@@ -1,5 +1,5 @@
 {
-  "name": "ds-storybook-6x-loader",
+  "name": "design-system-loader",
   "typings": "./index.d.ts",
   "module": "./index.mjs",
   "main": "./index.cjs.js",

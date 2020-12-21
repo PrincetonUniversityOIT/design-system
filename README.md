@@ -1,5 +1,4 @@
-# ds-storybook-6x
-Princeton Design System Storybook Example - Storybook Version 6
+# Princeton Design System
 
 ## Getting Started
 
