@@ -1,5 +1,5 @@
 {
-  "name": "@mzarillopu/ds-storybook-6x",
+  "name": "@PrincetonUniversityOIT/design-system",
   "version": "1.0.7",
   "description": "",
   "main": "./dist/index.js",
@@ -8,7 +8,7 @@
   "types": "./dist/types/components.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mzarillopu/ds-storybook-6x.git"
+    "url": "https://github.com/PrincetonUniversityOIT/design-system.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,9 +30,12 @@
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-decorators": "^7.10.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-syntax-jsx": "^7.10.1",
+    "@babel/plugin-transform-react-jsx": "^7.10.1",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@stencil/core": "^1.12.2",
     "@storybook/addon-a11y": "^6.0.26",
     "@storybook/addon-actions": "^6.0.21",
     "@storybook/addon-essentials": "^6.0.21",
@@ -48,6 +51,7 @@
     "flexboxgrid": "^6.3.1",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
+    "jsx-dom": "^6.4.15",
     "lit-element": "^2.4.0",
     "lit-html": "^1.3.0",
     "lit-scss-loader": "^1.0.1",
@@ -66,15 +70,10 @@
     "vue-template-compiler": "^2.6.12",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "workbox-build": "4.3.1"
-  },
-  "dependencies": {
-    "@babel/plugin-syntax-jsx": "^7.10.1",
-    "@babel/plugin-transform-react-jsx": "^7.10.1",
-    "@stencil/core": "^1.12.2",
-    "jsx-dom": "^6.4.15",
+    "workbox-build": "4.3.1",
     "write-file-webpack-plugin": "^4.5.1"
   },
+  "dependencies": {},
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }

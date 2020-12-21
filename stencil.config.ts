@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'ds-storybook-6x',
+  namespace: 'design-system',
   taskQueue: 'async',
   outputTargets: [
     {
