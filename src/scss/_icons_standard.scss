@@ -23,6 +23,9 @@ $emc-icons-standard: (
   }
 }
 
+/// Provides the icon path of the specified icon for use in CSS url references.
+/// @parameter {string} $name - The name of the icon for which the path is desired.
+/// @return {string} The path of the specified icon.
 @function emc-icons-path($name) {
   @return map-get(map-merge($emc-icons-standard, $emc-icons-custom), $name);
 }

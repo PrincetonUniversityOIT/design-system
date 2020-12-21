@@ -1,4 +1,9 @@
-// convert a pixel measurement into rems
+/// convert a pixel measurement into rems
+/// @access public
+/// @return {string} the rem value that equals the specified pixel value
+/// @param {number} $px - the pixel value that is being converted
+/// @require {variable} emc-base-font-size-in-pixels
+/// @since 1.0.0
 @function px-to-rem($px) {
   @return ($px / $emc-base-font-size-in-pixels) * 1rem;
 }

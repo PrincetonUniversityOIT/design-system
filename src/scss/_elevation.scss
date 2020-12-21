@@ -28,6 +28,9 @@
     0px 6px 30px rgba(0, 0, 0, 0.12),
     0px 8px 10px rgba(0, 0, 0, 0.2);
 }
+
+/// Applies styles (drop shadows) to simulate various levels of elevation based on the specified size.
+/// @parameter {number} size [16] - The depth of the elevation (1, 2, 4, 8, or 16)
 @mixin emc-elevation($size) {
   @if $size == 1 {
     box-shadow:

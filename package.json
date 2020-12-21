@@ -1,6 +1,7 @@
 {
   "name": "@princetonuniversityoit/design-system",
   "version": "1.0.8",
+  "title": "Princeton Design System",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -17,6 +18,7 @@
     "build-dev": "webpack --config ./webpack.dev.config.js --mode development",
     "build-css-dev": "webpack --config ./webpack.css.dev.config.js --mode development",
     "build-storybook": "build-storybook -c .storybook -o .out -s ./dist",
+    "build-sassdoc": "sassdoc src/scss",
     "stencil-build": "stencil build --docs && webpack --config ./webpack.css.dev.config.js --mode development",
     "stencil-start": "stencil build --dev --watch --serve",
     "stencil-test": "stencil test --spec --e2e",
@@ -62,6 +64,7 @@
     "react-is": "^16.13.1",
     "sass": "^1.30.0",
     "sass-loader": "^10.0.2",
+    "sassdoc": "^2.7.3",
     "svg-inline-loader": "^0.8.2",
     "svg-transform-loader": "^2.0.13",
     "svg-url-loader": "^6.0.0",
@@ -73,8 +76,7 @@
     "workbox-build": "4.3.1",
     "write-file-webpack-plugin": "^4.5.1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }
