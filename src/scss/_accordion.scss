@@ -1,26 +1,29 @@
-.emc-accordion__button,
-.emc-accordion__button[aria-expanded='true'] {
+.emc-accordion h1,
+.emc-accordion h2,
+.emc-accordion h3,
+.emc-accordion h4,
+.emc-accordion h5,
+.emc-accordion h6 {
+  margin: 0px;
+}
+.emc-accordion__button {
   padding: 1rem 50px 1rem 1rem;
   position: relative;
   border: none;
+  font-size: 1rem;
   font-weight: normal;
-  background-color: #f4f4f4;
   display: block;
   width: 100%;
   text-align: left;
   cursor: pointer;
+  font-family: $font-face-heading-default;
+}
+.emc-accordion__button[aria-expanded='true'] {
+  background-color: #f4f4f4;
 }
 .emc-accordion__button[aria-expanded='false'] {
-  padding: 1rem 50px 1rem 1rem;
-  position: relative;
-  border: none;
   border-bottom: 1px solid #c8c8c8;
-  font-weight: normal;
-  display: block;
-  width: 100%;
-  text-align: left;
   background-color: #fff;
-  cursor: pointer;
 }
 .emc-accordion__button[aria-expanded='false']:after {
   content: ' ';
