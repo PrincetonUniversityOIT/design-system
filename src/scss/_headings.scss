@@ -1,51 +1,65 @@
 h1, .emc-h1 {
   font-weight: 400;
-  font-size: px-to-rem(50);
+  font-size: px-to-rem(53);
   line-height: px-to-rem(72);
   margin: .4em 0;
   text-transform: none;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
 }
 
 h2, .emc-h2 {
   font-weight: 600;
-  font-size: px-to-rem(28);
-  line-height: px-to-rem(46);
+  font-size: px-to-rem(34);
+  line-height: px-to-rem(48);
   text-transform: none;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
 }
 
 h3, .emc-h3 {
   font-weight: 600;
-  font-size: px-to-rem(26);
-  line-height: px-to-rem(40);
+  font-size: px-to-rem(24);
+  line-height: px-to-rem(27);
   text-transform: none;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 h4, .emc-h4 {
   font-weight: 700;
-  font-size: px-to-rem(22);
-  line-height: px-to-rem(34);
+  font-size: px-to-rem(21);
+  line-height: px-to-rem(27);
   text-transform: none;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
 }
 
 h5, .emc-h5 {
   font-weight: 700;
-  font-size: px-to-rem(18);
+  font-size: px-to-rem(16);
   line-height: px-to-rem(27);
   text-transform: uppercase;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
 }
 
 h6, .emc-h6 {
   font-weight: 700;
-  font-size: px-to-rem(18);
-  line-height: px-to-rem(28);
-  text-transform: none;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(27);
+  text-transform: uppercase;
+  margin-block-start: 2.33em;
+  margin-block-end: 2.33em;
 }
 
 .emc-display-heading {
   font-weight: 700;
   font-size: px-to-rem(53);
-  line-height: 4em;
+  line-height: 4rem;
   text-transform: none;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
 }
 
 .emc-block-heading {
@@ -68,5 +82,5 @@ h6, .emc-h6 {
   font-size: 3.35rem;
   font-weight: 500;
   text-transform: none;
-  line-height: 4em;
+  line-height: 4rem;
 }
