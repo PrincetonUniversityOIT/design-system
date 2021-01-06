@@ -1,11 +1,11 @@
-import { Listener, Component, ARIA_EXPANDED } from '../base/delegreater';
+import {Listener, ARIA_EXPANDED, Behavior} from '../base/delegreater';
 import { prefix as PREFIX } from '../config';
 
 const ACCORDION_SELECTOR = `.${PREFIX}-accordion`;
 const ACCORDION_BUTTON_SELECTOR = `.${PREFIX}-accordion__button`;
 const MULTISELECTABLE = "aria-multiselectable";
 
-export class Accordion extends Component {
+export class Accordion extends Behavior {
 
     init(root: ParentNode) {
         console.log('init was called');
@@ -40,5 +40,6 @@ export class Accordion extends Component {
                 }
             });
         }
+        event.stopImmediatePropagation();
     }
 }

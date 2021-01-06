@@ -23,7 +23,7 @@ export const Listener = (config) => (target: Object, _propertyKey: string, descr
     meta.push(new Config(event, selector, descriptor.value));
 };
 
-export abstract class Component {
+export abstract class Behavior {
 
     abstract init(root: ParentNode): void;
 
