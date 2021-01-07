@@ -1,19 +1,19 @@
-import { Accordion } from './components/accordion';
-import {ModalDialog} from "./components/modal-dialog";
+import { AccordionBehavior } from './components/accordion';
+import {ModalDialogBehavior} from "./components/modal-dialog";
 
-export class DesignSystem {
+export class PrincetonDesignSystem {
     public enableDesignSystem() {
         this.enable();
         this.disable();
     }
 
     public enable() {
-        new Accordion().enable();
-        new ModalDialog().enable();
+        new AccordionBehavior().enable();
+        new ModalDialogBehavior().enable();
     }
 
     public disable() {
-        new Accordion().disable();
-        new ModalDialog().disable();
+        new AccordionBehavior().disable();
+        new ModalDialogBehavior().disable();
     }
 }

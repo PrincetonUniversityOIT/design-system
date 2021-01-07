@@ -5,7 +5,7 @@ const ACCORDION_SELECTOR = `.${PREFIX}-accordion`;
 const ACCORDION_BUTTON_SELECTOR = `.${PREFIX}-accordion__button`;
 const MULTISELECTABLE = "aria-multiselectable";
 
-export class Accordion extends Behavior {
+export class AccordionBehavior extends Behavior {
 
     init(root: ParentNode) {
         console.log('init was called');

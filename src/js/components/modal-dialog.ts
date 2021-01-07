@@ -8,26 +8,25 @@ const MODAL_BUTTON_SELECTOR = `.${PREFIX}-modal__button`;
 const INPUT_SELECTORS_EXCL_CLOSE = 'a[href]:not([disabled]), button:not([disabled]):not(.emc-modal-button__close), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])';
 const INPUT_SELECTORS = 'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])';
 
-export class ModalDialog extends Behavior {
+export class ModalDialogBehavior extends Behavior {
 
     init(root: ParentNode) {
         this.select(MODAL_WRAPPER_SELECTOR, root).forEach((wrapper) => {
             wrapper.classList.remove('emc-modal__wrapper--visible')
-            this.focusOnFirstInput(wrapper);
         });
     }
-
-    @Listener({
-        event: 'click',
-        selector: MODAL_BUTTON_SELECTOR
-    })
 
     @Listener({
         event: 'keydown',
         selector: MODAL_SELECTOR
     })
 
-    onClick(event: Event) {
+    @Listener({
+        event: 'click',
+        selector: MODAL_BUTTON_SELECTOR
+    })
+
+    onAction(event: Event) {
         const button = <HTMLElement>event.target;
         const modalEl = button.closest(MODAL_SELECTOR);
 
