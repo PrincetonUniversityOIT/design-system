@@ -19,7 +19,7 @@
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
-.emc-modal {
+.emc-modal-window {
   @include emc-theme-color(modal);
   font-size: 1rem;
   padding: px-to-rem(10);
