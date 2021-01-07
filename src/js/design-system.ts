@@ -2,6 +2,10 @@ import { Accordion } from './components/accordion';
 import {ModalDialog} from "./components/modal-dialog";
 
 export class DesignSystem {
+    public enableDesignSystem() {
+        this.enable();
+        this.disable();
+    }
 
     public enable() {
         new Accordion().enable();

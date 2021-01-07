@@ -18,7 +18,109 @@ export const PassiveDialogTemplate = (args) => html`
         </div>
     </div>
     <script id="initscript">
-            enableDesignSystem();
+            DesignSystem.enableDesignSystem();
+    </script>
+`;
+
+export const DialogWithOkActionTemplate = (args) => html`
+    <div class="emc-modal" role="region">
+        <button class="emc-btn emc-modal__button">Test Script Runs Before Close!</button>
+        <div role="presentation" class="emc-modal-wrapper">
+          <div role="dialog" aria-label="Test Dialog with Script" aria-modal="true" class="emc-modal-window emc-modal--sm">
+          <div class="emc-modal-title">
+                    ${ args.title }
+                      <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
+                          aria-label="Close modal dialog"></button>
+            </div>
+            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">${ args.content }</div>
+            <div class="emc-modal-button-container">
+              <button class="emc-btn emc-modal__button">Cancel</button>
+              <button class="emc-btn emc-modal__button" onClick="alert('do something here')">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script id="initscript">
+            DesignSystem.enableDesignSystem();
+    </script>
+`;
+
+export const DialogWithOtherButtonsTemplate = (args) => html`
+    <div class="emc-modal" role="region">
+        <button class="emc-btn emc-modal__button">Test with Other Buttons!</button>
+        <div role="presentation" class="emc-modal-wrapper">
+          <div role="dialog" aria-label="Test Dialog with Other Buttons" aria-modal="true" class="emc-modal-window emc-modal--sm">
+          <div class="emc-modal-title">
+                    ${ args.title }
+                      <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
+                          aria-label="Close modal dialog"></button>
+            </div>
+            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">${ args.content }</div>
+            <div class="emc-modal-button-container">
+              <button class="emc-btn emc-modal__button">Cancel</button>
+              <button class="emc-btn emc-modal__button">OK</button>
+              <button class="emc-btn">Not Closing</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script id="initscript">
+            DesignSystem.enableDesignSystem();
+    </script>
+`;
+
+export const DialogWithStopCloseButtonTemplate = (args) => html`
+    <div class="emc-modal" role="region">
+        <button class="emc-btn emc-modal__button">Test Dialog with Button that Stops Close!</button>
+        <div role="presentation" class="emc-modal-wrapper">
+          <div role="dialog" aria-label="Test Dialog with Button that Stops Close" aria-modal="true" class="emc-modal-window emc-modal--sm">
+          <div class="emc-modal-title">
+                    ${ args.title }
+                      <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
+                          aria-label="Close modal dialog"></button>
+            </div>
+            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">${ args.content }</div>
+            <div class="emc-modal-button-container">
+              <button class="emc-btn emc-modal__button">Cancel</button>
+              <button class="emc-btn emc-modal__button">OK</button>
+              <button class="emc-btn emc-modal__button" onClick="testStopClose(event);">Do not close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script id="initscript">
+          DesignSystem.enableDesignSystem();
+          function testStopClose(event) {
+            console.log('log this message');
+            event.stopImmediatePropagation();
+          }
+    </script>
+`;
+
+export const DialogWithFormFieldsTemplate = (args) => html`
+    <div class="emc-modal" role="region">
+        <button class="emc-btn emc-modal__button">Test Dialog with Form Fields!</button>
+        <div role="presentation" class="emc-modal-wrapper">
+          <div role="dialog" aria-label="Test Small Dialog with Form Fields" aria-modal="true" class="emc-modal-window emc-modal--sm">
+          <div class="emc-modal-title">
+                    ${ args.title }
+                      <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
+                          aria-label="Close modal dialog"></button>
+            </div>
+            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">
+            ${ args.content }
+            <input class="emc-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
+            <input class="emc-input" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
+            </div>
+            <div class="emc-modal-button-container">
+              <button class="emc-btn emc-modal__button">Cancel</button>
+              <button class="emc-btn emc-modal__button">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script id="initscript">
+          DesignSystem.enableDesignSystem();
     </script>
 `;
 
@@ -41,82 +143,7 @@ export const SmallDialogTemplate = (args) => html`
         </div>
     </div>
     <script id="initscript">
-            enableDesignSystem();
-    </script>
-`;
-
-export const SmallWithOkActionDialogTemplate = (args) => html`
-    <div class="emc-modal" role="region">
-        <button class="emc-btn emc-modal__button">Test Small Dialog!</button>
-        <div role="presentation" class="emc-modal-wrapper">
-          <div role="dialog" aria-label="Test Small Dialog" aria-modal="true" class="emc-modal-window emc-modal--sm">
-          <div class="emc-modal-title">
-                    ${ args.title }
-                      <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
-                          aria-label="Close modal dialog"></button>
-            </div>
-            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">${ args.content }</div>
-            <div class="emc-modal-button-container">
-              <button class="emc-btn emc-modal__button">Cancel</button>
-              <button class="emc-btn emc-modal__button" onClick="alert('do something here')">OK</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    <script id="initscript">
-            enableDesignSystem();
-    </script>
-`;
-
-export const SmallWithOtherButtonsDialogTemplate = (args) => html`
-    <div class="emc-modal" role="region">
-        <button class="emc-btn emc-modal__button">Test Small Dialog with Other Buttons!</button>
-        <div role="presentation" class="emc-modal-wrapper">
-          <div role="dialog" aria-label="Test Small Dialog with Other Buttons" aria-modal="true" class="emc-modal-window emc-modal--sm">
-          <div class="emc-modal-title">
-                    ${ args.title }
-                      <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
-                          aria-label="Close modal dialog"></button>
-            </div>
-            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">${ args.content }</div>
-            <div class="emc-modal-button-container">
-              <button class="emc-btn emc-modal__button">Cancel</button>
-              <button class="emc-btn emc-modal__button">OK</button>
-              <button class="emc-btn">Not Closing</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    <script id="initscript">
-            enableDesignSystem();
-    </script>
-`;
-
-export const SmallWithStopCloseDialogTemplate = (args) => html`
-    <div class="emc-modal" role="region">
-        <button class="emc-btn emc-modal__button">Test Small Dialog with Button that Stops Close!</button>
-        <div role="presentation" class="emc-modal-wrapper">
-          <div role="dialog" aria-label="Test Small Dialog with Button that Stops Close" aria-modal="true" class="emc-modal-window emc-modal--sm">
-          <div class="emc-modal-title">
-                    ${ args.title }
-                      <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
-                          aria-label="Close modal dialog"></button>
-            </div>
-            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">${ args.content }</div>
-            <div class="emc-modal-button-container">
-              <button class="emc-btn emc-modal__button">Cancel</button>
-              <button class="emc-btn emc-modal__button">OK</button>
-              <button class="emc-btn emc-modal__button" onClick="testStopClose(event);">Do not close</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    <script id="initscript">
-          enableDesignSystem();
-          function testStopClose(event) {
-            console.log('log this message');
-            event.stopImmediatePropagation();
-          }
+            DesignSystem.enableDesignSystem();
     </script>
 `;
 
@@ -139,7 +166,7 @@ export const MediumDialogTemplate = (args) => html`
          </div>
      </div>
      <script id="initscript">
-             enableDesignSystem();
+             DesignSystem.enableDesignSystem();
      </script>
 `;
 
@@ -162,7 +189,7 @@ export const LargeDialogTemplate = (args) => html`
         </div>
     </div>
     <script id="initscript">
-            enableDesignSystem();
+            DesignSystem.enableDesignSystem();
     </script>
 `;
 
@@ -195,27 +222,31 @@ export const ScrollingDialogTemplate = (args) => html`
         </div>
     </div>
     <script id="initscript">
-            enableDesignSystem();
+            DesignSystem.enableDesignSystem();
     </script>
 `;
 
 export const MultipleDialogsTemplate = (args) => html`
-    <div class="emc-modal" role="region">
-        <button class="emc-btn emc-modal__button">Test Small Dialog 1!</button>
-        <div role="presentation" class="emc-modal-wrapper">
-          <div role="dialog" aria-label="Test Small Dialog 1" aria-modal="true" class="emc-modal-window emc-modal--sm">
-          <div class="emc-modal-title">
-                      Dialog 1
-                      <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
-                          aria-label="Close modal dialog"></button>
-            </div>
-            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">Show Dialog 1 Content</div>
-            <div class="emc-modal-button-container">
-              <button class="emc-btn emc-modal__button">Cancel</button>
-              <button class="emc-btn emc-modal__button">OK</button>
-            </div>
-          </div>
-        </div>
+   <div class="emc-modal" role="region">
+           <button class="emc-btn emc-modal__button">Test Small Dialog 1!</button>
+           <div role="presentation" class="emc-modal-wrapper">
+             <div role="dialog" aria-label="Test Small Dialog 1" aria-modal="true" class="emc-modal-window emc-modal--sm">
+             <div class="emc-modal-title">
+                         Dialog 1
+                         <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
+                             aria-label="Close modal dialog"></button>
+               </div>
+               <div class="emc-modal-content" aria-labelledBy="emc-modal-title">
+               Show Dialog 1 Content
+                   <input class="emc-input" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
+                   <input class="emc-input" id="my-input4" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
+               </div>
+               <div class="emc-modal-button-container">
+                 <button class="emc-btn emc-modal__button">Cancel</button>
+                 <button class="emc-btn emc-modal__button">OK</button>
+               </div>
+             </div>
+           </div>
     </div>
     <br/>
     <div class="emc-modal" role="region">
@@ -227,7 +258,11 @@ export const MultipleDialogsTemplate = (args) => html`
                       <button class="emc-modal__button emc-modal-button__close emc-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">Show Dialog 2 Content</div>
+            <div class="emc-modal-content" aria-labelledBy="emc-modal-title">
+            Show Dialog 2 Content
+                <input class="emc-input" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 3" />
+                <input class="emc-input" id="my-input4" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 4" />
+            </div>
             <div class="emc-modal-button-container">
               <button class="emc-btn emc-modal__button">Cancel</button>
               <button class="emc-btn emc-modal__button">OK</button>
@@ -236,7 +271,7 @@ export const MultipleDialogsTemplate = (args) => html`
         </div>
     </div>
     <script id="initscript">
-            enableDesignSystem();
+            DesignSystem.enableDesignSystem();
     </script>
 `;
 
@@ -293,42 +328,6 @@ This is a small dialog
     </Story>
 </Canvas>
 
-## Small with Ok Action Dialog
-This is a small dialog with an action for the Ok button
-
-<Canvas>
-    <Story name="Small Dialog with OK Action" args={{
-            title: "This is for small dialogs with Ok actions",
-            content: "We need to add some content here"
-        }}>
-        {SmallWithOkActionDialogTemplate.bind({})}
-    </Story>
-</Canvas>
-
-## Small with Other Buttons Dialog
-This is a small dialog with other buttons that do not close the dialog
-
-<Canvas>
-    <Story name="Small Dialog with Other Buttons" args={{
-            title: "This is for small dialogs with other buttons that do not close the screen",
-            content: "We need to add some content here"
-        }}>
-        {SmallWithOtherButtonsDialogTemplate.bind({})}
-    </Story>
-</Canvas>
-
-## Small with Button that Stops Closing Dialog
-This is a small dialog with a button that stops closing the dialog
-
-<Canvas>
-    <Story name="Small Dialog with Button that Stops Closing the Dialog" args={{
-            title: "This is for small dialogs with a button that stops closing the dialog",
-            content: "We need to add some content here"
-        }}>
-        {SmallWithStopCloseDialogTemplate.bind({})}
-    </Story>
-</Canvas>
-
 ## Medium Dialog
 This is a medium dialog
 
@@ -363,10 +362,62 @@ This is a large dialog
     </Story>
 </Canvas>
 
+## Dialog that runs a script before closing the dialog
+This is a dialog that runs a script before closing the dialog
+
+<Canvas>
+    <Story name="Dialog with Button that Runs Script Before Close" args={{
+            title: "Dialog that has a button that runs a script before closing the window",
+            content: "We need to add some content here"
+        }}>
+        {DialogWithOkActionTemplate.bind({})}
+    </Story>
+</Canvas>
+
+## Dialog that has other buttons that do not close the window
+This is a dialog that has other buttons that do not close the window
+
+<Canvas>
+    <Story name="Dialog with Button That Keep Window Open" args={{
+            title: "Dialog that has a button that does not automatically close window",
+            content: "We need to add some content here"
+        }}>
+        {DialogWithOtherButtonsTemplate.bind({})}
+    </Story>
+</Canvas>
+
+## Dialog that has a button that prevents the window from closing
+This is a dialog that has a button that prevents the window from closing
+
+<Canvas>
+    <Story name="Dialog with Button to Prevent Window Closing" args={{
+            title: "Dialog that has a button that prevents closing the window",
+            content: "We need to add some content here"
+        }}>
+        {DialogWithStopCloseButtonTemplate.bind({})}
+    </Story>
+</Canvas>
+
+## Dialog with Form Fields
+This is a dialog with form fields
+
+<Canvas>
+    <Story name="Dialog with Form Fields" args={{
+            title: "This is for dialogs with form fields",
+            content: "We need to add some content here",
+            label: "Label",
+            value: ""
+        }}>
+        {DialogWithFormFieldsTemplate.bind({})}
+    </Story>
+</Canvas>
+
 ## Multiple Dialogs
 
 <Canvas>
     <Story name="Multiple Dialogs" args={{
+            label: "Label",
+            value: ""
         }}>
         {MultipleDialogsTemplate.bind({})}
     </Story>
