@@ -1,5 +1,5 @@
-import { DesignSystem } from './js/design-system';
+import { PrincetonDesignSystem } from './js/design-system';
 
 export * from './components';
 
-(<any> window).DesignSystem = new DesignSystem();
+(<any> window).PrincetonDesignSystem = new PrincetonDesignSystem();
