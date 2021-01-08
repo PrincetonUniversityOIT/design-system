@@ -9,7 +9,8 @@ module.exports = {
 
     entry: {
         styles: './src/scss/styles.scss',
-        fonts: './src/scss/fonts.scss'
+        fonts: './src/scss/fonts.scss',
+        design_system: './src/design_system.ts'
     },
 
     output: {
@@ -20,8 +21,17 @@ module.exports = {
     optimization: {
         minimizer: [new OptimizeCSSAssetsPlugin({})],
     },
+    resolve: {
+        extensions: [ '.tsx', '.ts', '.js', '.scss', '.css' ],
+    },
     module: {
         rules: [
+            // Typescript
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
             // SCSS modules (.scss, but not .module.scss) that will be included in the global stylesheet.
             {
                 test: /\.s([ac])ss$/,

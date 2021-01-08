@@ -1,0 +1,44 @@
+{
+  "primary": [
+    {
+      "label": "Getting Started",
+      "url": "/getting_started/",
+      "items": [
+        {
+          "label": "About The Design System",
+          "url": "/getting_started/"
+        }
+      ]
+    },
+    {
+      "label": "Design",
+      "url": "/design/"
+    },
+    {
+      "label": "Components",
+      "url": "/components/",
+      "items": [
+        {
+          "label": "About Components",
+          "url": "/components/"
+        },
+        {
+          "label": "Accordion",
+          "url": "/components/accordion/"
+        },
+        {
+          "label": "Buttons",
+          "url": "/components/buttons/"
+        }
+      ]
+    },
+    {
+      "label": "Templates",
+      "url": "/templates/"
+    },
+    {
+      "label": "Contribute",
+      "url": "/contribute/"
+    }
+  ]
+}

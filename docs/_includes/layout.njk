@@ -1,0 +1,191 @@
+---
+title: Princeton Design System
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Princeton Design System</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/fonts.css">
+    <style>
+        body, h1, h2, h3, h4 {
+            padding: 0px;
+            margin: 0px;
+        }
+        .container {
+            width: 900px;
+            margin: auto;
+        }
+        .core {
+            display: flex;
+        }
+        .sidenav {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 2.4rem;
+            bottom: 2.4rem;
+            flex: 0 0 14rem;
+            height: calc(100vh - 55px);
+            background-color: silver;
+        }
+        .core-content {
+            flex: 1 1 auto;
+            margin-left: 20px;
+        }
+        main {
+            margin-bottom: 20px;
+        }
+        header {
+            background-color: lightcoral;
+            color: black;
+        }
+        footer {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header role="banner" class="emc-header">
+    <h1 class="emc-sr-only">Princeton University Design System</h1>
+    <div class="emc-skip-links">
+        <a href="#main-content" class="emc-skip-link">Skip to main content</a>
+        <a href="#search" class="emc-skip-link">Skip to search options</a>
+    </div>
+    <!-- div class="emc-container" -->
+    <div class="emc-header__pu-branding">
+        <div class="emc-container">
+            <a href="https://www.princeton.edu" title="Princeton University"><img src="/logos/pu-logo.svg" alt="Princeton University" /></a>
+        </div>
+    </div>
+    <div class="emc-header__site-branding">
+        <div class="emc-container emc-header__site-branding-contents">
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="emc-header__site-branding-home-link"><img src="/logos/shield.svg" /></a>
+            <div class="emc-header__site-branding-info">
+                <div class="emc-header__site-branding-name">
+                    <a href="/" title="Home" rel="home">Relativity Design System</a>
+                </div>
+                <div class="emc-header__site-branding-slogan">
+                    The Princeton Design System
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Main Menu" class="emc-header__main-menu">
+        <h2 class="emc-sr-only">Main Menu</h2>
+        <div class="emc-container">
+            <div class="emc-header__main-menu-navbar">
+                <button id="emc-header-menu-toggle" class="emc-header__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
+                <div id="emc-header-nav-container" class="emc-header__nav-container">
+                    <ul class="emc-menubar" role="list">
+                        {%- for item in siteMap.primary -%}
+                        <li{% if page.url.startsWith(item.url) %} aria-current="true"{% endif %}><a href="{{ item.url }}">{{ item.label }}</a></li>
+                        {%- endfor -%}
+                    </ul>
+                    <div class="emc-header__utility-menu">
+                        <ul>
+                            <li><a href="javascript void(0);">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="emc-header__search-bar">
+        <div class="emc-container">
+            <h2 class="emc-sr-only">Search</h2>
+            <button id="my-search-toggle" class="emc-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="emc-icon emc-icon-search" aria-hidden="true"></i><span class="emc-sr-only">Search Menu Toggle</span></button>
+            <div id="emc-header-search-bar-panel" class="emc-header__search-bar-panel">
+                <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
+                    <label class="emc-sr-only" for="search-field">Search</label>
+                    <a name="search">
+                        <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
+                    </a>
+                    <button class="emc-button" type="submit">
+                        <span class="emc-sr-only">Search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /div -->
+</header>
+<main class="emc-container">
+    <div class="core">
+        <nav class="emc-sidebar-menu" aria-label="section">
+            <h2 class="emc-sr-only">Section Menu</h2>
+            <ul class="emc-sidebar-menu__list" role="list">
+                {% for privNav in siteMap.primary %}
+                {% if page.url.startsWith(privNav.url) %}
+                {% for secNav in privNav.items %}
+                <li {% if page.url == secNav.url %} class="emc-sidebar-menu__list-item--active"{% else %} class="emc-sidebar-menu__list-item"{% endif %}>
+                    <a href="{{ secNav.url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active"{% endif %}>{{ secNav.label }}<span class="emc-sr-only">, (current page)</span></a>
+                </li>
+                {% endfor %}
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="core-content">
+            {{ content | safe }}
+        </div>
+    </div>
+</main>
+</body>
+<footer role="contentinfo" class="emc-footer">
+    <div class="emc-container emc-footer__content">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <h2>General Information</h2>
+                <ul class="emc-footer__list">
+                    <li><a href="javascript:void(0);">Contact Us</a></li>
+                    <li><a href="javascript:void(0);">About Us</a></li>
+                    <li><a href="javascript:void(0);">News</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Services</h2>
+                <ul class="emc-footer__list">
+                    <li><a href="javascript:void(0);">Update Your Info</a></li>
+                    <li><a href="javascript:void(0);">Online Resources</a></li>
+                    <li><a href="javascript:void(0);">Visiting Campus</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>University Links</h2>
+                <ul class="emc-footer__list">
+                    <li><a href="https://www.princeton.edu/">Princeton University</a></li>
+                    <li><a href="https://communications.princeton.edu/">Office of Communications</a></li>
+                    <li><a href="https://ux.princeton.edu/">User Experience Office</a></li>
+                    <li><a href="https://wds.princeton.edu/">Web Development Services</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Resources</h2>
+                <ul class="emc-footer__icon-list">
+                    <li><a href="javascript:void(0);"><i class="emc-icon emc-icon-2x emc-footer__icon emc-icon-facebook"></i><span class="emc-sr-only">Go to GitHub</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="emc-footer__subfooter">
+        <div class="emc-container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <a href="javascript:void(0)">Accessibility</a>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    &copy; 2020 The Trustees of Princeton University
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <a href="https://www.princeton.edu" target="_blank" class="emc-no-icon"><img class="emc-footer__logo" src="/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/design_system.js"></script>
+</html>
