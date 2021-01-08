@@ -21,6 +21,7 @@
 
 .emc-modal-window {
   @include emc-theme-color(modal);
+  font-family: emc-theme-font(body);
   font-size: 1rem;
   padding: px-to-rem(10);
   position: absolute;

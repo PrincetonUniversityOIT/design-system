@@ -3,6 +3,14 @@ footer.emc-footer {
   color: #fff;
   padding-top: 2rem;
 }
+footer.emc-footer h1,
+footer.emc-footer h2,
+footer.emc-footer h3,
+footer.emc-footer h4,
+footer.emc-footer h5,
+footer.emc-footer h6 {
+  font-family: emc-theme-font(body);
+}
 footer.emc-footer h2 {
   font-size: 1rem;
   text-transform: uppercase;
