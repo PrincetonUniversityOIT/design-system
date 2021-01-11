@@ -12,3 +12,7 @@
 @function emc-theme-rgb($feature) {
   @return map-get(map-get($emc-color-map, map-get($emc-theme-feature-colors, $feature)), background-color);
 }
+
+@function emc-theme-font($feature) {
+  @return map-get($emc-font-map, map-get($emc-theme-feature-fonts, $feature));
+}

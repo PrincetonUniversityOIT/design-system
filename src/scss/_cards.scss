@@ -4,6 +4,7 @@
 }
 
 .emc-card__heading {
+  font-family: emc-theme-font(heading-default);
   font-style: normal;
   font-weight: 600;
   font-size: px-to-rem(14);
@@ -23,6 +24,7 @@
 .emc-card__footer {
   @include emc-theme-color(neutral-light);
   padding: px-to-rem(10) px-to-rem(12);
+  font-family: emc-theme-font(body);
   font-style: normal;
   font-weight: 700;
   font-size: px-to-rem(10);
@@ -33,6 +35,7 @@
 
 .emc-news-card {
   @include emc-theme-color(card);
+  font-family: emc-theme-font(header-default);
   display: flex;
   flex-direction: column;
   // this allows the card to properly take up space when put into a flex container
@@ -93,6 +96,7 @@
   margin-bottom: px-to-rem(12);
 }
 .emc-event-card__title a {
+  font-family: emc-theme-font(header-default);
   font-size: 1.25rem;
   font-weight: bold;
   text-decoration: none;

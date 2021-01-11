@@ -5,12 +5,14 @@
 @import 'functions';
 @import 'breakpoints';
 @import 'color';
+@import 'font';
 @import 'theme_colors_default';
 // @import 'theme_colors_demo';
+@import 'theme_font_default';
 @import 'theme';
 @import 'typography';
-@import 'font_pairing_default';
-@import 'font_pairing_casual';
+//@import 'font_pairing_default';
+//@import 'font_pairing_casual';
 @import 'elevation';
 
 @import 'focus';
