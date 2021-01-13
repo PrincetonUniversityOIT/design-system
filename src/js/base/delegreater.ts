@@ -5,31 +5,19 @@ export const ARIA_EXPANDED = "aria-expanded";
 export const ARIA_CONTROLS = "aria-controls";
 export const HIDDEN = "hidden";
 
-class Config {
+export class Config {
     constructor(public event: string, public selector: string, public f: (event) => {}) {
     }
 }
 
-export const Listener = (config) => (target: Object, _propertyKey: string, descriptor: PropertyDescriptor) =>  {
-    const event = config.event;
-    const selector = config.selector;
-
-    const constructor = target.constructor;
-    // Use of Object.defineProperty is important since it creates non-enumerable property which
-    // prevents the property is copied during subclassing.
-    const meta = constructor.hasOwnProperty(EVENT_METADATA) ?
-        (constructor as any)[EVENT_METADATA] :
-        Object.defineProperty(constructor, EVENT_METADATA, {value: []})[EVENT_METADATA];
-    meta.push(new Config(event, selector, descriptor.value));
-};
-
 export abstract class Behavior {
 
+    constructor() {
+
+    }
     abstract init(root: ParentNode): void;
 
     public enable(_root?: ParentNode) {
-        console.log('enabled');
-        console.log(this.constructor[EVENT_METADATA]);
         let root = _root ? _root : window.document;
         this.init(root);
         this.constructor[EVENT_METADATA].forEach((config: Config) => {
@@ -41,8 +29,6 @@ export abstract class Behavior {
     }
 
     public disable() {
-        console.log('disabled');
-        console.log(this.constructor[EVENT_METADATA]);
         this.constructor[EVENT_METADATA].forEach((config: Config) => {
             // multiple events can be specified, separated by spaces
             config.event.split(" ").forEach((event: string) => {
@@ -71,7 +57,6 @@ export abstract class Behavior {
         if (safeExpanded) {
             controlledElement.removeAttribute(HIDDEN);
         } else {
-            console.log('setting control' + controlledElementId + ' to hidden');
             controlledElement.setAttribute(HIDDEN, "");
         }
 
@@ -93,8 +78,6 @@ export abstract class Behavior {
         }
 
         const selection = context.querySelectorAll(selector);
-        console.log('select ' + selector);
-        console.log(selection);
         return Array.prototype.slice.call(selection);
     }
 

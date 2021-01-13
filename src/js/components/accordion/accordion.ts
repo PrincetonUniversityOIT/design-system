@@ -1,5 +1,6 @@
-import {Listener, ARIA_EXPANDED, Behavior} from '../base/delegreater';
-import { prefix as PREFIX } from '../config';
+import { ARIA_EXPANDED, Behavior} from '../../base/delegreater';
+import { prefix as PREFIX } from '../../config';
+import {Listener} from "../../base/decorator-functions";
 
 const ACCORDION_SELECTOR = `.${PREFIX}-accordion`;
 const ACCORDION_BUTTON_SELECTOR = `.${PREFIX}-accordion__button`;
@@ -7,10 +8,12 @@ const MULTISELECTABLE = "aria-multiselectable";
 
 export class AccordionBehavior extends Behavior {
 
+    constructor() {
+        super();
+    }
+
     init(root: ParentNode) {
-        console.log('init was called');
         this.select(ACCORDION_BUTTON_SELECTOR, root).forEach((button) => {
-            console.log('toggling button');
             const expanded = button.getAttribute(ARIA_EXPANDED) === "true";
             this.toggleControl(button, expanded);
         });
@@ -25,8 +28,6 @@ export class AccordionBehavior extends Behavior {
         selector: ACCORDION_BUTTON_SELECTOR
     })
     onClick(event: Event) {
-        console.log('clicked it!');
-        console.log(event);
         const button = <HTMLElement> event.target;
         const accordionEl = button.closest(ACCORDION_SELECTOR);
         const multiselectable = accordionEl.getAttribute(MULTISELECTABLE) === "true";

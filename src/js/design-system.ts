@@ -1,5 +1,5 @@
-import { AccordionBehavior } from './components/accordion';
-import {ModalDialogBehavior} from "./components/modal-dialog";
+import { AccordionBehavior } from './components/accordion/accordion';
+import { ModalDialogBehavior } from "./components/modal-dialog/modal-dialog";
 
 export class PrincetonDesignSystem {
     public enableDesignSystem() {
