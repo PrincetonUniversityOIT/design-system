@@ -1,5 +1,6 @@
-import {Listener, Behavior} from '../base/delegreater';
-import { prefix as PREFIX } from '../config';
+import {Behavior} from '../../base/delegreater';
+import { prefix as PREFIX } from '../../config';
+import {Listener} from "../../base/decorator-functions";
 
 const MODAL_SELECTOR = `.${PREFIX}-modal`;
 const MODAL_WRAPPER_SELECTOR = `.${PREFIX}-modal-wrapper`;
@@ -9,6 +10,10 @@ const INPUT_SELECTORS_EXCL_CLOSE = 'a[href]:not([disabled]), button:not([disable
 const INPUT_SELECTORS = 'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])';
 
 export class ModalDialogBehavior extends Behavior {
+
+    constructor() {
+        super();
+    }
 
     init(root: ParentNode) {
         this.select(MODAL_WRAPPER_SELECTOR, root).forEach((wrapper) => {

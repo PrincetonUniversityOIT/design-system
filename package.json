@@ -12,7 +12,7 @@
     "url": "https://github.com/PrincetonUniversityOIT/design-system.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --passWithNoTests --testPathPattern=src/js --silent=false",
     "storybook": "npm run stencil-build && start-storybook -s ./dist -p 6006",
     "build": "webpack --config ./webpack.prod.config.js --mode production",
     "build-dev": "webpack --config ./webpack.dev.config.js --mode development",
@@ -46,7 +46,7 @@
     "@storybook/addon-essentials": "^6.0.21",
     "@storybook/addon-links": "^6.0.21",
     "@storybook/web-components": "^6.0.21",
-    "@types/jest": "24.9.1",
+    "@types/jest": "^24.9.1",
     "@types/puppeteer": "2.0.1",
     "@webcomponents/webcomponentsjs": "^2.4.4",
     "babel-loader": "^8.1.0",
@@ -81,7 +81,9 @@
     "workbox-build": "4.3.1",
     "write-file-webpack-plugin": "^4.5.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ts-jest": "^26.4.4"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }
