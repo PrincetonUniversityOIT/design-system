@@ -87,6 +87,17 @@ export const Template = (args) => html`
     </ul>
 `;
 
+export const SingleMenuTemplate = (args) => html`
+    <ul class="emc-menubar" role="list">
+        <li aria-current="true">
+            <a href="javascript:void(0);" aria-current="page">Section 1</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">Section 2</a>
+        </li>
+    </ul>
+`;
+
 # Nav Menu
 
 The Navigation Menu can be used as a primary or secondary navigation.
@@ -127,6 +138,14 @@ The Navigation Menu can be used as a primary or secondary navigation.
         forceExpanded: false
     }}>
       {Template.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Basic Single Menu" args={{
+        forceExpanded: false
+    }}>
+      {SingleMenuTemplate.bind({})}
     </Story>
 </Canvas>
 
