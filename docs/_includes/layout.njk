@@ -10,45 +10,34 @@ title: Princeton Design System
     <title>{{ title }} - Princeton Design System</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/prism-atom-dark.css">
     <style>
-        body, h1, h2, h3, h4 {
-            padding: 0px;
-            margin: 0px;
-        }
-        .container {
-            width: 900px;
-            margin: auto;
-        }
         .core {
             display: flex;
-        }
-        .sidenav {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 2.4rem;
-            bottom: 2.4rem;
-            flex: 0 0 14rem;
-            height: calc(100vh - 55px);
-            background-color: silver;
         }
         .core-content {
             flex: 1 1 auto;
             margin-left: 20px;
+            min-width: 0px; /* This is necessary to stop the code from pushing the rest of the page out. */
         }
         main {
             margin-bottom: 20px;
         }
-        header {
-            background-color: lightcoral;
-            color: black;
-        }
-        footer {
-            background-color: black;
-            color: white;
+        iframe {
+            border: 1px solid lightgrey;
+            display: block;
+            padding: 10px;
+            width: 100%;
+            overflow-y: hidden;
+            box-shadow:
+                0px 2px 4px rgba(0, 0, 0, 0.14),
+                0px 4px 5px rgba(0, 0, 0, 0.12),
+                0px 1px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
     </style>
 </head>
-<body>
+<body onload="registerAllIframes()">
 <header role="banner" class="emc-header">
     <h1 class="emc-sr-only">Princeton University Design System</h1>
     <div class="emc-skip-links">
@@ -134,7 +123,6 @@ title: Princeton Design System
         </div>
     </div>
 </main>
-</body>
 <footer role="contentinfo" class="emc-footer">
     <div class="emc-container emc-footer__content">
         <div class="row">
@@ -188,4 +176,33 @@ title: Princeton Design System
     </div>
 </footer>
 <script src="/design_system.js"></script>
+<script type="text/javascript">
+    PrincetonDesignSystem.enable();
+
+    function resizeIframe(iframe) {
+        iframe.height = (iframe.contentWindow.document.body.scrollHeight + 22) + "px";
+    }
+
+    function registerIframe(iframe) {
+        // register a listener to list to changes to the iframe content
+        const observer = new MutationObserver((/* mutationsList, observer*/) => {
+            resizeIframe(iframe);
+        });
+        observer.observe(iframe.contentWindow.document.body, { attributes: true, childList: true, subtree: true });
+        // resize immediately for initial load
+        resizeIframe(iframe);
+    }
+
+    function registerAllIframes() {
+        const iframes = document.querySelectorAll("iframe.emc-docs__code-sample");
+        for (const iframe of iframes) {
+            registerIframe(iframe);
+        }
+    }
+
+    function copyCode(button) {
+        navigator.clipboard.writeText(button.parentNode.querySelector("pre.language-html > code.language-html").innerText);
+    }
+</script>
+</body>
 </html>
