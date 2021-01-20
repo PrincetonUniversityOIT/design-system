@@ -59,6 +59,20 @@ ul.emc-menubar a[aria-current='page'] {
   @include emc-theme-color(menubar-sm-current);
 }
 
+ul.emc-menubar__submenu {
+  display: none;
+  list-style: none;
+  padding: px-to-rem(16) px-to-rem(16) px-to-rem(0) 0rem;
+  margin: 0px;
+  line-height: 1.15;
+}
+ul.emc-menubar__submenu.emc-menubar_submenu--shown {
+  display: block;
+}
+ul.emc-menubar__submenu li > button:not([aria-expanded='true']) + ul {
+  display: none;
+}
+
 @include for-tablet-landscape-up {
   ul.emc-menubar,
   ul.emc-menubar.emc-menubar--shown {
@@ -191,3 +205,4 @@ ul.emc-menubar a[aria-current='page'] {
     @include emc-theme-color(menubar-lg-secondary-current);
   }
 }
+

@@ -3,68 +3,7 @@ import { html } from 'lit-html';
 
 <Meta title="Components/Header" component="Header" />
 
-export const Template = (args) => html`
-    <script id="initscript">
-        function toggleMenu(event) {
-            const menuToggle = document.getElementById("emc-header-menu-toggle");
-            var expandedAttr = menuToggle.getAttribute("aria-expanded");
-            var expand = !(expandedAttr && expandedAttr == "true");
-            if (expand) {
-                 showSearch(false);
-            }
-            showMenu(expand);
-        }
-        function showMenu(expand) {
-            const menuToggle = document.getElementById("emc-header-menu-toggle");
-            const menuToggleIcon = menuToggle.querySelector(".emc-icon");
-            const el = document.getElementById("emc-header-nav-container");
-            const navbar = document.querySelector(".emc-menubar");
-            if (expand) {
-                el.classList.add("emc-header__nav-container--expanded");
-                navbar.classList.add("emc-menubar--shown");
-                menuToggle.setAttribute("aria-expanded", "true");
-                menuToggleIcon.classList.remove("emc-icon-menu");
-                menuToggleIcon.classList.add("emc-icon-close");
-            } else {
-                el.classList.remove("emc-header__nav-container--expanded");
-                navbar.classList.remove("emc-menubar--shown");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggleIcon.classList.remove("emc-icon-close");
-                menuToggleIcon.classList.add("emc-icon-menu");
-            }
-        }
-        function toggleSearch(event) {
-            const searchToggle = document.getElementById("my-search-toggle");
-            var expandedAttr = searchToggle.getAttribute("aria-expanded");
-            var expand = !(expandedAttr && expandedAttr == "true");
-            if (expand) {
-                 showMenu(false);
-            }
-            showSearch(expand);
-        }
-        function showSearch(expand) {
-            const searchbar = document.getElementById("emc-header-search-bar-panel");
-            const searchToggle = document.getElementById("my-search-toggle");
-            const searchToggleIcon = searchToggle.querySelector(".emc-icon");
-            if (expand) {
-                searchbar.classList.add("emc-header__search-bar-panel--shown");
-                searchToggle.setAttribute("aria-expanded", "true");
-                searchToggleIcon.classList.remove("emc-icon-search");
-                searchToggleIcon.classList.add("emc-icon-close");
-                var input = searchbar.querySelector("input[type='search']");
-                input.focus();         
-            } else {
-                searchbar.classList.remove("emc-header__search-bar-panel--shown");
-                searchToggle.setAttribute("aria-expanded", "false");
-                searchToggleIcon.classList.remove("emc-icon-close");
-                searchToggleIcon.classList.add("emc-icon-search");
-            }
-        }
-        myMainMenuToggle = document.getElementById("emc-header-menu-toggle");
-        myMainMenuToggle.addEventListener('click', toggleMenu);
-        mySearchToggle = document.getElementById("my-search-toggle");
-        mySearchToggle.addEventListener('click', toggleSearch); 
-    </script>
+export const TemplateComponent = (args) => html`
     <header role="banner" class="emc-header">
         <h1 class="emc-sr-only">Princeton University Design System</h1>
         <div class="emc-skip-links">
@@ -75,7 +14,7 @@ export const Template = (args) => html`
             <div class="emc-header__pu-branding">
                 <div class="emc-container">
                 <a href="https://www.princeton.edu" title="Princeton University"><img src="/logos/pu-logo.svg" alt="Princeton University" /></a>
-                </div> 
+                </div>
             </div>
             <div class="emc-header__site-branding">
                 <div class="emc-container emc-header__site-branding-contents">
@@ -94,69 +33,75 @@ export const Template = (args) => html`
                 <h2 class="emc-sr-only">Main Menu</h2>
                 <div class="emc-container">
                 <div class="emc-header__main-menu-navbar">
-                    <button id="emc-header-menu-toggle" class="emc-header__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
-                    <div id="emc-header-nav-container" class="emc-header__nav-container">
+                    <button class="emc-header__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
+                    <div class="emc-header__nav-container">
                         <ul class="emc-menubar" role="list">
-                            <li aria-current="true">
+                            <li class="emc-menubar__submenu" aria-current="true">
                                 <a href="/blocks/accordion" aria-current="page">Content Types</a>
-                                <button type="button" aria-expanded="${ args.forceExpanded }">
+                                <button type="button" class="emc-header__submenu-toggle" type="button" aria-expanded="false" aria-label="Navigation Sub Menu Toggle">
                                     <span class="emc-sr-only">
                                         Content Types
                                         SubMenu
                                     </span>
                                 </button>
-                                <ul>
-                                    <li>
-                                        <a href="/content-types/page">Page</a>
-                                        <button type="button" aria-expanded="${ args.forceExpanded }">
-                                            <span class="emc-sr-only">
-                                                Page
-                                                SubMenu
-                                            </span>
-                                        </button>
-                                        <ul class="emc-menubar__submenu--shown">
-                                            <li><a href="javascript:void(0);">Page List</a></li>
-                                            <li><a href="javascript:void(0);" aria-current="page">Sub Page</a></li>
-                                            <li><a href="javascript:void(0);">Sub Page with Right Sidebar</a></li>
-                                            <li><a href="javascript:void(0);">Landing Page</a></li>
-                                            <li><a href="javascript:void(0);">Detail Page</a></li>
-                                        </ul>
-                                     </li>
-                                    <li aria-current="page"><a href="/content-types/page">Alert</a></li>
-                                    <li>
-                                        <a href="/content-types/page">News</a>
-                                        <button type="button" aria-expanded="false">
-                                            <span class="emc-sr-only">
-                                                News
-                                                SubMenu
-                                            </span>
-                                        </button>
-                                        <ul>
-                                            <li><a href="javascript:void(0);">News List</a></li>
-                                            <li><a href="javascript:void(0);">News List with Archive Years</a></li>
-                                            <li><a href="javascript:void(0);">News Landing Page</a></li>
-                                            <li><a href="javascript:void(0);">Featured News</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/content-types/page">Person</a></li>
-                                </ul>
+                                <div class="emc-header__subnav-container">
+                                    <ul>
+                                        <li class="emc-menubar__submenu">
+                                            <a href="/content-types/page">Page</a>
+                                            <button class="emc-header__submenu-toggle" type="button" aria-expanded="false" aria-label="Navigation Sub Menu Toggle">
+                                                <span class="emc-sr-only">
+                                                    Page
+                                                    SubMenu
+                                                </span>
+                                            </button>
+                                            <div class="emc-header__subnav-container">
+                                                <ul role="list">
+                                                    <li><a href="javascript:void(0);">Page List</a></li>
+                                                    <li><a href="javascript:void(0);" aria-current="page">Sub Page</a></li>
+                                                    <li><a href="javascript:void(0);">Sub Page with Right Sidebar</a></li>
+                                                    <li><a href="javascript:void(0);">Landing Page</a></li>
+                                                    <li><a href="javascript:void(0);">Detail Page</a></li>
+                                                </ul>
+                                           </div>
+                                         </li>
+                                        <li aria-current="page"><a href="/content-types/page">Alert</a></li>
+                                        <li>
+                                            <a href="/content-types/page">News</a>
+                                            <button type="button" aria-expanded="false">
+                                                <span class="emc-sr-only">
+                                                    News
+                                                    SubMenu
+                                                </span>
+                                            </button>
+                                            <ul>
+                                                <li><a href="javascript:void(0);">News List</a></li>
+                                                <li><a href="javascript:void(0);">News List with Archive Years</a></li>
+                                                <li><a href="javascript:void(0);">News Landing Page</a></li>
+                                                <li><a href="javascript:void(0);">Featured News</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="/content-types/page">Person</a></li>
+                                    </ul>
+                                </div>
                             </li>
-                            <li>
+                            <li class="emc-menubar__submenu">
                                 <a href="/blocks/content-slider">Blocks</a>
-                                <button type="button" aria-expanded="false">
+                                <button type="button" class="emc-header__submenu-toggle" type="button" aria-expanded="false" aria-label="Navigation Sub Menu Toggle">
                                     <span class="emc-sr-only">
                                         Blocks
                                         SubMenu
                                     </span>
                                 </button>
-                                <ul>
-                                    <li><a href="/content-types/page">Accordion</a></li>
-                                    <li><a href="/content-types/page">Content Slider</a></li>
-                                    <li><a href="/content-types/page">Feature</a></li>
-                                    <li><a href="/content-types/page">iFrame</a></li>
-                                    <li><a href="/content-types/page">Map</a></li>
-                                    <li><a href="/content-types/page">Related Links</a></li>
-                                </ul>
+                                <div class="emc-header__subnav-container">
+                                    <ul>
+                                        <li><a href="/content-types/page">Accordion</a></li>
+                                        <li><a href="/content-types/page">Content Slider</a></li>
+                                        <li><a href="/content-types/page">Feature</a></li>
+                                        <li><a href="/content-types/page">iFrame</a></li>
+                                        <li><a href="/content-types/page">Map</a></li>
+                                        <li><a href="/content-types/page">Related Links</a></li>
+                                    </ul>
+                                </div>
                             </li>
                             <li>
                                 <a href="/blocks/content-slider">Images &amp; Media</a>
@@ -190,8 +135,8 @@ export const Template = (args) => html`
             <div class="emc-header__search-bar">
                 <div class="emc-container">
                 <h2 class="emc-sr-only">Search</h2>
-                <button id="my-search-toggle" class="emc-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="emc-icon emc-icon-search" aria-hidden="true"></i><span class="emc-sr-only">Search Menu Toggle</span></button>
-                <div id="emc-header-search-bar-panel" class="emc-header__search-bar-panel">
+                <button class="emc-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="emc-icon emc-icon-search" aria-hidden="true"></i><span class="emc-sr-only">Search Menu Toggle</span></button>
+                <div class="emc-header__search-bar-panel">
                     <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
                         <label class="emc-sr-only" for="search-field">Search</label>
                         <a name="search">
@@ -207,8 +152,10 @@ export const Template = (args) => html`
         <!-- /div -->
     </header>
     <a name="main-content"></a>
+    <script id="initscript">
+        PrincetonDesignSystem.enableDesignSystem();
+    </script>
 `;
-
 
 
 # Header
@@ -244,6 +191,6 @@ of a website, including copyright information, navigation links, and privacy sta
         siteBrandingName: 'Relativity',
         siteBrandingSlogan: 'The Princeton University Design System'
     }}>
-      {Template.bind({})}
+      {TemplateComponent.bind({})}
     </Story>
 </Canvas>

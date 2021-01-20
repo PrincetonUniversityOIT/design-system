@@ -21,6 +21,7 @@ export abstract class Behavior {
         let root = _root ? _root : window.document;
         this.init(root);
         this.constructor[EVENT_METADATA].forEach((config: Config) => {
+            // console.log('config', config);
             // multiple events can be specified, separated by spaces
             config.event.split(" ").forEach((event: string) => {
                 on(event, config.selector, (args) => { config.f.call(this, args)});

@@ -159,6 +159,17 @@
 .emc-header__utility-menu--shown {
   display: block;
 }
+
+.emc-header__subnav-container {
+  display: none;
+}
+.emc-header__subnav-container--expanded{
+  left: 0;
+  top: px-to-rem(-104);
+  width: 100%;
+  z-index: 1000;
+  display: block;
+}
 // -- end
 
 @include for-tablet-landscape-up {
