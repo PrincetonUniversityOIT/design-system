@@ -7,11 +7,9 @@ const ICON_SELECTOR = `.${PREFIX}-icon`;
 const HEADER_SELECTOR = `.${PREFIX}-header`;
 const HEADER_MENU_SELECTOR = `.${PREFIX}-header__menu-toggle`;
 const HEADER_NAV_SELECTOR = `.${PREFIX}-header__nav-container`;
-const HEADER_NAVBAR_SELECTOR = `.${PREFIX}-menubar`;
+const HEADER_MAIN_MENU_SELECTOR = `.${PREFIX}-header__main-menu-navbar`;
 
 const HEADER_SUB_MENU_SELECTOR = `.${PREFIX}-header__submenu-toggle`;
-const HEADER_SUB_NAV_SELECTOR = `.${PREFIX}-header__subnav-container`;
-const HEADER_SUB_NAVBAR_SELECTOR = `.${PREFIX}-menubar__submenu`;
 
 const SEARCH_SELECTOR = `.${PREFIX}-header__search-bar-toggle`;
 const SEARCH_PANEL = `.${PREFIX}-header__search-bar-panel`;
@@ -48,6 +46,7 @@ export class HeaderBehavior extends Behavior {
     })
 
     onAction(event: Event) {
+        // console.log('event', event);
         const button = <HTMLElement>event.target;
 
         // This will handle when the click event happens for the icons within the button element
@@ -78,12 +77,11 @@ export class HeaderBehavior extends Behavior {
 
     showMenu(expand, button) {
         // This makes sure regardless of which button is picked that the menu elements are expanded/hidden
-        const buttonToReset = this.getButtonForSelector(HEADER_MENU_SELECTOR, button);
-
+        const menuEl = button.closest(HEADER_MAIN_MENU_SELECTOR);
+        const buttonToReset = this.getButtonForSelector(HEADER_MENU_SELECTOR, button, menuEl);
         const menuToggleIcon = buttonToReset.querySelector(ICON_SELECTOR);
-        const headerEl = button.closest(HEADER_SELECTOR);
-        const navbar = headerEl.querySelector(HEADER_NAVBAR_SELECTOR);
-        const navContainer = headerEl.querySelector(HEADER_NAV_SELECTOR);
+        const navbar = menuEl.querySelector("ul");
+        const navContainer = menuEl.querySelector(HEADER_NAV_SELECTOR);
 
         if (expand) {
             navContainer.classList.add("emc-header__nav-container--expanded");
@@ -111,11 +109,15 @@ export class HeaderBehavior extends Behavior {
     }
 
     showSubMenu(expand, button) {
-        // This makes sure regardless of which button is picked that the menu elements are expanded/hidden
-        const buttonToReset = this.getButtonForSelector(HEADER_SUB_MENU_SELECTOR, button);
+        const mq = window.matchMedia( "(min-width: 900px)" );
+        if (mq.matches) {
+            return;
+        }
 
-        const navbar = button.closest(HEADER_SUB_NAVBAR_SELECTOR);
-        const navContainer = navbar.querySelector(HEADER_SUB_NAV_SELECTOR);
+        // This makes sure regardless of which button is picked that the menu elements are expanded/hidden
+        const navbar = button.closest("li");
+        const buttonToReset = this.getButtonForSelector(HEADER_SUB_MENU_SELECTOR, button, navbar);
+        const navContainer = navbar.querySelector("ul");
 
         if (expand) {
             navContainer.classList.add("emc-header__subnav-container--expanded");
@@ -123,7 +125,7 @@ export class HeaderBehavior extends Behavior {
             buttonToReset.setAttribute(ARIA_EXPANDED, "true");
         } else {
             navContainer.classList.remove("emc-header__subnav-container--expanded");
-            navbar.classList.remove("emc-menubar_submenu--show");
+            navbar.classList.remove("emc-menubar_submenu--shown");
             buttonToReset.setAttribute(ARIA_EXPANDED, "false");
         }
     }
@@ -139,10 +141,9 @@ export class HeaderBehavior extends Behavior {
 
     showSearch(expand, button) {
         // This makes sure regardless of which button is picked that the search elements are expanded/hidden
-        const buttonToReset = this.getButtonForSelector(SEARCH_SELECTOR, button);
-
-        const searchToggleIcon = buttonToReset.querySelector(ICON_SELECTOR);
         const headerEl = button.closest(HEADER_SELECTOR);
+        const buttonToReset = this.getButtonForSelector(SEARCH_SELECTOR, button, headerEl);
+        const searchToggleIcon = buttonToReset.querySelector(ICON_SELECTOR);
         const searchbar = headerEl.querySelector(SEARCH_PANEL);
 
         if (expand) {
@@ -161,10 +162,9 @@ export class HeaderBehavior extends Behavior {
     }
 
     // This retrieves the appropriate button depending on the selector passed in
-    getButtonForSelector(btnSelector, button) {
-        const headerEl = button.closest(HEADER_SELECTOR);
+    getButtonForSelector(btnSelector, button, mainEl) {
         if (!button.matches(btnSelector)) {
-            button = headerEl.querySelector(btnSelector);
+            button = mainEl.querySelector(btnSelector);
         }
         return button;
     }

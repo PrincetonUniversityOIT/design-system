@@ -134,6 +134,16 @@
   z-index: 1000;
   display: block;
 }
+.emc-header__subnav-container {
+  display: none;
+}
+.emc-header__subnav-container--expanded{
+  left: 0;
+  top: px-to-rem(-104);
+  width: 100%;
+  z-index: 1000;
+  display: block;
+}
 .emc-header__utility-menu {
   padding-left: px-to-rem(16);
   position: relative;
@@ -159,21 +169,10 @@
 .emc-header__utility-menu--shown {
   display: block;
 }
-
-.emc-header__subnav-container {
-  display: none;
-}
-.emc-header__subnav-container--expanded{
-  left: 0;
-  top: px-to-rem(-104);
-  width: 100%;
-  z-index: 1000;
-  display: block;
-}
 // -- end
 
 @include for-tablet-landscape-up {
-//@media (min-width: $emc-breakpoint-large) {
+  //@media (min-width: $emc-breakpoint-large) {
   .emc-header__menu-toggle {
     display: none;
   }
