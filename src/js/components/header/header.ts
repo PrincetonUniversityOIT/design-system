@@ -109,11 +109,61 @@ export class HeaderBehavior extends Behavior {
     }
 
     showSubMenu(expand, button) {
-        const mq = window.matchMedia( "(min-width: 900px)" );
+        const mq = window.matchMedia("(min-width: 900px)");
         if (mq.matches) {
-            return;
+            this.showSubMenuFull(expand, button);
+        } else {
+            this.showSubMenuCondensed(expand, button);
         }
+    }
 
+    showSubMenuFull(expand, button) {
+        // This makes sure regardless of which button is picked that the menu elements are expanded/hidden
+        const navbar = button.closest("li");
+        const buttonToReset = this.getButtonForSelector(HEADER_SUB_MENU_SELECTOR, button, navbar);
+        const navContainer = navbar.querySelector("ul");
+        if (expand) {
+            this.closeSubMenus(button);
+
+            navContainer.classList.add("emc-menubar--stuck");
+            navContainer.classList.remove("emc-menubar--hide");
+            navbar.classList.add("emc-menubar--stuck");
+            buttonToReset.setAttribute(ARIA_EXPANDED, "true");
+        } else {
+            this.resetSubMenus(button);
+
+            navContainer.classList.remove("emc-menubar--stuck");
+            navContainer.classList.add("emc-menubar--hide");
+            navbar.classList.remove("emc-menubar--stuck");
+            buttonToReset.setAttribute(ARIA_EXPANDED, "false");
+        }
+    }
+
+    closeSubMenus(button) {
+        const mainEl = button.closest(HEADER_MAIN_MENU_SELECTOR);
+        this.select("li", mainEl).forEach((navbar) => {
+            this.select("ul", navbar).forEach((list) => {
+                list.classList.remove("emc-menubar--stuck");
+                list.classList.add("emc-menubar--hide");
+            });
+        });
+
+        this.select(HEADER_SUB_MENU_SELECTOR, mainEl).forEach((button) => {
+            button.setAttribute(ARIA_EXPANDED, "false");
+        });
+    }
+
+    resetSubMenus(button) {
+        const mainEl = button.closest(HEADER_MAIN_MENU_SELECTOR);
+        this.select("li", mainEl).forEach((navbar) => {
+            this.select("ul", navbar).forEach((list) => {
+                list.classList.remove("emc-menubar--stuck");
+                list.classList.remove("emc-menubar--hide");
+            });
+        });
+    }
+
+    showSubMenuCondensed(expand, button) {
         // This makes sure regardless of which button is picked that the menu elements are expanded/hidden
         const navbar = button.closest("li");
         const buttonToReset = this.getButtonForSelector(HEADER_SUB_MENU_SELECTOR, button, navbar);
