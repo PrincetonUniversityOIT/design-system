@@ -192,33 +192,6 @@ it('We can check if the main menu has the styles to display the content after th
     expect(icon.classList).toContain("emc-icon-menu");
 });
 
-it('We can check if the sub main menu has the styles to display the content after the button click', () => {
-    document.body.innerHTML = template;
-
-    const header = new HeaderBehavior();
-    header.enable();
-
-    const submenuButton = document.getElementById("emc-header-sub-menu-toggle");
-    expect(submenuButton.getAttribute('aria-expanded')).toBe("false");
-
-    const subcontainer = document.getElementById("emc-header__subnav-container");
-    expect(subcontainer.classList).not.toContain("emc-header__subnav-container--expanded");
-
-    // opens the sub menu
-    submenuButton.click();
-
-    // show the submenu content
-    expect(submenuButton.getAttribute('aria-expanded')).toBe("true");
-    expect(subcontainer.classList).toContain("emc-header__subnav-container--expanded");
-
-    // closes the sub menu
-    submenuButton.click();
-
-    // hide the submenu content
-    expect(submenuButton.getAttribute('aria-expanded')).toBe("false");
-    expect(subcontainer.classList).not.toContain("emc-header__subnav-container--expanded");
-});
-
 it('We can check if the search popup has the styles to display the content after the search button click', () => {
     document.body.innerHTML = template;
 
