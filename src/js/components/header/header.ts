@@ -15,6 +15,9 @@ const HEADER_SUB_MENU_SELECTOR = `.${PREFIX}-header__submenu-toggle`;
 const SEARCH_SELECTOR = `.${PREFIX}-header__search-bar-toggle`;
 const SEARCH_PANEL = `.${PREFIX}-header__search-bar-panel`;
 
+const MENU_STICKY_STYLE = 'emc-menubar--stuck';
+const MENU_HIDE_STYLE = 'emc-menubar--hide';
+
 export class HeaderBehavior extends Behavior {
 
     constructor() {
@@ -24,6 +27,16 @@ export class HeaderBehavior extends Behavior {
     init(root: ParentNode) {
         this.select(HEADER_MENU_SELECTOR, root).forEach((header) => {
             this.showMenu(false, header);
+        });
+
+        this.select(HEADER_SUB_MENU_SELECTOR, root).forEach((submenu) => {
+            submenu.addEventListener('mouseleave', () => {
+                const navContainer = document.getElementById("emc-menu:recentlyOpened");
+                if (navContainer) {
+                    navContainer.classList.remove(MENU_HIDE_STYLE);
+                    navContainer.id = "";
+                }
+            });
         });
 
         this.select(SEARCH_SELECTOR, root).forEach((search) => {
@@ -128,16 +141,17 @@ export class HeaderBehavior extends Behavior {
         if (expand) {
             this.closeSubMenus(button, true);
 
-            navContainer.classList.add("emc-menubar--stuck");
-            navContainer.classList.remove("emc-menubar--hide");
-            navbar.classList.add("emc-menubar--stuck");
+            navContainer.classList.add(MENU_STICKY_STYLE);
+            navContainer.classList.remove(MENU_HIDE_STYLE);
+            navbar.classList.add(MENU_STICKY_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "true");
         } else {
             this.resetSubMenus(button);
 
-            navContainer.classList.remove("emc-menubar--stuck");
-            navContainer.classList.add("emc-menubar--hide");
-            navbar.classList.remove("emc-menubar--stuck");
+            navContainer.classList.remove(MENU_STICKY_STYLE);
+            navContainer.classList.add(MENU_HIDE_STYLE);
+            navContainer.id = "emc-menu:recentlyOpened";
+            navbar.classList.remove(MENU_STICKY_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "false");
         }
     }
@@ -146,9 +160,9 @@ export class HeaderBehavior extends Behavior {
         const mainEl = button.closest(HEADER_MAIN_MENU_SELECTOR);
         this.select("li", mainEl).forEach((navbar) => {
             this.select("ul", navbar).forEach((list) => {
-                list.classList.remove("emc-menubar--stuck");
+                list.classList.remove(MENU_STICKY_STYLE);
                 if (disableNav) {
-                    list.classList.add("emc-menubar--hide");
+                    list.classList.add(MENU_HIDE_STYLE);
                 }
             });
         });
@@ -162,8 +176,8 @@ export class HeaderBehavior extends Behavior {
         const mainEl = button.closest(HEADER_MAIN_MENU_SELECTOR);
         this.select("li", mainEl).forEach((navbar) => {
             this.select("ul", navbar).forEach((list) => {
-                list.classList.remove("emc-menubar--stuck");
-                list.classList.remove("emc-menubar--hide");
+                list.classList.remove(MENU_STICKY_STYLE);
+                list.classList.remove(MENU_HIDE_STYLE);
             });
         });
     }
