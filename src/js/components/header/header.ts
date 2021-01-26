@@ -2,21 +2,41 @@ import {ARIA_EXPANDED, Behavior} from '../../base/delegreater';
 import { prefix as PREFIX } from '../../config';
 import {Listener} from "../../base/decorator-functions";
 
-const ICON_SELECTOR = `.${PREFIX}-icon`;
-
+// Main Menu Selectors
 const HEADER_SELECTOR = `.${PREFIX}-header`;
 const HEADER_MENU_SELECTOR = `.${PREFIX}-header__menu-toggle`;
 const HEADER_NAV_SELECTOR = `.${PREFIX}-header__nav-container`;
 const HEADER_MAIN_MENU_SELECTOR = `.${PREFIX}-header__main-menu-navbar`;
 
+// Submenu Selectors
 const MENU_SELECTOR =  `.${PREFIX}-menubar`;
 const HEADER_SUB_MENU_SELECTOR = `.${PREFIX}-header__submenu-toggle`;
 
+// Search Selectors
 const SEARCH_SELECTOR = `.${PREFIX}-header__search-bar-toggle`;
 const SEARCH_PANEL = `.${PREFIX}-header__search-bar-panel`;
 
-const MENU_STICKY_STYLE = 'emc-menubar--stuck';
-const MENU_HIDE_STYLE = 'emc-menubar--hide';
+// Used to conditionally hide and show menu to handle hovers + click open
+const MENU_STICKY_STYLE = `${PREFIX}-menubar--stuck`;
+const MENU_HIDE_STYLE = `${PREFIX}-menubar--hide`;
+
+// Styles to show menu in low resolution view
+const MENU_NAV_EXPANDED_STYLE = `${PREFIX}-header__nav-container--expanded`;
+const MENU_SUB_NAV_EXPANDED_STYLE = `${PREFIX}-header__subnav-container--expanded`;
+
+// Styles to show menu in high resolution view
+const MENUBAR_SHOWN_STYLE = `${PREFIX}-menubar--shown`;
+const MENUBAR_SUB_SHOWN_STYLE = `${PREFIX}-menubar_submenu--shown`;
+const SEARCH_SHOWN_STYLE = `${PREFIX}-header__search-bar-panel--shown`;
+
+// Id used to identify recently closed sub nav
+const MENU_RECENTLY_OPENED_ID = `${PREFIX}-menu:recentlyOpened`;
+
+// Icons
+const ICON_SELECTOR = `.${PREFIX}-icon`;
+const ICON_CLOSE = `${PREFIX}-icon-close`;
+const ICON_SEARCH = `${PREFIX}-icon-search`;
+const ICON_MENU = `${PREFIX}-icon-menu`;
 
 export class HeaderBehavior extends Behavior {
 
@@ -31,7 +51,7 @@ export class HeaderBehavior extends Behavior {
 
         this.select(HEADER_SUB_MENU_SELECTOR, root).forEach((submenu) => {
             submenu.addEventListener('mouseleave', () => {
-                const navContainer = document.getElementById("emc-menu:recentlyOpened");
+                const navContainer = document.getElementById(MENU_RECENTLY_OPENED_ID);
                 if (navContainer) {
                     navContainer.classList.remove(MENU_HIDE_STYLE);
                     navContainer.id = "";
@@ -100,16 +120,16 @@ export class HeaderBehavior extends Behavior {
         const navContainer = menuEl.querySelector(HEADER_NAV_SELECTOR);
 
         if (expand) {
-            navContainer.classList.add("emc-header__nav-container--expanded");
-            navbar.classList.add("emc-menubar--shown");
+            navContainer.classList.add(MENU_NAV_EXPANDED_STYLE);
+            navbar.classList.add(MENUBAR_SHOWN_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "true");
             menuToggleIcon.classList.remove("emc-icon-menu");
-            menuToggleIcon.classList.add("emc-icon-close");
+            menuToggleIcon.classList.add(ICON_CLOSE);
         } else {
-            navContainer.classList.remove("emc-header__nav-container--expanded");
-            navbar.classList.remove("emc-menubar--shown");
+            navContainer.classList.remove(MENU_NAV_EXPANDED_STYLE);
+            navbar.classList.remove(MENUBAR_SHOWN_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "false");
-            menuToggleIcon.classList.remove("emc-icon-close");
+            menuToggleIcon.classList.remove(ICON_CLOSE);
             menuToggleIcon.classList.add("emc-icon-menu");
         }
     }
@@ -150,7 +170,7 @@ export class HeaderBehavior extends Behavior {
 
             navContainer.classList.remove(MENU_STICKY_STYLE);
             navContainer.classList.add(MENU_HIDE_STYLE);
-            navContainer.id = "emc-menu:recentlyOpened";
+            navContainer.id = MENU_RECENTLY_OPENED_ID;
             navbar.classList.remove(MENU_STICKY_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "false");
         }
@@ -189,12 +209,12 @@ export class HeaderBehavior extends Behavior {
         const navContainer = navbar.querySelector("ul");
 
         if (expand) {
-            navContainer.classList.add("emc-header__subnav-container--expanded");
-            navbar.classList.add("emc-menubar_submenu--shown");
+            navContainer.classList.add(MENU_SUB_NAV_EXPANDED_STYLE);
+            navbar.classList.add(MENUBAR_SUB_SHOWN_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "true");
         } else {
-            navContainer.classList.remove("emc-header__subnav-container--expanded");
-            navbar.classList.remove("emc-menubar_submenu--shown");
+            navContainer.classList.remove(MENU_SUB_NAV_EXPANDED_STYLE);
+            navbar.classList.remove(MENUBAR_SUB_SHOWN_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "false");
         }
     }
@@ -216,17 +236,17 @@ export class HeaderBehavior extends Behavior {
         const searchbar = headerEl.querySelector(SEARCH_PANEL);
 
         if (expand) {
-            searchbar.classList.add("emc-header__search-bar-panel--shown");
+            searchbar.classList.add(SEARCH_SHOWN_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "true");
-            searchToggleIcon.classList.remove("emc-icon-search");
-            searchToggleIcon.classList.add("emc-icon-close");
+            searchToggleIcon.classList.remove(ICON_SEARCH);
+            searchToggleIcon.classList.add(ICON_CLOSE);
             const input = searchbar.querySelector("input[type='search']");
             input.focus();
         } else {
-            searchbar.classList.remove("emc-header__search-bar-panel--shown");
+            searchbar.classList.remove(SEARCH_SHOWN_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "false");
-            searchToggleIcon.classList.remove("emc-icon-close");
-            searchToggleIcon.classList.add("emc-icon-search");
+            searchToggleIcon.classList.remove(ICON_CLOSE);
+            searchToggleIcon.classList.add(ICON_SEARCH);
         }
     }
 
@@ -241,24 +261,30 @@ export class HeaderBehavior extends Behavior {
     displayWindowSize() {
         // Main Menu Reset
         document.querySelectorAll(HEADER_NAV_SELECTOR).forEach((header) => {
-            header.classList.remove("emc-header__nav-container--expanded");
+            header.classList.remove(MENU_NAV_EXPANDED_STYLE);
             header.querySelectorAll("ul").forEach((navbar) => {
-                navbar.classList.remove("emc-menubar--shown");
+                navbar.classList.remove(MENU_NAV_EXPANDED_STYLE);
+                navbar.classList.remove(MENUBAR_SHOWN_STYLE);
+                navbar.classList.remove(MENU_STICKY_STYLE);
+                navbar.querySelectorAll("li").forEach((submenu) => {
+                    submenu.classList.remove(MENU_STICKY_STYLE);
+                    submenu.classList.remove(MENU_HIDE_STYLE);
+                });
             });
         });
 
         document.querySelectorAll(HEADER_MENU_SELECTOR).forEach((button) => {
             button.setAttribute(ARIA_EXPANDED, "false");
             const menuToggleIcon = button.querySelector(ICON_SELECTOR);
-            menuToggleIcon.classList.remove("emc-icon-close");
-            menuToggleIcon.classList.add("emc-icon-menu");
+            menuToggleIcon.classList.remove(ICON_CLOSE);
+            menuToggleIcon.classList.add(ICON_MENU);
         });
 
         // Sub Menus Reset
         document.querySelectorAll(MENU_SELECTOR).forEach((menu) => {
             menu.querySelectorAll("ul").forEach((navbar) => {
-                navbar.classList.remove("emc-header__subnav-container--expanded");
-                navbar.classList.remove("emc-menubar_submenu--shown");
+                navbar.classList.remove(MENU_SUB_NAV_EXPANDED_STYLE);
+                navbar.classList.remove(MENUBAR_SUB_SHOWN_STYLE);
             });
         });
 
@@ -269,14 +295,14 @@ export class HeaderBehavior extends Behavior {
 
         // Search Reset
         document.querySelectorAll(SEARCH_PANEL).forEach((searchbar) => {
-            searchbar.classList.remove("emc-header__search-bar-panel--shown");
+            searchbar.classList.remove(SEARCH_SHOWN_STYLE);
         });
 
         document.querySelectorAll(SEARCH_SELECTOR).forEach((button) => {
             button.setAttribute(ARIA_EXPANDED, "false");
             const searchToggleIcon = button.querySelector(ICON_SELECTOR);
-            searchToggleIcon.classList.remove("emc-icon-close");
-            searchToggleIcon.classList.add("emc-icon-search");
+            searchToggleIcon.classList.remove(ICON_CLOSE);
+            searchToggleIcon.classList.add(ICON_SEARCH);
         });
     }
 }
