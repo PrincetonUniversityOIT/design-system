@@ -29,16 +29,16 @@ export const Template = (args) => html`
                 </div>
                 </div>
             </div>
-            <nav aria-label="Main Menu" class="emc-header__main-menu">
+            <nav aria-label="Main Menu" class="emc-menu__main-menu">
                 <h2 class="emc-sr-only">Main Menu</h2>
                 <div class="emc-container">
-                <div class="emc-header__main-menu-navbar">
-                    <button class="emc-header__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
-                    <div class="emc-header__nav-container">
+                <div class="emc-menu__main-menu-navbar">
+                    <button class="emc-menu__menu-toggle emc-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
+                    <div class="emc-menu__nav-container">
                         <ul class="emc-menubar" role="list">
                             <li aria-current="true">
                                 <a href="javascript:void(0);" aria-current="page">Content Types</a>
-                                <button class="emc-header__submenu-toggle" type="button" aria-expanded="${ args.forceExpanded }">
+                                <button class="emc-menu__submenu-toggle" type="button" aria-expanded="${ args.forceExpanded }">
                                     <span class="emc-sr-only">
                                         Content Types
                                         SubMenu
@@ -47,7 +47,7 @@ export const Template = (args) => html`
                                 <ul>
                                     <li>
                                         <a href="javascript:void(0);">Page</a>
-                                        <button type="button" class="emc-header__submenu-toggle" aria-expanded="${ args.forceExpanded }">
+                                        <button type="button" class="emc-menu__submenu-toggle" aria-expanded="${ args.forceExpanded }">
                                             <span class="emc-sr-only">
                                                 Page
                                                 SubMenu
@@ -82,7 +82,7 @@ export const Template = (args) => html`
                             </li>
                             <li>
                                 <a href="javascript:void(0);">Blocks</a>
-                                <button type="button" class="emc-header__submenu-toggle" aria-expanded="false">
+                                <button type="button" class="emc-menu__submenu-toggle" aria-expanded="false">
                                     <span class="emc-sr-only">
                                         Blocks
                                         SubMenu
@@ -99,7 +99,7 @@ export const Template = (args) => html`
                             </li>
                             <li>
                                 <a href="javascript:void(0);">Images &amp; Media</a>
-                                <button class="emc-header__submenu-toggle" type="button" aria-expanded="false">
+                                <button class="emc-menu__submenu-toggle" type="button" aria-expanded="false">
                                     <span class="emc-sr-only">
                                         Images &amp; Media
                                         SubMenu
