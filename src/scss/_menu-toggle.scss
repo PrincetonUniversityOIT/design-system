@@ -6,7 +6,7 @@
 .emc-menu__menu-toggle {
   top: px-to-rem(-146);
   right: px-to-rem(48);
-  background-color: transparent;
+  background-color: white;
   border: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -34,6 +34,7 @@
   width: 100%;
   z-index: 1000;
   display: block;
+  position: relative;
 }
 .emc-menu__subnav-container {
   display: none;
