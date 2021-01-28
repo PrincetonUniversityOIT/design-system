@@ -1,19 +1,22 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { html } from 'lit-html';
+import {MenuToggleBehavior} from "./menu-toggle";
 
-<Meta title="Components/Menu Toggle" component="MenuToggle" />
+it('We should be able to call new() on MenuToggleBehavior', () => {
+    // Ensure constructor created the object:
+    const menu = new MenuToggleBehavior();
+    expect(menu).toBeTruthy();
+});
 
-export const Template = (args) => html`
+const template = `
     <nav aria-label="Main Menu" class="emc-menu emc-menu__main-menu">
         <h2 class="emc-sr-only">Main Menu</h2>
         <div class="emc-container">
         <div class="emc-menu__main-menu-navbar">
-            <button class="emc-menu__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
-            <div class="emc-menu__nav-container">
+            <button id="emc-menu__menu-toggle" class="emc-menu__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i id="main-icon" class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
+            <div id="emc-menu__nav-container" class="emc-menu__nav-container">
                 <ul class="emc-menubar" role="list">
                     <li aria-current="true">
                         <a href="javascript:void(0);" aria-current="page">Content Types</a>
-                        <button class="emc-menu__submenu-toggle" type="button" aria-expanded="${ args.forceExpanded }">
+                        <button class="emc-menu__submenu-toggle" type="button" aria-expanded="false">
                             <span class="emc-sr-only">
                                 Content Types
                                 SubMenu
@@ -22,7 +25,7 @@ export const Template = (args) => html`
                         <ul>
                             <li>
                                 <a href="javascript:void(0);">Page</a>
-                                <button type="button" class="emc-menu__submenu-toggle" aria-expanded="${ args.forceExpanded }">
+                                <button type="button" class="emc-menu__submenu-toggle" aria-expanded="false">
                                     <span class="emc-sr-only">
                                         Page
                                         SubMenu
@@ -96,25 +99,39 @@ export const Template = (args) => html`
         </div>
     </nav>
     <a name="main-content"></a>
-    <script id="initscript">
-        PrincetonDesignSystem.enableDesignSystem();
-    </script>
 `;
 
-# Menu Toggle
+it('We can check if the main menu has the styles to display the content after the button click', () => {
+    document.body.innerHTML = template;
 
-The Menu Toggle is a common pattern for toggling the visibility of a menu.
+    const menu = new MenuToggleBehavior();
+    menu.enable();
 
-## Implementation Notes
+    const menuButton = document.getElementById("emc-menu__menu-toggle");
+    expect(menuButton.getAttribute('aria-expanded')).toBe("false");
 
-## TODO
+    const container = document.getElementById("emc-menu__nav-container");
+    expect(container.classList).not.toContain("emc-menu__nav-container--expanded");
 
-<Canvas>
-    <Story name="Basic" args={{
-        forceExpanded: false,
-        siteBrandingName: 'Relativity',
-        siteBrandingSlogan: 'The Princeton University Design System'
-    }}>
-      {Template.bind({})}
-    </Story>
-</Canvas>
+    const icon = document.getElementById("main-icon");
+    expect(icon.classList).not.toContain("emc-icon-close");
+    expect(icon.classList).toContain("emc-icon-menu");
+
+    // opens the menu
+    menuButton.click();
+
+    // show the menu content
+    expect(menuButton.getAttribute('aria-expanded')).toBe("true");
+    expect(container.classList).toContain("emc-menu__nav-container--expanded");
+    expect(icon.classList).toContain("emc-icon-close");
+    expect(icon.classList).not.toContain("emc-icon-menu");
+
+    // closes the menu
+    menuButton.click();
+
+    // hide the menu content
+    expect(menuButton.getAttribute('aria-expanded')).toBe("false");
+    expect(container.classList).not.toContain("emc-menu__nav-container--expanded");
+    expect(icon.classList).not.toContain("emc-icon-close");
+    expect(icon.classList).toContain("emc-icon-menu");
+});

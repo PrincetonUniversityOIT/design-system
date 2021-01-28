@@ -63,15 +63,26 @@ title: Princeton Design System
             </div>
         </div>
     </div>
-    <nav aria-label="Main Menu" class="emc-header__main-menu">
+    <nav aria-label="Main Menu" class="emc-menu__main-menu">
         <h2 class="emc-sr-only">Main Menu</h2>
         <div class="emc-container">
-            <div class="emc-header__main-menu-navbar">
-                <button id="emc-header-menu-toggle" class="emc-header__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
-                <div id="emc-header-nav-container" class="emc-header__nav-container">
+            <div class="emc-menu__main-menu-navbar">
+                <button class="emc-menu__menu-toggle emc-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
+                <div  class="emc-menu__nav-container">
                     <ul class="emc-menubar" role="list">
                         {%- for item in siteMap.primary -%}
-                        <li{% if page.url.startsWith(item.url) %} aria-current="true"{% endif %}><a href="{{ item.url }}">{{ item.label }}</a></li>
+                        <li{% if page.url.startsWith(item.url) %} aria-current="true"{% endif %}><a href="{{ item.url }}">{{ item.label }}</a>
+                             <button type="button" class="emc-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="emc-sr-only">{{ item.label }}</span>
+                             </button>
+                             {% if item.items.length > 0 %}
+                                <ul>
+                                    {% for secNav in item.items %}
+                                        <li><a href="{{ secNav.url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active" {% endif %} >{{ secNav.label }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                             {% endif %}
+                        </li>
                         {%- endfor -%}
                     </ul>
                     <div class="emc-header__utility-menu">
