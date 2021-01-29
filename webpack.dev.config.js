@@ -12,7 +12,7 @@ module.exports = {
 
     entry: {
         index: './src/index.ts',
-        styles: './src/scss/styles.scss'
+        styles: './src/scss/jazz_serif.scss'
     },
 
     // Output will be based on the name of the entry point.
