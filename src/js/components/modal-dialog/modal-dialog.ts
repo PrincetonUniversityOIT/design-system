@@ -40,7 +40,7 @@ export class ModalDialogBehavior extends Behavior {
                 return;
             }
 
-            if (button.matches(MODAL_BUTTON_SELECTOR)) {
+            if (button.matches(MODAL_BUTTON_SELECTOR) || event instanceof KeyboardEvent) {
                 wrapper.classList.toggle('emc-modal__wrapper--visible');
                 if (wrapper.classList.contains('emc-modal__wrapper--visible')) {
                     this.focusOnFirstInput(wrapper);
