@@ -1,5 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { html } from 'lit-html';
+import {PrincetonDesignSystem} from "../dist/jazz_behavior.js";
+
 
 <Meta title="Components/Modal Dialog" component="ModalDialog" />
 
@@ -275,44 +277,6 @@ export const MultipleDialogsTemplate = (args) => html`
     </script>
 `;
 
-export const TransactionalModalComponentDialogTemplate = (args) => html`
-    <script id="initscript">
-        var modalTransaction = document.getElementById("transactionModal");
-        modalTransaction.addEventListener("ok", function () {
-            console.log("ok");
-        });
-        modalTransaction.addEventListener("cancel", function () {
-            console.log("cancel");
-        });
-         var btn = document.getElementById("btnTest");
-         btn.addEventListener("click", function () {
-             modalTransaction.visible = !modal.visible;
-         });
-    </script>
-    <button class="emc-btn" id="btnTest">Test Me!</button>
-    <emc-modal-dialog id="transactionModal" visible="false" title="${ args.title}">
-        ${ args.content }
-    </emc-modal-dialog>
-`;
-
-export const PassiveModalComponentDialogTemplate = (args) => html`
-    <script id="initscript">
-           var modal = document.querySelector("emc-modal-dialog-passive");
-           modal.addEventListener("cancel", function () {
-               console.log("cancel");
-           });
-            var btn = document.getElementById("btnTest2");
-            btn.addEventListener("click", function () {
-                var modal = document.querySelector("emc-modal-dialog-passive");
-                modal.visible = !modal.visible;
-            });
-       </script>
-       <button class="emc-btn" id="btnTest2">Test Me Too!</button>
-       <emc-modal-dialog-passive visible="false" title="${ args.title}">
-           ${ args.content }
-       </emc-modal-dialog-passive>
-`;
-
 # Modal Dialog
 A modal dialog displays content that requires user interaction, in a layer above the page.
 
@@ -432,29 +396,5 @@ Presents information the user needs to be aware of concerning their current work
             content: "We need to add some content here"
         }}>
         {PassiveDialogTemplate.bind({})}
-    </Story>
-</Canvas>
-
-## Transactional Web Component
-Requires an action to be taken in order for the modal to be completed and closed. Contains a cancel and primary action buttons.
-
-<Canvas>
-    <Story name="Transactional Web Component" args={{
-            title: "We need to add a title here",
-            content: "We need to add some content here"
-        }}>
-        {TransactionalModalComponentDialogTemplate.bind({})}
-    </Story>
-</Canvas>
-
-## Passive Web Component
-Presents information the user needs to be aware of concerning their current workflow. Contains no actions for the user to take.
-
-<Canvas>
-    <Story name="Passive Web Component" args={{
-            title: "We need to add a title here",
-            content: "We need to add some content here"
-        }}>
-        {PassiveModalComponentDialogTemplate.bind({})}
     </Story>
 </Canvas>

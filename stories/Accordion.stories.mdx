@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { html } from 'lit-html';
+import {PrincetonDesignSystem} from "../dist/jazz_behavior.js";
 
 <Meta title="Components/Accordion" component="Accordion" />
 
@@ -81,13 +82,6 @@ export const MultiSelectTemplate = (args) => html`
       </script>
   `;
 
-export const TemplateWebComponent = (args) => html`
-  <emc-accordion class="emc-wc">
-    <emc-accordion-item item-id="test1" item-title="Item 1" class="emc-wc">This is the test content (1)</emc-accordion-item>
-    <emc-accordion-item item-id="test2" item-title="Item 2" class="emc-wc">This is the test content (2)</emc-accordion-item>
-  </emc-accordion>
-`;
-  
 export const TestTemplate = (args) => html`
     <button class="my-button">Test It!</button>
 `;
@@ -120,12 +114,6 @@ An "Accordion" allows page content to be collapsed under a header.
         content: "This is the content of the alert.  It can be a simple paragraph or something more complex."
     }}>
       {MultiSelectTemplate.bind({})}
-    </Story>
-</Canvas>
-
-<Canvas>
-    <Story name="Web Component" args={{}}>
-      {TemplateWebComponent.bind({})}
     </Story>
 </Canvas>
 
