@@ -9,6 +9,7 @@ module.exports = {
 
     entry: {
         jazz_serif: './src/scss/jazz_serif.scss',
+        jazz_sans: './src/scss/jazz_sans.scss',
         jazz_fonts: './src/scss/jazz_fonts.scss',
         jazz_behavior: './src/jazz_behavior.ts'
     },
