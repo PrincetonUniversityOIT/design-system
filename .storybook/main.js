@@ -1,5 +1,5 @@
-const customWebpack = require('../webpack.dev.config.js');
-const customWebpackCSS = require('../webpack.css.dev.config.js');
+const customWebpack = require('../webpack.config.js');
+const customWebpackCSS = require('../webpack.config.js');
 
 module.exports = {
   "stories": [
