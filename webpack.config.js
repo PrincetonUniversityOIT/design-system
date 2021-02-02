@@ -1,11 +1,11 @@
 const path = require('path');
+const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-
-    // mode: 'development',
 
     entry: {
         jazz_serif: './src/scss/jazz_serif.scss',
@@ -14,13 +14,13 @@ module.exports = {
         jazz_behavior: './src/jazz_behavior.ts'
     },
 
+    // stats : "verbose",
+
     output: {
         path: path.resolve(__dirname, 'dist')
-        // ,
-        // filename: 'js/editor.blocks.js',
     },
     optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
     resolve: {
         extensions: [ '.tsx', '.ts', '.js', '.scss', '.css' ],
@@ -53,8 +53,6 @@ module.exports = {
             {
                 test: /\.svg(\?.*)?$/, // match img.svg and img.svg?param=value
                 exclude: /(\/fonts)/,
-                // test: /\.svg$/,
-                // loader: 'svg-url-loader'
                 use: [
                     'url-loader',
                     'svg-transform-loader' // allows transformation of svg to set fill/stroke values
@@ -71,24 +69,11 @@ module.exports = {
                     }
                 }]
             }
-            // {
-            //     test: /\.scss$/,
-            //     use: [
-            //         {
-            //             loader: 'file-loader',
-            //             options: { name: 'css/[name].css' }
-            //         },
-            //         { loader: 'extract-loader' },
-            //         { loader: 'css-loader?-url' },
-            //         { loader: 'postcss-loader' },
-            //         { loader: 'sass-loader' }
-            //     ]
-            // }
         ]
     },
 
     plugins: [
-        // new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css'

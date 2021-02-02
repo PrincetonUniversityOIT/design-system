@@ -8,6 +8,4 @@ stories/
 babel.config.json
 package.json
 tsconfig.json
-webpack.css.dev.config.ts
-webpack.dev.config.ts
-webpack.prod.config.ts
+webpack.config.ts
