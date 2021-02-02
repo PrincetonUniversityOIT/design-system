@@ -1,6 +1,3 @@
-const customWebpack = require('../webpack.config.js');
-const customWebpackCSS = require('../webpack.config.js');
-
 module.exports = {
   "stories": [
     "../stories/**/*.stories.mdx",
