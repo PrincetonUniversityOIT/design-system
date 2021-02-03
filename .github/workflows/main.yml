@@ -20,7 +20,17 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@princetonuniversityoit'
       - run: npm install
-      - run: npm run stencil-build
+
+      - run: npm run build-prod
+
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: npm run build-docsite
+
+      - name: Deploy
+        uses: design-system/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
