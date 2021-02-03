@@ -1,10 +1,10 @@
 {% macro htmlCode(path, id) %}
-<div class="pjz-accordion" role="region">
+<div class="jazz-accordion" role="region">
     <h3>
-        <button class="pjz-accordion__button" aria-controls="{{ id }}">HTML Code</button>
+        <button class="jazz-accordion__button" aria-controls="{{ id }}">HTML Code</button>
     </h3>
-    <div class="pjz-accordion__content pjz-code-panel" id="{{ id }}">
-        <button class="pjz-btn" onclick="copyCode(this)">Copy</button>
+    <div class="jazz-accordion__content jazz-code-panel" id="{{ id }}">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
         {% highlight "html" %}
         {% src path %}
         {% endhighlight %}

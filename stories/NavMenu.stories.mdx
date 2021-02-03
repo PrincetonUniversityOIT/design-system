@@ -4,11 +4,11 @@ import { html } from 'lit-html';
 <Meta title="Components/Nav Bar" component="NavBar" />
 
 export const Template = (args) => html`
-    <ul class="pjz-menubar pjz-menubar--shown" role="list">
+    <ul class="jazz-menubar jazz-menubar--shown" role="list">
         <li aria-current="true">
             <a href="/blocks/accordion" aria-current="page">Content Types</a>
             <button type="button" aria-expanded="${ args.forceExpanded }">
-                <span class="pjz-sr-only">
+                <span class="jazz-sr-only">
                     Content Types
                     SubMenu
                 </span>
@@ -17,12 +17,12 @@ export const Template = (args) => html`
                 <li>
                     <a href="/content-types/page">Page</a>
                     <button type="button" aria-expanded="${ args.forceExpanded }">
-                        <span class="pjz-sr-only">
+                        <span class="jazz-sr-only">
                             Page
                             SubMenu
                         </span>
                     </button>
-                    <ul class="pjz-menubar__submenu--shown">
+                    <ul class="jazz-menubar__submenu--shown">
                         <li><a href="javascript:void(0);">Page List</a></li>
                         <li><a href="javascript:void(0);" aria-current="page">Sub Page</a></li>
                         <li><a href="javascript:void(0);">Sub Page with Right Sidebar</a></li>
@@ -34,7 +34,7 @@ export const Template = (args) => html`
                 <li>
                     <a href="/content-types/page">News</a>
                     <button type="button" aria-expanded="false">
-                        <span class="pjz-sr-only">
+                        <span class="jazz-sr-only">
                             News
                             SubMenu
                         </span>
@@ -52,7 +52,7 @@ export const Template = (args) => html`
         <li>
             <a href="/blocks/content-slider">Blocks</a>
             <button type="button" aria-expanded="false">
-                <span class="pjz-sr-only">
+                <span class="jazz-sr-only">
                     Blocks
                     SubMenu
                 </span>
@@ -69,7 +69,7 @@ export const Template = (args) => html`
         <li>
             <a href="/blocks/content-slider">Images &amp; Media</a>
             <button type="button" aria-expanded="false">
-                <span class="pjz-sr-only">
+                <span class="jazz-sr-only">
                     Images &amp; Media
                     SubMenu
                 </span>
@@ -88,7 +88,7 @@ export const Template = (args) => html`
 `;
 
 export const SingleMenuTemplate = (args) => html`
-    <ul class="pjz-menubar" role="list">
+    <ul class="jazz-menubar" role="list">
         <li aria-current="true">
             <a href="javascript:void(0);" aria-current="page">Section 1</a>
         </li>

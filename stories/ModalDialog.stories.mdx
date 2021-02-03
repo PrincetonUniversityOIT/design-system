@@ -4,16 +4,16 @@ import { html } from 'lit-html';
 <Meta title="Components/Modal Dialog" component="ModalDialog" />
 
 export const PassiveDialogTemplate = (args) => html`
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test Passive Dialog!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Passive Dialog" aria-modal="true" class="pjz-modal-window pjz-modal--sm">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test Passive Dialog!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Passive Dialog" aria-modal="true" class="jazz-modal-window jazz-modal--sm">
+          <div class="jazz-modal-title">
                     ${ args.title }
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">${ args.content }</div>
+            <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">${ args.content }</div>
           </div>
         </div>
     </div>
@@ -23,19 +23,19 @@ export const PassiveDialogTemplate = (args) => html`
 `;
 
 export const DialogWithOkActionTemplate = (args) => html`
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test Script Runs Before Close!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Dialog with Script" aria-modal="true" class="pjz-modal-window pjz-modal--sm">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test Script Runs Before Close!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Dialog with Script" aria-modal="true" class="jazz-modal-window jazz-modal--sm">
+          <div class="jazz-modal-title">
                     ${ args.title }
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">${ args.content }</div>
-            <div class="pjz-modal-button-container">
-              <button class="pjz-btn pjz-modal__button">Cancel</button>
-              <button class="pjz-btn pjz-modal__button" onClick="alert('do something here')">OK</button>
+            <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">${ args.content }</div>
+            <div class="jazz-modal-button-container">
+              <button class="jazz-btn jazz-modal__button">Cancel</button>
+              <button class="jazz-btn jazz-modal__button" onClick="alert('do something here')">OK</button>
             </div>
           </div>
         </div>
@@ -46,20 +46,20 @@ export const DialogWithOkActionTemplate = (args) => html`
 `;
 
 export const DialogWithOtherButtonsTemplate = (args) => html`
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test with Other Buttons!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Dialog with Other Buttons" aria-modal="true" class="pjz-modal-window pjz-modal--sm">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test with Other Buttons!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Dialog with Other Buttons" aria-modal="true" class="jazz-modal-window jazz-modal--sm">
+          <div class="jazz-modal-title">
                     ${ args.title }
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">${ args.content }</div>
-            <div class="pjz-modal-button-container">
-              <button class="pjz-btn pjz-modal__button">Cancel</button>
-              <button class="pjz-btn pjz-modal__button">OK</button>
-              <button class="pjz-btn">Not Closing</button>
+            <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">${ args.content }</div>
+            <div class="jazz-modal-button-container">
+              <button class="jazz-btn jazz-modal__button">Cancel</button>
+              <button class="jazz-btn jazz-modal__button">OK</button>
+              <button class="jazz-btn">Not Closing</button>
             </div>
           </div>
         </div>
@@ -70,20 +70,20 @@ export const DialogWithOtherButtonsTemplate = (args) => html`
 `;
 
 export const DialogWithStopCloseButtonTemplate = (args) => html`
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test Dialog with Button that Stops Close!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Dialog with Button that Stops Close" aria-modal="true" class="pjz-modal-window pjz-modal--sm">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test Dialog with Button that Stops Close!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Dialog with Button that Stops Close" aria-modal="true" class="jazz-modal-window jazz-modal--sm">
+          <div class="jazz-modal-title">
                     ${ args.title }
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">${ args.content }</div>
-            <div class="pjz-modal-button-container">
-              <button class="pjz-btn pjz-modal__button">Cancel</button>
-              <button class="pjz-btn pjz-modal__button">OK</button>
-              <button class="pjz-btn pjz-modal__button" onClick="testStopClose(event);">Do not close</button>
+            <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">${ args.content }</div>
+            <div class="jazz-modal-button-container">
+              <button class="jazz-btn jazz-modal__button">Cancel</button>
+              <button class="jazz-btn jazz-modal__button">OK</button>
+              <button class="jazz-btn jazz-modal__button" onClick="testStopClose(event);">Do not close</button>
             </div>
           </div>
         </div>
@@ -98,23 +98,23 @@ export const DialogWithStopCloseButtonTemplate = (args) => html`
 `;
 
 export const DialogWithFormFieldsTemplate = (args) => html`
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test Dialog with Form Fields!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Small Dialog with Form Fields" aria-modal="true" class="pjz-modal-window pjz-modal--sm">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test Dialog with Form Fields!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Small Dialog with Form Fields" aria-modal="true" class="jazz-modal-window jazz-modal--sm">
+          <div class="jazz-modal-title">
                     ${ args.title }
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">
+            <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">
             ${ args.content }
-            <input class="pjz-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
-            <input class="pjz-input" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
+            <input class="jazz-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
+            <input class="jazz-input" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
             </div>
-            <div class="pjz-modal-button-container">
-              <button class="pjz-btn pjz-modal__button">Cancel</button>
-              <button class="pjz-btn pjz-modal__button">OK</button>
+            <div class="jazz-modal-button-container">
+              <button class="jazz-btn jazz-modal__button">Cancel</button>
+              <button class="jazz-btn jazz-modal__button">OK</button>
             </div>
           </div>
         </div>
@@ -125,19 +125,19 @@ export const DialogWithFormFieldsTemplate = (args) => html`
 `;
 
 export const SmallDialogTemplate = (args) => html`
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test Small Dialog!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Small Dialog" aria-modal="true" class="pjz-modal-window pjz-modal--sm">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test Small Dialog!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Small Dialog" aria-modal="true" class="jazz-modal-window jazz-modal--sm">
+          <div class="jazz-modal-title">
                     ${ args.title }
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">${ args.content }</div>
-            <div class="pjz-modal-button-container">
-              <button class="pjz-btn pjz-modal__button">Cancel</button>
-              <button class="pjz-btn pjz-modal__button">OK</button>
+            <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">${ args.content }</div>
+            <div class="jazz-modal-button-container">
+              <button class="jazz-btn jazz-modal__button">Cancel</button>
+              <button class="jazz-btn jazz-modal__button">OK</button>
             </div>
           </div>
         </div>
@@ -148,19 +148,19 @@ export const SmallDialogTemplate = (args) => html`
 `;
 
 export const MediumDialogTemplate = (args) => html`
-     <div class="pjz-modal" role="region">
-         <button class="pjz-btn pjz-modal__button">Test Medium Dialog!</button>
-         <div role="presentation" class="pjz-modal-wrapper">
-           <div role="dialog" aria-label="Test Medium Dialog" aria-modal="true" class="pjz-modal-window pjz-modal--md">
-           <div class="pjz-modal-title">
+     <div class="jazz-modal" role="region">
+         <button class="jazz-btn jazz-modal__button">Test Medium Dialog!</button>
+         <div role="presentation" class="jazz-modal-wrapper">
+           <div role="dialog" aria-label="Test Medium Dialog" aria-modal="true" class="jazz-modal-window jazz-modal--md">
+           <div class="jazz-modal-title">
                      ${ args.title }
-                       <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                       <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                            aria-label="Close modal dialog"></button>
              </div>
-             <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">${ args.content }</div>
-             <div class="pjz-modal-button-container">
-               <button class="pjz-btn pjz-modal__button">Cancel</button>
-               <button class="pjz-btn pjz-modal__button">OK</button>
+             <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">${ args.content }</div>
+             <div class="jazz-modal-button-container">
+               <button class="jazz-btn jazz-modal__button">Cancel</button>
+               <button class="jazz-btn jazz-modal__button">OK</button>
              </div>
            </div>
          </div>
@@ -171,19 +171,19 @@ export const MediumDialogTemplate = (args) => html`
 `;
 
 export const LargeDialogTemplate = (args) => html`
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test Large Dialog!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Large Dialog" aria-modal="true" class="pjz-modal-window pjz-modal--lg">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test Large Dialog!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Large Dialog" aria-modal="true" class="jazz-modal-window jazz-modal--lg">
+          <div class="jazz-modal-title">
                     ${ args.title }
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">${ args.content }</div>
-            <div class="pjz-modal-button-container">
-              <button class="pjz-btn pjz-modal__button">Cancel</button>
-              <button class="pjz-btn pjz-modal__button">OK</button>
+            <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">${ args.content }</div>
+            <div class="jazz-modal-button-container">
+              <button class="jazz-btn jazz-modal__button">Cancel</button>
+              <button class="jazz-btn jazz-modal__button">OK</button>
             </div>
           </div>
         </div>
@@ -194,16 +194,16 @@ export const LargeDialogTemplate = (args) => html`
 `;
 
 export const ScrollingDialogTemplate = (args) => html`
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test Scrolling Dialog!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Scrolling Dialog" aria-modal="true" class="pjz-modal-window pjz-modal--lg">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test Scrolling Dialog!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Scrolling Dialog" aria-modal="true" class="jazz-modal-window jazz-modal--lg">
+          <div class="jazz-modal-title">
                     ${ args.title }
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content pjz-modal-content--scroll" aria-labelledBy="pjz-modal-title">
+            <div class="jazz-modal-content jazz-modal-content--scroll" aria-labelledBy="jazz-modal-title">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
                 <br/>
                 Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
@@ -214,9 +214,9 @@ export const ScrollingDialogTemplate = (args) => html`
                 <br/>
                 Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis
             </div>
-            <div class="pjz-modal-button-container">
-              <button class="pjz-btn pjz-modal__button">Cancel</button>
-              <button class="pjz-btn pjz-modal__button">OK</button>
+            <div class="jazz-modal-button-container">
+              <button class="jazz-btn jazz-modal__button">Cancel</button>
+              <button class="jazz-btn jazz-modal__button">OK</button>
             </div>
           </div>
         </div>
@@ -227,45 +227,45 @@ export const ScrollingDialogTemplate = (args) => html`
 `;
 
 export const MultipleDialogsTemplate = (args) => html`
-   <div class="pjz-modal" role="region">
-           <button class="pjz-btn pjz-modal__button">Test Small Dialog 1!</button>
-           <div role="presentation" class="pjz-modal-wrapper">
-             <div role="dialog" aria-label="Test Small Dialog 1" aria-modal="true" class="pjz-modal-window pjz-modal--sm">
-             <div class="pjz-modal-title">
+   <div class="jazz-modal" role="region">
+           <button class="jazz-btn jazz-modal__button">Test Small Dialog 1!</button>
+           <div role="presentation" class="jazz-modal-wrapper">
+             <div role="dialog" aria-label="Test Small Dialog 1" aria-modal="true" class="jazz-modal-window jazz-modal--sm">
+             <div class="jazz-modal-title">
                          Dialog 1
-                         <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                         <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                              aria-label="Close modal dialog"></button>
                </div>
-               <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">
+               <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">
                Show Dialog 1 Content
-                   <input class="pjz-input" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
-                   <input class="pjz-input" id="my-input4" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
+                   <input class="jazz-input" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
+                   <input class="jazz-input" id="my-input4" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
                </div>
-               <div class="pjz-modal-button-container">
-                 <button class="pjz-btn pjz-modal__button">Cancel</button>
-                 <button class="pjz-btn pjz-modal__button">OK</button>
+               <div class="jazz-modal-button-container">
+                 <button class="jazz-btn jazz-modal__button">Cancel</button>
+                 <button class="jazz-btn jazz-modal__button">OK</button>
                </div>
              </div>
            </div>
     </div>
     <br/>
-    <div class="pjz-modal" role="region">
-        <button class="pjz-btn pjz-modal__button">Test Small Dialog 2!</button>
-        <div role="presentation" class="pjz-modal-wrapper">
-          <div role="dialog" aria-label="Test Small Dialog 2" aria-modal="true" class="pjz-modal-window pjz-modal--sm">
-          <div class="pjz-modal-title">
+    <div class="jazz-modal" role="region">
+        <button class="jazz-btn jazz-modal__button">Test Small Dialog 2!</button>
+        <div role="presentation" class="jazz-modal-wrapper">
+          <div role="dialog" aria-label="Test Small Dialog 2" aria-modal="true" class="jazz-modal-window jazz-modal--sm">
+          <div class="jazz-modal-title">
                       Dialog 2
-                      <button class="pjz-modal__button pjz-modal-button__close pjz-modal-button--transparent"
+                      <button class="jazz-modal__button jazz-modal-button__close jazz-modal-button--transparent"
                           aria-label="Close modal dialog"></button>
             </div>
-            <div class="pjz-modal-content" aria-labelledBy="pjz-modal-title">
+            <div class="jazz-modal-content" aria-labelledBy="jazz-modal-title">
             Show Dialog 2 Content
-                <input class="pjz-input" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 3" />
-                <input class="pjz-input" id="my-input4" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 4" />
+                <input class="jazz-input" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 3" />
+                <input class="jazz-input" id="my-input4" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 4" />
             </div>
-            <div class="pjz-modal-button-container">
-              <button class="pjz-btn pjz-modal__button">Cancel</button>
-              <button class="pjz-btn pjz-modal__button">OK</button>
+            <div class="jazz-modal-button-container">
+              <button class="jazz-btn jazz-modal__button">Cancel</button>
+              <button class="jazz-btn jazz-modal__button">OK</button>
             </div>
           </div>
         </div>

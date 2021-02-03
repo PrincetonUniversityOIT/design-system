@@ -1,5 +1,5 @@
-h1, .pjz-h1 {
-  font-family: pjz-theme-font(header-default);
+h1, .jazz-h1 {
+  font-family: jazz-theme-font(header-default);
   font-weight: 400;
   font-size: px-to-rem(53);
   line-height: px-to-rem(64);
@@ -9,8 +9,8 @@ h1, .pjz-h1 {
   margin-block-end: 0.67em;
 }
 
-h2, .pjz-h2 {
-  font-family: pjz-theme-font(header-default);
+h2, .jazz-h2 {
+  font-family: jazz-theme-font(header-default);
   font-weight: 600;
   font-size: px-to-rem(34);
   line-height: px-to-rem(48);
@@ -19,8 +19,8 @@ h2, .pjz-h2 {
   margin-block-end: 0.83em;
 }
 
-h3, .pjz-h3 {
-  font-family: pjz-theme-font(header-default);
+h3, .jazz-h3 {
+  font-family: jazz-theme-font(header-default);
   font-weight: 600;
   font-size: px-to-rem(24);
   line-height: px-to-rem(27);
@@ -29,8 +29,8 @@ h3, .pjz-h3 {
   margin-block-end: 1em;
 }
 
-h4, .pjz-h4 {
-  font-family: pjz-theme-font(header-default);
+h4, .jazz-h4 {
+  font-family: jazz-theme-font(header-default);
   font-weight: 700;
   font-size: px-to-rem(21);
   line-height: px-to-rem(27);
@@ -39,8 +39,8 @@ h4, .pjz-h4 {
   margin-block-end: 1.33em;
 }
 
-h5, .pjz-h5 {
-  font-family: pjz-theme-font(header-default);
+h5, .jazz-h5 {
+  font-family: jazz-theme-font(header-default);
   font-weight: 700;
   font-size: px-to-rem(16);
   line-height: px-to-rem(27);
@@ -49,8 +49,8 @@ h5, .pjz-h5 {
   margin-block-end: 1.67em;
 }
 
-h6, .pjz-h6 {
-  font-family: pjz-theme-font(header-default);
+h6, .jazz-h6 {
+  font-family: jazz-theme-font(header-default);
   font-weight: 700;
   font-size: px-to-rem(16);
   line-height: px-to-rem(27);
@@ -59,8 +59,8 @@ h6, .pjz-h6 {
   margin-block-end: 2.33em;
 }
 
-.pjz-display-heading {
-  font-family: pjz-theme-font(header-default);
+.jazz-display-heading {
+  font-family: jazz-theme-font(header-default);
   font-weight: 700;
   font-size: px-to-rem(53);
   line-height: 4rem;
@@ -69,23 +69,23 @@ h6, .pjz-h6 {
   margin-block-end: 0.67em;
 }
 
-.pjz-block-heading {
-  font-family: pjz-theme-font(header-default);
+.jazz-block-heading {
+  font-family: jazz-theme-font(header-default);
   font-weight: 700;
 }
 
-.pjz-block-heading:after {
+.jazz-block-heading:after {
   content: "";
   width: px-to-rem(50);
   height: px-to-rem(3);
   display: block;
-  background-color: pjz-theme-rgb(accent);
+  background-color: jazz-theme-rgb(accent);
   margin-top: px-to-rem(2);
 }
 
-.pjz-page-title {
-  font-family: pjz-theme-font(header-default);
-  border-bottom: px-to-rem(3) solid pjz-theme-rgb(accent);
+.jazz-page-title {
+  font-family: jazz-theme-font(header-default);
+  border-bottom: px-to-rem(3) solid jazz-theme-rgb(accent);
   padding-bottom: px-to-rem(5);
   margin: 0.2em 0 0.75em;
   font-size: 3.35rem;

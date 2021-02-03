@@ -1,5 +1,5 @@
-.pjz-pill {
-  @include pjz-theme-color(neutral-light);
+.jazz-pill {
+  @include jazz-theme-color(neutral-light);
   display: inline-block;
   border-radius: px-to-rem(500);
   padding: px-to-rem(2) px-to-rem(16) px-to-rem(2) px-to-rem(16);
@@ -9,17 +9,17 @@
   text-decoration: none;
   line-height: 1.5;
 }
-.pjz-pill:hover {
+.jazz-pill:hover {
   text-decoration: underline;
 }
-ul.pjz-pill-bag {
+ul.jazz-pill-bag {
   list-style: none;
   margin: 0px;
   padding: 0px;
   display: inline-block;
 }
-ul.pjz-pill-bag li {
-  @include pjz-theme-color(neutral-light);
+ul.jazz-pill-bag li {
+  @include jazz-theme-color(neutral-light);
   display: inline-block;
   border-radius: px-to-rem(500);
   padding: px-to-rem(2) px-to-rem(16) px-to-rem(2) px-to-rem(16);
@@ -28,10 +28,10 @@ ul.pjz-pill-bag li {
   font-weight: bold;
   text-decoration: none;
 }
-ul.pjz-pill-bag li a {
+ul.jazz-pill-bag li a {
   color: black;
   text-decoration: none;
 }
-ul.pjz-pill-bag li a:hover {
+ul.jazz-pill-bag li a:hover {
   text-decoration: underline;
 }

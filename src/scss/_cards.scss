@@ -1,10 +1,10 @@
-.pjz-card {
-  border: 1px solid pjz-theme-rgb(neutral-light);
-  border-top: 3px solid pjz-theme-rgb(accent);
+.jazz-card {
+  border: 1px solid jazz-theme-rgb(neutral-light);
+  border-top: 3px solid jazz-theme-rgb(accent);
 }
 
-.pjz-card__heading {
-  font-family: pjz-theme-font(heading-default);
+.jazz-card__heading {
+  font-family: jazz-theme-font(heading-default);
   font-style: normal;
   font-weight: 600;
   font-size: px-to-rem(14);
@@ -12,19 +12,19 @@
   text-transform: uppercase;
   margin: 0px;
   padding: px-to-rem(16) px-to-rem(22) px-to-rem(14) px-to-rem(22);
-  border-bottom: 1px solid pjz-theme-rgb(neutral-light);
+  border-bottom: 1px solid jazz-theme-rgb(neutral-light);
   vertical-align: middle;
 }
 
-.pjz-card__content {
+.jazz-card__content {
   padding: px-to-rem(15) px-to-rem(22);
   line-height: 1.5;
 }
 
-.pjz-card__footer {
-  @include pjz-theme-color(neutral-light);
+.jazz-card__footer {
+  @include jazz-theme-color(neutral-light);
   padding: px-to-rem(10) px-to-rem(12);
-  font-family: pjz-theme-font(body);
+  font-family: jazz-theme-font(body);
   font-style: normal;
   font-weight: 700;
   font-size: px-to-rem(10);
@@ -33,9 +33,9 @@
 
 // EE article card
 
-.pjz-news-card {
-  @include pjz-theme-color(card);
-  font-family: pjz-theme-font(header-default);
+.jazz-news-card {
+  @include jazz-theme-color(card);
+  font-family: jazz-theme-font(header-default);
   display: flex;
   flex-direction: column;
   // this allows the card to properly take up space when put into a flex container
@@ -43,89 +43,89 @@
   max-width: px-to-rem(400);
   margin: px-to-rem(20);
 }
-.pjz-news-card:hover {
-  @include pjz-elevation(4);
+.jazz-news-card:hover {
+  @include jazz-elevation(4);
   cursor: pointer;
 }
-.pjz-news-card img {
-  border-bottom: 4px solid pjz-theme-rgb(accent);
+.jazz-news-card img {
+  border-bottom: 4px solid jazz-theme-rgb(accent);
   width: 100%;
 }
-.pjz-news-card h1,
-.pjz-news-card h2,
-.pjz-news-card h3,
-.pjz-news-card h4,
-.pjz-news-card h5,
-.pjz-news-card h6 {
+.jazz-news-card h1,
+.jazz-news-card h2,
+.jazz-news-card h3,
+.jazz-news-card h4,
+.jazz-news-card h5,
+.jazz-news-card h6 {
   line-height: 1.5;
   margin: 0 0 px-to-rem(8) 0;
   padding: px-to-rem(4) px-to-rem(20);
 }
-.pjz-news-card a {
+.jazz-news-card a {
   text-decoration: none;
   line-height: 1;
   color: black;
   background-color: white;
 }
-.pjz-news-card h3 a:hover {
-  border-bottom: px-to-rem(1) solid pjz-theme-rgb(accent);
+.jazz-news-card h3 a:hover {
+  border-bottom: px-to-rem(1) solid jazz-theme-rgb(accent);
 }
 
 // EE event card
 
-.pjz-event-card-container {
+.jazz-event-card-container {
   padding: px-to-rem(20);
   max-width: px-to-rem(430);
 }
-.pjz-event-card {
-  @include pjz-theme-color(card);
-  border-top: 4px solid pjz-theme-rgb(accent);
+.jazz-event-card {
+  @include jazz-theme-color(card);
+  border-top: 4px solid jazz-theme-rgb(accent);
   padding: 1.5rem;
   display: flex;
   flex-direction: row;
   align-items: stretch;
   line-height: 1.5;
 }
-.pjz-event-card:hover {
-   @include pjz-elevation(4);
+.jazz-event-card:hover {
+   @include jazz-elevation(4);
 }
-.pjz-event-card__date-badge {
+.jazz-event-card__date-badge {
   margin: 0px px-to-rem(20) 0px 0px;
 }
-.pjz-event-card__title {
+.jazz-event-card__title {
   margin-bottom: px-to-rem(12);
 }
-.pjz-event-card__title a {
-  font-family: pjz-theme-font(header-default);
+.jazz-event-card__title a {
+  font-family: jazz-theme-font(header-default);
   font-size: 1.25rem;
   font-weight: bold;
   text-decoration: none;
   color: black;
   line-height: 1.2;
 }
-.pjz-event-card__title a:hover {
-  border-bottom: 1px solid pjz-theme-rgb(accent);
+.jazz-event-card__title a:hover {
+  border-bottom: 1px solid jazz-theme-rgb(accent);
 }
-.pjz-event-card__section {
+.jazz-event-card__section {
   margin-bottom: px-to-rem(12);
 }
-.pjz-event-card__label {
+.jazz-event-card__label {
   font-weight: bold;
   text-transform: uppercase;
   font-size: .85rem;
   display: block;
   margin-top: px-to-rem(12);
 }
-.pjz-event-card__date-badge-date {
+.jazz-event-card__date-badge-date {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.pjz-event-card__date-badge-month {
+.jazz-event-card__date-badge-month {
   text-transform: uppercase;
   text-align: center;
 }
-.pjz-event-card__date-badge-day {
+.jazz-event-card__date-badge-day {
   font-size: 1.85em;
   line-height: 1;
 }

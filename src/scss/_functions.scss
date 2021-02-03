@@ -2,8 +2,8 @@
 /// @access public
 /// @return {string} the rem value that equals the specified pixel value
 /// @param {number} $px - the pixel value that is being converted
-/// @require {variable} pjz-base-font-size-in-pixels
+/// @require {variable} jazz-base-font-size-in-pixels
 /// @since 1.0.0
 @function px-to-rem($px) {
-  @return ($px / $pjz-base-font-size-in-pixels) * 1rem;
+  @return ($px / $jazz-base-font-size-in-pixels) * 1rem;
 }

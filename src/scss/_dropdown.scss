@@ -1,27 +1,27 @@
-.pjz-dropdown,
-.pjz-dropdown--error {
-  @include pjz-theme-color(form-input);
+.jazz-dropdown,
+.jazz-dropdown--error {
+  @include jazz-theme-color(form-input);
   position: relative;
 }
-.pjz-dropdown:after,
-.pjz-dropdown:before,
-.pjz-dropdown--error:after,
-.pjz-dropdown--error:before {
+.jazz-dropdown:after,
+.jazz-dropdown:before,
+.jazz-dropdown--error:after,
+.jazz-dropdown--error:before {
   bottom: 0;
   content: "";
   pointer-events: none;
   position: absolute;
   top: 0;
 }
-.pjz-dropdown:before,
-.pjz-dropdown--error:before {
+.jazz-dropdown:before,
+.jazz-dropdown--error:before {
   right: 0;
   width: 1.85em;
 }
-.pjz-dropdown:after,
-.pjz-dropdown--error:after {
-  border-bottom: 2px solid pjz-theme-rgb(accent);
-  border-right: 2px solid pjz-theme-rgb(accent);
+.jazz-dropdown:after,
+.jazz-dropdown--error:after {
+  border-bottom: 2px solid jazz-theme-rgb(accent);
+  border-right: 2px solid jazz-theme-rgb(accent);
   height: .5em;
   margin: auto;
   right: .95em;
@@ -30,28 +30,28 @@
   width: .5em;
   z-index: 2;
 }
-.pjz-dropdown select,
-.pjz-dropdown--error select {
-  @include pjz-theme-color(form-input);
+.jazz-dropdown select,
+.jazz-dropdown--error select {
+  @include jazz-theme-color(form-input);
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   box-shadow: none;
   border-radius: 0;
-  border: 1px solid pjz-theme-rgb(neutral-dark);
+  border: 1px solid jazz-theme-rgb(neutral-dark);
   line-height: normal;
   max-width: 100%;
   padding: .5em 2em .5em .5em;
   width: 100%;
 }
-.pjz-dropdown--error select {
-  border: .25rem solid pjz-theme-rgb(error);
+.jazz-dropdown--error select {
+  border: .25rem solid jazz-theme-rgb(error);
 }
-.pjz-dropdown select option,
-.pjz-dropdown--error select option {
-  @include pjz-theme-color(form-input);
+.jazz-dropdown select option,
+.jazz-dropdown--error select option {
+  @include jazz-theme-color(form-input);
 }
-.pjz-dropdown select option[disabled],
-.pjz-dropdown--error select option[disabled] {
-  color: pjz-theme-rgb(form-input__disabled);
+.jazz-dropdown select option[disabled],
+.jazz-dropdown--error select option[disabled] {
+  color: jazz-theme-rgb(form-input__disabled);
 }

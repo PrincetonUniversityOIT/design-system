@@ -1,33 +1,33 @@
-.pjz-form-field,
- .pjz-form-field--error {
+.jazz-form-field,
+ .jazz-form-field--error {
    margin-top: 1.5rem;
    padding-left: 1rem;
    border-left: .25rem solid transparent;
  }
 
-.pjz-form-field label,
-.pjz-form-field--error label {
+.jazz-form-field label,
+.jazz-form-field--error label {
   display: block;
   line-height: 1.1;
   margin-bottom: .5rem;
   max-width: 30rem;
 }
 
-.pjz-form-field--error {
-  border-left: 4px solid pjz-theme-rgb(error);
+.jazz-form-field--error {
+  border-left: 4px solid jazz-theme-rgb(error);
 }
 
-.pjz-form-field-error-msg {
+.jazz-form-field-error-msg {
   font-size: .85em;
-  color: pjz-theme-rgb(error);
+  color: jazz-theme-rgb(error);
 }
 
-.pjz-form-field-msg {
+.jazz-form-field-msg {
   font-size: .85em;
-  color: pjz-theme-rgb(neutral-dark);
+  color: jazz-theme-rgb(neutral-dark);
 }
 
-.pjz-form-field-required {
+.jazz-form-field-required {
   padding-left: px-to-rem(5);
-  color: pjz-theme-rgb(accent);
+  color: jazz-theme-rgb(accent);
 }

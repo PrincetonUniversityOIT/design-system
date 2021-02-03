@@ -4,45 +4,45 @@ import { html } from 'lit-html';
 <Meta title="Components/Form Inputs" component="Input" />
 
 export const TextInputTemplate = (args) => html`
-    <input class="pjz-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
-    <input class="pjz-input pjz-focus" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
-    <input class="pjz-input pjz-input--error" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 3" />
-    <input class="pjz-input" id="my-input4" type="text" placeholder="Placeholder" required value="${ args.value }" aria-label="My Input 4" />
+    <input class="jazz-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
+    <input class="jazz-input jazz-focus" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
+    <input class="jazz-input jazz-input--error" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 3" />
+    <input class="jazz-input" id="my-input4" type="text" placeholder="Placeholder" required value="${ args.value }" aria-label="My Input 4" />
 `;
 
 export const MultilineTextInputTemplate = (args) => html`
-    <textarea class="pjz-input" id="my-input" type="text" aria-label="My Input">${ args.value }</textarea>
-    <textarea class="pjz-input pjz-focus" id="my-input2" type="text" aria-label="My Input 2">${ args.value }</textarea>
-    <textarea class="pjz-input pjz-input--error" id="my-input3" type="text" aria-label="My Input 3">${ args.value }</textarea>
-    <textarea class="pjz-input" id="my-input4" type="text" aria-label="My Input 4" required>${ args.value }</textarea>
+    <textarea class="jazz-input" id="my-input" type="text" aria-label="My Input">${ args.value }</textarea>
+    <textarea class="jazz-input jazz-focus" id="my-input2" type="text" aria-label="My Input 2">${ args.value }</textarea>
+    <textarea class="jazz-input jazz-input--error" id="my-input3" type="text" aria-label="My Input 3">${ args.value }</textarea>
+    <textarea class="jazz-input" id="my-input4" type="text" aria-label="My Input 4" required>${ args.value }</textarea>
 `;
 
 export const CheckboxTemplate = (args) => html`
-    <fieldset class="pjz-fieldset">
-        <legend class="pjz-sr-only">${ args.legend }</legend>
-        <div class="pjz-checkbox">
-            <input class="pjz-checkbox__input" type="checkbox" id="apple" type="checkbox" checked />
-            <label class="pjz-checkbox__label" for="apple">Apple</label>
+    <fieldset class="jazz-fieldset">
+        <legend class="jazz-sr-only">${ args.legend }</legend>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="apple" type="checkbox" checked />
+            <label class="jazz-checkbox__label" for="apple">Apple</label>
         </div>
-        <div class="pjz-checkbox">
-            <input class="pjz-checkbox__input" type="checkbox" id="orange" type="checkbox" />
-            <label class="pjz-checkbox__label" for="orange">Orange</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="orange" type="checkbox" />
+            <label class="jazz-checkbox__label" for="orange">Orange</label>
         </div>
-        <div class="pjz-checkbox">
-            <input class="pjz-checkbox__input" type="checkbox" id="strawberry" type="checkbox" disabled />
-            <label class="pjz-checkbox__label" for="strawberry">Strawberry</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="strawberry" type="checkbox" disabled />
+            <label class="jazz-checkbox__label" for="strawberry">Strawberry</label>
         </div>
-        <div class="pjz-checkbox">
-            <input class="pjz-checkbox__input" type="checkbox" id="watermelon" type="checkbox" disabled checked />
-            <label class="pjz-checkbox__label" for="watermelon">Watermelon</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="watermelon" type="checkbox" disabled checked />
+            <label class="jazz-checkbox__label" for="watermelon">Watermelon</label>
         </div>
     </fieldset>
 `;
 
 export const DropdownTemplate = (args) => html`
-    <div class="pjz-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-1">Dropdown</label>
-        <div class="pjz-dropdown">
+        <div class="jazz-dropdown">
             <select id="my-dropdown-1">
                 <option>Option 1</option>
                 <option>Option 2</option>
@@ -51,9 +51,9 @@ export const DropdownTemplate = (args) => html`
             </select>
         </div>
     </div>
-    <div class="pjz-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-2">Dropdown - Focused</label>
-        <div class="pjz-dropdown pjz-focus">
+        <div class="jazz-dropdown jazz-focus">
             <select id="my-dropdown-2">
                 <option>Option 1</option>
                 <option>Option 2</option>
@@ -62,9 +62,9 @@ export const DropdownTemplate = (args) => html`
             </select>
         </div>
     </div>
-    <div class="pjz-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-3">Dropdown - Focused</label>
-        <div class="pjz-dropdown--error">
+        <div class="jazz-dropdown--error">
             <select id="my-dropdown-3">
                 <option>Option 1</option>
                 <option>Option 2</option>

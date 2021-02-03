@@ -1,5 +1,5 @@
-.pjz-btn {
-  font-family: pjz-theme-font(body);
+.jazz-btn {
+  font-family: jazz-theme-font(body);
   font-size: 1.06rem;
   line-height: .9;
   -moz-osx-font-smoothing: grayscale;
@@ -21,28 +21,28 @@
   width: 100%;
 }
 
-.pjz-btn.pjz-btn--hover, .pjz-btn:hover {
+.jazz-btn.jazz-btn--hover, .jazz-btn:hover {
   color: #fff;
   background-color: get-color("primary-bg-dark"); // #1a4480;
   border-bottom: 0;
   text-decoration: none;
 }
 
-.pjz-btn.pjz-btn--active, .pjz-btn:active {
+.jazz-btn.jazz-btn--active, .jazz-btn:active {
   color: #fff;
   background-color: get-color("primary-bg-darker"); // #162e51;
 }
 
-.pjz-btn.pjz-btn--focus, .pjz-btn:focus {
+.jazz-btn.jazz-btn--focus, .jazz-btn:focus {
   outline: .25rem solid get-color("focus"); // #2491ff;
   outline-offset: 0;
 }
 
-.pjz-btn:not([disabled]).pjz-focus, .pjz-btn:not([disabled]):focus {
+.jazz-btn:not([disabled]).jazz-focus, .jazz-btn:not([disabled]):focus {
   outline-offset: .25rem;
 }
 
-.pjz-btn:disabled {
+.jazz-btn:disabled {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   background-color: get-color("primary-bg-disabled"); // #c9c9c9;
@@ -50,7 +50,7 @@
   pointer-events: none;
 }
 
-.pjz-btn.pjz-btn--unstyled {
+.jazz-btn.jazz-btn--unstyled {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
   color: #005ea2;
@@ -66,7 +66,7 @@
 }
 
 @media (min-width: 30em) {
-  .pjz-btn {
+  .jazz-btn {
     width: auto;
   }
 }

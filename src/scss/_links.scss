@@ -1,29 +1,29 @@
 a {
-  color: pjz-theme-rgb(link);
+  color: jazz-theme-rgb(link);
 }
 
-a:visited, .pjz-link-visited {
-  color: pjz-theme-rgb(link-visited);
+a:visited, .jazz-link-visited {
+  color: jazz-theme-rgb(link-visited);
 }
 
-.pjz-highlight-visited a:visited, .pjz-highlight-visited .pjz-link-visited {
-  color: pjz-theme-rgb(link);
+.jazz-highlight-visited a:visited, .jazz-highlight-visited .jazz-link-visited {
+  color: jazz-theme-rgb(link);
 }
 
-a:focus, .pjz-link-focus {
-  color: pjz-theme-rgb(link-focus);
+a:focus, .jazz-link-focus {
+  color: jazz-theme-rgb(link-focus);
 }
 
-a:active, .pjz-link-active {
-  color: pjz-theme-rgb(link-active);
+a:active, .jazz-link-active {
+  color: jazz-theme-rgb(link-active);
 }
 
-a:hover, .pjz-link-hover {
-  color: pjz-theme-rgb(link-hover);
+a:hover, .jazz-link-hover {
+  color: jazz-theme-rgb(link-hover);
 }
 
-a:disabled, .pjz-link-disabled {
-  color: pjz-theme-rgb(link);
+a:disabled, .jazz-link-disabled {
+  color: jazz-theme-rgb(link);
   cursor: not-allowed;
   opacity: 0.7;
   text-decoration: none;
@@ -31,14 +31,14 @@ a:disabled, .pjz-link-disabled {
 
 a[target="_blank"]::after {
   content:"";
-  background-image: url(pjz-icons-path("external"));
+  background-image: url(jazz-icons-path("external"));
   display: inline-block;
   background-size: px-to-rem(15) px-to-rem(15);
   width:px-to-rem(15);
   height:px-to-rem(15);
   margin-left: 0.2em;
 }
-.pjz-no-icon[target="_blank"]::after {
+.jazz-no-icon[target="_blank"]::after {
   content: none;
   display: inherit;
   margin-left: inherit;;

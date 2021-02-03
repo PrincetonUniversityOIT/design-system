@@ -38,42 +38,42 @@ title: Princeton Design System
     </style>
 </head>
 <body onload="registerAllIframes()">
-<header role="banner" class="pjz-header">
-    <h1 class="pjz-sr-only">Princeton University Design System</h1>
-    <div class="pjz-skip-links">
-        <a href="#main-content" class="pjz-skip-link">Skip to main content</a>
-        <a href="#search" class="pjz-skip-link">Skip to search options</a>
+<header role="banner" class="jazz-header">
+    <h1 class="jazz-sr-only">Princeton University Design System</h1>
+    <div class="jazz-skip-links">
+        <a href="#main-content" class="jazz-skip-link">Skip to main content</a>
+        <a href="#search" class="jazz-skip-link">Skip to search options</a>
     </div>
-    <!-- div class="pjz-container" -->
-    <div class="pjz-header__pu-branding">
-        <div class="pjz-container">
+    <!-- div class="jazz-container" -->
+    <div class="jazz-header__pu-branding">
+        <div class="jazz-container">
             <a href="https://www.princeton.edu" title="Princeton University"><img src="/logos/pu-logo.svg" alt="Princeton University" /></a>
         </div>
     </div>
-    <div class="pjz-header__site-branding">
-        <div class="pjz-container pjz-header__site-branding-contents">
-            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="pjz-header__site-branding-home-link"><img src="/logos/shield.svg" /></a>
-            <div class="pjz-header__site-branding-info">
-                <div class="pjz-header__site-branding-name">
+    <div class="jazz-header__site-branding">
+        <div class="jazz-container jazz-header__site-branding-contents">
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/logos/shield.svg" /></a>
+            <div class="jazz-header__site-branding-info">
+                <div class="jazz-header__site-branding-name">
                     <a href="/" title="Home" rel="home">Relativity Design System</a>
                 </div>
-                <div class="pjz-header__site-branding-slogan">
+                <div class="jazz-header__site-branding-slogan">
                     The Princeton Design System
                 </div>
             </div>
         </div>
     </div>
-    <nav aria-label="Main Menu" class="pjz-menu__main-menu">
-        <h2 class="pjz-sr-only">Main Menu</h2>
-        <div class="pjz-container">
-            <div class="pjz-menu__main-menu-navbar">
-                <button class="pjz-menu__menu-toggle pjz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="pjz-icon pjz-icon-menu" aria-hidden="true"></i></button>
-                <div  class="pjz-menu__nav-container">
-                    <ul class="pjz-menubar" role="list">
+    <nav aria-label="Main Menu" class="jazz-menu__main-menu">
+        <h2 class="jazz-sr-only">Main Menu</h2>
+        <div class="jazz-container">
+            <div class="jazz-menu__main-menu-navbar">
+                <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
+                <div  class="jazz-menu__nav-container">
+                    <ul class="jazz-menubar" role="list">
                         {%- for item in siteMap.primary -%}
                         <li{% if page.url.startsWith(item.url) %} aria-current="true"{% endif %}><a href="{{ item.url }}">{{ item.label }}</a>
-                             <button type="button" class="pjz-menu__submenu-toggle" aria-expanded="false">
-                                 <span class="pjz-sr-only">{{ item.label }}</span>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-sr-only">{{ item.label }}</span>
                              </button>
                              {% if item.items.length > 0 %}
                                 <ul>
@@ -85,7 +85,7 @@ title: Princeton Design System
                         </li>
                         {%- endfor -%}
                     </ul>
-                    <div class="pjz-header__utility-menu">
+                    <div class="jazz-header__utility-menu">
                         <ul>
                             <li><a href="javascript void(0);">Help</a></li>
                         </ul>
@@ -94,18 +94,18 @@ title: Princeton Design System
             </div>
         </div>
     </nav>
-    <div class="pjz-header__search-bar">
-        <div class="pjz-container">
-            <h2 class="pjz-sr-only">Search</h2>
-            <button id="my-search-toggle" class="pjz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="pjz-icon pjz-icon-search" aria-hidden="true"></i><span class="pjz-sr-only">Search Menu Toggle</span></button>
-            <div id="pjz-header-search-bar-panel" class="pjz-header__search-bar-panel">
+    <div class="jazz-header__search-bar">
+        <div class="jazz-container">
+            <h2 class="jazz-sr-only">Search</h2>
+            <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-sr-only">Search Menu Toggle</span></button>
+            <div id="jazz-header-search-bar-panel" class="jazz-header__search-bar-panel">
                 <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
-                    <label class="pjz-sr-only" for="search-field">Search</label>
+                    <label class="jazz-sr-only" for="search-field">Search</label>
                     <a name="search">
                         <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
                     </a>
-                    <button class="pjz-button" type="submit">
-                        <span class="pjz-sr-only">Search</span>
+                    <button class="jazz-button" type="submit">
+                        <span class="jazz-sr-only">Search</span>
                     </button>
                 </form>
             </div>
@@ -113,16 +113,16 @@ title: Princeton Design System
     </div>
     <!-- /div -->
 </header>
-<main class="pjz-container">
+<main class="jazz-container">
     <div class="core">
-        <nav class="pjz-sidebar-menu" aria-label="section">
-            <h2 class="pjz-sr-only">Section Menu</h2>
-            <ul class="pjz-sidebar-menu__list" role="list">
+        <nav class="jazz-sidebar-menu" aria-label="section">
+            <h2 class="jazz-sr-only">Section Menu</h2>
+            <ul class="jazz-sidebar-menu__list" role="list">
                 {% for privNav in siteMap.primary %}
                 {% if page.url.startsWith(privNav.url) %}
                 {% for secNav in privNav.items %}
-                <li {% if page.url == secNav.url %} class="pjz-sidebar-menu__list-item--active"{% else %} class="pjz-sidebar-menu__list-item"{% endif %}>
-                    <a href="{{ secNav.url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active"{% endif %}>{{ secNav.label }}<span class="pjz-sr-only">, (current page)</span></a>
+                <li {% if page.url == secNav.url %} class="jazz-sidebar-menu__list-item--active"{% else %} class="jazz-sidebar-menu__list-item"{% endif %}>
+                    <a href="{{ secNav.url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active"{% endif %}>{{ secNav.label }}<span class="jazz-sr-only">, (current page)</span></a>
                 </li>
                 {% endfor %}
                 {% endif %}
@@ -134,12 +134,12 @@ title: Princeton Design System
         </div>
     </div>
 </main>
-<footer role="contentinfo" class="pjz-footer">
-    <div class="pjz-container pjz-footer__content">
+<footer role="contentinfo" class="jazz-footer">
+    <div class="jazz-container jazz-footer__content">
         <div class="row">
             <div class="col-sm-3 col-xs-12">
                 <h2>General Information</h2>
-                <ul class="pjz-footer__list">
+                <ul class="jazz-footer__list">
                     <li><a href="javascript:void(0);">Contact Us</a></li>
                     <li><a href="javascript:void(0);">About Us</a></li>
                     <li><a href="javascript:void(0);">News</a></li>
@@ -147,7 +147,7 @@ title: Princeton Design System
             </div>
             <div class="col-sm-3 col-xs-12">
                 <h2>Services</h2>
-                <ul class="pjz-footer__list">
+                <ul class="jazz-footer__list">
                     <li><a href="javascript:void(0);">Update Your Info</a></li>
                     <li><a href="javascript:void(0);">Online Resources</a></li>
                     <li><a href="javascript:void(0);">Visiting Campus</a></li>
@@ -155,7 +155,7 @@ title: Princeton Design System
             </div>
             <div class="col-sm-3 col-xs-12">
                 <h2>University Links</h2>
-                <ul class="pjz-footer__list">
+                <ul class="jazz-footer__list">
                     <li><a href="https://www.princeton.edu/">Princeton University</a></li>
                     <li><a href="https://communications.princeton.edu/">Office of Communications</a></li>
                     <li><a href="https://ux.princeton.edu/">User Experience Office</a></li>
@@ -164,14 +164,14 @@ title: Princeton Design System
             </div>
             <div class="col-sm-3 col-xs-12">
                 <h2>Resources</h2>
-                <ul class="pjz-footer__icon-list">
-                    <li><a href="javascript:void(0);"><i class="pjz-icon pjz-icon-2x pjz-footer__icon pjz-icon-facebook"></i><span class="pjz-sr-only">Go to GitHub</span></a></li>
+                <ul class="jazz-footer__icon-list">
+                    <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-2x jazz-footer__icon jazz-icon-facebook"></i><span class="jazz-sr-only">Go to GitHub</span></a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="pjz-footer__subfooter">
-        <div class="pjz-container">
+    <div class="jazz-footer__subfooter">
+        <div class="jazz-container">
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
                     <a href="javascript:void(0)">Accessibility</a>
@@ -180,7 +180,7 @@ title: Princeton Design System
                     &copy; 2020 The Trustees of Princeton University
                 </div>
                 <div class="col-sm-4 col-xs-12">
-                    <a href="https://www.princeton.edu" target="_blank" class="pjz-no-icon"><img class="pjz-footer__logo" src="/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
+                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
                 </div>
             </div>
         </div>
@@ -205,7 +205,7 @@ title: Princeton Design System
     }
 
     function registerAllIframes() {
-        const iframes = document.querySelectorAll("iframe.pjz-docs__code-sample");
+        const iframes = document.querySelectorAll("iframe.jazz-docs__code-sample");
         for (const iframe of iframes) {
             registerIframe(iframe);
         }

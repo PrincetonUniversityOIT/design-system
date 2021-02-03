@@ -1,33 +1,33 @@
-ol.pjz-tab-list {
+ol.jazz-tab-list {
   list-style: none;
   display: flex;
   padding-inline-start: 0px;
-  border-bottom: 1px solid pjz-theme-rgb(accent);
+  border-bottom: 1px solid jazz-theme-rgb(accent);
 }
 
-li.pjz-tab {
+li.jazz-tab {
   text-align: center;
   height: px-to-rem(40);
   text-transform: uppercase;
-  border-bottom: 4px solid pjz-theme-rgb(tab); // #fff
+  border-bottom: 4px solid jazz-theme-rgb(tab); // #fff
 }
 
-li.pjz-tab:hover,
-li.pjz-tab:focus-within {
-  border-bottom: 4px solid pjz-theme-rgb(neutral-dark);
+li.jazz-tab:hover,
+li.jazz-tab:focus-within {
+  border-bottom: 4px solid jazz-theme-rgb(neutral-dark);
 }
 
-li.pjz-tab--active,
-li.pjz-tab--active:focus-within,
-li.pjz-tab--active:hover {
-  border-bottom: 4px solid pjz-theme-rgb(accent);
+li.jazz-tab--active,
+li.jazz-tab--active:focus-within,
+li.jazz-tab--active:hover {
+  border-bottom: 4px solid jazz-theme-rgb(accent);
 }
 
-a.pjz-tab-link {
+a.jazz-tab-link {
   text-decoration: none;
   color: rgba(0,0,0,.87);
   height: px-to-rem(40);
-  font-family: pjz-theme-font(body);
+  font-family: jazz-theme-font(body);
   font-style: normal;
   font-weight: 700;
   font-size: px-to-rem(14);

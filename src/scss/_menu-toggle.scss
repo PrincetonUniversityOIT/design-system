@@ -1,9 +1,9 @@
-.pjz-menu {
+.jazz-menu {
   display: flex;
   flex-wrap: wrap;
 }
 
-.pjz-menu__menu-toggle {
+.jazz-menu__menu-toggle {
   top: px-to-rem(-146);
   right: px-to-rem(48);
   background-color: white;
@@ -15,30 +15,30 @@
   display: flex;
 }
 
-.pjz-menu__menu-toggle-absolute {
+.jazz-menu__menu-toggle-absolute {
   position: absolute;
 }
 
-.pjz-menu__main-menu {
-  @include pjz-theme-color(header-navbar);
+.jazz-menu__main-menu {
+  @include jazz-theme-color(header-navbar);
   height: px-to-rem(51);
 }
 
-.pjz-menu__nav-container {
+.jazz-menu__nav-container {
   display: none;
 }
-.pjz-menu__nav-container--expanded {
-  @include pjz-theme-color(header-nav);
+.jazz-menu__nav-container--expanded {
+  @include jazz-theme-color(header-nav);
   left: 0;
   top: px-to-rem(-104);
   width: 100%;
   z-index: 1000;
   display: block;
 }
-.pjz-menu__subnav-container {
+.jazz-menu__subnav-container {
   display: none;
 }
-.pjz-menu__subnav-container--expanded{
+.jazz-menu__subnav-container--expanded{
   left: 0;
   top: px-to-rem(-104);
   width: 100%;
@@ -46,10 +46,10 @@
   display: block;
 }
 @include for-tablet-landscape-up {
-  .pjz-menu__menu-toggle {
+  .jazz-menu__menu-toggle {
     display: none;
   }
-  .pjz-menu__nav-container {
+  .jazz-menu__nav-container {
     display: flex;
     flex-basis: auto;
     flex-grow: 1;
