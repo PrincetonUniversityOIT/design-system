@@ -1,38 +1,38 @@
-.emc-table__bordered {
-  border: 1px solid emc-theme-rgb(neutral-dark); // grey
+.jazz-table__bordered {
+  border: 1px solid jazz-theme-rgb(neutral-dark); // grey
   border-collapse: collapse;
   line-height: 1.25;
 }
 
-.emc-table__bordered th,
-.emc-table__bordered td {
-  border: 1px solid emc-theme-rgb(neutral-dark); // grey
+.jazz-table__bordered th,
+.jazz-table__bordered td {
+  border: 1px solid jazz-theme-rgb(neutral-dark); // grey
   padding: px-to-rem(12);
   text-align: left;
   font-size: px-to-rem(14);
 }
 
-.emc-table__bordered th {
-  @include emc-theme-color(neutral-light);
+.jazz-table__bordered th {
+  @include jazz-theme-color(neutral-light);
 }
 
-.emc-table__borderless {
+.jazz-table__borderless {
   border-collapse: collapse;
   line-height: 1.25;
 }
 
-.emc-table__borderless th,
-.emc-table__borderless td {
-  border-bottom: 1px solid emc-theme-rgb(neutral-light);
+.jazz-table__borderless th,
+.jazz-table__borderless td {
+  border-bottom: 1px solid jazz-theme-rgb(neutral-light);
   padding: px-to-rem(12);
   text-align: left;
   font-size: px-to-rem(14);
 }
 
-.emc-table__borderless th {
-  border-bottom: 3px solid emc-theme-rgb(accent);
+.jazz-table__borderless th {
+  border-bottom: 3px solid jazz-theme-rgb(accent);
 }
 
-.emc-table__borderless tr:nth-child(even) {
-  @include emc-theme-color(neutral-light);
+.jazz-table__borderless tr:nth-child(even) {
+  @include jazz-theme-color(neutral-light);
 }

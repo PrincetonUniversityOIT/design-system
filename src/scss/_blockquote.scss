@@ -1,4 +1,4 @@
-.emc-quote {
+.jazz-quote {
   font-weight: 300;
   font-size: 1.5rem;
   border-top: 1px solid #c8c8c8;
@@ -7,7 +7,7 @@
   margin: 1.5em 0 0;
 }
 
-.emc-quote:before {
+.jazz-quote:before {
   content: "";
   width: 115px;
   height: 8px;
@@ -18,7 +18,7 @@
   top: -9px;
 }
 
-.emc-quote:after {
+.jazz-quote:after {
   display: block;
   clear: both;
   content: "";

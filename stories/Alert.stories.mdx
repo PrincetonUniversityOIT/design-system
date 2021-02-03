@@ -4,15 +4,15 @@ import { html } from 'lit-html';
 <Meta title="Components/Alert" component="Alert" />
 
 export const Template = (args) => html`
-    <section class="emc-alert-section">
-        <h2 class="emc-alert-section__heading emc-visually-hidden">${ args.heading }</h2>
-        <div class="emc-alert-section__content">
-            <div class="emc-row">
-                <h3 class="emc-alert-section__title">${ args.title }</h3>
+    <section class="jazz-alert-section">
+        <h2 class="jazz-alert-section__heading jazz-visually-hidden">${ args.heading }</h2>
+        <div class="jazz-alert-section__content">
+            <div class="jazz-row">
+                <h3 class="jazz-alert-section__title">${ args.title }</h3>
                 <p>${ args.content }</p>
             </div>
         </div>
-        <a href="#" aria-label="Hide alert with title ${ args.title } until it is updated" title="Hide alert with title ${ args.title } until it is updated" class="emc-alert-section__close" role="button">X</a>
+        <a href="#" aria-label="Hide alert with title ${ args.title } until it is updated" title="Hide alert with title ${ args.title } until it is updated" class="jazz-alert-section__close" role="button">X</a>
     </section>
 `;
 

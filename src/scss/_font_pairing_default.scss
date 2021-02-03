@@ -2,38 +2,38 @@ html {
   font-family: $font-face-body-default;
 }
 
-h1, .emc-h1,
-h2, .emc-h2,
-h3, .emc-h3,
-h4, .emc-h4,
-h5, .emc-h5,
-h6, .emc-h6,
-.emc-page-title,
-.emc-display-heading,
-.emc-block-heading,
-.emc-card__heading,
-.emc-news-card  {
+h1, .jazz-h1,
+h2, .jazz-h2,
+h3, .jazz-h3,
+h4, .jazz-h4,
+h5, .jazz-h5,
+h6, .jazz-h6,
+.jazz-page-title,
+.jazz-display-heading,
+.jazz-block-heading,
+.jazz-card__heading,
+.jazz-news-card  {
   font-family: $font-face-heading-default;
 }
 
-footer.emc-footer h1,
-footer.emc-footer h2,
-footer.emc-footer h3,
-footer.emc-footer h4,
-footer.emc-footer h5,
-footer.emc-footer h6,
-.emc-card__footer,
-.emc-pager,
-.emc-btn,
-.emc-breadcrumb,
-.emc-modal {
+footer.jazz-footer h1,
+footer.jazz-footer h2,
+footer.jazz-footer h3,
+footer.jazz-footer h4,
+footer.jazz-footer h5,
+footer.jazz-footer h6,
+.jazz-card__footer,
+.jazz-pager,
+.jazz-btn,
+.jazz-breadcrumb,
+.jazz-modal {
   font-family: $font-face-body-default;
 }
 
-emc-event-card__title a {
+jazz-event-card__title a {
   font-family: $font-face-heading-default;
 }
 
-a.emc-tab-link {
+a.jazz-tab-link {
   font-family: $font-face-body-default;
 }

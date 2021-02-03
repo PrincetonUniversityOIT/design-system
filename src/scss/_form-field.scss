@@ -1,33 +1,33 @@
-.emc-form-field,
- .emc-form-field--error {
+.jazz-form-field,
+ .jazz-form-field--error {
    margin-top: 1.5rem;
    padding-left: 1rem;
    border-left: .25rem solid transparent;
  }
 
-.emc-form-field label,
-.emc-form-field--error label {
+.jazz-form-field label,
+.jazz-form-field--error label {
   display: block;
   line-height: 1.1;
   margin-bottom: .5rem;
   max-width: 30rem;
 }
 
-.emc-form-field--error {
-  border-left: 4px solid emc-theme-rgb(error);
+.jazz-form-field--error {
+  border-left: 4px solid jazz-theme-rgb(error);
 }
 
-.emc-form-field-error-msg {
+.jazz-form-field-error-msg {
   font-size: .85em;
-  color: emc-theme-rgb(error);
+  color: jazz-theme-rgb(error);
 }
 
-.emc-form-field-msg {
+.jazz-form-field-msg {
   font-size: .85em;
-  color: emc-theme-rgb(neutral-dark);
+  color: jazz-theme-rgb(neutral-dark);
 }
 
-.emc-form-field-required {
+.jazz-form-field-required {
   padding-left: px-to-rem(5);
-  color: emc-theme-rgb(accent);
+  color: jazz-theme-rgb(accent);
 }

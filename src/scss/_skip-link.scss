@@ -1,4 +1,4 @@
-.emc-skip-link {
+.jazz-skip-link {
   position:absolute;
   left:-10000px;
   top:auto;
@@ -7,6 +7,6 @@
   margin: .25rem;
 }
 
-.emc-skip-link:focus, .emc-skip-link--shown {
+.jazz-skip-link:focus, .jazz-skip-link--shown {
   left: auto;
 }

@@ -4,12 +4,12 @@ import { html } from 'lit-html';
 <Meta title="Components/Hidden Content" component="Hidden" />
 
 export const Template = (args) => html`
-    <h1 class="emc-visually-hidden">${ args.content }</h1>
+    <h1 class="jazz-visually-hidden">${ args.content }</h1>
     <small>Note: If you see anything above this note, then it is not working properly.</small>
 `;
 
 export const NestedTemplate = (args) => html`
-    <ul class="emc-visually-hidden">
+    <ul class="jazz-visually-hidden">
         <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
@@ -19,7 +19,7 @@ export const NestedTemplate = (args) => html`
     <ul >
         <li>Item 1</li>
         <li>Item 2</li>
-        <li class="emc-visually-hidden">Item 3</li>
+        <li class="jazz-visually-hidden">Item 3</li>
         <li>Item 4</li>
     </ul>
     <small>Note 2: Item 3 should be hidden in the list above.</small>
@@ -31,7 +31,7 @@ Sometimes it is necessary to hide content visually, but allow it to remain acces
 
 ## Usage Notes
 
-Use the ```emc-visually-hidden``` or ```emc-sr-only``` class on any HTML element that you want to hide.
+Use the ```jazz-visually-hidden``` or ```jazz-sr-only``` class on any HTML element that you want to hide.
 
 ## Implementation Notes
 

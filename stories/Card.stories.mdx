@@ -4,12 +4,12 @@ import { html } from 'lit-html';
 <Meta title="Components/Card" component="Card" />
 
 export const Template = (args) => html`
-    <div class="emc-card">
-        <h2 class="emc-card__heading">${ args.heading }</h2>
-        <div class="emc-card__content">
+    <div class="jazz-card">
+        <h2 class="jazz-card__heading">${ args.heading }</h2>
+        <div class="jazz-card__content">
             ${ args.bodyContent }
         </div>
-        <div class="emc-card__footer">
+        <div class="jazz-card__footer">
             ${ args.footerContent }
         </div>
     </div>
@@ -17,7 +17,7 @@ export const Template = (args) => html`
 
 export const NewsCardTemplate = (args) => html`
     <style>
-        .emc-news-card-container {
+        .jazz-news-card-container {
           display: flex;
           flex-flow: row;
           align-items: stretch;
@@ -27,35 +27,35 @@ export const NewsCardTemplate = (args) => html`
           background-color: gray;
         }
     </style>
-    <div class="emc-news-card-container">
-        <div class="emc-news-card">
+    <div class="jazz-news-card-container">
+        <div class="jazz-news-card">
             <a href="javascript:void(0)" tabindex="-1"><img src="img/quantumcomputing_final.jpg" alt="Quantum Computing" /></a>
             <h3><a href="javascript:void(0)">${ args.heading }</a></h3>
         </div>
-        <div class="emc-news-card">
+        <div class="jazz-news-card">
             <a href="javascript:void(0)" tabindex="-1"><img src="img/quantumcomputing_final.jpg" alt="Quantum Computing" /></a>
             <h3><a href="javascript:void(0)">${ args.heading }</a></h3>
         </div>
-        <div class="emc-news-card">
+        <div class="jazz-news-card">
             <a href="javascript:void(0)" tabindex="-1"><img src="img/quantumcomputing_final.jpg" alt="Quantum Computing" /></a>
             <h3><a href="javascript:void(0)">Quantum laser pioneer and acclaimed teacher, Claire Gmachl, elected Optical Society Fellow</a></h3>
         </div>
     </div>
     <div class="row around-xs">
         <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="emc-news-card">
+        <div class="jazz-news-card">
             <a href="javascript:void(0)" tabindex="-1"><img src="img/quantumcomputing_final.jpg" alt="Quantum Computing" /></a>
             <h3><a href="javascript:void(0)">${ args.heading }</a></h3>
         </div>
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="emc-news-card">
+        <div class="jazz-news-card">
             <a href="javascript:void(0)" tabindex="-1"><img src="img/quantumcomputing_final.jpg" alt="Quantum Computing" /></a>
             <h3><a href="javascript:void(0)">${ args.heading }</a></h3>
         </div>
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="emc-news-card">
+        <div class="jazz-news-card">
             <a href="javascript:void(0)" tabindex="-1"><img src="img/quantumcomputing_final.jpg" alt="Quantum Computing" /></a>
             <h3><a href="javascript:void(0)">Quantum laser pioneer and acclaimed teacher, Claire Gmachl, elected Optical Society Fellow</a></h3>
         </div>
@@ -64,32 +64,32 @@ export const NewsCardTemplate = (args) => html`
 `;
 
 export const EventCardTemplate = (args) => html`
-    <div class="emc-event-card-container">
-    <div class="emc-event-card">
-        <h3 class="emc-sr-only">${ args.heading }</h3>
-        <div class="emc-event-card__date-badge">
-            <div class="emc-event-card__date-badge-date" aria-hidden="true">
-                <div class="emc-event-card__date-badge-month">Nov</div>
-                <div class="emc-event-card__date-badge-day">12</div>
+    <div class="jazz-event-card-container">
+    <div class="jazz-event-card">
+        <h3 class="jazz-sr-only">${ args.heading }</h3>
+        <div class="jazz-event-card__date-badge">
+            <div class="jazz-event-card__date-badge-date" aria-hidden="true">
+                <div class="jazz-event-card__date-badge-month">Nov</div>
+                <div class="jazz-event-card__date-badge-day">12</div>
             </div>
         </div>
         <div title="Event information">
-            <div class="emc-event-card__title emc-event-card__section">
+            <div class="jazz-event-card__title jazz-event-card__section">
                 <a href="javascript:void(0);">${ args.heading }</a>
             </div>
-            <div class="emc-event-card__section">
+            <div class="jazz-event-card__section">
                 Thu, Nov 12, 2020, 12:30 pm to 1:30 pm
             </div>
-            <div class="emc-event-card__section">
-                <span class="emc-event-card__label">Location: </span>
+            <div class="jazz-event-card__section">
+                <span class="jazz-event-card__label">Location: </span>
                 <span>Bowen Hall (Auditorium)</span>
             </div>
-            <div class="emc-event-card__section">
-                <span class="emc-event-card__label">Speaker(s): </span>
+            <div class="jazz-event-card__section">
+                <span class="jazz-event-card__label">Speaker(s): </span>
                 <span>Carole-Jean Wu, Facebook AI Research/ASU</span>
             </div>
-            <div class="emc-event-card__section">
-                <ul class="emc-pill-bag">
+            <div class="jazz-event-card__section">
+                <ul class="jazz-pill-bag">
                     <li><a href="javascript:void(0);">Electrical Engineering</a></li>
                     <li><a href="javascript:void(0);">Seminars</a></li>
                 </ul>      

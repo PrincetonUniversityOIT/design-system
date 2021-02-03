@@ -1,17 +1,17 @@
-footer.emc-footer {
+footer.jazz-footer {
   background: #1b1b1b;
   color: #fff;
   padding-top: 2rem;
 }
-footer.emc-footer h1,
-footer.emc-footer h2,
-footer.emc-footer h3,
-footer.emc-footer h4,
-footer.emc-footer h5,
-footer.emc-footer h6 {
-  font-family: emc-theme-font(body);
+footer.jazz-footer h1,
+footer.jazz-footer h2,
+footer.jazz-footer h3,
+footer.jazz-footer h4,
+footer.jazz-footer h5,
+footer.jazz-footer h6 {
+  font-family: jazz-theme-font(body);
 }
-footer.emc-footer h2 {
+footer.jazz-footer h2 {
   font-size: 1rem;
   text-transform: uppercase;
   color: #fff !important;
@@ -19,42 +19,42 @@ footer.emc-footer h2 {
   font-style: normal !important;
   margin-bottom: 0;
 }
-footer.emc-footer a {
+footer.jazz-footer a {
   color: #fff;
   text-decoration: none;
 }
-footer.emc-footer a:hover {
+footer.jazz-footer a:hover {
   text-decoration: underline;
 }
-ul.emc-footer__list {
+ul.jazz-footer__list {
   list-style: none;
   padding-left: 0px;
   margin-top: 0px;
 }
-ul.emc-footer__list li {
+ul.jazz-footer__list li {
   // margin-bottom: .50rem;
 }
-ul.emc-footer__icon-list {
+ul.jazz-footer__icon-list {
   list-style: none;
   padding-left: 0px;
   margin-top: 0px;
 }
-ul.emc-footer__icon-list li {
+ul.jazz-footer__icon-list li {
   display: inline-block;
   margin-right: 10px;
 }
-.emc-footer__content {
+.jazz-footer__content {
   padding-bottom: 2rem;
 }
-.emc-footer__subfooter {
+.jazz-footer__subfooter {
   background: #000000;
   border-top: 1px solid #979797;
   padding: 1rem 0;
 }
-.emc-footer__logo {
+.jazz-footer__logo {
   width: 142px;
   float: right;
 }
-.emc-icon.emc-footer__icon {
+.jazz-icon.jazz-footer__icon {
   background-color: white;
 }

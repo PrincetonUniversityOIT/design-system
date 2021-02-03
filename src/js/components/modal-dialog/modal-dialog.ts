@@ -6,7 +6,7 @@ const MODAL_SELECTOR = `.${PREFIX}-modal`;
 const MODAL_WRAPPER_SELECTOR = `.${PREFIX}-modal-wrapper`;
 const MODAL_BUTTON_SELECTOR = `.${PREFIX}-modal__button`;
 
-const INPUT_SELECTORS_EXCL_CLOSE = 'a[href]:not([disabled]), button:not([disabled]):not(.emc-modal-button__close), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])';
+const INPUT_SELECTORS_EXCL_CLOSE = 'a[href]:not([disabled]), button:not([disabled]):not(.jazz-modal-button__close), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])';
 const INPUT_SELECTORS = 'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])';
 
 export class ModalDialogBehavior extends Behavior {
@@ -17,7 +17,7 @@ export class ModalDialogBehavior extends Behavior {
 
     init(root: ParentNode) {
         this.select(MODAL_WRAPPER_SELECTOR, root).forEach((wrapper) => {
-            wrapper.classList.remove('emc-modal__wrapper--visible')
+            wrapper.classList.remove('jazz-modal__wrapper--visible')
         });
     }
 
@@ -41,8 +41,8 @@ export class ModalDialogBehavior extends Behavior {
             }
 
             if (button.matches(MODAL_BUTTON_SELECTOR) || event instanceof KeyboardEvent) {
-                wrapper.classList.toggle('emc-modal__wrapper--visible');
-                if (wrapper.classList.contains('emc-modal__wrapper--visible')) {
+                wrapper.classList.toggle('jazz-modal__wrapper--visible');
+                if (wrapper.classList.contains('jazz-modal__wrapper--visible')) {
                     this.focusOnFirstInput(wrapper);
                 }
             }

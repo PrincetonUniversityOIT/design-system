@@ -4,45 +4,45 @@ import { html } from 'lit-html';
 <Meta title="Components/Form Inputs" component="Input" />
 
 export const TextInputTemplate = (args) => html`
-    <input class="emc-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
-    <input class="emc-input emc-focus" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
-    <input class="emc-input emc-input--error" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 3" />
-    <input class="emc-input" id="my-input4" type="text" placeholder="Placeholder" required value="${ args.value }" aria-label="My Input 4" />
+    <input class="jazz-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 1" />
+    <input class="jazz-input jazz-focus" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 2" />
+    <input class="jazz-input jazz-input--error" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-label="My Input 3" />
+    <input class="jazz-input" id="my-input4" type="text" placeholder="Placeholder" required value="${ args.value }" aria-label="My Input 4" />
 `;
 
 export const MultilineTextInputTemplate = (args) => html`
-    <textarea class="emc-input" id="my-input" type="text" aria-label="My Input">${ args.value }</textarea>
-    <textarea class="emc-input emc-focus" id="my-input2" type="text" aria-label="My Input 2">${ args.value }</textarea>
-    <textarea class="emc-input emc-input--error" id="my-input3" type="text" aria-label="My Input 3">${ args.value }</textarea>
-    <textarea class="emc-input" id="my-input4" type="text" aria-label="My Input 4" required>${ args.value }</textarea>
+    <textarea class="jazz-input" id="my-input" type="text" aria-label="My Input">${ args.value }</textarea>
+    <textarea class="jazz-input jazz-focus" id="my-input2" type="text" aria-label="My Input 2">${ args.value }</textarea>
+    <textarea class="jazz-input jazz-input--error" id="my-input3" type="text" aria-label="My Input 3">${ args.value }</textarea>
+    <textarea class="jazz-input" id="my-input4" type="text" aria-label="My Input 4" required>${ args.value }</textarea>
 `;
 
 export const CheckboxTemplate = (args) => html`
-    <fieldset class="emc-fieldset">
-        <legend class="emc-sr-only">${ args.legend }</legend>
-        <div class="emc-checkbox">
-            <input class="emc-checkbox__input" type="checkbox" id="apple" type="checkbox" checked />
-            <label class="emc-checkbox__label" for="apple">Apple</label>
+    <fieldset class="jazz-fieldset">
+        <legend class="jazz-sr-only">${ args.legend }</legend>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="apple" type="checkbox" checked />
+            <label class="jazz-checkbox__label" for="apple">Apple</label>
         </div>
-        <div class="emc-checkbox">
-            <input class="emc-checkbox__input" type="checkbox" id="orange" type="checkbox" />
-            <label class="emc-checkbox__label" for="orange">Orange</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="orange" type="checkbox" />
+            <label class="jazz-checkbox__label" for="orange">Orange</label>
         </div>
-        <div class="emc-checkbox">
-            <input class="emc-checkbox__input" type="checkbox" id="strawberry" type="checkbox" disabled />
-            <label class="emc-checkbox__label" for="strawberry">Strawberry</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="strawberry" type="checkbox" disabled />
+            <label class="jazz-checkbox__label" for="strawberry">Strawberry</label>
         </div>
-        <div class="emc-checkbox">
-            <input class="emc-checkbox__input" type="checkbox" id="watermelon" type="checkbox" disabled checked />
-            <label class="emc-checkbox__label" for="watermelon">Watermelon</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="watermelon" type="checkbox" disabled checked />
+            <label class="jazz-checkbox__label" for="watermelon">Watermelon</label>
         </div>
     </fieldset>
 `;
 
 export const DropdownTemplate = (args) => html`
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-1">Dropdown</label>
-        <div class="emc-dropdown">
+        <div class="jazz-dropdown">
             <select id="my-dropdown-1">
                 <option>Option 1</option>
                 <option>Option 2</option>
@@ -51,9 +51,9 @@ export const DropdownTemplate = (args) => html`
             </select>
         </div>
     </div>
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-2">Dropdown - Focused</label>
-        <div class="emc-dropdown emc-focus">
+        <div class="jazz-dropdown jazz-focus">
             <select id="my-dropdown-2">
                 <option>Option 1</option>
                 <option>Option 2</option>
@@ -62,9 +62,9 @@ export const DropdownTemplate = (args) => html`
             </select>
         </div>
     </div>
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-3">Dropdown - Focused</label>
-        <div class="emc-dropdown--error">
+        <div class="jazz-dropdown--error">
             <select id="my-dropdown-3">
                 <option>Option 1</option>
                 <option>Option 2</option>
@@ -73,41 +73,6 @@ export const DropdownTemplate = (args) => html`
             </select>
         </div>
     </div>    
-`;
-
-export const ComboBoxTemplate = () => html`
-    <emc-combobox id="mycombo"></emc-combobox>
-    <script id="initscript">
-        (function() {
-            let options = [
-                { name: 'Apple', value: 'Apple-Value', key: 'Apple-Value' },
-                { name: 'Banana', value: 'Banana-Value', key: 'Banana-Value' },
-                { name: 'Orange', value: 'Orange-Value', key: 'Orange-Value' },
-            ];
-            let combo = document.getElementById("mycombo");
-            console.log('found combo?' + combo);
-            console.log(combo);
-            combo.options = options;            
-        })();
-    </script>
-`;
-
-export const AutocompleteTemplate = (args) => html`
-    <script id="initscript">
-        function generateAutocompleteResults(e) {
-            let options = [
-                { name: 'Apple (' + e.detail + ')', value: 'Apple-Value', key: 'Apple-Value' },
-                { name: 'Banana (' + e.detail + ')', value: 'Banana-Value', key: 'Banana-Value' },
-                { name: 'Orange (' + e.detail + ')', value: 'Orange-Value', key: 'Orange-Value' },
-            ];
-            e.target.options = options;
-        }
-        function optionSelected(e) {
-            console.log('option-selected');
-            console.log(e);
-        }
-    </script>
-    <emc-autocomplete id="myauto" @search-changed="${(e) => generateAutocompleteResults(e) }" @option-selected="${ args.optionSelected }"></emc-autocomplete>
 `;
 
 # Form Inputs
@@ -155,21 +120,5 @@ export const AutocompleteTemplate = (args) => html`
         legend: "Types of Fruit"
     }}>
       {DropdownTemplate.bind({})}
-    </Story>
-</Canvas>
-
-<Canvas>
-    <Story name="ComboBox" args={{
-        legend: "Types of Fruit"
-    }}>
-      {ComboBoxTemplate.bind({})}
-    </Story>
-</Canvas>
-
-<Canvas>
-    <Story name="Autocomplete" args={{
-        legend: "Types of Fruit"
-    }}>
-      {AutocompleteTemplate.bind({})}
     </Story>
 </Canvas>

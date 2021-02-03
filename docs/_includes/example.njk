@@ -1,13 +1,13 @@
 {% macro example(path, name, id) %}
 
-<iframe src="{{ path }}" title="{{ title }}" class="emc-docs__code-sample"></iframe>
+<iframe src="{{ path }}" title="{{ title }}" class="jazz-docs__code-sample"></iframe>
 
-<div class="emc-accordion" role="region">
+<div class="jazz-accordion" role="region">
     <h3>
-        <button class="emc-accordion__button" aria-controls="{{ id }}">HTML Code</button>
+        <button class="jazz-accordion__button" aria-controls="{{ id }}">HTML Code</button>
     </h3>
-    <div class="emc-accordion__content emc-code-panel" id="{{ id }}">
-        <button class="emc-btn" onclick="copyCode(this)">Copy</button>
+    <div class="jazz-accordion__content jazz-code-panel" id="{{ id }}">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
         {% highlight "html" %}
         {% src path %}
         {% endhighlight %}

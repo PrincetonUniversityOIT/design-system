@@ -4,85 +4,85 @@ import { html } from 'lit-html';
 <Meta title="Components/Form" component="Forms" />
 
 export const TextInputTemplate = (args) => html`
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-input">${ args.label }</label>
-        <input class="emc-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" />
+        <input class="jazz-input" id="my-input" type="text" placeholder="Placeholder" value="${ args.value }" />
     </div>
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-input2">${ args.label } - Focused</label>
-        <input class="emc-input emc-focus" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" />
+        <input class="jazz-input jazz-focus" id="my-input2" type="text" placeholder="Placeholder" value="${ args.value }" />
     </div>
-    <div class="emc-form-field--error">
+    <div class="jazz-form-field--error">
         <label for="my-input3">${ args.label } - With Error</label>
-        <span class="emc-form-field-error-msg">Clear and brief error message</span>
-        <input class="emc-input emc-input--error" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" />
+        <span class="jazz-form-field-error-msg">Clear and brief error message</span>
+        <input class="jazz-input jazz-input--error" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" />
     </div>
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-input4">${ args.label } - Required (Required)</label>
-        <input class="emc-input" id="my-input4" type="text" placeholder="Placeholder" required value="${ args.value }" />
+        <input class="jazz-input" id="my-input4" type="text" placeholder="Placeholder" required value="${ args.value }" />
     </div>
 `;
 
 export const MultilineTextInputTemplate = (args) => html`
-    <label class="emc-label" for="my-input4">${ args.label }</label>
-    <textarea class="emc-input" id="my-input4" type="text">${ args.value }</textarea>
+    <label class="jazz-label" for="my-input4">${ args.label }</label>
+    <textarea class="jazz-input" id="my-input4" type="text">${ args.value }</textarea>
 `;
 
 export const CheckboxTemplate = (args) => html`
-    <fieldset class="emc-fieldset">
-        <legend class="emc-sr-only">${ args.legend }</legend>
-        <div class="emc-checkbox">
-            <input class="emc-checkbox__input" type="checkbox" id="apple" type="checkbox" checked />
-            <label class="emc-checkbox__label" for="apple">Apple</label>
+    <fieldset class="jazz-fieldset">
+        <legend class="jazz-sr-only">${ args.legend }</legend>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="apple" type="checkbox" checked />
+            <label class="jazz-checkbox__label" for="apple">Apple</label>
         </div>
-        <div class="emc-checkbox">
-            <input class="emc-checkbox__input" type="checkbox" id="orange" type="checkbox" />
-            <label class="emc-checkbox__label" for="orange">Orange</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="orange" type="checkbox" />
+            <label class="jazz-checkbox__label" for="orange">Orange</label>
         </div>
-        <div class="emc-checkbox">
-            <input class="emc-checkbox__input" type="checkbox" id="strawberry" type="checkbox" disabled />
-            <label class="emc-checkbox__label" for="strawberry">Strawberry</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="strawberry" type="checkbox" disabled />
+            <label class="jazz-checkbox__label" for="strawberry">Strawberry</label>
         </div>
-        <div class="emc-checkbox">
-            <input class="emc-checkbox__input" type="checkbox" id="watermelon" type="checkbox" disabled checked />
-            <label class="emc-checkbox__label" for="watermelon">Watermelon</label>
+        <div class="jazz-checkbox">
+            <input class="jazz-checkbox__input" type="checkbox" id="watermelon" type="checkbox" disabled checked />
+            <label class="jazz-checkbox__label" for="watermelon">Watermelon</label>
         </div>
     </fieldset>
 `;
 
 export const DropdownTemplate = (args) => html`
     <style>
-        .emc-form-field {
+        .jazz-form-field {
             margin-top: 1.5rem;
         }
-        .emc-form-field label {
+        .jazz-form-field label {
           display: block;
           line-height: 1.1;
           margin-bottom: .5rem;
           max-width: 30rem;    
         }
-        .emc-dropdown,
-        .emc-dropdown--error {
+        .jazz-dropdown,
+        .jazz-dropdown--error {
             background-color: #fff;
             position: relative;
         }
-        .emc-dropdown:after, 
-        .emc-dropdown:before,
-        .emc-dropdown--error:after,
-        .emc-dropdown--error:before {
+        .jazz-dropdown:after,
+        .jazz-dropdown:before,
+        .jazz-dropdown--error:after,
+        .jazz-dropdown--error:before {
             bottom: 0;
             content: "";
             pointer-events: none;
             position: absolute;
             top: 0;
         }
-        .emc-dropdown:before,
-        .emc-dropdown--error:before {
+        .jazz-dropdown:before,
+        .jazz-dropdown--error:before {
             right: 0;
             width: 1.85em;
         }
-        .emc-dropdown:after,
-        .emc-dropdown--error:after {
+        .jazz-dropdown:after,
+        .jazz-dropdown--error:after {
             border-bottom: 2px solid #e77500;
             border-right: 2px solid #e77500;
             height: .5em;
@@ -93,8 +93,8 @@ export const DropdownTemplate = (args) => html`
             width: .5em;
             z-index: 2;
         }
-        .emc-dropdown select,
-        .emc-dropdown--error select {
+        .jazz-dropdown select,
+        .jazz-dropdown--error select {
             -moz-appearance: none;
             -webkit-appearance: none;
             appearance: none;
@@ -108,21 +108,21 @@ export const DropdownTemplate = (args) => html`
             padding: .5em 2em .5em .5em;
             width: 100%;
         }
-        .emc-dropdown--error select {
+        .jazz-dropdown--error select {
             border: .25rem solid #b50909;
         }
-        .emc-dropdown select option,
-        .emc-dropdown--error select option {
+        .jazz-dropdown select option,
+        .jazz-dropdown--error select option {
             color: #000;
         }
-        .emc-dropdown select option[disabled],
-        .emc-dropdown--error select option[disabled] {
+        .jazz-dropdown select option[disabled],
+        .jazz-dropdown--error select option[disabled] {
             color: #c8c8c8;
         }
     </style>
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-1">Dropdown</label>
-        <div class="emc-dropdown">
+        <div class="jazz-dropdown">
             <select id="my-dropdown-1">
                 <option>Option 1</option>
                 <option>Option 2</option>
@@ -131,9 +131,9 @@ export const DropdownTemplate = (args) => html`
             </select>
         </div>
     </div>
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-2">Dropdown - Focused</label>
-        <div class="emc-dropdown emc-focus">
+        <div class="jazz-dropdown jazz-focus">
             <select id="my-dropdown-2">
                 <option>Option 1</option>
                 <option>Option 2</option>
@@ -142,9 +142,9 @@ export const DropdownTemplate = (args) => html`
             </select>
         </div>
     </div>
-    <div class="emc-form-field">
+    <div class="jazz-form-field">
         <label for="my-dropdown-3">Dropdown - Focused</label>
-        <div class="emc-dropdown--error">
+        <div class="jazz-dropdown--error">
             <select id="my-dropdown-3">
                 <option>Option 1</option>
                 <option>Option 2</option>
@@ -156,7 +156,7 @@ export const DropdownTemplate = (args) => html`
 `;
 
 export const ComboBoxTemplate = () => html`
-    <emc-combobox id="mycombo"></emc-combobox>
+    <jazz-combobox id="mycombo"></jazz-combobox>
     <script id="initscript">
         (function() {
             let options = [
@@ -187,15 +187,15 @@ export const AutocompleteTemplate = (args) => html`
             console.log(e);
         }
     </script>
-    <emc-autocomplete id="myauto" @search-changed="${(e) => generateAutocompleteResults(e) }" @option-selected="${ args.optionSelected }"></emc-autocomplete>
+    <jazz-autocomplete id="myauto" @search-changed="${(e) => generateAutocompleteResults(e) }" @option-selected="${ args.optionSelected }"></jazz-autocomplete>
 `;
 
 export const FileUploadTemplate = (args) => html`
     <style>
-        .emc-file-upload {
+        .jazz-file-upload {
             display: none;
         }
-        .emc-file-upload__label span[role=button] {
+        .jazz-file-upload__label span[role=button] {
             display: inline-block;
             font-family: Roboto, sans-serif;
             font-size: 1rem;
@@ -204,11 +204,11 @@ export const FileUploadTemplate = (args) => html`
             cursor: pointer;
             background-color: #265986;
         }
-        .emc-file-upload__label span[role=button]:hover {
+        .jazz-file-upload__label span[role=button]:hover {
             background-color: #183a57;
             border-color: #265986;
         }
-        .emc-file-upload__text {
+        .jazz-file-upload__text {
             display: inline-block;
             margin-left: -5px;
             width: 20rem;
@@ -220,12 +220,12 @@ export const FileUploadTemplate = (args) => html`
             background-color: #ffffff;
         }
     </style>
-    <label for="fileupload" id="buttonlabel" class="emc-file-upload__label">
+    <label for="fileupload" id="buttonlabel" class="jazz-file-upload__label">
         <span role="button" aria-controls="filename" tabindex="0">Upload File</span>
     </label>
-    <input type="file" id="fileupload" class="emc-file-upload" />
-    <label for="filename" class="emc-sr-only">Uploaded File</label>
-    <input type="text" id="filename" autocomplete="off" readonly placeholder="No File Chosen" class="emc-file-upload__text" />
+    <input type="file" id="fileupload" class="jazz-file-upload" />
+    <label for="filename" class="jazz-sr-only">Uploaded File</label>
+    <input type="text" id="filename" autocomplete="off" readonly placeholder="No File Chosen" class="jazz-file-upload__text" />
 `;
 
 # Forms

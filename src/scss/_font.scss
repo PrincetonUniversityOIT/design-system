@@ -1,9 +1,9 @@
-$emc-font-map: (
-        emc-lora: ('Lora', serif),
-        emc-public-sans: ('Public Sans', sans-serif),
-        emc-roboto: ('Roboto', sans-serif)
+$jazz-font-map: (
+        jazz-lora: ('Lora', serif),
+        jazz-public-sans: ('Public Sans', sans-serif),
+        jazz-roboto: ('Roboto', sans-serif)
 );
 
-@each $key, $value in $emc-font-map {
+@each $key, $value in $jazz-font-map {
   .#{$key} { font-family: $value; }
 }
