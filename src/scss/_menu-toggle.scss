@@ -1,9 +1,9 @@
-.emc-menu {
+.pjz-menu {
   display: flex;
   flex-wrap: wrap;
 }
 
-.emc-menu__menu-toggle {
+.pjz-menu__menu-toggle {
   top: px-to-rem(-146);
   right: px-to-rem(48);
   background-color: white;
@@ -15,30 +15,30 @@
   display: flex;
 }
 
-.emc-menu__menu-toggle-absolute {
+.pjz-menu__menu-toggle-absolute {
   position: absolute;
 }
 
-.emc-menu__main-menu {
-  @include emc-theme-color(header-navbar);
+.pjz-menu__main-menu {
+  @include pjz-theme-color(header-navbar);
   height: px-to-rem(51);
 }
 
-.emc-menu__nav-container {
+.pjz-menu__nav-container {
   display: none;
 }
-.emc-menu__nav-container--expanded {
-  @include emc-theme-color(header-nav);
+.pjz-menu__nav-container--expanded {
+  @include pjz-theme-color(header-nav);
   left: 0;
   top: px-to-rem(-104);
   width: 100%;
   z-index: 1000;
   display: block;
 }
-.emc-menu__subnav-container {
+.pjz-menu__subnav-container {
   display: none;
 }
-.emc-menu__subnav-container--expanded{
+.pjz-menu__subnav-container--expanded{
   left: 0;
   top: px-to-rem(-104);
   width: 100%;
@@ -46,10 +46,10 @@
   display: block;
 }
 @include for-tablet-landscape-up {
-  .emc-menu__menu-toggle {
+  .pjz-menu__menu-toggle {
     display: none;
   }
-  .emc-menu__nav-container {
+  .pjz-menu__nav-container {
     display: flex;
     flex-basis: auto;
     flex-grow: 1;

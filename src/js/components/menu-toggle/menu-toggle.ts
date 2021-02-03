@@ -101,14 +101,14 @@ export class MenuToggleBehavior extends Behavior {
             navContainer.classList.add(MENU_NAV_EXPANDED_STYLE);
             navbar.classList.add(MENUBAR_SHOWN_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "true");
-            menuToggleIcon.classList.remove("emc-icon-menu");
+            menuToggleIcon.classList.remove("pjz-icon-menu");
             menuToggleIcon.classList.add(ICON_CLOSE);
         } else {
             navContainer.classList.remove(MENU_NAV_EXPANDED_STYLE);
             navbar.classList.remove(MENUBAR_SHOWN_STYLE);
             buttonToReset.setAttribute(ARIA_EXPANDED, "false");
             menuToggleIcon.classList.remove(ICON_CLOSE);
-            menuToggleIcon.classList.add("emc-icon-menu");
+            menuToggleIcon.classList.add("pjz-icon-menu");
         }
     }
 

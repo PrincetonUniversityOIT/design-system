@@ -1,5 +1,5 @@
-.emc-btn {
-  font-family: emc-theme-font(body);
+.pjz-btn {
+  font-family: pjz-theme-font(body);
   font-size: 1.06rem;
   line-height: .9;
   -moz-osx-font-smoothing: grayscale;
@@ -21,28 +21,28 @@
   width: 100%;
 }
 
-.emc-btn.emc-btn--hover, .emc-btn:hover {
+.pjz-btn.pjz-btn--hover, .pjz-btn:hover {
   color: #fff;
   background-color: get-color("primary-bg-dark"); // #1a4480;
   border-bottom: 0;
   text-decoration: none;
 }
 
-.emc-btn.emc-btn--active, .emc-btn:active {
+.pjz-btn.pjz-btn--active, .pjz-btn:active {
   color: #fff;
   background-color: get-color("primary-bg-darker"); // #162e51;
 }
 
-.emc-btn.emc-btn--focus, .emc-btn:focus {
+.pjz-btn.pjz-btn--focus, .pjz-btn:focus {
   outline: .25rem solid get-color("focus"); // #2491ff;
   outline-offset: 0;
 }
 
-.emc-btn:not([disabled]).emc-focus, .emc-btn:not([disabled]):focus {
+.pjz-btn:not([disabled]).pjz-focus, .pjz-btn:not([disabled]):focus {
   outline-offset: .25rem;
 }
 
-.emc-btn:disabled {
+.pjz-btn:disabled {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   background-color: get-color("primary-bg-disabled"); // #c9c9c9;
@@ -50,7 +50,7 @@
   pointer-events: none;
 }
 
-.emc-btn.emc-btn--unstyled {
+.pjz-btn.pjz-btn--unstyled {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
   color: #005ea2;
@@ -66,7 +66,7 @@
 }
 
 @media (min-width: 30em) {
-  .emc-btn {
+  .pjz-btn {
     width: auto;
   }
 }

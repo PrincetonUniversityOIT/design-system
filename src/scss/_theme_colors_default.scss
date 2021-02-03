@@ -1,108 +1,108 @@
 // default theme
-$emc-theme-feature-colors: (
+$pjz-theme-feature-colors: (
 
   // general theme options
-        accent: emc-princeton-orange,
-        neutral-light: emc-gray-20,
-        neutral-dark: emc-gray-60,
-        success: emc-green,
-        error: emc-red,
-        info: emc-blue,
-        warning: emc-indigo,
+        accent: pjz-princeton-orange,
+        neutral-light: pjz-gray-20,
+        neutral-dark: pjz-gray-60,
+        success: pjz-green,
+        error: pjz-red,
+        info: pjz-blue,
+        warning: pjz-indigo,
 
-        body-text: emc-black,
+        body-text: pjz-black,
 
-        link: emc-blue-dark,
-        link-visited: emc-indigo-dark,
-        link-hover: emc-blue,
-        link-active: emc-blue,
-        link-focus: emc-blue,
+        link: pjz-blue-dark,
+        link-visited: pjz-indigo-dark,
+        link-hover: pjz-blue,
+        link-active: pjz-blue,
+        link-focus: pjz-blue,
 
-        breadcrumb-item: emc-gray-60,
+        breadcrumb-item: pjz-gray-60,
 
   // header theme options
-        header-cap: emc-princeton-orange,
-        header-pu-branding: emc-white,
-        header-site-branding: emc-white,
-        header-utility-menu-underline: emc-princeton-orange,
-        header-utility-menu-border-hover__small: emc-princeton-orange,
-        header-utility-menu-border__small: emc-gray-20,
-        header-search-border: emc-cool-gray-40, // was formerly #c8c8c8
-        header-search-input: emc-white,
-        header-search-bar-bottom-border: emc-gray-20,
-        header-searchbar: emc-white,
-        header-nav: emc-white,
-        header-navbar: emc-white,
+        header-cap: pjz-princeton-orange,
+        header-pu-branding: pjz-white,
+        header-site-branding: pjz-white,
+        header-utility-menu-underline: pjz-princeton-orange,
+        header-utility-menu-border-hover__small: pjz-princeton-orange,
+        header-utility-menu-border__small: pjz-gray-20,
+        header-search-border: pjz-cool-gray-40, // was formerly #c8c8c8
+        header-search-input: pjz-white,
+        header-search-bar-bottom-border: pjz-gray-20,
+        header-searchbar: pjz-white,
+        header-nav: pjz-white,
+        header-navbar: pjz-white,
 
   // menubar theme options
-        menubar-lg-primary: emc-white,
-        menubar-lg-primary-hover-underline: emc-gray-40,
-        menubar-lg-primary-current-underline: emc-princeton-orange,
-        menubar-lg-secondary: emc-white,
-        menubar-lg-secondary-hover: emc-gray-20, // #f4f4f4
-        menubar-lg-secondary-current: emc-white,
-        menubar-lg-secondary-border: emc-gray-40,
-        menubar-sm: emc-white,
-        menubar-sm-current: emc-gray-40,
-        menubar-sm-border-bottom: emc-gray-40,
-        menubar-sm-border-bottom-hover: emc-princeton-orange,
+        menubar-lg-primary: pjz-white,
+        menubar-lg-primary-hover-underline: pjz-gray-40,
+        menubar-lg-primary-current-underline: pjz-princeton-orange,
+        menubar-lg-secondary: pjz-white,
+        menubar-lg-secondary-hover: pjz-gray-20, // #f4f4f4
+        menubar-lg-secondary-current: pjz-white,
+        menubar-lg-secondary-border: pjz-gray-40,
+        menubar-sm: pjz-white,
+        menubar-sm-current: pjz-gray-40,
+        menubar-sm-border-bottom: pjz-gray-40,
+        menubar-sm-border-bottom-hover: pjz-princeton-orange,
 
   // form theme options
-        form-input-border: emc-gray-40,
-        form-input: emc-white,
-        form-input__disabled: emc-gray-40,
+        form-input-border: pjz-gray-40,
+        form-input: pjz-white,
+        form-input__disabled: pjz-gray-40,
 
   // tabs
-        tab: emc-white,
+        tab: pjz-white,
 
   // pager theme
-        pager-item: emc-gray-20,
-        pager-item-active: emc-gray-60,
-        pager-item-hover: emc-gray-80,
-        pager-item-disabled: emc-gray-20,
-        pager-item-border: emc-dirty-white,
+        pager-item: pjz-gray-20,
+        pager-item-active: pjz-gray-60,
+        pager-item-hover: pjz-gray-80,
+        pager-item-disabled: pjz-gray-20,
+        pager-item-border: pjz-dirty-white,
 
   // overflow menu theme
-        overflow-menu: emc-white,
-        overflow-menu-divider: emc-cool-gray-20,
-        overflow-menu-active: emc-blue,
-        overflow-menu-danger: emc-red,
+        overflow-menu: pjz-white,
+        overflow-menu-divider: pjz-cool-gray-20,
+        overflow-menu-active: pjz-blue,
+        overflow-menu-danger: pjz-red,
 
   // modal theme
-        modal-wrapper: emc-gray-40,
-        modal: emc-white,
+        modal-wrapper: pjz-gray-40,
+        modal: pjz-white,
 
   // toolbar theme
-        toolbar: emc-gray-20,
-        toolbar-section-divider: emc-gray,
-        toolbar-legend-color: emc-gray-80,
+        toolbar: pjz-gray-20,
+        toolbar-section-divider: pjz-gray,
+        toolbar-legend-color: pjz-gray-80,
 
-        card: emc-white,
+        card: pjz-white,
 );
 
 // example olive theme
-//$emc-theme-feature-colors: (
-//  header-cap: emc-rose-dark, // emc-princeton-orange
-//  header-pu-branding: emc-olive, // emc-white
-//  header-site-branding: emc-lime, // emc-white
-//  header-utility-menu-underline: emc-lime, // emc-princeton-orange
-//  header-utility-menu-border-hover__small: emc-rose-dark // emc-princeton-orange,
-//  header-utility-menu-border__small: emc-gray-20,
-//  header-search-border: emc-black, // emc-cool-gray-40 // was formerly #c8c8c8
-//  header-search-input: emc-lime,
-//  header-search-bar-bottom-border: emc-gray-20,
-//  header-searchbar: emc-olive, // emc-white
-//  header-nav: emc-lime, // emc-white
-//  header-navbar: emc-lime, // emc-white
-//  menubar-lg-primary: emc-lime,
-//  menubar-lg-primary-hover-underline: emc-gray-40, // emc-gray-40
-//  menubar-lg-primary-current-underline: emc-rose-dark, // emc-princeton-orange
-//  menubar-lg-secondary: emc-olive, // emc-white,
-//  menubar-lg-secondary-hover: emc-lime, // emc-gray-20, // #f4f4f4
-//  menubar-lg-secondary-current: emc-gray-20, // emc-white
-//  menubar-lg-secondary-border: emc-black, // emc-gray-40
-//  menubar-sm: emc-olive, // emc-white
-//  menubar-sm-current: emc-lime, // emc-gray-40
-//  menubar-sm-border-bottom: emc-lime, // emc-gray-40
-//  menubar-sm-border-bottom-hover: emc-rose-dark, // emc-princeton-orange
+//$pjz-theme-feature-colors: (
+//  header-cap: pjz-rose-dark, // pjz-princeton-orange
+//  header-pu-branding: pjz-olive, // pjz-white
+//  header-site-branding: pjz-lime, // pjz-white
+//  header-utility-menu-underline: pjz-lime, // pjz-princeton-orange
+//  header-utility-menu-border-hover__small: pjz-rose-dark // pjz-princeton-orange,
+//  header-utility-menu-border__small: pjz-gray-20,
+//  header-search-border: pjz-black, // pjz-cool-gray-40 // was formerly #c8c8c8
+//  header-search-input: pjz-lime,
+//  header-search-bar-bottom-border: pjz-gray-20,
+//  header-searchbar: pjz-olive, // pjz-white
+//  header-nav: pjz-lime, // pjz-white
+//  header-navbar: pjz-lime, // pjz-white
+//  menubar-lg-primary: pjz-lime,
+//  menubar-lg-primary-hover-underline: pjz-gray-40, // pjz-gray-40
+//  menubar-lg-primary-current-underline: pjz-rose-dark, // pjz-princeton-orange
+//  menubar-lg-secondary: pjz-olive, // pjz-white,
+//  menubar-lg-secondary-hover: pjz-lime, // pjz-gray-20, // #f4f4f4
+//  menubar-lg-secondary-current: pjz-gray-20, // pjz-white
+//  menubar-lg-secondary-border: pjz-black, // pjz-gray-40
+//  menubar-sm: pjz-olive, // pjz-white
+//  menubar-sm-current: pjz-lime, // pjz-gray-40
+//  menubar-sm-border-bottom: pjz-lime, // pjz-gray-40
+//  menubar-sm-border-bottom-hover: pjz-rose-dark, // pjz-princeton-orange
 //);

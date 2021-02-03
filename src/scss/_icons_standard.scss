@@ -1,4 +1,4 @@
-$emc-icons-standard: (
+$pjz-icons-standard: (
         facebook: '../icons/iconmonstr-facebook-6.svg',
         twitter:  '../icons/iconmonstr-twitter-1.svg',
         linkedin: '../icons/iconmonstr-linkedin-3.svg',
@@ -16,8 +16,8 @@ $emc-icons-standard: (
         right-arrow: '../icons/angle-arrow-pointing-to-right.svg',
 );
 
-@each $name, $path in map-merge($emc-icons-standard, $emc-icons-custom) {
-  .emc-icon-#{$name} {
+@each $name, $path in map-merge($pjz-icons-standard, $pjz-icons-custom) {
+  .pjz-icon-#{$name} {
     -webkit-mask-image: url(#{$path});
     mask-image: url($path);
   }
@@ -26,6 +26,6 @@ $emc-icons-standard: (
 /// Provides the icon path of the specified icon for use in CSS url references.
 /// @parameter {string} $name - The name of the icon for which the path is desired.
 /// @return {string} The path of the specified icon.
-@function emc-icons-path($name) {
-  @return map-get(map-merge($emc-icons-standard, $emc-icons-custom), $name);
+@function pjz-icons-path($name) {
+  @return map-get(map-merge($pjz-icons-standard, $pjz-icons-custom), $name);
 }

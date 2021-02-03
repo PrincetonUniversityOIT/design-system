@@ -1,29 +1,29 @@
 a {
-  color: emc-theme-rgb(link);
+  color: pjz-theme-rgb(link);
 }
 
-a:visited, .emc-link-visited {
-  color: emc-theme-rgb(link-visited);
+a:visited, .pjz-link-visited {
+  color: pjz-theme-rgb(link-visited);
 }
 
-.emc-highlight-visited a:visited, .emc-highlight-visited .emc-link-visited {
-  color: emc-theme-rgb(link);
+.pjz-highlight-visited a:visited, .pjz-highlight-visited .pjz-link-visited {
+  color: pjz-theme-rgb(link);
 }
 
-a:focus, .emc-link-focus {
-  color: emc-theme-rgb(link-focus);
+a:focus, .pjz-link-focus {
+  color: pjz-theme-rgb(link-focus);
 }
 
-a:active, .emc-link-active {
-  color: emc-theme-rgb(link-active);
+a:active, .pjz-link-active {
+  color: pjz-theme-rgb(link-active);
 }
 
-a:hover, .emc-link-hover {
-  color: emc-theme-rgb(link-hover);
+a:hover, .pjz-link-hover {
+  color: pjz-theme-rgb(link-hover);
 }
 
-a:disabled, .emc-link-disabled {
-  color: emc-theme-rgb(link);
+a:disabled, .pjz-link-disabled {
+  color: pjz-theme-rgb(link);
   cursor: not-allowed;
   opacity: 0.7;
   text-decoration: none;
@@ -31,14 +31,14 @@ a:disabled, .emc-link-disabled {
 
 a[target="_blank"]::after {
   content:"";
-  background-image: url(emc-icons-path("external"));
+  background-image: url(pjz-icons-path("external"));
   display: inline-block;
   background-size: px-to-rem(15) px-to-rem(15);
   width:px-to-rem(15);
   height:px-to-rem(15);
   margin-left: 0.2em;
 }
-.emc-no-icon[target="_blank"]::after {
+.pjz-no-icon[target="_blank"]::after {
   content: none;
   display: inherit;
   margin-left: inherit;;

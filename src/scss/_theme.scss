@@ -1,18 +1,18 @@
 /// Applies background and foreground color for the specified feature
 /// @parameter {string} $feature - The name of the feature that corresponds to the color pair being referenced.
 /// @group Theme
-@mixin emc-theme-color($feature) {
-  background-color: map-get(map-get($emc-color-map, map-get($emc-theme-feature-colors, $feature)), background-color);
-  color: map-get(map-get($emc-color-map, map-get($emc-theme-feature-colors, $feature)), color);
+@mixin pjz-theme-color($feature) {
+  background-color: map-get(map-get($pjz-color-map, map-get($pjz-theme-feature-colors, $feature)), background-color);
+  color: map-get(map-get($pjz-color-map, map-get($pjz-theme-feature-colors, $feature)), color);
 }
 
 /// Provides the RGB color code for the specified feature.
 /// @parameter {string} $feature - The name of the feature that corresponds to the color being referenced.
 /// @group Theme
-@function emc-theme-rgb($feature) {
-  @return map-get(map-get($emc-color-map, map-get($emc-theme-feature-colors, $feature)), background-color);
+@function pjz-theme-rgb($feature) {
+  @return map-get(map-get($pjz-color-map, map-get($pjz-theme-feature-colors, $feature)), background-color);
 }
 
-@function emc-theme-font($feature) {
-  @return map-get($emc-font-map, map-get($emc-theme-feature-fonts, $feature));
+@function pjz-theme-font($feature) {
+  @return map-get($pjz-font-map, map-get($pjz-theme-feature-fonts, $feature));
 }

@@ -1,17 +1,17 @@
-footer.emc-footer {
+footer.pjz-footer {
   background: #1b1b1b;
   color: #fff;
   padding-top: 2rem;
 }
-footer.emc-footer h1,
-footer.emc-footer h2,
-footer.emc-footer h3,
-footer.emc-footer h4,
-footer.emc-footer h5,
-footer.emc-footer h6 {
-  font-family: emc-theme-font(body);
+footer.pjz-footer h1,
+footer.pjz-footer h2,
+footer.pjz-footer h3,
+footer.pjz-footer h4,
+footer.pjz-footer h5,
+footer.pjz-footer h6 {
+  font-family: pjz-theme-font(body);
 }
-footer.emc-footer h2 {
+footer.pjz-footer h2 {
   font-size: 1rem;
   text-transform: uppercase;
   color: #fff !important;
@@ -19,42 +19,42 @@ footer.emc-footer h2 {
   font-style: normal !important;
   margin-bottom: 0;
 }
-footer.emc-footer a {
+footer.pjz-footer a {
   color: #fff;
   text-decoration: none;
 }
-footer.emc-footer a:hover {
+footer.pjz-footer a:hover {
   text-decoration: underline;
 }
-ul.emc-footer__list {
+ul.pjz-footer__list {
   list-style: none;
   padding-left: 0px;
   margin-top: 0px;
 }
-ul.emc-footer__list li {
+ul.pjz-footer__list li {
   // margin-bottom: .50rem;
 }
-ul.emc-footer__icon-list {
+ul.pjz-footer__icon-list {
   list-style: none;
   padding-left: 0px;
   margin-top: 0px;
 }
-ul.emc-footer__icon-list li {
+ul.pjz-footer__icon-list li {
   display: inline-block;
   margin-right: 10px;
 }
-.emc-footer__content {
+.pjz-footer__content {
   padding-bottom: 2rem;
 }
-.emc-footer__subfooter {
+.pjz-footer__subfooter {
   background: #000000;
   border-top: 1px solid #979797;
   padding: 1rem 0;
 }
-.emc-footer__logo {
+.pjz-footer__logo {
   width: 142px;
   float: right;
 }
-.emc-icon.emc-footer__icon {
+.pjz-icon.pjz-footer__icon {
   background-color: white;
 }

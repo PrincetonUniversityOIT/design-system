@@ -1,6 +1,6 @@
 // em's are used for media queries (instead of rem's) because of a Safari bug
 
-.emc-container {
+.pjz-container {
   position: relative;
   width: 100%;
   padding-right: px-to-rem(16);
@@ -9,12 +9,12 @@
   margin-left: auto;
 }
 @include for-tablet-landscape-up {
-  .emc-container {
+  .pjz-container {
     max-width: 60em;
   }
 }
 @include for-desktop-up {
-  .emc-container {
+  .pjz-container {
     max-width: 75em;
   }
 }

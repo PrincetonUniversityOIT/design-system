@@ -4,66 +4,66 @@ import { html } from 'lit-html';
 <Meta title="Components/Toolbar" component="Toolbar" />
 
 export const DefaultToolbarTemplate = (args) => html`
-    <div class="emc-toolbar">
-      <div class="emc-toolbar-section">
+    <div class="pjz-toolbar">
+      <div class="pjz-toolbar-section">
         <fieldset>
             <legend>${ args.section1 }</legend>
-            <button class="emc-btn">${ args.action1 }</button>
-            <button class="emc-btn">${ args.action2 }</button>
-            <button class="emc-btn">${ args.action3 }</button>
-            <button class="emc-btn">${ args.action4 }</button>
+            <button class="pjz-btn">${ args.action1 }</button>
+            <button class="pjz-btn">${ args.action2 }</button>
+            <button class="pjz-btn">${ args.action3 }</button>
+            <button class="pjz-btn">${ args.action4 }</button>
         </fieldset>
        </div>
-       <div class="emc-toolbar-section emc-toolbar-last-section">
+       <div class="pjz-toolbar-section pjz-toolbar-last-section">
         <fieldset>
            <legend>${ args.section2 }</legend>
-           <button class="emc-btn">${ args.action1 }</button>
-           <button class="emc-btn" disabled>${ args.action2 }</button>
+           <button class="pjz-btn">${ args.action1 }</button>
+           <button class="pjz-btn" disabled>${ args.action2 }</button>
         </fieldset>
       </div>
    </div>
 `;
 
 export const OverflowToolbarTemplate = (args) => html`
-    <div class="emc-toolbar">
-      <div class="emc-toolbar-section">
+    <div class="pjz-toolbar">
+      <div class="pjz-toolbar-section">
         <fieldset>
             <legend>${ args.section1 }</legend>
-            <button class="emc-btn">${ args.action1 }</button>
-            <button class="emc-btn">${ args.action2 }</button>
-            <button class="emc-btn">${ args.action3 }</button>
-            <button class="emc-btn">${ args.action4 }</button>
+            <button class="pjz-btn">${ args.action1 }</button>
+            <button class="pjz-btn">${ args.action2 }</button>
+            <button class="pjz-btn">${ args.action3 }</button>
+            <button class="pjz-btn">${ args.action4 }</button>
         </fieldset>
        </div>
-       <div class="emc-toolbar-section emc-toolbar-last-section">
+       <div class="pjz-toolbar-section pjz-toolbar-last-section">
         <fieldset>
            <legend>${ args.section2 }</legend>
-           <button class="emc-btn">${ args.action1 }</button>
-           <button class="emc-btn" disabled>${ args.action2 }</button>
+           <button class="pjz-btn">${ args.action1 }</button>
+           <button class="pjz-btn" disabled>${ args.action2 }</button>
         </fieldset>
       </div>
        <div class="pull-right" style="margin-top: 28px;">
-          <div tabindex="0" aria-label="Overflow menu description" class="emc-overflow-menu">
-           <svg class="emc-overflow-menu-icon" width="4" height="20" viewBox="0 0 4 20" fill-rule="evenodd">
+          <div tabindex="0" aria-label="Overflow menu description" class="pjz-overflow-menu">
+           <svg class="pjz-overflow-menu-icon" width="4" height="20" viewBox="0 0 4 20" fill-rule="evenodd">
              <circle cx="2" cy="2" r="2"></circle>
              <circle cx="2" cy="10" r="2"></circle>
              <circle cx="2" cy="18" r="2"></circle>
            </svg>
-           <ul class="emc-overflow-menu-options emc-overflow-menu-options--open" tabindex="-1">
-             <li class="emc-overflow-menu-options-option">
-               <button class="emc-overflow-menu-options-btn">Stop app</button>
+           <ul class="pjz-overflow-menu-options pjz-overflow-menu-options--open" tabindex="-1">
+             <li class="pjz-overflow-menu-options-option">
+               <button class="pjz-overflow-menu-options-btn">Stop app</button>
              </li>
-             <li class="emc-overflow-menu-options-option">
-               <button class="emc-overflow-menu-options-btn">Restart app</button>
+             <li class="pjz-overflow-menu-options-option">
+               <button class="pjz-overflow-menu-options-btn">Restart app</button>
              </li>
-             <li class="emc-overflow-menu-options-option">
-               <button class="emc-overflow-menu-options-btn">Rename app</button>
+             <li class="pjz-overflow-menu-options-option">
+               <button class="pjz-overflow-menu-options-btn">Rename app</button>
              </li>
-             <li class="emc-overflow-menu-options-option">
-               <button class="emc-overflow-menu-options-btn">Edit routes and access</button>
+             <li class="pjz-overflow-menu-options-option">
+               <button class="pjz-overflow-menu-options-btn">Edit routes and access</button>
              </li>
-             <li class="emc-overflow-menu-options-option emc-overflow-menu-options-option--danger">
-               <button class="emc-overflow-menu-options-btn">Delete app</button>
+             <li class="pjz-overflow-menu-options-option pjz-overflow-menu-options-option--danger">
+               <button class="pjz-overflow-menu-options-btn">Delete app</button>
              </li>
            </ul>
           </div>

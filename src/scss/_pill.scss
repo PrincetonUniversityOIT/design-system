@@ -1,5 +1,5 @@
-.emc-pill {
-  @include emc-theme-color(neutral-light);
+.pjz-pill {
+  @include pjz-theme-color(neutral-light);
   display: inline-block;
   border-radius: px-to-rem(500);
   padding: px-to-rem(2) px-to-rem(16) px-to-rem(2) px-to-rem(16);
@@ -9,17 +9,17 @@
   text-decoration: none;
   line-height: 1.5;
 }
-.emc-pill:hover {
+.pjz-pill:hover {
   text-decoration: underline;
 }
-ul.emc-pill-bag {
+ul.pjz-pill-bag {
   list-style: none;
   margin: 0px;
   padding: 0px;
   display: inline-block;
 }
-ul.emc-pill-bag li {
-  @include emc-theme-color(neutral-light);
+ul.pjz-pill-bag li {
+  @include pjz-theme-color(neutral-light);
   display: inline-block;
   border-radius: px-to-rem(500);
   padding: px-to-rem(2) px-to-rem(16) px-to-rem(2) px-to-rem(16);
@@ -28,10 +28,10 @@ ul.emc-pill-bag li {
   font-weight: bold;
   text-decoration: none;
 }
-ul.emc-pill-bag li a {
+ul.pjz-pill-bag li a {
   color: black;
   text-decoration: none;
 }
-ul.emc-pill-bag li a:hover {
+ul.pjz-pill-bag li a:hover {
   text-decoration: underline;
 }

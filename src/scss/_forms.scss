@@ -1,31 +1,31 @@
-.emc-input, .emc-select, .emc-textarea {
-  @include emc-theme-color(form-input);
+.pjz-input, .pjz-select, .pjz-textarea {
+  @include pjz-theme-color(form-input);
   border-radius: 0;
-  border: 1px solid emc-theme-rgb(form-input-border);
+  border: 1px solid pjz-theme-rgb(form-input-border);
   display: block;
   margin-top: .5rem;
   max-width: 30rem;
   padding: .5rem;
 }
 
-.emc-input.emc-input--error {
-  border: .25rem solid emc-theme-rgb(error);
+.pjz-input.pjz-input--error {
+  border: .25rem solid pjz-theme-rgb(error);
 }
 
 // taken from digital.gov
-.emc-fieldset {
+.pjz-fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
 // TODO: doesn't work in firefox
-.emc-checkbox__input {
+.pjz-checkbox__input {
   width: 1.25em;
   height: 1.25em;
 }
 
-textarea.emc-input {
+textarea.pjz-input {
   width: 100%;
   max-width: 100%;
 }

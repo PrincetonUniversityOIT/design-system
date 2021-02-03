@@ -2,38 +2,38 @@ html {
   font-family: $font-face-body-default;
 }
 
-h1, .emc-h1,
-h2, .emc-h2,
-h3, .emc-h3,
-h4, .emc-h4,
-h5, .emc-h5,
-h6, .emc-h6,
-.emc-page-title,
-.emc-display-heading,
-.emc-block-heading,
-.emc-card__heading,
-.emc-news-card  {
+h1, .pjz-h1,
+h2, .pjz-h2,
+h3, .pjz-h3,
+h4, .pjz-h4,
+h5, .pjz-h5,
+h6, .pjz-h6,
+.pjz-page-title,
+.pjz-display-heading,
+.pjz-block-heading,
+.pjz-card__heading,
+.pjz-news-card  {
   font-family: $font-face-heading-default;
 }
 
-footer.emc-footer h1,
-footer.emc-footer h2,
-footer.emc-footer h3,
-footer.emc-footer h4,
-footer.emc-footer h5,
-footer.emc-footer h6,
-.emc-card__footer,
-.emc-pager,
-.emc-btn,
-.emc-breadcrumb,
-.emc-modal {
+footer.pjz-footer h1,
+footer.pjz-footer h2,
+footer.pjz-footer h3,
+footer.pjz-footer h4,
+footer.pjz-footer h5,
+footer.pjz-footer h6,
+.pjz-card__footer,
+.pjz-pager,
+.pjz-btn,
+.pjz-breadcrumb,
+.pjz-modal {
   font-family: $font-face-body-default;
 }
 
-emc-event-card__title a {
+pjz-event-card__title a {
   font-family: $font-face-heading-default;
 }
 
-a.emc-tab-link {
+a.pjz-tab-link {
   font-family: $font-face-body-default;
 }

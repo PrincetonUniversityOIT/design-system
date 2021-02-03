@@ -7,17 +7,17 @@ it('We should be able to call new() on MenuToggleBehavior', () => {
 });
 
 const template = `
-    <nav aria-label="Main Menu" class="emc-menu emc-menu__main-menu">
-        <h2 class="emc-sr-only">Main Menu</h2>
-        <div class="emc-container">
-        <div class="emc-menu__main-menu-navbar">
-            <button id="emc-menu__menu-toggle" class="emc-menu__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i id="main-icon" class="emc-icon emc-icon-menu" aria-hidden="true"></i></button>
-            <div id="emc-menu__nav-container" class="emc-menu__nav-container">
-                <ul class="emc-menubar" role="list">
+    <nav aria-label="Main Menu" class="pjz-menu pjz-menu__main-menu">
+        <h2 class="pjz-sr-only">Main Menu</h2>
+        <div class="pjz-container">
+        <div class="pjz-menu__main-menu-navbar">
+            <button id="pjz-menu__menu-toggle" class="pjz-menu__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i id="main-icon" class="pjz-icon pjz-icon-menu" aria-hidden="true"></i></button>
+            <div id="pjz-menu__nav-container" class="pjz-menu__nav-container">
+                <ul class="pjz-menubar" role="list">
                     <li aria-current="true">
                         <a href="javascript:void(0);" aria-current="page">Content Types</a>
-                        <button class="emc-menu__submenu-toggle" type="button" aria-expanded="false">
-                            <span class="emc-sr-only">
+                        <button class="pjz-menu__submenu-toggle" type="button" aria-expanded="false">
+                            <span class="pjz-sr-only">
                                 Content Types
                                 SubMenu
                             </span>
@@ -25,13 +25,13 @@ const template = `
                         <ul>
                             <li>
                                 <a href="javascript:void(0);">Page</a>
-                                <button type="button" class="emc-menu__submenu-toggle" aria-expanded="false">
-                                    <span class="emc-sr-only">
+                                <button type="button" class="pjz-menu__submenu-toggle" aria-expanded="false">
+                                    <span class="pjz-sr-only">
                                         Page
                                         SubMenu
                                     </span>
                                 </button>
-                                <ul class="emc-menubar__submenu--shown-by-default">
+                                <ul class="pjz-menubar__submenu--shown-by-default">
                                     <li><a href="javascript:void(0);">Page List</a></li>
                                     <li><a href="javascript:void(0);" aria-current="page">Sub Page</a></li>
                                     <li><a href="javascript:void(0);">Sub Page with Right Sidebar</a></li>
@@ -43,7 +43,7 @@ const template = `
                             <li>
                                 <a href="javascript:void(0);">News</a>
                                 <button type="button" aria-expanded="false">
-                                    <span class="emc-sr-only">
+                                    <span class="pjz-sr-only">
                                         News
                                         SubMenu
                                     </span>
@@ -60,8 +60,8 @@ const template = `
                     </li>
                     <li>
                         <a href="javascript:void(0);">Blocks</a>
-                        <button type="button" class="emc-menu__submenu-toggle" aria-expanded="false">
-                            <span class="emc-sr-only">
+                        <button type="button" class="pjz-menu__submenu-toggle" aria-expanded="false">
+                            <span class="pjz-sr-only">
                                 Blocks
                                 SubMenu
                             </span>
@@ -77,8 +77,8 @@ const template = `
                     </li>
                     <li>
                         <a href="javascript:void(0);">Images &amp; Media</a>
-                        <button class="emc-menu__submenu-toggle" type="button" aria-expanded="false">
-                            <span class="emc-sr-only">
+                        <button class="pjz-menu__submenu-toggle" type="button" aria-expanded="false">
+                            <span class="pjz-sr-only">
                                 Images &amp; Media
                                 SubMenu
                             </span>
@@ -107,31 +107,31 @@ it('We can check if the main menu has the styles to display the content after th
     const menu = new MenuToggleBehavior();
     menu.enable();
 
-    const menuButton = document.getElementById("emc-menu__menu-toggle");
+    const menuButton = document.getElementById("pjz-menu__menu-toggle");
     expect(menuButton.getAttribute('aria-expanded')).toBe("false");
 
-    const container = document.getElementById("emc-menu__nav-container");
-    expect(container.classList).not.toContain("emc-menu__nav-container--expanded");
+    const container = document.getElementById("pjz-menu__nav-container");
+    expect(container.classList).not.toContain("pjz-menu__nav-container--expanded");
 
     const icon = document.getElementById("main-icon");
-    expect(icon.classList).not.toContain("emc-icon-close");
-    expect(icon.classList).toContain("emc-icon-menu");
+    expect(icon.classList).not.toContain("pjz-icon-close");
+    expect(icon.classList).toContain("pjz-icon-menu");
 
     // opens the menu
     menuButton.click();
 
     // show the menu content
     expect(menuButton.getAttribute('aria-expanded')).toBe("true");
-    expect(container.classList).toContain("emc-menu__nav-container--expanded");
-    expect(icon.classList).toContain("emc-icon-close");
-    expect(icon.classList).not.toContain("emc-icon-menu");
+    expect(container.classList).toContain("pjz-menu__nav-container--expanded");
+    expect(icon.classList).toContain("pjz-icon-close");
+    expect(icon.classList).not.toContain("pjz-icon-menu");
 
     // closes the menu
     menuButton.click();
 
     // hide the menu content
     expect(menuButton.getAttribute('aria-expanded')).toBe("false");
-    expect(container.classList).not.toContain("emc-menu__nav-container--expanded");
-    expect(icon.classList).not.toContain("emc-icon-close");
-    expect(icon.classList).toContain("emc-icon-menu");
+    expect(container.classList).not.toContain("pjz-menu__nav-container--expanded");
+    expect(icon.classList).not.toContain("pjz-icon-close");
+    expect(icon.classList).toContain("pjz-icon-menu");
 });

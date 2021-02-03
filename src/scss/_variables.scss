@@ -1,24 +1,24 @@
 /// Indicates the base font size to be used in calculations.
 ///
-/// This value should be kept in sync with the $emc-rem value.
+/// This value should be kept in sync with the $pjz-rem value.
 ///
 /// @type number
-$emc-base-font-size-in-pixels: 16;
+$pjz-base-font-size-in-pixels: 16;
 
 /// Establishes the base font size for the entire site.
 ///
-/// This value should be kept in sync with the $emc-rem value.
+/// This value should be kept in sync with the $pjz-rem value.
 ///
 /// Using something other than 100% (16px) will make it more difficult to reason about sizes in the design.  Setting
 /// the root "rem" size using pixels will eliminate the ability for users to increase font size in their browser
 /// Disabling the ability to increase font size in the browser might be undesirable from an accessibility perspective.
 /// @type string
-$emc-rem: 100%;
+$pjz-rem: 100%;
 
 /// Controls the font loading behavior.
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
 /// @type string
-$emc-font-display: swap;
+$pjz-font-display: swap;
 
 /// Specifies the font family for body text in the 'default' font pairing.
 /// @group Theme

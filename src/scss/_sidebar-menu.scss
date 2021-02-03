@@ -1,8 +1,8 @@
-.emc-sidebar-menu {
+.pjz-sidebar-menu {
   border-right: 1px solid #c8c8c8;
   line-height: 1.15;
 }
-.emc-sidebar-menu__list {
+.pjz-sidebar-menu__list {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -12,19 +12,19 @@
   margin-bottom: 0;
   list-style: none;
 }
-.emc-sidebar-menu__list a {
+.pjz-sidebar-menu__list a {
   text-decoration: none;
   color: #000;
   display: block;
   padding: 0.5rem 1rem;
   border-right: 4px solid transparent;
 }
-.emc-sidebar-menu__list-item {
+.pjz-sidebar-menu__list-item {
   margin: 0.1em 0;
 }
-.emc-sidebar-menu__list-item--active {
+.pjz-sidebar-menu__list-item--active {
 }
-.emc-sidebar-menu__list-item--active a {
+.pjz-sidebar-menu__list-item--active a {
   font-weight: bold;
   border-right: 4px solid #e77500;
 }
