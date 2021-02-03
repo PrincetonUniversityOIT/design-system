@@ -31,7 +31,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
 
     eleventyConfig.addWatchTarget("./dist/");
-    eleventyConfig.addWatchTarget("./docs/**/*.code");
+    // eleventyConfig.addWatchTarget("./docs/**/*.code");
+    eleventyConfig.addWatchTarget("./docs/");
 
     eleventyConfig.addPassthroughCopy({ "dist/jazz_serif.css": "jazz_serif.css" });
     eleventyConfig.addPassthroughCopy({ "dist/jazz_fonts.css": "jazz_fonts.css" });
