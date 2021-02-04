@@ -23,10 +23,6 @@ jobs:
 
       - run: npm run build-prod
 
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - run: npm run build-docsite
 
       - name: Deploy
@@ -35,3 +31,7 @@ jobs:
           deploy_key: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./_site
+
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

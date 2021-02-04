@@ -20,7 +20,7 @@ const configObj = {
 
 function getSourceCode(config, path) {
     // return process.cwd() + '/' + config.dir.input + '/' + path + '.code';
-    var fileToProcess = process.cwd() + '/' + config.dir.input + '/' + path + '.code';
+    var fileToProcess = process.cwd() + '/' + config.dir.input + path + '.code';
     fileToProcess = fileToProcess.replace('/./', '/');
     fileToProcess = fileToProcess.replace('/', '\\');
     return fs.readFileSync(fileToProcess, 'utf8');
@@ -31,8 +31,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
 
     eleventyConfig.addWatchTarget("./dist/");
-    // eleventyConfig.addWatchTarget("./docs/**/*.code");
-    eleventyConfig.addWatchTarget("./docs/");
+    eleventyConfig.addWatchTarget("./docs/**/*.code");
 
     eleventyConfig.addPassthroughCopy({ "dist/jazz_serif.css": "jazz_serif.css" });
     eleventyConfig.addPassthroughCopy({ "dist/jazz_fonts.css": "jazz_fonts.css" });
