@@ -32,6 +32,6 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./_site
 
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- run: npm publish --access public
+      #  env:
+      #    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
