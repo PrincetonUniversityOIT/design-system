@@ -25,7 +25,7 @@
     "build-docsite": "npx @11ty/eleventy",
     "build-docsite-prod": "npx @11ty/eleventy --pathprefix 'design_system'",
     "serve-docsite": "npx @11ty/eleventy --serve",
-    "serve-docsite-prod": "npx @11ty/eleventy --serve --pathprefix 'design_system'"
+    "serve-docsite-prod": "npx @11ty/eleventy --serve --pathprefix 'design-system'"
   },
   "author": "",
   "license": "ISC",
