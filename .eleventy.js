@@ -21,8 +21,10 @@ const configObj = {
 function getSourceCode(config, path) {
     // return process.cwd() + '/' + config.dir.input + '/' + path + '.code';
     var fileToProcess = process.cwd() + '/' + config.dir.input + path + '.code';
+    // console.log('fileToProcess 1', fileToProcess)
     fileToProcess = fileToProcess.replace('/./', '/');
-    fileToProcess = fileToProcess.replace('/', '\\');
+    // fileToProcess = fileToProcess.replace('/', '\\');
+    // console.log('fileToProcess 2', fileToProcess)
     return fs.readFileSync(fileToProcess, 'utf8');
 }
 
