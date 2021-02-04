@@ -1,6 +1,6 @@
 {% macro example(path, name, id) %}
 
-<iframe src="{{ path }}" title="{{ title }}" class="jazz-docs__code-sample"></iframe>
+<iframe src="{{ path | url }}" title="{{ title }}" class="jazz-docs__code-sample"></iframe>
 
 <div class="jazz-accordion" role="region">
     <h3>
