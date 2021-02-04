@@ -8,9 +8,9 @@ title: Princeton Design System
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Princeton Design System</title>
-    <link rel="stylesheet" href="{{ '/css/jazz_serif.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/jazz_fonts.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-atom-dark.css' | url }}">
+    <link rel="stylesheet" href="{{ '/jazz_serif.css' | url }}">
+    <link rel="stylesheet" href="{{ '/jazz_fonts.css' | url }}">
+    <link rel="stylesheet" href="{{ '/prism-atom-dark.css' | url }}">
     <style>
         .core {
             display: flex;
@@ -122,7 +122,7 @@ title: Princeton Design System
                 {% if page.url.startsWith(privNav.url) %}
                 {% for secNav in privNav.items %}
                 <li {% if page.url == secNav.url %} class="jazz-sidebar-menu__list-item--active"{% else %} class="jazz-sidebar-menu__list-item"{% endif %}>
-                    <a href="{{ secNav.url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active"{% endif %}>{{ secNav.label }}<span class="jazz-sr-only">, (current page)</span></a>
+                    <a href="{{ secNav.url | url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active"{% endif %}>{{ secNav.label }}<span class="jazz-sr-only">, (current page)</span></a>
                 </li>
                 {% endfor %}
                 {% endif %}
@@ -186,7 +186,7 @@ title: Princeton Design System
         </div>
     </div>
 </footer>
-<script src="{{ '/js/jazz_behavior.js' | url }}"></script>
+<script src="{{ '/jazz_behavior.js' | url }}"></script>
 <script type="text/javascript">
     PrincetonDesignSystem.enable();
 
