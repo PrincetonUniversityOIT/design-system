@@ -47,12 +47,12 @@ title: Princeton Design System
     <!-- div class="jazz-container" -->
     <div class="jazz-header__pu-branding">
         <div class="jazz-container">
-            <a href="https://www.princeton.edu" title="Princeton University"><img src="/logos/pu-logo.svg" alt="Princeton University" /></a>
+            <a href="https://www.princeton.edu" title="Princeton University"><img src="{{ '/logos/pu-logo.svg' | url }}" alt="Princeton University" /></a>
         </div>
     </div>
     <div class="jazz-header__site-branding">
         <div class="jazz-container jazz-header__site-branding-contents">
-            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/logos/shield.svg" /></a>
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="{{ '/logos/shield.svg' | url }}" /></a>
             <div class="jazz-header__site-branding-info">
                 <div class="jazz-header__site-branding-name">
                     <a href="/" title="Home" rel="home">Relativity Design System</a>
@@ -71,14 +71,14 @@ title: Princeton Design System
                 <div  class="jazz-menu__nav-container">
                     <ul class="jazz-menubar" role="list">
                         {%- for item in siteMap.primary -%}
-                        <li{% if page.url.startsWith(item.url) %} aria-current="true"{% endif %}><a href="{{ item.url }}">{{ item.label }}</a>
+                        <li{% if page.url.startsWith(item.url) %} aria-current="true"{% endif %}><a href="{{ item.url | url}}">{{ item.label }}</a>
                              <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
                                  <span class="jazz-sr-only">{{ item.label }}</span>
                              </button>
                              {% if item.items.length > 0 %}
                                 <ul>
                                     {% for secNav in item.items %}
-                                        <li><a href="{{ secNav.url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active" {% endif %} >{{ secNav.label }}</a></li>
+                                        <li><a href="{{ secNav.url | url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active" {% endif %} >{{ secNav.label }}</a></li>
                                     {% endfor %}
                                 </ul>
                              {% endif %}
@@ -180,7 +180,7 @@ title: Princeton Design System
                     &copy; 2020 The Trustees of Princeton University
                 </div>
                 <div class="col-sm-4 col-xs-12">
-                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
+                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="{{ '/icons/pu-logo-stacked-white.svg' | url }}" alt="Princeton University" /></a>
                 </div>
             </div>
         </div>
