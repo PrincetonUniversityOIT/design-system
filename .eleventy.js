@@ -35,14 +35,12 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget("./dist/");
     eleventyConfig.addWatchTarget("./docs/**/*.code");
 
-    eleventyConfig.addPassthroughCopy({ "dist/jazz_serif.css": "jazz_serif.css" });
-    eleventyConfig.addPassthroughCopy({ "dist/jazz_fonts.css": "jazz_fonts.css" });
+    eleventyConfig.addPassthroughCopy({ "dist/*.css": "/css" });
     eleventyConfig.addPassthroughCopy({ "dist/fonts": "fonts" });
     eleventyConfig.addPassthroughCopy({ "dist/icons": "icons" });
     eleventyConfig.addPassthroughCopy({ "dist/img": "img" });
     eleventyConfig.addPassthroughCopy({ "dist/logos": "logos" });
-    eleventyConfig.addPassthroughCopy({ "dist/jazz_behavior.js": "jazz_behavior.js" });
-    eleventyConfig.addPassthroughCopy({ "docs/css/prism-atom-dark.css": "prism-atom-dark.css" });
+    eleventyConfig.addPassthroughCopy({ "dist/*.js": "/js" });
 
     eleventyConfig.addNunjucksShortcode("src", function(path) { return getSourceCode(configObj, path); });
 
