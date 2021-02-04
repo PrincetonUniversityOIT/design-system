@@ -1,0 +1,318 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion - Princeton Design System</title>
+    <link rel="stylesheet" href="/jazz_serif.css">
+    <link rel="stylesheet" href="/jazz_fonts.css">
+    <link rel="stylesheet" href="/prism-atom-dark.css">
+    <style>
+        .core {
+            display: flex;
+        }
+        .core-content {
+            flex: 1 1 auto;
+            margin-left: 20px;
+            min-width: 0px; /* This is necessary to stop the code from pushing the rest of the page out. */
+        }
+        main {
+            margin-bottom: 20px;
+        }
+        iframe {
+            border: 1px solid lightgrey;
+            display: block;
+            padding: 10px;
+            width: 100%;
+            overflow-y: hidden;
+            box-shadow:
+                0px 2px 4px rgba(0, 0, 0, 0.14),
+                0px 4px 5px rgba(0, 0, 0, 0.12),
+                0px 1px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body onload="registerAllIframes()">
+<header role="banner" class="jazz-header">
+    <h1 class="jazz-sr-only">Princeton University Design System</h1>
+    <div class="jazz-skip-links">
+        <a href="#main-content" class="jazz-skip-link">Skip to main content</a>
+        <a href="#search" class="jazz-skip-link">Skip to search options</a>
+    </div>
+    <!-- div class="jazz-container" -->
+    <div class="jazz-header__pu-branding">
+        <div class="jazz-container">
+            <a href="https://www.princeton.edu" title="Princeton University"><img src="/logos/pu-logo.svg" alt="Princeton University" /></a>
+        </div>
+    </div>
+    <div class="jazz-header__site-branding">
+        <div class="jazz-container jazz-header__site-branding-contents">
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/logos/shield.svg" /></a>
+            <div class="jazz-header__site-branding-info">
+                <div class="jazz-header__site-branding-name">
+                    <a href="/" title="Home" rel="home">Relativity Design System</a>
+                </div>
+                <div class="jazz-header__site-branding-slogan">
+                    The Princeton Design System
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Main Menu" class="jazz-menu__main-menu">
+        <h2 class="jazz-sr-only">Main Menu</h2>
+        <div class="jazz-container">
+            <div class="jazz-menu__main-menu-navbar">
+                <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
+                <div  class="jazz-menu__nav-container">
+                    <ul class="jazz-menubar" role="list"><li><a href="/getting_started/">Getting Started</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-sr-only">Getting Started</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/getting_started/"  >About The Design System</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design/">Design</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-sr-only">Design</span>
+                             </button>
+                             
+                        </li><li aria-current="true"><a href="/components/">Components</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-sr-only">Components</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/components/"  >About Components</a></li>
+                                    
+                                        <li><a href="/components/accordion/"  aria-current="page" class="is-active"  >Accordion</a></li>
+                                    
+                                        <li><a href="/components/buttons/"  >Buttons</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/templates/">Templates</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-sr-only">Templates</span>
+                             </button>
+                             
+                        </li><li><a href="/contribute/">Contribute</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-sr-only">Contribute</span>
+                             </button>
+                             
+                        </li></ul>
+                    <div class="jazz-header__utility-menu">
+                        <ul>
+                            <li><a href="javascript void(0);">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="jazz-header__search-bar">
+        <div class="jazz-container">
+            <h2 class="jazz-sr-only">Search</h2>
+            <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-sr-only">Search Menu Toggle</span></button>
+            <div id="jazz-header-search-bar-panel" class="jazz-header__search-bar-panel">
+                <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
+                    <label class="jazz-sr-only" for="search-field">Search</label>
+                    <a name="search">
+                        <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
+                    </a>
+                    <button class="jazz-button" type="submit">
+                        <span class="jazz-sr-only">Search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /div -->
+</header>
+<main class="jazz-container">
+    <div class="core">
+        <nav class="jazz-sidebar-menu" aria-label="section">
+            <h2 class="jazz-sr-only">Section Menu</h2>
+            <ul class="jazz-sidebar-menu__list" role="list">
+                
+                
+                
+                
+                
+                
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/components/" >About Components<span class="jazz-sr-only">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item--active">
+                    <a href="/components/accordion/"  aria-current="page" class="is-active">Accordion<span class="jazz-sr-only">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/components/buttons/" >Buttons<span class="jazz-sr-only">, (current page)</span></a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+        </nav>
+        <div class="core-content">
+            
+
+
+<h2 class="jazz-page-title">Accordion</h2>
+
+What is the purpose of the accordion?
+
+
+
+<iframe src="/components/accordion-example1" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-1">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-1">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>region<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion__button<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Sed porttitor lectus nibh?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion__content<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a
+      pellentesque nec, egestas non nisi.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>acrd-btn-2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion__button<span class="token punctuation">"</span></span> <span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion__content<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet
+      et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+      Cras ultricies ligula sed magna dictum porta.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion__button<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion__content<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+      posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+      Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+      posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+      Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion__button<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-accordion__content<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+      posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+      Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+</main>
+<footer role="contentinfo" class="jazz-footer">
+    <div class="jazz-container jazz-footer__content">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <h2>General Information</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="javascript:void(0);">Contact Us</a></li>
+                    <li><a href="javascript:void(0);">About Us</a></li>
+                    <li><a href="javascript:void(0);">News</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Services</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="javascript:void(0);">Update Your Info</a></li>
+                    <li><a href="javascript:void(0);">Online Resources</a></li>
+                    <li><a href="javascript:void(0);">Visiting Campus</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>University Links</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="https://www.princeton.edu/">Princeton University</a></li>
+                    <li><a href="https://communications.princeton.edu/">Office of Communications</a></li>
+                    <li><a href="https://ux.princeton.edu/">User Experience Office</a></li>
+                    <li><a href="https://wds.princeton.edu/">Web Development Services</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Resources</h2>
+                <ul class="jazz-footer__icon-list">
+                    <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-2x jazz-footer__icon jazz-icon-facebook"></i><span class="jazz-sr-only">Go to GitHub</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jazz-footer__subfooter">
+        <div class="jazz-container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <a href="javascript:void(0)">Accessibility</a>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    &copy; 2020 The Trustees of Princeton University
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/jazz_behavior.js"></script>
+<script type="text/javascript">
+    PrincetonDesignSystem.enable();
+
+    function resizeIframe(iframe) {
+        iframe.height = (iframe.contentWindow.document.body.scrollHeight + 22) + "px";
+    }
+
+    function registerIframe(iframe) {
+        // register a listener to list to changes to the iframe content
+        const observer = new MutationObserver((/* mutationsList, observer*/) => {
+            resizeIframe(iframe);
+        });
+        observer.observe(iframe.contentWindow.document.body, { attributes: true, childList: true, subtree: true });
+        // resize immediately for initial load
+        resizeIframe(iframe);
+    }
+
+    function registerAllIframes() {
+        const iframes = document.querySelectorAll("iframe.jazz-docs__code-sample");
+        for (const iframe of iframes) {
+            registerIframe(iframe);
+        }
+    }
+
+    function copyCode(button) {
+        navigator.clipboard.writeText(button.parentNode.querySelector("pre.language-html > code.language-html").innerText);
+    }
+</script>
+</body>
+</html>
