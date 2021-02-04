@@ -25,7 +25,7 @@ jobs:
 
       - run: npm run build-prod
 
-      - run: npm run build-docsite
+      - run: npm run build-docsite-prod
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
