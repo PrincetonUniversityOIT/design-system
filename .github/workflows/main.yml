@@ -27,9 +27,9 @@ jobs:
 
       - run: npm run build-docsite-prod
 
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- run: npm publish --access public
+      #  env:
+      #    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -38,15 +38,14 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./_site
 
-  zip-files:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: papeloto/action-zip@v1
-        with:
+      -name: Zip Files
+       uses: papeloto/action-zip@v1
+       with:
           files: dist/
           dest: jazz.zip
 
-      - uses: actions/upload-artifact@v1
-        with:
+      -name: Upload Artifact
+       uses: actions/upload-artifact@v1
+       with:
           name: jazz-artifact
           path: ${{ github.workspace }}/jazz.zip
