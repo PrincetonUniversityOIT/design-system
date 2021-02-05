@@ -1,6 +1,41 @@
 import { MINIMAL_VIEWPORTS} from '@storybook/addon-viewport';
 
 const customViewports = {
+  PhoneOnly: {
+    name: 'Phone Only',
+    styles: {
+      width: '599px',
+      height: '375px',
+    },
+  },
+  TabletPortrait: {
+    name: 'Tablet Portrait',
+    styles: {
+      width: '600px',
+      height: '375px',
+    },
+  },
+  TabletLandscape: {
+    name: 'Tablet Landscape',
+    styles: {
+      width: '900px',
+      height: '600px',
+    },
+  },
+  Desktop: {
+    name: 'Desktop',
+    styles: {
+      width: '1200px',
+      height: '720px',
+    },
+  },
+  BigDesktop: {
+    name: 'Big Desktop',
+    styles: {
+      width: '1800px',
+      height: '977px',
+    },
+  },
   iPhoneNew: {
     name: 'iPhone X/11',
     styles: {
