@@ -38,14 +38,14 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./_site
 
-      - name: Zip Files
-       uses: papeloto/action-zip@v1
-       with:
+      - name: ZipFiles
+        uses: papeloto/action-zip@v1
+        with:
           files: dist/
           dest: jazz.zip
 
-      - name: Upload Artifact
-       uses: actions/upload-artifact@v1
-       with:
+      - name: UploadArtifact
+        uses: actions/upload-artifact@v1
+        with:
           name: jazz-artifact
           path: ${{ github.workspace }}/jazz.zip
