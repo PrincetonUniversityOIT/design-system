@@ -4,7 +4,8 @@ name: Publish a Release
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
- on:
+
+on:
   release:
     types: [created]
 
@@ -31,6 +32,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Get release
+        id: get_release
+        uses: bruceadams/get-release@v1.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -38,14 +45,28 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./_site
 
-      - name: ZipFiles
+      - name: Zip Files
+        id: zip_files
         uses: papeloto/action-zip@v1
         with:
           files: dist/
           dest: jazz.zip
 
-      - name: UploadArtifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: jazz-artifact
-          path: ${{ github.workspace }}/jazz.zip
+      - name: Upload Release Asset
+          id: upload_release_asset
+          uses: actions/upload-release-asset@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ steps.get_release.outputs.upload_url }}
+            asset_path: ./jazz.zip
+            asset_name: jazz.zip
+            asset_content_type: application/zip
+
+      #- name: UploadArtifact
+      #- id: upload-artifact
+      #  uses: actions/upload-artifact@v1
+      #  with:
+      #    name: jazz-artifact
+      #    path: ${{ github.workspace }}/jazz.zip
+
