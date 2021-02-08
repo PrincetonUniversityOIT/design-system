@@ -28,9 +28,9 @@ jobs:
 
       - run: npm run build-docsite-prod
 
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- run: npm publish --access public
+      #  env:
+      #    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get release
         id: get_release
