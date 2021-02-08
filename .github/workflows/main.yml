@@ -55,8 +55,9 @@ jobs:
       - name: Upload Release Asset
         id: upload_release_asset
         uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-           github_token: "${{ secrets.GITHUB_TOKEN }}"
            # upload_url: ${{ steps.get_release.outputs.upload_url }}
            upload_url: ${{ github.event.release.upload_url }}
            asset_path: ./jazz.zip
