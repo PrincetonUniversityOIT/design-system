@@ -8,7 +8,7 @@ it('We should be able to call new() on MenuToggleBehavior', () => {
 
 const template = `
     <nav aria-label="Main Menu" class="jazz-menu jazz-menu__main-menu">
-        <h2 class="jazz-sr-only">Main Menu</h2>
+        <h2 class="jazz-visually-hidden">Main Menu</h2>
         <div class="jazz-container">
         <div class="jazz-menu__main-menu-navbar">
             <button id="jazz-menu__menu-toggle" class="jazz-menu__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i id="main-icon" class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
@@ -17,7 +17,7 @@ const template = `
                     <li aria-current="true">
                         <a href="javascript:void(0);" aria-current="page">Content Types</a>
                         <button class="jazz-menu__submenu-toggle" type="button" aria-expanded="false">
-                            <span class="jazz-sr-only">
+                            <span class="jazz-visually-hidden">
                                 Content Types
                                 SubMenu
                             </span>
@@ -26,7 +26,7 @@ const template = `
                             <li>
                                 <a href="javascript:void(0);">Page</a>
                                 <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
-                                    <span class="jazz-sr-only">
+                                    <span class="jazz-visually-hidden">
                                         Page
                                         SubMenu
                                     </span>
@@ -43,7 +43,7 @@ const template = `
                             <li>
                                 <a href="javascript:void(0);">News</a>
                                 <button type="button" aria-expanded="false">
-                                    <span class="jazz-sr-only">
+                                    <span class="jazz-visually-hidden">
                                         News
                                         SubMenu
                                     </span>
@@ -61,7 +61,7 @@ const template = `
                     <li>
                         <a href="javascript:void(0);">Blocks</a>
                         <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
-                            <span class="jazz-sr-only">
+                            <span class="jazz-visually-hidden">
                                 Blocks
                                 SubMenu
                             </span>
@@ -78,7 +78,7 @@ const template = `
                     <li>
                         <a href="javascript:void(0);">Images &amp; Media</a>
                         <button class="jazz-menu__submenu-toggle" type="button" aria-expanded="false">
-                            <span class="jazz-sr-only">
+                            <span class="jazz-visually-hidden">
                                 Images &amp; Media
                                 SubMenu
                             </span>

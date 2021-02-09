@@ -8,7 +8,7 @@ export const Template = (args) => html`
         <li aria-current="true">
             <a href="/blocks/accordion" aria-current="page">Content Types</a>
             <button type="button" aria-expanded="${ args.forceExpanded }">
-                <span class="jazz-sr-only">
+                <span class="jazz-visually-hidden">
                     Content Types
                     SubMenu
                 </span>
@@ -17,7 +17,7 @@ export const Template = (args) => html`
                 <li>
                     <a href="/content-types/page">Page</a>
                     <button type="button" aria-expanded="${ args.forceExpanded }">
-                        <span class="jazz-sr-only">
+                        <span class="jazz-visually-hidden">
                             Page
                             SubMenu
                         </span>
@@ -34,7 +34,7 @@ export const Template = (args) => html`
                 <li>
                     <a href="/content-types/page">News</a>
                     <button type="button" aria-expanded="false">
-                        <span class="jazz-sr-only">
+                        <span class="jazz-visually-hidden">
                             News
                             SubMenu
                         </span>
@@ -52,7 +52,7 @@ export const Template = (args) => html`
         <li>
             <a href="/blocks/content-slider">Blocks</a>
             <button type="button" aria-expanded="false">
-                <span class="jazz-sr-only">
+                <span class="jazz-visually-hidden">
                     Blocks
                     SubMenu
                 </span>
@@ -69,7 +69,7 @@ export const Template = (args) => html`
         <li>
             <a href="/blocks/content-slider">Images &amp; Media</a>
             <button type="button" aria-expanded="false">
-                <span class="jazz-sr-only">
+                <span class="jazz-visually-hidden">
                     Images &amp; Media
                     SubMenu
                 </span>

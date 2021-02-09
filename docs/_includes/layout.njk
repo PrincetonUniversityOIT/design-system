@@ -39,7 +39,7 @@ title: Princeton Design System
 </head>
 <body onload="registerAllIframes()">
 <header role="banner" class="jazz-header">
-    <h1 class="jazz-sr-only">Princeton University Design System</h1>
+    <h1 class="jazz-visually-hidden">Princeton University Design System</h1>
     <div class="jazz-skip-links">
         <a href="#main-content" class="jazz-skip-link">Skip to main content</a>
         <a href="#search" class="jazz-skip-link">Skip to search options</a>
@@ -64,7 +64,7 @@ title: Princeton Design System
         </div>
     </div>
     <nav aria-label="Main Menu" class="jazz-menu__main-menu">
-        <h2 class="jazz-sr-only">Main Menu</h2>
+        <h2 class="jazz-visually-hidden">Main Menu</h2>
         <div class="jazz-container">
             <div class="jazz-menu__main-menu-navbar">
                 <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
@@ -73,7 +73,7 @@ title: Princeton Design System
                         {%- for item in siteMap.primary -%}
                         <li{% if page.url.startsWith(item.url) %} aria-current="true"{% endif %}><a href="{{ item.url | url}}">{{ item.label }}</a>
                              <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
-                                 <span class="jazz-sr-only">{{ item.label }}</span>
+                                 <span class="jazz-visually-hidden">{{ item.label }}</span>
                              </button>
                              {% if item.items.length > 0 %}
                                 <ul>
@@ -96,16 +96,16 @@ title: Princeton Design System
     </nav>
     <div class="jazz-header__search-bar">
         <div class="jazz-container">
-            <h2 class="jazz-sr-only">Search</h2>
-            <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-sr-only">Search Menu Toggle</span></button>
+            <h2 class="jazz-visually-hidden">Search</h2>
+            <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-visually-hidden">Search Menu Toggle</span></button>
             <div id="jazz-header-search-bar-panel" class="jazz-header__search-bar-panel">
                 <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
-                    <label class="jazz-sr-only" for="search-field">Search</label>
+                    <label class="jazz-visually-hidden" for="search-field">Search</label>
                     <a name="search">
                         <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
                     </a>
                     <button class="jazz-button" type="submit">
-                        <span class="jazz-sr-only">Search</span>
+                        <span class="jazz-visually-hidden">Search</span>
                     </button>
                 </form>
             </div>
@@ -116,13 +116,13 @@ title: Princeton Design System
 <main class="jazz-container">
     <div class="core">
         <nav class="jazz-sidebar-menu" aria-label="section">
-            <h2 class="jazz-sr-only">Section Menu</h2>
+            <h2 class="jazz-visually-hidden">Section Menu</h2>
             <ul class="jazz-sidebar-menu__list" role="list">
                 {% for privNav in siteMap.primary %}
                 {% if page.url.startsWith(privNav.url) %}
                 {% for secNav in privNav.items %}
                 <li {% if page.url == secNav.url %} class="jazz-sidebar-menu__list-item--active"{% else %} class="jazz-sidebar-menu__list-item"{% endif %}>
-                    <a href="{{ secNav.url | url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active"{% endif %}>{{ secNav.label }}<span class="jazz-sr-only">, (current page)</span></a>
+                    <a href="{{ secNav.url | url }}" {% if page.url == secNav.url %} aria-current="page" class="is-active"{% endif %}>{{ secNav.label }}<span class="jazz-visually-hidden">, (current page)</span></a>
                 </li>
                 {% endfor %}
                 {% endif %}
@@ -165,7 +165,7 @@ title: Princeton Design System
             <div class="col-sm-3 col-xs-12">
                 <h2>Resources</h2>
                 <ul class="jazz-footer__icon-list">
-                    <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-2x jazz-footer__icon jazz-icon-facebook"></i><span class="jazz-sr-only">Go to GitHub</span></a></li>
+                    <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-2x jazz-footer__icon jazz-icon-facebook"></i><span class="jazz-visually-hidden">Go to GitHub</span></a></li>
                 </ul>
             </div>
         </div>

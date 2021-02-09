@@ -5,7 +5,7 @@ import { html } from 'lit-html';
 
 export const Template = (args) => html`
     <nav aria-label="Main Menu" class="jazz-menu jazz-menu__main-menu">
-        <h2 class="jazz-sr-only">Main Menu</h2>
+        <h2 class="jazz-visually-hidden">Main Menu</h2>
         <div class="jazz-container">
         <div class="jazz-menu__main-menu-navbar">
             <button class="jazz-menu__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
@@ -14,7 +14,7 @@ export const Template = (args) => html`
                     <li aria-current="true">
                         <a href="javascript:void(0);" aria-current="page">Content Types</a>
                         <button class="jazz-menu__submenu-toggle" type="button" aria-expanded="${ args.forceExpanded }">
-                            <span class="jazz-sr-only">
+                            <span class="jazz-visually-hidden">
                                 Content Types
                                 SubMenu
                             </span>
@@ -23,7 +23,7 @@ export const Template = (args) => html`
                             <li>
                                 <a href="javascript:void(0);">Page</a>
                                 <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="${ args.forceExpanded }">
-                                    <span class="jazz-sr-only">
+                                    <span class="jazz-visually-hidden">
                                         Page
                                         SubMenu
                                     </span>
@@ -40,7 +40,7 @@ export const Template = (args) => html`
                             <li>
                                 <a href="javascript:void(0);">News</a>
                                 <button type="button" aria-expanded="false">
-                                    <span class="jazz-sr-only">
+                                    <span class="jazz-visually-hidden">
                                         News
                                         SubMenu
                                     </span>
@@ -58,7 +58,7 @@ export const Template = (args) => html`
                     <li>
                         <a href="javascript:void(0);">Blocks</a>
                         <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
-                            <span class="jazz-sr-only">
+                            <span class="jazz-visually-hidden">
                                 Blocks
                                 SubMenu
                             </span>
@@ -75,7 +75,7 @@ export const Template = (args) => html`
                     <li>
                         <a href="javascript:void(0);">Images &amp; Media</a>
                         <button class="jazz-menu__submenu-toggle" type="button" aria-expanded="false">
-                            <span class="jazz-sr-only">
+                            <span class="jazz-visually-hidden">
                                 Images &amp; Media
                                 SubMenu
                             </span>
