@@ -171,7 +171,7 @@
 }
 // -- end
 
-@include for-tablet-landscape-up {
+@include apply-from-small-laptop-up {
   //@media (min-width: $jazz-breakpoint-large) {
   .jazz-header__menu-toggle {
     display: none;

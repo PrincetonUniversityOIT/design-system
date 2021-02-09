@@ -1,38 +1,25 @@
-////
-/// @link https://medium.com/free-code-camp/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
-////
-
-/// Constructs a media query that associated styles are for use on devices with limited resolutions, such as phones (<600px)
-///
-/// Breakpoints were defined based on the philosophy outlined in the linked post.
-/// @content [Specified the styles to be restricted to the associated media query.]
-@mixin for-phone-only {
+/*
+  Breakpoint names make an assumption that the device is being held in it's default orientation.
+  For phones and tablets, this is assumed to be in portrait orientation.
+  Hence, the 'apply-from-small-laptop-up' breakpoint (min-width: 900px) would also apply to tablets being held in landscape mode.
+  Similarly, the 'apply-from-tablet-up' breakpoint (min-width: 600px) could also apply to some phones being held in landscape mode.
+ */
+@mixin apply-to-phone-only {
   @media (max-width: px-to-rem(599)) { @content; }
 }
-/// Constructs a media query that associated styles are to be used on devices with a resolution greater
-/// than or equal to tablets in portrait mode (>=600px).
-///
-/// Breakpoints were defined based on the philosophy outlined in the linked post.
-@mixin for-tablet-portrait-up {
+
+@mixin apply-from-tablet-up {
   @media (min-width: px-to-rem(600)) { @content; }
 }
-/// Constructs a media query that associated styles are to be used on devices with a resolution greater than or
-/// equal to tablets in landscape mode (>=900px).
-///
-/// Breakpoints were defined based on the philosophy outlined in the linked post.
-@mixin for-tablet-landscape-up {
+
+@mixin apply-from-small-laptop-up {
   @media (min-width: px-to-rem(900)) { @content; }
 }
-/// Constructs a media query that associated styles are to be used on devices with a resolution like desktops and
-/// greater (>=1200px).
-///
-/// Breakpoints were defined based on the philosophy outlined in the linked post.
-@mixin for-desktop-up {
+
+@mixin apply-from-desktop-up {
   @media (min-width: px-to-rem(1200)) { @content; }
 }
-/// Constructs a media query that associated styles are to be used on devices with very large resolution (>=1800px).
-///
-/// Breakpoints were defined based on the philosophy outlined in the linked post.
-@mixin for-big-desktop-up {
+
+@mixin apply-from-big-desktop-up {
   @media (min-width: px-to-rem(1800)) { @content; }
 }

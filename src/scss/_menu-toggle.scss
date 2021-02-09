@@ -45,7 +45,7 @@
   z-index: 1000;
   display: block;
 }
-@include for-tablet-landscape-up {
+@include apply-from-small-laptop-up {
   .jazz-menu__menu-toggle {
     display: none;
   }

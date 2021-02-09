@@ -72,7 +72,7 @@ ul.jazz-menubar__submenu.jazz-menubar_submenu--shown {
 ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
   display: none;
 }
-@include for-tablet-landscape-up {
+@include apply-from-small-laptop-up {
   ul.jazz-menubar,
   ul.jazz-menubar.jazz-menubar--shown {
     @include jazz-theme-color(menubar-lg-primary);
