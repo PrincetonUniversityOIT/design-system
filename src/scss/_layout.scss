@@ -8,12 +8,12 @@
   margin-right: auto;
   margin-left: auto;
 }
-@include for-tablet-landscape-up {
+@include apply-from-small-laptop-up {
   .jazz-container {
     max-width: 60em;
   }
 }
-@include for-desktop-up {
+@include apply-from-desktop-up {
   .jazz-container {
     max-width: 75em;
   }
