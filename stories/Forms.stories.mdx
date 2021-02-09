@@ -30,7 +30,7 @@ export const MultilineTextInputTemplate = (args) => html`
 
 export const CheckboxTemplate = (args) => html`
     <fieldset class="jazz-fieldset">
-        <legend class="jazz-sr-only">${ args.legend }</legend>
+        <legend class="jazz-visually-hidden">${ args.legend }</legend>
         <div class="jazz-checkbox">
             <input class="jazz-checkbox__input" type="checkbox" id="apple" type="checkbox" checked />
             <label class="jazz-checkbox__label" for="apple">Apple</label>
@@ -224,7 +224,7 @@ export const FileUploadTemplate = (args) => html`
         <span role="button" aria-controls="filename" tabindex="0">Upload File</span>
     </label>
     <input type="file" id="fileupload" class="jazz-file-upload" />
-    <label for="filename" class="jazz-sr-only">Uploaded File</label>
+    <label for="filename" class="jazz-visually-hidden">Uploaded File</label>
     <input type="text" id="filename" autocomplete="off" readonly placeholder="No File Chosen" class="jazz-file-upload__text" />
 `;
 

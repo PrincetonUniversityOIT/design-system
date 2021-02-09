@@ -8,7 +8,7 @@ it('We should be able to call new() on MenuToggleBehavior', () => {
 
 const template = `
     <header role="banner" class="jazz-header">
-        <h1 class="jazz-sr-only">Princeton University Design System</h1>
+        <h1 class="jazz-visually-hidden">Princeton University Design System</h1>
         <div class="jazz-skip-links">
             <a href="#main-content" class="jazz-skip-link">Skip to main content</a>
             <a href="#search" class="jazz-skip-link">Skip to search options</a>
@@ -33,7 +33,7 @@ const template = `
                 </div>
             </div>
             <nav aria-label="Main Menu" class="jazz-menu__main-menu">
-                <h2 class="jazz-sr-only">Main Menu</h2>
+                <h2 class="jazz-visually-hidden">Main Menu</h2>
                 <div class="jazz-container">
                 <div class="jazz-menu__main-menu-navbar">
                     <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
@@ -42,7 +42,7 @@ const template = `
                             <li aria-current="true">
                                 <a href="javascript:void(0);" aria-current="page">Content Types</a>
                                 <button class="jazz-menu__submenu-toggle" type="button" aria-expanded="false">
-                                    <span class="jazz-sr-only">
+                                    <span class="jazz-visually-hidden">
                                         Content Types
                                         SubMenu
                                     </span>
@@ -51,7 +51,7 @@ const template = `
                                     <li>
                                         <a href="javascript:void(0);">Page</a>
                                         <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
-                                            <span class="jazz-sr-only">
+                                            <span class="jazz-visually-hidden">
                                                 Page
                                                 SubMenu
                                             </span>
@@ -68,7 +68,7 @@ const template = `
                                     <li>
                                         <a href="javascript:void(0);">News</a>
                                         <button type="button" aria-expanded="false">
-                                            <span class="jazz-sr-only">
+                                            <span class="jazz-visually-hidden">
                                                 News
                                                 SubMenu
                                             </span>
@@ -86,7 +86,7 @@ const template = `
                             <li>
                                 <a href="javascript:void(0);">Blocks</a>
                                 <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
-                                    <span class="jazz-sr-only">
+                                    <span class="jazz-visually-hidden">
                                         Blocks
                                         SubMenu
                                     </span>
@@ -103,7 +103,7 @@ const template = `
                             <li>
                                 <a href="javascript:void(0);">Images &amp; Media</a>
                                 <button class="jazz-menu__submenu-toggle" type="button" aria-expanded="false">
-                                    <span class="jazz-sr-only">
+                                    <span class="jazz-visually-hidden">
                                         Images &amp; Media
                                         SubMenu
                                     </span>
@@ -131,16 +131,16 @@ const template = `
             </nav>
             <div class="jazz-header__search-bar">
                 <div class="jazz-container">
-                <h2 class="jazz-sr-only">Search</h2>
-                <button id="jazz-header__search-bar-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i id="search-icon" class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-sr-only">Search Menu Toggle</span></button>
+                <h2 class="jazz-visually-hidden">Search</h2>
+                <button id="jazz-header__search-bar-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i id="search-icon" class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-visually-hidden">Search Menu Toggle</span></button>
                 <div id="jazz-header__search-bar-panel" class="jazz-header__search-bar-panel">
                     <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
-                        <label class="jazz-sr-only" for="search-field">Search</label>
+                        <label class="jazz-visually-hidden" for="search-field">Search</label>
                         <a name="search">
                         <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
                         </a>
                         <button class="jazz-button" type="submit">
-                          <span class="jazz-sr-only">Search</span>
+                          <span class="jazz-visually-hidden">Search</span>
                         </button>
                     </form>
                 </div>
