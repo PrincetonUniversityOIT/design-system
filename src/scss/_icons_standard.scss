@@ -1,19 +1,19 @@
 $jazz-icons-standard: (
-        facebook: '../icons/iconmonstr-facebook-6.svg',
-        twitter:  '../icons/iconmonstr-twitter-1.svg',
-        linkedin: '../icons/iconmonstr-linkedin-3.svg',
-        instagram: '../icons/iconmonstr-instagram-11.svg',
-        youtube: '../icons/iconmonstr-youtube-6.svg',
+        facebook: '../icons/phosphor/facebook-logo.svg',
+        twitter:  '../icons/phosphor/twitter-logo.svg',
+        linkedin: '../icons/phosphor/linkedin-logo.svg',
+        instagram: '../icons/phosphor/instagram-logo.svg',
+        youtube: '../icons/phosphor/youtube-logo.svg',
 
-        close: '../icons/close-24px.svg',
-        down-arrow: '../icons/keyboard_arrow_down-black-18dp.svg',
-        expand-less: '../icons/expand_less-24px.svg',
-        expand-more: '../icons/expand_more-24px.svg',
+        close: '../icons/phosphor/x.svg',
+        down-arrow: '../icons/phosphor/caret-down.svg',
+        expand-less: '../icons/phosphor/caret-up.svg',
+        expand-more: '../icons/phosphor/caret-down.svg',
         external: '../icons/external-link-symbol.svg',
-        search: '../icons/iconmonstr-magnifier-2.svg',
-        menu: '../icons/menu-24px.svg',
-        remove: '../icons/remove-symbol.svg',
-        right-arrow: '../icons/angle-arrow-pointing-to-right.svg',
+        search: '../icons/phosphor/magnifying-glass.svg',
+        menu: '../icons/phosphor/list.svg',
+        remove: '../icons/phosphor/x-bold.svg',
+        breadcrumb: '../icons/phosphor/breadcrumb.svg',
 );
 
 @each $name, $path in map-merge($jazz-icons-standard, $jazz-icons-custom) {
