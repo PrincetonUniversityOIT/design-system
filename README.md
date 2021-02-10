@@ -10,10 +10,10 @@ After cloning the repo to your local system, be sure to install the project depe
 npm install
 ```
 
-You will want to run the build for the web components and CSS before running the server.
+You will want to run the build for the JS components and CSS before running the server.
 
 ```
-npm run stencil-build
+npm run build-dev
 ```
 
 After that you should be ready to run the site locally.
