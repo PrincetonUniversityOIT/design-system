@@ -158,9 +158,9 @@
   border-bottom: 1px solid jazz-theme-rgb(header-utility-menu-border-hover__small);
 }
 .jazz-header__utility-menu li > a {
+  @include jazz-theme-color(header-utility-menu);
   border-bottom: 1px solid jazz-theme-rgb(header-utility-menu-border__small); //#c8c8c8
   text-decoration: none;
-  color: #000;
   font-weight: bold;
   padding: px-to-rem(15) 0px;
   padding-left: px-to-rem(5);
