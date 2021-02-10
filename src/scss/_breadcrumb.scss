@@ -43,12 +43,12 @@
 .jazz-breadcrumb__list-item:not(:last-child)::after {
   background: 0 0;
   background-color: jazz-theme-rgb(breadcrumb-item);
-  -webkit-mask: url(jazz-icons-path("right-arrow")) no-repeat center/.84375ex 1.35ex;
-  mask: url(jazz-icons-path("right-arrow")) no-repeat center/.84375ex 1.35ex;
-  background: url(jazz-icons-path("right-arrow")) no-repeat center/.84375ex 1.35ex;
+  -webkit-mask: url(jazz-icons-path("breadcrumb")) no-repeat center/2ex 1.50ex;
+  mask: url(jazz-icons-path("breadcrumb")) no-repeat center/2ex 1.50ex;
+  background: url(jazz-icons-path("breadcrumb")) no-repeat center/2ex 1.50ex;
   display: inline-block;
-  height: 1.35ex;
-  width: .84375ex;
+  height: 1.50ex;
+  width: 2ex;
   content: "";
   vertical-align: baseline;
 }
