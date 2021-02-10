@@ -81,7 +81,7 @@
     "workbox-build": "4.3.1",
     "write-file-webpack-plugin": "^4.5.1"
   },
-  "dependencies": {
+  "devDependencies": {
     "ts-jest": "^26.4.4"
   },
   "publishConfig": {
