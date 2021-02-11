@@ -1,6 +1,7 @@
 import {ARIA_EXPANDED, Behavior} from '../../base/delegreater';
 import { prefix as PREFIX } from '../../config';
 import {Listener} from "../../base/decorator-functions";
+import {MenuToggleBehavior} from "../menu-toggle/menu-toggle";
 
 // Main Menu Selectors
 const HEADER_SELECTOR = `.${PREFIX}-header`;
@@ -24,13 +25,20 @@ export class HeaderBehavior extends Behavior {
         super();
     }
 
+    currentRoot;
+
     init(root: ParentNode) {
 
+        this.currentRoot = root;
+        this.resetSearch(root);
+
+        window.addEventListener("resize", this.displayWindowSize);
+    }
+
+    resetSearch(root) {
         this.select(SEARCH_SELECTOR, root).forEach((search) => {
             this.showSearch(false, search);
         });
-
-        window.addEventListener("resize", this.displayWindowSize);
     }
 
     @Listener({
@@ -49,6 +57,10 @@ export class HeaderBehavior extends Behavior {
         // Depending on which button was clicked an action is performed
         if (targetButton.matches(SEARCH_SELECTOR)) {
             this.toggleSearch(targetButton);
+
+            const menu: MenuToggleBehavior = new MenuToggleBehavior();
+            menu.resetMenu(this.currentRoot);
+
             event.stopImmediatePropagation();
         }
     }
