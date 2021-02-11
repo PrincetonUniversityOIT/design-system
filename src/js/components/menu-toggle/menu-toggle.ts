@@ -1,6 +1,7 @@
 import {ARIA_EXPANDED, Behavior} from '../../base/delegreater';
 import { prefix as PREFIX } from '../../config';
 import {Listener} from "../../base/decorator-functions";
+import {HeaderBehavior} from "../header/header";
 
 // Main Menu Selectors
 const MENU_SELECTOR =  `.${PREFIX}-menubar`;
@@ -34,11 +35,20 @@ const ICON_MENU = `${PREFIX}-icon-menu`;
 
 export class MenuToggleBehavior extends Behavior {
 
+    currentRoot;
+
     constructor() {
         super();
     }
 
     init(root: ParentNode) {
+        this.currentRoot = root;
+        this.resetMenu(root);
+
+        window.addEventListener("resize", this.displayWindowSize);
+    }
+
+    resetMenu(root) {
         this.select(MENU_BUTTON_SELECTOR, root).forEach((header) => {
             this.showMenu(false, header);
         });
@@ -52,8 +62,6 @@ export class MenuToggleBehavior extends Behavior {
                 }
             });
         });
-
-        window.addEventListener("resize", this.displayWindowSize);
     }
 
     @Listener({
@@ -76,6 +84,10 @@ export class MenuToggleBehavior extends Behavior {
         // Depending on which button was clicked an action is performed
         if (targetButton.matches(MENU_BUTTON_SELECTOR)) {
             this.toggleMenu(targetButton);
+
+            const header: HeaderBehavior = new HeaderBehavior();
+            header.resetSearch(this.currentRoot);
+
             event.stopImmediatePropagation();
         } else if (targetButton.matches(HEADER_SUB_MENU_SELECTOR)) {
             this.toggleSubMenu(targetButton);

@@ -17,6 +17,7 @@
   "scripts": {
     "test": "jest --passWithNoTests --testPathPattern=src/js --silent=false",
     "storybook": "webpack --config ./webpack.config.js --mode development && start-storybook -s ./dist -p 6006",
+    "storybook-watch": "webpack --config ./webpack.config.js --mode development --watch && start-storybook -s ./dist -p 6006",
     "build": "webpack --config ./webpack.config.js --mode production",
     "build-dev": "webpack --config ./webpack.config.js --mode development",
     "build-prod": "webpack --config ./webpack.config.js --mode production",
@@ -78,7 +79,7 @@
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
+    "webpack-cli": "^4.5.0",
     "workbox-build": "4.3.1",
     "write-file-webpack-plugin": "^4.5.1"
   },
