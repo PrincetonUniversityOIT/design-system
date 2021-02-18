@@ -2,6 +2,7 @@ import { AccordionBehavior } from './components/accordion/accordion';
 import { ModalDialogBehavior } from "./components/modal-dialog/modal-dialog";
 import {HeaderBehavior} from "./components/header/header";
 import {MenuToggleBehavior} from "./components/menu-toggle/menu-toggle";
+import {PagerBehavior} from "./components/pager/pager.";
 
 export class PrincetonDesignSystem {
     public enableDesignSystem() {
@@ -14,6 +15,7 @@ export class PrincetonDesignSystem {
         new ModalDialogBehavior().enable();
         new HeaderBehavior().enable();
         new MenuToggleBehavior().enable();
+        new PagerBehavior().enable();
     }
 
     public disable() {
@@ -21,5 +23,6 @@ export class PrincetonDesignSystem {
         new ModalDialogBehavior().disable();
         new HeaderBehavior().disable();
         new MenuToggleBehavior().disable();
+        new PagerBehavior().disable();
     }
 }
