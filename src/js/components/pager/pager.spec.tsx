@@ -1,4 +1,4 @@
-import {PagerBehavior} from "./pager.";
+import {PagerBehavior} from "./pager";
 
 it('We should be able to call new() on PagerBehavior', () => {
     // Ensure constructor created the object:

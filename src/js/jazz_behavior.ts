@@ -1,8 +1,8 @@
-import { AccordionBehavior } from './components/accordion/accordion';
-import { ModalDialogBehavior } from "./components/modal-dialog/modal-dialog";
+import {AccordionBehavior} from './components/accordion/accordion';
+import {ModalDialogBehavior} from "./components/modal-dialog/modal-dialog";
 import {HeaderBehavior} from "./components/header/header";
 import {MenuToggleBehavior} from "./components/menu-toggle/menu-toggle";
-import {PagerBehavior} from "./components/pager/pager.";
+import {PagerBehavior} from "./components/pager/pager";
 
 export class PrincetonDesignSystem {
     public enableDesignSystem() {
