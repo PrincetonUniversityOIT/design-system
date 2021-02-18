@@ -38,7 +38,7 @@ export class PagerBehavior extends Behavior {
     }
 
     disablePrevious(pagerEl) {
-        return Number(pagerEl.dataset.currentPage) === 0;
+        return Number(pagerEl.dataset.currentPage) === 1;
     }
 
     disableNext(pagerEl) {

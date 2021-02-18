@@ -30,7 +30,15 @@ export const DefaultPagerTemplate = (args) => html`
 `;
 
 export const ComponentPagerTemplate = (args) => html`
-  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="20" data-total-elements="200" data-current-page="4">
+  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="10" data-current-page="4">
+   </ul>
+   <script id="initscript">
+       PrincetonDesignSystem.enableDesignSystem();
+   </script>
+`;
+
+export const DoubleTruncateComponentPagerTemplate = (args) => html`
+  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="20" data-current-page="7">
    </ul>
    <script id="initscript">
        PrincetonDesignSystem.enableDesignSystem();
@@ -127,11 +135,21 @@ When the number of pages exceeds the maximum display limit, an ellipsis is used 
 </Canvas>
 
 ## Component
-The default form of the pager
+The default form of the pager component
 
 <Canvas>
-    <Story name="Component" args={{
+    <Story name="Simple Component" args={{
         }}>
         {ComponentPagerTemplate.bind({})}
+    </Story>
+</Canvas>
+
+## Double Truncate
+The default form of the pager component
+
+<Canvas>
+    <Story name="Double Truncate" args={{
+        }}>
+        {DoubleTruncateComponentPagerTemplate.bind({})}
     </Story>
 </Canvas>
