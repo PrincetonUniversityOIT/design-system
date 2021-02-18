@@ -4,7 +4,7 @@ import { html } from 'lit-html';
 <Meta title="Components/Pager" component="Pager" />
 
 export const DefaultPagerTemplate = (args) => html`
-  <ul role="navigation" aria-label="Pagination" class="jazz-pager">
+  <ul class="jazz-pager" role="navigation" aria-label="pagination">
        <li>
           <a>Previous</a>
        </li>
@@ -24,10 +24,29 @@ export const DefaultPagerTemplate = (args) => html`
           <a>Next</a>
       </li>
    </ul>
+   <script id="initscript">
+       PrincetonDesignSystem.enableDesignSystem();
+   </script>
+`;
+
+export const ComponentPagerTemplate = (args) => html`
+  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="10" data-current-page="4">
+   </ul>
+   <script id="initscript">
+       PrincetonDesignSystem.enableDesignSystem();
+   </script>
+`;
+
+export const DoubleTruncateComponentPagerTemplate = (args) => html`
+  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="20" data-current-page="7">
+   </ul>
+   <script id="initscript">
+       PrincetonDesignSystem.enableDesignSystem();
+   </script>
 `;
 
 export const ActivePagerTemplate = (args) => html`
-  <ul role="navigation" aria-label="Pagination" class="jazz-pager">
+  <ul role="navigation" aria-label="pagination" class="jazz-pager">
        <li>
           <a>Previous</a>
        </li>
@@ -47,10 +66,13 @@ export const ActivePagerTemplate = (args) => html`
           <a>Next</a>
        </li>
    </ul>
+   <script id="initscript">
+          PrincetonDesignSystem.enableDesignSystem();
+   </script>
 `;
 
 export const TruncatePagerTemplate = (args) => html`
-  <ul role="navigation" aria-label="Pagination" class="jazz-pager">
+  <ul role="navigation" aria-label="pagination" class="jazz-pager">
        <li>
           <a>Previous</a>
        </li>
@@ -73,6 +95,9 @@ export const TruncatePagerTemplate = (args) => html`
             <a>Next</a>
       </li>
    </ul>
+   <script id="initscript">
+          PrincetonDesignSystem.enableDesignSystem();
+   </script>
 `;
 
 # Pager
@@ -106,5 +131,25 @@ When the number of pages exceeds the maximum display limit, an ellipsis is used 
     <Story name="Truncated" args={{
         }}>
           {TruncatePagerTemplate.bind({})}
+    </Story>
+</Canvas>
+
+## Component
+The default form of the pager component
+
+<Canvas>
+    <Story name="Simple Component" args={{
+        }}>
+        {ComponentPagerTemplate.bind({})}
+    </Story>
+</Canvas>
+
+## Double Truncate
+The default form of the pager component
+
+<Canvas>
+    <Story name="Double Truncate" args={{
+        }}>
+        {DoubleTruncateComponentPagerTemplate.bind({})}
     </Story>
 </Canvas>
