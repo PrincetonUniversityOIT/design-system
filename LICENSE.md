@@ -28,9 +28,24 @@ open source.  Each font is listed along with its corresponding license below:
 
 ### Princeton Logos & Other Princeton Imagery
 
-This software bundle includes Princeton University logos and imagery, which are 
-[registered trademarks](https://trademarks.princeton.edu/).  Inclusion of the logos and imagery in this software 
-distribution does not imply any change to the licensing requirements for use of those trademarks. 
+The words "Princeton" and "Princeton University," as well as the University shield, are trademarks registered with 
+the U.S. Trademark Office. Princeton University also owns marks that are not registered.
+
+Any use of photo and logos provided within this software distribution must comply with all terms of use for 
+intellectual property as identified by the [Office of Communications](https://communications.princeton.edu/) and 
+the [Office of Trademark Licensing](https://trademarks.princeton.edu/) at Princeton University.
+
+Commercial uses of campus images, in any form including but not limited to advertising and merchandising, require prior 
+consent of the University. Requests should be directed either to the 
+[Office of Trademark Licensing](https://trademarks.princeton.edu/) or the assistant vice president for communications.
+
+**Restrictions apply to commercial use** of campus images. Inclusion of Princeton University Graphical Identity within
+this software bundle does not include the right to forward images to commercial entities without first consulting 
+with the University representatives who manage photo rights. 
+
+The following credits apply to photos packaged with this distribution:
+
+* src/img/stairway.jpg: Princeton University, Office of Communications, Denise Applewhite (2013)
 
 ### Icons
 
