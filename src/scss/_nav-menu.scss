@@ -118,8 +118,7 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
   ul.jazz-menubar li:hover > button:not([aria-expanded='true']) + ul:not(.jazz-menubar--hide) {
     display: block;
   }
-  ul.jazz-menubar li:hover > button:not([aria-expanded='true']) + ul:not(.jazz-menubar--stuck) > li > ul:not(.jazz-menubar__submenu--shown-by-default),
-  ul.jazz-menubar li > button:not([aria-expanded=true]) + ul:not(.jazz-menubar--stuck) > li:hover > ul:not(.jazz-menubar__submenu--shown-by-default) {
+  ul.jazz-menubar li:hover > button:not([aria-expanded='true']) + ul:not(.jazz-menubar--stuck) > li > ul:not(.jazz-menubar__submenu--shown-by-default){
     display: none;
   }
   ul.jazz-menubar > li > ul {
