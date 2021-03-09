@@ -97,8 +97,8 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
   ul.jazz-menubar li > a {
     border-bottom: none;
   }
-  ul.jazz-menubar > li > a,
-  ul.jazz-menubar > li > a[aria-current='page'] {
+  ul.jazz-menubar > li > a /*,
+  ul.jazz-menubar > li > a[aria-current='page']*/ {
     @include jazz-theme-color(menubar-lg-primary);
     border-bottom: px-to-rem(7) solid transparent;
     text-decoration: none;
@@ -109,8 +109,8 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
   ul.jazz-menubar > li:hover > a {
     border-bottom: px-to-rem(7) solid jazz-theme-rgb(menubar-lg-primary-hover-underline);
   }
-  ul.jazz-menubar > li[aria-current='true'] > a,
-  .jazz-menubar > ul > li[aria-current='true']:hover > a {
+  ul.jazz-menubar > li > a[aria-current='page'],
+  .jazz-menubar > ul > li:hover > a[aria-current='page'] {
     border-bottom: px-to-rem(7) solid jazz-theme-rgb(menubar-lg-primary-current-underline);
   }
   ul.jazz-menubar > li:hover > ul,
@@ -143,7 +143,7 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     right: 0;
   }
   ul.jazz-menubar > li > button {
-    z-index: 2;
+    //z-index: 2;
     position: absolute;
     right: auto;
     top: 0;
