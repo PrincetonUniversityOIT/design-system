@@ -4,19 +4,23 @@
 }
 
 .jazz-menu__menu-toggle {
-  top: px-to-rem(-146);
-  right: px-to-rem(48);
-  background-color: white;
+  @include jazz-theme-color(header-collapsed-menu);
   border: none;
   text-transform: uppercase;
   font-weight: bold;
   height: px-to-rem(32);
   padding: px-to-rem(4);
   display: flex;
+
+  position: absolute;
+  right: 1em;
+  top: px-to-rem(-55);
 }
 
-.jazz-menu__menu-toggle-absolute {
+.jazz-header-compact .jazz-menu__menu-toggle {
   position: absolute;
+  right: 1em;
+  top: px-to-rem(25);
 }
 
 .jazz-menu__main-menu {
@@ -30,7 +34,6 @@
 .jazz-menu__nav-container--expanded {
   @include jazz-theme-color(header-nav);
   left: 0;
-  top: px-to-rem(-104);
   width: 100%;
   z-index: 1000;
   display: block;
