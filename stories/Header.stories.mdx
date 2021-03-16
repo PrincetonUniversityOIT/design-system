@@ -29,6 +29,24 @@ export const Template = (args) => html`
                 </div>
                 </div>
             </div>
+             <div class="jazz-header-collapsed-header">
+                <div class="jazz-container">
+                <div class="jazz-header-collapsed-container">
+                   <div class="jazz-header-collapsed__pu-branding">
+                       <a href="javascript:void(0);" title="Princeton University"><img src="/logos/shield.svg" alt="Princeton University" /></a>
+                   </div>
+                   <div class="jazz-header-collapsed__site-branding--divider">
+                   </div>
+                   <div class="jazz-header-collapsed__site-branding">
+                       <div class="jazz-header-collapsed__site-branding-info">
+                           <div class="jazz-header-collapsed__site-branding-name">
+                               <a href="javascript:void(0);" title="Home" rel="home">${ args.siteBrandingName }</a>
+                           </div>
+                       </div>
+                   </div>
+                 </div>
+                 </div>
+              </div>
             <nav aria-label="Main Menu" class="jazz-menu__main-menu">
                 <h2 class="jazz-visually-hidden">Main Menu</h2>
                 <div class="jazz-container">
@@ -36,8 +54,8 @@ export const Template = (args) => html`
                     <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
                     <div class="jazz-menu__nav-container">
                         <ul class="jazz-menubar" role="list">
-                            <li aria-current="true">
-                                <a href="javascript:void(0);" aria-current="page">Content Types</a>
+                            <li>
+                                <a href="javascript:void(0);">Content Types</a>
                                 <button class="jazz-menu__submenu-toggle" type="button" aria-expanded="${ args.forceExpanded }">
                                     <span class="jazz-visually-hidden">
                                         Content Types
