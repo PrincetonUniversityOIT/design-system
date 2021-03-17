@@ -79,7 +79,6 @@ The default styles for the collapsed version of the compact header.
     width: px-to-rem(739);
     height: px-to-rem(33);
 
-    font-family: Public Sans;
     font-style: normal;
     font-weight: bold;
     font-size: px-to-rem(28);
@@ -107,11 +106,6 @@ The default styles for the collapsed version of the compact header.
     margin-right: px-to-rem(20);
     margin-top: px-to-rem(40);
   }
-
-  .jazz-header-break {
-    flex-basis: 0;
-    height: 0;
-  }
   .jazz-menu__main-menu {
     display: flex;
     flex-direction: row;
@@ -136,7 +130,6 @@ The default styles for the collapsed version of the compact header.
   .jazz-header-compact__utility-menu li > a {
     text-decoration: none;
 
-    font-family: Public Sans;
     font-style: normal;
     font-weight: bold;
     font-size: px-to-rem(18);
@@ -149,7 +142,6 @@ The default styles for the collapsed version of the compact header.
     text-align: center;
     margin-top: px-to-rem(20);
 
-    color: #121212;
     border-bottom: none;
     padding: px-to-rem(40) 0px 0px 0px;
     margin-right: px-to-rem(20);

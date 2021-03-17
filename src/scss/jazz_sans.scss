@@ -6,8 +6,9 @@
 @import 'breakpoints';
 @import 'color';
 @import 'font';
-@import 'theme_colors_default';
-// @import 'theme_colors_demo';
+//@import 'theme_colors_default';
+//@import 'theme_colors_demo';
+@import 'theme_colors_black';
 @import 'theme_font_sans';
 @import 'theme';
 @import 'typography';
@@ -33,7 +34,9 @@
 @import 'footer';
 @import 'form-field';
 @import 'forms';
-@import 'header';
+@import 'header-compact';
+@import 'header-full';
+@import 'header-collapsed';
 @import 'headings';
 @import 'icon';
 @import 'layout';

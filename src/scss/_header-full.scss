@@ -2,6 +2,25 @@
 The default styles for the collapsed version of the full header.
  */
 
+.jazz-header {
+  @include jazz-theme-color(header-pu-branding);
+}
+.jazz-header-break {
+  flex-basis: 0;
+  height: 0;
+}
+.jazz-header-container {
+  @include jazz-theme-color(header-pu-branding);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.jazz-header-right-container {
+  @include jazz-theme-color(header-pu-branding);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 .jazz-header__pu-branding {
   display: none;
 }
@@ -36,20 +55,21 @@ The default styles for the collapsed version of the full header.
 .jazz-header__search-bar-toggle {
   border: none;
   background-color: transparent;
-
   position: absolute;
-  top: -103px;
-  right: -.5em;
+  right: .25em;
+  top: 1.7rem;
+  z-index: 1000;
 }
 
 .jazz-header__search-bar-panel {
   @include jazz-theme-color(header-searchbar);
-  position: absolute;
-  left: 0;
   width: 100%;
   z-index: 1000;
   padding: px-to-rem(20);
   border-bottom: px-to-rem(2) solid jazz-theme-rgb('header-search-bar-bottom-border');
+  position: absolute;
+  top: px-to-rem(70);
+  left: 0;
 }
 .jazz-header__search-bar form [type='search'] {
   @include jazz-theme-color(header-search-input);
@@ -122,6 +142,12 @@ The default styles for the collapsed version of the full header.
 .jazz-header__utility-menu--shown {
   display: block;
 }
+.jazz-header__utility-menu--hide-large {
+  display: block;
+}
+.jazz-header__utility-menu--hide-small {
+  display: none;
+}
 .jazz-header__nav-container {
   display: flex;
   flex-basis: auto;
@@ -135,19 +161,28 @@ These are the styles for the higher resolution version of the full header
  */
 @include apply-from-small-laptop-up {
   .jazz-header {
+    @include jazz-theme-color(header-pu-branding);
     border-top: 4px solid jazz-theme-rgb('header-cap');
     line-height: 1.15;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .jazz-header-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 
   /* PU Branding */
   .jazz-header__pu-branding {
     @include jazz-theme-color(header-pu-branding);
-    padding: 1.26rem 0;
     display: block;
   }
   .jazz-header__pu-branding img {
     width: px-to-rem(260);
     display: block;
+    padding-top: 10px;
   }
 
   /* Site Branding */
@@ -185,14 +220,13 @@ These are the styles for the higher resolution version of the full header
   }
 
   .jazz-header__search-bar-panel {
-    position: absolute;
     width: px-to-rem(200);
-    left: unset;
-    top: px-to-rem(-222);
-    right: px-to-rem(16);
     display: block;
     background-color: transparent;
     border: none;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 
   /* Nav Container */
@@ -225,12 +259,6 @@ These are the styles for the higher resolution version of the full header
   }
 
   /* Utility Menu */
-  .jazz-header__utility-menu {
-    position: absolute;
-    top: px-to-rem(-159);
-    right: px-to-rem(200);
-    line-height: 1.65;
-  }
   .jazz-header__utility-menu ul {
     display: flex;
     flex-direction: row;
@@ -252,10 +280,16 @@ These are the styles for the higher resolution version of the full header
     @include jazz-theme-color(header-pu-branding);
     border-bottom: none;
     font-weight: bold;
-    padding: px-to-rem(15) 0px 0px 0px;
+    padding: px-to-rem(35) 0px 0px 0px;
     display: block;
   }
   .jazz-header__utility-menu a:hover {
     border-bottom: 1px solid jazz-theme-rgb('header-utility-menu-underline');
+  }
+  .jazz-header__utility-menu--hide-large {
+    display: none;
+  }
+  .jazz-header__utility-menu--hide-small {
+    display: block;
   }
 }
