@@ -10,26 +10,50 @@ export const Template = (args) => html`
             <a href="#main-content" class="jazz-skip-link">Skip to main content</a>
             <a href="#search" class="jazz-skip-link">Skip to search options</a>
         </div>
-        <!-- div class="jazz-container" -->
+        <div class="jazz-container">
+        <div class="jazz-header-container">
             <div class="jazz-header__pu-branding">
-                <div class="jazz-container">
                 <a href="https://www.princeton.edu" title="Princeton University"><img src="/logos/pu-logo.svg" alt="Princeton University" /></a>
+            </div>
+            <div class="jazz-header-right-container">
+                <div class="jazz-header__utility-menu jazz-header__utility-menu--hide-small">
+                  <ul>
+                      <li><a href="javascript void(0);">Documentation</a></li>
+                      <li><a href="javascript:void(0);">Log In</a></li>
+                  </ul>
+                </div>
+                <div class="jazz-header__search-bar">
+                    <h2 class="jazz-visually-hidden">Search</h2>
+                    <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-visually-hidden">Search Menu Toggle</span></button>
+                    <div id="jazz-header-search-bar-panel" class="jazz-header__search-bar-panel">
+                        <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
+                            <label class="jazz-visually-hidden" for="search-field">Search</label>
+                            <a name="search">
+                            <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
+                            </a>
+                            <button class="jazz-button" type="submit">
+                              <span class="jazz-visually-hidden">Search</span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="jazz-header__site-branding">
-                <div class="jazz-container jazz-header__site-branding-contents">
-                <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/logos/shield.svg" /></a>
-                <div class="jazz-header__site-branding-info">
-                    <div class="jazz-header__site-branding-name">
-                        <a href="javascript:void(0);" title="Home" rel="home">${ args.siteBrandingName }</a>
-                    </div>
-                    <div class="jazz-header__site-branding-slogan">
-                        ${ args.siteBrandingSlogan }
-                    </div>
+         </div>
+         <div class="jazz-header-break"></div>
+         <div class="jazz-header__site-branding">
+            <div class="jazz-header__site-branding-contents">
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/logos/shield.svg" /></a>
+            <div class="jazz-header__site-branding-info">
+                <div class="jazz-header__site-branding-name">
+                    <a href="javascript:void(0);" title="Home" rel="home">${ args.siteBrandingName }</a>
                 </div>
+                <div class="jazz-header__site-branding-slogan">
+                    ${ args.siteBrandingSlogan }
                 </div>
             </div>
-             <div class="jazz-header-collapsed-header">
+          </div>
+          </div>
+          <div class="jazz-header-collapsed-header">
                 <div class="jazz-container">
                 <div class="jazz-header-collapsed-container">
                    <div class="jazz-header-collapsed__pu-branding">
@@ -51,7 +75,7 @@ export const Template = (args) => html`
                 <h2 class="jazz-visually-hidden">Main Menu</h2>
                 <div class="jazz-container">
                 <div class="jazz-menu__main-menu-navbar">
-                    <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
+                    <button class="jazz-menu__menu-toggle" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
                     <div class="jazz-menu__nav-container">
                         <ul class="jazz-menubar" role="list">
                             <li>
@@ -134,7 +158,7 @@ export const Template = (args) => html`
                                 </ul>
                             </li>
                         </ul>
-                        <div class="jazz-header__utility-menu">
+                        <div class="jazz-header__utility-menu jazz-header__utility-menu--hide-large">
                             <ul>
                                 <li><a href="javascript void(0);">Documentation</a></li>
                                 <li><a href="javascript:void(0);">Log In</a></li>
@@ -144,22 +168,6 @@ export const Template = (args) => html`
                 </div>
                 </div>
             </nav>
-            <div class="jazz-header__search-bar">
-                <div class="jazz-container">
-                <h2 class="jazz-visually-hidden">Search</h2>
-                <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-visually-hidden">Search Menu Toggle</span></button>
-                <div id="jazz-header-search-bar-panel" class="jazz-header__search-bar-panel">
-                    <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
-                        <label class="jazz-visually-hidden" for="search-field">Search</label>
-                        <a name="search">
-                        <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
-                        </a>
-                        <button class="jazz-button" type="submit">
-                          <span class="jazz-visually-hidden">Search</span>
-                        </button>
-                    </form>
-                </div>
-                </div>
             </div>
         <!-- /div -->
     </header>

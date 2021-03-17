@@ -51,6 +51,7 @@ ul.jazz-menubar button {
   transform: rotate(0deg);
   transition: transform 0.3s ease;
   background: url(jazz-icons-path("down-arrow")) no-repeat center/2ex 2ex;
+  filter: invert(1);
 }
 ul.jazz-menubar  li > button[aria-expanded='true'] {
   transform: rotate(180deg);
@@ -158,7 +159,7 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     transition: transform 0.3s ease;
     background: url(jazz-icons-path("down-arrow")) no-repeat center/2ex 2ex;
     // TODO: find a better way to handle button color
-    filter: invert(0); // invert(1) would turn it white
+    filter: invert(1); // invert(1) would turn it white
   }
   ul.jazz-menubar > li:hover > button,
   ul.jazz-menubar > li > button[aria-expanded='true'] {
