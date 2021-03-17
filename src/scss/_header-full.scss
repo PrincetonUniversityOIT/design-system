@@ -178,6 +178,7 @@ These are the styles for the higher resolution version of the full header
   .jazz-header__pu-branding {
     @include jazz-theme-color(header-pu-branding);
     display: block;
+    margin-top: px-to-rem(0);
   }
   .jazz-header__pu-branding img {
     width: px-to-rem(260);
