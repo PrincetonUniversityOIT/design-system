@@ -47,6 +47,7 @@
     "@storybook/addon-essentials": "^6.0.21",
     "@storybook/addon-links": "^6.0.21",
     "@storybook/web-components": "^6.0.21",
+    "@testing-library/jest-dom": "^5.11.9",
     "@types/jest": "^24.9.1",
     "@types/puppeteer": "2.0.1",
     "@webcomponents/webcomponentsjs": "^2.4.4",

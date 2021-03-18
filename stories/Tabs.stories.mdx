@@ -4,17 +4,39 @@ import { html } from 'lit-html';
 <Meta title="Components/Tabs" component="Tabs" />
 
 export const Template = (args) => html`
-  <nav>
-      <ol class="jazz-tab-list">
-          <li class="jazz-tab"><a href="javascript:void(0);" class="jazz-tab-link" aria-disabled="false" tabindex="0">Summary</a></li>
-          <li class="jazz-tab jazz-tab--active"><a href="javascript:void(0);" class="jazz-tab-link" aria-disabled="false" tabindex="0" aria-current="page">Personnel</a></li>
-          <li class="jazz-tab"><a href="javascript:void(0);" class="jazz-tab-link" aria-disabled="false" tabindex="0">Groups</a></li>
-          <li class="jazz-tab"><a href="javascript:void(0);" class="jazz-tab-link" aria-disabled="false" tabindex="0">Funding</a></li>
-          <li class="jazz-tab"><a href="javascript:void(0);" class="jazz-tab-link" aria-disabled="false" tabindex="0">Expenses</a></li>
-          <li class="jazz-tab"><a href="javascript:void(0);" class="jazz-tab-link" aria-disabled="false" tabindex="0">Icon</a></li>
-          <li class="jazz-tab"><a href="javascript:void(0);" class="jazz-tab-link" aria-disabled="false" tabindex="0">Multiple Lines</a></li>
-      </ol>
-  </nav>  
+    <div class="jazz-tablist" role="tablist">
+      <button role="tab" id="one">Tab Label A</button>
+      <button role="tab" id="two" aria-selected="true">Tab Label B</button>
+      <button role="tab" disabled>Multiple Lines</button>
+      <button role="tab">Groups</button>
+      <button role="tab">Funding</button>
+      <button role="tab">Expenses</button>
+      <button role="tab" aria-controls="icons">Icon</button>
+    </div>
+    <div id="icons">
+        Hello, Icons!
+    </div>
+    <script id="initscript">
+      PrincetonDesignSystem.enableDesignSystem();
+    </script>
+`;
+
+export const AutoActivateTemplate = (args) => html`
+    <div class="jazz-tablist jazz-auto-activate" role="tablist">
+      <button role="tab" id="one">Tab Label A</button>
+      <button role="tab" id="two" aria-selected="true">Tab Label B</button>
+      <button role="tab" disabled>Multiple Lines</button>
+      <button role="tab">Groups</button>
+      <button role="tab">Funding</button>
+      <button role="tab">Expenses</button>
+      <button role="tab" aria-controls="icons">Icon</button>
+    </div>
+    <div id="icons">
+        Hello, Icons!
+    </div>
+    <script id="initscript">
+      PrincetonDesignSystem.enableDesignSystem();
+    </script>
 `;
 
 # Tabs
@@ -29,6 +51,14 @@ The following section demonstrates a simple set of tabs:
     </Story>
 </Canvas>
 
+<Canvas>
+    <Story name="Auto Activate" args={{
+        label: 'Auto Activate Tabs' 
+    }}>
+      {AutoActivateTemplate.bind({})}
+    </Story>
+</Canvas>
+
 Some general considerations:
 
 * ARIA guidance was not completely followed because it actually decreases usability (https://simplyaccessible.com/article/danger-aria-tabs/)
@@ -37,8 +67,7 @@ Some general considerations:
 TODO: 
 
 * Hover/focus color for tabs that are not selected needs to be improved.
-* Labels that break onto multiple lines
+* Allowing labels to break onto multiple lines if that is desired
 * Tabs that use icons and/or are completely made up of icons.
 * Scrolling of the tabs panel (perhaps can simply create a scrolling panel)
-* Javascript to show selection
 * Javascript events?

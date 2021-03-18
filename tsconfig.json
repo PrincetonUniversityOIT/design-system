@@ -18,7 +18,8 @@
   },
   "include": [
     "src",
-    "types/jsx.d.ts"
+    "types/jsx.d.ts",
+    "./jest-setup.ts"
   ],
   "exclude": [
     "node_modules"

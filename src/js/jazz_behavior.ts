@@ -3,6 +3,7 @@ import {ModalDialogBehavior} from "./components/modal-dialog/modal-dialog";
 import {HeaderBehavior} from "./components/header/header";
 import {MenuToggleBehavior} from "./components/menu-toggle/menu-toggle";
 import {PagerBehavior} from "./components/pager/pager";
+import {TabsBehavior} from "./components/tabs/tabs";
 
 export class PrincetonDesignSystem {
     public enableDesignSystem() {
@@ -16,6 +17,7 @@ export class PrincetonDesignSystem {
         new HeaderBehavior().enable();
         new MenuToggleBehavior().enable();
         new PagerBehavior().enable();
+        new TabsBehavior().enable();
     }
 
     public disable() {
@@ -24,5 +26,6 @@ export class PrincetonDesignSystem {
         new HeaderBehavior().disable();
         new MenuToggleBehavior().disable();
         new PagerBehavior().disable();
+        new TabsBehavior().disable();
     }
 }

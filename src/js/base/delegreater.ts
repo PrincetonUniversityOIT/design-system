@@ -3,6 +3,7 @@ import { on, off } from 'delegated-events';
 export const EVENT_METADATA = '__event__metadata__';
 export const ARIA_EXPANDED = "aria-expanded";
 export const ARIA_CONTROLS = "aria-controls";
+export const ARIA_SELECTED = "aria-selected";
 export const HIDDEN = "hidden";
 
 export class Config {
@@ -38,27 +39,40 @@ export abstract class Behavior {
         });
     }
 
-    public toggleControl(target: HTMLElement, expanded?: boolean) {
+    /**
+     * This method works for the following attributes:
+     *
+     * ARIA_EXPANDED
+     * ARIA_SELECTED
+     *
+     * @param target
+     * @param expanded
+     * @param attribute
+     */
+    public toggleControl(target: HTMLElement, expanded?: boolean, attribute?: string): boolean {
+
+        let safeAttribute: string = attribute || ARIA_EXPANDED;
 
         let safeExpanded = expanded;
 
         if (typeof safeExpanded !== "boolean") {
             // invert the existing button value
-            safeExpanded = target.getAttribute(ARIA_EXPANDED) === "false";
+            safeExpanded = target.getAttribute(safeAttribute) === "false";
         }
 
-        target.setAttribute(ARIA_EXPANDED, safeExpanded.toString());
+        target.setAttribute(safeAttribute, safeExpanded.toString());
 
         const controlledElementId = target.getAttribute(ARIA_CONTROLS);
-        const controlledElement = document.getElementById(controlledElementId);
-        if (!controlledElement) {
-            throw new Error(`aria-controls is not properly configured: ${controlledElementId}`);
-        }
-
-        if (safeExpanded) {
-            controlledElement.removeAttribute(HIDDEN);
-        } else {
-            controlledElement.setAttribute(HIDDEN, "");
+        if (controlledElementId) {
+            const controlledElement = document.getElementById(controlledElementId);
+            if (!controlledElement) {
+                throw new Error(`aria-controls is not properly configured: ${controlledElementId}`);
+            }
+            if (safeExpanded) {
+                controlledElement.removeAttribute(HIDDEN);
+            } else {
+                controlledElement.setAttribute(HIDDEN, "");
+            }
         }
 
         return safeExpanded;
