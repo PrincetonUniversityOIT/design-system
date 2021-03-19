@@ -140,6 +140,27 @@ describe('tab button click behavior', () => {
     expect(button3).toHaveAttribute("aria-selected", "true");
   });
 
+  it('should not de-select an active tab button when it is clicked', () => {
+    document.body.innerHTML = `
+        <div class="jazz-tablist" role="tablist">
+          <button role="tab">Tab Label 1</button>
+          <button role="tab" aria-selected="true" id="button1">Tab Label 2</button>
+          <button role="tab" disabled>Tab Disabled</button>
+          <button role="tab">Tab Label 3</button>
+        </div>
+    `;
+
+    const tabs = new TabsBehavior();
+    tabs.enable();
+
+    const button1 = document.getElementById("button1");
+    expect(button1).toHaveAttribute("aria-selected", "true");
+
+    button1.click();
+
+    expect(button1).toHaveAttribute("aria-selected", "true");
+  });
+
   it('should remove selection of a tab button when another tab button is clicked', () => {
     document.body.innerHTML = `
         <div class="jazz-tablist" role="tablist">
