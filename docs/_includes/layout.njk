@@ -35,6 +35,13 @@ title: Princeton Design System
                 0px 1px 10px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
         }
+        .jazz-sidebar-menu {
+            min-width: 200px;
+        }
+        .code {
+            background-color: #ddd;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body onload="registerAllIframes()">
@@ -140,7 +147,7 @@ title: Princeton Design System
 </header>
 <main class="jazz-container">
     <div class="core">
-        <nav class="jazz-sidebar-menu" aria-label="section">
+        <nav class="jazz-sidebar-menu" aria-label="Section Navigation">
             <h2 class="jazz-visually-hidden">Section Menu</h2>
             <ul class="jazz-sidebar-menu__list" role="list">
                 {% for privNav in siteMap.primary %}

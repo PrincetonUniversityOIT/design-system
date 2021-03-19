@@ -29,6 +29,10 @@
         {
           "label": "Buttons",
           "url": "/components/buttons/"
+        },
+        {
+          "label": "Tabs",
+          "url": "/components/tabs/"
         }
       ]
     },

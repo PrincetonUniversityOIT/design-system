@@ -1,0 +1,205 @@
+---
+layout: layout.njk
+title: Tabs
+tags: components
+---
+
+{% from "../_includes/example.njk" import example %}
+
+<h1 class="jazz-page-title">Tabs</h1>
+
+<p>
+Tabs organize related content into separate sections when available space is limited or there is a need to
+efficiently flip between related sections.
+</p>
+
+{{ example("/components/tabs-example1", "Demonstration", "code-panel-demo") }}
+
+<h2>Best Practices</h2>
+
+<ul>
+    <li>Each tab must have a label.</li>
+    <li>Tab labels should be short.</li>
+    <li>Tab labels should not be wrapped within the tab.</li>
+    <li>
+        Avoid having an abundance of tabs and have a strategy for when the number of tabs do not fit within the
+        available horizontal space.
+    </li>
+    <li>Avoid having multiple levels of tabs.</li>
+    <li>Icons should be to the left of the label when used on tabs.</li>
+    <li>
+        When tab labels are represented by only icons, be sure to consider accessibility and also provide tooltips
+        to provide clarity for users that might not know what the icons represent.
+    </li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>The Basics</h3>
+
+<p>
+    This example demonstrates the basic structure for tabs, and demonstrates the following tab states:
+</p>
+<ul>
+    <li>Default (Enabled &amp; Not Current)</li>
+    <li>Current</li>
+    <li>Disabled - disabled tabs can never receive focus</li>
+    <li>Hover (when the mouse is within a tab that is Not Current and not disabled)</li>
+    <li>Focus (when browser focus is placed on one of the tabs that is not disabled)</li>
+</ul>
+
+{{ example("/components/tabs-example-simple", "Simple Example", "code-panel-simple") }}
+
+<h3>Tabs and Content Sections</h3>
+
+<p>
+    Tabs can automatically control the visibility of other sections of the page by relating each tab to a content
+    section by way of the <span class="code">aria-controls</span> attribute.  The value of the
+    <span class="code">aria-controls</span> attribute should be the <span class="code">id</span> of the corresponding
+    content section.
+</p>
+
+{{ example("/components/tabs-example-with-panels", "Tabs Example With Content Sections", "code-panel-with-panels") }}
+
+<h3>Automatic Activation</h3>
+
+<p>
+    By default, tabs will not automatically activate their corresponding content section when they receive focus.
+    To enable this behavior, include the <span class="code">jazz-auto-activate</span> class.
+</p>
+
+{{ example("/components/tabs-example-with-auto-activate", "Tabs Example With Automatic Activation", "code-panel-with-auto-activate") }}
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<ul>
+    <li>A tab list is made of up individual tab buttons.</li>
+    <li>Each tab button has a label, which can consist of either a text label, an icon, or both.</li>
+    <li>
+        Each tab can be associated with a related section of content.  The section content is not considered
+        to be a part of the tabs, but is an external structure that can be controlled by the tabs.
+    </li>
+</ul>
+
+<h3>Behavior</h3>
+
+<ul>
+    <li>
+        Tabs are contained in a <span class="code">div</span> element is given a class of <span class="code">jazz-tablist</span>.
+        This <span class="code">div</span> defines the overall scope of the tab list.
+        The <span class="code">div</span> is preferred over the <span class="code">nav</span> element because the
+        feature has more specific behavior than a simple navigation list.
+    </li>
+    <li>
+        The containing element (preferably a <span class="code">div</span>) must have its <span class="code">role</span>
+        set to <span class="code">tablist</span>
+        {% highlight "html" %}
+
+<div class="jazz-tablist" role="tablist">
+    <button role="tab">Tab 1</button>
+    <button role="tab">Tab 2</button>
+</div>
+
+        {% endhighlight %}
+    </li>
+    <li>
+        Individual tabs are structurally implemented as a <span class="code">button</span> instead of a link because
+        there is a need to be able to disable individual tabs and the link element does not support the
+        <span class="code">disabled</span> attribute.  Implementing this structure as a button avoids the need to
+        otherwise replicate button semantics (i.e. disabled, focus, etc…).
+    </li>
+    <li>
+        Each tab button  must have its <span class="code">role</span> set to <span class="code">tab</span>.
+        {% highlight "html" %}
+        <button role="tab">Tab Label</button>
+        {% endhighlight %}
+    </li>
+    <li>
+        To disable an individual tab, disable the corresponding button.
+        {% highlight "html" %}
+        <button role="tab" disabled>Tab Label</button>
+        {% endhighlight %}
+    </li>
+    <li>
+        The selected tab (button) should have the aria-selected attribute set to <span class="code">true</span>.
+        All other tabs should have their <span class="code">aria-selected</span> attribute set to
+        <span class="code">false</span> or not specified at all.  A disabled tab cannot be the selected tab.
+        {% highlight "html" %}
+        <button role="tab" aria-selected="true">Tab Label</button>
+        {% endhighlight %}
+    </li>
+    <li>
+        Before the tab with the Selected state can be programmatically disabled,
+        another tab that is not disabled must be given the Selected state.
+    </li>
+    <li>
+        The focus indicator is pulled within the boundary of the tab (using a negative value for the CSS
+        <span class="code">outline</span> property) to avoid having the outline indicator truncated by neighboring
+        content.  Additional padding is added to each tab to avoid having the focus indicator overlap with the tab label.
+    </li>
+    <li>
+        When a tab is selected, its <span class="code">tabindex</span> is set to <span class="code">zero</span> and
+        the tab index of all other tabs is set to <span class="code">-1</span>.  This causes the Selected tab to
+        receive focus when the tab list receives focus and causes all other tabs to be removed from the tab order
+        until such time that they are selected.
+    </li>
+    <li>
+        The Hover state is only implemented for tabs that are not Disabled and Not Selected.
+    </li>
+    <li>
+        Disabled tabs do not have a Hover state, cannot be the Current tab, and cannot obtain focus.
+    </li>
+    <li>
+        Optionally, tabs can automatically be selected when they obtain focus by adding the
+        <span class="code">jazz-auto-activate</span> class.
+        {% highlight "html" %}
+        <div class="jazz-tablist jazz-auto-activate" role="tablist">...</div>
+        {% endhighlight %}
+    </li>
+    <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">ARIA best practices</a> for implementing
+        a <span class="code">tablist</span> have been followed.  Of particular note are the keyboard interactions
+        described below:
+        <ul>
+            <li>The <span class="code">[Tab]</span> key will navigate to only the Selected tab.</li>
+            <li>
+                The Left Arrow key will move focus to the previous tab. If the previous tab is not enabled, then it is
+                skipped and its previous tab is given focus...and so on.  If focus is on the first tab, The Left Arrow
+                will move focus to the last tab.  If the last tab is not enabled, then it is skipped and its previous
+                tab is given focus...and so on.
+            </li>
+            <li>
+                The Right Arrow key will move focus to the next tab. If the next tab is not enabled, then it is
+                skipped and its next tab is given focus...and so on.  If focus is on the last tab, The Right Arrow
+                will move focus to the first tab.  If the first tab is not enabled, then it is skipped and its next
+                tab is given focus...and so on.
+            </li>
+            <li>The Space &amp; Enter keys will transition a tab to the Selected state.</li>
+            <li>The Home &amp; End keys set focus to the first/last enabled tab, respectively.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>States</h3>
+
+<p>
+    All of the states described below apply to each individual Tab, except for the “Overflow” state.
+</p>
+
+<h4>Default</h4>
+<p>The Default state of a Tab is Enabled & Not Selected.</p>
+<h4>Active</h4>
+<p>The tab button is in the process of being selected as the current tab.</p>
+<h4>Not Selected</h4>
+<p>The tab button does not correspond to the tab region that is currently visible.</p>
+<h4>Selected</h4>
+<p>The tab button corresponds to the tab region that is currently visible.</p>
+<h4>Focus</h4>
+<p>The tab button has focus.</p>
+<h4>Hover</h4>
+<p>The mouse cursor is within the tab button.</p>
+<h4>Disabled</h4>
+<p>The tab button cannot be selected as the current tab.</p>
+<h4>Overflow</h4>
+<p>Tab buttons are being displayed horizontally and there are too many tab buttons to fit within the available horizontal space.</p>
