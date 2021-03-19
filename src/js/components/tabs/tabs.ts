@@ -3,7 +3,7 @@ import { prefix as PREFIX } from '../../config';
 import {Listener} from "../../base/decorator-functions";
 
 const TABLIST_SELECTOR = `.${PREFIX}-tablist`;
-const TABLIST_BUTTON_SELECTOR = `.${PREFIX}-tablist[role="tablist"] > button[role='tab']`;
+const TABLIST_BUTTON_SELECTOR = `.${PREFIX}-tablist > button`;
 
 export class TabsBehavior extends Behavior {
 
@@ -12,7 +12,11 @@ export class TabsBehavior extends Behavior {
     }
 
     init(root: ParentNode) {
+        this.select(TABLIST_SELECTOR, root).forEach((tablist: HTMLElement) => {
+           tablist.setAttribute("role", "tablist");
+        });
         this.select(TABLIST_BUTTON_SELECTOR, root).forEach((button: HTMLButtonElement) => {
+            button.setAttribute("role", "tab");
             const selected = button.getAttribute(ARIA_SELECTED) === "true";
             this.toggleTab(button, selected);
         });

@@ -39,6 +39,24 @@ export const AutoActivateTemplate = (args) => html`
     </script>
 `;
 
+export const MissingRolesTemplate = (args) => html`
+    <div class="jazz-tablist">
+      <button id="one">Tab Label A</button>
+      <button id="two" aria-selected="true">Tab Label B</button>
+      <button disabled>Multiple Lines</button>
+      <button>Groups</button>
+      <button>Funding</button>
+      <button>Expenses</button>
+      <button aria-controls="icons">Icon</button>
+    </div>
+    <div id="icons">
+        Hello, Icons!
+    </div>
+    <script id="initscript">
+      PrincetonDesignSystem.enableDesignSystem();
+    </script>
+`;
+
 # Tabs
 
 The following section demonstrates a simple set of tabs:
@@ -56,6 +74,14 @@ The following section demonstrates a simple set of tabs:
         label: 'Auto Activate Tabs' 
     }}>
       {AutoActivateTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Missing Roles" args={{
+        label: 'Missing Roles' 
+    }}>
+      {MissingRolesTemplate.bind({})}
     </Story>
 </Canvas>
 

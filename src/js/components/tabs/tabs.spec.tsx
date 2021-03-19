@@ -16,6 +16,31 @@ describe('tab initialization behavior', () => {
     tabs.enable();
   });
 
+  it('should assign tablist and tab roles', () => {
+    document.body.innerHTML = `
+        <div class="jazz-tablist" id="tablist">
+          <button id="button1">Tab Label 1</button>
+          <button id="button2" aria-selected="true">Tab Label 2</button>
+          <button id="button3" disabled>Tab Disabled</button>
+          <button id="button4">Tab Label 3</button>
+        </div>
+      `;
+
+    const tabs = new TabsBehavior();
+    tabs.enable();
+
+    const tablist = document.getElementById("tablist");
+    expect(tablist).toHaveAttribute("role", "tablist");
+    const button1 = document.getElementById("button1");
+    expect(button1).toHaveAttribute("role", "tab");
+    const button2 = document.getElementById("button2");
+    expect(button2).toHaveAttribute("role", "tab");
+    const button3 = document.getElementById("button3");
+    expect(button3).toHaveAttribute("role", "tab");
+    const button4 = document.getElementById("button4");
+    expect(button4).toHaveAttribute("role", "tab");
+  });
+
   it('should show the section associated with the active tab if it is not already shown', () => {
     document.body.innerHTML = `
         <div class="jazz-tablist" role="tablist">
