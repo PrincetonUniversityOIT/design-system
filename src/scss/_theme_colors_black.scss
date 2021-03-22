@@ -2,6 +2,8 @@
 $jazz-theme-feature-colors: (
 
   // general theme options
+        accent-lightest: jazz-gray-20,
+        accent-light: jazz-gray-60,
         accent: jazz-princeton-orange,
         neutral-light: jazz-gray-20,
         neutral-dark: jazz-gray-60,
@@ -61,6 +63,7 @@ $jazz-theme-feature-colors: (
 
   // tabs
         tab: jazz-white,
+        tab-normal: jazz-white,
 
   // pager theme
         pager-item: jazz-gray-20,
