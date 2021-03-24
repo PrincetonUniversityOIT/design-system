@@ -2,7 +2,7 @@ ul.jazz-menubar {
   @include jazz-theme-color(menubar-sm);
   display: none;
   list-style: none;
-  padding: px-to-rem(16) px-to-rem(16) px-to-rem(0) 0rem;
+  padding: px-to-rem(16) 0 px-to-rem(0) 0;
   margin: 0px;
   line-height: 1.15;
 }
@@ -91,8 +91,8 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
   ul.jazz-menubar > li {
     @include jazz-theme-color(menubar-lg-primary);
     padding-left: 0rem;
-    padding-right: px-to-rem(14);
-    margin: 0 px-to-rem(10);
+    padding-right: px-to-rem(10);
+    margin: px-to-rem(62) px-to-rem(10);
     position: relative;
   }
   ul.jazz-menubar li > a {
@@ -104,8 +104,9 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     border-bottom: px-to-rem(7) solid transparent;
     text-decoration: none;
     font-weight: bold;
-    padding: 0px 0px px-to-rem(10) 0px;
+    padding: 0;
     display: inline-block;
+    white-space: nowrap;
   }
   ul.jazz-menubar > li:hover > a {
     border-bottom: px-to-rem(7) solid jazz-theme-rgb(menubar-lg-primary-hover-underline);

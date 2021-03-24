@@ -29,3 +29,11 @@
 .jazz-icon.jazz-inverted {
   background-color: white;
 }
+
+.jazz-icon-white {
+  filter: invert(1);
+}
+
+.jazz-icon-transparent {
+  filter: opacity(0);
+}
