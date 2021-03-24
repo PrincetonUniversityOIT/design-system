@@ -53,7 +53,54 @@ export const Template = (args) => html`
                     <div class="col-sm-4 col-xs-12">
                         <a href="javascript:void(0)">Accessibility</a>
                     </div>
+                    <div class="col-sm-4 col-xs-12 jazz-footer-text--center">
+                        &copy; 2020 The Trustees of Princeton University
+                    </div>
                     <div class="col-sm-4 col-xs-12">
+                        <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+`;
+
+export const TemplateVariant1 = (args) => html`
+    <footer role="contentinfo" class="jazz-footer">
+        <div class="jazz-container jazz-footer__content">
+            <div class="row">
+                <div class="col-sm-3 col-xs-12">
+                    <ul class="jazz-footer__list">
+                        <li><a href="javascript:void(0);">finance@princeton.edu</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-xs-12">
+                    <ul class="jazz-footer__list">
+                        <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-phone jazz-icon-white" aria-hidden="true"></i>  609-258-3080</a></li>
+                        <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-printer jazz-icon-white" aria-hidden="true"></i>  609-258-3080</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-xs-12">
+                    <ul class="jazz-footer__list">
+                        <li><i class="jazz-icon jazz-icon-map-pin jazz-icon-transparent" aria-hidden="true"></i>  701 Carnegie Center</li>
+                        <li><i class="jazz-icon jazz-icon-map-pin jazz-icon-white" aria-hidden="true"></i>  Suite 435</li>
+                        <li><i class="jazz-icon jazz-icon-map-pin jazz-icon-transparent" aria-hidden="true"></i>  Princeton, NJ 08540</li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-xs-12 jazz-footer-text--right">
+                    <ul class="jazz-footer__list">
+                        <li><img class="jazz-footer__shield" src="/logos/shield.svg" />  Web Development Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="jazz-footer__subfooter">
+            <div class="jazz-container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <a href="javascript:void(0)">Accessibility</a>
+                    </div>
+                    <div class="col-sm-4 col-xs-12 jazz-footer-text--center">
                         &copy; 2020 The Trustees of Princeton University
                     </div>
                     <div class="col-sm-4 col-xs-12">
@@ -77,6 +124,12 @@ of a website, including copyright information, navigation links, and privacy sta
 <Canvas>
     <Story name="Basic" args={{}}>
       {Template.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Variant1" args={{}}>
+      {TemplateVariant1.bind({})}
     </Story>
 </Canvas>
 

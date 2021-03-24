@@ -35,6 +35,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget("./dist/");
     eleventyConfig.addWatchTarget("./docs/**/*.code");
 
+    eleventyConfig.addPassthroughCopy({ "dist/jazz_sans.css": "jazz_sans.css" });
     eleventyConfig.addPassthroughCopy({ "dist/jazz_serif.css": "jazz_serif.css" });
     eleventyConfig.addPassthroughCopy({ "dist/jazz_fonts.css": "jazz_fonts.css" });
     eleventyConfig.addPassthroughCopy({ "dist/fonts": "fonts" });
