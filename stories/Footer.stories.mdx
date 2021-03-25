@@ -65,13 +65,13 @@ export const Template = (args) => html`
     </footer>
 `;
 
-export const TemplateVariant1 = (args) => html`
+export const TemplateSample1 = (args) => html`
     <footer role="contentinfo" class="jazz-footer">
         <div class="jazz-container jazz-footer__content">
             <div class="row">
                 <div class="col-sm-3 col-xs-12">
                     <ul class="jazz-footer__list">
-                        <li><a href="javascript:void(0);">finance@princeton.edu</a></li>
+                        <li><i class="jazz-icon jazz-icon-email jazz-icon-white" aria-hidden="true"></i><a href="javascript:void(0);">  finance@princeton.edu</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 col-xs-12">
@@ -128,8 +128,8 @@ of a website, including copyright information, navigation links, and privacy sta
 </Canvas>
 
 <Canvas>
-    <Story name="Variant1" args={{}}>
-      {TemplateVariant1.bind({})}
+    <Story name="Sample1" args={{}}>
+      {TemplateSample1.bind({})}
     </Story>
 </Canvas>
 

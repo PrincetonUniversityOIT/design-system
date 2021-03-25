@@ -2,7 +2,7 @@ ul.jazz-menubar {
   @include jazz-theme-color(menubar-sm);
   display: none;
   list-style: none;
-  padding: px-to-rem(16) 0 px-to-rem(0) 0;
+  padding: 0;
   margin: 0px;
   line-height: 1.15;
 }
@@ -92,8 +92,9 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     @include jazz-theme-color(menubar-lg-primary);
     padding-left: 0rem;
     padding-right: px-to-rem(10);
-    margin: px-to-rem(62) px-to-rem(10);
+    margin: px-to-rem(10);
     position: relative;
+    height: px-to-rem(30);
   }
   ul.jazz-menubar li > a {
     border-bottom: none;

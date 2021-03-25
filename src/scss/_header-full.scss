@@ -13,13 +13,15 @@ The default styles for the collapsed version of the full header.
   @include jazz-theme-color(header-pu-branding);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  height: px-to-rem(5);
 }
 .jazz-header-right-container {
   @include jazz-theme-color(header-pu-branding);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: baseline;
 }
 .jazz-header__pu-branding {
   display: none;
@@ -57,7 +59,7 @@ The default styles for the collapsed version of the full header.
   background-color: transparent;
   position: absolute;
   right: 2em;
-  top: 1.75rem;
+  top: 2.1rem;
   width: px-to-rem(2);
   z-index: 1000;
 }
@@ -74,16 +76,26 @@ The default styles for the collapsed version of the full header.
 }
 .jazz-header__search-bar form [type='search'] {
   @include jazz-theme-color(header-search-input);
-  padding-right: 0px;
-  padding-left: px-to-rem(10);
+  padding: px-to-rem(8);
   margin-right: 0px;
   border-right: none;
   border-left: 1px solid jazz-theme-rgb('header-search-border');
   border-top: 1px solid jazz-theme-rgb('header-search-border');
   border-bottom: 1px solid jazz-theme-rgb('header-search-border');
-  height: px-to-rem(35);
+  height: px-to-rem(40);
   max-width: px-to-rem(140);
 }
+
+input[type="search"]::-webkit-input-placeholder {
+  color: jazz-theme-rgb(header-search-input-placeholder);
+}
+input[type="search"]::-moz-placeholder {
+  color: jazz-theme-rgb(header-search-input-placeholder);
+}
+input[type="search"]::placeholder {
+  color: jazz-theme-rgb(header-search-input-placeholder);
+}
+
 .jazz-header__search-bar form [type='submit'] {
   @include jazz-theme-color(header-search-input);
   background-image: url(jazz-icons-path("search"));
@@ -91,11 +103,11 @@ The default styles for the collapsed version of the full header.
   background-position: center center;
   background-size: 1rem;
   border: none;
-  height: px-to-rem(35);
+  height: px-to-rem(40);
   width: px-to-rem(35);
-  border-right: 1px solid jazz-theme-rgb('header-search-border');
-  border-top: 1px solid jazz-theme-rgb('header-search-border');
-  border-bottom: 1px solid jazz-theme-rgb('header-search-border');
+  border-right: 1px solid jazz-theme-rgb('header-search-border-glass');
+  border-top: 1px solid jazz-theme-rgb('header-search-border-glass');
+  border-bottom: 1px solid jazz-theme-rgb('header-search-border-glass');
 }
 .jazz-header__search-bar form,
 .jazz-header__search-bar form a {
@@ -127,18 +139,20 @@ The default styles for the collapsed version of the full header.
   padding: 0px;
   margin-right: px-to-rem(10);
   margin-top: 0px;
+  line-height: 1.15;
 }
 .jazz-header__utility-menu a:hover {
-  border-bottom: 1px solid jazz-theme-rgb(header-utility-menu-border-hover__small);
+  border-bottom: px-to-rem(1) solid jazz-theme-rgb(header-utility-menu-border-hover__small);
 }
 .jazz-header__utility-menu li > a {
   @include jazz-theme-color(header-utility-menu);
   border-bottom: 1px solid jazz-theme-rgb(header-utility-menu-border__small); //#c8c8c8
   text-decoration: none;
-  font-weight: bold;
-  padding: px-to-rem(15) 0px;
+  padding-top: px-to-rem(15);
+  padding-bottom: px-to-rem(15);
   padding-left: px-to-rem(5);
   display: block;
+  font-weight: bold;
 }
 .jazz-header__utility-menu--shown {
   display: block;
@@ -175,6 +189,10 @@ These are the styles for the higher resolution version of the full header
     justify-content: flex-start;
   }
 
+  .jazz-header-container {
+    height: px-to-rem(6);
+  }
+
   /* PU Branding */
   .jazz-header__pu-branding {
     @include jazz-theme-color(header-pu-branding);
@@ -190,27 +208,32 @@ These are the styles for the higher resolution version of the full header
   /* Site Branding */
   .jazz-header__site-branding {
     @include jazz-theme-color(header-site-branding);
-    padding: px-to-rem(12) 0px;
+    padding: px-to-rem(40) 0 px-to-rem(40) 0;
     display: flex;
     flex-wrap: wrap;
   }
   .jazz-header__site-branding img {
-    width: px-to-rem(60);
+    width: px-to-rem(70);
+    height: px-to-rem(70);
   }
   .jazz-header__site-branding-name a,
   .jazz-header__site-branding-name a:visited {
     @include jazz-theme-color(header-site-branding);
     text-decoration: none;
-    font-size: px-to-rem(44);
-    font-weight: 700;
+    font-size: px-to-rem(36);
+    font-style: normal;
+    font-weight: bold;
+    line-height: px-to-rem(42);
   }
   .jazz-header__site-branding-contents {
     display: flex;
     flex-wrap: wrap;
   }
   .jazz-header__site-branding-slogan {
-    font-size: px-to-rem(20);
+    font-style: normal;
+    font-size: px-to-rem(18);
     font-weight: 300;
+    line-height: 21px;
   }
   .jazz-header__site-branding-home-link {
     padding-right: 1rem;
@@ -260,6 +283,10 @@ These are the styles for the higher resolution version of the full header
     display: none;
   }
 
+  .jazz-header__utility-menu {
+    padding-top: px-to-rem(20);
+  }
+
   /* Utility Menu */
   .jazz-header__utility-menu ul {
     display: flex;
@@ -267,26 +294,31 @@ These are the styles for the higher resolution version of the full header
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
+    margin-right: 0;
     list-style: none;
+    line-height: 1.15;
   }
   .jazz-header__utility-menu a {
     @include jazz-theme-color(header-pu-branding);
-    font-size: .85rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
     padding: px-to-rem(8) 0 .2rem 0;
     margin: 0 .65rem;
     text-decoration: none;
     border: none;
+    line-height: 28px;
   }
   .jazz-header__utility-menu li > a {
     @include jazz-theme-color(header-pu-branding);
     border-bottom: none;
-    font-weight: bold;
-    padding: px-to-rem(35) 0px 0px 0px;
+    font-weight: normal;
+    font-style: normal;
+    padding: 0;
     display: block;
   }
   .jazz-header__utility-menu a:hover {
-    border-bottom: 1px solid jazz-theme-rgb('header-utility-menu-underline');
+    border-bottom: px-to-rem(4) solid jazz-theme-rgb('header-utility-menu-underline');
   }
   .jazz-header__utility-menu--hide-large {
     display: none;

@@ -18,6 +18,7 @@ $jazz-icons-standard: (
         phone: '../icons/phosphor/phone.svg',
         printer: '../icons/phosphor/printer.svg',
         map-pin: '../icons/phosphor/map-pin.svg',
+        email: '../icons/phosphor/envelope.svg',
 );
 
 @each $name, $path in map-merge($jazz-icons-standard, $jazz-icons-custom) {
