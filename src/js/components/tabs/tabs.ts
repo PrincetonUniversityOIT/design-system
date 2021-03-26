@@ -14,7 +14,7 @@ export class TabsBehavior extends Behavior {
     /**
      * During initialization of tablist behavior, the following logic is performed:
      *
-     * 1) Each tablist element is give the role of "tablist".
+     * 1) Each tablist element is given the role of "tablist".
      * 2) Each tablist button element is given the role of "tab".
      * 3) Content associated with each tab is shown/hidden based on the "aria-selected" attribute.
      *
