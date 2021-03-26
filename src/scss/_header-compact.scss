@@ -163,4 +163,8 @@ The default styles for the collapsed version of the compact header.
     flex-grow: 0;
     margin: px-to-rem(30) 0 px-to-rem(30) px-to-rem(10);
   }
+
+  .jazz-header-compact-container .jazz-menu__nav-container {
+    margin-top: 40px;
+  }
 }
