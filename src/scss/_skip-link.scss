@@ -10,3 +10,23 @@
 .jazz-skip-link:focus, .jazz-skip-link--shown {
   left: auto;
 }
+
+.jazz-skip-links a {
+  color: jazz-theme-rgb(skip-link);
+}
+
+.jazz-skip-links a:visited {
+  color: jazz-theme-rgb(skip-link-visited);
+}
+
+.jazz-skip-links a:focus {
+  color: jazz-theme-rgb(skip-link-focus);
+}
+
+.jazz-skip-links a:active {
+  color: jazz-theme-rgb(skip-link-active);
+}
+
+.jazz-skip-links a:hover {
+  color: jazz-theme-rgb(skip-link-hover);
+}

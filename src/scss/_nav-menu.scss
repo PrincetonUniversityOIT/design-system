@@ -92,7 +92,7 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     @include jazz-theme-color(menubar-lg-primary);
     padding-left: 0rem;
     padding-right: px-to-rem(10);
-    margin: px-to-rem(10);
+    margin: px-to-rem(10) px-to-rem(10) 0 px-to-rem(10);
     position: relative;
     height: px-to-rem(30);
   }
