@@ -116,7 +116,7 @@ title: Princeton Design System
                 <div  class="jazz-menu__nav-container">
                     <ul class="jazz-menubar" role="list">
                         {%- for item in siteMap.primary -%}
-                        <li{% if page.url.startsWith(item.url) %} aria-current="true"{% endif %}><a href="{{ item.url | url}}">{{ item.label }}</a>
+                        <li><a href="{{ item.url | url}}" {% if page.url.startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.label }}</a>
                              <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
                                  <span class="jazz-visually-hidden">{{ item.label }}</span>
                              </button>
