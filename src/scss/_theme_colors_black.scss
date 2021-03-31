@@ -27,7 +27,13 @@ $jazz-theme-feature-colors: (
         skip-link-active: jazz-white,
         skip-link-focus: jazz-white,
 
-        breadcrumb-item: jazz-gray-60,
+  // breadcrumbs
+        breadcrumb-item: jazz-white-and-gray-60,
+        breadcrumb-hover: jazz-white-and-gray,
+        breadcrumb-hover-line: jazz-princeton-orange,
+        breadcrumb-active: jazz-white-and-gray,
+        breadcrumb-active-line: jazz-princeton-orange,
+        breadcrumb-divider: jazz-white-and-gray-60,
 
   // header theme options
         header-cap: jazz-princeton-orange,
