@@ -113,6 +113,7 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     border-bottom: px-to-rem(7) solid jazz-theme-rgb(menubar-lg-primary-hover-underline);
   }
   ul.jazz-menubar > li > a[aria-current='page'],
+  ul.jazz-menubar > li[aria-current='true'] > a,
   .jazz-menubar > ul > li:hover > a[aria-current='page'] {
     @include jazz-theme-color(menubar-lg-primary);
     border-bottom: px-to-rem(7) solid jazz-theme-rgb(menubar-lg-primary-current-underline);
