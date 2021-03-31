@@ -4,6 +4,7 @@
   font-weight: normal;
   font-size: px-to-rem(14);
   line-height: px-to-rem(18);
+  letter-spacing: px-to-rem(1);
 
   padding-bottom: 1rem;
   padding-top: 1rem;
@@ -62,24 +63,31 @@
 .jazz-breadcrumb__list-item a:visited {
   @include jazz-theme-color(breadcrumb-item);
   text-decoration: none;
-  padding: 5px;
+  padding: px-to-rem(5);
 }
 
 .jazz-breadcrumb__list-item a:hover {
   @include jazz-theme-color(breadcrumb-hover);
+  border-bottom: px-to-rem(1) solid jazz-theme-rgb(breadcrumb-hover-line);
 }
 
 .jazz-breadcrumb__list-item a:active,
 .jazz-breadcrumb__list-item a[aria-current=page]{
   @include jazz-theme-color(breadcrumb-active);
   font-weight: 600;
+  border-bottom: px-to-rem(1) solid jazz-theme-rgb(breadcrumb-hover-line);
 }
 
-.jazz-breadcrumb__list-item a:hover > span,
-.jazz-breadcrumb__list-item a:active > span,
-.jazz-breadcrumb__list-item a[aria-current=page] > span
-{
-  @include jazz-theme-color(breadcrumb-hover);
-  padding-bottom: 2px;
-  border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
+// Todo: Remove later will keep this first until after design is reviewed
+//.jazz-breadcrumb__list-item a:hover > span,
+//.jazz-breadcrumb__list-item a:active > span,
+//.jazz-breadcrumb__list-item a[aria-current=page] > span
+//{
+//  @include jazz-theme-color(breadcrumb-hover);
+//  padding-bottom: 2px;
+//  border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
+//}
+
+.jazz-breadcrumb--flush-left {
+  margin-left: -10px;
 }
