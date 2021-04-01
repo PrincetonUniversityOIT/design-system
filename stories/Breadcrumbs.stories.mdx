@@ -5,51 +5,76 @@ import { html } from 'lit-html';
 
 export const Template = () => html`
     <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
-      <ol class="jazz-breadcrumb__list">
-        <li class="jazz-breadcrumb__list-item">
-          <a href="javascript:void(0)" class="jazz-breadcrumb__link">Home</a>
+      <ol>
+        <li>
+          <a href="javascript:void(0)">Home</a>
         </li>
-        <li class="jazz-breadcrumb__list-item">
-          <a href="javascript:void(0)" class="jazz-breadcrumb__link">Another Link</a>
+        <li>
+          <a href="javascript:void(0)">Another Link</a>
         </li>
-        <li class="jazz-breadcrumb__list-item">
-          <a href="javascript:void(0)" class="jazz-breadcrumb__link" aria-current="page">Yet Another Link Level</a>
+        <li>
+          <a href="javascript:void(0)">Yet Another Link Level</a>
         </li>
-        <li class="jazz-breadcrumb__list-item jazz-current" aria-current="page">Current Page</li>
+        <li>
+           <span aria-current="page">Current Page</span>
+        </li>
       </ol>
     </nav>
 `;
 
 export const CapsTemplate = () => html`
     <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
-      <ol class="jazz-breadcrumb__list">
-        <li class="jazz-breadcrumb__list-item">
-          <a href="javascript:void(0)" class="jazz-breadcrumb__link">HOME</a>
+      <ol>
+        <li>
+          <a href="javascript:void(0)">HOME</a>
         </li>
-        <li class="jazz-breadcrumb__list-item">
-          <a href="javascript:void(0)" class="jazz-breadcrumb__link">ANOTHER LINK</a>
+        <li>
+          <a href="javascript:void(0)">ANOTHER LINK</a>
         </li>
-        <li class="jazz-breadcrumb__list-item">
-          <a href="javascript:void(0)" class="jazz-breadcrumb__link" aria-current="page">YET ANOTHER LINK LEVEL</a>
+        <li>
+          <a href="javascript:void(0)">YET ANOTHER LINK LEVEL</a>
         </li>
-        <li class="jazz-breadcrumb__list-item jazz-current" aria-current="page">CURRENT PAGE</li>
+        <li>
+           <span aria-current="page">CURRENT PAGE</span>
+        </li>
       </ol>
     </nav>
 `;
 
 export const IconsTemplate = () => html`
     <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
-      <ol class="jazz-breadcrumb__list">
-        <li class="jazz-breadcrumb__list-item">
-          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)" class="jazz-breadcrumb__link">  HOME</a>
+      <ol>
+        <li>
+          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">  HOME</a>
         </li>
-        <li class="jazz-breadcrumb__list-item">
-          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)" class="jazz-breadcrumb__link">  ANOTHER LINK</a>
+        <li>
+          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">  ANOTHER LINK</a>
         </li>
-        <li class="jazz-breadcrumb__list-item">
-          <i class="jazz-icon jazz-icon-gear"></i> <a href="javascript:void(0)" class="jazz-breadcrumb__link" aria-current="page">  YET ANOTHER LINK LEVEL</a>
+        <li>
+          <i class="jazz-icon jazz-icon-gear"></i> <a href="javascript:void(0)">  YET ANOTHER LINK LEVEL</a>
         </li>
-        <li class="jazz-breadcrumb__list-item jazz-current" aria-current="page">CURRENT PAGE</li>
+        <li>
+           <i class="jazz-icon jazz-icon-gear"></i> <span aria-current="page">CURRENT PAGE</span>
+        </li>
+      </ol>
+    </nav>
+`;
+
+export const CurrentPageAsLinkTemplate = () => html`
+    <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
+      <ol>
+        <li>
+          <a href="javascript:void(0)">  HOME</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">  ANOTHER LINK</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">  YET ANOTHER LINK LEVEL</a>
+        </li>
+        <li>
+           <a href="javascript:void(0)" aria-current=page>  YET ANOTHER LINK LEVEL</a>
+        </li>
       </ol>
     </nav>
 `;
@@ -75,5 +100,12 @@ export const IconsTemplate = () => html`
     <Story name="With Icons" args={{
     }}>
       {IconsTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Current Page as a Link" args={{
+    }}>
+      {CurrentPageAsLinkTemplate.bind({})}
     </Story>
 </Canvas>
