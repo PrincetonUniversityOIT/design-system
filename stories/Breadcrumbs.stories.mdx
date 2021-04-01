@@ -5,25 +5,80 @@ import { html } from 'lit-html';
 
 export const Template = () => html`
     <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
-      <ol class="jazz-breadcrumb__list">
-        <li class="jazz-breadcrumb__list-item">
-          <a href="#" class="jazz-breadcrumb__link">Home</a>
+      <ol>
+        <li>
+          <a href="javascript:void(0)">Home</a>
         </li>
-        <li class="jazz-breadcrumb__list-item">
-          <a href="#" class="jazz-breadcrumb__link">Another Link</a>
+        <li>
+          <a href="javascript:void(0)">Another Link</a>
         </li>
-        <li class="jazz-breadcrumb__list-item">
-          <a href="#" class="jazz-breadcrumb__link">Yet Another Link Level</a>
+        <li>
+          <a href="javascript:void(0)">Yet Another Link Level</a>
         </li>
-        <li class="jazz-breadcrumb__list-item jazz-current" aria-current="page">And finally here were are the page description</li>
+        <li>
+           <span aria-current="page">Current Page</span>
+        </li>
       </ol>
     </nav>
-    
-    <small><small>
-    Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-    https://www.flaticon.com/packs/font-awesome/2
-    </small></small>
 `;
+
+export const CapsTemplate = () => html`
+    <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
+      <ol>
+        <li>
+          <a href="javascript:void(0)">HOME</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">ANOTHER LINK</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">YET ANOTHER LINK LEVEL</a>
+        </li>
+        <li>
+           <span aria-current="page">CURRENT PAGE</span>
+        </li>
+      </ol>
+    </nav>
+`;
+
+export const IconsTemplate = () => html`
+    <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
+      <ol>
+        <li>
+          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">  HOME</a>
+        </li>
+        <li>
+          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">  ANOTHER LINK</a>
+        </li>
+        <li>
+          <i class="jazz-icon jazz-icon-gear"></i> <a href="javascript:void(0)">  YET ANOTHER LINK LEVEL</a>
+        </li>
+        <li>
+           <i class="jazz-icon jazz-icon-gear"></i> <span aria-current="page">CURRENT PAGE</span>
+        </li>
+      </ol>
+    </nav>
+`;
+
+export const CurrentPageAsLinkTemplate = () => html`
+    <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
+      <ol>
+        <li>
+          <a href="javascript:void(0)">  HOME</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">  ANOTHER LINK</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">  YET ANOTHER LINK LEVEL</a>
+        </li>
+        <li>
+           <a href="javascript:void(0)" aria-current=page>  YET ANOTHER LINK LEVEL</a>
+        </li>
+      </ol>
+    </nav>
+`;
+
 
 # Breadcrumb
 
@@ -31,5 +86,26 @@ export const Template = () => html`
     <Story name="Basic" args={{
     }}>
       {Template.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="All Caps" args={{
+    }}>
+      {CapsTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="With Icons" args={{
+    }}>
+      {IconsTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Current Page as a Link" args={{
+    }}>
+      {CurrentPageAsLinkTemplate.bind({})}
     </Story>
 </Canvas>
