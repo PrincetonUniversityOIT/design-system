@@ -73,16 +73,6 @@
   border-bottom: px-to-rem(1) solid jazz-theme-rgb(breadcrumb-hover-line);
 }
 
-// Todo: Remove later will keep this first until after design is reviewed
-//.jazz-breadcrumb > ol > li a:hover > span,
-//.jazz-breadcrumb > ol > li a:active > span,
-//.jazz-breadcrumb > ol > li a[aria-current=page] > span
-//{
-//  @include jazz-theme-color(breadcrumb-hover);
-//  padding-bottom: 2px;
-//  border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
-//}
-
 .jazz-breadcrumb--flush-left {
   margin-left: -10px;
 }
