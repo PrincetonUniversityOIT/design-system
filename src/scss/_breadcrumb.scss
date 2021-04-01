@@ -43,6 +43,13 @@
   margin-right: px-to-rem(3);
 }
 
+.jazz-breadcrumb > ol > li > div {
+  display: inline-flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  align-items: center;
+}
+
 .jazz-breadcrumb > ol > li a:focus {
   @include jazz-theme-color(breadcrumb-item);
   font-style: normal;
@@ -57,7 +64,7 @@
   @include jazz-theme-color(breadcrumb-item);
   text-decoration: none;
   //padding: px-to-rem(5) 0 px-to-rem(5) px-to-rem(5);
-  padding: px-to-rem(5);
+  padding: px-to-rem(5) 0;
 }
 
 .jazz-breadcrumb > ol > li a:hover {
@@ -75,4 +82,8 @@
 
 .jazz-breadcrumb--flush-left {
   margin-left: -10px;
+}
+
+.jazz-breadcrumb-spacer {
+  width: 2px;
 }

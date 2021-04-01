@@ -45,16 +45,16 @@ export const IconsTemplate = () => html`
     <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
       <ol>
         <li>
-          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">  HOME</a>
+          <div><i class="jazz-icon jazz-icon-gear"></i><div class="jazz-breadcrumb-spacer"></div><a href="javascript:void(0)">HOME</a></div>
         </li>
         <li>
-          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">  ANOTHER LINK</a>
+          <div><i class="jazz-icon jazz-icon-gear"></i><div class="jazz-breadcrumb-spacer"></div><a href="javascript:void(0)">ANOTHER LINK</a></div>
         </li>
         <li>
-          <i class="jazz-icon jazz-icon-gear"></i> <a href="javascript:void(0)">  YET ANOTHER LINK LEVEL</a>
+          <div><i class="jazz-icon jazz-icon-gear"></i><div class="jazz-breadcrumb-spacer"></div><a href="javascript:void(0)">YET ANOTHER LINK LEVEL</a></div>
         </li>
         <li>
-           <i class="jazz-icon jazz-icon-gear"></i> <span aria-current="page">CURRENT PAGE</span>
+           <div><i class="jazz-icon jazz-icon-gear"></i><div class="jazz-breadcrumb-spacer"></div><span aria-current="page">CURRENT PAGE</span></div>
         </li>
       </ol>
     </nav>
@@ -74,6 +74,16 @@ export const CurrentPageAsLinkTemplate = () => html`
         </li>
         <li>
            <a href="javascript:void(0)" aria-current=page>  YET ANOTHER LINK LEVEL</a>
+        </li>
+      </ol>
+    </nav>
+`;
+
+export const BackToHomeTemplate = () => html`
+    <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
+      <ol>
+        <li>
+          <i class="jazz-icon jazz-icon-arrow-left"></i><div class="jazz-breadcrumb-spacer"></div><a href="javascript:void(0)">  Back to Home</a>
         </li>
       </ol>
     </nav>
@@ -107,5 +117,12 @@ export const CurrentPageAsLinkTemplate = () => html`
     <Story name="Current Page as a Link" args={{
     }}>
       {CurrentPageAsLinkTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Back to Home" args={{
+    }}>
+      {BackToHomeTemplate.bind({})}
     </Story>
 </Canvas>
