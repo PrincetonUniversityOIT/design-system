@@ -79,11 +79,11 @@ export const CurrentPageAsLinkTemplate = () => html`
     </nav>
 `;
 
-export const BackToHomeTemplate = () => html`
+export const BackToParentTemplate = () => html`
     <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
       <ol>
         <li>
-          <i class="jazz-icon jazz-icon-arrow-left"></i><div class="jazz-breadcrumb-spacer"></div><a href="javascript:void(0)">  Back to Home</a>
+          <i class="jazz-icon jazz-icon-arrow-left"></i><div class="jazz-breadcrumb-spacer"></div><a href="javascript:void(0)">  Back to Parent</a>
         </li>
       </ol>
     </nav>
@@ -121,8 +121,8 @@ export const BackToHomeTemplate = () => html`
 </Canvas>
 
 <Canvas>
-    <Story name="Back to Home" args={{
+    <Story name="Back to Parent" args={{
     }}>
-      {BackToHomeTemplate.bind({})}
+      {BackToParentTemplate.bind({})}
     </Story>
 </Canvas>
