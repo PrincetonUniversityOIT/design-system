@@ -57,6 +57,8 @@
 .jazz-breadcrumb > ol > li a:visited,
 .jazz-breadcrumb > ol > li span {
   @include jazz-theme-color(breadcrumb-item);
+  font-size: px-to-rem(14);
+  line-height: px-to-rem(18);
   text-decoration: none;
   padding: px-to-rem(5);
   border-bottom: px-to-rem(2) solid transparent;
@@ -64,6 +66,8 @@
 
 .jazz-breadcrumb > ol > li a:hover {
   @include jazz-theme-color(breadcrumb-hover);
+  font-size: px-to-rem(14);
+  line-height: px-to-rem(18);
   border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
 }
 
@@ -71,8 +75,10 @@
 .jazz-breadcrumb > ol > li a[aria-current=page],
 .jazz-breadcrumb > ol > li span[aria-current=page]{
   @include jazz-theme-color(breadcrumb-active);
+  font-size: px-to-rem(14);
   font-weight: 600;
   border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
+  line-height: px-to-rem(18);
 }
 
 .jazz-breadcrumb--flush-left {
