@@ -1,5 +1,12 @@
 a {
   color: jazz-theme-rgb(link);
+  border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-focus-line);
+  text-decoration: none;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(28);
 }
 
 a:visited, .jazz-link-visited {
@@ -12,14 +19,19 @@ a:visited, .jazz-link-visited {
 
 a:focus, .jazz-link-focus {
   color: jazz-theme-rgb(link-focus);
+  border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-focus-line);
+  outline: px-to-rem(2) solid jazz-theme-rgb(focus);
+  outline-offset: 0;
 }
 
 a:active, .jazz-link-active {
   color: jazz-theme-rgb(link-active);
+  border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-active-line);
 }
 
 a:hover, .jazz-link-hover {
   color: jazz-theme-rgb(link-hover);
+  border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-hover-line);
 }
 
 a:disabled, .jazz-link-disabled {
@@ -37,6 +49,9 @@ a[target="_blank"]::after {
   width:px-to-rem(15);
   height:px-to-rem(15);
   margin-left: 0.2em;
+  vertical-align: super;
+  font-size: .5em;
+  position: absolute;
 }
 .jazz-no-icon[target="_blank"]::after {
   content: none;
