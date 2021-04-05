@@ -15,7 +15,6 @@
 .jazz-breadcrumb:not(.jazz-breadcrumb--wrap) > ol > li {
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .jazz-breadcrumb > ol {
@@ -27,8 +26,11 @@
 
 .jazz-breadcrumb > ol > li {
   position: static;
-  display: inline;
   white-space: nowrap;
+  display: inline-flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  align-items: center;
 }
 
 .jazz-breadcrumb > ol > li:not(:last-child)::after {
@@ -47,7 +49,7 @@
   @include jazz-theme-color(breadcrumb-item);
   font-style: normal;
   font-weight: normal;
-  outline: px-to-rem(1) solid jazz-theme-rgb(focus);
+  outline: px-to-rem(2) solid jazz-theme-rgb(focus);
   outline-offset: 0;
 }
 
@@ -56,13 +58,13 @@
 .jazz-breadcrumb > ol > li span {
   @include jazz-theme-color(breadcrumb-item);
   text-decoration: none;
-  //padding: px-to-rem(5) 0 px-to-rem(5) px-to-rem(5);
   padding: px-to-rem(5);
+  border-bottom: px-to-rem(2) solid transparent;
 }
 
 .jazz-breadcrumb > ol > li a:hover {
   @include jazz-theme-color(breadcrumb-hover);
-  border-bottom: px-to-rem(1) solid jazz-theme-rgb(breadcrumb-hover-line);
+  border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
 }
 
 .jazz-breadcrumb > ol > li a:active,
@@ -70,7 +72,7 @@
 .jazz-breadcrumb > ol > li span[aria-current=page]{
   @include jazz-theme-color(breadcrumb-active);
   font-weight: 600;
-  border-bottom: px-to-rem(1) solid jazz-theme-rgb(breadcrumb-hover-line);
+  border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
 }
 
 .jazz-breadcrumb--flush-left {

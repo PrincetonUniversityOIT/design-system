@@ -45,16 +45,16 @@ export const IconsTemplate = () => html`
     <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
       <ol>
         <li>
-          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">  HOME</a>
+          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">HOME</a>
         </li>
         <li>
-          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">  ANOTHER LINK</a>
+          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">ANOTHER LINK</a>
         </li>
         <li>
-          <i class="jazz-icon jazz-icon-gear"></i> <a href="javascript:void(0)">  YET ANOTHER LINK LEVEL</a>
+          <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">YET ANOTHER LINK LEVEL</a>
         </li>
         <li>
-           <i class="jazz-icon jazz-icon-gear"></i> <span aria-current="page">CURRENT PAGE</span>
+           <i class="jazz-icon jazz-icon-gear"></i><span aria-current="page">CURRENT PAGE</span>
         </li>
       </ol>
     </nav>
@@ -64,16 +64,26 @@ export const CurrentPageAsLinkTemplate = () => html`
     <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
       <ol>
         <li>
-          <a href="javascript:void(0)">  HOME</a>
+          <a href="javascript:void(0)">HOME</a>
         </li>
         <li>
-          <a href="javascript:void(0)">  ANOTHER LINK</a>
+          <a href="javascript:void(0)">ANOTHER LINK</a>
         </li>
         <li>
-          <a href="javascript:void(0)">  YET ANOTHER LINK LEVEL</a>
+          <a href="javascript:void(0)">YET ANOTHER LINK LEVEL</a>
         </li>
         <li>
-           <a href="javascript:void(0)" aria-current=page>  YET ANOTHER LINK LEVEL</a>
+           <a href="javascript:void(0)" aria-current=page>YET ANOTHER LINK LEVEL</a>
+        </li>
+      </ol>
+    </nav>
+`;
+
+export const BackToParentTemplate = () => html`
+    <nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
+      <ol>
+        <li>
+          <i class="jazz-icon jazz-icon-arrow-left"></i><a href="javascript:void(0)">Back to Parent</a>
         </li>
       </ol>
     </nav>
@@ -107,5 +117,12 @@ export const CurrentPageAsLinkTemplate = () => html`
     <Story name="Current Page as a Link" args={{
     }}>
       {CurrentPageAsLinkTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Back to Parent" args={{
+    }}>
+      {BackToParentTemplate.bind({})}
     </Story>
 </Canvas>
