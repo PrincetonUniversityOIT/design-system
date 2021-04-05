@@ -53,11 +53,6 @@
   outline-offset: 0;
 }
 
-.jazz-breadcrumb > ol > li i {
-  border-bottom: px-to-rem(2) solid transparent;
-  padding: px-to-rem(5);
-}
-
 .jazz-breadcrumb > ol > li a,
 .jazz-breadcrumb > ol > li a:visited,
 .jazz-breadcrumb > ol > li span {
@@ -84,6 +79,6 @@
   margin-left: -10px;
 }
 
-.jazz-breadcrumb-spacer {
-  width: 3px;
-}
+//.jazz-breadcrumb-spacer {
+//  width: 3px;
+//}
