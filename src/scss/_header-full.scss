@@ -108,10 +108,21 @@ input[type="search"]::placeholder {
   border-right: 1px solid jazz-theme-rgb('header-search-border-glass');
   border-top: 1px solid jazz-theme-rgb('header-search-border-glass');
   border-bottom: 1px solid jazz-theme-rgb('header-search-border-glass');
+
+  // for black only and comment out the theme color
+  // filter: invert(1);
 }
 .jazz-header__search-bar form,
 .jazz-header__search-bar form a {
   width: 100%;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: px-to-rem(16);
+  line-height: normal;
+  letter-spacing: normal;
+  border-bottom: 0;
+  text-decoration: none;
 }
 .jazz-header__search-bar form [type='search'] {
   width: 100%;
@@ -217,17 +228,26 @@ These are the styles for the higher resolution version of the full header
     height: px-to-rem(70);
   }
   .jazz-header__site-branding-name a,
-  .jazz-header__site-branding-name a:visited {
+  .jazz-header__site-branding-name a:visited,
+  .jazz-header__site-branding-name a:hover,
+  .jazz-header__site-branding-name a:active {
     @include jazz-theme-color(header-site-branding);
     text-decoration: none;
     font-size: px-to-rem(36);
     font-style: normal;
     font-weight: bold;
     line-height: px-to-rem(42);
+    letter-spacing: normal;
+    border-bottom: 0;
   }
   .jazz-header__site-branding-contents {
     display: flex;
     flex-wrap: wrap;
+  }
+  .jazz-header__site-branding-contents a,
+  .jazz-header__site-branding-contents a:hover,
+  .jazz-header__site-branding-contents a:active {
+    border-bottom: 0;
   }
   .jazz-header__site-branding-slogan {
     font-style: normal;
@@ -314,8 +334,10 @@ These are the styles for the higher resolution version of the full header
     border-bottom: none;
     font-weight: normal;
     font-style: normal;
+    font-size: px-to-rem(16);
     padding: 0;
     display: block;
+    line-height: px-to-rem(28);
   }
   .jazz-header__utility-menu a:hover {
     border-bottom: px-to-rem(4) solid jazz-theme-rgb('header-utility-menu-underline');

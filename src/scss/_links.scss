@@ -41,6 +41,9 @@ a:disabled, .jazz-link-disabled {
   text-decoration: none;
 }
 
+a[target="_blank"] {
+  margin-right: 15px;
+}
 a[target="_blank"]::after {
   content:"";
   background-image: url(jazz-icons-path("external"));

@@ -29,7 +29,11 @@ ul.jazz-menubar li > a {
   @include jazz-theme-color(menubar-sm);
   border-bottom: 1px solid jazz-theme-rgb(menubar-sm-border-bottom);
   text-decoration: none;
+  font-style: normal;
   font-weight: bold;
+  font-size: px-to-rem(16);
+  line-height: normal;
+  letter-spacing: normal;
   padding: px-to-rem(15) 0px px-to-rem(15) px-to-rem(5);
   display: block;
 }
@@ -96,18 +100,20 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     position: relative;
     height: px-to-rem(30);
   }
-  ul.jazz-menubar li > a {
-    border-bottom: none;
-  }
-  ul.jazz-menubar > li > a /*,
-  ul.jazz-menubar > li > a[aria-current='page']*/ {
+  ul.jazz-menubar > li > a  {
     @include jazz-theme-color(menubar-lg-primary);
     border-bottom: px-to-rem(7) solid transparent;
     text-decoration: none;
+    font-style: normal;
     font-weight: bold;
+    font-size: px-to-rem(16);
+    line-height: normal;
+    letter-spacing: normal;
+    border-bottom: 0;
     padding: 0;
     display: inline-block;
     white-space: nowrap;
+    border-bottom: none;
   }
   ul.jazz-menubar > li:hover > a {
     border-bottom: px-to-rem(7) solid jazz-theme-rgb(menubar-lg-primary-hover-underline);
@@ -195,6 +201,12 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     @include jazz-theme-color(menubar-lg-secondary);
     text-decoration: none;
     font-weight: bold;
+    font-style: normal;
+    font-size: px-to-rem(16);
+    line-height: normal;
+    letter-spacing: normal;
+    border-bottom: 0;
+    text-decoration: none;
     padding: px-to-rem(13) px-to-rem(5);
     width: 100%;
     display: block;
