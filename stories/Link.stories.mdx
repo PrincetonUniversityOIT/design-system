@@ -29,10 +29,6 @@ export const HoverTemplate = (args) => html`
     <a href="javascript:void(0);" class="jazz-link-hover">${ args.text }</a>
 `;
 
-export const DisabledTemplate = (args) => html`
-    <a href="javascript:void(0);" class="jazz-link-disabled" disabled>${ args.text }</a>
-`;
-
 export const ExternalLinkTemplate = (args) => html`
     <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer">${ args.text }</a>
 `;
@@ -99,13 +95,5 @@ navigate to a different section within the same page/document.
         text: "Link Text"
     }}>
       {HoverTemplate.bind({})}
-    </Story>
-</Canvas>
-
-<Canvas>
-    <Story name="Disabled" args={{
-        text: "Link Text"
-    }}>
-      {DisabledTemplate.bind({})}
     </Story>
 </Canvas>
