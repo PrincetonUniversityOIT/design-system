@@ -34,13 +34,9 @@ a:hover, .jazz-link-hover {
   border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-hover-line);
 }
 
-a:disabled, .jazz-link-disabled {
-  color: jazz-theme-rgb(link);
-  cursor: not-allowed;
-  opacity: 0.7;
-  text-decoration: none;
+a[target="_blank"] {
+  margin-right: 15px;
 }
-
 a[target="_blank"]::after {
   content:"";
   background-image: url(jazz-icons-path("external"));

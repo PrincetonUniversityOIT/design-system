@@ -13,11 +13,17 @@
   list-style: none;
 }
 .jazz-sidebar-menu__list a {
+  @include jazz-theme-color(sidebar);
+  font-style: normal;
+  font-weight: bold;
+  font-size: px-to-rem(16);
+  line-height: normal;
+  letter-spacing: normal;
+  border-bottom: 0;
+  border-right: 4px solid transparent;
   text-decoration: none;
-  color: #000;
   display: block;
   padding: 0.5rem 1rem;
-  border-right: 4px solid transparent;
 }
 .jazz-sidebar-menu__list-item {
   margin: 0.1em 0;

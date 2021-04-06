@@ -5,12 +5,16 @@
   padding: px-to-rem(2) px-to-rem(16) px-to-rem(2) px-to-rem(16);
   margin-right: px-to-rem(4);
   font-size: px-to-rem(14);
+  font-style: normal;
   font-weight: bold;
   text-decoration: none;
   line-height: 1.5;
+  letter-spacing: normal;
+  border-bottom: 0;
 }
 .jazz-pill:hover {
   text-decoration: underline;
+  border-bottom: 0;
 }
 ul.jazz-pill-bag {
   list-style: none;

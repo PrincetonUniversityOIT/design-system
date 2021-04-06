@@ -75,10 +75,9 @@ The default styles for the collapsed version of the compact header.
   .jazz-header-compact__site-branding-name a:hover {
     @include jazz-theme-color(header-site-branding-name);
     text-decoration: none;
-
+    border-bottom: 0;
     width: px-to-rem(739);
     height: px-to-rem(33);
-
     font-style: normal;
     font-weight: bold;
     font-size: px-to-rem(28);
@@ -133,7 +132,7 @@ The default styles for the collapsed version of the compact header.
     font-style: normal;
     font-weight: bold;
     font-size: px-to-rem(18);
-    line-height: px-to-rem(20);
+    line-height: normal;
     letter-spacing: 0.12px;
 
     padding: px-to-rem(20) px-to-rem(5);
