@@ -1,6 +1,6 @@
 # Terms of Use and License Information
 
-The Princeton University Jazz Design System (the "System") uses and/or bundles resources that carry their own license
+The Princeton University Design System (the "System") uses and/or bundles resources that carry their own license
 restrictions and requirements.  These licenses are identified below.  By using any of the resources made available in 
 the System, you agree to abide by the applicable license terms, as well as the following terms of use.  The University 
 reserves the right to update or modify this Terms of Use and License Information at any time without prior notice.
