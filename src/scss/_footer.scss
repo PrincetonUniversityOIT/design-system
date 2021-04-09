@@ -21,10 +21,29 @@ footer.jazz-footer h2 {
 }
 footer.jazz-footer a {
   @include jazz-theme-color(footer);
+  border-bottom: px-to-rem(1) solid transparent;
   text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+  letter-spacing: px-to-rem(2);
 }
-footer.jazz-footer a:hover {
-  text-decoration: underline;
+footer.jazz-footer a:hover,
+footer.jazz-footer a:active,
+footer.jazz-footer a:focus {
+  border-bottom: px-to-rem(1) solid jazz-theme-rgb('footer-underline');
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+  letter-spacing: px-to-rem(2);
+}
+footer.jazz-footer .jazz-footer__icon-list a:hover,
+footer.jazz-footer .jazz-footer__icon-list a:active,
+footer.jazz-footer .jazz-footer__icon-list a:focus {
+  border-bottom: 0;
 }
 ul.jazz-footer__list {
   list-style: none;

@@ -15,11 +15,15 @@ $jazz-theme-feature-colors: (
         body-text: jazz-black,
         focus: jazz-blue,
 
-        link: jazz-blue-dark,
-        link-visited: jazz-indigo-dark,
-        link-hover: jazz-blue,
-        link-active: jazz-blue,
-        link-focus: jazz-blue,
+        link: jazz-gray,
+        link-line: jazz-gray-60,
+        link-visited: jazz-gray,
+        link-hover: jazz-gray,
+        link-hover-line: jazz-princeton-orange,
+        link-active: jazz-gray,
+        link-active-line: jazz-princeton-orange,
+        link-focus: jazz-gray,
+        link-focus-line: jazz-gray-60,
 
         skip-link: jazz-black,
         skip-link-visited: jazz-indigo-dark,
@@ -59,6 +63,7 @@ $jazz-theme-feature-colors: (
 
   // footer theme options
         footer: jazz-gray-80,
+        footer-underline: jazz-white,
         sub-footer: jazz-gray-80,
         sub-footer-divider: jazz-gray-40,
 
@@ -74,6 +79,9 @@ $jazz-theme-feature-colors: (
         menubar-sm-current: jazz-gray-40,
         menubar-sm-border-bottom: jazz-gray-40,
         menubar-sm-border-bottom-hover: jazz-princeton-orange,
+
+  // sidebar options
+        sidebar: jazz-white,
 
   // form theme options
         form-input-border: jazz-gray-40,
