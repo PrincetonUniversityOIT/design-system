@@ -1,55 +1,69 @@
-# License Information
+# Terms of Use and License Information
 
-## Bundled Resources and Dependencies
+The Princeton University Jazz Design System (the "System") uses and/or bundles resources that carry their own license
+restrictions and requirements.  These licenses are identified below.  By using any of the resources made available in 
+the System, you agree to abide by the applicable license terms, as well as the following terms of use.  The University 
+reserves the right to update or modify this Terms of Use and License Information at any time without prior notice.
 
-This project makes use of and/or bundles resources thar carry their own license restrictions that are important 
-to enumerate.
+## Fonts
 
-### Fonts
-
-All fonts bundled with this distribution were sourced from the Google Fonts initiative and are free and 
-open source.  Each font is listed along with its corresponding license below:
+The Google Fonts initiative was the source for all fonts bundled with this System.  The fonts are free and open source. 
+Below is a list of each font and its corresponding license:
 
 * Lora - [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 * Public Sans - [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 * Roboto - [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-### Princeton Logos & Other Princeton Imagery
+## Princeton University Marks
 
-The words "Princeton" and "Princeton University," as well as the University shield, are trademarks registered with 
-the U.S. Trademark Office. Princeton University also owns marks that are not registered.
+No individual or organization may use, copy or distribute Princeton University's name, seal, shield, logos, 
+campus images or other identifiers that is part of this project (collectively, "Princeton University Marks"), except 
+to the extent such individual has been authorized by the proper University officials or as is required for reasonable 
+and customary use in describing the origin of their work. 
 
-Any use of photo and logos provided within this software distribution must comply with all terms of use for 
-intellectual property as identified by the [Office of Communications](https://communications.princeton.edu/) and 
-the [Office of Trademark Licensing](https://trademarks.princeton.edu/) at Princeton University.
+Any authorized use of Princeton University Marks provided within this system must comply with all policies and 
+guidelines of the [Office of Communications](https://communications.princeton.edu/) and the 
+[Office of Trademark Licensing](https://trademarks.princeton.edu/) at Princeton University, 
+including without limitations:
 
-Commercial uses of campus images, in any form including but not limited to advertising and merchandising, require prior 
-consent of the University. Requests should be directed either to the 
-[Office of Trademark Licensing](https://trademarks.princeton.edu/) or the assistant vice president for communications.
+* [Princeton Logo & Graphic Identity](https://communications.princeton.edu/guides-tools/logo-graphic-identity)
+* [Princeton Web, Social Media & App Requirements](https://communications.princeton.edu/guides/web-social-media-app-requirements)
+* [Princeton University Trademark Licensing Policies](https://trademarks.princeton.edu/)
+* [Princeton Imagery Policy](https://communications.princeton.edu/guides-tools/intellectual-property)
+* [Princeton Rights, Rules, and Responsibilities](https://rrr.princeton.edu/)
+* [Princeton Editorial Style](https://communications.princeton.edu/guides-tools/princeton-editorial-style-guide)
 
-**Restrictions apply to commercial use** of campus images. Inclusion of Princeton University Graphical Identity within
-this software bundle does not include the right to forward images to commercial entities without first consulting 
-with the University representatives who manage photo rights. 
+Commercial uses of Princeton University Marks in any form, including but not limited to advertising and merchandising, 
+require prior consent of the University. Requests should be directed to the 
+[Office of Trademark Licensing](https://trademarks.princeton.edu/).
 
-The following credits apply to photos packaged with this distribution:
+## Photos 
+
+Use of any photos included in the System is subject to 
+[Princeton Imagery Policy](https://communications.princeton.edu/guides-tools/intellectual-property)
+and policies for use of photos from the 
+[Princeton Photo Libraries](https://communications.princeton.edu/guides-tools/photo-libraries). 
+
+The following credits apply to photos packaged with this System for the purposes of demonstrating
+System functionality:
 
 * src/img/stairway.jpg: Princeton University, Office of Communications, Denise Applewhite (2013)
 
-### Icons
+## Icons
 
 Wherever possible, icons have been sourced from [Phosphor Icons](https://phosphoricons.com/), which is distributed 
 under the [MIT License](https://opensource.org/licenses/MIT).
 
-### Other Resources
+## Other Resources
 
-This project makes use of the following libraries:
+The System makes use of the following libraries:
 
 * Normalize.css (Distributed under the [MIT License](https://opensource.org/licenses/MIT))
 * Flexboxgrid (Distributed under the [Apache license, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0))
 
-### License
+## License
 
-Beyond the resources mentioned above, all other sources for this project are distributed under the MIT License:
+Beyond the resources mentioned above, all other sources for this System are distributed under the MIT License:
 
 ```
 Copyright 2021 The Trustees of Princeton University
