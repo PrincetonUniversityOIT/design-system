@@ -1,0 +1,9 @@
+{
+  "name": "jazz-design",
+  "version": "1.0.0",
+  "description": "Princeton Design System",
+  "main": "index.js",
+  "author": "Princeton University",
+  "license": "MIT",
+  "dependencies": {}
+}

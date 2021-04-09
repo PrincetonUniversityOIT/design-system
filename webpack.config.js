@@ -84,6 +84,7 @@ module.exports = {
                 { from: 'src/logos', to: 'logos' },
                 { from: 'src/img', to: 'img' },
                 { from: 'LICENSE.md', to: 'LICENSE.md' },
+                { from: 'package-lib.json', to: 'package.json' },
             ],
         })
     ]
