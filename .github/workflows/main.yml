@@ -38,7 +38,7 @@ jobs:
           package: "./dist/package.json"
           token: ${{ secrets.NPM_TOKEN }}
           access: public
-          dryRun: true
+          dry-run: true
 
       #- name: Deploy
       #  uses: peaceiris/actions-gh-pages@v3
