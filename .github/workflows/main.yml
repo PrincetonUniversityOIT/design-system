@@ -34,11 +34,11 @@ jobs:
       #    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: JS-DevTools/npm-publish@v1
-          with:
-            package: "./dist/package.json"
-            token: ${{ secrets.NPM_TOKEN }}
-            access: public
-            dryRun: true
+        with:
+          package: "./dist/package.json"
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          dryRun: true
 
       #- name: Deploy
       #  uses: peaceiris/actions-gh-pages@v3
