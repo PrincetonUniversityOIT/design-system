@@ -2,6 +2,7 @@
   "name": "@princetonuniversityoit/design-system",
   "version": "1.0.12",
   "title": "Princeton Design System",
+  "private": false,
   "description": "",
   "main": "./dist/index.js",
   "files": [
