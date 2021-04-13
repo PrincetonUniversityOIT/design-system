@@ -1,0 +1,595 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs - Princeton Design System</title>
+    <link rel="stylesheet" href="/design-system/jazz_sans.css">
+    <link rel="stylesheet" href="/design-system/jazz_fonts.css">
+    <link rel="stylesheet" href="/design-system/prism-atom-dark.css">
+    <style>
+        .core {
+            display: flex;
+        }
+        .core-content {
+            flex: 1 1 auto;
+            margin-left: 20px;
+            min-width: 0px; /* This is necessary to stop the code from pushing the rest of the page out. */
+        }
+        main {
+            margin-bottom: 20px;
+        }
+        iframe {
+            border: 1px solid lightgrey;
+            display: block;
+            padding: 10px;
+            width: 100%;
+            overflow-y: hidden;
+            box-shadow:
+                0px 2px 4px rgba(0, 0, 0, 0.14),
+                0px 4px 5px rgba(0, 0, 0, 0.12),
+                0px 1px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .jazz-sidebar-menu {
+            min-width: 200px;
+        }
+        .code {
+            background-color: #ddd;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body onload="registerAllIframes()">
+<header role="banner" class="jazz-header">
+    <h1 class="jazz-visually-hidden">Princeton University Design System</h1>
+    <div class="jazz-skip-links">
+        <a href="#main-content" class="jazz-skip-link">Skip to main content</a>
+        <a href="#search" class="jazz-skip-link">Skip to search options</a>
+    </div>
+    <div class="jazz-container">
+    <div class="jazz-header-container">
+        <div class="jazz-header-right-container">
+            <div class="jazz-header__utility-menu jazz-header__utility-menu--hide-small">
+                <ul>
+                    <li><a href="javascript void(0);">Help</a></li>
+                </ul>
+            </div>
+            <div class="jazz-header__search-bar">
+                <h2 class="jazz-visually-hidden">Search</h2>
+                <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-visually-hidden">Search Menu Toggle</span></button>
+                <div id="jazz-header-search-bar-panel" class="jazz-header__search-bar-panel">
+                    <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
+                        <label class="jazz-visually-hidden" for="search-field">Search</label>
+                        <a name="search">
+                            <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
+                        </a>
+                        <button class="jazz-button" type="submit">
+                            <span class="jazz-visually-hidden">Search</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="jazz-header-break"></div>
+        <div class="jazz-header__site-branding">
+        <div class="jazz-container jazz-header__site-branding-contents">
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/design-system/logos/shield.svg" /></a>
+            <div class="jazz-header__site-branding-info">
+                <div class="jazz-header__site-branding-name">
+                    <a href="/" title="Home" rel="home">Relativity Design System</a>
+                </div>
+                <div class="jazz-header__site-branding-slogan">
+                    The Princeton Design System
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jazz-header-collapsed-header">
+        <div class="jazz-container">
+        <div class="jazz-header-collapsed-container">
+           <div class="jazz-header-collapsed__pu-branding">
+               <a href="javascript:void(0);" title="Princeton University"><img src="/logos/shield.svg" alt="Princeton University" /></a>
+           </div>
+           <div class="jazz-header-collapsed__site-branding--divider">
+           </div>
+           <div class="jazz-header-collapsed__site-branding">
+               <div class="jazz-header-collapsed__site-branding-info">
+                   <div class="jazz-header-collapsed__site-branding-name">
+                       <a href="javascript:void(0);" title="Home" rel="home">Relativity Design System</a>
+                   </div>
+               </div>
+           </div>
+         </div>
+         </div>
+    </div>
+    <nav aria-label="Main Menu" class="jazz-menu__main-menu">
+        <h2 class="jazz-visually-hidden">Main Menu</h2>
+        <div class="jazz-container">
+            <div class="jazz-menu__main-menu-navbar">
+                <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
+                <div  class="jazz-menu__nav-container">
+                    <ul class="jazz-menubar" role="list"><li><a href="/design-system/getting_started/" >Getting Started</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Getting Started</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/design-system/getting_started/"  >About The Design System</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design-system/design/" >Design</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Design</span>
+                             </button>
+                             
+                        </li><li><a href="/design-system/components/"  aria-current="page">Components</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Components</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/design-system/components/"  >About Components</a></li>
+                                    
+                                        <li><a href="/design-system/components/accordion/"  >Accordion</a></li>
+                                    
+                                        <li><a href="/design-system/components/buttons/"  >Buttons</a></li>
+                                    
+                                        <li><a href="/design-system/components/tabs/"  aria-current="page" class="is-active"  >Tabs</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design-system/templates/" >Templates</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Templates</span>
+                             </button>
+                             
+                        </li><li><a href="/design-system/contribute/" >Contribute</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Contribute</span>
+                             </button>
+                             
+                        </li></ul>
+                    <div class="jazz-header__utility-menu jazz-header__utility-menu--hide-large">
+                        <ul>
+                            <li><a href="javascript void(0);">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- /div -->
+</header>
+<main class="jazz-container">
+    <div class="core">
+        <nav class="jazz-sidebar-menu" aria-label="Section Navigation">
+            <h2 class="jazz-visually-hidden">Section Menu</h2>
+            <ul class="jazz-sidebar-menu__list" role="list">
+                
+                
+                
+                
+                
+                
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/components/" >About Components<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/components/accordion/" >Accordion<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/components/buttons/" >Buttons<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item--active">
+                    <a href="/design-system/components/tabs/"  aria-current="page" class="is-active">Tabs<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+        </nav>
+        <div class="core-content">
+            
+
+
+<h1 class="jazz-page-title">Tabs</h1>
+
+<p>
+Tabs organize related content into separate sections when available space is limited or there is a need to
+efficiently flip between related sections.
+</p>
+
+
+
+<iframe src="/design-system/components/tabs-example1" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-demo">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-demo">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-tablist<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Best Practices</h2>
+
+<ul>
+    <li>Each tab must have a label.</li>
+    <li>Tab labels should be short.</li>
+    <li>Tab labels should not be wrapped within the tab.</li>
+    <li>
+        Avoid having an abundance of tabs and have a strategy for when the number of tabs do not fit within the
+        available horizontal space.
+    </li>
+    <li>Avoid having multiple levels of tabs.</li>
+    <li>Icons should be to the left of the label when used on tabs.</li>
+    <li>
+        When tab labels are represented by only icons, be sure to consider accessibility and also provide tooltips
+        to provide clarity for users that might not know what the icons represent.
+    </li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>The Basics</h3>
+
+<p>
+    This example demonstrates the basic structure for tabs, and demonstrates the following tab states:
+</p>
+<ul>
+    <li>Default (Enabled &amp; Not Current)</li>
+    <li>Current</li>
+    <li>Disabled - disabled tabs can never receive focus</li>
+    <li>Hover (when the mouse is within a tab that is Not Current and not disabled)</li>
+    <li>Focus (when browser focus is placed on one of the tabs that is not disabled)</li>
+</ul>
+
+
+
+<iframe src="/design-system/components/tabs-example-simple" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-simple">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-simple">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-tablist<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Default<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Current<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">></span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Tabs and Content Sections</h3>
+
+<p>
+    Tabs can automatically control the visibility of other sections of the page by relating each tab to a content
+    section by way of the <span class="code">aria-controls</span> attribute.  The value of the
+    <span class="code">aria-controls</span> attribute should be the <span class="code">id</span> of the corresponding
+    content section.
+</p>
+
+
+
+<iframe src="/design-system/components/tabs-example-with-panels" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-with-panels">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-with-panels">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-tablist<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed interdum tortor. Curabitur volutpat
+        condimentum lorem. Phasellus eu laoreet est, et vestibulum lorem. Phasellus suscipit ut metus euismod porta. Phasellus
+        ligula ligula, tristique quis risus ut, molestie placerat urna. Cras sollicitudin maximus euismod.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        Nullam eget urna dignissim, finibus ligula eget, posuere dui. Mauris porta luctus faucibus. Morbi eget libero eget
+        lectus aliquet sagittis. Nulla quis imperdiet ipsum. Etiam elit nisl, placerat ut facilisis ac, tristique a est.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        Cras ac ultrices orci, non vestibulum est. In lobortis ante in est vestibulum, sed porta mi pharetra. Nullam eget
+        nibh dictum, sodales quam at, gravida magna. Proin mattis justo quis ex vestibulum fringilla. Suspendisse ultricies,
+        nunc vitae ornare ultricies, dui diam dignissim mi, sed imperdiet mauris mi in dolor.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        This panel is disabled and the content cannot be shown.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Automatic Activation</h3>
+
+<p>
+    By default, tabs will not automatically activate their corresponding content section when they receive focus.
+    To enable this behavior, include the <span class="code">jazz-auto-activate</span> class.
+</p>
+
+
+
+<iframe src="/design-system/components/tabs-example-with-auto-activate" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-with-auto-activate">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-with-auto-activate">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-tablist jazz-auto-activate<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed interdum tortor. Curabitur volutpat
+        condimentum lorem. Phasellus eu laoreet est, et vestibulum lorem. Phasellus suscipit ut metus euismod porta. Phasellus
+        ligula ligula, tristique quis risus ut, molestie placerat urna. Cras sollicitudin maximus euismod.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        Nullam eget urna dignissim, finibus ligula eget, posuere dui. Mauris porta luctus faucibus. Morbi eget libero eget
+        lectus aliquet sagittis. Nulla quis imperdiet ipsum. Etiam elit nisl, placerat ut facilisis ac, tristique a est.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        Cras ac ultrices orci, non vestibulum est. In lobortis ante in est vestibulum, sed porta mi pharetra. Nullam eget
+        nibh dictum, sodales quam at, gravida magna. Proin mattis justo quis ex vestibulum fringilla. Suspendisse ultricies,
+        nunc vitae ornare ultricies, dui diam dignissim mi, sed imperdiet mauris mi in dolor.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        This panel is disabled and the content cannot be shown.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<ul>
+    <li>A tab list is made of up individual tab buttons.</li>
+    <li>Each tab button has a label, which can consist of either a text label, an icon, or both.</li>
+    <li>
+        Each tab can be associated with a related section of content.  The section content is not considered
+        to be a part of the tabs, but is an external structure that can be controlled by the tabs.
+    </li>
+</ul>
+
+<h3>Behavior</h3>
+
+<ul>
+    <li>
+        Tabs are contained in a <span class="code">div</span> element is given a class of <span class="code">jazz-tablist</span>.
+        This <span class="code">div</span> defines the overall scope of the tab list.
+        The <span class="code">div</span> is preferred over the <span class="code">nav</span> element because the
+        feature has more specific behavior than a simple navigation list.
+    </li>
+    <li>
+        The containing element (preferably a <span class="code">div</span>) must have its <span class="code">role</span>
+        set to <span class="code">tablist</span>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-tablist<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+    </li>
+    <li>
+        Individual tabs are structurally implemented as a <span class="code">button</span> instead of a link because
+        there is a need to be able to disable individual tabs and the link element does not support the
+        <span class="code">disabled</span> attribute.  Implementing this structure as a button avoids the need to
+        otherwise replicate button semantics (i.e. disabled, focus, etc…).
+    </li>
+    <li>
+        Each tab button  must have its <span class="code">role</span> set to <span class="code">tab</span>.
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </li>
+    <li>
+        To disable an individual tab, disable the corresponding button.
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">></span></span>Tab Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </li>
+    <li>
+        The selected tab (button) should have the aria-selected attribute set to <span class="code">true</span>.
+        All other tabs should have their <span class="code">aria-selected</span> attribute set to
+        <span class="code">false</span> or not specified at all.  A disabled tab cannot be the selected tab.
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Tab Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </li>
+    <li>
+        Before the tab with the Selected state can be programmatically disabled,
+        another tab that is not disabled must be given the Selected state.
+    </li>
+    <li>
+        The focus indicator is pulled within the boundary of the tab (using a negative value for the CSS
+        <span class="code">outline</span> property) to avoid having the outline indicator truncated by neighboring
+        content.  Additional padding is added to each tab to avoid having the focus indicator overlap with the tab label.
+    </li>
+    <li>
+        When a tab is selected, its <span class="code">tabindex</span> is set to <span class="code">zero</span> and
+        the tab index of all other tabs is set to <span class="code">-1</span>.  This causes the Selected tab to
+        receive focus when the tab list receives focus and causes all other tabs to be removed from the tab order
+        until such time that they are selected.
+    </li>
+    <li>
+        The Hover state is only implemented for tabs that are not Disabled and Not Selected.
+    </li>
+    <li>
+        Disabled tabs do not have a Hover state, cannot be the Current tab, and cannot obtain focus.
+    </li>
+    <li>
+        Optionally, tabs can automatically be selected when they obtain focus by adding the
+        <span class="code">jazz-auto-activate</span> class.
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-tablist jazz-auto-activate<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+    </li>
+    <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">ARIA best practices</a> for implementing
+        a <span class="code">tablist</span> have been followed.  Of particular note are the keyboard interactions
+        described below:
+        <ul>
+            <li>The <span class="code">[Tab]</span> key will navigate to only the Selected tab.</li>
+            <li>
+                The Left Arrow key will move focus to the previous tab. If the previous tab is not enabled, then it is
+                skipped and its previous tab is given focus...and so on.  If focus is on the first tab, The Left Arrow
+                will move focus to the last tab.  If the last tab is not enabled, then it is skipped and its previous
+                tab is given focus...and so on.
+            </li>
+            <li>
+                The Right Arrow key will move focus to the next tab. If the next tab is not enabled, then it is
+                skipped and its next tab is given focus...and so on.  If focus is on the last tab, The Right Arrow
+                will move focus to the first tab.  If the first tab is not enabled, then it is skipped and its next
+                tab is given focus...and so on.
+            </li>
+            <li>The Space &amp; Enter keys will transition a tab to the Selected state.</li>
+            <li>The Home &amp; End keys set focus to the first/last enabled tab, respectively.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>States</h3>
+
+<p>
+    All of the states described below apply to each individual Tab, except for the “Overflow” state.
+</p>
+
+<h4>Default</h4>
+<p>The Default state of a Tab is Enabled & Not Selected.</p>
+<h4>Active</h4>
+<p>The tab button is in the process of being selected as the current tab.</p>
+<h4>Not Selected</h4>
+<p>The tab button does not correspond to the tab region that is currently visible.</p>
+<h4>Selected</h4>
+<p>The tab button corresponds to the tab region that is currently visible.</p>
+<h4>Focus</h4>
+<p>The tab button has focus.</p>
+<h4>Hover</h4>
+<p>The mouse cursor is within the tab button.</p>
+<h4>Disabled</h4>
+<p>The tab button cannot be selected as the current tab.</p>
+<h4>Overflow</h4>
+<p>Tab buttons are being displayed horizontally and there are too many tab buttons to fit within the available horizontal space.</p>
+
+        </div>
+    </div>
+</main>
+<footer role="contentinfo" class="jazz-footer">
+    <div class="jazz-container jazz-footer__content">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <h2>General Information</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="javascript:void(0);">Contact Us</a></li>
+                    <li><a href="javascript:void(0);">About Us</a></li>
+                    <li><a href="javascript:void(0);">News</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Services</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="javascript:void(0);">Update Your Info</a></li>
+                    <li><a href="javascript:void(0);">Online Resources</a></li>
+                    <li><a href="javascript:void(0);">Visiting Campus</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>University Links</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="https://www.princeton.edu/">Princeton University</a></li>
+                    <li><a href="https://communications.princeton.edu/">Office of Communications</a></li>
+                    <li><a href="https://ux.princeton.edu/">User Experience Office</a></li>
+                    <li><a href="https://wds.princeton.edu/">Web Development Services</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Resources</h2>
+                <ul class="jazz-footer__icon-list">
+                    <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-2x jazz-footer__icon jazz-icon-facebook"></i><span class="jazz-visually-hidden">Go to GitHub</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jazz-footer__subfooter">
+        <div class="jazz-container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <a href="javascript:void(0)">Accessibility</a>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    &copy; 2020 The Trustees of Princeton University
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/design-system/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/design-system/jazz_behavior.js"></script>
+<script type="text/javascript">
+    PrincetonDesignSystem.enable();
+
+    function resizeIframe(iframe) {
+        iframe.height = (iframe.contentWindow.document.body.scrollHeight + 22) + "px";
+    }
+
+    function registerIframe(iframe) {
+        // register a listener to list to changes to the iframe content
+        const observer = new MutationObserver((/* mutationsList, observer*/) => {
+            resizeIframe(iframe);
+        });
+        observer.observe(iframe.contentWindow.document.body, { attributes: true, childList: true, subtree: true });
+        // resize immediately for initial load
+        resizeIframe(iframe);
+    }
+
+    function registerAllIframes() {
+        const iframes = document.querySelectorAll("iframe.jazz-docs__code-sample");
+        for (const iframe of iframes) {
+            registerIframe(iframe);
+        }
+    }
+
+    function copyCode(button) {
+        navigator.clipboard.writeText(button.parentNode.querySelector("pre.language-html > code.language-html").innerText);
+    }
+</script>
+</body>
+</html>

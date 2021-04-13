@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs Example 1 - Princeton Design System</title>
+   <link rel="stylesheet" href="/design-system/jazz_serif.css">
+   <link rel="stylesheet" href="/design-system/jazz_fonts.css">
+   <link rel="stylesheet" href="/design-system/prism-atom-dark.css">
+</head>
+<body>
+<!-- Example Start -->
+
+<div class="jazz-tablist" role="tablist">
+  <button role="tab" aria-controls="panel1">Tab 1</button>
+  <button role="tab" aria-selected="true" aria-controls="panel2">Tab 2</button>
+  <button role="tab" disabled aria-controls="panel3">Tab 3</button>
+</div>
+<div id="panel1">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed interdum tortor. Curabitur volutpat
+        condimentum lorem. Phasellus eu laoreet est, et vestibulum lorem. Phasellus suscipit ut metus euismod porta. Phasellus
+        ligula ligula, tristique quis risus ut, molestie placerat urna. Cras sollicitudin maximus euismod.
+    </p>
+    <p>
+        Nullam eget urna dignissim, finibus ligula eget, posuere dui. Mauris porta luctus faucibus. Morbi eget libero eget
+        lectus aliquet sagittis. Nulla quis imperdiet ipsum. Etiam elit nisl, placerat ut facilisis ac, tristique a est.
+    </p>
+</div>
+<div id="panel2">
+    <p>
+        Cras ac ultrices orci, non vestibulum est. In lobortis ante in est vestibulum, sed porta mi pharetra. Nullam eget
+        nibh dictum, sodales quam at, gravida magna. Proin mattis justo quis ex vestibulum fringilla. Suspendisse ultricies,
+        nunc vitae ornare ultricies, dui diam dignissim mi, sed imperdiet mauris mi in dolor.
+    </p>
+</div>
+<div id="panel3">
+    <p>
+        This panel is disabled and the content cannot be shown.
+    </p>
+</div>
+
+
+<!-- Example End -->
+<script src="/design-system/jazz_behavior.js"></script>
+<script>
+    PrincetonDesignSystem.enable();
+</script>
+</body>
+</html>
