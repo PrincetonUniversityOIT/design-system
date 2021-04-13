@@ -81,6 +81,46 @@ export const MultiSelectTemplate = (args) => html`
       </script>
   `;
 
+export const BorderedTemplate = (args) => html`
+      <div class="jazz-accordion jazz-accordion--bordered" role="region">
+          <h2>
+            <button class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
+          </h2>
+          <div class="jazz-accordion__content" id="content1">
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a
+              pellentesque nec, egestas non nisi.
+          </div>
+          <h2>
+            <button id="acrd-btn-2" class="jazz-accordion__button" aria-expanded="true" aria-controls="content2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta?</button>
+          </h2>
+          <div aria-hidden="false" class="jazz-accordion__content" id="content2">
+              Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet
+              et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+              Cras ultricies ligula sed magna dictum porta.
+          </div>
+          <h2>
+            <button class="jazz-accordion__button" aria-controls="content3">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</button>
+          </h2>
+          <div class="jazz-accordion__content" id="content3">
+              Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+              posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+          </div>
+          <h2>
+            <button class="jazz-accordion__button" aria-controls="content4">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</button>
+          </h2>
+          <div class="jazz-accordion__content" id="content4">
+              Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+              posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+          </div>
+      </div>
+      <script id="initscript">
+        PrincetonDesignSystem.enableDesignSystem();
+      </script>
+  `;
+
+
 export const TestTemplate = (args) => html`
     <button class="my-button">Test It!</button>
 `;
@@ -98,9 +138,6 @@ An "Accordion" allows page content to be collapsed under a header.
 
 <Canvas>
     <Story name="Basic" args={{
-        heading: "Alerts",
-        title: "Alert Title",
-        content: "This is the content of the alert.  It can be a simple paragraph or something more complex."
     }}>
       {Template.bind({})}
     </Story>
@@ -108,13 +145,18 @@ An "Accordion" allows page content to be collapsed under a header.
 
 <Canvas>
     <Story name="Multi Select" args={{
-        heading: "Alerts",
-        title: "Alert Title",
-        content: "This is the content of the alert.  It can be a simple paragraph or something more complex."
     }}>
       {MultiSelectTemplate.bind({})}
     </Story>
 </Canvas>
+
+<Canvas>
+    <Story name="Bordered" args={{
+    }}>
+      {BorderedTemplate.bind({})}
+    </Story>
+</Canvas>
+
 
 <Canvas>
     <Story name="Button Test" args={{}}>

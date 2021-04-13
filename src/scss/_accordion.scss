@@ -1,3 +1,15 @@
+.jazz-accordion {
+  @include jazz-theme-color(accordion-body);
+}
+.jazz-accordion--bordered {
+  border: px-to-rem(.5) solid jazz-theme-rgb(accordion-header-border);
+}
+.jazz-accordion--bordered .jazz-accordion__button[aria-expanded='false'] {
+  @include jazz-theme-color(accordion-header-bordered);
+}
+.jazz-accordion--bordered .jazz-accordion__button[aria-expanded='true'] {
+  @include jazz-theme-color(accordion-header);
+}
 .jazz-accordion > h1,
 .jazz-accordion > h2,
 .jazz-accordion > h3,
@@ -8,27 +20,39 @@
   margin: 0px;
 }
 .jazz-accordion__button {
-  padding: 1rem 50px 1rem 1rem;
+  @include jazz-theme-color(accordion-header);
+  font-family: jazz-theme-font(accordion-header);
+  font-style: normal;
+  font-weight: 600;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+
+  padding: px-to-rem(10) px-to-rem(20) px-to-rem(14) px-to-rem(20);
+  margin-top: px-to-rem(3);
+  margin-left: px-to-rem(3);
+  margin-bottom: px-to-rem(3);
+  margin-right: px-to-rem(-3);
+
   position: relative;
   border: none;
-  font-size: 1rem;
-  font-weight: normal;
   display: block;
   width: 100%;
   text-align: left;
   cursor: pointer;
-  font-family: jazz-theme-font(accordion-header);
 }
 .jazz-accordion__button[aria-expanded='true'] {
-  background-color: #f4f4f4;
+  //background-color: #f4f4f4;
 }
 .jazz-accordion__button[aria-expanded='false'] {
-  border-bottom: 1px solid #c8c8c8;
-  background-color: #fff;
+  border-bottom: px-to-rem(.5) solid jazz-theme-rgb(accordion-divider);
+  //background-color: #fff;
+}
+.jazz-accordion__button[aria-expanded='false']:hover {
+  @include jazz-theme-color(accordion-header-hover);
 }
 .jazz-accordion__button[aria-expanded='false']:after {
   content: ' ';
-  background-image: url(jazz-icons-path("expand-more"));
+  background-image: url(jazz-icons-path("plus"));
   width: 18px;
   height: 17px;
   background-size: 18px 18px;
@@ -38,7 +62,7 @@
 }
 .jazz-accordion__button[aria-expanded='true']:after {
   content: ' ';
-  background-image: url(jazz-icons-path("expand-less"));
+  background-image: url(jazz-icons-path("minus"));
   width: 18px;
   height: 17px;
   background-size: 18px 18px;
@@ -47,9 +71,16 @@
   float: right;
 }
 .jazz-accordion__content {
-  border-left: 2px solid #e77500;
-  padding: 0.5rem 1rem;
-  margin: 1rem 0 1rem 1.25rem;
+  @include jazz-theme-color(accordion-body);
+  font-family: jazz-theme-font(accordion-body);
+  font-style: normal;
+  font-weight: normal;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+
+  border-left: px-to-rem(3) solid jazz-theme-rgb(accordion-content-border);
+  margin: px-to-rem(10) px-to-rem(20);
+  padding-left: px-to-rem(20);
   text-align: left;
 }
 .jazz-accordion__content[aria-hidden='true'] {
