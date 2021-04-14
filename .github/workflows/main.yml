@@ -6,9 +6,8 @@ name: Publish a Release
 # events but only for the master branch
 
 on:
-  push
-  #release:
-  #  types: [created]
+  release:
+  types: [created]
 
 jobs:
   build:
@@ -28,10 +27,6 @@ jobs:
       - run: npm run build-prod
 
       - run: npm run build-docsite-prod
-
-      #- run: npm publish --access public
-      #  env:
-      #    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: JS-DevTools/npm-publish@v1
         with:
