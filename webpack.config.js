@@ -85,6 +85,7 @@ module.exports = {
                 { from: 'src/img', to: 'img' },
                 { from: 'LICENSE.md', to: 'LICENSE.md' },
                 { from: 'package-lib.json', to: 'package.json' },
+                { from: 'README-lib.md', to: 'README.md' },
             ],
         })
     ]
