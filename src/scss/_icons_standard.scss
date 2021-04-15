@@ -16,6 +16,8 @@ $jazz-icons-standard: (
         breadcrumb: '../icons/phosphor/breadcrumb.svg',
         gear: '../icons/phosphor/gear.svg',
         arrow-left: '../icons/phosphor/arrow-left.svg',
+        plus: '../icons/phosphor/plus.svg',
+        minus: '../icons/phosphor/minus.svg',
 
         phone: '../icons/phosphor/phone.svg',
         printer: '../icons/phosphor/printer.svg',
@@ -35,4 +37,8 @@ $jazz-icons-standard: (
 /// @return {string} The path of the specified icon.
 @function jazz-icons-path($name) {
   @return map-get(map-merge($jazz-icons-standard, $jazz-icons-custom), $name);
+}
+
+@function jazz-icons-path-with-color($name, $color) {
+  @return map-get(map-merge($jazz-icons-standard, $jazz-icons-custom), $name) + '?stroke=' + $color + '&fill=none';
 }

@@ -7,17 +7,21 @@ $jazz-color-map: (
   // when using orange on a black background, the orange has to be adjusted based on PU Communications guidelines:
   // https://communications.princeton.edu/guides-tools/logo-graphic-identity
         jazz-gray-and-orange: (background-color: #121212, color: #F58025),
+        jazz-gray-5-and-black: (background-color: #F7F7F7, color: #121212),
         jazz-black-and-orange: (background-color: #000, color: #F58025),
         jazz-white-and-orange: (background-color: #fff, color: #F58025),
-        jazz-white-and-gray-60: (background-color: #fff, color: #717171),
         jazz-white-and-gray: (background-color: #fff, color: #121212),
+        jazz-white-and-gray-5: (background-color: #fff, color: #F7F7F7),
+        jazz-white-and-gray-60: (background-color: #fff, color: #717171),
         jazz-white: (background-color: #fff, color: #000),
   // neutral 1
         jazz-gray: (background-color: #121212, color: #fff),
+        jazz-gray-5: (background-color: #F7F7F7, color: #fff),
         jazz-gray-80: (background-color: #414141, color: #fff),
         jazz-gray-60: (background-color: #717171, color: #fff),
         jazz-gray-40: (background-color: #A0A0A0, color: #000),
-        jazz-gray-20: (background-color: #EEEEEE, color: #000),
+        jazz-gray-20: (background-color: #D0D0D0, color: #000),
+        jazz-gray-10: (background-color: #EEEEEE, color: #121212),
   // neutral 2
         jazz-cool-gray: (background-color: #091F30, color: #fff),
         jazz-cool-gray-80: (background-color: #3A4C59, color: #fff),

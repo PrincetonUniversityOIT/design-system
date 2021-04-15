@@ -98,7 +98,7 @@ input[type="search"]::placeholder {
 
 .jazz-header__search-bar form [type='submit'] {
   @include jazz-theme-color(header-search-input);
-  background-image: url(jazz-icons-path("search"));
+  background-image: url(jazz-icons-path-with-color("search", jazz-theme-rgb(header-search-icon)));
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 1rem;
