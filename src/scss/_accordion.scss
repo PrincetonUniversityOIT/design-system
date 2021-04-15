@@ -39,7 +39,7 @@
   border-top: px-to-rem(.25) solid jazz-theme-rgb(accordion-divider);
   border-bottom: 0;
 }
-.jazz-accordion__button[aria-expanded='false']:hover {
+.jazz-accordion__button:hover {
   @include jazz-theme-color(accordion-header-hover);
 }
 .jazz-accordion__button[aria-expanded='false']:after {
