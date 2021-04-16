@@ -43,10 +43,6 @@
 .jazz-accordion__button:hover {
   @include jazz-theme-color(accordion-header-hover);
 }
-.jazz-accordion__button > * {
-  flex: flex-grow;
-}
-
 .jazz-accordion__button[aria-expanded='false']:after {
   content: ' ';
   background-image: url(jazz-icons-path-with-color("plus", jazz-theme-rgb(accordion-icon)));
