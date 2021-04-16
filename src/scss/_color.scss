@@ -70,5 +70,6 @@ $jazz-color-map: (
 @each $key, $value in $jazz-color-map {
   .#{$key} { color: map-get($value, color); background-color: map-get($value, background-color); }
   .#{$key}-bg { background-color: map-get($value, background-color); }
-  .#{$key}-fg { color: map-get($value, color); }
+  .#{$key}-fg { color: map-get($value, background-color); }
+  i.jazz-icon.#{$key} { color: map-get($value, background-color); }
 }

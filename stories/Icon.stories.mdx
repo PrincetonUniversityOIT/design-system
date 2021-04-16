@@ -15,6 +15,10 @@ export const TemplateTextFlow = (args) => html`
     <p>This is an icon in the flow<i style="vertical-align: -2px" class="jazz-icon jazz-icon-facebook"></i><span class="jazz-visually-hidden">Follow Us on Facebook</span> Facebook</span> of the text.</p>
 `;
 
+export const TemplateColor = (args) => html`
+    <i class="jazz-icon jazz-icon-facebook jazz-icon-2x jazz-princeton-orange"></i><span class="jazz-visually-hidden">Follow Us on Facebook</span>
+`;
+
 # Icons
 
 Icons can be used as a way to represent information with a visual image instead of text, usually to convey information
@@ -58,5 +62,11 @@ jazz-icon-3x, jazz-icon-5x, jazz-icon-7x, jazz-icon-9x.
 <Canvas>
     <Story name="Flow" args={{}}>
       {TemplateTextFlow.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Color" args={{}}>
+      {TemplateColor.bind({})}
     </Story>
 </Canvas>
