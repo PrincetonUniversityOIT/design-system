@@ -40,5 +40,5 @@ $jazz-icons-standard: (
 }
 
 @function jazz-icons-path-with-color($name, $color) {
-  @return map-get(map-merge($jazz-icons-standard, $jazz-icons-custom), $name) + '?stroke=' + $color + '&fill=none';
+  @return map-get(map-merge($jazz-icons-standard, $jazz-icons-custom), $name) + '?stroke=' + $color + ' line&fill=none';
 }

@@ -26,12 +26,13 @@
   font-style: normal;
   font-weight: 600;
   font-size: px-to-rem(16);
-  line-height: px-to-rem(24);
+  line-height: px-to-rem(28);
 
-  padding: px-to-rem(10) px-to-rem(20) px-to-rem(14) px-to-rem(20);
+  padding: px-to-rem(10) px-to-rem(20) px-to-rem(10) px-to-rem(20);
   position: relative;
   border: none;
-  display: block;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   text-align: left;
   cursor: pointer;
@@ -42,25 +43,27 @@
 .jazz-accordion__button:hover {
   @include jazz-theme-color(accordion-header-hover);
 }
+.jazz-accordion__button > * {
+  flex: flex-grow;
+}
+
 .jazz-accordion__button[aria-expanded='false']:after {
   content: ' ';
   background-image: url(jazz-icons-path-with-color("plus", jazz-theme-rgb(accordion-icon)));
-  width: 18px;
-  height: 17px;
-  background-size: 18px 18px;
-  background-position: 0px 3px;
-  display: inline-block;
-  float: right;
+  width: px-to-rem(28);
+  height: px-to-rem(28);
+  margin-left: px-to-rem(28);
+  background-size: px-to-rem(28) px-to-rem(28);
+  flex: none;
 }
 .jazz-accordion__button[aria-expanded='true']:after {
   content: ' ';
   background-image: url(jazz-icons-path-with-color("minus", jazz-theme-rgb(accordion-icon)));
-  width: 18px;
-  height: 17px;
-  background-size: 18px 18px;
-  background-position: 0px 3px;
-  display: inline-block;
-  float: right;
+  width: px-to-rem(28);
+  height: px-to-rem(28);
+  margin-left: px-to-rem(28);
+  background-size: px-to-rem(28) px-to-rem(28);
+  flex: none;
 }
 .jazz-accordion__content {
   @include jazz-theme-color(accordion-body);
@@ -78,4 +81,8 @@
 }
 .jazz-accordion__content[aria-hidden='true'] {
   display: none;
+}
+.jazz-accordion__button:focus {
+  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme-rgb(focus);
+  outline-offset: -.25rem;
 }
