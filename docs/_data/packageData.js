@@ -1,3 +1,3 @@
-const packageData = require('../../package.json');
+const packageData = require('../../package-lib.json');
 
 module.exports = packageData;
