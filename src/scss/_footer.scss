@@ -39,6 +39,10 @@ footer.jazz-footer a:focus {
   font-size: px-to-rem(16);
   line-height: px-to-rem(24);
   letter-spacing: px-to-rem(2);
+
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 footer.jazz-footer .jazz-footer__icon-list a:hover,
 footer.jazz-footer .jazz-footer__icon-list a:active,
@@ -54,6 +58,7 @@ ul.jazz-footer__list li {
   // margin-bottom: .50rem;
   line-height: px-to-rem(24);
   letter-spacing: px-to-rem(2);
+  width: 100%;
 
   display: inline-flex;
   flex-basis: auto;
