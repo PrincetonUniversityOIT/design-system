@@ -54,6 +54,12 @@ ul.jazz-footer__list li {
   // margin-bottom: .50rem;
   line-height: px-to-rem(24);
   letter-spacing: px-to-rem(2);
+
+  display: inline-flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  align-items: center;
+  gap: px-to-rem(4);
 }
 ul.jazz-footer__icon-list {
   list-style: none;
@@ -89,20 +95,20 @@ ul.jazz-footer__icon-list li {
 
 .jazz-footer__subfooter div {
   text-align: center;
+  line-height: px-to-rem(20);
+  flex-grow: 1;
 }
 
 @include apply-from-small-laptop-up {
-  .jazz-footer__subfooter div {
-    text-align: left;
+  .jazz-footer-text--center {
+    text-align: center;
   }
   .jazz-footer-text--left {
     text-align: left;
   }
-
   .jazz-footer-text--right {
     text-align: right;
   }
-
   .jazz-footer__logo {
     float: right;
   }
