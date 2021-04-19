@@ -24,7 +24,7 @@ const template = `
                 <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/logos/shield.svg" /></a>
                 <div class="jazz-header__site-branding-info">
                     <div class="jazz-header__site-branding-name">
-                        <a href="javascript:void(0);" title="Home" rel="home">Relativity</a>
+                        <a href="javascript:void(0);" title="Home" rel="home">Jazz</a>
                     </div>
                     <div class="jazz-header__site-branding-slogan">
                         This is the slogan
