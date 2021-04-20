@@ -1,0 +1,16 @@
+<nav class="jazz-breadcrumb" aria-label="Breadcrumbs">
+  <ol>
+    <li>
+      <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">HOME</a>
+    </li>
+    <li>
+      <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">ANOTHER LINK</a>
+    </li>
+    <li>
+      <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">YET ANOTHER LINK LEVEL</a>
+    </li>
+    <li>
+       <i class="jazz-icon jazz-icon-gear"></i><span aria-current="page">CURRENT PAGE</span>
+    </li>
+  </ol>
+</nav>

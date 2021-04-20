@@ -1,0 +1,120 @@
+---
+layout: layout.njk
+title: Breadcrumbs
+tags: components
+---
+
+{% from "../../_includes/example.njk" import example %}
+
+<h1 class="jazz-page-title">Breadcrumbs</h1>
+
+<p>
+Breadcrumbs are a hierarchical list of links that indicate where the current page is situated within the overall information architecture.
+</p>
+
+<p>
+Each link in the Breadcrumbs provides quick navigation to related pages in the site hierarchy.
+</p>
+
+{{ example("/components/breadcrumbs/breadcrumbs-example1", "Demonstration", "code-panel-demo") }}
+
+<h2>Best Practices</h2>
+
+<ul>
+    <li>Help users understand where they are within a site/application.</li>
+    <li>Link labels used in the Breadcrumbs should match the page titles used on the corresponding pages.</li>
+    <li>Strive to keep site hierarchies shallow to avoid burying content deep in the information architecture.  This will result in long Breadcrumb trails.</li>
+    <li>Evaluate if Breadcrumbs are even necessary for pages where the hierarchy is very shallow or the site hierarchy is already clearly represented in the existing navigation structure.</li>
+    <li>Breadcrumbs should not be used to manage a workflow.  Other patterns, such as “wizards” or “steppers” would be more appropriate for that use case.</li>
+    <li>Do not represent a site hierarchy where one does not exist.</li>
+    <li>Breadcrumbs are not a replacement for native browser “Back” button navigation.  Wherever possible, do not disable native browser “Back” button navigation.</li>
+    <li>Add JSON-LD (https://developers.google.com/search/docs/data-types/breadcrumb) as a search engine optimization where it is useful.</li>
+    <li>Use only a single set of Breadcrumbs on a page.</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>The Basics</h3>
+
+<p>
+    This example demonstrates the basic structure for Breadcrumbs, including the following states:
+</p>
+<ul>
+    <li>Default</li>
+    <li>Active</li>
+    <li>Current</li>
+    <li>Not Current</li>
+    <li>Hover</li>
+    <li>Focus</li>
+</ul>
+
+{{ example("/components/breadcrumbs/breadcrumbs-example-simple", "Simple Example", "code-panel-simple") }}
+
+<h3>Icons</h3>
+
+<p>
+    Icons can be used within Breadcrumb labels.
+</p>
+
+<ul>
+    <li>Icons should be on the left side of the text label.</li>
+    <li>Icons should not be used as the only content of the label.</li>
+    <li>If an icon is represented on any single label in the Breadcrumb trail, then icons should be used for all labels in the Breadcrumb trail.</li>
+</ul>
+
+{{ example("/components/breadcrumbs/breadcrumbs-example-with-icons", "Breadcrumbs Example With Icons", "code-panel-with-icons") }}
+
+<h3>Parent Only</h3>
+
+<p>
+    “Parent-Only” Breadcrumbs provide a single Breadcrumb item that links back to the parent page or component.  This variant is useful in cases where there is a very shallow hierarchy or in providing quick navigation back in List/Detail scenarios.
+</p>
+
+<ul>
+    <li>Never include more than one Breadcrumb item in the “Parent-Only” variant of the Breadcrumbs.</li>
+</ul>
+
+{{ example("/components/breadcrumbs/breadcrumbs-example-parent-only", "Parent-Only Breadcrumbs Example", "code-panel-parent-only") }}
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<ul>
+    <li>Breadcrumbs are made up of Breadcrumb Items separated by the Breadcrumb Separator.</li>
+    <li>Each Breadcrumb Item is a link that can be made up of a text label and an optional icon.</li>
+    <li>The current page is represented as plain text, not an active link.</li>
+    <li>Icons are always shown to the left of the label.</li>
+</ul>
+
+<h3>Code</h3>
+
+<ul>
+    <li>Breadcrumbs are wrapped in a “nav” element to indicate their purpose.</li>
+    <li>The “nav” element is given an “aria-label” of “Breadcrumbs” for use by assistive technologies.</li>
+    <li>The list of links is implemented as a simple order list (“ol”).</li>
+    <li>The current page is indicated by adding the “aria-current=’page’” attribute to the appropriate “li”.</li>
+    <li>The forward slash (“/”) is used as a separator between items in the Breadcrumb list. </li>
+    <li>The last Breadcrumb item represents the current page and should not be an active link.</li>
+    <li>Breadcrumbs will never wrap.</li>
+    <li>The Breadcrumbs will be truncated (with ellipsis: “...”) when the Breadcrumbs are too wide to fit on the screen.</li>
+    <li>Breadcrumb labels will never wrap.</li>
+    <li>If icons are used as part of the label, they should always be on the left side of the label and should never be used alone.</li>
+</ul>
+
+<h3>States</h3>
+
+<h4>Default</h4>
+<p>The Default state of a breadcrumb item will be Not Current.</p>
+<h4>Active</h4>
+<p>The breadcrumb item is in the process of being selected.</p>
+<h4>Not Current</h4>
+<p>The breadcrumb item represents a location (page) that is not the current location (page).  The breadcrumb item is represented as a link.</p>
+<h4>Current</h4>
+<p>The breadcrumb item represents the current location (page).  The breadcrumb item is represented as plain text that is not a link, and will not obtain focus.</p>
+<h4>Focus</h4>
+<p>The breadcrumb item has focus.</p>
+<h4>Hover</h4>
+<p>The mouse cursor is within the breadcrumb item.</p>
+<h4>Overflow</h4>
+<p>The breadcrumb items do not fit within the available horizontal space.</p>

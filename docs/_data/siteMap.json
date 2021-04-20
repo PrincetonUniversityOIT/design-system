@@ -27,6 +27,10 @@
           "url": "/components/accordion/"
         },
         {
+          "label": "Breadcrumbs",
+          "url": "/components/breadcrumbs/"
+        },
+        {
           "label": "Buttons",
           "url": "/components/buttons/"
         },
