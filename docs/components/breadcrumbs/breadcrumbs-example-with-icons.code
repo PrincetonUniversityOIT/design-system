@@ -9,8 +9,8 @@
     <li>
       <i class="jazz-icon jazz-icon-gear"></i><a href="javascript:void(0)">YET ANOTHER LINK LEVEL</a>
     </li>
-    <li>
-       <i class="jazz-icon jazz-icon-gear"></i><span aria-current="page">CURRENT PAGE</span>
+    <li aria-current="page">
+       <i class="jazz-icon jazz-icon-gear"></i>CURRENT PAGE
     </li>
   </ol>
 </nav>

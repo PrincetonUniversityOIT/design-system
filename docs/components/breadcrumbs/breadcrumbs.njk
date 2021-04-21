@@ -28,7 +28,7 @@ Each link in the Breadcrumbs provides quick navigation to related pages in the s
     <li>Breadcrumbs should not be used to manage a workflow.  Other patterns, such as “wizards” or “steppers” would be more appropriate for that use case.</li>
     <li>Do not represent a site hierarchy where one does not exist.</li>
     <li>Breadcrumbs are not a replacement for native browser “Back” button navigation.  Wherever possible, do not disable native browser “Back” button navigation.</li>
-    <li>Add JSON-LD (https://developers.google.com/search/docs/data-types/breadcrumb) as a search engine optimization where it is useful.</li>
+    <li>Add JSON-LD (<a href="https://developers.google.com/search/docs/data-types/breadcrumb">https://developers.google.com/search/docs/data-types/breadcrumb</a>) as a search engine optimization where it is useful.</li>
     <li>Use only a single set of Breadcrumbs on a page.</li>
 </ul>
 
@@ -90,10 +90,10 @@ Each link in the Breadcrumbs provides quick navigation to related pages in the s
 <h3>Code</h3>
 
 <ul>
-    <li>Breadcrumbs are wrapped in a “nav” element to indicate their purpose.</li>
-    <li>The “nav” element is given an “aria-label” of “Breadcrumbs” for use by assistive technologies.</li>
-    <li>The list of links is implemented as a simple order list (“ol”).</li>
-    <li>The current page is indicated by adding the “aria-current=’page’” attribute to the appropriate “li”.</li>
+    <li>Breadcrumbs are wrapped in a <span class="code">nav</span> element to indicate their purpose.</li>
+    <li>The <span class="code">nav</span> element is given an <span class="code">aria-label</span> of “Breadcrumbs” for use by assistive technologies.</li>
+    <li>The list of links is implemented as a simple order list (<span class="code">ol</span>).</li>
+    <li>The current page is indicated by adding the <span class="code">aria-current=’page’</span> attribute to the appropriate <span class="code">li</span>.</li>
     <li>The forward slash (“/”) is used as a separator between items in the Breadcrumb list. </li>
     <li>The last Breadcrumb item represents the current page and should not be an active link.</li>
     <li>Breadcrumbs will never wrap.</li>

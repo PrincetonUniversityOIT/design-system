@@ -9,8 +9,8 @@
     <li>
       <a href="javascript:void(0)">Yet Another Link Level</a>
     </li>
-    <li>
-       <span aria-current="page">Current Page</span>
+    <li aria-current="page">
+       Current Page
     </li>
   </ol>
 </nav>

@@ -31,6 +31,7 @@
   flex-basis: auto;
   flex-grow: 0;
   align-items: center;
+  gap: 5px;
 }
 
 .jazz-breadcrumb > ol > li:not(:last-child)::after {
@@ -72,6 +73,7 @@
 }
 
 .jazz-breadcrumb > ol > li a:active,
+.jazz-breadcrumb > ol > li[aria-current=page],
 .jazz-breadcrumb > ol > li a[aria-current=page],
 .jazz-breadcrumb > ol > li span[aria-current=page]{
   @include jazz-theme-color(breadcrumb-active);
