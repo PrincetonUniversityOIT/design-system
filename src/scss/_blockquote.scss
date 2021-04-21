@@ -1,7 +1,8 @@
 .jazz-quote {
+  font-family: jazz-theme(blockquote-font);
   font-weight: 300;
   font-size: 1.5rem;
-  border-top: 1px solid #c8c8c8;
+  border-top: 1px solid jazz-theme(blockquote-divider-color);
   line-height: 1.25em;
   display: table;
   margin: 1.5em 0 0;
@@ -11,7 +12,7 @@
   content: "";
   width: 115px;
   height: 8px;
-  background-color: #e77500;
+  background-color: jazz-theme(blockquote-accent-color);
   display: block;
   position: relative;
   left: 3em;

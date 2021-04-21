@@ -1,75 +1,10 @@
-$jazz-color-map: (
-        jazz-princeton-orange: (background-color: #E77500, color: #000),
-        jazz-princeton-orange-80: (background-color: #EC9133, color: #000),
-        jazz-princeton-orange-20: (background-color: #FAE3CC, color: #000),
-        jazz-princeton-orange-10: (background-color: #FCF1E5, color: #000),
-        jazz-black: (background-color: #000, color: #fff),
-  // when using orange on a black background, the orange has to be adjusted based on PU Communications guidelines:
-  // https://communications.princeton.edu/guides-tools/logo-graphic-identity
-        jazz-gray-and-orange: (background-color: #121212, color: #F58025),
-        jazz-gray-5-and-black: (background-color: #F7F7F7, color: #121212),
-        jazz-black-and-orange: (background-color: #000, color: #F58025),
-        jazz-white-and-orange: (background-color: #fff, color: #F58025),
-        jazz-white-and-gray: (background-color: #fff, color: #121212),
-        jazz-white-and-gray-5: (background-color: #fff, color: #F7F7F7),
-        jazz-white-and-gray-60: (background-color: #fff, color: #717171),
-        jazz-white: (background-color: #fff, color: #000),
-  // neutral 1
-        jazz-gray: (background-color: #121212, color: #fff),
-        jazz-gray-5: (background-color: #F7F7F7, color: #fff),
-        jazz-gray-80: (background-color: #414141, color: #fff),
-        jazz-gray-60: (background-color: #717171, color: #fff),
-        jazz-gray-40: (background-color: #A0A0A0, color: #000),
-        jazz-gray-20: (background-color: #D0D0D0, color: #000),
-        jazz-gray-10: (background-color: #EEEEEE, color: #121212),
-  // neutral 2
-        jazz-cool-gray: (background-color: #091F30, color: #fff),
-        jazz-cool-gray-80: (background-color: #3A4C59, color: #fff),
-        jazz-cool-gray-60: (background-color: #6B7983, color: #000),
-        jazz-cool-gray-40: (background-color: #9DA5AC, color: #000),
-        jazz-cool-gray-20: (background-color: #E6E9EA, color: #000),
-  // neutral 3
-        jazz-gold: (background-color: #857437, color: #fff),
-        jazz-gold-80: (background-color: #A5935B, color: #000),
-        jazz-gold-60: (background-color: #B4A36A, color: #000),
-        jazz-gold-40: (background-color: #D9D1B4, color: #000),
-        jazz-gold-10: (background-color: #F6F3EC, color: #000),
-  // dark mode
-        jazz-dark-gray: (background-color: #262626, color: #fff),
-        jazz-dark-gray-medium: (background-color: #333333, color: #fff),
-        jazz-dark-gray-light: (background-color: #3A3A3A, color: #fff),
-  // accents
-        jazz-red: (background-color: #D14112, color: #fff),
-        jazz-red-dark: (background-color: #B00002, color: #fff),
-        jazz-bad-orange: (background-color: #FB9F26, color: #000),
-        jazz-yellow: (background-color: #FBC129, color: #000),
-        jazz-green: (background-color: #00C08B, color: #000),
-        jazz-green-dark: (background-color: #006450, color: #fff),
-        jazz-teal-dark: (background-color: #014758, color: #fff),
-        jazz-teal: (background-color: #086B83, color: #fff),
-        jazz-blue-dark: (background-color: #0B2F42, color: #fff),
-        jazz-blue-medium: (background-color: #074760, color: #fff),
-        jazz-blue: (background-color: #0B7097, color: #fff),
-        jazz-indigo-dark: (background-color: #1E0944, color: #fff),
-        jazz-indigo: (background-color: #5C43A8, color: #fff),
-        jazz-violet-dark: (background-color: #733B8C, color: #fff),
-        jazz-violet: (background-color: #983A90, color: #fff),
-        jazz-rose-dark: (background-color: #880E4F, color: #fff),
-        jazz-rose: (background-color: #E91E63, color: #000),
-        jazz-dirty-white: (background-color: #ddd, color: #000),
-
-  // highlights
-        jazz-cyan: (background-color: #75F4FF, color: #000),
-        jazz-aqua: (background-color: #03DAC5, color: #000),
-        jazz-neon: (background-color: #E1FF32, color: #000),
-        jazz-lime: (background-color: #C9FB36, color: #000),
-        jazz-olive: (background-color: #A0BD00, color: #000),
-
-);
-
 @each $key, $value in $jazz-color-map {
   .#{$key} { color: map-get($value, color); background-color: map-get($value, background-color); }
   .#{$key}-bg { background-color: map-get($value, background-color); }
   .#{$key}-fg { color: map-get($value, background-color); }
   i.jazz-icon.#{$key} { color: map-get($value, background-color); }
+}
+
+@function jazz-color($color-name) {
+    @return map-get($jazz-color-hex-map, $color-name);
 }

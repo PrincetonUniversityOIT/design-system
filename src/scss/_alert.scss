@@ -1,10 +1,12 @@
 .jazz-alert-section {
-  background-color: #000;
-  color: #fff;
+  background-color: jazz-theme(alert-bgcolor);
+  color: jazz-theme(alert-color);
+  font-family: jazz-theme(alert-body-font);
   padding: 1rem;
   margin-bottom: 1rem;
 }
 .jazz-alert-section__title {
+  font-family: jazz-theme(alert-header-font);
   padding-right: 3rem; // what is the purpose of this?
   font-weight: 700;
   font-size: 1.35rem;
@@ -14,7 +16,7 @@
 .jazz-alert-section__close {
   width: 44px;
   height: 44px;
-  color: #fff;
+  color: jazz-theme(alert-color);
   font-weight: bold;
   position: absolute;
   margin: 0;

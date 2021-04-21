@@ -1,0 +1,70 @@
+// Colors have been put into a map here to make it easy to generate color styles (*-bg & *-fg & i.jazz-icon.#{$name})
+// Color keys are prefixed because HTML color names are treated as colors in sass (even when used as keys in a map) and
+// also because the colors referenced as keys do not match the HTML hex values.
+$jazz-color-hex-map: (
+        jazz-princeton-orange: #E77500,
+        // when using orange on a black background, the orange has to be adjusted based on PU Communications guidelines:
+        // https://communications.princeton.edu/guides-tools/logo-graphic-identity
+        jazz-princeton-orange-on-dark: #F58025,
+        jazz-princeton-orange-80: #EC9133,
+        jazz-princeton-orange-20: #FAE3CC,
+        jazz-princeton-orange-10: #FCF1E5,
+
+        jazz-black: #000,
+        jazz-white: #fff,
+
+        // neutral 1
+        jazz-gray: #121212,
+        jazz-gray-5: #F7F7F7,
+        jazz-gray-80: #414141,
+        jazz-gray-60: #717171,
+        jazz-gray-40: #A0A0A0,
+        jazz-gray-20: #D0D0D0,
+        jazz-gray-10: #EEEEEE,
+
+        // neutral 2
+        jazz-cool-gray: #091F30,
+        jazz-cool-gray-80: #3A4C59,
+        jazz-cool-gray-60: #6B7983,
+        jazz-cool-gray-40: #9DA5AC,
+        jazz-cool-gray-20: #E6E9EA,
+
+        // neutral 3
+        jazz-gold: #857437,
+        jazz-gold-80: #A5935B,
+        jazz-gold-60: #B4A36A,
+        jazz-gold-40: #D9D1B4,
+        jazz-gold-10: #F6F3EC,
+
+        // dark mode
+        jazz-dark-gray: #262626,
+        jazz-dark-gray-medium:  #333333,
+        jazz-dark-gray-light: #3A3A3A,
+
+        // accents
+        jazz-red: #D14112,
+        jazz-red-dark: #B00002,
+        jazz-bad-orange: #FB9F26,
+        jazz-yellow: #FBC129,
+        jazz-green: #00C08B,
+        jazz-green-dark: #006450,
+        jazz-teal-dark: #014758,
+        jazz-teal: #086B83,
+        jazz-blue-dark: #0B2F42,
+        jazz-blue-medium: #074760,
+        jazz-blue: #0B7097,
+        jazz-indigo-dark: #1E0944,
+        jazz-indigo: #5C43A8,
+        jazz-violet-dark: #733B8C,
+        jazz-violet: #983A90,
+        jazz-rose-dark: #880E4F,
+        jazz-rose: #E91E63,
+        jazz-dirty-white: #ddd,
+
+        // highlights
+        jazz-cyan: #75F4FF,
+        jazz-aqua: #03DAC5,
+        jazz-neon: #E1FF32,
+        jazz-lime: #C9FB36,
+        jazz-olive: #A0BD00,
+);
