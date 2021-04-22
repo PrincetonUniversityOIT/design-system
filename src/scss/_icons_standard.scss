@@ -6,16 +6,15 @@ $jazz-icons-standard: (
         youtube: '../icons/phosphor/youtube-logo.svg',
 
         close: '../icons/phosphor/x.svg',
-        down-arrow: '../icons/phosphor/caret-down.svg',
-        expand-less: '../icons/phosphor/caret-up.svg',
-        expand-more: '../icons/phosphor/caret-down.svg',
+        caret-up: '../icons/phosphor/caret-up.svg',
+        caret-down: '../icons/phosphor/caret-down.svg',
         external: '../icons/phosphor/arrow-square-up-right.svg',
         search: '../icons/phosphor/magnifying-glass.svg',
         menu: '../icons/phosphor/list.svg',
         remove: '../icons/phosphor/x-bold.svg',
-        breadcrumb: '../icons/phosphor/breadcrumb.svg',
         gear: '../icons/phosphor/gear.svg',
         arrow-left: '../icons/phosphor/arrow-left.svg',
+        arrow-right: '../icons/phosphor/arrow-right.svg',
         plus: '../icons/phosphor/plus.svg',
         minus: '../icons/phosphor/minus.svg',
         copyright: '../icons/phosphor/copyright.svg',
@@ -23,7 +22,7 @@ $jazz-icons-standard: (
         phone: '../icons/phosphor/phone.svg',
         printer: '../icons/phosphor/printer.svg',
         map-pin: '../icons/phosphor/map-pin.svg',
-        email: '../icons/phosphor/envelope.svg',
+        envelope: '../icons/phosphor/envelope.svg',
 );
 
 @each $name, $path in map-merge($jazz-icons-standard, $jazz-icons-custom) {

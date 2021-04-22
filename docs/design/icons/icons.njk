@@ -1,0 +1,245 @@
+---
+layout: layout.njk
+title: Icons
+tags: design
+---
+
+{% from "../../_includes/example.njk" import example %}
+
+<h1 class="jazz-page-title">Icons</h1>
+
+<p>
+Icons are a compact visual means of quickly communicating a concept or idea.
+</p>
+
+{{ example("/design/icons/icons-example", "Icons Example", "code-panel-icons") }}
+
+<h2>Best Practices</h2>
+
+<ul>
+    <li>Use icons to enhance pieces of your design, not to replace pieces of your design.</li>
+    <li>Use icons that have a well-established meaning.</li>
+    <li>Avoid attempting to represent abstract concepts with icons.</li>
+    <li>Use icons consistently.  Icons should have a single meaning within the context that they are being used.  Icons should have a consistent meaning across all University sites.</li>
+    <li>Keep icons simple.  A limited space is available to convey meaning.</li>
+    <li>If a legend or training is necessary to explain the meaning of icons, then the icons should be made more clear or excluded from the design altogether.</li>
+    <li>Icons should be paired with text wherever possible.</li>
+    <li>Consider assistive devices.  Be sure to clearly indicate to assistive devices that an icon is decorative.</li>
+    <li>Provide additional metadata to assistive devices when an icon is not accompanied by a textual label.</li>
+    <li>Icons are most useful as part of another component (Button, Link, Tab, Menu, etc…).</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>Specifying an Icon</h3>
+
+<p>Icons are specified using a predefined set of names.</p>
+
+{{ example("/design/icons/icons-example", "Icons Example", "code-panel-icons-2") }}
+
+<p>See the full list of icons (link to them) for a list of icons bundled with the Design System and their corresponding names.</p>
+
+<h3>Buttons With Icons</h3>
+
+<p>
+    Icons can be used within buttons.
+</p>
+
+{{ example("/design/icons/icons-example-button", "Button With Icon Example", "code-panel-button-with-icon") }}
+
+<p>
+    When icons are not paired with a text label, additional metadata should be provided for assistive devices.
+</p>
+
+{{ example("/design/icons/icons-example-button-no-text", "Buttons With Icons No Text Example", "code-panel-button-with-icon-no-text") }}
+
+<h3>Icons With Text</h3>
+
+<p>
+    Icons can be used within the flow of text.  They will inherit their size and color from the surrounding text.
+</p>
+
+{{ example("/design/icons/icons-example-icons-with-text", "Icons With Text Example", "code-panel-icons-with-text") }}
+
+<h3>Icons Color</h3>
+
+<p>
+    Icons will take the color of their surrounding text, or will be black by default.  The color of an icon can be changed using one of the convenient styles already defined within the Design System.
+</p>
+
+{{ example("/design/icons/icons-example-colors", "Icon Color Example", "code-panel-icon-color") }}
+
+<h3>Icons Size</h3>
+
+<p>
+    Icons will take the size of their surrounding text, but icon size can be changed using redefined sizes: 2x, 3x, 5x, 7x, 9x.
+</p>
+
+{{ example("/design/icons/icons-example-size", "Icon Size Example", "code-panel-icon-size") }}
+
+<p>
+   It is also possible to change the size of an icon by changing the width and height CSS descriptors.
+</p>
+
+{{ example("/design/icons/icons-example-size-defined", "Icon Defined Size Example", "code-panel-icon-size-defined") }}
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<p>
+    Icons for the Design System have been sourced from Phosphor Icons (<a href="https://phosphoricons.com">https://phosphoricons.com</a>).  This icon set offers an extensive library or icons with an open license.
+</p>
+
+<p>
+    To keep the Design System library small, only the most commonly used and recommended icons from the Phosphor Icons library have been bundled with the Design System.  However, you can supplement the Design System icons easily by adding icons to the Design System.
+</p>
+
+<p>
+    The easiest way to add an external icon without rebuilding the Design System would be to define icon classes that follow the Design System icon naming convention and reference your custom icon files
+</p>
+
+   {% highlight "html" %}
+        .jazz-icon-#{$name} {
+            -webkit-mask-image: url(#{$path});
+            mask-image: url($path);
+        }
+   {% endhighlight %}
+
+<h3>Code</h3>
+<p>
+    Icons do not have any dynamic behavior.  Their styling and other characteristics are primarily derived from the underlying HTML structure.
+</p>
+
+<ul>
+
+    <li>Icons are associated with the  <span class="code">&lti&gt</span> element.  Although this is somewhat semantically incorrect, the association with the <span class="code">&lti&gt</span> tag provides a structure that is easy for developers to remember without creating any burden on the user.</li>
+    <li>Adding the <span class="code">jazz-icon</span> class to the <span class="code">&lti&gt</span> element identifies the element as an icon.</li>
+    <li>The appropriate icon class is given to the <span class="code">&lti&gt</span> element to specify the icon to be used.  See the section the follows for the list of icon class names that are available.</li>
+    <li>Icons take the size of the surrounding text.  By default, that would be 16px (1em).  Additional classes are available for changing the size of the icons easily (jazz-icon-2x, jazz-icon-3x, jazz-icon-5x, jazz-icon-7x, jazz-icon-9x).  Custom sizes can be achieved by setting the width and height CSS descriptors on the element.  The width of the icon should always equal the height to maintain the appropriate proportions for the image.</li>
+    <li>Design System color classes can be used to change the color of icons, as can the <span class="code">color</span> CSS descriptor.</li>
+    <li>In cases where an icon is paired with a corresponding label, nothing special needs to be done to support assistive devices.</li>
+    <li>In cases where an icon IS NOT paired with a corresponding label, it is recommended that a visually hidden <span class="code">span</span> tag is used to wrap a label next to the icon to improve the experience for assistive devices. [i.e. <span class=”jazz-visually-hidden”>Delete</span>]</li>
+</ul>
+
+<h3>Icons</h3>
+
+<p>The following table lists the icons bundled with the Design System along with the name used to refer to the icon.  The table also includes recommended uses for each icon to help establish a consistent experience for users of University sites.</p>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>Icon</th>
+        <th>Class Name</th>
+        <th>Recommended Use</th>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-arrow-left jazz-icon-2x"></i></td>
+        <td>jazz-icon-arrow-left</td>
+        <td>Arrow Left</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-arrow-right jazz-icon-2x"></i></td>
+        <td>jazz-icon-arrow-right</td>
+        <td>Arrow Right</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-caret-down jazz-icon-2x"></i></td>
+        <td>jazz-icon-caret-down</td>
+        <td>Caret Down</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-caret-up jazz-icon-2x"></i></td>
+        <td>jazz-icon-caret-up</td>
+        <td>Caret Up</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-close jazz-icon-2x"></i></td>
+        <td>jazz-icon-close</td>
+        <td>Close</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-copyright jazz-icon-2x"></i></td>
+        <td>jazz-icon-copyright</td>
+        <td>Copyright</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-envelope jazz-icon-2x"></i></td>
+        <td>jazz-icon-envelope</td>
+        <td>Envelope</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-external jazz-icon-2x"></i></td>
+        <td>jazz-icon-external</td>
+        <td>External: used for external links</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-facebook jazz-icon-2x"></i></td>
+        <td>jazz-icon-facebook</td>
+        <td>Facebook</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-gear jazz-icon-2x"></i></td>
+        <td>jazz-icon-gear</td>
+        <td>Gear</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-instagram jazz-icon-2x"></i></td>
+        <td>jazz-icon-instagram</td>
+        <td>Instagram</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-linkedin jazz-icon-2x"></i></td>
+        <td>jazz-icon-linkedin</td>
+        <td>LinkedIn</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-map-pin jazz-icon-2x"></i></td>
+        <td>jazz-icon-map-pin</td>
+        <td>Map Pin</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-menu jazz-icon-2x"></i></td>
+        <td>jazz-icon-menu</td>
+        <td>Menu: used for the collapsed menu</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-minus jazz-icon-2x"></i></td>
+        <td>jazz-icon-minus</td>
+        <td>Minus</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-phone jazz-icon-2x"></i></td>
+        <td>jazz-icon-phone</td>
+        <td>Phone</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-plus jazz-icon-2x"></i></td>
+        <td>jazz-icon-plus</td>
+        <td>Plus</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-printer jazz-icon-2x"></i></td>
+        <td>jazz-icon-printer</td>
+        <td>Printer</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-remove jazz-icon-2x"></i></td>
+        <td>jazz-icon-remove</td>
+        <td>Remove: used for the close dialog</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-search jazz-icon-2x"></i></td>
+        <td>jazz-icon-search</td>
+        <td>Search</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-twitter jazz-icon-2x"></i></td>
+        <td>jazz-icon-twitter</td>
+        <td>Twitter</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-youtube jazz-icon-2x"></i></td>
+        <td>jazz-icon-youtube</td>
+        <td>YouTube</td>
+    </tr>
+</table>

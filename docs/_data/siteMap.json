@@ -12,7 +12,13 @@
     },
     {
       "label": "Design",
-      "url": "/design/"
+      "url": "/design/",
+      "items": [
+        {
+          "label": "Icons",
+          "url": "/design/icons"
+        }
+      ]
     },
     {
       "label": "Components",
