@@ -15,6 +15,7 @@ $jazz-theme-feature: (
         warning: jazz-indigo,
 
         body-text: jazz-black,
+        body-text-color: jazz-color(jazz-black),
         body-font: jazz-font(jazz-roboto),
         focus-color: jazz-color(jazz-blue),
 
@@ -71,6 +72,63 @@ $jazz-theme-feature: (
         breadcrumb-active-underline-color: jazz-color(jazz-princeton-orange),
         breadcrumb-divider-color: jazz-color(jazz-gray-20),
 
+        // buttons
+        button-primary-bgcolor: jazz-color(jazz-gray),
+        button-primary-color: jazz-color(jazz-white),
+        button-primary-hover-bgcolor: jazz-color(jazz-gray-60),
+        button-primary-hover-color: jazz-color(jazz-white),
+        button-primary-active-bgcolor: jazz-color(jazz-gray-60),
+        button-primary-active-color: jazz-color(jazz-white),
+        button-primary-disabled-bgcolor: jazz-color(jazz-gray-20),
+        button-primary-disabled-color: jazz-color(jazz-gray-60),
+        button-primary-unstyled-color: jazz-color(jazz-gray),
+
+        // cards
+        card-border-color: jazz-color(jazz-gray-20),
+        card-border-accent-color: jazz-color(jazz-princeton-orange),
+        card-heading-font: jazz-font(jazz-lora),
+        card-footer-font: jazz-font(jazz-roboto),
+
+        card-news-bgcolor: jazz-color(jazz-white),
+        card-news-color: jazz-color(jazz-black),
+        card-news-header-font: jazz-font(jazz-lora),
+        card-news-border-bottom-color: jazz-color(jazz-princeton-orange),
+        card-news-heading-underline-color: jazz-color(jazz-princeton-orange),
+
+        card-event-bgcolor: jazz-color(jazz-white),
+        card-event-color: jazz-color(jazz-black),
+        card-event-border-accent-color: jazz-color(jazz-princeton-orange),
+        card-event-title-font: jazz-font(jazz-lora),
+        card-event-title-hover-underline-color: jazz-color(jazz-princeton-orange),
+
+        // email
+        email-underline-color: jazz-color(jazz-gray),
+        email-hover-underline-color: jazz-color(jazz-princeton-orange),
+
+        // form theme options
+        form-input-bgcolor: jazz-color(jazz-white),
+        form-input-color: jazz-color(jazz-black),
+        form-input-border-color: jazz-color(jazz-gray-60),
+        form-input-error-border-color: jazz-color(jazz-red),
+        form-dropdown-arrow-color: jazz-color(jazz-princeton-orange),
+        form-input-disabled-color: jazz-color(jazz-gray-40),
+
+        file-upload-description-color: jazz-color(jazz-gray-80),
+
+        // footer theme options
+        footer-bgcolor: jazz-color(jazz-white),
+        footer-color: jazz-color(jazz-gray),
+        footer-heading-font: jazz-font(jazz-lora),
+        footer-link-underline-color: jazz-color(jazz-princeton-orange),
+        footer-subfooter-bgcolor: jazz-color(jazz-white),
+        footer-subfooter-color: jazz-color(jazz-gray),
+        footer-subfooter-divider-color: jazz-color(jazz-gray-40),
+
+        //footer: jazz-gray-80,
+        //footer-underline: jazz-white,
+        //sub-footer: jazz-gray-80,
+        //sub-footer-divider: jazz-gray-40,
+
   // header theme options
         header-cap: jazz-princeton-orange,
         header-pu-branding: jazz-white,
@@ -94,12 +152,6 @@ $jazz-theme-feature: (
         header-icon: jazz-black,
         header-search-icon: jazz-black,
 
-  // footer theme options
-        footer: jazz-gray-80,
-        footer-underline: jazz-white,
-        sub-footer: jazz-gray-80,
-        sub-footer-divider: jazz-gray-40,
-
   // menubar theme options
         menubar-lg-primary: jazz-white,
         menubar-lg-primary-hover-underline: jazz-gray-40,
@@ -116,11 +168,6 @@ $jazz-theme-feature: (
 
   // sidebar options
         sidebar: jazz-white,
-
-  // form theme options
-        form-input-border: jazz-gray-40,
-        form-input: jazz-white,
-        form-input__disabled: jazz-gray-40,
 
   // tabs
         tab: jazz-white,
@@ -147,7 +194,4 @@ $jazz-theme-feature: (
         toolbar: jazz-gray-20,
         toolbar-section-divider: jazz-gray,
         toolbar-legend-color: jazz-gray-80,
-
-        card: jazz-white,
-
 );

@@ -1,19 +1,19 @@
 .jazz-btn {
-  font-family: jazz-theme-font(body);
+  font-family: jazz-theme(body-font);
   font-size: 1.06rem;
   line-height: .9;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: #fff;
-  background-color: get-color("primary-bg"); // #005ea2;
+  color: jazz-theme(button-primary-color);
+  background-color: jazz-theme(button-primary-bgcolor);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: 0;
-  border-radius: .25rem;
+  border-radius: px-to-rem(2);
   cursor: pointer;
   display: inline-block;
-  font-weight: 700;
+  font-weight: 400;
   margin-right: .5rem;
   padding: .75rem 1.25rem;
   text-align: center;
@@ -22,19 +22,19 @@
 }
 
 .jazz-btn.jazz-btn--hover, .jazz-btn:hover {
-  color: #fff;
-  background-color: get-color("primary-bg-dark"); // #1a4480;
+  color: jazz-theme(button-primary-hover-color);
+  background-color: jazz-theme(button-primary-hover-bgcolor);
   border-bottom: 0;
   text-decoration: none;
 }
 
 .jazz-btn.jazz-btn--active, .jazz-btn:active {
-  color: #fff;
-  background-color: get-color("primary-bg-darker"); // #162e51;
+  color: jazz-theme(button-primary-active-color);
+  background-color: jazz-theme(button-primary-active-bgcolor);
 }
 
 .jazz-btn.jazz-btn--focus, .jazz-btn:focus {
-  outline: .25rem solid get-color("focus"); // #2491ff;
+  outline: px-to-rem(2) solid jazz-theme(focus-color);
   outline-offset: 0;
 }
 
@@ -43,19 +43,19 @@
 }
 
 .jazz-btn:disabled {
+  color: jazz-theme(button-primary-disabled-color);
+  background-color: jazz-theme(button-primary-disabled-bgcolor);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: get-color("primary-bg-disabled"); // #c9c9c9;
-  color: #fff;
   pointer-events: none;
 }
 
 .jazz-btn.jazz-btn--unstyled {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: #005ea2;
+  color: jazz-theme(button-primary-unstyled-color);
   text-decoration: underline;
-  background-color: get-color("primary-bg-unstyled"); // transparent;
+  background-color: transparent;
   border: 0;
   border-radius: 0;
   box-shadow: none;

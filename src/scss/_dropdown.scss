@@ -1,6 +1,7 @@
 .jazz-dropdown,
 .jazz-dropdown--error {
-  @include jazz-theme-color(form-input);
+  background-color: jazz-theme(form-input-bgcolor);
+  color: jazz-theme(form-input-color);
   position: relative;
 }
 .jazz-dropdown:after,
@@ -20,8 +21,8 @@
 }
 .jazz-dropdown:after,
 .jazz-dropdown--error:after {
-  border-bottom: 2px solid jazz-theme-rgb(accent);
-  border-right: 2px solid jazz-theme-rgb(accent);
+  border-bottom: 2px solid jazz-theme(form-dropdown-arrow-color);
+  border-right: 2px solid jazz-theme(form-dropdown-arrow-color);
   height: .5em;
   margin: auto;
   right: .95em;
@@ -32,26 +33,28 @@
 }
 .jazz-dropdown select,
 .jazz-dropdown--error select {
-  @include jazz-theme-color(form-input);
+  background-color: jazz-theme(form-input-bgcolor);
+  color: jazz-theme(form-input-color);
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   box-shadow: none;
   border-radius: 0;
-  border: 1px solid jazz-theme-rgb(neutral-dark);
+  border: 1px solid jazz-theme(form-input-border-color);
   line-height: normal;
   max-width: 100%;
   padding: .5em 2em .5em .5em;
   width: 100%;
 }
 .jazz-dropdown--error select {
-  border: .25rem solid jazz-theme-rgb(error);
+  border: .25rem solid jazz-theme(form-input-error-border-color);
 }
 .jazz-dropdown select option,
 .jazz-dropdown--error select option {
-  @include jazz-theme-color(form-input);
+  border-bottom: 2px solid jazz-theme(form-dropdown-arrow-color);
+  border-right: 2px solid jazz-theme(form-dropdown-arrow-color);
 }
 .jazz-dropdown select option[disabled],
 .jazz-dropdown--error select option[disabled] {
-  color: jazz-theme-rgb(form-input__disabled);
+  color: jazz-theme(form-input-disabled-color);
 }

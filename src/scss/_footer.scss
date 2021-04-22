@@ -1,5 +1,6 @@
 footer.jazz-footer {
-  @include jazz-theme-color(footer);
+  background-color: jazz-theme(footer-bgcolor);
+  color: jazz-theme(footer-color);
   padding-top: 2rem;
   margin-top: auto;
 }
@@ -9,10 +10,9 @@ footer.jazz-footer h3,
 footer.jazz-footer h4,
 footer.jazz-footer h5,
 footer.jazz-footer h6 {
-  font-family: jazz-theme-font(body);
+  font-family: jazz-theme(footer-heading-font);
 }
 footer.jazz-footer h2 {
-  @include jazz-theme-color(footer);
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: bold !important;
@@ -20,8 +20,7 @@ footer.jazz-footer h2 {
   margin-bottom: 0;
 }
 footer.jazz-footer a {
-  @include jazz-theme-color(footer);
-  border-bottom: px-to-rem(1) solid transparent;
+  color: jazz-theme(footer-color);
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
@@ -32,7 +31,7 @@ footer.jazz-footer a {
 footer.jazz-footer a:hover,
 footer.jazz-footer a:active,
 footer.jazz-footer a:focus {
-  border-bottom: px-to-rem(1) solid jazz-theme-rgb('footer-underline');
+  border-bottom: px-to-rem(1) solid jazz-theme(footer-link-underline-color);
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
@@ -68,8 +67,9 @@ ul.jazz-footer__icon-list li {
   padding-bottom: 2rem;
 }
 .jazz-footer__subfooter {
-  @include jazz-theme-color(sub-footer);
-  border-top: px-to-rem(1) solid jazz-theme-rgb(sub-footer-divider);
+  background-color: jazz-theme(footer-subfooter-bgcolor);
+  color: jazz-theme(footer-subfooter-color);
+  border-top: px-to-rem(1) solid jazz-theme(footer-subfooter-divider-color);
   padding: 1rem 0;
 }
 .jazz-footer__logo {
@@ -79,8 +79,8 @@ ul.jazz-footer__icon-list li {
   width: 1em;
   height: 1em;
 }
-.jazz-icon.jazz-footer__icon {
-  background-color: white;
+.jazz-footer .jazz-icon {
+  background-color: jazz-theme(footer-color);
 }
 
 /*
@@ -95,9 +95,9 @@ ul.jazz-footer__icon-list li {
   .jazz-footer__subfooter div {
     text-align: left;
   }
-  .jazz-footer-text--left {
-    text-align: left;
-  }
+  //.jazz-footer-text--left {
+  //  text-align: left;
+  //}
 
   .jazz-footer-text--right {
     text-align: right;
