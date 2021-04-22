@@ -1,15 +1,8 @@
 .jazz-breadcrumb {
-  font-family: jazz-theme-font(body);
-  font-style: normal;
-  font-weight: normal;
+  font-family: jazz-theme(body-font);
   font-size: px-to-rem(14);
   line-height: px-to-rem(18);
   letter-spacing: px-to-rem(1);
-
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .jazz-breadcrumb:not(.jazz-breadcrumb--wrap) > ol > li {
@@ -18,10 +11,12 @@
 }
 
 .jazz-breadcrumb > ol {
-  margin: -.25rem;
-  padding: .5rem;
+  margin: 0px;
+  padding: 0px;
   list-style-type: none;
   display: block;
+  padding-left: px-to-rem(2); // margin added to make sure focus indicator is not truncated
+  padding-top: px-to-rem(2); // margin added to make sure focus indicator is not truncated
 }
 
 .jazz-breadcrumb > ol > li {
@@ -31,58 +26,46 @@
   flex-basis: auto;
   flex-grow: 0;
   align-items: center;
-  gap: 5px;
 }
 
 .jazz-breadcrumb > ol > li:not(:last-child)::after {
-  @include jazz-theme-color(breadcrumb-divider);
-  font-style: normal;
-  font-weight: normal;
+  color: jazz-theme(breadcrumb-divider-color);
   font-size: px-to-rem(14);
   line-height: px-to-rem(18);
   display: inline-block;
   content: "/";
-  margin-left: px-to-rem(4);
-  margin-right: px-to-rem(3);
+  margin-left: px-to-rem(6);
 }
 
 .jazz-breadcrumb > ol > li a:focus {
-  @include jazz-theme-color(breadcrumb-item);
-  font-style: normal;
-  font-weight: normal;
-  outline: px-to-rem(2) solid jazz-theme-rgb(focus);
-  outline-offset: 0;
+  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
 }
 
-.jazz-breadcrumb > ol > li a,
-.jazz-breadcrumb > ol > li a:visited,
-.jazz-breadcrumb > ol > li span {
-  @include jazz-theme-color(breadcrumb-item);
+.jazz-breadcrumb > ol > li > a,
+.jazz-breadcrumb > ol > li > a:visited,
+.jazz-breadcrumb > ol > li > span {
+  color: jazz-theme(breadcrumb-item-color);
   font-size: px-to-rem(14);
+  font-weight: 400;
   line-height: px-to-rem(18);
   text-decoration: none;
-  padding: px-to-rem(5);
-  border-bottom: px-to-rem(2) solid transparent;
+  padding: px-to-rem(2) px-to-rem(0) 0px px-to-rem(0);
+  border-bottom: px-to-rem(1) solid transparent;
 }
 
-.jazz-breadcrumb > ol > li a:hover {
-  @include jazz-theme-color(breadcrumb-hover);
-  font-size: px-to-rem(14);
-  line-height: px-to-rem(18);
-  border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
+.jazz-breadcrumb > ol > li > a:hover {
+  border-bottom: px-to-rem(1) solid jazz-theme(breadcrumb-hover-underline-color);
 }
 
-.jazz-breadcrumb > ol > li a:active,
-.jazz-breadcrumb > ol > li[aria-current=page],
-.jazz-breadcrumb > ol > li a[aria-current=page],
-.jazz-breadcrumb > ol > li span[aria-current=page]{
-  @include jazz-theme-color(breadcrumb-active);
-  font-size: px-to-rem(14);
-  font-weight: 600;
-  border-bottom: px-to-rem(2) solid jazz-theme-rgb(breadcrumb-hover-line);
-  line-height: px-to-rem(18);
+.jazz-breadcrumb > ol > li a:active {
+  color: jazz-theme(breadcrumb-active-color);
+  border-bottom: px-to-rem(1) solid jazz-theme(breadcrumb-active-underline-color);
 }
 
 .jazz-breadcrumb--flush-left {
-  margin-left: -10px;
+  margin-left: px-to-rem(-10);
+}
+
+.jazz-breadcrumb > ol > li i.jazz-icon {
+  margin-right: px-to-rem(2);
 }

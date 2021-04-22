@@ -1,0 +1,197 @@
+// default theme
+
+// themes features have been placed into a map to allow for easy switching between CSS variables and concrete values.
+$jazz-theme-feature: (
+
+  // general theme options
+        accent-lightest: jazz-gray-20,
+        accent-light: jazz-gray-60,
+        accent: jazz-princeton-orange,
+        neutral-light: jazz-gray-20,
+        neutral-dark: jazz-gray-60,
+        success: jazz-green,
+        error: jazz-red,
+        info: jazz-blue,
+        warning: jazz-indigo,
+
+        body-text: jazz-black,
+        body-text-color: jazz-color(jazz-black),
+        body-font: jazz-font(jazz-roboto),
+        focus-color: jazz-color(jazz-blue),
+
+        link: jazz-gray,
+        link-line: jazz-gray-60,
+        link-visited: jazz-gray,
+        link-hover: jazz-gray,
+        link-hover-line: jazz-princeton-orange,
+        link-active: jazz-gray,
+        link-active-line: jazz-princeton-orange,
+        link-focus: jazz-gray,
+        link-focus-line: jazz-gray-60,
+
+        skip-link: jazz-black,
+        skip-link-visited: jazz-indigo-dark,
+        skip-link-hover: jazz-blue,
+        skip-link-active: jazz-blue,
+        skip-link-focus: jazz-blue,
+
+        // accordion
+        accordion-header-bgcolor: jazz-color(jazz-white),
+        accordion-header-color: jazz-color(jazz-gray),
+        accordion-header-font: jazz-font(jazz-lora),
+        accordion-body-bgcolor: jazz-color(jazz-white),
+        accordion-body-color: jazz-color(jazz-gray),
+        accordion-body-font: jazz-font(jazz-roboto),
+        accordion-divider-color: jazz-color(jazz-gray-40),
+        accordion-header-border-color: jazz-color(jazz-gray-20),
+        accordion-bordered-header-collapsed-bgcolor: jazz-color(jazz-gray-5),
+        accordion-bordered-header-collapsed-color: jazz-color(jazz-gray),
+        accordion-bordered-header-expanded-bgcolor: jazz-color(jazz-white),
+        accordion-bordered-header-expanded-color: jazz-color(jazz-gray),
+        accordion-icon-color: jazz-color(jazz-gray),
+        accordion-content-border-color: jazz-color(jazz-princeton-orange),
+        accordion-header-hover-bgcolor: jazz-color(jazz-gray-10),
+        accordion-header-hover-color: jazz-color(jazz-gray),
+
+        // alert
+        alert-bgcolor: jazz-color(jazz-gray),
+        alert-color: jazz-color(jazz-white),
+        alert-header-font: jazz-font(jazz-lora),
+        alert-body-font: jazz-font(jazz-roboto),
+
+        // blockquote
+        blockquote-divider-color: jazz-color(jazz-gray-20),
+        blockquote-accent-color: jazz-color(jazz-princeton-orange),
+        blockquote-font: jazz-font(jazz-lora),
+
+        // breadcrumbs
+        breadcrumb-item-color: jazz-color(jazz-gray-60),
+        breadcrumb-hover-color: jazz-color(jazz-gray),
+        breadcrumb-hover-underline-color: jazz-color(jazz-princeton-orange),
+        breadcrumb-active-color: jazz-color(jazz-gray),
+        breadcrumb-active-underline-color: jazz-color(jazz-princeton-orange),
+        breadcrumb-divider-color: jazz-color(jazz-gray-20),
+
+        // buttons
+        button-primary-bgcolor: jazz-color(jazz-gray),
+        button-primary-color: jazz-color(jazz-white),
+        button-primary-hover-bgcolor: jazz-color(jazz-gray-60),
+        button-primary-hover-color: jazz-color(jazz-white),
+        button-primary-active-bgcolor: jazz-color(jazz-gray-60),
+        button-primary-active-color: jazz-color(jazz-white),
+        button-primary-disabled-bgcolor: jazz-color(jazz-gray-20),
+        button-primary-disabled-color: jazz-color(jazz-gray-60),
+        button-primary-unstyled-color: jazz-color(jazz-gray),
+
+        // cards
+        card-border-color: jazz-color(jazz-gray-20),
+        card-border-accent-color: jazz-color(jazz-princeton-orange),
+        card-heading-font: jazz-font(jazz-lora),
+        card-footer-font: jazz-font(jazz-roboto),
+
+        card-news-bgcolor: jazz-color(jazz-white),
+        card-news-color: jazz-color(jazz-black),
+        card-news-header-font: jazz-font(jazz-lora),
+        card-news-border-bottom-color: jazz-color(jazz-princeton-orange),
+        card-news-heading-underline-color: jazz-color(jazz-princeton-orange),
+
+        card-event-bgcolor: jazz-color(jazz-white),
+        card-event-color: jazz-color(jazz-black),
+        card-event-border-accent-color: jazz-color(jazz-princeton-orange),
+        card-event-title-font: jazz-font(jazz-lora),
+        card-event-title-hover-underline-color: jazz-color(jazz-princeton-orange),
+
+        // email
+        email-underline-color: jazz-color(jazz-gray),
+        email-hover-underline-color: jazz-color(jazz-princeton-orange),
+
+        // form theme options
+        form-input-bgcolor: jazz-color(jazz-white),
+        form-input-color: jazz-color(jazz-black),
+        form-input-border-color: jazz-color(jazz-gray-60),
+        form-input-error-border-color: jazz-color(jazz-red),
+        form-dropdown-arrow-color: jazz-color(jazz-princeton-orange),
+        form-input-disabled-color: jazz-color(jazz-gray-40),
+
+        file-upload-description-color: jazz-color(jazz-gray-80),
+
+        // footer theme options
+        footer-bgcolor: jazz-color(jazz-white),
+        footer-color: jazz-color(jazz-gray),
+        footer-heading-font: jazz-font(jazz-lora),
+        footer-link-underline-color: jazz-color(jazz-princeton-orange),
+        footer-subfooter-bgcolor: jazz-color(jazz-white),
+        footer-subfooter-color: jazz-color(jazz-gray),
+        footer-subfooter-divider-color: jazz-color(jazz-gray-40),
+
+        //footer: jazz-gray-80,
+        //footer-underline: jazz-white,
+        //sub-footer: jazz-gray-80,
+        //sub-footer-divider: jazz-gray-40,
+
+  // header theme options
+        header-cap: jazz-princeton-orange,
+        header-pu-branding: jazz-white,
+        header-site-branding: jazz-white,
+        header-site-branding-name: jazz-white-and-orange,
+        header-site-branding-divider: jazz-black,
+        header-utility-menu: jazz-white,
+        header-utility-menu-underline: jazz-princeton-orange,
+        header-utility-menu-border-hover__small: jazz-princeton-orange,
+        header-utility-menu-border__small: jazz-gray-40,
+        header-utility-menu-divider: jazz-black,
+        header-search-border: jazz-cool-gray-40, // was formerly #c8c8c8
+        header-search-border-glass: jazz-cool-gray-40,
+        header-search-input: jazz-white,
+        header-search-input-placeholder: jazz-black,
+        header-search-bar-bottom-border: jazz-gray-20,
+        header-searchbar: jazz-white,
+        header-nav: jazz-white,
+        header-navbar: jazz-white,
+        header-collapsed-menu: jazz-white,
+        header-icon: jazz-black,
+        header-search-icon: jazz-black,
+
+  // menubar theme options
+        menubar-lg-primary: jazz-white,
+        menubar-lg-primary-hover-underline: jazz-gray-40,
+        menubar-lg-primary-current-underline: jazz-princeton-orange,
+        menubar-lg-secondary: jazz-white,
+        menubar-lg-secondary-hover: jazz-gray-20, // #f4f4f4
+        menubar-lg-secondary-current: jazz-white,
+        menubar-lg-secondary-border: jazz-gray-40,
+        menubar-sm: jazz-white,
+        menubar-sm-current: jazz-gray-40,
+        menubar-sm-border-bottom: jazz-gray-40,
+        menubar-sm-border-bottom-hover: jazz-princeton-orange,
+        menubar-icon: jazz-black,
+
+  // sidebar options
+        sidebar: jazz-white,
+
+  // tabs
+        tab: jazz-white,
+        tab-normal: jazz-white,
+
+  // pager theme
+        pager-item: jazz-gray-20,
+        pager-item-active: jazz-gray-60,
+        pager-item-hover: jazz-gray-80,
+        pager-item-disabled: jazz-gray-20,
+        pager-item-border: jazz-dirty-white,
+
+  // overflow menu theme
+        overflow-menu: jazz-white,
+        overflow-menu-divider: jazz-cool-gray-20,
+        overflow-menu-active: jazz-blue,
+        overflow-menu-danger: jazz-red,
+
+  // modal theme
+        modal-wrapper: jazz-gray-40,
+        modal: jazz-white,
+
+  // toolbar theme
+        toolbar: jazz-gray-20,
+        toolbar-section-divider: jazz-gray,
+        toolbar-legend-color: jazz-gray-80,
+);

@@ -4,6 +4,11 @@ import { html } from 'lit-html';
 <Meta title="Components/Accordion" component="Accordion" />
 
 export const Template = (args) => html`
+        <style>
+            :root {
+                --jazz-accordion-content-border-background-color: blue;
+            }
+        </style>
       <div class="jazz-accordion" role="region">
           <h2>
             <button class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
@@ -120,21 +125,9 @@ export const BorderedTemplate = (args) => html`
       </script>
   `;
 
-
-export const TestTemplate = (args) => html`
-    <button class="my-button">Test It!</button>
-`;
-
 # Accordion
 
 An "Accordion" allows page content to be collapsed under a header.
-
-## TODO
-
-* A request was made to have the ability to have more than a single line of clickable content instead of just a 
-  single line (button).  The accessibility impact of such a change would need to be evaluated.
-
-<i>TODO: Buttons or divs?</i>
 
 <Canvas>
     <Story name="Basic" args={{
@@ -156,11 +149,3 @@ An "Accordion" allows page content to be collapsed under a header.
       {BorderedTemplate.bind({})}
     </Story>
 </Canvas>
-
-
-<Canvas>
-    <Story name="Button Test" args={{}}>
-      {TestTemplate.bind({})}
-    </Story>
-</Canvas>
-

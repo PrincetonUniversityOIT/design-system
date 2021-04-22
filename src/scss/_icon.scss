@@ -5,6 +5,7 @@
   mask-size: auto;
   -webkit-mask-size: 100%;
   background-color: currentColor;
+  vertical-align: px-to-rem(-2);
 }
 .jazz-icon.jazz-icon-2x {
   width: 2em;

@@ -1,9 +1,9 @@
 .jazz-focus {
-  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme-rgb(focus);
+  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
   outline-offset: 0;
 }
 
 *:focus {
-  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme-rgb(focus);
+  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
   outline-offset: 0;
 }

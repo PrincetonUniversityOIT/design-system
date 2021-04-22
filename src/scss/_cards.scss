@@ -1,10 +1,10 @@
 .jazz-card {
-  border: 1px solid jazz-theme-rgb(neutral-light);
-  border-top: 3px solid jazz-theme-rgb(accent);
+  border: 1px solid jazz-theme(card-border-color);
+  border-top: 3px solid jazz-theme(card-border-accent-color);
 }
 
 .jazz-card__heading {
-  font-family: jazz-theme-font(heading-default);
+  font-family: jazz-theme(card-heading-font);
   font-style: normal;
   font-weight: 600;
   font-size: px-to-rem(14);
@@ -12,7 +12,7 @@
   text-transform: uppercase;
   margin: 0px;
   padding: px-to-rem(16) px-to-rem(22) px-to-rem(14) px-to-rem(22);
-  border-bottom: 1px solid jazz-theme-rgb(neutral-light);
+  border-bottom: 1px solid jazz-theme(card-border-color);
   vertical-align: middle;
 }
 
@@ -22,9 +22,10 @@
 }
 
 .jazz-card__footer {
-  @include jazz-theme-color(neutral-light);
+  background-color: jazz-theme(card-border-color);
+  color: jazz-theme(card-footer-color);
   padding: px-to-rem(10) px-to-rem(12);
-  font-family: jazz-theme-font(body);
+  font-family: jazz-theme(card-footer-font);
   font-style: normal;
   font-weight: 700;
   font-size: px-to-rem(10);
@@ -34,8 +35,9 @@
 // EE article card
 
 .jazz-news-card {
-  @include jazz-theme-color(card);
-  font-family: jazz-theme-font(header-default);
+  background-color: jazz-theme(card-news-bgcolor);
+  color: jazz-theme(card-news-color);
+  font-family: jazz-theme(card-header-font);
   display: flex;
   flex-direction: column;
   // this allows the card to properly take up space when put into a flex container
@@ -48,7 +50,7 @@
   cursor: pointer;
 }
 .jazz-news-card img {
-  border-bottom: 4px solid jazz-theme-rgb(accent);
+  border-bottom: 4px solid jazz-theme(card-news-border-bottom-color);
   width: 100%;
 }
 .jazz-news-card h1,
@@ -68,7 +70,7 @@
   background-color: white;
 }
 .jazz-news-card h3 a:hover {
-  border-bottom: px-to-rem(1) solid jazz-theme-rgb(accent);
+  border-bottom: px-to-rem(1) solid jazz-theme(card-news-heading-underline-color);
 }
 
 // EE event card
@@ -78,8 +80,9 @@
   max-width: px-to-rem(430);
 }
 .jazz-event-card {
-  @include jazz-theme-color(card);
-  border-top: 4px solid jazz-theme-rgb(accent);
+  background-color: jazz-theme(card-event-bgcolor);
+  color: jazz-theme(card-event-color);
+  border-top: 4px solid jazz-theme(card-event-border-accent-color);
   padding: 1.5rem;
   display: flex;
   flex-direction: row;
@@ -96,7 +99,7 @@
   margin-bottom: px-to-rem(12);
 }
 .jazz-event-card__title a {
-  font-family: jazz-theme-font(header-default);
+  font-family: jazz-theme(card-event-title-font);
   font-size: 1.25rem;
   font-weight: bold;
   text-decoration: none;
@@ -104,7 +107,7 @@
   line-height: 1.2;
 }
 .jazz-event-card__title a:hover {
-  border-bottom: 1px solid jazz-theme-rgb(accent);
+  border-bottom: 1px solid jazz-theme(card-event-title-hover-underline-color);
 }
 .jazz-event-card__section {
   margin-bottom: px-to-rem(12);

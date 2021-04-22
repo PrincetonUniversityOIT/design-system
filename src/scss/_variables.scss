@@ -35,3 +35,7 @@ $font-face-heading-default: 'Lora', serif;
 $font-face-heading-casual: 'Public Sans', sans-serif;
 
 $jazz-focus-size-px: 2.5;
+
+/// When true, theme references are CSS Custom Properties.  When false, no CSS Custom Properties are used.
+/// Internet Explorer (and other obscure browsers) does not support CSS Custom Properties natively.
+$jazz-enable-css-custom-properties: false;
