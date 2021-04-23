@@ -41,6 +41,10 @@
           "url": "/components/buttons/"
         },
         {
+          "label": "Pager",
+          "url": "/components/pager/"
+        },
+        {
           "label": "Tabs",
           "url": "/components/tabs/"
         }

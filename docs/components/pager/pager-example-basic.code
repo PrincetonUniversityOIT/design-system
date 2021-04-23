@@ -1,0 +1,13 @@
+<ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="20" data-current-page="7">
+   <li><a href="javascript:setPage(Previous);" aria-label="Previous" data-page="Previous">Previous</a></li>
+   <li><a href="javascript:setPage(1);" aria-label="Go to Page 1" data-page="1">1</a></li>
+   <li><span aria-disabled="true" data-page="...">...</span></li>
+   <li><a href="javascript:setPage(10);" aria-label="Go to Page 10" data-page="10">10</a></li>
+   <li><a href="javascript:setPage(11);" aria-label="Go to Page 11" data-page="11" aria-current="page">11</a></li>
+   <li><a href="javascript:setPage(12);" aria-label="Go to Page 12" data-page="12">12</a></li>
+   <li><a href="javascript:setPage(13;" aria-label="Go to Page 13" data-page="13">13</a></li>
+   <li><a href="javascript:setPage(14);" aria-label="Go to Page 14" data-page="14">14</a></li>
+   <li><span aria-disabled="true" data-page="...">...</span></li>
+   <li><a href="javascript:setPage(20);" aria-label="Go to Page 20" data-page="20">20</a></li>
+   <li><a href="javascript:setPage(Next);" aria-label="Next" data-page="Next">Next</a></li>
+</ul>

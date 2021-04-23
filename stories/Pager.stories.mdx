@@ -42,6 +42,15 @@ export const DoubleTruncateComponentPagerTemplate = (args) => html`
    </script>
 `;
 
+export const NoTruncateComponentPagerTemplate = (args) => html`
+  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="7" data-current-page="4">
+   </ul>
+   <script id="initscript">
+       PrincetonDesignSystem.enableDesignSystem();
+   </script>
+`;
+
+
 export const ActivePagerTemplate = (args) => html`
   <ul role="navigation" aria-label="pagination" class="jazz-pager">
        <li>
@@ -136,11 +145,21 @@ The default form of the pager component
 </Canvas>
 
 ## Double Truncate
-The default form of the pager component
+The pager component with double truncation
 
 <Canvas>
     <Story name="Double Truncate" args={{
         }}>
         {DoubleTruncateComponentPagerTemplate.bind({})}
+    </Story>
+</Canvas>
+
+## No Truncate
+The pager component with no truncation
+
+<Canvas>
+    <Story name="No Truncate" args={{
+        }}>
+        {NoTruncateComponentPagerTemplate.bind({})}
     </Story>
 </Canvas>

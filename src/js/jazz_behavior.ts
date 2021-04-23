@@ -5,27 +5,36 @@ import {MenuToggleBehavior} from "./components/menu-toggle/menu-toggle";
 import {PagerBehavior} from "./components/pager/pager";
 import {TabsBehavior} from "./components/tabs/tabs";
 
+export class BehaviorOptions {
+    public disablePager?: boolean
+}
+
 export class PrincetonDesignSystem {
+
     public enableDesignSystem() {
         this.enable();
         this.disable();
     }
 
-    public enable() {
+    public enable(options?: BehaviorOptions) {
         new AccordionBehavior().enable();
         new ModalDialogBehavior().enable();
         new HeaderBehavior().enable();
         new MenuToggleBehavior().enable();
-        new PagerBehavior().enable();
+        if (options && !options.disablePager) {
+            new PagerBehavior().enable();
+        }
         new TabsBehavior().enable();
     }
 
-    public disable() {
+    public disable(options?: BehaviorOptions) {
         new AccordionBehavior().disable();
         new ModalDialogBehavior().disable();
         new HeaderBehavior().disable();
         new MenuToggleBehavior().disable();
-        new PagerBehavior().disable();
+        if (options && !options.disablePager) {
+            new PagerBehavior().disable();
+        }
         new TabsBehavior().disable();
     }
 }
