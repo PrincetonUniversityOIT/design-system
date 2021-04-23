@@ -174,11 +174,11 @@ $jazz-theme-feature: (
         tab-normal: jazz-white,
 
   // pager theme
-        pager-item: jazz-gray-20,
-        pager-item-active: jazz-gray-60,
-        pager-item-hover: jazz-gray-80,
-        pager-item-disabled: jazz-gray-20,
-        pager-item-border: jazz-dirty-white,
+        pager-item-bgcolor: jazz-color(jazz-white),
+        pager-item-color: jazz-color(jazz-gray-60),
+        pager-item-hover-underline-color: jazz-color(jazz-princeton-orange),
+        pager-item-disabled-color: jazz-color(jazz-gray-40),
+        pager-item-current-color: jazz-color(jazz-princeton-orange),
 
   // overflow menu theme
         overflow-menu: jazz-white,

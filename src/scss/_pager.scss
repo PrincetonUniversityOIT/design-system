@@ -1,44 +1,39 @@
 .jazz-pager {
-  display: inline-block;
+  font-family: jazz-theme-font(body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+  letter-spacing: normal;
+  text-align: center;
+
+  background-color: jazz-theme(pager-item-bgcolor);
+  color: jazz-theme(pager-item-color);
+  list-style-type: none;
+
+  display: inline-flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  align-items: center;
+  gap: px-to-rem(10);
+
   padding-left: px-to-rem(0);
   margin: px-to-rem(20) px-to-rem(0);
-  font-family: jazz-theme-font(body);
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: .9;
-  letter-spacing: normal;
   border-bottom: 0;
 }
 
-.jazz-pager ul {
-  display: block;
-  list-style-type: disc;
-}
-
-.jazz-pager li {
-  display: inline;
+.jazz-pager li a {
+  padding: px-to-rem(5);
+  border-bottom: px-to-rem(4) solid jazz-theme(pager-item-bg-color);
 }
 
 .jazz-pager li a:hover {
-  @include jazz-theme-color(pager-item-hover);
-  border-color: jazz-theme-rgb(pager-item-hover);
+  border-bottom: px-to-rem(4) solid jazz-theme(pager-item-hover-underline-color);
 }
 
 .jazz-pager li a:focus {
   font-weight: bold;
-  border-color: jazz-theme-rgb(pager-item-hover);
-}
-
-.jazz-pager>li:first-child>a {
-  margin-left: 0;
-  border-top-left-radius: px-to-rem(4);
-  border-bottom-left-radius: px-to-rem(4);
-}
-
-.jazz-pager>li:last-child>a {
-  margin-right: 0;
-  border-top-right-radius: px-to-rem(4);
-  border-bottom-right-radius: px-to-rem(4);
+  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
 }
 
 .jazz-pager a[aria-disabled=true],
@@ -47,8 +42,8 @@
 .jazz-pager span[aria-disabled=true],
 .jazz-pager span[aria-disabled=true]:focus,
 .jazz-pager span[aria-disabled=true]:hover {
-  @include jazz-theme-color(pager-item-disabled);
   cursor: not-allowed;
+  color: jazz-theme(pager-item-disabled-color);
 }
 
 .jazz-pager a[aria-current=page],
@@ -57,25 +52,6 @@
 .jazz-pager span[aria-current=page],
 .jazz-pager span[aria-current=page]:focus,
 .jazz-pager span[aria-current=page]:hover {
-  @include jazz-theme-color(pager-item-active);
   cursor: not-allowed;
-  border-color: jazz-theme-rgb(pager-item-active);
-}
-
-.jazz-pager>li>a,
-.jazz-pager>li>span {
-  @include jazz-theme-color(pager-item);
-  border: 1px solid jazz-theme-rgb(pager-item-border);
-  float: left;
-  line-height: 1.5;
-  margin-left: -1px;
-  padding: px-to-rem(4) px-to-rem(10);
-  position: relative;
-  text-decoration: none;
-}
-
-.jazz-pager>li>a,
-.jazz-pager>li>span {
-  padding: px-to-rem(6) px-to-rem(12);
-  line-height: 1.42857143;
+  color: jazz-theme(pager-item-current-color);
 }

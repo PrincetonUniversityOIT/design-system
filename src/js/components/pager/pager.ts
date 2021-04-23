@@ -139,13 +139,17 @@ export class PagerBehavior extends Behavior {
         selector: PAGER_SELECTOR
     })
     onClick(event: Event) {
-        // console.log('event', event)
-
         // Click is on the anchor tag
         const itemLink = <HTMLElement> event.target;
 
         // Get the parent list item
         const item = itemLink.closest("li");
+
+        // exit if there is no page value, this is when the page handles rendering the
+        // pages instead of this component
+        if (!itemLink.dataset.page) {
+            return;
+        }
 
         // Get the page string
         const displayPageStr = itemLink.dataset.page;
