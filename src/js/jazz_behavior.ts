@@ -11,9 +11,10 @@ export class BehaviorOptions {
 
 export class PrincetonDesignSystem {
 
-    public enableDesignSystem() {
-        this.enable();
-        this.disable();
+    // options allow consumers to disable behavior for components if they want to handle the behavior on their own
+    public enableDesignSystem(options?: BehaviorOptions) {
+        this.enable(options);
+        this.disable(options);
     }
 
     public enable(options?: BehaviorOptions) {
@@ -21,9 +22,12 @@ export class PrincetonDesignSystem {
         new ModalDialogBehavior().enable();
         new HeaderBehavior().enable();
         new MenuToggleBehavior().enable();
-        if (options && !options.disablePager) {
+
+        // if pager is not disabled
+        if (!options || (options && !options.disablePager)) {
             new PagerBehavior().enable();
         }
+
         new TabsBehavior().enable();
     }
 
@@ -32,9 +36,12 @@ export class PrincetonDesignSystem {
         new ModalDialogBehavior().disable();
         new HeaderBehavior().disable();
         new MenuToggleBehavior().disable();
-        if (options && !options.disablePager) {
+
+        // if pager is not disabled
+        if (!options || (options && !options.disablePager)) {
             new PagerBehavior().disable();
         }
+
         new TabsBehavior().disable();
     }
 }

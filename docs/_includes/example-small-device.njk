@@ -1,0 +1,18 @@
+{% macro exampleSmall(path, name, id) %}
+
+<iframe src="{{ path | url }}" title="{{ title }}" class="jazz-docs__code-sample jazz__small-device"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="{{ id }}">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="{{ id }}">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        {% highlight "html" %}
+        {% src path %}
+        {% endhighlight %}
+    </div>
+</div>
+{% endmacro %}
+
+

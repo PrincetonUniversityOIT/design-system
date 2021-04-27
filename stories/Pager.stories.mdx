@@ -4,14 +4,15 @@ import { html } from 'lit-html';
 <Meta title="Components/Pager" component="Pager" />
 
 export const DefaultPagerTemplate = (args) => html`
-  <ul class="jazz-pager" role="navigation" aria-label="pagination">
+<nav class="jazz-pager" role="navigation" aria-label="Pagination Navigation, Current Page 2">
+  <ul>
        <li>
-          <a>Previous</a>
+          <a aria-label="Previous" href="javascript:void(0)"><i class="jazz-icon jazz-icon-caret-left"></i>Previous</a>
        </li>
        <li>
           <a aria-label="Go to page 1" href="javascript:void(0)">1</a>
        </li>
-       <li>
+       <li aria-current="page">
           <a aria-label="Go to page 2" href="javascript:void(0)">2</a>
       </li>
       <li>
@@ -21,30 +22,31 @@ export const DefaultPagerTemplate = (args) => html`
           <a aria-label="Go to page 4" href="javascript:void(0)">4</a>
       </li>
       <li>
-          <a>Next</a>
+          <a aria-label="Next" href="javascript:void(0)">Next<i class="jazz-icon jazz-icon-caret-right"></i></a>
       </li>
    </ul>
+</nav>
 `;
 
 export const ComponentPagerTemplate = (args) => html`
-  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="10" data-current-page="4">
-   </ul>
+  <nav class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="10" data-current-page="4">
+   </nav>
    <script id="initscript">
        PrincetonDesignSystem.enableDesignSystem();
    </script>
 `;
 
 export const DoubleTruncateComponentPagerTemplate = (args) => html`
-  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="20" data-current-page="7">
-   </ul>
+  <nav class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="20" data-current-page="7">
+   </nav>
    <script id="initscript">
        PrincetonDesignSystem.enableDesignSystem();
    </script>
 `;
 
 export const NoTruncateComponentPagerTemplate = (args) => html`
-  <ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="7" data-current-page="4">
-   </ul>
+  <nav class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="7" data-current-page="4">
+   </nav>
    <script id="initscript">
        PrincetonDesignSystem.enableDesignSystem();
    </script>
@@ -52,12 +54,13 @@ export const NoTruncateComponentPagerTemplate = (args) => html`
 
 
 export const ActivePagerTemplate = (args) => html`
-  <ul role="navigation" aria-label="pagination" class="jazz-pager">
+<nav class="jazz-pager" role="navigation" aria-label="Pagination Navigation, Current Page 3">
+  <ul>
        <li>
           <a>Previous</a>
        </li>
-       <li>
-          <a aria-current="page" aria-label="Go to page 1" href="javascript:void(0)">1</a>
+       <li aria-current="page">
+          <a aria-label="Go to page 1" href="javascript:void(0)">1</a>
        </li>
        <li>
           <a aria-label="Go to page 2" href="javascript:void(0)">2</a>
@@ -72,17 +75,19 @@ export const ActivePagerTemplate = (args) => html`
           <a>Next</a>
        </li>
    </ul>
+</nav>
 `;
 
 export const TruncatePagerTemplate = (args) => html`
-  <ul role="navigation" aria-label="pagination" class="jazz-pager">
+<nav class="jazz-pager" role="navigation" aria-label="Pagination Navigation, Current Page 2">
+  <ul>
        <li>
           <a>Previous</a>
        </li>
        <li>
           <a aria-label="Go to page 1" href="javascript:void(0)">1</a>
        </li>
-       <li>
+       <li aria-current="page">
           <a aria-label="Go to page 2" href="javascript:void(0)">2</a>
       </li>
       <li>
@@ -98,6 +103,7 @@ export const TruncatePagerTemplate = (args) => html`
             <a>Next</a>
       </li>
    </ul>
+</nav>
 `;
 
 # Pager

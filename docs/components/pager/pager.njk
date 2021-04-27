@@ -5,6 +5,8 @@ tags: components
 ---
 
 {% from "../../_includes/example.njk" import example %}
+{% from "../../_includes/example-small-device.njk" import exampleSmall %}
+
 
 <h1 class="jazz-page-title">Pager</h1>
 
@@ -88,7 +90,7 @@ tags: components
     On low resolution devices that have limited horizontal space, only the current page and the next and previous links will be shown.
 </p>
 
-** Insert Low Resolution Version
+{{ exampleSmall("/components/pager/pager-example-small-device", "Lower Resolution Example", "code-panel-pager-lower-res") }}
 
 <h2>Detailed Specification</h2>
 
@@ -112,23 +114,44 @@ tags: components
 </p>
 
 <ul>
-    <li>The containing element for the Pager component is the “nav” element.  Wrapping the entire structure in a “nav” element leverages semantic meaning and avoids the need to override ARIA roles.</li>
-    <li>The “nav” element is given an aria-label of “Pagination Navigation, Current Page {n}”.</li>
-    <li>The “nav” element is given a class of “jazz-pager” to allow it to be identified by the Design System for styling and interaction.</li>
-    <li>The paging links are represented as an unordered list (“ul”), with each pagination link represented as a link (“a”) within a list item (“li”).</li>
-    <li>Each link (“a”) is given an aria-label of “Go to Page {n}” to describe its purpose more clearly for users of assistive devices.  Sited users will be able to deduce the purpose of the numbered links based on the visual structure.</li>
-    <li>The current page is indicated on the appropriate link using the aria-current=”page” attribute.  The current page will be disabled.</li>
-    <li>When links are disabled, they should be displayed as a “span” element with a class of “jazz-pager__link--disabled”.  Provide an attribute to reinforce that it is disabled (aria-disabled=”true”).</li>
-    <li>The “data-page” attribute can also be set to the page number for each link to simplify programmatic use of the page number.</li>
+    <li>The containing element for the Pager component is the <span class="code">nav</span> element.  Wrapping the entire structure in a <span class="code">nav</span> element leverages semantic meaning and avoids the need to override ARIA roles.</li>
+    <li>The <span class="code">nav</span> element is given an aria-label of “Pagination Navigation, Current Page {n}”.</li>
+    <li>The <span class="code">nav</span> element is given a class of <span class="code">jazz-pager</span>to allow it to be identified by the Design System for styling and interaction.</li>
+    <li>The paging links are represented as an unordered list (<span class="code">ul</span>), with each pagination link represented as a link (<span class="code">a</span>) within a list item (<span class="code">li</span>).</li>
+    <li>Each link (<span class="code">a</span>) is given an aria-label of “Go to Page {n}” to describe its purpose more clearly for users of assistive devices.  Sited users will be able to deduce the purpose of the numbered links based on the visual structure.</li>
+    <li>The current page is indicated on the appropriate link using the <span class="code">aria-current=”page”</span> attribute.  The current page will be disabled.</li>
+    <li>When links are disabled, they should be displayed as a <span class="code">span</span> element with a class of <span class="code">jazz-pager__link--disabled</span>.  Provide an attribute to reinforce that it is disabled (<span class="code">aria-disabled=”true”</span>).</li>
+    <li>The <span class="code">data-page</span> attribute can also be set to the page number for each link to simplify programmatic use of the page number.</li>
 </ul>
 
-*** Show basic code structure
+ {% highlight "html" %}
+    <nav class="jazz-pager" role="navigation" aria-label="Pagination Navigation, Current Page 11">
+        <ul data-total-pages="20" data-current-page="7">
+           <li><a href="javascript:setPage(Previous);" aria-label="Previous" data-page="Previous"><i class="jazz-icon jazz-icon-caret-left"></i>Previous</a></li>
+           <li><a href="javascript:setPage(1);" aria-label="Go to Page 1" data-page="1">1</a></li>
+           <li><span aria-disabled="true" data-page="...">...</span></li>
+           <li><a href="javascript:setPage(10);" aria-label="Go to Page 10" data-page="10">10</a></li>
+           <li><a href="javascript:setPage(11);" aria-label="Go to Page 11" data-page="11" aria-current="page">11</a></li>
+           <li><a href="javascript:setPage(12);" aria-label="Go to Page 12" data-page="12">12</a></li>
+           <li><a href="javascript:setPage(13;" aria-label="Go to Page 13" data-page="13">13</a></li>
+           <li><a href="javascript:setPage(14);" aria-label="Go to Page 14" data-page="14">14</a></li>
+           <li><span aria-disabled="true" data-page="...">...</span></li>
+           <li><a href="javascript:setPage(20);" aria-label="Go to Page 20" data-page="20">20</a></li>
+           <li><a href="javascript:setPage(Next);" aria-label="Next" data-page="Next">Next<i class="jazz-icon jazz-icon-caret-right"></i></a></li>
+        </ul>
+    </nav>
+ {% endhighlight %}
 
 <p>
-    The “Previous” and “”Next” page links may not be useful depending on which page is the current page.  For example, the “Previous” link is not useful when the first page is the current page.  Even when a “Previous” or “Next” link is not useful for navigation, it is useful to include the links in the interface to preserve the position.  Display the disabled link with a “span” element with a class of “jazz-pager__link--disabled”.  Provide an attribute to reinforce that it is disabled (aria-disabled=”true”).
+    The “Previous” and “”Next” page links may not be useful depending on which page is the current page.
+    For example, the “Previous” link is not useful when the first page is the current page.
+    Even when a “Previous” or “Next” link is not useful for navigation, it is useful to include the links in the interface to preserve the position.
+    Display the disabled link with a <span class="code">span</span> element and an <span class="code">aria-disabled</span> attribute to reinforce that it is disabled.
 </p>
 
-** Show basic code structure
+ {% highlight "html" %}
+    <span aria-disabled="true" data-page="Previous">Previous</span>
+ {% endhighlight %}
 
 <h3>Truncation</h3>
 

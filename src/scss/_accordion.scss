@@ -23,6 +23,7 @@
   font-family: jazz-theme(accordion-header-font);
   margin: 0px;
 }
+
 .jazz-accordion__button {
   background-color: jazz-theme(accordion-header-bgcolor);
   color: jazz-theme(accordion-header-color);
@@ -87,4 +88,9 @@
 .jazz-accordion__button:focus {
   outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
   outline-offset: -.25rem;
+}
+
+// this is used to remove top border of the first accordion element
+.jazz-accordion > h2:first-of-type > button:first-of-type {
+  border-top: none;
 }

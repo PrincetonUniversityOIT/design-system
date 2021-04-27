@@ -1,4 +1,4 @@
-.jazz-pager {
+.jazz-pager ul {
   font-family: jazz-theme-font(body);
   font-style: normal;
   font-weight: 600;
@@ -23,7 +23,15 @@
 }
 
 .jazz-pager li a {
-  padding: px-to-rem(5);
+  display: inline-flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  gap: px-to-rem(5);
+
+  padding-right: px-to-rem(5);
+  padding-left: px-to-rem(5);
   border-bottom: px-to-rem(4) solid jazz-theme(pager-item-bgcolor);
 }
 
@@ -34,6 +42,9 @@
 .jazz-pager li a:focus {
   font-weight: bold;
   outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
+
+  // fixing issue where left outline is missing
+  margin-left: px-to-rem(2);
 }
 
 .jazz-pager a[aria-disabled=true],
@@ -46,12 +57,26 @@
   color: jazz-theme(pager-item-disabled-color);
 }
 
-.jazz-pager a[aria-current=page],
-.jazz-pager a[aria-current=page]:focus,
-.jazz-pager a[aria-current=page]:hover,
-.jazz-pager span[aria-current=page],
-.jazz-pager span[aria-current=page]:focus,
-.jazz-pager span[aria-current=page]:hover {
+.jazz-pager li[aria-current=page] a,
+.jazz-pager li[aria-current=page] a:focus,
+.jazz-pager li[aria-current=page] a:hover {
   cursor: not-allowed;
   color: jazz-theme(pager-item-current-color);
+}
+
+.jazz-pager > li:first-child > a,
+.jazz-pager > li:last-child  > a{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.jazz-pager > li:not(:first-child):not(:last-child) > a {
+  min-width: px-to-rem(25);
+}
+
+@include apply-to-phone-only {
+  .jazz-pager > ul > li:not(:first-child):not(:last-child):not([aria-current=page]){
+    display: none;
+  }
+
 }

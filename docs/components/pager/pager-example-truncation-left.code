@@ -1,13 +1,15 @@
-<ul id="myPager" class="jazz-pager" role="navigation" aria-label="pagination" data-total-pages="20" data-current-page="19">
-   <li><a href="javascript:setPage(Previous);" aria-label="Previous" data-page="Previous">Previous</a></li>
-   <li><a href="javascript:setPage(1);" aria-label="Go to Page 1" data-page="1">1</a></li>
-   <li><span aria-disabled="true" data-page="...">...</span></li>
-   <li><a href="javascript:setPage(14);" aria-label="Go to Page 14" data-page="14">14</a></li>
-   <li><a href="javascript:setPage(15);" aria-label="Go to Page 15" data-page="15">15</a></li>
-   <li><a href="javascript:setPage(16);" aria-label="Go to Page 16" data-page="16">16</a></li>
-   <li><a href="javascript:setPage(17);" aria-label="Go to Page 17" data-page="17">17</a></li>
-   <li><a href="javascript:setPage(18);" aria-label="Go to Page 18" data-page="18">18</a></li>
-   <li><a href="javascript:setPage(19);" aria-label="Go to Page 19" data-page="19" aria-current="page">19</a></li>
-   <li><a href="javascript:setPage(20);" aria-label="Go to Page 20" data-page="20">20</a></li>
-   <li><a href="javascript:setPage(Next);" aria-label="Next" data-page="Next">Next</a></li>
-</ul>
+<nav class="jazz-pager" role="navigation" aria-label="Pagination Navigation, Current Page 19">
+    <ul data-total-pages="20" data-current-page="19">
+       <li><a href="javascript:setPage(Previous);" aria-label="Previous" data-page="Previous"><i class="jazz-icon jazz-icon-caret-left"></i>Previous</a></li>
+       <li><a href="javascript:setPage(1);" aria-label="Go to Page 1" data-page="1">1</a></li>
+       <li><span aria-disabled="true" data-page="...">...</span></li>
+       <li><a href="javascript:setPage(14);" aria-label="Go to Page 14" data-page="14">14</a></li>
+       <li><a href="javascript:setPage(15);" aria-label="Go to Page 15" data-page="15">15</a></li>
+       <li><a href="javascript:setPage(16);" aria-label="Go to Page 16" data-page="16">16</a></li>
+       <li><a href="javascript:setPage(17);" aria-label="Go to Page 17" data-page="17">17</a></li>
+       <li><a href="javascript:setPage(18);" aria-label="Go to Page 18" data-page="18">18</a></li>
+       <li aria-current="page"><a href="javascript:setPage(19);" aria-label="Go to Page 19" data-page="19">19</a></li>
+       <li><a href="javascript:setPage(20);" aria-label="Go to Page 20" data-page="20">20</a></li>
+       <li><a href="javascript:setPage(Next);" aria-label="Next" data-page="Next">Next<i class="jazz-icon jazz-icon-caret-right"></i></a></li>
+    </ul>
+</nav>
