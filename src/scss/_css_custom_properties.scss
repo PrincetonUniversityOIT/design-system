@@ -6,9 +6,4 @@
   @each $key, $value in $jazz-color-hex-map {
     --#{$key}: #{$value};
   }
-
-  // TODO: REMOVE THIS...this is just temporary until we move all font themes to the normal themes
-  @each $key, $value in $jazz-theme-feature-fonts {
-    --jazz-#{$key}-font-family: #{map-get($jazz-font-map, $value)};
-  }
 }

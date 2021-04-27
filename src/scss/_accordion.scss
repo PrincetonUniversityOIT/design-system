@@ -50,20 +50,30 @@
 }
 .jazz-accordion__button[aria-expanded='false']:after {
   content: ' ';
-  background-image: url(jazz-icons-path-with-color("plus", jazz-theme(accordion-icon-color)));
+  -webkit-mask-image: url(jazz-icons-path(plus));
+  mask-image: url(jazz-icons-path(plus));
+  mask-size: auto;
+  -webkit-mask-size: 100%;
   width: px-to-rem(28);
   height: px-to-rem(28);
+  min-width: px-to-rem(28);
+  min-height: px-to-rem(28);
   margin-left: px-to-rem(28);
-  background-size: px-to-rem(28) px-to-rem(28);
+  background-color: currentColor;
   flex: none;
 }
 .jazz-accordion__button[aria-expanded='true']:after {
   content: ' ';
-  background-image: url(jazz-icons-path-with-color("minus", jazz-theme(accordion-icon-color)));
+  -webkit-mask-image: url(jazz-icons-path(minus));
+  mask-image: url(jazz-icons-path(minus));
+  mask-size: auto;
+  -webkit-mask-size: 100%;
   width: px-to-rem(28);
   height: px-to-rem(28);
+  min-width: px-to-rem(28);
+  min-height: px-to-rem(28);
   margin-left: px-to-rem(28);
-  background-size: px-to-rem(28) px-to-rem(28);
+  background-color: currentColor;
   flex: none;
 }
 .jazz-accordion__content {

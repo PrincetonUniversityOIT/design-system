@@ -3,14 +3,15 @@ The default styles for the collapsed version of the compact header.
  */
 
 .jazz-header-compact {
-  @include jazz-theme-color(header-site-branding);
+  background-color: jazz-theme(header-site-branding-bgcolor);
+  color: jazz-theme(header-site-branding-color);
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
 }
 
 .jazz-header-compact .jazz-icon {
-  background-color: jazz-theme-rgb(header-icon);
+  background-color: jazz-theme(header-menu-icon-color);
 }
 
 .jazz-header-compact-logo {
@@ -35,8 +36,9 @@ The default styles for the collapsed version of the compact header.
   flex: 3;
 }
 .jazz-header-compact__utility-menu li > a {
-  @include jazz-theme-color(header-utility-menu);
-  border-bottom: px-to-rem(1) solid jazz-theme-rgb(header-utility-menu-border__small); //#c8c8c8
+  background-color: jazz-theme(header-utility-menu-bgcolor);
+  color: jazz-theme(header-utility-menu-color);
+  border-bottom: px-to-rem(1) solid jazz-theme(header-utility-menu-underline-color);
   text-decoration: none;
   font-weight: bold;
   padding: px-to-rem(15) 0px;
@@ -48,7 +50,8 @@ The default styles for the collapsed version of the compact header.
 @include apply-from-small-laptop-up {
   /* PU Branding */
   .jazz-header-compact__pu-branding {
-    @include jazz-theme-color(header-pu-branding);
+    background-color: jazz-theme(header-pu-branding-bgcolor);
+    color: jazz-theme(header-pu-branding-color);
     padding: px-to-rem(59) 0px px-to-rem(63) px-to-rem(10);
   }
   .jazz-header-compact__pu-branding img {
@@ -58,7 +61,7 @@ The default styles for the collapsed version of the compact header.
 
   /* Site Branding */
   .jazz-header-compact__site-branding--divider {
-    @include jazz-theme-color(header-site-branding-divider);
+    background-color: jazz-theme(header-site-branding-divider-bgcolor);
     position: static;
     width: px-to-rem(2);
     height: px-to-rem(84);
@@ -73,7 +76,7 @@ The default styles for the collapsed version of the compact header.
   .jazz-header-compact__site-branding-name a,
   .jazz-header-compact__site-branding-name a:visited,
   .jazz-header-compact__site-branding-name a:hover {
-    @include jazz-theme-color(header-site-branding-name);
+    color: jazz-theme(header-site-branding-color);
     text-decoration: none;
     border-bottom: 0;
     width: px-to-rem(739);
@@ -139,15 +142,13 @@ The default styles for the collapsed version of the compact header.
     display: inline-block;
     width: 100%;
     text-align: center;
-    //margin-top: px-to-rem(20);
 
     border-bottom: none;
     padding: px-to-rem(40) 0px 0px 0px;
-    //margin-right: px-to-rem(20);
     display: block;
   }
   .jazz-header-compact__utility-menu a:hover {
-    border-bottom: px-to-rem(1) solid jazz-theme-rgb('header-utility-menu-underline');
+    border-bottom: px-to-rem(1) solid jazz-theme(header-utility-menu-underline-color);
   }
   .jazz-header-compact__utility-menu--divider {
     position: static;
@@ -155,7 +156,7 @@ The default styles for the collapsed version of the compact header.
     height: px-to-rem(39);
     left: 0px;
     top: px-to-rem(20);
-    background: jazz-theme-rgb(header-utility-menu-divider);
+    background: jazz-theme(header-utility-menu-divider-color);
 
     flex: none;
     order: 0;

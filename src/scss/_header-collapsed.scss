@@ -1,13 +1,11 @@
-.jazz-header-collapsed-header {
-  @include jazz-theme-color(header-site-branding);
-}
 .jazz-header-collapsed-container {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
 }
 .jazz-header-collapsed-header {
-  @include jazz-theme-color(header-site-branding);
+  background-color: jazz-theme(header-bgcolor);
+  color: jazz-theme(header-color);
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -17,7 +15,8 @@
 }
 /* PU Branding */
 .jazz-header-collapsed__pu-branding {
-  @include jazz-theme-color(header-pu-branding);
+  background-color: jazz-theme(header-pu-branding-bgcolor);
+  color: jazz-theme(header-pu-branding-color);
 }
 .jazz-header-collapsed__pu-branding img {
   width: px-to-rem(30);
@@ -26,8 +25,7 @@
 
 /* Site Branding */
 .jazz-header-collapsed__site-branding--divider {
-  @include jazz-theme-color(header-site-branding-divider);
-  //position: static;
+  background-color: jazz-theme(header-site-branding-divider-bgcolor);
   width: px-to-rem(2);
   height: px-to-rem(40);
 
@@ -37,13 +35,13 @@
 .jazz-header-collapsed__site-branding-name a,
 .jazz-header-collapsed__site-branding-name a:visited,
 .jazz-header-collapsed__site-branding-name a:hover {
-  @include jazz-theme-color(header-site-branding-name);
+  color: jazz-theme(header-site-branding-color);
   text-decoration: none;
 
   width: px-to-rem(739);
   height: px-to-rem(33);
 
-  font-family: Public Sans;
+  font-family: jazz-theme(header-site-branding-name-font);
   font-style: normal;
   font-weight: bold;
   font-size: px-to-rem(28);

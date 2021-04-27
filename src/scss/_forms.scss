@@ -1,7 +1,8 @@
 .jazz-input, .jazz-select, .jazz-textarea {
-  @include jazz-theme-color(form-input);
+  background-color: jazz-theme(form-input-bgcolor);
+  color: jazz-theme(form-input-color);
   border-radius: 0;
-  border: 1px solid jazz-theme-rgb(form-input-border);
+  border: 1px solid jazz-theme(form-input-border-color);
   display: block;
   margin-top: .5rem;
   max-width: 30rem;
@@ -9,7 +10,7 @@
 }
 
 .jazz-input.jazz-input--error {
-  border: .25rem solid jazz-theme-rgb(error);
+  border: .25rem solid jazz-theme(error);
 }
 
 // taken from digital.gov

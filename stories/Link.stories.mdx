@@ -33,6 +33,14 @@ export const ExternalLinkTemplate = (args) => html`
     <a href="javascript:void(0);" target="_blank" rel="noopener noreferrer">${ args.text }</a>
 `;
 
+export const BodyTemplate = (args) => html`
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sed tristique pellentesque 
+        <a href="javascript:void(0);">body hyperlink</a> enim pellentesque at enim. Eget at quam euismod at 
+        quisque tempor risus, tempus vulputate. Nisl quisque quam neque, posuere arcu lorem eget. 
+    </p>
+`;
+
 # Link
 
 A link (or "hyperlink") is a word or phrase that the user can click on to navigate to a new web page/document or
@@ -95,5 +103,13 @@ navigate to a different section within the same page/document.
         text: "Link Text"
     }}>
       {HoverTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Flow" args={{
+        text: "Link Text"
+    }}>
+      {BodyTemplate.bind({})}
     </Story>
 </Canvas>

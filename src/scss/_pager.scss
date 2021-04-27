@@ -2,7 +2,7 @@
   display: inline-block;
   padding-left: px-to-rem(0);
   margin: px-to-rem(20) px-to-rem(0);
-  font-family: jazz-theme-font(body);
+  font-family: jazz-theme(body-font);
   font-size: 1rem;
   font-weight: normal;
   line-height: .9;
@@ -20,13 +20,14 @@
 }
 
 .jazz-pager li a:hover {
-  @include jazz-theme-color(pager-item-hover);
-  border-color: jazz-theme-rgb(pager-item-hover);
+  background-color: jazz-theme(pager-item-hover-bgcolor);
+  color: jazz-theme(pager-item-hover-color);
+  border-color: jazz-theme(pager-item-hover-border-color);
 }
 
 .jazz-pager li a:focus {
   font-weight: bold;
-  border-color: jazz-theme-rgb(pager-item-hover);
+  border-color: jazz-theme(focus-color);
 }
 
 .jazz-pager>li:first-child>a {
@@ -47,7 +48,8 @@
 .jazz-pager span[aria-disabled=true],
 .jazz-pager span[aria-disabled=true]:focus,
 .jazz-pager span[aria-disabled=true]:hover {
-  @include jazz-theme-color(pager-item-disabled);
+  background-color: jazz-theme(pager-item-disabled-bgcolor);
+  color: jazz-theme(pager-item-disabled-color);
   cursor: not-allowed;
 }
 
@@ -57,15 +59,17 @@
 .jazz-pager span[aria-current=page],
 .jazz-pager span[aria-current=page]:focus,
 .jazz-pager span[aria-current=page]:hover {
-  @include jazz-theme-color(pager-item-active);
+  background-color: jazz-theme(pager-item-active-bgcolor);
+  color: jazz-theme(pager-item-active-color);
   cursor: not-allowed;
-  border-color: jazz-theme-rgb(pager-item-active);
+  border-color: jazz-theme(pager-item-active-border-color);
 }
 
 .jazz-pager>li>a,
 .jazz-pager>li>span {
-  @include jazz-theme-color(pager-item);
-  border: 1px solid jazz-theme-rgb(pager-item-border);
+  background-color: jazz-theme(pager-item-bgcolor);
+  color: jazz-theme(pager-item-color);
+  border: 1px solid jazz-theme(pager-item-border-color);
   float: left;
   line-height: 1.5;
   margin-left: -1px;

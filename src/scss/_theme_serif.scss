@@ -11,16 +11,16 @@ $jazz-theme-feature: (
         warning: jazz-color(jazz-indigo),
 
         body-text-color: jazz-color(jazz-black),
-        body-font: jazz-font(jazz-public-sans),
+        body-font: jazz-font(jazz-roboto),
         focus-color: jazz-color(jazz-focus-blue),
 
         // accordion
         accordion-header-bgcolor: jazz-color(jazz-white),
         accordion-header-color: jazz-color(jazz-gray),
-        accordion-header-font: jazz-font(jazz-public-sans),
+        accordion-header-font: jazz-font(jazz-lora),
         accordion-body-bgcolor: jazz-color(jazz-white),
         accordion-body-color: jazz-color(jazz-gray),
-        accordion-body-font: jazz-font(jazz-public-sans),
+        accordion-body-font: jazz-font(jazz-roboto),
         accordion-divider-color: jazz-color(jazz-gray-40),
         accordion-header-border-color: jazz-color(jazz-gray-20),
         accordion-bordered-header-collapsed-bgcolor: jazz-color(jazz-gray-5),
@@ -35,13 +35,13 @@ $jazz-theme-feature: (
         // alert
         alert-bgcolor: jazz-color(jazz-gray),
         alert-color: jazz-color(jazz-white),
-        alert-header-font: jazz-font(jazz-public-sans),
-        alert-body-font: jazz-font(jazz-public-sans),
+        alert-header-font: jazz-font(jazz-lora),
+        alert-body-font: jazz-font(jazz-roboto),
 
         // blockquote
         blockquote-divider-color: jazz-color(jazz-gray-20),
         blockquote-accent-color: jazz-color(jazz-princeton-orange),
-        blockquote-font: jazz-font(jazz-public-sans),
+        blockquote-font: jazz-font(jazz-lora),
 
         // breadcrumbs
         breadcrumb-item-color: jazz-color(jazz-gray-60),
@@ -65,19 +65,19 @@ $jazz-theme-feature: (
         // cards
         card-border-color: jazz-color(jazz-gray-20),
         card-border-accent-color: jazz-color(jazz-princeton-orange),
-        card-heading-font: jazz-font(jazz-public-sans),
-        card-footer-font: jazz-font(jazz-public-sans),
+        card-heading-font: jazz-font(jazz-lora),
+        card-footer-font: jazz-font(jazz-roboto),
 
         card-news-bgcolor: jazz-color(jazz-white),
         card-news-color: jazz-color(jazz-black),
-        card-news-header-font: jazz-font(jazz-public-sans),
+        card-news-header-font: jazz-font(jazz-lora),
         card-news-border-bottom-color: jazz-color(jazz-princeton-orange),
         card-news-heading-underline-color: jazz-color(jazz-princeton-orange),
 
         card-event-bgcolor: jazz-color(jazz-white),
         card-event-color: jazz-color(jazz-black),
         card-event-border-accent-color: jazz-color(jazz-princeton-orange),
-        card-event-title-font: jazz-font(jazz-public-sans),
+        card-event-title-font: jazz-font(jazz-lora),
         card-event-title-hover-underline-color: jazz-color(jazz-princeton-orange),
 
         // email
@@ -98,8 +98,8 @@ $jazz-theme-feature: (
         // footer theme options
         footer-bgcolor: jazz-color(jazz-white),
         footer-color: jazz-color(jazz-gray),
-        footer-font: jazz-font(jazz-public-sans),
-        footer-heading-font: jazz-font(jazz-public-sans),
+        footer-font: jazz-font(jazz-roboto),
+        footer-heading-font: jazz-font(jazz-lora),
         footer-link-underline-color: jazz-color(jazz-princeton-orange),
         footer-subfooter-bgcolor: jazz-color(jazz-white),
         footer-subfooter-color: jazz-color(jazz-gray),
@@ -114,7 +114,7 @@ $jazz-theme-feature: (
         header-site-branding-divider-bgcolor: jazz-color(jazz-black),
         header-site-branding-bgcolor: jazz-color(jazz-white),
         header-site-branding-color: jazz-color(jazz-black),
-        header-site-branding-name-font: jazz-font(jazz-public-sans),
+        header-site-branding-name-font: jazz-font(jazz-lora),
         header-menu-icon-color: jazz-color(jazz-black),
         header-utility-menu-bgcolor: jazz-color(jazz-white),
         header-utility-menu-color: jazz-color(jazz-black),
@@ -135,7 +135,7 @@ $jazz-theme-feature: (
         header-capline-color: jazz-color(jazz-princeton-orange),
 
         // headings
-        heading-font: jazz-font(jazz-public-sans),
+        heading-font: jazz-font(jazz-lora),
         heading-title-accent-color: jazz-color(jazz-princeton-orange),
 
         // link
@@ -223,7 +223,7 @@ $jazz-theme-feature: (
         // tabs
         tab-bgcolor: jazz-color(jazz-white),
         tab-color: jazz-color(jazz-black),
-        tab-font: jazz-font(jazz-public-sans),
+        tab-font: jazz-font(jazz-roboto),
         tab-label-transform: uppercase,
         tab-hover-underline-color: jazz-color(jazz-gray-60),
         tab-current-underline-color: jazz-color(jazz-princeton-orange),

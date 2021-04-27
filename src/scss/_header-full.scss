@@ -3,21 +3,20 @@ The default styles for the collapsed version of the full header.
  */
 
 .jazz-header {
-  @include jazz-theme-color(header-pu-branding);
+  background-color: jazz-theme(header-pu-branding-bgcolor);
+  color: jazz-theme(header-pu-branding-color);
 }
 .jazz-header-break {
   flex-basis: 0;
   height: 0;
 }
 .jazz-header-container {
-  @include jazz-theme-color(header-pu-branding);
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   height: px-to-rem(5);
 }
 .jazz-header-right-container {
-  @include jazz-theme-color(header-pu-branding);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -32,12 +31,13 @@ The default styles for the collapsed version of the full header.
 }
 
 .jazz-header__main-menu {
-  @include jazz-theme-color(header-navbar);
+  background-color: jazz-theme(header-navbar-bgcolor);
+  color: jazz-theme(header-navbar-color);
   height: px-to-rem(51);
 }
 
 .jazz-header .jazz-icon {
-  background-color: jazz-theme-rgb(header-icon);
+  background-color: jazz-theme(header-menu-icon-color);
 }
 
 .jazz-header__menu-toggle {
@@ -65,57 +65,55 @@ The default styles for the collapsed version of the full header.
 }
 
 .jazz-header__search-bar-panel {
-  @include jazz-theme-color(header-searchbar);
+  background-color: jazz-theme(header-searchbar-bgcolor);
+  color: jazz-theme(header-searchbar-color);
   width: 100%;
   z-index: 1000;
   padding: px-to-rem(20);
-  border-bottom: px-to-rem(2) solid jazz-theme-rgb('header-search-bar-bottom-border');
+  border-bottom: px-to-rem(2) solid jazz-theme(header-search-panel-bottom-border-color);
   position: absolute;
   top: px-to-rem(70);
   left: 0;
 }
 .jazz-header__search-bar form [type='search'] {
-  @include jazz-theme-color(header-search-input);
+  background-color: jazz-theme(header-search-input-bgcolor);
+  color: jazz-theme(header-search-input-color);
   padding: px-to-rem(8);
   margin-right: 0px;
   border-right: none;
-  border-left: 1px solid jazz-theme-rgb('header-search-border');
-  border-top: 1px solid jazz-theme-rgb('header-search-border');
-  border-bottom: 1px solid jazz-theme-rgb('header-search-border');
+  border-left: 1px solid jazz-theme(header-search-input-border-color);
+  border-top: 1px solid jazz-theme(header-search-input-border-color);
+  border-bottom: 1px solid jazz-theme(header-search-input-border-color);
   height: px-to-rem(40);
   max-width: px-to-rem(140);
 }
 
-input[type="search"]::-webkit-input-placeholder {
-  color: jazz-theme-rgb(header-search-input-placeholder);
-}
-input[type="search"]::-moz-placeholder {
-  color: jazz-theme-rgb(header-search-input-placeholder);
-}
+input[type="search"]::-webkit-input-placeholder,
+input[type="search"]::-moz-placeholder,
 input[type="search"]::placeholder {
-  color: jazz-theme-rgb(header-search-input-placeholder);
+  color: jazz-theme(header-search-placeholder-color);
 }
 
 .jazz-header__search-bar form [type='submit'] {
-  @include jazz-theme-color(header-search-input);
-  background-image: url(jazz-icons-path-with-color("search", jazz-theme-rgb(header-search-icon)));
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 1rem;
+  background-color: jazz-theme(header-search-input-bgcolor);
+  color: jazz-theme(header-search-input-color);
+  //-webkit-mask-image: url(jazz-icons-path(search));
+  //mask-image: url(jazz-icons-path(search));
+  //mask-size: auto;
+  //-webkit-mask-size: 100%;
+  //background-color: currentColor;
   border: none;
   height: px-to-rem(40);
-  width: px-to-rem(35);
-  border-right: 1px solid jazz-theme-rgb('header-search-border-glass');
-  border-top: 1px solid jazz-theme-rgb('header-search-border-glass');
-  border-bottom: 1px solid jazz-theme-rgb('header-search-border-glass');
-
-  // for black only and comment out the theme color
-  // filter: invert(1);
+  width: px-to-rem(40);
+  //min-height: px-to-rem(28);
+  //min-width: px-to-rem(28);
+  border-right: 1px solid jazz-theme(header-search-input-border-color);
+  border-top: 1px solid jazz-theme(header-search-input-border-color);
+  border-bottom: 1px solid jazz-theme(header-search-input-border-color);
 }
 .jazz-header__search-bar form,
 .jazz-header__search-bar form a {
   width: 100%;
-
   font-style: normal;
   font-weight: normal;
   font-size: px-to-rem(16);
@@ -153,11 +151,11 @@ input[type="search"]::placeholder {
   line-height: 1.15;
 }
 .jazz-header__utility-menu a:hover {
-  border-bottom: px-to-rem(1) solid jazz-theme-rgb(header-utility-menu-border-hover__small);
+  border-bottom: px-to-rem(1) solid jazz-theme(header-utility-menu-hover-underline-color);
 }
 .jazz-header__utility-menu li > a {
-  @include jazz-theme-color(header-utility-menu);
-  border-bottom: 1px solid jazz-theme-rgb(header-utility-menu-border__small); //#c8c8c8
+  color: jazz-theme(header-utility-menu-color);
+  border-bottom: 1px solid jazz-theme(header-utility-menu-underline-color);
   text-decoration: none;
   padding-top: px-to-rem(15);
   padding-bottom: px-to-rem(15);
@@ -187,8 +185,9 @@ These are the styles for the higher resolution version of the full header
  */
 @include apply-from-small-laptop-up {
   .jazz-header {
-    @include jazz-theme-color(header-pu-branding);
-    border-top: 4px solid jazz-theme-rgb('header-cap');
+    background-color: jazz-theme(header-pu-branding-bgcolor);
+    color: jazz-theme(header-pu-branding-color);
+    border-top: 4px solid jazz-theme(header-capline-color);
     line-height: 1.15;
     display: flex;
     flex-wrap: wrap;
@@ -206,7 +205,8 @@ These are the styles for the higher resolution version of the full header
 
   /* PU Branding */
   .jazz-header__pu-branding {
-    @include jazz-theme-color(header-pu-branding);
+    background-color: jazz-theme(header-pu-branding-bgcolor);
+    color: jazz-theme(header-pu-branding-color);
     display: block;
     margin-top: px-to-rem(0);
   }
@@ -218,7 +218,8 @@ These are the styles for the higher resolution version of the full header
 
   /* Site Branding */
   .jazz-header__site-branding {
-    @include jazz-theme-color(header-site-branding);
+    background-color: jazz-theme(header-site-branding-bgcolor);
+    color: jazz-theme(header-site-branding-color);
     padding: px-to-rem(40) 0 px-to-rem(40) 0;
     display: flex;
     flex-wrap: wrap;
@@ -231,7 +232,7 @@ These are the styles for the higher resolution version of the full header
   .jazz-header__site-branding-name a:visited,
   .jazz-header__site-branding-name a:hover,
   .jazz-header__site-branding-name a:active {
-    @include jazz-theme-color(header-site-branding);
+    color: jazz-theme(header-site-branding-color);
     text-decoration: none;
     font-size: px-to-rem(36);
     font-style: normal;
@@ -279,7 +280,8 @@ These are the styles for the higher resolution version of the full header
     display: none;
   }
   .jazz-header__nav-container--expanded {
-    @include jazz-theme-color(header-nav);
+    background-color: jazz-theme(header-nav-bgcolor);
+    color: jazz-theme(header-nav-color);
     position: absolute;
     left: 0;
     top: px-to-rem(-104);
@@ -319,7 +321,7 @@ These are the styles for the higher resolution version of the full header
     line-height: 1.15;
   }
   .jazz-header__utility-menu a {
-    @include jazz-theme-color(header-pu-branding);
+    color: jazz-theme(header-pu-branding-color);
     font-size: 1rem;
     font-weight: normal;
     font-style: normal;
@@ -330,7 +332,7 @@ These are the styles for the higher resolution version of the full header
     line-height: 28px;
   }
   .jazz-header__utility-menu li > a {
-    @include jazz-theme-color(header-pu-branding);
+    color: jazz-theme(header-pu-branding-color);
     border-bottom: none;
     font-weight: normal;
     font-style: normal;
@@ -340,7 +342,7 @@ These are the styles for the higher resolution version of the full header
     line-height: px-to-rem(28);
   }
   .jazz-header__utility-menu a:hover {
-    border-bottom: px-to-rem(4) solid jazz-theme-rgb('header-utility-menu-underline');
+    border-bottom: px-to-rem(4) solid jazz-theme(header-utility-menu-hover-underline-color);
   }
   .jazz-header__utility-menu--hide-large {
     display: none;

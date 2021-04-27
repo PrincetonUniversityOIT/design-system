@@ -1,47 +1,41 @@
-footer.jazz-footer {
+.jazz-footer {
   background-color: jazz-theme(footer-bgcolor);
   color: jazz-theme(footer-color);
   padding-top: 2rem;
   margin-top: auto;
+  border-top: px-to-rem(5) solid jazz-theme(footer-top-border-color);
+  font-family: jazz-theme(footer-font);
+  font-size: px-to-rem(16);
+  font-weight: 700;
 }
-footer.jazz-footer h1,
-footer.jazz-footer h2,
-footer.jazz-footer h3,
-footer.jazz-footer h4,
-footer.jazz-footer h5,
-footer.jazz-footer h6 {
+.jazz-footer h1,
+.jazz-footer h2,
+.jazz-footer h3,
+.jazz-footer h4,
+.jazz-footer h5,
+.jazz-footer h6,{
   font-family: jazz-theme(footer-heading-font);
-}
-footer.jazz-footer h2 {
   text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: bold !important;
-  font-style: normal !important;
-  margin-bottom: 0;
+  font-size: px-to-rem(16);
+  font-weight: 700;
+  line-height: px-to-rem(18);
+  margin-bottom: px-to-rem(16);
 }
-footer.jazz-footer a {
+.jazz-footer a {
   color: jazz-theme(footer-color);
   text-decoration: none;
-  font-style: normal;
-  font-weight: 500;
-  font-size: px-to-rem(16);
-  line-height: px-to-rem(24);
-  letter-spacing: px-to-rem(2);
+  font-family: jazz-theme(footer-font);
+  font-weight: 700;
+  border-bottom: px-to-rem(1) solid transparent;
 }
-footer.jazz-footer a:hover,
-footer.jazz-footer a:active,
-footer.jazz-footer a:focus {
+.jazz-footer a:hover,
+.jazz-footer a:active,
+.jazz-footer a:focus {
   border-bottom: px-to-rem(1) solid jazz-theme(footer-link-underline-color);
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 500;
-  font-size: px-to-rem(16);
-  line-height: px-to-rem(24);
-  letter-spacing: px-to-rem(2);
 }
-footer.jazz-footer .jazz-footer__icon-list a:hover,
-footer.jazz-footer .jazz-footer__icon-list a:active,
-footer.jazz-footer .jazz-footer__icon-list a:focus {
+.jazz-footer .jazz-footer__icon-list a:hover,
+.jazz-footer .jazz-footer__icon-list a:active,
+.jazz-footer .jazz-footer__icon-list a:focus {
   border-bottom: 0;
 }
 ul.jazz-footer__list {
@@ -50,9 +44,8 @@ ul.jazz-footer__list {
   margin-top: 0px;
 }
 ul.jazz-footer__list li {
-  // margin-bottom: .50rem;
-  line-height: px-to-rem(24);
-  letter-spacing: px-to-rem(2);
+  padding: px-to-rem(4) 0;
+  line-height: px-to-rem(18);
 }
 ul.jazz-footer__icon-list {
   list-style: none;
@@ -62,17 +55,37 @@ ul.jazz-footer__icon-list {
 ul.jazz-footer__icon-list li {
   display: inline-block;
   margin-right: px-to-rem(10);
+  line-height: px-to-rem(18);
 }
 .jazz-footer__content {
   padding-bottom: 2rem;
 }
-.jazz-footer__subfooter {
+.jazz-subfooter {
   background-color: jazz-theme(footer-subfooter-bgcolor);
   color: jazz-theme(footer-subfooter-color);
-  border-top: px-to-rem(1) solid jazz-theme(footer-subfooter-divider-color);
+  border-top: px-to-rem(2) solid jazz-theme(footer-subfooter-divider-color);
+  border-bottom: px-to-rem(2) solid jazz-theme(footer-subfooter-divider-color);
   padding: 1rem 0;
 }
-.jazz-footer__logo {
+.jazz-subfooter__layout {
+  @extend .jazz-container;
+  display: flex;
+  // On larger screens, the subfooter will layout vertically
+  // and will layout horizontally on larger screens (defined in the media query)
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+// flex display for these elements to get the logo to vertically align center
+.jazz-subfooter__layout div,
+.jazz-subfooter__logo a {
+  display: flex;
+}
+// jazz-footer class is added to this selector to make it more specific than other link styles in the footer
+.jazz-footer .jazz-subfooter__logo a:hover {
+  border-bottom: px-to-rem(1) solid transparent;
+}
+.jazz-subfooter__logo img {
   width: px-to-rem(142);
 }
 .jazz-footer__shield {
@@ -82,28 +95,19 @@ ul.jazz-footer__icon-list li {
 .jazz-footer .jazz-icon {
   background-color: jazz-theme(footer-color);
 }
-
-/*
-  on smaller screens the text is just centered for the footer
-*/
-
-.jazz-footer__subfooter div {
-  text-align: center;
+.jazz-subfooter__copyright {
+  display: flex;
+  align-items: center;
+}
+.jazz-subfooter__copyright .jazz-icon {
+  font-size: px-to-rem(32);
+  margin-right: px-to-rem(3);
 }
 
 @include apply-from-small-laptop-up {
-  .jazz-footer__subfooter div {
-    text-align: left;
-  }
-  //.jazz-footer-text--left {
-  //  text-align: left;
-  //}
-
-  .jazz-footer-text--right {
-    text-align: right;
-  }
-
-  .jazz-footer__logo {
-    float: right;
+  // on larger screens, the subfooter will layout horizontally
+  .jazz-subfooter__layout {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

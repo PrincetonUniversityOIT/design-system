@@ -1,5 +1,6 @@
 .jazz-pill {
-  @include jazz-theme-color(neutral-light);
+  background-color: jazz-theme(pill-bgcolor);
+  color: jazz-theme(pill-color);
   display: inline-block;
   border-radius: px-to-rem(500);
   padding: px-to-rem(2) px-to-rem(16) px-to-rem(2) px-to-rem(16);
@@ -23,7 +24,6 @@ ul.jazz-pill-bag {
   display: inline-block;
 }
 ul.jazz-pill-bag li {
-  @include jazz-theme-color(neutral-light);
   display: inline-block;
   border-radius: px-to-rem(500);
   padding: px-to-rem(2) px-to-rem(16) px-to-rem(2) px-to-rem(16);

@@ -1,5 +1,7 @@
 .jazz-sidebar-menu {
-  border-right: 1px solid #c8c8c8;
+  background-color: jazz-theme(sidebar-bgcolor);
+  color: jazz-theme(sidebar-color);
+  border-right: 1px solid jazz-theme(sidebar-border-color);
   line-height: 1.15;
 }
 .jazz-sidebar-menu__list {
@@ -13,7 +15,7 @@
   list-style: none;
 }
 .jazz-sidebar-menu__list a {
-  @include jazz-theme-color(sidebar);
+  color: jazz-theme(sidebar-color);
   font-style: normal;
   font-weight: bold;
   font-size: px-to-rem(16);
@@ -32,5 +34,7 @@
 }
 .jazz-sidebar-menu__list-item--active a {
   font-weight: bold;
-  border-right: 4px solid #e77500;
+  border-right: 4px solid jazz-theme(sidebar-current-color);
 }
+
+// TODO: hover

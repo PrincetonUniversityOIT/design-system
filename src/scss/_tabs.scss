@@ -5,22 +5,23 @@ $jazz-tab-border-size: 4;
   display: flex;
   border: none;
   // bottom border serves as a rail across the entire set of tabs
-  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme-rgb(accent-lightest);
+  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme(tablist-border-color);
 }
 
 .jazz-tablist[role="tablist"] button[role='tab'] {
-  @include jazz-theme-color(tab-normal);
+  background-color: jazz-theme(tab-bgcolor);
+  color: jazz-theme(tab-color);
   height: px-to-rem(40);
   text-align: center;
-  text-transform: uppercase;
+  text-transform: jazz-theme(tab-label-transform);
   white-space: nowrap;
-  font-family: jazz-theme-font(body);
+  font-family: jazz-theme(tab-font);
   font-weight: 700;
   font-size: px-to-rem(14);
   line-height: px-to-rem(18);
   border: none;
   // bottom border is the same as the bottom border for the container
-  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme-rgb(accent-lightest);
+  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme(tablist-border-color);
   // margin is a negative value and matches the size of the bottom border so the child border overlaps the parent border
   margin-bottom: px-to-rem($jazz-tab-border-size * -1);
   // spacing between tabs is created using margin because the underline does not go all the way to the adjacent tab
@@ -39,22 +40,22 @@ $jazz-tab-border-size: 4;
 // The focus indicator border is slightly smaller than the bottom border, which allows the bottom border to still show
 // through even when Focus is combined with other states.
 .jazz-tablist[role="tablist"] button[role='tab']:focus {
-  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme-rgb(focus);
+  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
   outline-offset: px-to-rem(-1 * $jazz-focus-size-px);
 }
 
 // hover indicator, which is excluded from disabled tabs and from the current tab
 .jazz-tablist[role="tablist"] button[role='tab']:not([disabled]):not([aria-selected="true"]):hover {
-  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme-rgb(accent-light);
+  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme(tab-hover-underline-color);
 }
 
 // current page indicator
 .jazz-tablist[role="tablist"] button[role="tab"][aria-selected="true"] {
-  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme-rgb(accent);
+  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme(tab-current-underline-color);
 }
 
 // disabled tab
 .jazz-tablist[role="tablist"] button[role="tab"][disabled]:not([disabled="false"]) {
-  color: jazz-theme-rgb(accent-light);
-  border-bottom: transparent solid jazz-theme-rgb(accent-lightest);
+  color: jazz-theme(tab-disabled-color);
+  border-bottom: px-to-rem($jazz-tab-border-size) solid jazz-theme(tablist-border-color);
 }

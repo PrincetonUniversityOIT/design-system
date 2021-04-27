@@ -1,37 +1,36 @@
 a {
-  color: jazz-theme-rgb(link);
-  border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-focus-line);
+  color: jazz-theme(link-color);
+  border-bottom: px-to-rem(2) solid jazz-theme(link-underline-color);
   text-decoration: none;
-
   font-style: normal;
   font-weight: 600;
   font-size: px-to-rem(16);
-  line-height: px-to-rem(28);
 }
 
-a:visited, .jazz-link-visited {
-  color: jazz-theme-rgb(link-visited);
+a:visited,
+.jazz-link-visited {
+  color: jazz-theme(link-visited-color);
 }
 
-.jazz-highlight-visited a:visited, .jazz-highlight-visited .jazz-link-visited {
-  color: jazz-theme-rgb(link);
+.jazz-highlight-visited a:visited,
+.jazz-highlight-visited
+.jazz-link-visited {
+  color: jazz-theme(link-highlighted-visited-color);
 }
 
 a:focus, .jazz-link-focus {
-  color: jazz-theme-rgb(link-focus);
-  border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-focus-line);
-  outline: px-to-rem(2) solid jazz-theme-rgb(focus);
-  outline-offset: 0;
+  outline: px-to-rem(2) solid jazz-theme(focus-color);
+  outline-offset: px-to-rem(2);
 }
 
 a:active, .jazz-link-active {
-  color: jazz-theme-rgb(link-active);
-  border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-active-line);
+  color: jazz-theme(link-active-color);
+  border-bottom: px-to-rem(2) solid jazz-theme(link-active-underline-color);
 }
 
 a:hover, .jazz-link-hover {
-  color: jazz-theme-rgb(link-hover);
-  border-bottom: px-to-rem(2) solid jazz-theme-rgb(link-hover-line);
+  color: jazz-theme(link-hover-color);
+  border-bottom: px-to-rem(2) solid jazz-theme(link-hover-underline-color);
 }
 
 a[target="_blank"] {
@@ -39,9 +38,12 @@ a[target="_blank"] {
 }
 a[target="_blank"]::after {
   content:"";
-  background-image: url(jazz-icons-path("external"));
+  -webkit-mask-image: url(jazz-icons-path(external));
+  mask-image: url(jazz-icons-path(external));
+  mask-size: auto;
+  -webkit-mask-size: 100%;
   display: inline-block;
-  background-size: px-to-rem(15) px-to-rem(15);
+  background-color: currentColor;
   width:px-to-rem(15);
   height:px-to-rem(15);
   margin-left: 0.2em;
