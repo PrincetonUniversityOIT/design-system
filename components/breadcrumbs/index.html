@@ -1,0 +1,532 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadcrumbs - Princeton Design System</title>
+    <link rel="stylesheet" href="/design-system/jazz_sans.css">
+    <link rel="stylesheet" href="/design-system/jazz_fonts.css">
+    <link rel="stylesheet" href="/design-system/prism-atom-dark.css">
+    <style>
+        .core {
+            display: flex;
+        }
+        .core-content {
+            flex: 1 1 auto;
+            margin-left: 20px;
+            min-width: 0px; /* This is necessary to stop the code from pushing the rest of the page out. */
+        }
+        main {
+            margin-bottom: 20px;
+        }
+        iframe {
+            border: 1px solid lightgrey;
+            display: block;
+            padding: 10px;
+            width: 100%;
+            overflow-y: hidden;
+            box-shadow:
+                0px 2px 4px rgba(0, 0, 0, 0.14),
+                0px 4px 5px rgba(0, 0, 0, 0.12),
+                0px 1px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .jazz__small-device {
+            width: 40%;
+        }
+        .jazz-sidebar-menu {
+            min-width: 200px;
+        }
+        .code {
+            background-color: #ddd;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body onload="registerAllIframes()">
+<header role="banner" class="jazz-header">
+    <h1 class="jazz-visually-hidden">Princeton University Design System</h1>
+    <div class="jazz-skip-links">
+        <a href="#main-content" class="jazz-skip-link">Skip to main content</a>
+        <a href="#search" class="jazz-skip-link">Skip to search options</a>
+    </div>
+    <div class="jazz-container">
+    <div class="jazz-header-container">
+        <div class="jazz-header-right-container">
+            <div class="jazz-header__utility-menu jazz-header__utility-menu--hide-small">
+                <ul>
+                    <li><a href="javascript void(0);">Help</a></li>
+                </ul>
+            </div>
+            <div class="jazz-header__search-bar">
+                <h2 class="jazz-visually-hidden">Search</h2>
+                <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-visually-hidden">Search Menu Toggle</span></button>
+                <div id="jazz-header-search-bar-panel" class="jazz-header__search-bar-panel">
+                    <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
+                        <label class="jazz-visually-hidden" for="search-field">Search</label>
+                        <a name="search">
+                            <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
+                        </a>
+                        <button class="jazz-button" type="submit">
+                            <span class="jazz-visually-hidden">Search</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="jazz-header-break"></div>
+        <div class="jazz-header__site-branding">
+        <div class="jazz-container jazz-header__site-branding-contents">
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/design-system/logos/shield.svg" /></a>
+            <div class="jazz-header__site-branding-info">
+                <div class="jazz-header__site-branding-name">
+                    <a href="/" title="Home" rel="home">Jazz</a>
+                </div>
+                <div class="jazz-header__site-branding-slogan">
+                    The Princeton University Design System
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jazz-header-collapsed-header">
+        <div class="jazz-container">
+        <div class="jazz-header-collapsed-container">
+           <div class="jazz-header-collapsed__pu-branding">
+               <a href="javascript:void(0);" title="Princeton University"><img src="/logos/shield.svg" alt="Princeton University" /></a>
+           </div>
+           <div class="jazz-header-collapsed__site-branding--divider">
+           </div>
+           <div class="jazz-header-collapsed__site-branding">
+               <div class="jazz-header-collapsed__site-branding-info">
+                   <div class="jazz-header-collapsed__site-branding-name">
+                       <a href="javascript:void(0);" title="Home" rel="home">Jazz - Princeton University Design System</a>
+                   </div>
+               </div>
+           </div>
+         </div>
+         </div>
+    </div>
+    <nav aria-label="Main Menu" class="jazz-menu__main-menu">
+        <h2 class="jazz-visually-hidden">Main Menu</h2>
+        <div class="jazz-container">
+            <div class="jazz-menu__main-menu-navbar">
+                <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
+                <div  class="jazz-menu__nav-container">
+                    <ul class="jazz-menubar" role="list"><li><a href="/design-system/getting_started/" >Getting Started</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Getting Started</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/design-system/getting_started/"  >About The Design System</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design-system/design/" >Design</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Design</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/design-system/design/icons"  >Icons</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design-system/components/"  aria-current="page">Components</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Components</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/design-system/components/"  >About Components</a></li>
+                                    
+                                        <li><a href="/design-system/components/accordion/"  >Accordion</a></li>
+                                    
+                                        <li><a href="/design-system/components/breadcrumbs/"  aria-current="page" class="is-active"  >Breadcrumbs</a></li>
+                                    
+                                        <li><a href="/design-system/components/buttons/"  >Buttons</a></li>
+                                    
+                                        <li><a href="/design-system/components/pager/"  >Pager</a></li>
+                                    
+                                        <li><a href="/design-system/components/tabs/"  >Tabs</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design-system/templates/" >Templates</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Templates</span>
+                             </button>
+                             
+                        </li><li><a href="/design-system/contribute/" >Contribute</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Contribute</span>
+                             </button>
+                             
+                        </li></ul>
+                    <div class="jazz-header__utility-menu jazz-header__utility-menu--hide-large">
+                        <ul>
+                            <li><a href="javascript void(0);">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- /div -->
+</header>
+<main class="jazz-container">
+    <div class="core">
+        <nav class="jazz-sidebar-menu" aria-label="Section Navigation">
+            <h2 class="jazz-visually-hidden">Section Menu</h2>
+            <ul class="jazz-sidebar-menu__list" role="list">
+                
+                
+                
+                
+                
+                
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/components/" >About Components<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/components/accordion/" >Accordion<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item--active">
+                    <a href="/design-system/components/breadcrumbs/"  aria-current="page" class="is-active">Breadcrumbs<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/components/buttons/" >Buttons<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/components/pager/" >Pager<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/components/tabs/" >Tabs<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+        </nav>
+        <div class="core-content">
+            
+
+
+<h1 class="jazz-page-title">Breadcrumbs</h1>
+
+<p>
+Breadcrumbs are a hierarchical list of links that indicate where the current page is situated within the overall information architecture.
+</p>
+
+<p>
+Each link in the Breadcrumbs provides quick navigation to related pages in the site hierarchy.
+</p>
+
+
+
+<iframe src="/design-system/components/breadcrumbs/breadcrumbs-example1" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-demo">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-demo">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-breadcrumb<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Breadcrumbs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Another Link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Yet Another Link Level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">aria-current</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>Current Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Best Practices</h2>
+
+<ul>
+    <li>Help users understand where they are within a site/application.</li>
+    <li>Link labels used in the Breadcrumbs should match the page titles used on the corresponding pages.</li>
+    <li>Strive to keep site hierarchies shallow to avoid burying content deep in the information architecture.  This will result in long Breadcrumb trails.</li>
+    <li>Evaluate if Breadcrumbs are even necessary for pages where the hierarchy is very shallow or the site hierarchy is already clearly represented in the existing navigation structure.</li>
+    <li>Breadcrumbs should not be used to manage a workflow.  Other patterns, such as “wizards” or “steppers” would be more appropriate for that use case.</li>
+    <li>Do not represent a site hierarchy where one does not exist.</li>
+    <li>Breadcrumbs are not a replacement for native browser “Back” button navigation.  Wherever possible, do not disable native browser “Back” button navigation.</li>
+    <li>Add JSON-LD (<a href="https://developers.google.com/search/docs/data-types/breadcrumb">https://developers.google.com/search/docs/data-types/breadcrumb</a>) as a search engine optimization where it is useful.</li>
+    <li>Use only a single set of Breadcrumbs on a page.</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>The Basics</h3>
+
+<p>
+    This example demonstrates the basic structure for Breadcrumbs, including the following states:
+</p>
+<ul>
+    <li>Default</li>
+    <li>Active</li>
+    <li>Current</li>
+    <li>Not Current</li>
+    <li>Hover</li>
+    <li>Focus</li>
+</ul>
+
+
+
+<iframe src="/design-system/components/breadcrumbs/breadcrumbs-example-simple" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-simple">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-simple">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-breadcrumb<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Breadcrumbs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Another Link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Yet Another Link Level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">aria-current</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+       Current Page
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Icons</h3>
+
+<p>
+    Icons can be used within Breadcrumb labels.
+</p>
+
+<ul>
+    <li>Icons should be on the left side of the text label.</li>
+    <li>Icons should not be used as the only content of the label.</li>
+    <li>If an icon is represented on any single label in the Breadcrumb trail, then icons should be used for all labels in the Breadcrumb trail.</li>
+</ul>
+
+
+
+<iframe src="/design-system/components/breadcrumbs/breadcrumbs-example-with-icons" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-with-icons">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-with-icons">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-breadcrumb<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Breadcrumbs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-gear<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>HOME<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-gear<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ANOTHER LINK<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-gear<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>YET ANOTHER LINK LEVEL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">aria-current</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-gear<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>CURRENT PAGE
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Parent Only</h3>
+
+<p>
+    “Parent-Only” Breadcrumbs provide a single Breadcrumb item that links back to the parent page or component.  This variant is useful in cases where there is a very shallow hierarchy or in providing quick navigation back in List/Detail scenarios.
+</p>
+
+<ul>
+    <li>Never include more than one Breadcrumb item in the “Parent-Only” variant of the Breadcrumbs.</li>
+</ul>
+
+
+
+<iframe src="/design-system/components/breadcrumbs/breadcrumbs-example-parent-only" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-parent-only">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-parent-only">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-breadcrumb<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Breadcrumbs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-arrow-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Back to Parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<ul>
+    <li>Breadcrumbs are made up of Breadcrumb Items separated by the Breadcrumb Separator.</li>
+    <li>Each Breadcrumb Item is a link that can be made up of a text label and an optional icon.</li>
+    <li>The current page is represented as plain text, not an active link.</li>
+    <li>Icons are always shown to the left of the label.</li>
+</ul>
+
+<h3>Code</h3>
+
+<ul>
+    <li>Breadcrumbs are wrapped in a <span class="code">nav</span> element to indicate their purpose.</li>
+    <li>The <span class="code">nav</span> element is given an <span class="code">aria-label</span> of “Breadcrumbs” for use by assistive technologies.</li>
+    <li>The list of links is implemented as a simple order list (<span class="code">ol</span>).</li>
+    <li>The current page is indicated by adding the <span class="code">aria-current=’page’</span> attribute to the appropriate <span class="code">li</span>.</li>
+    <li>The forward slash (“/”) is used as a separator between items in the Breadcrumb list. </li>
+    <li>The last Breadcrumb item represents the current page and should not be an active link.</li>
+    <li>Breadcrumbs will never wrap.</li>
+    <li>The Breadcrumbs will be truncated (with ellipsis: “...”) when the Breadcrumbs are too wide to fit on the screen.</li>
+    <li>Breadcrumb labels will never wrap.</li>
+    <li>If icons are used as part of the label, they should always be on the left side of the label and should never be used alone.</li>
+</ul>
+
+<h3>States</h3>
+
+<h4>Default</h4>
+<p>The Default state of a breadcrumb item will be Not Current.</p>
+<h4>Active</h4>
+<p>The breadcrumb item is in the process of being selected.</p>
+<h4>Not Current</h4>
+<p>The breadcrumb item represents a location (page) that is not the current location (page).  The breadcrumb item is represented as a link.</p>
+<h4>Current</h4>
+<p>The breadcrumb item represents the current location (page).  The breadcrumb item is represented as plain text that is not a link, and will not obtain focus.</p>
+<h4>Focus</h4>
+<p>The breadcrumb item has focus.</p>
+<h4>Hover</h4>
+<p>The mouse cursor is within the breadcrumb item.</p>
+<h4>Overflow</h4>
+<p>The breadcrumb items do not fit within the available horizontal space.</p>
+
+        </div>
+    </div>
+</main>
+<footer role="contentinfo" class="jazz-footer">
+    <div class="jazz-container jazz-footer__content">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <h2>General Information</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="javascript:void(0);">Contact Us</a></li>
+                    <li><a href="javascript:void(0);">About Us</a></li>
+                    <li><a href="javascript:void(0);">News</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Services</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="javascript:void(0);">Update Your Info</a></li>
+                    <li><a href="javascript:void(0);">Online Resources</a></li>
+                    <li><a href="javascript:void(0);">Visiting Campus</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>University Links</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="https://www.princeton.edu/">Princeton University</a></li>
+                    <li><a href="https://communications.princeton.edu/">Office of Communications</a></li>
+                    <li><a href="https://ux.princeton.edu/">User Experience Office</a></li>
+                    <li><a href="https://wds.princeton.edu/">Web Development Services</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Resources</h2>
+                <ul class="jazz-footer__icon-list">
+                    <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-2x jazz-footer__icon jazz-icon-facebook"></i><span class="jazz-visually-hidden">Go to GitHub</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jazz-footer__subfooter">
+        <div class="jazz-container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <a href="javascript:void(0)">Accessibility</a>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    &copy; 2020 The Trustees of Princeton University
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/design-system/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/design-system/jazz_behavior.js"></script>
+<script type="text/javascript">
+    PrincetonDesignSystem.enable();
+
+    function resizeIframe(iframe) {
+        iframe.height = (iframe.contentWindow.document.body.scrollHeight + 22) + "px";
+    }
+
+    function registerIframe(iframe) {
+        // register a listener to list to changes to the iframe content
+        const observer = new MutationObserver((/* mutationsList, observer*/) => {
+            resizeIframe(iframe);
+        });
+        observer.observe(iframe.contentWindow.document.body, { attributes: true, childList: true, subtree: true });
+        // resize immediately for initial load
+        resizeIframe(iframe);
+    }
+
+    function registerAllIframes() {
+        const iframes = document.querySelectorAll("iframe.jazz-docs__code-sample");
+        for (const iframe of iframes) {
+            registerIframe(iframe);
+        }
+    }
+
+    function copyCode(button) {
+        navigator.clipboard.writeText(button.parentNode.querySelector("pre.language-html > code.language-html").innerText);
+    }
+</script>
+</body>
+</html>

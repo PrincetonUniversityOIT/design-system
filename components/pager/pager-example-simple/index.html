@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pager Example - Princeton Design System</title>
+   <link rel="stylesheet" href="/design-system/jazz_serif.css">
+   <link rel="stylesheet" href="/design-system/jazz_fonts.css">
+   <link rel="stylesheet" href="/design-system/prism-atom-dark.css">
+</head>
+<body>
+<!-- Example Start -->
+<div style="width:90%;height:90%">
+
+<nav class="jazz-pager" role="navigation" aria-label="Pagination Navigation, Current Page 4">
+    <ul data-total-pages="7" data-current-page="4">
+       <li><a href="javascript:setPage(Previous);" aria-label="Go to Previous Page"><i class="jazz-icon jazz-icon-caret-left"></i>Previous</a></li>
+       <li><a href="javascript:setPage(1);" aria-label="Go to Page 1">1</a></li>
+       <li><a href="javascript:setPage(2);" aria-label="Go to Page 2">2</a></li>
+       <li><a href="javascript:setPage(3);" aria-label="Go to Page 3">3</a></li>
+       <li aria-current="page"><a href="javascript:setPage(4);" aria-label="Go to Page 4">4</a></li>
+       <li><a href="javascript:setPage(5);" aria-label="Go to Page 5">5</a></li>
+       <li><a href="javascript:setPage(6);" aria-label="Go to Page 6">6</a></li>
+       <li><a href="javascript:setPage(7);" aria-label="Go to Page 7">7</a></li>
+       <li><a href="javascript:setPage(Next);" aria-label="Go to Next Page">Next<i class="jazz-icon jazz-icon-caret-right"></i></a></li>
+    </ul>
+</nav>
+
+
+</div>
+<!-- Example End -->
+<script src="/design-system/jazz_behavior.js"></script>
+<script>
+    PrincetonDesignSystem.enable();
+</script>
+</body>
+</html>

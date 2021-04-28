@@ -1,0 +1,651 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icons - Princeton Design System</title>
+    <link rel="stylesheet" href="/design-system/jazz_sans.css">
+    <link rel="stylesheet" href="/design-system/jazz_fonts.css">
+    <link rel="stylesheet" href="/design-system/prism-atom-dark.css">
+    <style>
+        .core {
+            display: flex;
+        }
+        .core-content {
+            flex: 1 1 auto;
+            margin-left: 20px;
+            min-width: 0px; /* This is necessary to stop the code from pushing the rest of the page out. */
+        }
+        main {
+            margin-bottom: 20px;
+        }
+        iframe {
+            border: 1px solid lightgrey;
+            display: block;
+            padding: 10px;
+            width: 100%;
+            overflow-y: hidden;
+            box-shadow:
+                0px 2px 4px rgba(0, 0, 0, 0.14),
+                0px 4px 5px rgba(0, 0, 0, 0.12),
+                0px 1px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .jazz__small-device {
+            width: 40%;
+        }
+        .jazz-sidebar-menu {
+            min-width: 200px;
+        }
+        .code {
+            background-color: #ddd;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body onload="registerAllIframes()">
+<header role="banner" class="jazz-header">
+    <h1 class="jazz-visually-hidden">Princeton University Design System</h1>
+    <div class="jazz-skip-links">
+        <a href="#main-content" class="jazz-skip-link">Skip to main content</a>
+        <a href="#search" class="jazz-skip-link">Skip to search options</a>
+    </div>
+    <div class="jazz-container">
+    <div class="jazz-header-container">
+        <div class="jazz-header-right-container">
+            <div class="jazz-header__utility-menu jazz-header__utility-menu--hide-small">
+                <ul>
+                    <li><a href="javascript void(0);">Help</a></li>
+                </ul>
+            </div>
+            <div class="jazz-header__search-bar">
+                <h2 class="jazz-visually-hidden">Search</h2>
+                <button id="my-search-toggle" class="jazz-header__search-bar-toggle" aria-expanded="false" aria-label="Search Menu Toggle"><i class="jazz-icon jazz-icon-search" aria-hidden="true"></i><span class="jazz-visually-hidden">Search Menu Toggle</span></button>
+                <div id="jazz-header-search-bar-panel" class="jazz-header__search-bar-panel">
+                    <form action="javascript:void(0)" method="get" accept-charset="UTF-8" role="search">
+                        <label class="jazz-visually-hidden" for="search-field">Search</label>
+                        <a name="search">
+                            <input type="search" id="search-field" placeholder="Search" autocomplete="off" />
+                        </a>
+                        <button class="jazz-button" type="submit">
+                            <span class="jazz-visually-hidden">Search</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="jazz-header-break"></div>
+        <div class="jazz-header__site-branding">
+        <div class="jazz-container jazz-header__site-branding-contents">
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/design-system/logos/shield.svg" /></a>
+            <div class="jazz-header__site-branding-info">
+                <div class="jazz-header__site-branding-name">
+                    <a href="/" title="Home" rel="home">Jazz</a>
+                </div>
+                <div class="jazz-header__site-branding-slogan">
+                    The Princeton University Design System
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jazz-header-collapsed-header">
+        <div class="jazz-container">
+        <div class="jazz-header-collapsed-container">
+           <div class="jazz-header-collapsed__pu-branding">
+               <a href="javascript:void(0);" title="Princeton University"><img src="/logos/shield.svg" alt="Princeton University" /></a>
+           </div>
+           <div class="jazz-header-collapsed__site-branding--divider">
+           </div>
+           <div class="jazz-header-collapsed__site-branding">
+               <div class="jazz-header-collapsed__site-branding-info">
+                   <div class="jazz-header-collapsed__site-branding-name">
+                       <a href="javascript:void(0);" title="Home" rel="home">Jazz - Princeton University Design System</a>
+                   </div>
+               </div>
+           </div>
+         </div>
+         </div>
+    </div>
+    <nav aria-label="Main Menu" class="jazz-menu__main-menu">
+        <h2 class="jazz-visually-hidden">Main Menu</h2>
+        <div class="jazz-container">
+            <div class="jazz-menu__main-menu-navbar">
+                <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
+                <div  class="jazz-menu__nav-container">
+                    <ul class="jazz-menubar" role="list"><li><a href="/design-system/getting_started/" >Getting Started</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Getting Started</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/design-system/getting_started/"  >About The Design System</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design-system/design/"  aria-current="page">Design</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Design</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/design-system/design/icons"  >Icons</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design-system/components/" >Components</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Components</span>
+                             </button>
+                             
+                                <ul>
+                                    
+                                        <li><a href="/design-system/components/"  >About Components</a></li>
+                                    
+                                        <li><a href="/design-system/components/accordion/"  >Accordion</a></li>
+                                    
+                                        <li><a href="/design-system/components/breadcrumbs/"  >Breadcrumbs</a></li>
+                                    
+                                        <li><a href="/design-system/components/buttons/"  >Buttons</a></li>
+                                    
+                                        <li><a href="/design-system/components/pager/"  >Pager</a></li>
+                                    
+                                        <li><a href="/design-system/components/tabs/"  >Tabs</a></li>
+                                    
+                                </ul>
+                             
+                        </li><li><a href="/design-system/templates/" >Templates</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Templates</span>
+                             </button>
+                             
+                        </li><li><a href="/design-system/contribute/" >Contribute</a>
+                             <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
+                                 <span class="jazz-visually-hidden">Contribute</span>
+                             </button>
+                             
+                        </li></ul>
+                    <div class="jazz-header__utility-menu jazz-header__utility-menu--hide-large">
+                        <ul>
+                            <li><a href="javascript void(0);">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- /div -->
+</header>
+<main class="jazz-container">
+    <div class="core">
+        <nav class="jazz-sidebar-menu" aria-label="Section Navigation">
+            <h2 class="jazz-visually-hidden">Section Menu</h2>
+            <ul class="jazz-sidebar-menu__list" role="list">
+                
+                
+                
+                
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/design/icons" >Icons<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+        </nav>
+        <div class="core-content">
+            
+
+
+<h1 class="jazz-page-title">Icons</h1>
+
+<p>
+Icons are a compact visual means of quickly communicating a concept or idea.
+</p>
+
+
+
+<iframe src="/design-system/design/icons/icons-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-icons">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-icons">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-facebook<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Follow Us on Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Best Practices</h2>
+
+<ul>
+    <li>Use icons to enhance pieces of your design, not to replace pieces of your design.</li>
+    <li>Use icons that have a well-established meaning.</li>
+    <li>Avoid attempting to represent abstract concepts with icons.</li>
+    <li>Use icons consistently.  Icons should have a single meaning within the context that they are being used.  Icons should have a consistent meaning across all University sites.</li>
+    <li>Keep icons simple.  A limited space is available to convey meaning.</li>
+    <li>If a legend or training is necessary to explain the meaning of icons, then the icons should be made more clear or excluded from the design altogether.</li>
+    <li>Icons should be paired with text wherever possible.</li>
+    <li>Consider assistive devices.  Be sure to clearly indicate to assistive devices that an icon is decorative.</li>
+    <li>Provide additional metadata to assistive devices when an icon is not accompanied by a textual label.</li>
+    <li>Icons are most useful as part of another component (Button, Link, Tab, Menu, etc…).</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>Specifying an Icon</h3>
+
+<p>Icons are specified using a predefined set of names.</p>
+
+
+
+<iframe src="/design-system/design/icons/icons-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-icons-2">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-icons-2">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-facebook<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Follow Us on Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<p>See the full list of icons (link to them) for a list of icons bundled with the Design System and their corresponding names.</p>
+
+<h3>Buttons With Icons</h3>
+
+<p>
+    Icons can be used within buttons.
+</p>
+
+
+
+<iframe src="/design-system/design/icons/icons-example-button" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-button-with-icon">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-button-with-icon">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">vertical-align</span><span class="token punctuation">:</span>-2px</span><span class="token punctuation">"</span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-inverted jazz-icon-facebook<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Follow Us on Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<p>
+    When icons are not paired with a text label, additional metadata should be provided for assistive devices.
+</p>
+
+
+
+<iframe src="/design-system/design/icons/icons-example-button-no-text" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-button-with-icon-no-text">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-button-with-icon-no-text">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">vertical-align</span><span class="token punctuation">:</span>-2px</span><span class="token punctuation">"</span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-inverted jazz-icon-facebook<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Facebook<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Follow Us on Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Icons With Text</h3>
+
+<p>
+    Icons can be used within the flow of text.  They will inherit their size and color from the surrounding text.
+</p>
+
+
+
+<iframe src="/design-system/design/icons/icons-example-icons-with-text" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-icons-with-text">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-icons-with-text">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html">This is an icon in the flow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">vertical-align</span><span class="token punctuation">:</span> -2px</span><span class="token punctuation">"</span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-facebook<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Follow Us on Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> of the text.</code></pre>
+    </div>
+</div>
+
+
+<h3>Icons Color</h3>
+
+<p>
+    Icons will take the color of their surrounding text, or will be black by default.  The color of an icon can be changed using one of the convenient styles already defined within the Design System.
+</p>
+
+
+
+<iframe src="/design-system/design/icons/icons-example-colors" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-icon-color">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-icon-color">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-facebook jazz-princeton-orange<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Follow Us on Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Icons Size</h3>
+
+<p>
+    Icons will take the size of their surrounding text, but icon size can be changed using redefined sizes: 2x, 3x, 5x, 7x, 9x.
+</p>
+
+
+
+<iframe src="/design-system/design/icons/icons-example-size" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-icon-size">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-icon-size">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-facebook jazz-icon-2x<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Follow Us on Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<p>
+   It is also possible to change the size of an icon by changing the width and height CSS descriptors.
+</p>
+
+
+
+<iframe src="/design-system/design/icons/icons-example-size-defined" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-icon-size-defined">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-icon-size-defined">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-icon jazz-icon-facebook<span class="token punctuation">"</span></span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 100px</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-visually-hidden<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Follow Us on Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<p>
+    Icons for the Design System have been sourced from Phosphor Icons (<a href="https://phosphoricons.com">https://phosphoricons.com</a>).  This icon set offers an extensive library or icons with an open license.
+</p>
+
+<p>
+    To keep the Design System library small, only the most commonly used and recommended icons from the Phosphor Icons library have been bundled with the Design System.  However, you can supplement the Design System icons easily by adding icons to the Design System.
+</p>
+
+<p>
+    The easiest way to add an external icon without rebuilding the Design System would be to define icon classes that follow the Design System icon naming convention and reference your custom icon files
+</p>
+
+   <pre class="language-html"><code class="language-html">.jazz-icon-#{$name} {
+            -webkit-mask-image: url(#{$path});
+            mask-image: url($path);
+        }</code></pre>
+
+<h3>Code</h3>
+<p>
+    Icons do not have any dynamic behavior.  Their styling and other characteristics are primarily derived from the underlying HTML structure.
+</p>
+
+<ul>
+
+    <li>Icons are associated with the  <span class="code">&lti&gt</span> element.  Although this is somewhat semantically incorrect, the association with the <span class="code">&lti&gt</span> tag provides a structure that is easy for developers to remember without creating any burden on the user.</li>
+    <li>Adding the <span class="code">jazz-icon</span> class to the <span class="code">&lti&gt</span> element identifies the element as an icon.</li>
+    <li>The appropriate icon class is given to the <span class="code">&lti&gt</span> element to specify the icon to be used.  See the section the follows for the list of icon class names that are available.</li>
+    <li>Icons take the size of the surrounding text.  By default, that would be 16px (1em).  Additional classes are available for changing the size of the icons easily (jazz-icon-2x, jazz-icon-3x, jazz-icon-5x, jazz-icon-7x, jazz-icon-9x).  Custom sizes can be achieved by setting the width and height CSS descriptors on the element.  The width of the icon should always equal the height to maintain the appropriate proportions for the image.</li>
+    <li>Design System color classes can be used to change the color of icons, as can the <span class="code">color</span> CSS descriptor.</li>
+    <li>In cases where an icon is paired with a corresponding label, nothing special needs to be done to support assistive devices.</li>
+    <li>In cases where an icon IS NOT paired with a corresponding label, it is recommended that a visually hidden <span class="code">span</span> tag is used to wrap a label next to the icon to improve the experience for assistive devices. [i.e. <span class=”jazz-visually-hidden”>Delete</span>]</li>
+</ul>
+
+<h3>Icons</h3>
+
+<p>The following table lists the icons bundled with the Design System along with the name used to refer to the icon.  The table also includes recommended uses for each icon to help establish a consistent experience for users of University sites.</p>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>Icon</th>
+        <th>Class Name</th>
+        <th>Recommended Use</th>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-arrow-left jazz-icon-2x"></i></td>
+        <td>jazz-icon-arrow-left</td>
+        <td>Arrow Left</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-arrow-right jazz-icon-2x"></i></td>
+        <td>jazz-icon-arrow-right</td>
+        <td>Arrow Right</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-caret-down jazz-icon-2x"></i></td>
+        <td>jazz-icon-caret-down</td>
+        <td>Caret Down</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-caret-left jazz-icon-2x"></i></td>
+        <td>jazz-icon-caret-left</td>
+        <td>Caret Left</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-caret-right jazz-icon-2x"></i></td>
+        <td>jazz-icon-caret-right</td>
+        <td>Caret Right</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-caret-up jazz-icon-2x"></i></td>
+        <td>jazz-icon-caret-up</td>
+        <td>Caret Up</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-close jazz-icon-2x"></i></td>
+        <td>jazz-icon-close</td>
+        <td>Close</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-copyright jazz-icon-2x"></i></td>
+        <td>jazz-icon-copyright</td>
+        <td>Copyright</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-envelope jazz-icon-2x"></i></td>
+        <td>jazz-icon-envelope</td>
+        <td>Envelope</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-external jazz-icon-2x"></i></td>
+        <td>jazz-icon-external</td>
+        <td>External: used for external links</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-facebook jazz-icon-2x"></i></td>
+        <td>jazz-icon-facebook</td>
+        <td>Facebook</td>
+    </tr>
+   <tr>
+        <td><i class="jazz-icon jazz-icon-flag jazz-icon-2x"></i></td>
+        <td>jazz-icon-flag</td>
+        <td>Flag</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-gear jazz-icon-2x"></i></td>
+        <td>jazz-icon-gear</td>
+        <td>Gear</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-instagram jazz-icon-2x"></i></td>
+        <td>jazz-icon-instagram</td>
+        <td>Instagram</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-linkedin jazz-icon-2x"></i></td>
+        <td>jazz-icon-linkedin</td>
+        <td>LinkedIn</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-map-pin jazz-icon-2x"></i></td>
+        <td>jazz-icon-map-pin</td>
+        <td>Map Pin</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-menu jazz-icon-2x"></i></td>
+        <td>jazz-icon-menu</td>
+        <td>Menu: used for the collapsed menu</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-minus jazz-icon-2x"></i></td>
+        <td>jazz-icon-minus</td>
+        <td>Minus</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-phone jazz-icon-2x"></i></td>
+        <td>jazz-icon-phone</td>
+        <td>Phone</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-plus jazz-icon-2x"></i></td>
+        <td>jazz-icon-plus</td>
+        <td>Plus</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-printer jazz-icon-2x"></i></td>
+        <td>jazz-icon-printer</td>
+        <td>Printer</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-remove jazz-icon-2x"></i></td>
+        <td>jazz-icon-remove</td>
+        <td>Remove: used for the close dialog</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-search jazz-icon-2x"></i></td>
+        <td>jazz-icon-search</td>
+        <td>Search</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-twitter jazz-icon-2x"></i></td>
+        <td>jazz-icon-twitter</td>
+        <td>Twitter</td>
+    </tr>
+    <tr>
+        <td><i class="jazz-icon jazz-icon-youtube jazz-icon-2x"></i></td>
+        <td>jazz-icon-youtube</td>
+        <td>YouTube</td>
+    </tr>
+</table>
+
+        </div>
+    </div>
+</main>
+<footer role="contentinfo" class="jazz-footer">
+    <div class="jazz-container jazz-footer__content">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <h2>General Information</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="javascript:void(0);">Contact Us</a></li>
+                    <li><a href="javascript:void(0);">About Us</a></li>
+                    <li><a href="javascript:void(0);">News</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Services</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="javascript:void(0);">Update Your Info</a></li>
+                    <li><a href="javascript:void(0);">Online Resources</a></li>
+                    <li><a href="javascript:void(0);">Visiting Campus</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>University Links</h2>
+                <ul class="jazz-footer__list">
+                    <li><a href="https://www.princeton.edu/">Princeton University</a></li>
+                    <li><a href="https://communications.princeton.edu/">Office of Communications</a></li>
+                    <li><a href="https://ux.princeton.edu/">User Experience Office</a></li>
+                    <li><a href="https://wds.princeton.edu/">Web Development Services</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <h2>Resources</h2>
+                <ul class="jazz-footer__icon-list">
+                    <li><a href="javascript:void(0);"><i class="jazz-icon jazz-icon-2x jazz-footer__icon jazz-icon-facebook"></i><span class="jazz-visually-hidden">Go to GitHub</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jazz-footer__subfooter">
+        <div class="jazz-container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <a href="javascript:void(0)">Accessibility</a>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    &copy; 2020 The Trustees of Princeton University
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/design-system/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/design-system/jazz_behavior.js"></script>
+<script type="text/javascript">
+    PrincetonDesignSystem.enable();
+
+    function resizeIframe(iframe) {
+        iframe.height = (iframe.contentWindow.document.body.scrollHeight + 22) + "px";
+    }
+
+    function registerIframe(iframe) {
+        // register a listener to list to changes to the iframe content
+        const observer = new MutationObserver((/* mutationsList, observer*/) => {
+            resizeIframe(iframe);
+        });
+        observer.observe(iframe.contentWindow.document.body, { attributes: true, childList: true, subtree: true });
+        // resize immediately for initial load
+        resizeIframe(iframe);
+    }
+
+    function registerAllIframes() {
+        const iframes = document.querySelectorAll("iframe.jazz-docs__code-sample");
+        for (const iframe of iframes) {
+            registerIframe(iframe);
+        }
+    }
+
+    function copyCode(button) {
+        navigator.clipboard.writeText(button.parentNode.querySelector("pre.language-html > code.language-html").innerText);
+    }
+</script>
+</body>
+</html>
