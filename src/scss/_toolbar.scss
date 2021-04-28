@@ -1,6 +1,7 @@
 .jazz-toolbar {
   position: relative;
-  @include jazz-theme-color(toolbar);
+  background-color: jazz-theme(toolbar-bgcolor);
+  color: jazz-theme(toolbar-color);
   padding: px-to-rem(10) px-to-rem(15);
   display: flex;
   transition: opacity .15s linear;
@@ -9,7 +10,7 @@
 
 .jazz-toolbar-section {
   display: inline-block;
-  border-right: px-to-rem(1) solid jazz-theme-rgb(toolbar-section-divider);
+  border-right: px-to-rem(1) solid jazz-theme(toolbar-section-divider-color);
   -ms-flex: 1 1 auto;
   padding-right: px-to-rem(10);
   padding-left: 0;
@@ -31,7 +32,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: px-to-rem(16);
-  color: jazz-theme-rgb(toolbar-legend-color);
+  color: jazz-theme(toolbar-legend-color);
 }
 
 .jazz-toolbar legend {

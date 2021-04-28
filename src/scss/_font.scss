@@ -1,3 +1,7 @@
 @each $key, $value in $jazz-font-map {
   .#{$key} { font-family: $value; }
 }
+
+@function jazz-font($font-ref) {
+  @return map-get($jazz-font-map, $font-ref);
+}

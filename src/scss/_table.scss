@@ -1,19 +1,20 @@
 .jazz-table__bordered {
-  border: 1px solid jazz-theme-rgb(neutral-dark); // grey
+  border: 1px solid jazz-theme(table-border-color);
   border-collapse: collapse;
   line-height: 1.25;
 }
 
 .jazz-table__bordered th,
 .jazz-table__bordered td {
-  border: 1px solid jazz-theme-rgb(neutral-dark); // grey
+  border: 1px solid jazz-theme(table-border-color);
   padding: px-to-rem(12);
   text-align: left;
   font-size: px-to-rem(14);
 }
 
 .jazz-table__bordered th {
-  @include jazz-theme-color(neutral-light);
+  background-color: jazz-theme(table-th-bgcolor);
+  color: jazz-theme(table-th-color);
 }
 
 .jazz-table__borderless {
@@ -23,16 +24,17 @@
 
 .jazz-table__borderless th,
 .jazz-table__borderless td {
-  border-bottom: 1px solid jazz-theme-rgb(neutral-light);
+  border-bottom: 1px solid jazz-theme(table-row-sep-color);
   padding: px-to-rem(12);
   text-align: left;
   font-size: px-to-rem(14);
 }
 
 .jazz-table__borderless th {
-  border-bottom: 3px solid jazz-theme-rgb(accent);
+  border-bottom: 3px solid jazz-theme(accent);
 }
 
 .jazz-table__borderless tr:nth-child(even) {
-  @include jazz-theme-color(neutral-light);
+  background-color: jazz-theme(table-row-even-odd-bgcolor);
+  color: jazz-theme(table-row-even-odd-color);
 }

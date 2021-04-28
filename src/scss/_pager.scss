@@ -1,5 +1,5 @@
-.jazz-pager ul {
-  font-family: jazz-theme-font(body);
+.jazz-pager > ul {
+  font-family: jazz-theme(body);
   font-style: normal;
   font-weight: 600;
   font-size: px-to-rem(16);
@@ -22,7 +22,7 @@
   border-bottom: 0;
 }
 
-.jazz-pager li a {
+.jazz-pager > ul > li a {
   display: inline-flex;
   flex-basis: auto;
   flex-grow: 0;
@@ -35,11 +35,11 @@
   border-bottom: px-to-rem(4) solid jazz-theme(pager-item-bgcolor);
 }
 
-.jazz-pager li a:hover {
+.jazz-pager > ul > li a:hover {
   border-bottom: px-to-rem(4) solid jazz-theme(pager-item-hover-underline-color);
 }
 
-.jazz-pager li a:focus {
+.jazz-pager > ul > li a:focus {
   font-weight: bold;
   outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
 
@@ -47,30 +47,30 @@
   margin-left: px-to-rem(2);
 }
 
-.jazz-pager a[aria-disabled=true],
-.jazz-pager a[aria-disabled=true]:focus,
-.jazz-pager a[aria-disabled=true]:hover,
-.jazz-pager span[aria-disabled=true],
-.jazz-pager span[aria-disabled=true]:focus,
-.jazz-pager span[aria-disabled=true]:hover {
+.jazz-pager > ul > li a[aria-disabled=true],
+.jazz-pager > ul > li a[aria-disabled=true]:focus,
+.jazz-pager > ul > li a[aria-disabled=true]:hover,
+.jazz-pager > ul > li span[aria-disabled=true],
+.jazz-pager > ul > li span[aria-disabled=true]:focus,
+.jazz-pager > ul > li span[aria-disabled=true]:hover {
   cursor: not-allowed;
   color: jazz-theme(pager-item-disabled-color);
 }
 
-.jazz-pager li[aria-current=page] a,
-.jazz-pager li[aria-current=page] a:focus,
-.jazz-pager li[aria-current=page] a:hover {
+.jazz-pager > ul > li[aria-current=page] a,
+.jazz-pager > ul > li[aria-current=page] a:focus,
+.jazz-pager > ul > li[aria-current=page] a:hover {
   cursor: not-allowed;
   color: jazz-theme(pager-item-current-color);
 }
 
-.jazz-pager > li:first-child > a,
-.jazz-pager > li:last-child  > a{
+.jazz-pager > ul > li:first-child a,
+.jazz-pager > ul > li:last-child  a{
   padding-left: 0;
   padding-right: 0;
 }
 
-.jazz-pager > li:not(:first-child):not(:last-child) > a {
+.jazz-pager > ul > li:not(:first-child):not(:last-child) > a {
   min-width: px-to-rem(25);
 }
 
@@ -78,5 +78,4 @@
   .jazz-pager > ul > li:not(:first-child):not(:last-child):not([aria-current=page]){
     display: none;
   }
-
 }

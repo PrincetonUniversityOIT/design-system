@@ -20,20 +20,6 @@ $jazz-rem: 100%;
 /// @type string
 $jazz-font-display: swap;
 
-/// Specifies the font family for body text in the 'default' font pairing.
-/// @group Theme
-$font-face-body-default: 'Roboto', sans-serif;
-/// Specifies the font family for body text in the 'casual' font pairing.
-/// @group Theme
-$font-face-body-casual: 'Public Sans', sans-serif;
-
-/// Specifies the font family for the heading text in the 'default' font pairing.
-/// @group Theme
-$font-face-heading-default: 'Lora', serif;
-/// Specifies the font family for the heading text in the 'casual' font pairing.
-/// @group Theme
-$font-face-heading-casual: 'Public Sans', sans-serif;
-
 $jazz-focus-size-px: 2.5;
 
 /// When true, theme references are CSS Custom Properties.  When false, no CSS Custom Properties are used.

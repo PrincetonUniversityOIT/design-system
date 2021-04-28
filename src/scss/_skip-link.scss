@@ -1,4 +1,7 @@
-.jazz-skip-link {
+.jazz-skip-link,
+a.jazz-skip-link {
+  background-color: jazz-theme(skip-link-bgcolor);
+  color: jazz-theme(skip-link-color);
   position:absolute;
   left:-10000px;
   top:auto;
@@ -11,22 +14,10 @@
   left: auto;
 }
 
-.jazz-skip-links a {
-  color: jazz-theme-rgb(skip-link);
-}
-
-.jazz-skip-links a:visited {
-  color: jazz-theme-rgb(skip-link-visited);
-}
-
-.jazz-skip-links a:focus {
-  color: jazz-theme-rgb(skip-link-focus);
-}
-
 .jazz-skip-links a:active {
-  color: jazz-theme-rgb(skip-link-active);
+  color: jazz-theme(skip-link-active-color);
 }
 
 .jazz-skip-links a:hover {
-  color: jazz-theme-rgb(skip-link-hover);
+  color: jazz-theme(skip-link-hover-color);
 }

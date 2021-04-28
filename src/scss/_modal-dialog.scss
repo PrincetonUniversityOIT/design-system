@@ -4,7 +4,6 @@
   top: 0;
   width: 100%;
   height: 100%;
-  //background-color: jazz-theme-rgb(modal-wrapper);
   background-color: rgba(0,0,0,.32);
   opacity: .90;
   visibility: hidden;
@@ -21,8 +20,9 @@
 }
 
 .jazz-modal-window {
-  @include jazz-theme-color(modal);
-  font-family: jazz-theme-font(body);
+  background-color: jazz-theme(modal-bgcolor);
+  color: jazz-theme(modal-color);
+  font-family: jazz-theme(body-font);
   font-size: 1rem;
   padding: px-to-rem(10);
   position: absolute;
@@ -68,9 +68,13 @@
 }
 
 .jazz-modal-button__close {
-  background: url(jazz-icons-path("remove")) 0 no-repeat;
-  background-size: px-to-rem(14) px-to-rem(14);
-  height: 20%;
+  -webkit-mask-image: url(jazz-icons-path(remove));
+  mask-image: url(jazz-icons-path(remove));
+  mask-size: auto;
+  -webkit-mask-size: 100%;
+  background-color: currentColor;
+  width: px-to-rem(16);
+  height: px-to-rem(16);
   position: absolute;
   top: px-to-rem(5);
   right: px-to-rem(15);

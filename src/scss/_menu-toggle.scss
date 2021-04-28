@@ -4,7 +4,8 @@
 }
 
 .jazz-menu__menu-toggle {
-  @include jazz-theme-color(header-collapsed-menu);
+  background-color: jazz-theme(menu-toggle-bgcolor);
+  color: jazz-theme(menu-toggle-color);
   border: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -12,9 +13,10 @@
   padding: px-to-rem(4);
   display: flex;
 
-  position: absolute;
-  right: 1.5em;
-  top: px-to-rem(-55);
+  // WARNING: absolute positioning cannot be used here because it assumes a context.  The parent should control these
+  //position: absolute;
+  //right: 1.5em;
+  //top: px-to-rem(-55);
 }
 
 .jazz-header-compact .jazz-menu__menu-toggle {
@@ -24,14 +26,16 @@
 }
 
 .jazz-menu__main-menu {
-  @include jazz-theme-color(header-navbar);
+  background-color: jazz-theme(header-navbar-bgcolor);
+  color: jazz-theme(header-navbar-color);
 }
 
 .jazz-menu__nav-container {
   display: none;
 }
 .jazz-menu__nav-container--expanded {
-  @include jazz-theme-color(header-nav);
+  background-color: jazz-theme(header-nav-bgcolor);
+  color: jazz-theme(header-nav-color);
   left: 0;
   width: 100%;
   z-index: 1000;
