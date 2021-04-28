@@ -1,0 +1,214 @@
+---
+layout: layout.njk
+title: Pager
+tags: components
+---
+
+{% from "../../_includes/example.njk" import example %}
+{% from "../../_includes/example-small-device.njk" import exampleSmall %}
+
+
+<h1 class="jazz-page-title">Pager</h1>
+
+<p>
+    The Pager allows users to navigate through a set of items or rows which have been separated into pages.
+</p>
+
+<p>
+    Pagination (like scrolling) is a strategy for remediating the situation where a data set takes up too much space to list in its entirety.  The Pager component implements the pagination strategy.
+</p>
+
+{{ example("/components/pager/pager-example-simple", "Demonstration", "code-panel-pager") }}
+
+<h2>Best Practices</h2>
+
+<ul>
+    <li>Be mindful of the expected device resolution when choosing the number of results per page.</li>
+    <li>If the data section is very large, consider duplicating the pagination controls above and below the data section.</li>
+    <li>Clearly identify the current page.</li>
+    <li>Provide selection targets that are large enough to support use on the intended device, including use on assistive devices.</li>
+    <li>Provide “First & “Last” links when not all of the page links can be shown.</li>
+    <li>If “Infinite Scroll” is used as an alternative to pagination (for mobile or for desktop), be sure to understand the implications of that decision on accessibility of the design.</li>
+    <li>For very large data sets, provide the ability to jump to a specific page even if that page number is not listed as a page link on the page.</li>
+    <li>The existence of an extreme number of pages is an indication that a more efficient means of working with the data should be provided.  Consider providing powerful filter options in those situations.</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>The Basics</h3>
+
+<p>
+    This example demonstrates the structure for the Pager component and its features:
+</p>
+
+<ul>
+    <li>Paging links provide quick access to each page.</li>
+    <li>The “Next” and “Previous” links provide a large target for quick navigation to neighboring pages.</li>
+    <li>The “First” and “Last” links provide quick navigation to the first and last pages, respectively.</li>
+    <li>Page numbers are skipped to provide a compact design while still providing quick access to recent and upcoming pages.</li>
+    <li>The “Go to page” option provides the ability to jump to a specific page that may not be represented with a pagination link on the current page.</li>
+    <li>Hover, Focus, and Active states are demonstrated.</li>
+</ul>
+
+{{ example("/components/pager/pager-example-basic", "Pager Example", "code-panel-pager-basic") }}
+
+<h3>Truncation</h3>
+
+<p>
+    When many pages of data are available, the Pager component will be unable to display all links on the page.  The Pager component will display page number links in the following sections:
+</p>
+
+<ul>
+    <li>A link to the first page</li>
+    <li>An optional spacer</li>
+    <li>A limited number of paging links.</li>
+    <li>An optional spacer</li>
+    <li>A link to the last page</li>
+</ul>
+
+<p>
+    If the current page is within the first 4 pages, then no spacer will be shown on the left side of the paging links.  A spacer will be shown on the right side of the paging links as necessary.
+</p>
+
+{{ example("/components/pager/pager-example-truncation-right", "Truncation at Right Side Example", "code-panel-truncation-right") }}
+
+<p>
+    If the current page is within 4 pages of the last page, then no spacer will be shown on the right side of the paging links.  A spacer will be shown on the left side of the paging links as necessary.
+</p>
+
+{{ example("/components/pager/pager-example-truncation-left", "Truncation at Left Side Example", "code-panel-truncation-left") }}
+
+<p>
+    If the data set is small enough that all pages will fit comfortably within the horizontal space, then no spacers will be introduced because they are not necessary.
+</p>
+
+{{ example("/components/pager/pager-example-no-truncation", "No Truncation Needed Example", "code-panel-no-truncation") }}
+
+<h3>Low Resolution Devices</h3>
+
+<p>
+    On low resolution devices that have limited horizontal space, only the current page and the next and previous links will be shown.
+</p>
+
+{{ exampleSmall("/components/pager/pager-example-small-device", "Lower Resolution Example", "code-panel-pager-lower-res") }}
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<p>
+    The Pager component is made up of the following parts
+</p>
+
+<ul>
+    <li>A “Previous” link that navigates to the page before the current page.</li>
+    <li>Individual numbered page links that navigate to the specified page number.</li>
+    <li>Spacers that indicate that some paging links could not be shown.</li>
+    <li>A “Next” link that navigates to the page after the current page.</li>
+</ul>
+
+<h3>Code</h3>
+
+<p>
+    The list that follows describes the structure and behavior of the Pager component:
+</p>
+
+<ul>
+    <li>The containing element for the Pager component is the <span class="code">nav</span> element.  Wrapping the entire structure in a <span class="code">nav</span> element leverages semantic meaning and avoids the need to override ARIA roles.</li>
+    <li>The <span class="code">nav</span> element is given an aria-label of “Pagination Navigation, Current Page {n}”.</li>
+    <li>The <span class="code">nav</span> element is given a class of <span class="code">jazz-pager</span>to allow it to be identified by the Design System for styling and interaction.</li>
+    <li>The paging links are represented as an unordered list (<span class="code">ul</span>), with each pagination link represented as a link (<span class="code">a</span>) within a list item (<span class="code">li</span>).</li>
+    <li>Each link (<span class="code">a</span>) is given an aria-label of “Go to Page {n}” to describe its purpose more clearly for users of assistive devices.  Sited users will be able to deduce the purpose of the numbered links based on the visual structure.</li>
+    <li>The current page is indicated on the appropriate link using the <span class="code">aria-current=”page”</span> attribute.  The current page will be disabled.</li>
+    <li>When links are disabled, they should be displayed as a <span class="code">span</span> element with a class of <span class="code">jazz-pager__link--disabled</span>.  Provide an attribute to reinforce that it is disabled (<span class="code">aria-disabled=”true”</span>).</li>
+    <li>The <span class="code">data-page</span> attribute can also be set to the page number for each link to simplify programmatic use of the page number.</li>
+</ul>
+
+ {% highlight "html" %}
+    <nav class="jazz-pager" role="navigation" aria-label="Pagination Navigation, Current Page 11">
+        <ul data-total-pages="20" data-current-page="7">
+           <li><a href="javascript:setPage(Previous);" aria-label="Previous" data-page="Previous"><i class="jazz-icon jazz-icon-caret-left"></i>Previous</a></li>
+           <li><a href="javascript:setPage(1);" aria-label="Go to Page 1" data-page="1">1</a></li>
+           <li><span aria-disabled="true" data-page="...">...</span></li>
+           <li><a href="javascript:setPage(10);" aria-label="Go to Page 10" data-page="10">10</a></li>
+           <li><a href="javascript:setPage(11);" aria-label="Go to Page 11" data-page="11" aria-current="page">11</a></li>
+           <li><a href="javascript:setPage(12);" aria-label="Go to Page 12" data-page="12">12</a></li>
+           <li><a href="javascript:setPage(13;" aria-label="Go to Page 13" data-page="13">13</a></li>
+           <li><a href="javascript:setPage(14);" aria-label="Go to Page 14" data-page="14">14</a></li>
+           <li><span aria-disabled="true" data-page="...">...</span></li>
+           <li><a href="javascript:setPage(20);" aria-label="Go to Page 20" data-page="20">20</a></li>
+           <li><a href="javascript:setPage(Next);" aria-label="Next" data-page="Next">Next<i class="jazz-icon jazz-icon-caret-right"></i></a></li>
+        </ul>
+    </nav>
+ {% endhighlight %}
+
+<p>
+    The “Previous” and “”Next” page links may not be useful depending on which page is the current page.
+    For example, the “Previous” link is not useful when the first page is the current page.
+    Even when a “Previous” or “Next” link is not useful for navigation, it is useful to include the links in the interface to preserve the position.
+    Display the disabled link with a <span class="code">span</span> element and an <span class="code">aria-disabled</span> attribute to reinforce that it is disabled.
+</p>
+
+ {% highlight "html" %}
+    <span aria-disabled="true" data-page="Previous">Previous</span>
+ {% endhighlight %}
+
+<h3>Truncation</h3>
+
+<p>To accommodate the overflow state when there are too many page numbers to fit within the available horizontal space, spacers will be shown to indicate that paging links have been omitted from display.  </p>
+
+<ul>
+    <li>Spacers will only be shown if more than a single page is being omitted from display.</li>
+    <li>The first and last page numbers will always be shown.  This provides navigation to the first and last pages (eliminating the need for “First” and “Last” page links), and showing the last page number also informs the user of the total number of pages.</li>
+    <li>An odd number of pages (5) will be shown in the case where page numbers are omitted both before and after the current page.  This will make it so that the current page will always be in the center in those situations.</li>
+    <li>If the current page is close to the first page (current page is less than 5), then the first 7 links will be displayed with no spacer.</li>
+    <li>If the current page is close to the last page (within 5 pages), then the last 7 pages will be displayed with no spacer.</li>
+</ul>
+
+<p>At higher resolutions, there will always be 9 page “slots” to fill, including the truncation indicator (“...”).  The algorithm for determining how to fill those slots is as follows:</p>
+
+<ul>
+    <li>If the total number of pages is less than 10, display all 9 paging links.</li>
+    <li>If the total number of pages is greater than or equal to 10 then:
+        <ul>
+            <li>If the current page is less than 5, display pages 1 through 7, a spacer, and the last page number.
+            <li>If the current page plus 5 is greater than the total number of pages, display page 1, a spacer, and the range of numbers equal to total_pages - 5 through total_pages
+            <li>Otherwise, display the first page, a spacer, current page - 2, current page - 1, current page, current page + 1, current page + 2, a spacer, and the last page
+        </ul>
+    </li>
+</ul>
+
+<p>At lower resolutions, display the “Previous” link, the current page, and the “Next” link.</p>
+
+<h3>States</h3>
+
+<p>The states below refer to the individual page buttons, except where otherwise indicated.</p>
+
+<h4>Default</h4>
+<p>The Default state for the Pager component is the “Multiple” state.</p>
+<h4>Active</h4>
+<p>The Active state helps to confirm to the user that they have activated the control as they are clicking it.</p>
+<h4>Current</h4>
+<p>The Current state indicates which page is the current page.  The current page will always be listed as one of the pagination links, but it will be disabled.</p>
+<h4>Focus</h4>
+<p>Pagination links will indicate when they have focus.  Pagination links that are disabled will be removed from the focus ring.</p>
+<h4>Hover</h4>
+<p>Pagination links that have not been disabled with provide a hover indicator to reinforce that the area is clickable.</p>
+<h4>Visited</h4>
+<p>The Visited State is not explicitly represented.  Although it might be useful to indicate to the user which pages they have visited, such a feature would be very complicated in the case of a dynamic, sortable, filterable data set.  For this reason, we have purposely not pursued a unique representation of this state.</p>
+<h4>Disabled</h4>
+<p>“Previous” and “Next” links will be disabled in cases where they are not useful (i.e. when the first or last page is the current page).  There should never be a reason to disable other pagination links.</p>
+<h4>Hidden</h4>
+<p>“Previous” and “Next” links are hidden from assistive devices in cases where they are not useful (i.e. when the first or last page is the current page).  The links are displayed to preserve the space to avoid having the page reflow when they are needed.</p>
+<h4>Empty</h4>
+<p>The Empty state applies to the Pager component as a whole and occurs when there are no pages to choose from because there are no results to be paged through.  This could occur in a situation where dynamic results are filtered to the point where no results match the filter.</p>
+<p>It may be desirable to preserve the space where the Pager would display to avoid having the page reflow when the pager is needed.</p>
+<h4>One</h4>
+<p>The One state applies to the Pager component as a whole and is the case where there is a single page of results.  In this case, there is really no reason for the Pager component.</p>
+<p>It may be desirable to preserve the space where the Pager would display to avoid having the page reflow when the pager is needed.</p>
+<h4>Multiple</h4>
+<p>The Multiple state applies to the Pager component as a whole and is the normal case where there are multiple pages of results.</p>
+<h4>Overflow</h4>
+<p>The Overflow state applies to the Pager component as a whole and identifies the situation where there are too many pagination links to represent within the available horizontal space.</p>
+<p>When the Pager is in the Overflow state, some paging links are left out to attempt to keep the pagination links within the available horizontal space.  It may be necessary for each design to evaluate how many pages can be represented within a design before the Overflow state is  triggered.  Each device resolution may require a different threshold for triggering the overflow state.</p>
+<p>Situations where the number of pages is extreme (i.e. 10,000 pages) have not been considered as part of the design.  The existence of more than a few hundred pages within a data set is probably an indication that a more efficient means of working with the data should be devised.</p>

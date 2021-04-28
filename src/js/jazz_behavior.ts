@@ -6,6 +6,8 @@ import {PagerBehavior} from "./components/pager/pager";
 import {TabsBehavior} from "./components/tabs/tabs";
 
 export class PrincetonDesignSystem {
+
+    // options allow consumers to disable behavior for components if they want to handle the behavior on their own
     public enableDesignSystem() {
         this.enable();
         this.disable();

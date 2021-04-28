@@ -184,18 +184,12 @@ $jazz-theme-feature: (
         overflow-menu-danger-color: jazz-color(jazz-red),
 
         // pager theme
-        pager-item-bgcolor: jazz-color(jazz-gray-20),
-        pager-item-color: jazz-color(jazz-black),
-        pager-item-border-color: jazz-color(jazz-gray-20),
-        pager-item-hover-bgcolor: jazz-color(jazz-gray-80),
-        pager-item-hover-color: jazz-color(jazz-white),
-        pager-item-hover-border-color: jazz-color(jazz-gray-80),
-        pager-item-active-bgcolor: jazz-color(jazz-gray-60),
-        pager-item-active-color: jazz-color(jazz-black),
-        pager-item-active-border-color: jazz-color(jazz-gray-60),
-        pager-item-disabled-bgcolor: jazz-color(jazz-gray-20),
-        pager-item-disabled-color: jazz-color(jazz-black),
-        pager-item-border: jazz-dirty-white,
+        pager-item-font: jazz-font(jazz-public-sans),
+        pager-item-bgcolor: jazz-color(jazz-white),
+        pager-item-color: jazz-color(jazz-gray-60),
+        pager-item-hover-underline-color: jazz-color(jazz-princeton-orange),
+        pager-item-disabled-color: jazz-color(jazz-gray-40),
+        pager-item-current-color: jazz-color(jazz-princeton-orange),
 
         // pill
         pill-bgcolor: jazz-color(jazz-gray-20),

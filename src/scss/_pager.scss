@@ -1,85 +1,81 @@
-.jazz-pager {
-  display: inline-block;
+.jazz-pager > ul {
+  font-family: jazz-theme(pager-item-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+  letter-spacing: normal;
+  text-align: center;
+
+  background-color: jazz-theme(pager-item-bgcolor);
+  color: jazz-theme(pager-item-color);
+  list-style-type: none;
+
+  display: inline-flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  align-items: center;
+  gap: px-to-rem(10);
+
   padding-left: px-to-rem(0);
   margin: px-to-rem(20) px-to-rem(0);
-  font-family: jazz-theme(body-font);
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: .9;
-  letter-spacing: normal;
   border-bottom: 0;
 }
 
-.jazz-pager ul {
-  display: block;
-  list-style-type: disc;
+.jazz-pager > ul > li a {
+  display: inline-flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  gap: px-to-rem(5);
+
+  padding-right: px-to-rem(5);
+  padding-left: px-to-rem(5);
+  border-bottom: px-to-rem(4) solid jazz-theme(pager-item-bgcolor);
 }
 
-.jazz-pager li {
-  display: inline;
+.jazz-pager > ul > li a:hover {
+  border-bottom: px-to-rem(4) solid jazz-theme(pager-item-hover-underline-color);
 }
 
-.jazz-pager li a:hover {
-  background-color: jazz-theme(pager-item-hover-bgcolor);
-  color: jazz-theme(pager-item-hover-color);
-  border-color: jazz-theme(pager-item-hover-border-color);
-}
-
-.jazz-pager li a:focus {
+.jazz-pager > ul > li a:focus {
   font-weight: bold;
-  border-color: jazz-theme(focus-color);
+  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
+
+  // fixing issue where left outline is missing
+  margin-left: px-to-rem(2);
 }
 
-.jazz-pager>li:first-child>a {
-  margin-left: 0;
-  border-top-left-radius: px-to-rem(4);
-  border-bottom-left-radius: px-to-rem(4);
-}
-
-.jazz-pager>li:last-child>a {
-  margin-right: 0;
-  border-top-right-radius: px-to-rem(4);
-  border-bottom-right-radius: px-to-rem(4);
-}
-
-.jazz-pager a[aria-disabled=true],
-.jazz-pager a[aria-disabled=true]:focus,
-.jazz-pager a[aria-disabled=true]:hover,
-.jazz-pager span[aria-disabled=true],
-.jazz-pager span[aria-disabled=true]:focus,
-.jazz-pager span[aria-disabled=true]:hover {
-  background-color: jazz-theme(pager-item-disabled-bgcolor);
+.jazz-pager > ul > li a[aria-disabled=true],
+.jazz-pager > ul > li a[aria-disabled=true]:focus,
+.jazz-pager > ul > li a[aria-disabled=true]:hover,
+.jazz-pager > ul > li span[aria-disabled=true],
+.jazz-pager > ul > li span[aria-disabled=true]:focus,
+.jazz-pager > ul > li span[aria-disabled=true]:hover {
+  cursor: not-allowed;
   color: jazz-theme(pager-item-disabled-color);
+}
+
+.jazz-pager > ul > li[aria-current=page] a,
+.jazz-pager > ul > li[aria-current=page] a:focus,
+.jazz-pager > ul > li[aria-current=page] a:hover {
   cursor: not-allowed;
+  color: jazz-theme(pager-item-current-color);
 }
 
-.jazz-pager a[aria-current=page],
-.jazz-pager a[aria-current=page]:focus,
-.jazz-pager a[aria-current=page]:hover,
-.jazz-pager span[aria-current=page],
-.jazz-pager span[aria-current=page]:focus,
-.jazz-pager span[aria-current=page]:hover {
-  background-color: jazz-theme(pager-item-active-bgcolor);
-  color: jazz-theme(pager-item-active-color);
-  cursor: not-allowed;
-  border-color: jazz-theme(pager-item-active-border-color);
+.jazz-pager > ul > li:first-child a,
+.jazz-pager > ul > li:last-child  a{
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.jazz-pager>li>a,
-.jazz-pager>li>span {
-  background-color: jazz-theme(pager-item-bgcolor);
-  color: jazz-theme(pager-item-color);
-  border: 1px solid jazz-theme(pager-item-border-color);
-  float: left;
-  line-height: 1.5;
-  margin-left: -1px;
-  padding: px-to-rem(4) px-to-rem(10);
-  position: relative;
-  text-decoration: none;
+.jazz-pager > ul > li:not(:first-child):not(:last-child) > a {
+  min-width: px-to-rem(25);
 }
 
-.jazz-pager>li>a,
-.jazz-pager>li>span {
-  padding: px-to-rem(6) px-to-rem(12);
-  line-height: 1.42857143;
+@include apply-to-phone-only {
+  .jazz-pager > ul > li:not(:first-child):not(:last-child):not([aria-current=page]){
+    display: none;
+  }
 }

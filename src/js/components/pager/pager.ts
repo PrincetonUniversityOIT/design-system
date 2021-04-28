@@ -19,21 +19,25 @@ export class PagerBehavior extends Behavior {
     createPager(pager) {
         const pagerEl = <HTMLElement> pager;
         if (pagerEl.dataset.totalPages && pagerEl.dataset.currentPage) {
+            const listEl = document.createElement('ul');
+
             // add Previous Page
-            this.addPage(pagerEl, "Previous", this.disablePrevious(pagerEl));
+            this.addPage(listEl, pagerEl,"Previous", this.disablePrevious(pagerEl));
 
             const pages = this.iterablePages(pagerEl);
             pages.forEach((page) => {
                 if (page >= 0) {
                     const pageNum = page + 1;
-                    this.addPage(pagerEl, pageNum.toString(), false);
+                    this.addPage(listEl, pagerEl, pageNum.toString(), false);
                 } else {
-                    this.addPage(pagerEl, "...", true);
+                    this.addPage(listEl, pagerEl, "...", true);
                 }
             })
 
             // add Last Page
-            this.addPage(pagerEl, "Next", this.disableNext(pagerEl));
+            this.addPage(listEl, pagerEl, "Next", this.disableNext(pagerEl))
+
+            pagerEl.appendChild(listEl);
         }
     }
 
@@ -45,25 +49,25 @@ export class PagerBehavior extends Behavior {
         return Number(pagerEl.dataset.currentPage) === Number(pagerEl.dataset.totalPages);
     }
 
-    addPage(pagerEl, displayPageStr, disable: boolean ) {
+    addPage(listEl, pagerEl, displayPageStr, disable: boolean ) {
         const li = document.createElement('li');
         if (!disable) {
-            li.appendChild(this.createLink(displayPageStr, pagerEl));
+            if (displayPageStr == Number(pagerEl.dataset.currentPage) ) {
+                li.setAttribute("aria-current", "page")
+            }
+            li.appendChild(this.createLink(displayPageStr));
         } else {
             li.appendChild(this.createSpan(displayPageStr));
         }
-        pagerEl.appendChild(li);
+        listEl.appendChild(li);
     }
 
-    createLink(displayPageStr, pagerEl) {
+    createLink(displayPageStr) {
         const link = document.createElement('a');
         link.appendChild(document.createTextNode(displayPageStr));
         link.setAttribute("href", "javascript:setPage(" + displayPageStr + ");");
         link.setAttribute("aria-label", this.setAriaLabel(displayPageStr));
         link.setAttribute("data-page", displayPageStr);
-        if (displayPageStr == Number(pagerEl.dataset.currentPage) ) {
-            link.setAttribute("aria-current", "page")
-        }
         return link;
     }
 
@@ -139,13 +143,17 @@ export class PagerBehavior extends Behavior {
         selector: PAGER_SELECTOR
     })
     onClick(event: Event) {
-        // console.log('event', event)
-
         // Click is on the anchor tag
         const itemLink = <HTMLElement> event.target;
 
         // Get the parent list item
         const item = itemLink.closest("li");
+
+        // exit if there is no page value, this is when the page handles rendering the
+        // pages instead of this component
+        if (!itemLink.dataset.page) {
+            return;
+        }
 
         // Get the page string
         const displayPageStr = itemLink.dataset.page;
@@ -193,9 +201,9 @@ export class PagerBehavior extends Behavior {
     }
 
     refreshPager(pager) {
-        const lis = pager.querySelectorAll('li');
-        lis.forEach((li) => {
-            li.parentNode.removeChild(li);
+        const uls = pager.querySelectorAll('ul');
+        uls.forEach((ul) => {
+            ul.parentNode.removeChild(ul);
         });
         this.createPager(pager);
     }
