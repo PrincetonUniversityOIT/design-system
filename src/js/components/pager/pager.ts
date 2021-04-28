@@ -172,7 +172,6 @@ export class PagerBehavior extends Behavior {
         switch (displayPageStr) {
             case 'Next':
                 currentPage = this.setNextPageValue(currentPage, totalPages);
-                console.log('currentPage', currentPage)
                 break;
             case 'Previous':
                 currentPage = this.setPreviousPageValue(currentPage);
