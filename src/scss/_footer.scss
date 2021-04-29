@@ -31,6 +31,7 @@
 .jazz-footer a:hover,
 .jazz-footer a:active,
 .jazz-footer a:focus {
+  color: jazz-theme(footer-color);
   border-bottom: px-to-rem(1) solid jazz-theme(footer-link-underline-color);
 }
 .jazz-footer .jazz-footer__icon-list a:hover,
