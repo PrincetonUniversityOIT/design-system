@@ -28,6 +28,9 @@
   font-weight: 700;
   border-bottom: px-to-rem(1) solid transparent;
 }
+.jazz-footer a:visited {
+  color: jazz-theme(footer-color);
+}
 .jazz-footer a:hover,
 .jazz-footer a:active,
 .jazz-footer a:focus {
