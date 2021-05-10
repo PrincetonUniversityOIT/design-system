@@ -5,6 +5,7 @@
   min-height: 1em;
   display: inline-block;
   mask-size: auto;
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100%;
   background-color: currentColor;

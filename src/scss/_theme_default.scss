@@ -229,4 +229,18 @@ $jazz-theme-feature: (
         toolbar-color: jazz-color(black),
         toolbar-section-divider-color: jazz-color(jazz-gray),
         toolbar-legend-color: jazz-color(jazz-gray-80),
+
+        // utility header
+        utility-header-bgcolor: jazz-color(jazz-gray),
+        utility-header-divider-color: jazz-color(jazz-white),
+        utility-header-site-name-color: jazz-color(jazz-princeton-orange),
+        utility-header-slogan-color: jazz-color(jazz-white),
+        utility-header-logo-color: jazz-color(jazz-white),
+        utility-header-popup-menu-bgcolor: jazz-color(jazz-white),
+        utility-header-popup-menu-item-underline: jazz-color(jazz-gray),
+        utility-header-popup-menu-link-underline-hover-color: jazz-color(jazz-princeton-orange),
+        utility-header-popup-menu-link-color: jazz-color(jazz-black),
+        utility-header-popup-menu-toggle-icon-color: jazz-color(jazz-white),
+        utility-header-link-color: jazz-color(jazz-white),
+        utility-header-link-underline-color: jazz-color(jazz-princeton-orange),
 );

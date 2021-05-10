@@ -8,6 +8,7 @@ a.jazz-skip-link {
   overflow:hidden;
   padding: .5rem;
   margin: .25rem;
+  z-index: 1000;
 }
 
 .jazz-skip-link:focus, .jazz-skip-link--shown {

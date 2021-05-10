@@ -3,18 +3,22 @@
 .jazz-container {
   position: relative;
   width: 100%;
+  // pad the left and right in case the content takes up the full screen width
   padding-right: px-to-rem(16);
   padding-left: px-to-rem(16);
+  // add equal margin on left and right side of page content
   margin-right: auto;
   margin-left: auto;
 }
 @include apply-from-small-laptop-up {
   .jazz-container {
+    // restrict width of content to avoid stretching full width of screen on larger displays
     max-width: 60em;
   }
 }
 @include apply-from-desktop-up {
   .jazz-container {
+    // restrict width of content to avoid stretching full width of screen on larger displays
     max-width: 75em;
   }
 }
