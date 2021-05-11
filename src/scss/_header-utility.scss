@@ -102,7 +102,7 @@ button.jazz-utility-header__nav-toggle {
   -webkit-mask-image: url('/logos/pu-shield-white.svg');
   mask-image: url('/logos/pu-shield-white.svg');
   width: px-to-rem(29); // 1.8em;
-  height: px-to-rem(40); // 2.5em;
+  height: px-to-rem(80); // 2.5em;
   min-width: px-to-rem(29); // 1.8em;
   min-height: px-to-rem(40);
   margin: px-to-rem(10);
@@ -180,12 +180,11 @@ html[data-jazz-scrollY] .jazz-utility-header.jazz-stuck-mobile {
     mask-image: none;
     background-color: transparent;
     width: px-to-rem(130);
+    height: px-to-rem(80);
     margin: 0;
 
     img {
       display: block;
-      width: px-to-rem(130);
-      height: px-to-rem(50);
       content: jazz-theme(utility-header-logo);
     }
   }
