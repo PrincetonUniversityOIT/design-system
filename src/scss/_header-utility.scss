@@ -42,8 +42,11 @@
 // slogan is not displayed at smaller resolutions
 // navigation nav list is not displayed at smaller resolutions (until it is expanded)
 .jazz-utility-header__site-slogan,
-.jazz-utility-header__nav.jazz-expanded .jazz-nav {
+.jazz-utility-header__nav .jazz-nav {
   display: none;
+}
+.jazz-utility-header__nav.jazz-expanded .jazz-nav {
+  display: block;
 }
 // navigation menu that has been explicitly expanded
 // positioned below the header using absolute positioning
@@ -176,12 +179,14 @@ html[data-jazz-scrollY] .jazz-utility-header.jazz-stuck-mobile {
     -webkit-mask-image: none;
     mask-image: none;
     background-color: transparent;
-    width: px-to-rem(110);
+    width: px-to-rem(130);
     margin: 0;
 
     img {
       display: block;
-      width: px-to-rem(120);
+      width: px-to-rem(130);
+      height: px-to-rem(50);
+      content: jazz-theme(utility-header-logo);
     }
   }
   .jazz-utility-header__branding {
@@ -190,6 +195,10 @@ html[data-jazz-scrollY] .jazz-utility-header.jazz-stuck-mobile {
 
     .jazz-div {
       height: px-to-rem(84);
+    }
+
+    img {
+      content: jazz-theme(utility-header-logo);
     }
   }
   .jazz-utility-header__site-name {

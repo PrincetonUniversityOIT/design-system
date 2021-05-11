@@ -1,0 +1,3 @@
+@function jazz-logos-path($name) {
+  @return map-get(map-merge($jazz-logos-standard, $jazz-logos-custom), $name);
+}

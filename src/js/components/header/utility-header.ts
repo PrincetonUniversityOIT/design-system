@@ -47,6 +47,7 @@ export class UtilityHeaderBehavior extends Behavior {
                 spanEl.innerText = 'Close Navigation Menu';
             }
         }
+        event.stopImmediatePropagation();
     }
 
     // This retrieves the appropriate button depending on the selector passed in
