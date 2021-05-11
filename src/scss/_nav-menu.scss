@@ -51,7 +51,7 @@ ul.jazz-menubar button {
   right: px-to-rem(10);
   top: px-to-rem(12);
   border: none;
-  background-color: currentColor;
+  background-color: jazz-theme(header-menu-icon-color);
   width: px-to-rem(20);
   height: px-to-rem(20);
   overflow: hidden;
@@ -178,10 +178,11 @@ ul.jazz-menubar__submenu li > button:not([aria-expanded='true']) + ul {
     mask-image: url(jazz-icons-path(caret-down));
     mask-size: auto;
     -webkit-mask-size: 100%;
-    background-color: currentColor;
+    background-color: jazz-theme(header-menu-icon-color);
   }
   ul.jazz-menubar > li:hover > button,
   ul.jazz-menubar > li > button[aria-expanded='true'] {
+    background-color: jazz-theme(header-menu-icon-color);
     transform: rotate(180deg);
   }
   ul.jazz-menubar > li > ul > li {

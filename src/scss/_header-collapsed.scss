@@ -21,6 +21,7 @@
 .jazz-header-collapsed__pu-branding img {
   width: px-to-rem(30);
   display: block;
+  content: jazz-theme(header-pu-branding-collapsed-logo);
 }
 
 /* Site Branding */
