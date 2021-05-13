@@ -244,10 +244,6 @@ These are the styles for the higher resolution version of the full header
   .jazz-header__site-branding-contents {
     display: flex;
     flex-wrap: wrap;
-
-    img {
-      content: jazz-theme(header-site-branding-logo);
-    }
   }
   .jazz-header__site-branding-contents a,
   .jazz-header__site-branding-contents a:hover,

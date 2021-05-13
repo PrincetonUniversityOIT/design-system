@@ -111,12 +111,10 @@ $jazz-theme-feature: (
         header-color: jazz-color(jazz-black),
         header-pu-branding-bgcolor: jazz-color(jazz-white),
         header-pu-branding-color: jazz-color(jazz-black),
-        header-pu-branding-collapsed-logo: url(jazz-logos-path(pu-shield)),
         header-site-branding-divider-bgcolor: jazz-color(jazz-black),
         header-site-branding-bgcolor: jazz-color(jazz-white),
         header-site-branding-color: jazz-color(jazz-black),
         header-site-branding-name-font: jazz-font(jazz-public-sans),
-        header-site-branding-logo: url(jazz-logos-path(pu-shield)),
         header-site-branding-slogan-color: jazz-color(jazz-black),
         header-menu-icon-color: jazz-color(jazz-black),
         header-utility-menu-bgcolor: jazz-color(jazz-white),
@@ -243,5 +241,4 @@ $jazz-theme-feature: (
         utility-header-popup-menu-toggle-icon-color: jazz-color(jazz-white),
         utility-header-link-color: jazz-color(jazz-white),
         utility-header-link-underline-color: jazz-color(jazz-princeton-orange),
-        utility-header-logo: url(jazz-logos-path(pu-logo-stacked-white)),
 );
