@@ -24,7 +24,8 @@
   align-items: center;
 }
 // site name
-.jazz-utility-header__site-name {
+.jazz-utility-header__site-name,
+.jazz-utility-header__site-name:visited {
   display: inline-block;
   color: jazz-theme(utility-header-site-name-color);
   font-weight: 700;
@@ -194,7 +195,8 @@ html[data-jazz-scrollY] .jazz-utility-header.jazz-stuck-mobile {
       height: px-to-rem(84);
     }
   }
-  .jazz-utility-header__site-name {
+  .jazz-utility-header__site-name,
+  .jazz-utility-header__site-name:visited {
     color: jazz-theme(utility-header-site-name-color);
     font-weight: 700;
     font-size: px-to-rem(28);
