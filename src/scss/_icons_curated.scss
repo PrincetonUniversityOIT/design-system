@@ -1,39 +1,12 @@
-$jazz-icons-standard: (
-  facebook: "../icons/phosphor/facebook-logo.svg",
-  flag: "../icons/phosphor/flag.svg",
-  twitter: "../icons/phosphor/twitter-logo.svg",
-  linkedin: "../icons/phosphor/linkedin-logo.svg",
-  instagram: "../icons/phosphor/instagram-logo.svg",
-  youtube: "../icons/phosphor/youtube-logo.svg",
-  close: "../icons/phosphor/x.svg",
-  caret-up: "../icons/phosphor/caret-up.svg",
-  caret-down: "../icons/phosphor/caret-down.svg",
-  caret-left: "../icons/phosphor/caret-left.svg",
-  caret-right: "../icons/phosphor/caret-right.svg",
-  external: "../icons/phosphor/arrow-square-up-right.svg",
-  search: "../icons/phosphor/magnifying-glass.svg",
-  menu: "../icons/phosphor/list.svg",
-  remove: "../icons/phosphor/x-bold.svg",
-  gear: "../icons/phosphor/gear.svg",
-  plus: "../icons/phosphor/plus.svg",
-  minus: "../icons/phosphor/minus.svg",
-  copyright: "../icons/phosphor/copyright.svg",
-  phone: "../icons/phosphor/phone.svg",
-  printer: "../icons/phosphor/printer.svg",
-  map-pin: "../icons/phosphor/map-pin.svg",
-  envelope: "../icons/phosphor/envelope.svg",
+$jazz-icons-curated: (
   arrow-down-left: "../icons/phosphor/arrow-down-left.svg",
   arrow-down-right: "../icons/phosphor/arrow-down-right.svg",
-  arrow-down: "../icons/phosphor/arrow-down.svg",
   arrow-fat-down: "../icons/phosphor/arrow-fat-down.svg",
   arrow-fat-left: "../icons/phosphor/arrow-fat-left.svg",
   arrow-fat-right: "../icons/phosphor/arrow-fat-right.svg",
   arrow-fat-up: "../icons/phosphor/arrow-fat-up.svg",
-  arrow-left: "../icons/phosphor/arrow-left.svg",
-  arrow-right: "../icons/phosphor/arrow-right.svg",
   arrow-up-left: "../icons/phosphor/arrow-up-left.svg",
   arrow-up-right: "../icons/phosphor/arrow-up-right.svg",
-  arrow-up: "../icons/phosphor/arrow-up.svg",
   article: "../icons/phosphor/article.svg",
   asterisk: "../icons/phosphor/asterisk.svg",
   bag: "../icons/phosphor/bag.svg",
@@ -97,36 +70,6 @@ $jazz-icons-standard: (
   list-plus: "../icons/phosphor/list-plus.svg",
   list: "../icons/phosphor/list.svg",
   magnifying-glass: "../icons/phosphor/magnifying-glass.svg",
-  number-circle-eight: "../icons/phosphor/number-circle-eight.svg",
-  number-circle-five: "../icons/phosphor/number-circle-five.svg",
-  number-circle-four: "../icons/phosphor/number-circle-four.svg",
-  number-circle-nine: "../icons/phosphor/number-circle-nine.svg",
-  number-circle-one: "../icons/phosphor/number-circle-one.svg",
-  number-circle-seven: "../icons/phosphor/number-circle-seven.svg",
-  number-circle-six: "../icons/phosphor/number-circle-six.svg",
-  number-circle-three: "../icons/phosphor/number-circle-three.svg",
-  number-circle-two: "../icons/phosphor/number-circle-two.svg",
-  number-circle-zero: "../icons/phosphor/number-circle-zero.svg",
-  number-eight: "../icons/phosphor/number-eight.svg",
-  number-five: "../icons/phosphor/number-five.svg",
-  number-four: "../icons/phosphor/number-four.svg",
-  number-nine: "../icons/phosphor/number-nine.svg",
-  number-one: "../icons/phosphor/number-one.svg",
-  number-seven: "../icons/phosphor/number-seven.svg",
-  number-six: "../icons/phosphor/number-six.svg",
-  number-square-eight: "../icons/phosphor/number-square-eight.svg",
-  number-square-five: "../icons/phosphor/number-square-five.svg",
-  number-square-four: "../icons/phosphor/number-square-four.svg",
-  number-square-nine: "../icons/phosphor/number-square-nine.svg",
-  number-square-one: "../icons/phosphor/number-square-one.svg",
-  number-square-seven: "../icons/phosphor/number-square-seven.svg",
-  number-square-six: "../icons/phosphor/number-square-six.svg",
-  number-square-three: "../icons/phosphor/number-square-three.svg",
-  number-square-two: "../icons/phosphor/number-square-two.svg",
-  number-square-zero: "../icons/phosphor/number-square-zero.svg",
-  number-three: "../icons/phosphor/number-three.svg",
-  number-two: "../icons/phosphor/number-two.svg",
-  number-zero: "../icons/phosphor/number-zero.svg",
   pedestrian: "../icons/phosphor/pedestrian.svg",
   pencil: "../icons/phosphor/pencil.svg",
   share: "../icons/phosphor/share.svg",
@@ -137,21 +80,9 @@ $jazz-icons-standard: (
   trash: "../icons/phosphor/trash.svg",
 );
 
-@each $name, $path in map-merge($jazz-icons-standard, $jazz-icons-custom) {
+@each $name, $path in $jazz-icons-curated {
   .jazz-icon-#{$name} {
     -webkit-mask-image: url(#{$path});
     mask-image: url($path);
   }
-}
-
-/// Provides the icon path of the specified icon for use in CSS url references.
-/// @parameter {string} $name - The name of the icon for which the path is desired.
-/// @return {string} The path of the specified icon.
-@function jazz-icons-path($name) {
-  @return map-get(map-merge($jazz-icons-standard, $jazz-icons-custom), $name);
-}
-
-@function jazz-icons-path-with-color($name, $color) {
-  @return map-get(map-merge($jazz-icons-standard, $jazz-icons-custom), $name) +
-    "?stroke=" + $color + " line&fill=none";
 }

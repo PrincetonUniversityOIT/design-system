@@ -38,6 +38,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "dist/jazz_sans.css": "jazz_sans.css" });
     eleventyConfig.addPassthroughCopy({ "dist/jazz_serif.css": "jazz_serif.css" });
     eleventyConfig.addPassthroughCopy({ "dist/jazz_fonts.css": "jazz_fonts.css" });
+    eleventyConfig.addPassthroughCopy({ "dist/jazz_curated_icons.css": "jazz_curated_icons.css" });
     eleventyConfig.addPassthroughCopy({ "dist/fonts": "fonts" });
     eleventyConfig.addPassthroughCopy({ "dist/icons": "icons" });
     eleventyConfig.addPassthroughCopy({ "dist/img": "img" });
