@@ -572,6 +572,84 @@ export const WhiteUtilityTemplate = (args) => html`
     </script>
 `;
 
+export const UtilityTemplateOfficeOf = (args) => html`
+    <header role="banner" class="jazz-utility-header jazz-stuck-mobile jazz-stuck">
+        <h1 class="jazz-visually-hidden">Jazz - Princeton University Design System</h1>
+        <div class="jazz-container">
+            <div class="jazz-utility-header__branding">
+                <a class="jazz-utility-header__pu_logo" href="javascript:void(0);" title="Princeton University Home Page">
+                <img src="/logos/pu-logo-stacked-white.svg" alt="Princeton University Logo" />
+                </a>
+                <div class="jazz-div"></div>
+                <div class="jazz-utility-header__site-branding">
+                    <a class="jazz-utility-header__site-name-office-of" href="https://www.princeton.edu/" title="Application Home Page" rel="home">Office of
+                        <br/>
+                        <div class="jazz-utility-header__site-name-office-of-department">${ args.officeOfDepartment }</div>
+                    </a>
+                </div>
+            </div>
+            <div class="jazz-utility-header__options">
+                <section class="jazz-utility-header__nav">
+                    <h2 class="jazz-visually-hidden">Related Links</h2>
+                    <button class="jazz-utility-header__nav-toggle" aria-expanded="false"><i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i><span class="jazz-visually-hidden">Open Navigation Menu</span></button>
+                    <nav class="jazz-nav">
+                        <ul>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <!--
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            <li><a href="javascript:void(0);">Documentation</a></li>
+                            -->
+                            <li><a href="javascript:void(0);">Help</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <div class="jazz-div"></div>
+                <section class="jazz-utility-header__user-options">
+                    <h2 class="jazz-visually-hidden">User Options</h2>
+                    <ul>
+                        <li><a href="javascript:void(0);">Log In</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </header>
+    <section class="jazz-container">
+        <h1>Heading</h1>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu eu mi convallis tincidunt. Aliquam a orci tellus. Morbi imperdiet cursus tristique. Sed hendrerit, libero ac feugiat efficitur, tellus ex placerat urna, eu pharetra augue ipsum vitae urna. Ut ultricies purus massa. Nulla molestie, tellus in eleifend laoreet, justo felis porta eros, ut dapibus turpis sem eu risus. In molestie, massa maximus rutrum interdum, lacus ante viverra nibh, et eleifend risus erat vel risus.
+        </p>
+        <p>
+        Donec eget metus in nisl bibendum vehicula. Pellentesque semper diam a libero tempor, facilisis pulvinar elit pulvinar. Cras in pulvinar diam. Praesent euismod ultricies quam placerat blandit. Praesent cursus sit amet metus non cursus. Integer condimentum porttitor odio eu tempor. Mauris ac tellus diam. Donec quis porttitor quam. Nulla sed volutpat est. Curabitur non aliquam justo.
+        </p>
+        <p>
+        Integer id gravida mi, a facilisis lorem. Nam efficitur venenatis enim vel tempor. Integer vitae elit vulputate, sollicitudin libero vel, fermentum risus. Quisque tempor neque in leo molestie condimentum. Praesent lacinia felis nec tortor eleifend ornare. Donec scelerisque feugiat nisl in pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla velit tellus, condimentum ac ultricies et, ultricies cursus sapien. Nam laoreet facilisis lectus ac finibus.
+        </p>
+        <p>
+        Ut ut augue ac lectus lobortis sollicitudin. Nulla pretium, odio gravida consectetur ultrices, sapien enim faucibus augue, sit amet scelerisque sem sapien in dui. Aenean venenatis velit non eleifend sodales. Vestibulum sit amet ante vel lacus vehicula volutpat eu vitae metus. Sed cursus non nisi a maximus. Sed id maximus ante. Quisque vitae maximus nibh. Morbi vel enim gravida lectus commodo convallis a vel nibh. Ut eu commodo ligula. Curabitur et imperdiet nunc, tempor lobortis ligula.
+        </p>
+        <p>
+        Sed eu tristique quam, at viverra sem. Morbi blandit, ligula eu porttitor suscipit, tellus lacus finibus ex, at accumsan metus mi in tortor. Nullam interdum cursus nulla, et congue ligula suscipit non. Duis sollicitudin tellus mi, id suscipit neque ultrices nec. Duis malesuada, urna ut congue porttitor, arcu felis feugiat risus, quis finibus nisl nunc ut justo. Sed porttitor ornare urna, nec dignissim nulla fermentum at. Vestibulum aliquet molestie elit at pharetra.
+        </p>
+    </section>
+    <script id="initscript">
+        PrincetonDesignSystem.enableDesignSystem();
+    </script>
+`;
 
 # Header
 
@@ -637,5 +715,14 @@ of a website, including copyright information, navigation links, and privacy sta
         siteBrandingSlogan: 'The Princeton University Design System'
     }}>
       {WhiteUtilityTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Utility with Office Of Style" args={{
+        forceExpanded: false,
+        officeOfDepartment: 'Finance & Treasury'
+    }}>
+      {UtilityTemplateOfficeOf.bind({})}
     </Story>
 </Canvas>

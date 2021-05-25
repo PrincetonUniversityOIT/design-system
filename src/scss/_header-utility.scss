@@ -214,6 +214,34 @@ html[data-jazz-scrollY] .jazz-utility-header.jazz-stuck-mobile {
     display: block;
     color: jazz-theme(utility-header-slogan-color);
   }
+  .jazz-utility-header__site-name-office-of,
+  .jazz-utility-header__site-name-office-of:visited {
+    color: jazz-theme(utility-header-site-name-office-of-color);
+    font-weight: normal;
+    font-size: px-to-rem(16);
+    text-transform: uppercase;
+    border-bottom: px-to-rem(2) solid transparent;
+
+    &:hover,
+    &:active {
+      color: jazz-theme(utility-header-site-name-office-of-color);
+      border-bottom: px-to-rem(2) solid jazz-theme(utility-header-site-name-office-of-color);
+    }
+  }
+  .jazz-utility-header__site-name-office-of-department {
+    display: block;
+    color: jazz-theme(utility-header-site-name-office-of-department-color);
+    font-weight: 700;
+    font-size: px-to-rem(24);
+    text-transform: uppercase;
+    border-bottom: px-to-rem(2) solid transparent;
+
+    &:hover,
+    &:active {
+      color: jazz-theme(utility-header-site-name-office-of-color);
+      border-bottom: px-to-rem(2) solid jazz-theme(utility-header-site-name-office-of-color);
+    }
+  }
   .jazz-utility-header__options {
     flex-grow: 2;
     display: flex;
