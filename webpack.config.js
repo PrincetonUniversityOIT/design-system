@@ -12,6 +12,7 @@ module.exports = {
         jazz_sans: './src/scss/jazz_sans.scss',
         jazz_fonts: './src/scss/jazz_fonts.scss',
         jazz_custom: './src/scss/jazz_custom.scss',
+        jazz_curated_icons: './src/scss/jazz_curated_icons.scss',
         jazz_behavior: './src/jazz_behavior.ts'
     },
 

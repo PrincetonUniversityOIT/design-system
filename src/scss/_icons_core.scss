@@ -1,0 +1,50 @@
+$jazz-icons-core: (
+  facebook: "../icons/phosphor/facebook-logo.svg",
+  flag: "../icons/phosphor/flag.svg",
+  twitter: "../icons/phosphor/twitter-logo.svg",
+  linkedin: "../icons/phosphor/linkedin-logo.svg",
+  instagram: "../icons/phosphor/instagram-logo.svg",
+  youtube: "../icons/phosphor/youtube-logo.svg",
+
+  close: "../icons/phosphor/x.svg",
+  caret-up: "../icons/phosphor/caret-up.svg",
+  caret-down: "../icons/phosphor/caret-down.svg",
+  caret-left: "../icons/phosphor/caret-left.svg",
+  caret-right: "../icons/phosphor/caret-right.svg",
+
+  external: "../icons/phosphor/arrow-square-up-right.svg",
+  search: "../icons/phosphor/magnifying-glass.svg",
+  menu: "../icons/phosphor/list.svg",
+  remove: "../icons/phosphor/x-bold.svg",
+  gear: "../icons/phosphor/gear.svg",
+  plus: "../icons/phosphor/plus.svg",
+  minus: "../icons/phosphor/minus.svg",
+  copyright: "../icons/phosphor/copyright.svg",
+  phone: "../icons/phosphor/phone.svg",
+  printer: "../icons/phosphor/printer.svg",
+  map-pin: "../icons/phosphor/map-pin.svg",
+  envelope: "../icons/phosphor/envelope.svg",
+  arrow-left: "../icons/phosphor/arrow-left.svg",
+  arrow-right: "../icons/phosphor/arrow-right.svg",
+  arrow-down: "../icons/phosphor/arrow-down.svg",
+  arrow-up: "../icons/phosphor/arrow-up.svg"
+);
+
+@each $name, $path in $jazz-icons-core {
+  .jazz-icon-#{$name} {
+    -webkit-mask-image: url(#{$path});
+    mask-image: url($path);
+  }
+}
+
+/// Provides the icon path of the specified icon for use in CSS url references.
+/// @parameter {string} $name - The name of the icon for which the path is desired.
+/// @return {string} The path of the specified icon.
+@function jazz-icons-path($name) {
+  @return map-get($jazz-icons-core, $name);
+}
+
+@function jazz-icons-path-with-color($name, $color) {
+  @return map-get($jazz-icons-core, $name) +
+    "?stroke=" + $color + " line&fill=none";
+}
