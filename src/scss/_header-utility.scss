@@ -46,9 +46,44 @@
 .jazz-utility-header__nav .jazz-nav {
   display: none;
 }
+
+// office of
+.jazz-utility-header__site-name-office-of,
+.jazz-utility-header__site-name-office-of:visited {
+  color: jazz-theme(utility-header-site-name-office-of-color);
+  font-weight: normal;
+  font-size: px-to-rem(16);
+  text-transform: uppercase;
+  border-bottom: px-to-rem(2) solid transparent;
+
+  &:hover,
+  &:active {
+    color: jazz-theme(utility-header-site-name-office-of-color);
+    border-bottom: px-to-rem(2) solid jazz-theme(utility-header-site-name-office-of-color);
+  }
+}
+
+.jazz-utility-header__site-name-office-of-department,
+.jazz-utility-header__site-name-office-of-department:visited {
+  display: inline-block;
+  color: jazz-theme(utility-header-site-name-office-of-color);
+  font-weight: 700;
+  font-size: px-to-rem(24);
+  border-bottom: px-to-rem(2) solid transparent;
+  text-transform: uppercase;
+
+  // underline on hover, no color change on hover
+  &:active,
+  &:hover {
+    color: jazz-theme(utility-header-site-name-office-of-color);
+    border-bottom: px-to-rem(1) solid jazz-theme(utility-header-site-name-office-of-color);
+  }
+}
+
 .jazz-utility-header__nav.jazz-expanded .jazz-nav {
   display: block;
 }
+
 // navigation menu that has been explicitly expanded
 // positioned below the header using absolute positioning
 // nav items have a bottom border line that changes color on hover
