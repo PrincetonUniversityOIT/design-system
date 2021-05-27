@@ -14,7 +14,6 @@
   background-color: jazz-theme(button-primary-bgcolor);
   color: jazz-theme(button-primary-color);
 
-  width: 100%;
   height: jazz-theme(button-primary-medium);
   border-radius: px-to-rem(2);
   padding: px-to-rem(12) px-to-rem(24);
@@ -99,7 +98,7 @@
 
 .jazz-btn.jazz-btn-outline:disabled {
   color: jazz-theme(button-primary-outline-disabled-color);
-  background-color: jazz-theme(button-primary-ouline-disabled-bgcolor);
+  background-color: jazz-theme(button-primary-outline-disabled-bgcolor);
   border: px-to-rem(1) solid jazz-theme(button-primary-outline-disabled-border-color);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -109,6 +108,73 @@
 .jazz-btn.jazz-btn-outline:not([disabled]).jazz-focus, .jazz-btn.jazz-btn-outline:not([disabled]):focus {
   outline-offset: .25rem;
 }
+
+/*
+  Text Button Styles
+*/
+
+.jazz-btn-text {
+  background-color: transparent;
+  color: jazz-theme(button-primary-text-color);
+  text-decoration: underline;
+  text-decoration-color: jazz-theme(button-primary-text-border-color);
+  text-underline-offset: 3px;
+  padding: px-to-rem(1);
+}
+
+.jazz-btn.jazz-btn-text--hover, .jazz-btn-text:hover {
+  background-color: transparent;
+  color: jazz-theme(button-primary-text-hover-color);
+  text-decoration: underline;
+  text-decoration-color: jazz-theme(button-primary-text-hover-border-color);
+  text-underline-offset: 3px;
+  padding: px-to-rem(1);
+  border: 0;
+}
+
+.jazz-btn.jazz-btn-text--active, .jazz-btn-text:active {
+  background-color: transparent;
+  color: jazz-theme(button-primary-text-active-color);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: jazz-theme(button-primary-text-active-border-color);
+  text-underline-offset: 3px;
+  padding: px-to-rem(1);
+  border: 0;
+}
+
+.jazz-btn.jazz-btn-text--focus, .jazz-btn-text:focus {
+  background-color: transparent;
+  color: jazz-theme(button-primary-text-focus-color);
+  text-decoration: underline;
+  text-decoration-color: jazz-theme(button-primary-text-focus-color);
+  text-underline-offset: 3px;
+  padding: px-to-rem(1);
+  border: 0;
+  outline: px-to-rem(2) solid jazz-theme(focus-color);
+  outline-offset: 0;
+}
+
+.jazz-btn.jazz-btn-text:disabled {
+  background-color: transparent;
+  color: jazz-theme(button-primary-text-disabled-color);
+  text-decoration: underline;
+  text-decoration-color: jazz-theme(button-primary-text-disabled-border-color);
+  text-underline-offset: 3px;
+  padding: px-to-rem(1);
+  border: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  pointer-events: none;
+}
+
+.jazz-btn.jazz-btn-text:not([disabled]).jazz-focus, .jazz-btn.jazz-btn-text:not([disabled]):focus {
+  outline-offset: .25rem;
+}
+
+/*
+  Unstyled Button Styles
+*/
 
 .jazz-btn.jazz-btn--unstyled {
   -moz-osx-font-smoothing: auto;
@@ -143,6 +209,6 @@
 
 @media (min-width: 30em) {
   .jazz-btn {
-    width: auto;
+    width: max-content;
   }
 }
