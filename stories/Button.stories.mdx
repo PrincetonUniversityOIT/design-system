@@ -3,13 +3,78 @@ import { html } from 'lit-html';
 
 <Meta title="Components/Buttons" component="Button" />
 
-export const Template = (args) => html`
-    <button class="jazz-btn">${ args.label }</button>
-    <button class="jazz-btn jazz-btn--hover">${ args.label }</button>
-    <button class="jazz-btn jazz-btn--active">${ args.label }</button>
-    <button class="jazz-btn jazz-btn--focus jazz-focus">${ args.label }</button>
-    <button class="jazz-btn" disabled>${ args.label }</button>
-    <button class="jazz-btn jazz-btn--unstyled">${ args.label }</button>
+export const TemplateByVariant = (args) => html`
+    <style>
+        .layout-helper {
+            display: grid;
+            grid-template-columns:  110px 110px 110px 110px 110px 110px;
+            align-items: center;
+            row-gap: 10px;
+            column-gap: 20px;
+            margin-top:20px
+        }
+    </style>
+    <div class="layout-helper">
+        <h3>Variant</h3>
+        <h3>Default</h3>
+        <h3>Hover</h3>
+        <h3>Active</h3>
+        <h3>Focus</h3>
+        <h3>Disabled</h3>
+        <h4>Solid</h4>
+        <button class="jazz-btn">${ args.label }</button>
+        <button class="jazz-btn jazz-btn--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn" disabled>${ args.label }</button>
+        <h4>Outline</h4>
+        <button class="jazz-btn jazz-btn-outline">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-outline--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-outline--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-outline--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-outline" disabled>${ args.label }</button>
+        <h4>Unstyled</h4>
+        <button class="jazz-btn jazz-btn--unstyled">${ args.label }</button>
+    </div>
+`;
+
+export const TemplateBySize = (args) => html`
+    <style>
+        .layout-helper {
+            display: grid;
+            grid-template-columns:  110px 110px 110px 110px 110px 110px;
+            align-items: center;
+            row-gap: 10px;
+            column-gap: 20px;
+            margin-top:20px
+        }
+    </style>
+    <div class="layout-helper">
+        <h3>Size</h3>
+        <h3>Default</h3>
+        <h3>Hover</h3>
+        <h3>Active</h3>
+        <h3>Focus</h3>
+        <h3>Disabled</h3>
+        <h4>Small</h4>
+        <button class="jazz-btn jazz-btn-small">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-small jazz-btn--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-small jazz-btn--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-small jazz-btn--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-small" disabled>${ args.label }</button>
+        <h4>Medium</h4>
+        <button class="jazz-btn jazz-btn-medium">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-medium jazz-btn--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-medium jazz-btn--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-medium jazz-btn--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-medium" disabled>${ args.label }</button>
+        <h4>Large</h4>
+        <button class="jazz-btn jazz-btn-large">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-large jazz-btn--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-large jazz-btn--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-large jazz-btn--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-large" disabled>${ args.label }</button>
+    </div>
 `;
 
 export const DefaultTemplate = (args) => html`
@@ -35,10 +100,18 @@ export const UnstyledTemplate = (args) => html`<button class="jazz-btn jazz-btn-
 * Disabled mouse pointer should change
 
 <Canvas>
-    <Story name="Button States" args={{
+    <Story name="Button States By Variant" args={{
         label: "Label",
     }}>
-      {Template.bind({})}
+      {TemplateByVariant.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Button States By Size" args={{
+        label: "Label",
+    }}>
+      {TemplateBySize.bind({})}
     </Story>
 </Canvas>
 

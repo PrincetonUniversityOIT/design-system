@@ -1,45 +1,57 @@
+/*
+  Solid Button Styles
+*/
+
 .jazz-btn {
   font-family: jazz-theme(body-font);
-  font-size: 1.06rem;
-  line-height: .9;
+  font-size: px-to-rem(14);
+  font-style: normal;
+  font-weight: 600;
+  line-height: px-to-rem(16);
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: jazz-theme(button-primary-bgcolor);
+  color: jazz-theme(button-primary-color);
+
+  width: 100%;
+  height: jazz-theme(button-primary-medium);
+  border-radius: px-to-rem(2);
+  padding: px-to-rem(12) px-to-rem(24);
+
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: jazz-theme(button-primary-color);
-  background-color: jazz-theme(button-primary-bgcolor);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: 0;
-  border-radius: px-to-rem(2);
+
   cursor: pointer;
   display: inline-block;
-  font-weight: 400;
   margin-right: .5rem;
-  padding: .75rem 1.25rem;
+
   text-align: center;
   text-decoration: none;
-  width: 100%;
 }
 
 .jazz-btn.jazz-btn--hover, .jazz-btn:hover {
   color: jazz-theme(button-primary-hover-color);
   background-color: jazz-theme(button-primary-hover-bgcolor);
-  border-bottom: 0;
+  border: px-to-rem(1) solid jazz-theme(button-primary-hover-border-color);
   text-decoration: none;
 }
 
 .jazz-btn.jazz-btn--active, .jazz-btn:active {
   color: jazz-theme(button-primary-active-color);
   background-color: jazz-theme(button-primary-active-bgcolor);
+  border: px-to-rem(2) solid jazz-theme(button-primary-active-border-color);
 }
 
 .jazz-btn.jazz-btn--focus, .jazz-btn:focus {
+  color: jazz-theme(button-primary-focus-color);
+  background-color: jazz-theme(button-primary-focus-bgcolor);
   outline: px-to-rem(2) solid jazz-theme(focus-color);
   outline-offset: 0;
-}
-
-.jazz-btn:not([disabled]).jazz-focus, .jazz-btn:not([disabled]):focus {
-  outline-offset: .25rem;
 }
 
 .jazz-btn:disabled {
@@ -48,6 +60,54 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   pointer-events: none;
+}
+
+.jazz-btn:not([disabled]).jazz-focus, .jazz-btn:not([disabled]):focus {
+  outline-offset: .25rem;
+}
+
+/*
+  Outline Button Styles
+*/
+
+.jazz-btn-outline {
+  background-color: jazz-theme(button-primary-outline-bgcolor);
+  color: jazz-theme(button-primary-outline-color);
+  border: px-to-rem(1) solid jazz-theme(button-primary-outline-border-color);
+}
+
+.jazz-btn.jazz-btn-outline--hover, .jazz-btn-outline:hover {
+  color: jazz-theme(button-primary-outline-hover-color);
+  background-color: jazz-theme(button-primary-outline-hover-bgcolor);
+  border: px-to-rem(1) solid jazz-theme(button-primary-outline-hover-border-color);
+  text-decoration: none;
+}
+
+.jazz-btn.jazz-btn-outline--active, .jazz-btn-outline:active {
+  color: jazz-theme(button-primary-outline-active-color);
+  background-color: jazz-theme(button-primary-outline-active-bgcolor);
+  border: px-to-rem(2) solid jazz-theme(button-primary-outline-active-bgcolor);
+}
+
+.jazz-btn.jazz-btn-outline--focus, .jazz-btn-outline:focus {
+  color: jazz-theme(button-primary-outline-focus-color);
+  background-color: jazz-theme(button-primary-outline-focus-bgcolor);
+  border: px-to-rem(2) solid jazz-theme(button-primary-outline-focus-border-color);
+  outline: px-to-rem(2) solid jazz-theme(focus-color);
+  outline-offset: 0;
+}
+
+.jazz-btn.jazz-btn-outline:disabled {
+  color: jazz-theme(button-primary-outline-disabled-color);
+  background-color: jazz-theme(button-primary-ouline-disabled-bgcolor);
+  border: px-to-rem(1) solid jazz-theme(button-primary-outline-disabled-border-color);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  pointer-events: none;
+}
+
+.jazz-btn.jazz-btn-outline:not([disabled]).jazz-focus, .jazz-btn.jazz-btn-outline:not([disabled]):focus {
+  outline-offset: .25rem;
 }
 
 .jazz-btn.jazz-btn--unstyled {
@@ -63,6 +123,22 @@
   margin: 0;
   padding: 0;
   text-align: left;
+}
+
+/*
+  Button Sizes
+*/
+
+.jazz-btn-small {
+  height: jazz-theme(button-primary-small);
+}
+
+.jazz-btn-medium {
+  height: jazz-theme(button-primary-medium);
+}
+
+.jazz-btn-large {
+  height: jazz-theme(button-primary-large);
 }
 
 @media (min-width: 30em) {
