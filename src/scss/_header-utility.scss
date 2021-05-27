@@ -133,8 +133,7 @@ button.jazz-utility-header__nav-toggle {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100%;
-  background-color: currentColor;
-  color: jazz-theme(utility-header-logo-color);
+  background-color: jazz-theme(utility-header-logo-color);
   -webkit-mask-image: url(jazz-logos-path(pu-shield-white));
   mask-image: url(jazz-logos-path(pu-shield-white));
   width: px-to-rem(29); // 1.8em;
@@ -145,7 +144,7 @@ button.jazz-utility-header__nav-toggle {
   margin-right: px-to-rem(15);
 
   &:hover {
-    color: jazz-theme(utility-header-logo-color);
+    background-color: jazz-theme(utility-header-logo-color);
   }
 
   // hide the logo for smaller devices
