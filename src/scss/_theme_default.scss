@@ -58,6 +58,7 @@ $jazz-theme-feature: (
 
         button-primary-bgcolor: jazz-color(jazz-gray),
         button-primary-color: jazz-color(jazz-white),
+        button-primary-border-color: jazz-color(jazz-gray),
         button-primary-hover-bgcolor: jazz-color(jazz-white),
         button-primary-hover-color: jazz-color(jazz-gray),
         button-primary-hover-border-color: jazz-color(jazz-gray),
@@ -66,8 +67,10 @@ $jazz-theme-feature: (
         button-primary-active-border-color: jazz-color(jazz-gray),
         button-primary-focus-bgcolor: jazz-color(jazz-gray),
         button-primary-focus-color: jazz-color(jazz-white),
+        button-primary-focus-border-color: jazz-color(jazz-gray),
         button-primary-disabled-bgcolor: jazz-color(jazz-gray-20),
         button-primary-disabled-color: jazz-color(jazz-gray-60),
+        button-primary-disabled-border-color: jazz-color(jazz-gray-20),
 
         button-primary-outline-bgcolor: jazz-color(jazz-white),
         button-primary-outline-color: jazz-color(jazz-gray),
