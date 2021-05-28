@@ -1,0 +1,66 @@
+---
+layout: layout.njk
+title: themes
+tags: themes
+---
+<h1 class="jazz-page-title">Theme Support</h1>
+
+<p>The Design System provides basic themeing support that allows developers to easily modify color and font attributes for individual components (within reason)</p>
+
+<h2>Best Practices</h2>
+
+<p>Because the theming capabilities within the Design System are mostly limited to font and color, nest practices for theming tend to follow best practices for color and font use.</p>
+<ul>
+  <li>Try to utilize fonts that have similar font metrics and characteristics to the default fonts used within the Design System (Public Sans, Roboto & Lora</li>
+  <li>When replacing logos and images, utilize images that have the same size as those tha you are replacing. The value of the Design System diminishes significantly if styles need to be modified beyond what is provided in the theming capabilities.</li>
+  <li>Color contrast for your theme should align with accessibility best practeices.</li>
+  <li>Be consistent with how themes are applied to components. Components should look as though they belong together.</li>
+  <li>Although they do not need to be used as the primary colors in site designs, Princeton Orange & Black (or dark gray) should be part of every design.</li>
+</ul>
+
+
+<h2>Theme Capabilities</h2>
+
+<p>There are two options available for themes in the Design System:</p>
+<ol>
+  <li>CSS Themes - Theme changes are applied using CSS "variables" (a.k.a. CSS Custom Properties).</li>
+  <li>SCSS Themes - Theme changes are applied by modifying variables in the SCSS files used to build the Design System CSS style sheets.</li>
+</ol>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Advantages</th>
+    <th>Disadvantages</th>
+  </tr>
+  <tr>
+    <td>CSS Themes</td>
+    <td>
+      <ul>
+        <li>Simple</li>
+        <li>Fast</li>
+        <li>Does not require a build process</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>CSS variables (CSS Custom Properties) are not natively supported in all web browsers. Internet Explorer 11 is one example of an older browser that does not support CSS variables.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>SCSS Themes</td>
+    <td>
+      <ul>
+        <li>Can be integrated with existing build processes.</li>
+        <li>More explicit than using CSS variables.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Requires knowledge of front-end build processes and SCSS.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+

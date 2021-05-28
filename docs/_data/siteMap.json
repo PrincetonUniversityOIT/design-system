@@ -21,6 +21,16 @@
       ]
     },
     {
+      "label": "Themes",
+      "url": "/themes/",
+      "items": [
+        {
+          "label": "Theme Support",
+          "url": "/themes/"
+        }
+      ]
+    },
+    {
       "label": "Components",
       "url": "/components/",
       "items": [
