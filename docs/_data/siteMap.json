@@ -12,21 +12,15 @@
     },
     {
       "label": "Design",
-      "url": "/design/",
+      "url": "/design/themes",
       "items": [
+        {
+          "label": "Themes",
+          "url": "/design/themes"
+        },
         {
           "label": "Icons",
           "url": "/design/icons"
-        }
-      ]
-    },
-    {
-      "label": "Themes",
-      "url": "/themes/",
-      "items": [
-        {
-          "label": "Theme Support",
-          "url": "/themes/"
         }
       ]
     },
