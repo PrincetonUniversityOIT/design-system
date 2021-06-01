@@ -39,8 +39,6 @@ export const TemplateByVariant = (args) => html`
         <button class="jazz-btn jazz-btn-text--active">${ args.label }</button>
         <button class="jazz-btn jazz-btn-text--focus jazz-focus">${ args.label }</button>
         <button class="jazz-btn jazz-btn-text" disabled>${ args.label }</button>
-        <h4>Unstyled</h4>
-        <button class="jazz-btn jazz-btn--unstyled">${ args.label }</button>
     </div>
 `;
 
@@ -63,23 +61,23 @@ export const TemplateBySize = (args) => html`
         <h3>Focus</h3>
         <h3>Disabled</h3>
         <h4>Small</h4>
-        <button class="jazz-btn jazz-btn-small">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-small jazz-btn--hover">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-small jazz-btn--active">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-small jazz-btn--focus jazz-focus">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-small" disabled>${ args.label }</button>
+        <button class="jazz-btn jazz-btn-s-size">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-s-size jazz-btn--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-s-size jazz-btn--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-s-size jazz-btn--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-s-size" disabled>${ args.label }</button>
         <h4>Medium</h4>
-        <button class="jazz-btn jazz-btn-medium">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-medium jazz-btn--hover">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-medium jazz-btn--active">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-medium jazz-btn--focus jazz-focus">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-medium" disabled>${ args.label }</button>
+        <button class="jazz-btn jazz-btn-m-size">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-m-size jazz-btn--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-m-size jazz-btn--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-m-size jazz-btn--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-m-size" disabled>${ args.label }</button>
         <h4>Large</h4>
-        <button class="jazz-btn jazz-btn-large">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-large jazz-btn--hover">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-large jazz-btn--active">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-large jazz-btn--focus jazz-focus">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-large" disabled>${ args.label }</button>
+        <button class="jazz-btn jazz-btn-l-size">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-l-size jazz-btn--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-l-size jazz-btn--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-l-size jazz-btn--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-l-size" disabled>${ args.label }</button>
     </div>
 `;
 
@@ -96,8 +94,6 @@ export const FocusTemplate = (args) => html`
 `;
 
 export const DisabledTemplate = (args) => html`<button class="jazz-btn" disabled>${ args.label }</button>`;
-
-export const UnstyledTemplate = (args) => html`<button class="jazz-btn jazz-btn--unstyled">${ args.label }</button>`;
 
 # Buttons
 
@@ -158,13 +154,5 @@ export const UnstyledTemplate = (args) => html`<button class="jazz-btn jazz-btn-
         label: "Label",
     }}>
       {DisabledTemplate.bind({})}
-    </Story>
-</Canvas>
-
-<Canvas>
-    <Story name="Unstyled" args={{
-        label: "Label",
-    }}>
-      {UnstyledTemplate.bind({})}
     </Story>
 </Canvas>
