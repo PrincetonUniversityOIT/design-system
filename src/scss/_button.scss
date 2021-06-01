@@ -122,6 +122,8 @@
   text-decoration-color: jazz-theme(button-text-border-color);
   text-underline-offset: 3px;
   padding: px-to-rem(1);
+  height: 1.25rem;
+  width: max-content;
   border: 0;
 }
 
@@ -132,6 +134,8 @@
   text-decoration-color: jazz-theme(button-text-hover-border-color);
   text-underline-offset: 3px;
   padding: px-to-rem(1);
+  height: 1.25rem;
+  width: max-content;
   border: 0;
 }
 
@@ -143,6 +147,8 @@
   text-decoration-color: jazz-theme(button-text-active-border-color);
   text-underline-offset: 3px;
   padding: px-to-rem(1);
+  height: 1.25rem;
+  width: max-content;
   border: 0;
 }
 
@@ -156,6 +162,8 @@
   border: 0;
   outline: px-to-rem(2) solid jazz-theme(focus-color);
   outline-offset: 0;
+  height: 1.25rem;
+  width: max-content;
 }
 
 .jazz-btn.jazz-btn-text:disabled {
@@ -169,6 +177,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   pointer-events: none;
+  height: 1.25rem;
+  width: max-content;
 }
 
 .jazz-btn.jazz-btn-text:not([disabled]).jazz-focus, .jazz-btn.jazz-btn-text:not([disabled]):focus {
