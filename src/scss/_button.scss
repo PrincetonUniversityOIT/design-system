@@ -31,6 +31,12 @@
 
   text-align: center;
   text-decoration: none;
+
+  display: inline-flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  align-items: center;
+  gap: 5px;
 }
 
 .jazz-btn.jazz-btn--hover, .jazz-btn:hover {
@@ -115,7 +121,7 @@
   Text Button Styles
 */
 
-.jazz-btn-text {
+.jazz-btn.jazz-btn-text {
   background-color: transparent;
   color: jazz-theme(button-text-color);
   text-decoration: underline;
@@ -128,57 +134,29 @@
 }
 
 .jazz-btn.jazz-btn-text--hover, .jazz-btn-text:hover {
-  background-color: transparent;
   color: jazz-theme(button-text-hover-color);
-  text-decoration: underline;
   text-decoration-color: jazz-theme(button-text-hover-border-color);
-  text-underline-offset: 3px;
-  padding: px-to-rem(1);
-  height: 1.25rem;
-  width: max-content;
-  border: 0;
+  outline: none;
 }
 
 .jazz-btn.jazz-btn-text--active, .jazz-btn-text:active {
-  background-color: transparent;
   color: jazz-theme(button-text-active-color);
   font-weight: 600;
-  text-decoration: underline;
   text-decoration-color: jazz-theme(button-text-active-border-color);
-  text-underline-offset: 3px;
-  padding: px-to-rem(1);
-  height: 1.25rem;
-  width: max-content;
-  border: 0;
 }
 
 .jazz-btn.jazz-btn-text--focus, .jazz-btn-text:focus {
-  background-color: transparent;
   color: jazz-theme(button-text-focus-color);
-  text-decoration: underline;
   text-decoration-color: jazz-theme(button-text-focus-color);
-  text-underline-offset: 3px;
-  padding: px-to-rem(1);
-  border: 0;
   outline: px-to-rem(2) solid jazz-theme(focus-color);
   outline-offset: 0;
-  height: 1.25rem;
-  width: max-content;
 }
 
 .jazz-btn.jazz-btn-text:disabled {
-  background-color: transparent;
   color: jazz-theme(button-text-disabled-color);
-  text-decoration: underline;
   text-decoration-color: jazz-theme(button-text-disabled-border-color);
   text-underline-offset: 3px;
-  padding: px-to-rem(1);
-  border: 0;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   pointer-events: none;
-  height: 1.25rem;
-  width: max-content;
 }
 
 .jazz-btn.jazz-btn-text:not([disabled]).jazz-focus, .jazz-btn.jazz-btn-text:not([disabled]):focus {

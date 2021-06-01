@@ -35,10 +35,16 @@ export const TemplateByVariant = (args) => html`
         <button class="jazz-btn jazz-btn-outline" disabled>${ args.label }</button>
         <h4>Text</h4>
         <button class="jazz-btn jazz-btn-text">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-text--hover">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-text--active">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-text--focus jazz-focus">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-text" disabled>${ args.label }</button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--hover">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--active">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--focus jazz-focus">${ args.label }</button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text" disabled>${ args.label }</button>
+        <h4>With Icon</h4>
+        <button class="jazz-btn"><i class="jazz-icon jazz-icon-gear"></i> ${ args.label }</button>
+        <button class="jazz-btn jazz-btn--hover"><i class="jazz-icon jazz-icon-gear"></i> ${ args.label }</button>
+        <button class="jazz-btn jazz-btn--active"><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</button>
+        <button class="jazz-btn jazz-btn--focus jazz-focus"><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</button>
+        <button class="jazz-btn" disabled><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</button>
     </div>
 `;
 
