@@ -1,0 +1,83 @@
+---
+layout: layout.njk
+title: Buttons
+tags: components
+---
+
+{% from "../../_includes/example.njk" import example %}
+
+<h1 class="jazz-page-title">Buttons</h1>
+
+<p>
+Buttons allow users to take actions, and make choices, with a single tap.
+</p>
+
+<p>
+Use buttons to draw attention to important actions, such as “Add”, “Close”, “Cancel”, or “Save”.
+</p>
+
+{{ example("/components/buttons/buttons-example1", "Demonstration", "code-panel-demo") }}
+
+<h2>Best Practices</h2>
+
+<p>
+    Buttons should:
+</p>
+
+<ul>
+    <li>Be clearly and accurately labeled.</li>
+    <li>Lead with a strong, actionable verb.</li>
+    <li>Use established button colors appropriately. For example, only use a red button for an action that’s difficult or impossible to undo.</li>
+    <li>Prioritize the most important actions. Too many calls to action can cause confusion and make merchants unsure of what to do next.</li>
+    <li>Be positioned in consistent locations in the interface.</li>
+    <li>Buttons labels should indicate what will happen when the button is clicked.  Avoid the use of “Ok/Cancel”/“Yes/No” in favor of more descriptive labels.</li>
+    <li>For longer labels (multiple words), avoid using all uppercase labels.</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>Solid</h3>
+
+{{ example("/components/buttons/buttons-solid-example", "Solid Example", "code-panel-solid") }}
+
+<h3>Outline</h3>
+
+{{ example("/components/buttons/buttons-outline-example", "Outline Example", "code-panel-outline") }}
+
+<h3>Text</h3>
+
+{{ example("/components/buttons/buttons-text-example", "Text Example", "code-panel-text") }}
+
+<h2>Sizes &amp; Examples</h2>
+
+<h3>Small</h3>
+
+{{ example("/components/buttons/buttons-small-example", "Small Example", "code-panel-small") }}
+
+<h3>Medium</h3>
+
+{{ example("/components/buttons/buttons-medium-example", "Medium Example", "code-panel-medium") }}
+
+<h3>Large</h3>
+
+{{ example("/components/buttons/buttons-large-example", "Large Example", "code-panel-large") }}
+
+<h2>Buttons vs. Links</h2>
+
+<p>
+    Buttons are used primarily for actions, such as “Add”, “Close”, “Cancel”, or “Save”. Plain buttons, which look similar to links, are used for less important or less commonly used actions.
+</p>
+
+<p>
+    Links are used primarily for navigation, and usually appear within or directly following a sentence.
+</p>
+
+<p>
+    The HTML that renders for the Button and Link components carries meaning. Using these components intentionally and consistently results in:
+</p>
+
+<ul>
+    <li>A more inclusive experience for assistive technology users</li>
+    <li>A more cohesive visual experience for sighted users</li>
+</ul>
+
