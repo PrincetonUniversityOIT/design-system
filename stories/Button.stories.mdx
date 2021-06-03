@@ -34,17 +34,29 @@ export const TemplateByVariant = (args) => html`
         <button class="jazz-btn jazz-btn-outline--focus jazz-focus">${ args.label }</button>
         <button class="jazz-btn jazz-btn-outline" disabled>${ args.label }</button>
         <h4>Text</h4>
-        <button class="jazz-btn jazz-btn-text">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-text jazz-btn-text--hover">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-text jazz-btn-text--active">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-text jazz-btn-text--focus jazz-focus">${ args.label }</button>
-        <button class="jazz-btn jazz-btn-text jazz-btn-text" disabled>${ args.label }</button>
-        <h4>With Icon</h4>
+        <button class="jazz-btn jazz-btn-text"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--hover"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--active"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--focus jazz-focus"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text" disabled><span>${ args.label }</span></button>
+        <h4>Icon Before</h4>
         <button class="jazz-btn"><i class="jazz-icon jazz-icon-gear"></i> ${ args.label }</button>
         <button class="jazz-btn jazz-btn--hover"><i class="jazz-icon jazz-icon-gear"></i> ${ args.label }</button>
         <button class="jazz-btn jazz-btn--active"><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</button>
         <button class="jazz-btn jazz-btn--focus jazz-focus"><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</button>
         <button class="jazz-btn" disabled><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</button>
+        <h4>Icon After</h4>
+        <button class="jazz-btn">${ args.label }<i class="jazz-icon jazz-icon-gear"></i> </button>
+        <button class="jazz-btn jazz-btn--hover">${ args.label }<i class="jazz-icon jazz-icon-gear"></i> </button>
+        <button class="jazz-btn jazz-btn--active">${ args.label }<i class="jazz-icon jazz-icon-gear"></i></button>
+        <button class="jazz-btn jazz-btn--focus jazz-focus">${ args.label }<i class="jazz-icon jazz-icon-gear"></i></button>
+        <button class="jazz-btn" disabled>${ args.label }<i class="jazz-icon jazz-icon-gear"></i></button>
+        <h4>Text with Icon</h4>
+        <button class="jazz-btn jazz-btn-text"><span><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--hover"><span><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--active"><span><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text--focus jazz-focus"><span><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-text" disabled><span><i class="jazz-icon jazz-icon-gear"></i>${ args.label }</span></button>
     </div>
 `;
 
@@ -84,6 +96,24 @@ export const TemplateBySize = (args) => html`
         <button class="jazz-btn jazz-btn-l-size jazz-btn--active">${ args.label }</button>
         <button class="jazz-btn jazz-btn-l-size jazz-btn--focus jazz-focus">${ args.label }</button>
         <button class="jazz-btn jazz-btn-l-size" disabled>${ args.label }</button>
+        <h4>Small</h4>
+        <button class="jazz-btn jazz-btn-text jazz-btn-s-size"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-s-size jazz-btn--hover"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-s-size jazz-btn--active"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-s-size jazz-btn--focus jazz-focus"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-s-size" disabled><span>${ args.label }</span></button>
+        <h4>Medium</h4>
+        <button class="jazz-btn jazz-btn-text jazz-btn-m-size"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-m-size jazz-btn--hover"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-m-size jazz-btn--active"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-m-size jazz-btn--focus jazz-focus"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-m-size" disabled><span>${ args.label }</span></button>
+        <h4>Large</h4>
+        <button class="jazz-btn jazz-btn-text jazz-btn-l-size"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-l-size jazz-btn--hover"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-l-size jazz-btn--active"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-l-size jazz-btn--focus jazz-focus"><span>${ args.label }</span></button>
+        <button class="jazz-btn jazz-btn-text jazz-btn-l-size" disabled><span>${ args.label }</span></button>
     </div>
 `;
 
@@ -91,15 +121,34 @@ export const DefaultTemplate = (args) => html`
     <button class="jazz-btn">${ args.label }</button>
 `;
 
-export const HoverTemplate = (args) => html`<button class="jazz-btn jazz-btn--hover">${ args.label }</button>`;
+export const OutlineTemplate = (args) => html`<button class="jazz-btn jazz-btn-outline">${ args.label }</button>`;
 
-export const ActiveTemplate = (args) => html`<button class="jazz-btn jazz-btn--active">${ args.label }</button>`;
+export const TextTemplate = (args) => html`<button class="jazz-btn jazz-btn-text">${ args.label }</button>`;
 
-export const FocusTemplate = (args) => html`
-    <button class="jazz-btn jazz-btn--focus jazz-focus">${ args.label }</button>
+
+export const SideBySideTemplate = (args) => html`
+    <h1>Small</h1>
+    <button class="jazz-btn jazz-btn-s-size">${ args.label }</button>
+    <button class="jazz-btn jazz-btn-outline jazz-btn-s-size">${ args.label }</button>
+    <button class="jazz-btn jazz-btn-text jazz-btn-s-size"><span>${ args.label }</span></button>
+    <button class="jazz-btn jazz-btn-text jazz-btn-s-size"><span>${ args.label }</span></button>
+    <h1>Medium (Default)</h1>
+    <button class="jazz-btn">${ args.label }</button>
+    <button class="jazz-btn jazz-btn-outline">${ args.label }</button>
+    <button class="jazz-btn jazz-btn-text"><span>${ args.label }</span></button>
+    <button class="jazz-btn jazz-btn-text"><span>${ args.label }</span></button>
+    <h1>Large</h1>
+    <button class="jazz-btn jazz-btn-l-size">${ args.label }</button>
+    <button class="jazz-btn jazz-btn-outline jazz-btn-l-size">${ args.label }</button>
+    <button class="jazz-btn jazz-btn-text jazz-btn-l-size"><span>${ args.label }</span></button>
+    <button class="jazz-btn jazz-btn-text jazz-btn-l-size"><span>${ args.label }</span></button>
 `;
 
-export const DisabledTemplate = (args) => html`<button class="jazz-btn" disabled>${ args.label }</button>`;
+export const LongButtonsTemplate = (args) => html`
+    <button class="jazz-btn">This is a really long button</button>
+    <button class="jazz-btn jazz-btn-outline">This is an even longer button</button>
+    <button class="jazz-btn jazz-btn-text"><span>This is the longest button ever</span></button>
+`;
 
 # Buttons
 
@@ -132,33 +181,33 @@ export const DisabledTemplate = (args) => html`<button class="jazz-btn" disabled
 </Canvas>
 
 <Canvas>
-    <Story name="Hover" args={{
+    <Story name="Outline" args={{
         label: "Label",
     }}>
-      {HoverTemplate.bind({})}
+      {OutlineTemplate.bind({})}
     </Story>
 </Canvas>
 
 <Canvas>
-    <Story name="Active" args={{
+    <Story name="Text" args={{
         label: "Label",
     }}>
-      {ActiveTemplate.bind({})}
+      {TextTemplate.bind({})}
     </Story>
 </Canvas>
 
 <Canvas>
-    <Story name="Focus" args={{
+    <Story name="Side By Side" args={{
         label: "Label",
     }}>
-      {FocusTemplate.bind({})}
+      {SideBySideTemplate.bind({})}
     </Story>
 </Canvas>
 
 <Canvas>
-    <Story name="Disabled" args={{
+    <Story name="Long Buttons" args={{
         label: "Label",
     }}>
-      {DisabledTemplate.bind({})}
+      {LongButtonsTemplate.bind({})}
     </Story>
 </Canvas>

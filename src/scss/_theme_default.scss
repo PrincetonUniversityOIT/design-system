@@ -57,9 +57,9 @@ $jazz-theme-feature: (
         button-size-large: px-to-rem(43),
         button-size-default: px-to-rem(40),
 
+        // Default buttons always have the same border color with the background color by default
         button-bgcolor: jazz-color(jazz-gray),
         button-color: jazz-color(jazz-white),
-        button-border-color: jazz-color(jazz-gray),
         button-hover-bgcolor: jazz-color(jazz-white),
         button-hover-color: jazz-color(jazz-gray),
         button-hover-border-color: jazz-color(jazz-gray),
@@ -89,6 +89,7 @@ $jazz-theme-feature: (
         button-outline-disabled-color: jazz-color(jazz-gray-60),
         button-outline-disabled-border-color: jazz-color(jazz-gray-60),
 
+        // Text buttons always have transparent background colors
         button-text-color: jazz-color(jazz-gray),
         button-text-border-color: jazz-color(jazz-gray),
         button-text-hover-color: jazz-color(jazz-gray),
