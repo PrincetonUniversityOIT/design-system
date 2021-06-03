@@ -1,0 +1,121 @@
+---
+layout: layout.njk
+title: themes
+tags: themes
+---
+<h1 class="jazz-page-title">Themes</h1>
+
+<p>The Design System provides basic theming support that allows developers to easily modify color and font attributes for individual components (within reason).</p>
+
+<h2>Best Practices</h2>
+
+<p>Because the theming capabilities within the Design System are mostly limited to font and color, best practices for theming tend to follow best practices for color and font use.</p>
+<ul>
+  <li>Try to utilize fonts that have similar font metrics and characteristics to the default fonts used within the Design System (Public Sans, Roboto & Lora).</li>
+  <li>When replacing logos and images, utilize images that have the same size as those tha you are replacing. The value of the Design System diminishes significantly if styles need to be modified beyond what is provided in the theming capabilities.</li>
+  <li>Color contrast for your theme should align with accessibility best practeices.</li>
+  <li>Be consistent with how themes are applied to components. Components should look as though they belong together.</li>
+  <li>Although they do not need to be used as the primary colors in site designs, Princeton Orange & Black (or dark gray) should be part of every design.</li>
+</ul>
+
+
+<h2>Theme Capabilities</h2>
+
+<p>There are two options available for themes in the Design System:</p>
+<ol>
+  <li>CSS Themes - Theme changes are applied using CSS "variables" (a.k.a. CSS Custom Properties).</li>
+  <li>SCSS Themes - Theme changes are applied by modifying variables in the SCSS files used to build the Design System CSS style sheets.</li>
+</ol>
+
+<table class="jazz-table__bordered">
+  <tr>
+    <th style="width: 16%;"></th>
+    <th style="width: 42%;">Advantages</th>
+    <th style="width: 42%;">Disadvantages</th>
+  </tr>
+  <tr>
+    <td>CSS Themes</td>
+    <td>
+      <ul>
+        <li>Simple</li>
+        <li>Fast</li>
+        <li>Does not require a build process</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>CSS variables (CSS Custom Properties) are not natively supported in all web browsers. Internet Explorer 11 is one example of an older browser that does not support CSS variables.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>SCSS Themes</td>
+    <td>
+      <ul>
+        <li>Can be integrated with existing build processes.</li>
+        <li>More explicit than using CSS variables.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Requires knowledge of front-end build processes and SCSS.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h2>CSS Themes</h2>
+
+<p>Using CSS variables to modify the theme is by far the easiest way to create a custom theme for the Design System.  The Design System style sheets expose a number of variables that can be used to control colors, background colors, fonts, and logos that are used within the component designs.  Using CSS variables (CSS Custom Properties), developers can override these values to meet their needs.</p>
+
+<p>To utilize the default theme, there is no additional configuration needed.  Default values are included as part of the CSS stylesheet and will be applied if no other variable configurations are provided by the developer.</p>
+
+<p>If you wish to override the theme, provide the CSS variable overrides after you import the CSS stylesheet into your page.  Below is an example that demonstrates how to override the background color.</p>
+
+{% highlight "html" %}
+<link rel="stylesheet" href="jazz_custom.css">
+<style>
+  :root {
+    --jazz-header-bgcolor: var(--jazz-gray);
+    --jazz-header-color: var(--jazz-white);
+  }
+</style>
+{% endhighlight %}
+
+<p>See the “CSS Theme Variables” section within each component to see which aspects of the component design that can be controlled through the theming capabilities built into the Design System.</p>
+
+<p>The <span class="code">jazz_custom.css</span> must be used if you plan to override CSS variables.  Other CSS stylesheets provided with the design system do not support CSS variables.  If you have no intention of overriding CSS variables, then you can use one of the other stylesheets (<span class="code">jazz_serif.css</span> or <span class="code">jazz_sans.css</span>, depending on your font preference).  The <span class="code">jazz_custom.css</span> and <span class="code">jazz_sans.css</span> stylesheets are equivalent if you do not override any of the CSS variables.</p>
+
+<p>For convenience, CSS variables have been provided for each color in the Design System palette.  See the “Colors” section of this documentation for more information about the color variables and how to use them.</p>
+
+<h2>SCSS Themes</h2>
+<p>Using SCSS Theme capabilities is useful for developers that already have a front-end build process in place for their application/site, and they are planning on integrating or supplementing the Design System styles anyway.</p>
+
+<p>The Design System root SCSS files import the theme configuration:</p>
+
+{% highlight "scss" %}
+@import 'theme_default';
+{% endhighlight %}
+
+<p>You can replace this file with a configuration file that contains your own theme preferences.  The recommended approach for doing this is to copy the file, rename it, and modify it to your liking:</p>
+
+{% highlight "scss" %}
+@import 'theme_my_customized_theme';
+{% endhighlight %}
+
+<p>A couple of functions are provided with the Design System to simplify references to Design System colors and fonts: </p>
+
+<ul>
+  <li><span class="code">jazz-color($color_name)</span> - where <span class="code">$color-name</span> is one of the colors from the Design System palette.</li>
+  <li><span class="code">jazz-font($font_name)</span> - where <span class="code">$font-name</span> is one of the fonts from the Design System palette.</li>
+</ul>
+
+<p>To change theme properties in the custom SCSS theme file, simply change the value in the SCSS map:</p>
+
+{% highlight "scss" %}
+$jazz-theme-feature: (
+  ...
+  accordion-header-bgcolor: jazz-color(jazz-green),
+  ...
+);
+{% endhighlight %}
