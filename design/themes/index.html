@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getting Started - Princeton Design System</title>
+    <title>themes - Princeton Design System</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/design-system/jazz_sans.css">
     <link rel="stylesheet" href="/design-system/jazz_fonts.css">
@@ -120,18 +120,18 @@
             <div class="jazz-menu__main-menu-navbar">
                 <button class="jazz-menu__menu-toggle jazz-menu__menu-toggle-absolute" aria-expanded="false" aria-label="Navigation Menu Toggle">Menu<i class="jazz-icon jazz-icon-menu" aria-hidden="true"></i></button>
                 <div  class="jazz-menu__nav-container">
-                    <ul class="jazz-menubar" role="list"><li><a href="/design-system/getting_started/"  aria-current="page">Getting Started</a>
+                    <ul class="jazz-menubar" role="list"><li><a href="/design-system/getting_started/" >Getting Started</a>
                              <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
                                  <span class="jazz-visually-hidden">Getting Started</span>
                              </button>
                              
                                 <ul>
                                     
-                                        <li><a href="/design-system/getting_started/"  aria-current="page" class="is-active"  >About The Design System</a></li>
+                                        <li><a href="/design-system/getting_started/"  >About The Design System</a></li>
                                     
                                 </ul>
                              
-                        </li><li><a href="/design-system/design/" >Design</a>
+                        </li><li><a href="/design-system/design/"  aria-current="page">Design</a>
                              <button type="button" class="jazz-menu__submenu-toggle" aria-expanded="false">
                                  <span class="jazz-visually-hidden">Design</span>
                              </button>
@@ -196,11 +196,15 @@
                 
                 
                 
-                <li  class="jazz-sidebar-menu__list-item--active">
-                    <a href="/design-system/getting_started/"  aria-current="page" class="is-active">About The Design System<span class="jazz-visually-hidden">, (current page)</span></a>
+                
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/design/themes" >Themes<span class="jazz-visually-hidden">, (current page)</span></a>
                 </li>
                 
-                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/design/icons" >Icons<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
                 
                 
                 
@@ -213,62 +217,114 @@
             </ul>
         </nav>
         <div class="core-content">
-            
-<h1 class="jazz-page-title">Getting Started</h1>
+            <h1 class="jazz-page-title">Themes</h1>
 
-<h2>Installation</h2>
+<p>The Design System provides basic theming support that allows developers to easily modify color and font attributes for individual components (within reason).</p>
 
-<p>
-    This section describes the Jazz Design System installation process for projects that use
-    <a href="https://docs.npmjs.com/about-npm">NPM</a> (Node Package Manager) to manage project dependencies.
-</p>
-<p>
-    In your javascript project, run the following command to install the Jazz Design System libraries into your project:
-</p>
-<pre class="language-javascript"><code class="language-javascript">npm install @princeton<span class="token operator">-</span>design<span class="token operator">/</span>design<span class="token operator">-</span>system@<span class="token number">1.0</span><span class="token number">.26</span></code></pre>
+<h2>Best Practices</h2>
 
-<p>
-    The Jazz Design System project structure should accommodate most use cases.  Some options are described below:
-</p>
+<p>Because the theming capabilities within the Design System are mostly limited to font and color, best practices for theming tend to follow best practices for color and font use.</p>
 <ul>
-    <li>As part of your build process, copy the appropriate files (i.e. resources folder, jazz_serif.css,
-        jazz_fonts.css, and jazz_behavior.js) from the Jazz Design System node_modules folder into the appropriate
-        location in your project.  Then follow the steps in the “Basic Installation” to link the CSS and javascript
-        resources into your project.
-    </li>
-    <li>
-        If you plan to integrate the Jazz Design System with other resources in your build pipeline, you would be most
-        interested in source code provided in the “src/scss” and “src/js” folders.  It is recommended that
-        customizations to the Design System be made alongside Design System resources as opposed to directly
-        modifying the Design System sources themselves.
-    </li>
+  <li>Try to utilize fonts that have similar font metrics and characteristics to the default fonts used within the Design System (Public Sans, Roboto & Lora).</li>
+  <li>When replacing logos and images, utilize images that have the same size as those tha you are replacing. The value of the Design System diminishes significantly if styles need to be modified beyond what is provided in the theming capabilities.</li>
+  <li>Color contrast for your theme should align with accessibility best practeices.</li>
+  <li>Be consistent with how themes are applied to components. Components should look as though they belong together.</li>
+  <li>Although they do not need to be used as the primary colors in site designs, Princeton Orange & Black (or dark gray) should be part of every design.</li>
 </ul>
 
-<h2>Installation Without NPM</h2>
 
-<p>
-    This section describes the installation process for projects that are not using NPM to manage project dependencies.
-</p>
+<h2>Theme Capabilities</h2>
 
+<p>There are two options available for themes in the Design System:</p>
 <ol>
-    <li><a href="https://github.com/PrincetonUniversityOIT/design-system/releases">Download</a> the desired release bundle (jazz.zip file).</li>
-    <li>Extract (unzip) the contents of the release bundle into the folder alongside the rest of the web assets that
-        are to be delivered with your application or web site.</li>
-    <li>Link the styles and fonts CSS files into your web page.  You may need to adjust the “href” value to suit
-        your specific case:</li>
+  <li>CSS Themes - Theme changes are applied using CSS "variables" (a.k.a. CSS Custom Properties).</li>
+  <li>SCSS Themes - Theme changes are applied by modifying variables in the SCSS files used to build the Design System CSS style sheets.</li>
 </ol>
 
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/design-system/jazz_serif.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/design-system/jazz_fonts.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/design-system/prism-atom-dark.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<table class="jazz-table__bordered">
+  <tr>
+    <th style="width: 16%;"></th>
+    <th style="width: 42%;">Advantages</th>
+    <th style="width: 42%;">Disadvantages</th>
+  </tr>
+  <tr>
+    <td>CSS Themes</td>
+    <td>
+      <ul>
+        <li>Simple</li>
+        <li>Fast</li>
+        <li>Does not require a build process</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>CSS variables (CSS Custom Properties) are not natively supported in all web browsers. Internet Explorer 11 is one example of an older browser that does not support CSS variables.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>SCSS Themes</td>
+    <td>
+      <ul>
+        <li>Can be integrated with existing build processes.</li>
+        <li>More explicit than using CSS variables.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Requires knowledge of front-end build processes and SCSS.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-Link the script file in at the bottom of your web page body (<body>) and execute the logic to enable the Princeton Design System:
+<h2>CSS Themes</h2>
 
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/design-system/jazz_behavior.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-    PrincetonDesignSystem<span class="token punctuation">.</span><span class="token function">enable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>Using CSS variables to modify the theme is by far the easiest way to create a custom theme for the Design System.  The Design System style sheets expose a number of variables that can be used to control colors, background colors, fonts, and logos that are used within the component designs.  Using CSS variables (CSS Custom Properties), developers can override these values to meet their needs.</p>
 
+<p>To utilize the default theme, there is no additional configuration needed.  Default values are included as part of the CSS stylesheet and will be applied if no other variable configurations are provided by the developer.</p>
+
+<p>If you wish to override the theme, provide the CSS variable overrides after you import the CSS stylesheet into your page.  Below is an example that demonstrates how to override the background color.</p>
+
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz_custom.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">:root</span> <span class="token punctuation">{</span>
+    <span class="token property">--jazz-header-bgcolor</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--jazz-gray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">--jazz-header-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--jazz-white<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+
+<p>See the “CSS Theme Variables” section within each component to see which aspects of the component design that can be controlled through the theming capabilities built into the Design System.</p>
+
+<p>The <span class="code">jazz_custom.css</span> must be used if you plan to override CSS variables.  Other CSS stylesheets provided with the design system do not support CSS variables.  If you have no intention of overriding CSS variables, then you can use one of the other stylesheets (<span class="code">jazz_serif.css</span> or <span class="code">jazz_sans.css</span>, depending on your font preference).  The <span class="code">jazz_custom.css</span> and <span class="code">jazz_sans.css</span> stylesheets are equivalent if you do not override any of the CSS variables.</p>
+
+<p>For convenience, CSS variables have been provided for each color in the Design System palette.  See the “Colors” section of this documentation for more information about the color variables and how to use them.</p>
+
+<h2>SCSS Themes</h2>
+<p>Using SCSS Theme capabilities is useful for developers that already have a front-end build process in place for their application/site, and they are planning on integrating or supplementing the Design System styles anyway.</p>
+
+<p>The Design System root SCSS files import the theme configuration:</p>
+
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@import</span> <span class="token string">'theme_default'</span><span class="token punctuation">;</span></code></pre>
+
+<p>You can replace this file with a configuration file that contains your own theme preferences.  The recommended approach for doing this is to copy the file, rename it, and modify it to your liking:</p>
+
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@import</span> <span class="token string">'theme_my_customized_theme'</span><span class="token punctuation">;</span></code></pre>
+
+<p>A couple of functions are provided with the Design System to simplify references to Design System colors and fonts: </p>
+
+<ul>
+  <li><span class="code">jazz-color($color_name)</span> - where <span class="code">$color-name</span> is one of the colors from the Design System palette.</li>
+  <li><span class="code">jazz-font($font_name)</span> - where <span class="code">$font-name</span> is one of the fonts from the Design System palette.</li>
+</ul>
+
+<p>To change theme properties in the custom SCSS theme file, simply change the value in the SCSS map:</p>
+
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$jazz-theme-feature</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  ...
+  <span class="token property">accordion-header-bgcolor</span><span class="token punctuation">:</span> <span class="token function">jazz-color</span><span class="token punctuation">(</span>jazz-green<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  ...
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
         </div>
     </div>

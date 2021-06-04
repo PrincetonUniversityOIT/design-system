@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buttons - Princeton Design System</title>
+    <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/design-system/jazz_sans.css">
     <link rel="stylesheet" href="/design-system/jazz_fonts.css">
     <link rel="stylesheet" href="/design-system/jazz_curated_icons.css">
@@ -43,6 +44,10 @@
             background-color: #ddd;
             font-family: monospace;
         }
+
+        p, ol, ul {
+            line-height: 1.5em;
+        }
     </style>
 </head>
 <body onload="registerAllIframes()">
@@ -80,7 +85,7 @@
     <div class="jazz-header-break"></div>
         <div class="jazz-header__site-branding">
         <div class="jazz-container jazz-header__site-branding-contents">
-            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/design-system/logos/shield.svg" /></a>
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/design-system/logos/pu-shield.svg" /></a>
             <div class="jazz-header__site-branding-info">
                 <div class="jazz-header__site-branding-name">
                     <a href="/" title="Home" rel="home">Jazz</a>
@@ -95,7 +100,7 @@
         <div class="jazz-container">
         <div class="jazz-header-collapsed-container">
            <div class="jazz-header-collapsed__pu-branding">
-               <a href="javascript:void(0);" title="Princeton University"><img src="/logos/shield.svg" alt="Princeton University" /></a>
+               <a href="javascript:void(0);" title="Princeton University"><img src="/design-system/logos/pu-shield.svg" alt="Princeton University" /></a>
            </div>
            <div class="jazz-header-collapsed__site-branding--divider">
            </div>
@@ -132,6 +137,8 @@
                              </button>
                              
                                 <ul>
+                                    
+                                        <li><a href="/design-system/design/themes"  >Themes</a></li>
                                     
                                         <li><a href="/design-system/design/icons"  >Icons</a></li>
                                     
@@ -227,9 +234,174 @@
         </nav>
         <div class="core-content">
             
-<h2 class="jazz-page-title">Buttons</h2>
 
-How should buttons be used?
+
+<h1 class="jazz-page-title">Buttons</h1>
+
+<p>
+Buttons allow users to take actions, and make choices, with a single tap.
+</p>
+
+<p>
+Use buttons to draw attention to important actions, such as “Add”, “Close”, “Cancel”, or “Save”.
+</p>
+
+
+
+<iframe src="/design-system/components/buttons/buttons-example1" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-demo">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-demo">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Best Practices</h2>
+
+<p>
+    Buttons should:
+</p>
+
+<ul>
+    <li>Be clearly and accurately labeled.</li>
+    <li>Lead with a strong, actionable verb.</li>
+    <li>Use established button colors appropriately. For example, only use a red button for an action that’s difficult or impossible to undo.</li>
+    <li>Prioritize the most important actions. Too many calls to action can cause confusion and make merchants unsure of what to do next.</li>
+    <li>Be positioned in consistent locations in the interface.</li>
+    <li>Buttons labels should indicate what will happen when the button is clicked.  Avoid the use of “Ok/Cancel”/“Yes/No” in favor of more descriptive labels.</li>
+    <li>For longer labels (multiple words), avoid using all uppercase labels.</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>Solid</h3>
+
+
+
+<iframe src="/design-system/components/buttons/buttons-solid-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-solid">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-solid">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Outline</h3>
+
+
+
+<iframe src="/design-system/components/buttons/buttons-outline-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-outline">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-outline">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn jazz-btn-outline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Text</h3>
+
+
+
+<iframe src="/design-system/components/buttons/buttons-text-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-text">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-text">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn jazz-btn-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Sizes &amp; Examples</h2>
+
+<h3>Small</h3>
+
+
+
+<iframe src="/design-system/components/buttons/buttons-small-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-small">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-small">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn jazz-btn-s-size<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Medium</h3>
+
+
+
+<iframe src="/design-system/components/buttons/buttons-medium-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-medium">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-medium">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn jazz-btn-m-size<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Large</h3>
+
+
+
+<iframe src="/design-system/components/buttons/buttons-large-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-large">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-large">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn jazz-btn-l-size<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h2>Buttons vs. Links</h2>
+
+<p>
+    Buttons are used primarily for actions, such as “Add”, “Close”, “Cancel”, or “Save”. Plain buttons, which look similar to links, are used for less important or less commonly used actions.
+</p>
+
+<p>
+    Links are used primarily for navigation, and usually appear within or directly following a sentence.
+</p>
+
+<p>
+    The HTML that renders for the Button and Link components carries meaning. Using these components intentionally and consistently results in:
+</p>
+
+<ul>
+    <li>A more inclusive experience for assistive technology users</li>
+    <li>A more cohesive visual experience for sighted users</li>
+</ul>
+
 
         </div>
     </div>
@@ -243,6 +415,7 @@ How should buttons be used?
                     <li><a href="javascript:void(0);">Contact Us</a></li>
                     <li><a href="javascript:void(0);">About Us</a></li>
                     <li><a href="javascript:void(0);">News</a></li>
+                    <li><a href="javascript:void(0);">Data Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-sm-3 col-xs-12">
@@ -270,22 +443,21 @@ How should buttons be used?
             </div>
         </div>
     </div>
-    <div class="jazz-footer__subfooter">
-        <div class="jazz-container">
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <a href="javascript:void(0)">Accessibility</a>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    &copy; 2020 The Trustees of Princeton University
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/design-system/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
-                </div>
+    <div class="jazz-subfooter">
+        <div class="jazz-subfooter__layout">
+            <div>
+                <a href="https://accessibility.princeton.edu/help">Accessibility</a>
+            </div>
+            <div class="jazz-subfooter__copyright">
+                <i class="jazz-icon jazz-icon-copyright"><span class="jazz-visually-hidden">&copy;</span></i> 2021 The Trustees of Princeton University
+            </div>
+            <div class="jazz-subfooter__logo">
+                <a href="https://www.princeton.edu"><img src="/logos/pu-logo-stacked.svg" alt="Princeton University Home Page" /></a>
             </div>
         </div>
     </div>
 </footer>
+
 <script src="/design-system/jazz_behavior.js"></script>
 <script type="text/javascript">
     PrincetonDesignSystem.enable();

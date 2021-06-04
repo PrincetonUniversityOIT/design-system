@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Icons - Princeton Design System</title>
+    <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/design-system/jazz_sans.css">
     <link rel="stylesheet" href="/design-system/jazz_fonts.css">
     <link rel="stylesheet" href="/design-system/jazz_curated_icons.css">
@@ -43,6 +44,10 @@
             background-color: #ddd;
             font-family: monospace;
         }
+
+        p, ol, ul {
+            line-height: 1.5em;
+        }
     </style>
 </head>
 <body onload="registerAllIframes()">
@@ -80,7 +85,7 @@
     <div class="jazz-header-break"></div>
         <div class="jazz-header__site-branding">
         <div class="jazz-container jazz-header__site-branding-contents">
-            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/design-system/logos/shield.svg" /></a>
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="/design-system/logos/pu-shield.svg" /></a>
             <div class="jazz-header__site-branding-info">
                 <div class="jazz-header__site-branding-name">
                     <a href="/" title="Home" rel="home">Jazz</a>
@@ -95,7 +100,7 @@
         <div class="jazz-container">
         <div class="jazz-header-collapsed-container">
            <div class="jazz-header-collapsed__pu-branding">
-               <a href="javascript:void(0);" title="Princeton University"><img src="/logos/shield.svg" alt="Princeton University" /></a>
+               <a href="javascript:void(0);" title="Princeton University"><img src="/design-system/logos/pu-shield.svg" alt="Princeton University" /></a>
            </div>
            <div class="jazz-header-collapsed__site-branding--divider">
            </div>
@@ -132,6 +137,8 @@
                              </button>
                              
                                 <ul>
+                                    
+                                        <li><a href="/design-system/design/themes"  >Themes</a></li>
                                     
                                         <li><a href="/design-system/design/icons"  >Icons</a></li>
                                     
@@ -190,6 +197,10 @@
                 
                 
                 
+                
+                <li  class="jazz-sidebar-menu__list-item">
+                    <a href="/design-system/design/themes" >Themes<span class="jazz-visually-hidden">, (current page)</span></a>
+                </li>
                 
                 <li  class="jazz-sidebar-menu__list-item">
                     <a href="/design-system/design/icons" >Icons<span class="jazz-visually-hidden">, (current page)</span></a>
@@ -1008,6 +1019,7 @@ To get more Phosphor icons you can go to the Phosphor site: <a href="https://pho
                     <li><a href="javascript:void(0);">Contact Us</a></li>
                     <li><a href="javascript:void(0);">About Us</a></li>
                     <li><a href="javascript:void(0);">News</a></li>
+                    <li><a href="javascript:void(0);">Data Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-sm-3 col-xs-12">
@@ -1035,22 +1047,21 @@ To get more Phosphor icons you can go to the Phosphor site: <a href="https://pho
             </div>
         </div>
     </div>
-    <div class="jazz-footer__subfooter">
-        <div class="jazz-container">
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <a href="javascript:void(0)">Accessibility</a>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    &copy; 2020 The Trustees of Princeton University
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="/design-system/icons/pu-logo-stacked-white.svg" alt="Princeton University" /></a>
-                </div>
+    <div class="jazz-subfooter">
+        <div class="jazz-subfooter__layout">
+            <div>
+                <a href="https://accessibility.princeton.edu/help">Accessibility</a>
+            </div>
+            <div class="jazz-subfooter__copyright">
+                <i class="jazz-icon jazz-icon-copyright"><span class="jazz-visually-hidden">&copy;</span></i> 2021 The Trustees of Princeton University
+            </div>
+            <div class="jazz-subfooter__logo">
+                <a href="https://www.princeton.edu"><img src="/logos/pu-logo-stacked.svg" alt="Princeton University Home Page" /></a>
             </div>
         </div>
     </div>
 </footer>
+
 <script src="/design-system/jazz_behavior.js"></script>
 <script type="text/javascript">
     PrincetonDesignSystem.enable();
