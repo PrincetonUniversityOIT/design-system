@@ -1,1 +1,1 @@
-<button class="jazz-btn jazz-btn-text">Label</button>
+<button class="jazz-btn jazz-btn-text"><span>Label</span></button>

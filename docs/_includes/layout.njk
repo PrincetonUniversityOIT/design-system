@@ -8,6 +8,7 @@ title: Princeton Design System
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Princeton Design System</title>
+    <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="{{ '/jazz_sans.css' | url }}">
     <link rel="stylesheet" href="{{ '/jazz_fonts.css' | url }}">
     <link rel="stylesheet" href="{{ '/jazz_curated_icons.css' | url }}">
@@ -46,6 +47,10 @@ title: Princeton Design System
             background-color: #ddd;
             font-family: monospace;
         }
+
+        p, ol, ul {
+            line-height: 1.5em;
+        }
     </style>
 </head>
 <body onload="registerAllIframes()">
@@ -83,7 +88,7 @@ title: Princeton Design System
     <div class="jazz-header-break"></div>
         <div class="jazz-header__site-branding">
         <div class="jazz-container jazz-header__site-branding-contents">
-            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="{{ '/logos/shield.svg' | url }}" /></a>
+            <a href="javascript:void(0)" title="Home" rel="home" tabindex="-1" aria-hidden="true" class="jazz-header__site-branding-home-link"><img src="{{ '/logos/pu-shield.svg' | url }}" /></a>
             <div class="jazz-header__site-branding-info">
                 <div class="jazz-header__site-branding-name">
                     <a href="/" title="Home" rel="home">Jazz</a>
@@ -98,7 +103,7 @@ title: Princeton Design System
         <div class="jazz-container">
         <div class="jazz-header-collapsed-container">
            <div class="jazz-header-collapsed__pu-branding">
-               <a href="javascript:void(0);" title="Princeton University"><img src="/logos/shield.svg" alt="Princeton University" /></a>
+               <a href="javascript:void(0);" title="Princeton University"><img src="{{ '/logos/pu-shield.svg' | url }}" alt="Princeton University" /></a>
            </div>
            <div class="jazz-header-collapsed__site-branding--divider">
            </div>
@@ -176,6 +181,7 @@ title: Princeton Design System
                     <li><a href="javascript:void(0);">Contact Us</a></li>
                     <li><a href="javascript:void(0);">About Us</a></li>
                     <li><a href="javascript:void(0);">News</a></li>
+                    <li><a href="javascript:void(0);">Data Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-sm-3 col-xs-12">
@@ -203,22 +209,21 @@ title: Princeton Design System
             </div>
         </div>
     </div>
-    <div class="jazz-footer__subfooter">
-        <div class="jazz-container">
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <a href="javascript:void(0)">Accessibility</a>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    &copy; 2020 The Trustees of Princeton University
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <a href="https://www.princeton.edu" target="_blank" class="jazz-no-icon"><img class="jazz-footer__logo" src="{{ '/icons/pu-logo-stacked-white.svg' | url }}" alt="Princeton University" /></a>
-                </div>
+    <div class="jazz-subfooter">
+        <div class="jazz-subfooter__layout">
+            <div>
+                <a href="https://accessibility.princeton.edu/help">Accessibility</a>
+            </div>
+            <div class="jazz-subfooter__copyright">
+                <i class="jazz-icon jazz-icon-copyright"><span class="jazz-visually-hidden">&copy;</span></i> 2021 The Trustees of Princeton University
+            </div>
+            <div class="jazz-subfooter__logo">
+                <a href="https://www.princeton.edu"><img src="/logos/pu-logo-stacked.svg" alt="Princeton University Home Page" /></a>
             </div>
         </div>
     </div>
 </footer>
+
 <script src="{{ '/jazz_behavior.js' | url }}"></script>
 <script type="text/javascript">
     PrincetonDesignSystem.enable();

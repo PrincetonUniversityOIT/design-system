@@ -43,6 +43,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "dist/icons": "icons" });
     eleventyConfig.addPassthroughCopy({ "dist/img": "img" });
     eleventyConfig.addPassthroughCopy({ "dist/logos": "logos" });
+    eleventyConfig.addPassthroughCopy({ "docs/favicon.ico": "favicon.ico" });
     eleventyConfig.addPassthroughCopy({ "dist/jazz_behavior.js": "jazz_behavior.js" });
     eleventyConfig.addPassthroughCopy({ "docs/css/prism-atom-dark.css": "prism-atom-dark.css" });
 
