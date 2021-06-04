@@ -59,7 +59,6 @@
   background-color: jazz-theme(button-focus-bgcolor);
   border: px-to-rem(1) solid jazz-theme(button-focus-border-color);
   outline: px-to-rem(2) solid jazz-theme(focus-color);
-  outline-offset: 0;
 }
 
 .jazz-btn:disabled {
@@ -71,11 +70,6 @@
   pointer-events: none;
 }
 
-.jazz-btn:not([disabled]).jazz-focus,
-.jazz-btn:not([disabled]):focus{
-  outline-offset: .25rem;
-}
-
 /*
   Outline Button Styles
 */
@@ -85,6 +79,7 @@
   color: jazz-theme(button-outline-color);
   border: px-to-rem(1) solid jazz-theme(button-outline-border-color);
   outline: transparent solid px-to-rem(2);
+  outline-offset: .25rem;
 }
 
 .jazz-btn.jazz-btn-outline--hover, .jazz-btn-outline:hover {
@@ -103,9 +98,8 @@
 .jazz-btn.jazz-btn-outline--focus, .jazz-btn-outline:focus {
   color: jazz-theme(button-outline-focus-color);
   background-color: jazz-theme(button-outline-focus-bgcolor);
-  border: px-to-rem(2) solid jazz-theme(button-outline-focus-border-color);
+  border: px-to-rem(1) solid jazz-theme(button-outline-focus-border-color);
   outline: px-to-rem(2) solid jazz-theme(focus-color);
-  outline-offset: 0;
 }
 
 .jazz-btn.jazz-btn-outline:disabled {
@@ -117,11 +111,6 @@
   pointer-events: none;
 }
 
-.jazz-btn.jazz-btn-outline:not([disabled]).jazz-focus,
-.jazz-btn.jazz-btn-outline:not([disabled]):focus, {
-  outline-offset: .25rem;
-}
-
 /*
   Text Button Styles
 */
@@ -130,6 +119,7 @@
   background-color: transparent;
   color: jazz-theme(button-text-color);
   border: px-to-rem(1) solid transparent;
+  outline-offset: .25rem;
 
   span {
     border-bottom: px-to-rem(1) solid jazz-theme(button-text-border-color);
@@ -154,18 +144,12 @@
 
 .jazz-btn.jazz-btn-text--focus, .jazz-btn.jazz-btn-text:focus {
   outline: px-to-rem(2) solid jazz-theme(focus-color);
-  outline-offset: 0;
 }
 
 .jazz-btn.jazz-btn-text:disabled span {
   color: jazz-theme(button-text-disabled-color);
   pointer-events: none;
   border-bottom: px-to-rem(1) solid jazz-theme(button-text-disabled-border-color);
-}
-
-.jazz-btn.jazz-btn-text:not([disabled]).jazz-focus,
-.jazz-btn.jazz-btn-text:not([disabled]):focus, {
-  outline-offset: .25rem;
 }
 
 /*
