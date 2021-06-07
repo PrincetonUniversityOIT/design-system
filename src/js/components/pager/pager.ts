@@ -64,18 +64,21 @@ export class PagerBehavior extends Behavior {
 
     createLink(displayPageStr) {
         const link = document.createElement('a');
-        link.appendChild(document.createTextNode(displayPageStr));
+        // link.appendChild(document.createTextNode(displayPageStr));
+        link.appendChild(this.createSpan(displayPageStr, true));
         link.setAttribute("href", "javascript:setPage(" + displayPageStr + ");");
         link.setAttribute("aria-label", this.setAriaLabel(displayPageStr));
         link.setAttribute("data-page", displayPageStr);
         return link;
     }
 
-    createSpan(displayPageStr) {
+    createSpan(displayPageStr, isWithinLink = false) {
         const span = document.createElement('span');
         span.appendChild(document.createTextNode(displayPageStr));
-        span.setAttribute("aria-disabled", "true");
-        span.setAttribute("data-page", displayPageStr);
+        if (!isWithinLink) {
+            span.setAttribute("aria-disabled", "true");
+            span.setAttribute("data-page", displayPageStr);
+        }
         return span;
     }
 
@@ -143,8 +146,11 @@ export class PagerBehavior extends Behavior {
         selector: PAGER_SELECTOR
     })
     onClick(event: Event) {
-        // Click is on the anchor tag
-        const itemLink = <HTMLElement> event.target;
+        // Click is on the span tag
+        const itemSpan = <HTMLElement> event.target;
+
+        // Get the parent anchor tag
+        const itemLink = itemSpan.closest("a");
 
         // Get the parent list item
         const item = itemLink.closest("li");
