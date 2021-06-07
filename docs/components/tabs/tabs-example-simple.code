@@ -1,5 +1,5 @@
 <div class="jazz-tablist" role="tablist">
-  <button role="tab">Default</button>
-  <button role="tab" aria-selected="true">Current</button>
-  <button role="tab" disabled>Disabled</button>
+  <a role="tab">Default</a>
+  <a role="tab" aria-selected="true">Current</a>
+  <span disabled>Disabled</span>
 </div>

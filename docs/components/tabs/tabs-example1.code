@@ -1,6 +1,6 @@
 <div class="jazz-tablist" role="tablist">
-  <button role="tab" aria-selected="true">Tab 1</button>
-  <button role="tab">Tab 2</button>
-  <button role="tab">Tab 3</button>
+  <a role="tab" aria-selected="true">Tab 1</a>
+  <a role="tab">Tab 2</a>
+  <a role="tab">Tab 3</a>
 </div>
 
