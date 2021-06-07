@@ -1,7 +1,7 @@
 <div class="jazz-tablist" role="tablist">
   <a role="tab" aria-controls="panel1">Tab 1</a>
   <a role="tab" aria-selected="true" aria-controls="panel2">Tab 2</a>
-  <a role="tab" disabled aria-controls="panel3">Tab 3</a>
+  <span disabled aria-controls="panel3">Tab 3</span>
 </div>
 <div id="panel1">
     <p>

@@ -67,11 +67,7 @@ export class TabsBehavior extends Behavior {
      * @param tabs
      */
     getFirstEnabledTab(tabs: HTMLAnchorElement[]) {
-        if (tabs && tabs.length > 0) {
-            return tabs.find(tab => !tab.disabled);
-        } else {
-            return undefined;
-        }
+        return (tabs && tabs.length > 0) ? tabs[0] : undefined;
     }
 
     /**
@@ -80,11 +76,7 @@ export class TabsBehavior extends Behavior {
      * @param tabs
      */
     getLastEnabledTab(tabs: HTMLAnchorElement[]) {
-        if (tabs && tabs.length > 0) {
-            return tabs.reverse().find(tab => !tab.disabled);
-        } else {
-            return undefined;
-        }
+        return (tabs && tabs.length > 0) ? tabs.reverse()[0] : undefined;
     }
 
     /**
@@ -100,15 +92,8 @@ export class TabsBehavior extends Behavior {
     getNextEnabledTab(tabs: HTMLAnchorElement[], refTab: HTMLAnchorElement) {
         let found = false;
         for (let tab of tabs) {
-            if (found) {
-                // if (!tab.disabled) {
-                console.log('tab');
-                    return tab;
-                // }
-            }
-            if (tab === refTab) {
-                found = true;
-            }
+            if (found) return tab;
+            if (tab === refTab) found = true;
         }
         return this.getFirstEnabledTab(tabs);
     }
@@ -126,14 +111,8 @@ export class TabsBehavior extends Behavior {
     getPreviousEnabledTab(tabs: HTMLAnchorElement[], refTab: HTMLAnchorElement) {
         let found = false;
         for (let tab of tabs.slice().reverse()) {
-            if (found) {
-                if (!tab.disabled) {
-                    return tab;
-                }
-            }
-            if (tab === refTab) {
-                found = true;
-            }
+            if (found) return tab;
+            if (tab === refTab) found = true;
         }
         return this.getLastEnabledTab(tabs);
     }
@@ -178,9 +157,7 @@ export class TabsBehavior extends Behavior {
      */
     deselectAllOtherAnchorsInTablist(tablist: Element, exceptAnchor: HTMLAnchorElement) {
         this.getTabs(tablist).forEach((tab) => {
-            if (tab !== exceptAnchor) {
-                this.deselectTab(tab);
-            }
+            if (tab !== exceptAnchor) this.deselectTab(tab);
         });
     }
 
