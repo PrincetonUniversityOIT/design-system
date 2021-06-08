@@ -15,11 +15,12 @@
   flex-basis: auto;
   flex-grow: 0;
   align-items: center;
-  gap: px-to-rem(10);
+  gap: px-to-rem(16);
 
   padding-left: px-to-rem(0);
-  margin: px-to-rem(20) px-to-rem(0);
-  border-bottom: 0;
+  padding-right: px-to-rem(0);
+
+  margin: px-to-rem(20) px-to-rem(5);
 }
 
 .jazz-pager > ul > li a {
@@ -32,19 +33,18 @@
 
   padding-right: px-to-rem(5);
   padding-left: px-to-rem(5);
-  border-bottom: px-to-rem(4) solid jazz-theme(pager-item-bgcolor);
+
+  border-top: px-to-rem(4) solid transparent;
+  border-bottom: px-to-rem(4) solid transparent;
 }
 
-.jazz-pager > ul > li a:hover {
+.jazz-pager > ul > li a span {
+  border-top: px-to-rem(4) solid transparent;
+  border-bottom: px-to-rem(4) solid transparent;
+}
+
+.jazz-pager > ul > li a span:hover {
   border-bottom: px-to-rem(4) solid jazz-theme(pager-item-hover-underline-color);
-}
-
-.jazz-pager > ul > li a:focus {
-  font-weight: bold;
-  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
-
-  // fixing issue where left outline is missing
-  margin-left: px-to-rem(2);
 }
 
 .jazz-pager > ul > li a[aria-disabled=true],
@@ -61,17 +61,21 @@
 .jazz-pager > ul > li[aria-current=page] a:focus,
 .jazz-pager > ul > li[aria-current=page] a:hover {
   cursor: not-allowed;
+  font-weight: bold;
   color: jazz-theme(pager-item-current-color);
 }
 
-.jazz-pager > ul > li:first-child a,
-.jazz-pager > ul > li:last-child  a{
-  padding-left: 0;
-  padding-right: 0;
+.jazz-pager > ul > li[aria-current=page] a span {
+  border-bottom: px-to-rem(4) solid jazz-theme(pager-item-current-underline-color);
 }
 
 .jazz-pager > ul > li:not(:first-child):not(:last-child) > a {
   min-width: px-to-rem(25);
+}
+
+.jazz-pager > ul > li:not(:first-child):not(:last-child) > a span {
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 @include apply-to-phone-only {
