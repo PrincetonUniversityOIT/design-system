@@ -39,7 +39,7 @@ it('We can check if the pager displays the page items correctly for a small page
     expect(ulEl.children[3].children[0].getAttribute('data-page')).toBe('3');
 
     expect(ulEl.children[4].children[0].getAttribute('data-page')).toBe('4');
-    expect(ulEl.children[4].children[0].getAttribute('aria-current')).toBe('page');
+    expect(ulEl.children[4].getAttribute('aria-current')).toBe('page');
 
     expect(ulEl.children[5].children[0].getAttribute('data-page')).toBe('5');
     expect(ulEl.children[6].children[0].getAttribute('data-page')).toBe('6');
@@ -65,7 +65,7 @@ it('We can check if the pager displays proper values after clicking next', () =>
     expect(pagerEl.getAttribute('data-current-page')).toBe('4');
     expect(ulEl.children.length).toBe(11);
     expect(ulEl.children[4].children[0].getAttribute('data-page')).toBe('4');
-    expect(ulEl.children[4].children[0].getAttribute('aria-current')).toBe('page');
+    expect(ulEl.children[4].getAttribute('aria-current')).toBe('page');
 
     const pagerEls = ulEl.querySelectorAll("li");
     expect(pagerEls.length).toBe(11);
@@ -87,7 +87,7 @@ it('We can check if the pager displays proper values after clicking next', () =>
     expect(ulEl.children[3].children[0].getAttribute('data-page')).toBe('4');
 
     expect(ulEl.children[4].children[0].getAttribute('data-page')).toBe('5');
-    expect(ulEl.children[4].children[0].getAttribute('aria-current')).toBe('page');
+    expect(ulEl.children[4].getAttribute('aria-current')).toBe('page');
 
     expect(ulEl.children[5].children[0].getAttribute('data-page')).toBe('6');
     expect(ulEl.children[6].children[0].getAttribute('data-page')).toBe('7');
@@ -110,7 +110,7 @@ it('We can check if the pager displays proper values after clicking previous', (
     expect(pagerEl.getAttribute('data-current-page')).toBe('4');
     expect(ulEl.children.length).toBe(11);
     expect(ulEl.children[4].children[0].getAttribute('data-page')).toBe('4');
-    expect(ulEl.children[4].children[0].getAttribute('aria-current')).toBe('page');
+    expect(ulEl.children[4].getAttribute('aria-current')).toBe('page');
 
     const pagerEls = ulEl.querySelectorAll("li");
 
@@ -127,7 +127,7 @@ it('We can check if the pager displays proper values after clicking previous', (
     expect(ulEl.children[2].children[0].getAttribute('data-page')).toBe('2');
 
     expect(ulEl.children[3].children[0].getAttribute('data-page')).toBe('3');
-    expect(ulEl.children[3].children[0].getAttribute('aria-current')).toBe('page');
+    expect(ulEl.children[3].getAttribute('aria-current')).toBe('page');
 
     expect(ulEl.children[4].children[0].getAttribute('data-page')).toBe('4');
     expect(ulEl.children[5].children[0].getAttribute('data-page')).toBe('5');
@@ -163,7 +163,7 @@ it('We can check if the pager handles the double truncation properly', () => {
     expect(ulEl.children[3].children[0].getAttribute('data-page')).toBe('6');
 
     expect(ulEl.children[4].children[0].getAttribute('data-page')).toBe('7');
-    expect(ulEl.children[4].children[0].getAttribute('aria-current')).toBe('page');
+    expect(ulEl.children[4].getAttribute('aria-current')).toBe('page');
 
     expect(ulEl.children[5].children[0].getAttribute('data-page')).toBe('8');
     expect(ulEl.children[6].children[0].getAttribute('data-page')).toBe('9');

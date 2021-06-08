@@ -226,9 +226,11 @@ $jazz-theme-feature: (
         pager-item-color: jazz-color(jazz-gray-60),
         pager-item-hover-underline-color: jazz-color(jazz-princeton-orange),
         pager-item-disabled-color: jazz-color(jazz-gray-40),
-        pager-item-current-color: jazz-color(jazz-princeton-orange),
+        pager-item-current-color: jazz-color(jazz-gray),
+        pager-item-current-underline-color: jazz-color(jazz-princeton-orange),
 
-        // pill
+
+  // pill
         pill-bgcolor: jazz-color(jazz-gray-20),
         pill-color: jazz-color(jazz-black),
 
