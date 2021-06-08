@@ -21,7 +21,6 @@
   padding-right: px-to-rem(0);
 
   margin: px-to-rem(20) px-to-rem(5);
-  outline: transparent px-to-rem($jazz-focus-size-px) solid;
 }
 
 .jazz-pager > ul > li a {
@@ -46,11 +45,6 @@
 
 .jazz-pager > ul > li a span:hover {
   border-bottom: px-to-rem(4) solid jazz-theme(pager-item-hover-underline-color);
-}
-
-.jazz-pager > ul > li a:focus {
-  font-weight: bold;
-  outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
 }
 
 .jazz-pager > ul > li a[aria-disabled=true],
