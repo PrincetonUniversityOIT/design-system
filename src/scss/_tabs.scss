@@ -10,7 +10,8 @@ $jazz-tab-border-size: 4;
 }
 
 .jazz-tablist[role="tablist"] button[role="tab"],
-.jazz-tablist[role="tablist"] a[role="tab"] {
+.jazz-tablist[role="tablist"] a[role="tab"],
+.jazz-tablist[role="tablist"] span {
   background-color: jazz-theme(tab-bgcolor);
   color: jazz-theme(tab-color);
   height: px-to-rem(40);
@@ -37,7 +38,8 @@ $jazz-tab-border-size: 4;
   padding-left: px-to-rem($jazz-focus-size-px * 2);
   padding-right: px-to-rem($jazz-focus-size-px * 2);
 }
-.jazz-tablist[role="tablist"] a[role="tab"] {
+.jazz-tablist[role="tablist"] a[role="tab"],
+.jazz-tablist[role="tablist"] span[disabled] {
   display: flex;
   align-items: center;
 }
@@ -76,8 +78,7 @@ $jazz-tab-border-size: 4;
 .jazz-tablist[role="tablist"]
   button[role="tab"][disabled]:not([disabled="false"]),
 .jazz-tablist[role="tablist"] a[role="tab"][disabled]:not([disabled="false"]),
-.jazz-tablist[role="tablist"]
-  span[role="tab"][disabled]:not([disabled="false"]) {
+.jazz-tablist[role="tablist"] span[disabled]:not([disabled="false"]) {
   color: jazz-theme(tab-disabled-color);
   border-bottom: px-to-rem($jazz-tab-border-size) solid
     jazz-theme(tablist-border-color);

@@ -198,6 +198,10 @@ export class TabsBehavior extends Behavior {
         // identify the tab that should receive focus based on the key that was pressed
 
         switch (keyEvent.key) {
+            case 'Enter':
+                console.log('enter');
+                this.onClick(focusTab);
+                break;
             case 'ArrowRight':
                 focusTab = this.getNextEnabledTab(this.getTabs(tablist), eventTab);
                 break;
