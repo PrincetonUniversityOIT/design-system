@@ -77,13 +77,10 @@ export class TabsBehavior extends Behavior {
      *
      * @param tabs
      */
-    getFirstEnabledTab(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[])): HTMLButtonElement | HTMLAnchorElement | undefined {
-        console.log("tabs", tabs);
+    getFirstEnabledTab(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[])): HTMLButtonElement | HTMLAnchorElement {
         if (this.tabsAreButtons(tabs)) {
-            console.log("getFirstEnabledTab", tabs && tabs.length > 0);
             return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).find(tab => !tab.disabled) : undefined;
         }
-        console.log(tabs[0]);
         return (tabs && tabs.length > 0) ? tabs[0] : undefined;
     }
 
@@ -110,16 +107,17 @@ export class TabsBehavior extends Behavior {
      * @param refTab
      */
     getNextEnabledTab(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[]), refTab: HTMLButtonElement | HTMLAnchorElement) {
-        console.log(this.tabsAreButtons(tabs));
         let found = false;
         for (let tab of tabs) {
             if (found) {
-                if (this.tabsAreButtons(tabs) && !(tab as HTMLButtonElement).disabled) return tab;
-                else if (!this.tabsAreButtons(tabs)) return tab; // COME BACK TO THIS
+                if (!this.tabsAreButtons(tabs) || this.tabsAreButtons(tabs) && !(tab as HTMLButtonElement).disabled) {
+                    return tab;
+                } 
             }
-            if (tab === refTab) found = true;
+            if (tab === refTab) {
+                found = true;
+            } 
         }
-        console.log("getNextEnabledTab");
         return this.getFirstEnabledTab(tabs);
     }
 
@@ -134,13 +132,14 @@ export class TabsBehavior extends Behavior {
      * @param refTab
      */
     getPreviousEnabledTab(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[]), refTab: HTMLButtonElement | HTMLAnchorElement) {
-        console.log(tabs);
-        console.log(this.tabsAreButtons(tabs));
         let found = false;
         for (let tab of tabs.slice().reverse()) {
             if (found) {
-                if (this.tabsAreButtons(tabs) && !(tab as HTMLButtonElement).disabled) return tab;
-                else if (!this.tabsAreButtons(tabs)) return tab;
+                if (this.tabsAreButtons(tabs) && !(tab as HTMLButtonElement).disabled) {
+                    return tab;
+                } else if (!this.tabsAreButtons(tabs)) {
+                    return tab;
+                } 
             }
             if (tab === refTab) found = true;
         }
@@ -186,7 +185,9 @@ export class TabsBehavior extends Behavior {
      */
     deselectAllOtherAnchorsInTablist(tablist: Element & (HTMLButtonElement[] | HTMLAnchorElement[]), exceptTab: HTMLAnchorElement | HTMLButtonElement) {
         this.getTabs(tablist).forEach((tab) => {
-            if (tab !== exceptTab) this.deselectTab(tab);
+            if (tab !== exceptTab) {
+                this.deselectTab(tab);
+            } 
         });
     }
 
@@ -245,7 +246,9 @@ export class TabsBehavior extends Behavior {
             focusTab.focus();
 
             // if the tablist is configured to automatically select the tab upon focus, then select the tab
-            if (this.shouldSelectOnFocus(tablist)) this.selectTab(focusTab);
+            if (this.shouldSelectOnFocus(tablist)) {
+                this.selectTab(focusTab);
+            } 
             event.stopImmediatePropagation();
         }
     }
