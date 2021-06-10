@@ -203,3 +203,94 @@ efficiently flip between related sections.
 <p>The tab button cannot be selected as the current tab.</p>
 <h4>Overflow</h4>
 <p>Tab buttons are being displayed horizontally and there are too many tab buttons to fit within the available horizontal space.</p>
+
+<h2>Theme Variables</h2>
+
+<h3>Colors</h3>
+
+<p>
+    To override color variables with colors from the Design System color palette you can specify color hex values or html colors. If you want to use colors from the Design System color palette,
+    you can also specify the following value format for the color you want to use for the variable:
+</p>
+
+{% highlight "html" %}
+    var(--jazz-gray);
+{% endhighlight %}
+
+<h3>Fonts</h3>
+
+<p>
+    To override the font variables you can specify the font you want to use as you would typically put in the css. Here is a quick example:
+</p>
+
+{% highlight "html" %}
+    'Lora', serif
+{% endhighlight %}
+
+<h3>Tabs Variables </h3>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-tab-bgcolor</td>
+        <td>tab-bgcolor</td>
+        <td>Tab Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-tab-color</td>
+        <td>tab-color</td>
+        <td>Tab Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-tab-font</td>
+        <td>tab-font</td>
+        <td>Tab Font</td>
+        <td>Font</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-tab-label-transform</td>
+        <td>tab-label-transform</td>
+        <td>Tab Label Transform</td>
+        <td>Transform Value (uppercase, lowercase)</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-tab-hover-underline-color</td>
+        <td>tab-hover-underline-color</td>
+        <td>Tab Hover Underline</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-tab-current-underline-color</td>
+        <td>tab-current-underline-color</td>
+        <td>Tab Current Underline Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-tab-disabled-color</td>
+        <td>tab-disabled-color</td>
+        <td>Tab Disabled Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-tablist-border-color</td>
+        <td>tablist-border-color</td>
+        <td>Tablist Border Color</td>
+        <td>Color</td>
+    </tr>
+
+</table>
