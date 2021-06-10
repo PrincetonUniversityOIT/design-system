@@ -5,6 +5,8 @@ import {Listener} from "../../base/decorator-functions";
 const TABLIST_SELECTOR = `.${PREFIX}-tablist`;
 const TABLIST_BUTTON_SELECTOR = `.${PREFIX}-tablist > button`;
 const TABLIST_ANCHOR_SELECTOR = `.${PREFIX}-tablist > a`;
+const TABLIST_BUTTON_ANCHOR_SELECTOR = `${TABLIST_BUTTON_SELECTOR}, ${TABLIST_ANCHOR_SELECTOR}`;
+
 
 export class TabsBehavior extends Behavior {
 
@@ -22,47 +24,31 @@ export class TabsBehavior extends Behavior {
      * @param root
      */
     init(root: ParentNode) {
-        this.select(TABLIST_SELECTOR, root).forEach((tablist: HTMLButtonElement|HTMLAnchorElement) => {
+        this.select(TABLIST_SELECTOR, root).forEach((tablist: HTMLButtonElement | HTMLAnchorElement) => {
            tablist.setAttribute("role", "tablist");
         });
         
-        // Select <a> elements
-        this.select(TABLIST_ANCHOR_SELECTOR, root).forEach((anchor: HTMLAnchorElement) => {
-            anchor.setAttribute("role", "tab");
-            const selected = anchor.getAttribute(ARIA_SELECTED) === "true";
-            this.setTabSelection(anchor, selected);
-        });
-        
-        // Select <button> elements
-        this.select(TABLIST_BUTTON_SELECTOR, root).forEach((button: HTMLButtonElement) => {
-            button.setAttribute("role", "tab");
-            const selected = button.getAttribute(ARIA_SELECTED) === "true";
-            this.setTabSelection(button, selected);
+        this.select(TABLIST_BUTTON_ANCHOR_SELECTOR, root).forEach((element: HTMLAnchorElement | HTMLButtonElement) => {
+            element.setAttribute("role", "tab");
+            const selected = element.getAttribute(ARIA_SELECTED) === "true";
+            this.setTabSelection(element, selected);
         });
     }
 
-    tabsAreButtons(tabs: HTMLButtonElement[] | HTMLAnchorElement[]): Boolean {
-        for (let i = 0; i < tabs.length; i++) {
-            if (tabs[i].tagName === "BUTTON") return true;
-        }
-        return false;
-        // tabs.forEach((tab: HTMLButtonElement | HTMLAnchorElement) => {
-        //     console.log(tab);
-        //     if (tab.tagName === "BUTTON") return true;
-        // });
-        // return false;
+    tabsAreButtons(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[])): Boolean {
+        return tabs.firstElementChild.tagName === "BUTTON";
     }
 
     /**
      * Sets the tab as selected or not selected based on the provided boolean.
      *
-     * @param tabElement // Can be either <a> or <button>
+     * @param tab // Can be either <a> or <button>
      * @param selected
      */
-    setTabSelection(tabElement: HTMLButtonElement | HTMLAnchorElement, selected: boolean) {
-        this.toggleControl(tabElement, selected, ARIA_SELECTED);
+    setTabSelection(tab: HTMLButtonElement | HTMLAnchorElement, selected: boolean) {
+        this.toggleControl(tab, selected, ARIA_SELECTED);
         // enable the ability to get focus for the selected tab element and disable focus ability for all other tab elements
-        tabElement.tabIndex = selected ? 0 : -1;
+        tab.tabIndex = selected ? 0 : -1;
     }
 
     /**
@@ -70,7 +56,7 @@ export class TabsBehavior extends Behavior {
      *
      * @param tablist
      */
-    getTabs = (tablist: any | HTMLButtonElement[] | HTMLAnchorElement[]): HTMLButtonElement[] | HTMLAnchorElement[] => {
+    getTabs = (tablist: Element & (HTMLButtonElement[] | HTMLAnchorElement[])): Element & (HTMLButtonElement[] | HTMLAnchorElement[]) => {
         if (this.tabsAreButtons(tablist)) {
             return this.selectClosestTo(TABLIST_BUTTON_SELECTOR, TABLIST_SELECTOR, tablist);
         }
@@ -82,7 +68,7 @@ export class TabsBehavior extends Behavior {
      *
      * @param tab
      */
-    getTabListForTab(tab: any | HTMLButtonElement | HTMLAnchorElement) {
+    getTabListForTab(tab: HTMLButtonElement | HTMLAnchorElement): Element & (HTMLButtonElement[] | HTMLAnchorElement[]) {
         return tab.closest(TABLIST_SELECTOR);
     }
 
@@ -91,10 +77,13 @@ export class TabsBehavior extends Behavior {
      *
      * @param tabs
      */
-    getFirstEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[]): HTMLButtonElement | HTMLAnchorElement | void {
+    getFirstEnabledTab(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[])): HTMLButtonElement | HTMLAnchorElement | undefined {
+        console.log("tabs", tabs);
         if (this.tabsAreButtons(tabs)) {
-            return (tabs && tabs.length > 0) ? (tabs as any[]).find(tab => !tab.disabled) : undefined;
+            console.log("getFirstEnabledTab", tabs && tabs.length > 0);
+            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).find(tab => !tab.disabled) : undefined;
         }
+        console.log(tabs[0]);
         return (tabs && tabs.length > 0) ? tabs[0] : undefined;
     }
 
@@ -103,7 +92,7 @@ export class TabsBehavior extends Behavior {
      *
      * @param tabs
      */
-    getLastEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[]) {
+    getLastEnabledTab(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[])) {
         if (this.tabsAreButtons(tabs)) {
             return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).reverse().find(tab => !tab.disabled) : undefined;
         }
@@ -120,15 +109,17 @@ export class TabsBehavior extends Behavior {
      * @param tabs
      * @param refTab
      */
-    getNextEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[], refTab: HTMLButtonElement | HTMLAnchorElement) {
+    getNextEnabledTab(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[]), refTab: HTMLButtonElement | HTMLAnchorElement) {
+        console.log(this.tabsAreButtons(tabs));
         let found = false;
         for (let tab of tabs) {
             if (found) {
                 if (this.tabsAreButtons(tabs) && !(tab as HTMLButtonElement).disabled) return tab;
-                else if (!this.tabsAreButtons(tabs)) return tab;
+                else if (!this.tabsAreButtons(tabs)) return tab; // COME BACK TO THIS
             }
             if (tab === refTab) found = true;
         }
+        console.log("getNextEnabledTab");
         return this.getFirstEnabledTab(tabs);
     }
 
@@ -142,7 +133,9 @@ export class TabsBehavior extends Behavior {
      * @param tabs
      * @param refTab
      */
-    getPreviousEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[], refTab: HTMLButtonElement | HTMLAnchorElement) {
+    getPreviousEnabledTab(tabs: Element & (HTMLButtonElement[] | HTMLAnchorElement[]), refTab: HTMLButtonElement | HTMLAnchorElement) {
+        console.log(tabs);
+        console.log(this.tabsAreButtons(tabs));
         let found = false;
         for (let tab of tabs.slice().reverse()) {
             if (found) {
@@ -159,7 +152,7 @@ export class TabsBehavior extends Behavior {
      *
      * @param tablist
      */
-    shouldSelectOnFocus(tablist: Element) {
+    shouldSelectOnFocus(tablist: Element & (HTMLButtonElement[] | HTMLAnchorElement[]) ) {
         return tablist && tablist.classList.contains("jazz-auto-activate");
     }
 
@@ -191,7 +184,7 @@ export class TabsBehavior extends Behavior {
      * @param tablist
      * @param exceptTab
      */
-    deselectAllOtherAnchorsInTablist(tablist: HTMLButtonElement[] | HTMLAnchorElement[], exceptTab: HTMLAnchorElement | HTMLButtonElement) {
+    deselectAllOtherAnchorsInTablist(tablist: Element & (HTMLButtonElement[] | HTMLAnchorElement[]), exceptTab: HTMLAnchorElement | HTMLButtonElement) {
         this.getTabs(tablist).forEach((tab) => {
             if (tab !== exceptTab) this.deselectTab(tab);
         });
@@ -206,27 +199,10 @@ export class TabsBehavior extends Behavior {
      */
     @Listener({
         event: 'click',
-        selector: TABLIST_BUTTON_SELECTOR
-    })
-    onClickButton(event: Event) {
-        const tab = <HTMLButtonElement> event.target;
-        this.selectTab(tab);
-        event.stopImmediatePropagation();
-    }
-
-    /**
-     * Handle tab (anchor) selection events.
-     *
-     * The tab associated with the selected (clicked) anchor will be selected.
-     *
-     * @param event
-     */
-    @Listener({
-        event: 'click',
-        selector: TABLIST_ANCHOR_SELECTOR
+        selector: TABLIST_BUTTON_ANCHOR_SELECTOR
     })
     onClickAnchor(event: Event) {
-        const tab = <HTMLAnchorElement> event.target;
+        const tab = <HTMLButtonElement | HTMLAnchorElement> event.target;
         this.selectTab(tab);
         event.stopImmediatePropagation();
     }
@@ -238,54 +214,11 @@ export class TabsBehavior extends Behavior {
      */
     @Listener({
         event: 'keyup',
-        selector: TABLIST_BUTTON_SELECTOR
+        selector: TABLIST_BUTTON_ANCHOR_SELECTOR
     })
     onKeyupButton(event: Event) {
 
-        const eventTab = <HTMLButtonElement> event.target;
-        const keyEvent: KeyboardEvent = <KeyboardEvent> event;
-        const tablist = this.getTabListForTab(eventTab);
-
-        let focusTab = undefined;
-
-        // identify the tab that should receive focus based on the key that was pressed
-        switch (keyEvent.key) {
-            case 'ArrowRight':
-                focusTab = this.getNextEnabledTab(this.getTabs(tablist), eventTab);
-                break;
-            case 'ArrowLeft':
-                focusTab = this.getPreviousEnabledTab(this.getTabs(tablist), eventTab);
-                break;
-            case 'Home':
-                focusTab = this.getFirstEnabledTab(this.getTabs(tablist));
-                break;
-            case 'End':
-                focusTab = this.getLastEnabledTab(this.getTabs(tablist));
-                break;
-        }
-
-        if (focusTab) {
-            // set focus to the tab
-            focusTab.focus();
-
-            // if the tablist is configured to automatically select the tab upon focus, then select the tab
-            if (this.shouldSelectOnFocus(tablist)) this.selectTab(focusTab);
-            event.stopImmediatePropagation();
-        }
-    }
-
-    /**
-     * Handle tab (anchor) keyboard events.
-     *
-     * @param event
-     */
-    @Listener({
-        event: 'keyup',
-        selector: TABLIST_ANCHOR_SELECTOR
-    })
-    onKeyupAnchor(event: Event) {
-
-        const eventTab = <HTMLAnchorElement> event.target;
+        const eventTab = <HTMLButtonElement | HTMLAnchorElement> event.target;
         const keyEvent: KeyboardEvent = <KeyboardEvent> event;
         const tablist = this.getTabListForTab(eventTab);
 
