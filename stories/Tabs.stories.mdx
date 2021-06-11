@@ -21,6 +21,24 @@ export const Template = (args) => html`
     </script>
 `;
 
+export const TemplateLinks = (args) => html`
+    <div class="jazz-tablist" role="tablist">
+      <a href="javascript:void(0)" role="tab" id="one">Tab Label A</a>
+      <a href="javascript:void(0)" role="tab" id="two" aria-selected="true">Tab Label B</a>
+      <span role="tab">Disabled Tab</span>
+      <a href="javascript:void(0)" role="tab">Groups</a>
+      <a href="javascript:void(0)" role="tab">Funding</a>
+      <a href="javascript:void(0)" role="tab">Expenses</a>
+      <a href="javascript:void(0)" role="tab" aria-controls="icons">Icon</a>
+    </div>
+    <div id="icons">
+        Hello, Icons!
+    </div>
+    <script id="initscript">
+      PrincetonDesignSystem.enableDesignSystem();
+    </script>
+`;
+
 export const AutoActivateTemplate = (args) => html`
     <div class="jazz-tablist jazz-auto-activate" role="tablist">
       <button role="tab" id="one">Tab Label A</button>
@@ -66,6 +84,15 @@ The following section demonstrates a simple set of tabs:
         label: 'Simple Tabs' 
     }}>
       {Template.bind({})}
+    </Story>
+</Canvas>
+
+
+<Canvas>
+    <Story name="Simple Links" args={{
+        label: 'Simple Links'
+    }}>
+      {TemplateLinks.bind({})}
     </Story>
 </Canvas>
 
