@@ -9,9 +9,7 @@ $jazz-tab-border-size: 4;
     jazz-theme(tablist-border-color);
 }
 
-.jazz-tablist[role="tablist"] button[role="tab"],
-.jazz-tablist[role="tablist"] a[role="tab"],
-.jazz-tablist[role="tablist"] span {
+.jazz-tablist[role="tablist"] *[role="tab"] {
   background-color: jazz-theme(tab-bgcolor);
   color: jazz-theme(tab-color);
   height: px-to-rem(40);
@@ -38,46 +36,36 @@ $jazz-tab-border-size: 4;
   padding-left: px-to-rem($jazz-focus-size-px * 2);
   padding-right: px-to-rem($jazz-focus-size-px * 2);
 }
-.jazz-tablist[role="tablist"] a[role="tab"],
-.jazz-tablist[role="tablist"] span[role="tab"] {
+
+// Match text alignment of <a> and <span> to that of <button>
+.jazz-tablist[role="tablist"] *[role="tab"]:not(button){
   display: flex;
   align-items: center;
-}
-
-.jazz-tablist[role="tablist"] a[role="tab"]:not([disabled]) {
-  cursor: pointer;
 }
 
 // Pull the focus indicator inside of the tab to avoid having it stretch outside the tab and get cut off by neighboring content
 //
 // The focus indicator border is slightly smaller than the bottom border, which allows the bottom border to still show
 // through even when Focus is combined with other states.
-.jazz-tablist[role="tablist"] button[role="tab"]:focus,
-.jazz-tablist[role="tablist"] a[role="tab"]:focus {
+.jazz-tablist[role="tablist"] *[role="tab"]:not(span):focus {
   outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
   outline-offset: px-to-rem(-1 * $jazz-focus-size-px);
 }
 
 // hover indicator, which is excluded from disabled tabs and from the current tab
-.jazz-tablist[role="tablist"]
-  button[role="tab"]:not([disabled]):not([aria-selected="true"]):hover,
-.jazz-tablist[role="tablist"]
-  a[role="tab"]:not([disabled]):not([aria-selected="true"]):hover {
+.jazz-tablist[role="tablist"] *[role="tab"]:not([disabled]):not(span):not([aria-selected="true"]):hover {
   border-bottom: px-to-rem($jazz-tab-border-size) solid
     jazz-theme(tab-hover-underline-color);
 }
 
 // current page indicator
-.jazz-tablist[role="tablist"] button[role="tab"][aria-selected="true"],
-.jazz-tablist[role="tablist"] a[role="tab"][aria-selected="true"] {
+.jazz-tablist[role="tablist"] *[role="tab"][aria-selected="true"] {
   border-bottom: px-to-rem($jazz-tab-border-size) solid
     jazz-theme(tab-current-underline-color);
 }
 
 // disabled tab
-.jazz-tablist[role="tablist"]
-  button[role="tab"][disabled]:not([disabled="false"]),
-.jazz-tablist[role="tablist"] a[role="tab"][disabled]:not([disabled="false"]),
+.jazz-tablist[role="tablist"] *[role="tab"][disabled]:not([disabled="false"]),
 .jazz-tablist[role="tablist"] span[role="tab"] {
   color: jazz-theme(tab-disabled-color);
   border-bottom: px-to-rem($jazz-tab-border-size) solid
