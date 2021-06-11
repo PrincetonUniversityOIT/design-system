@@ -39,7 +39,7 @@ $jazz-tab-border-size: 4;
   padding-right: px-to-rem($jazz-focus-size-px * 2);
 }
 .jazz-tablist[role="tablist"] a[role="tab"],
-.jazz-tablist[role="tablist"] span[disabled] {
+.jazz-tablist[role="tablist"] span[role="tab"] {
   display: flex;
   align-items: center;
 }
@@ -78,9 +78,9 @@ $jazz-tab-border-size: 4;
 .jazz-tablist[role="tablist"]
   button[role="tab"][disabled]:not([disabled="false"]),
 .jazz-tablist[role="tablist"] a[role="tab"][disabled]:not([disabled="false"]),
-.jazz-tablist[role="tablist"] span[disabled]:not([disabled="false"]) {
+.jazz-tablist[role="tablist"] span[role="tab"] {
   color: jazz-theme(tab-disabled-color);
   border-bottom: px-to-rem($jazz-tab-border-size) solid
     jazz-theme(tablist-border-color);
-  cursor: not-allowed;
+  cursor: default;
 }
