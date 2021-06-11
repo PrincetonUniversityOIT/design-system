@@ -5,10 +5,10 @@ describe('tab initialization behavior', () => {
   it('should not throw an error when a selected tab button does not define what it controls', () => {
     document.body.innerHTML = `
         <div class="jazz-tablist" role="tablist">
-          <button role="tab">Tab Label 1</button>
-          <button role="tab" aria-selected="true">Tab Label 2</button>
-          <button role="tab" disabled>Tab Disabled</button>
-          <button role="tab">Tab Label 3</button>
+          <a href="javascript:void(0)" role="tab">Tab Label 1</a>
+          <a href="javascript:void(0)" role="tab" aria-selected="true">Tab Label 2</a>
+          <span role="tab">Tab Disabled</span>
+          <a href="javascript:void(0)" role="tab">Tab Label 3</a>
         </div>
       `;
 
@@ -19,10 +19,10 @@ describe('tab initialization behavior', () => {
   it('should assign tablist and tab roles', () => {
     document.body.innerHTML = `
         <div class="jazz-tablist" id="tablist">
-          <button id="button1">Tab Label 1</button>
-          <button id="button2" aria-selected="true">Tab Label 2</button>
-          <button id="button3" disabled>Tab Disabled</button>
-          <button id="button4">Tab Label 3</button>
+          <a id="tab1">Tab Label 1</a>
+          <a id="tab2" aria-selected="true">Tab Label 2</a>
+          <span id="tab3">Tab Disabled</span>
+          <a id="tab4">Tab Label 3</a>
         </div>
       `;
 
@@ -31,23 +31,23 @@ describe('tab initialization behavior', () => {
 
     const tablist = document.getElementById("tablist");
     expect(tablist).toHaveAttribute("role", "tablist");
-    const button1 = document.getElementById("button1");
-    expect(button1).toHaveAttribute("role", "tab");
-    const button2 = document.getElementById("button2");
-    expect(button2).toHaveAttribute("role", "tab");
-    const button3 = document.getElementById("button3");
-    expect(button3).toHaveAttribute("role", "tab");
-    const button4 = document.getElementById("button4");
-    expect(button4).toHaveAttribute("role", "tab");
+    const tab1 = document.getElementById("tab1");
+    expect(tab1).toHaveAttribute("role", "tab");
+    const tab2 = document.getElementById("tab2");
+    expect(tab2).toHaveAttribute("role", "tab");
+    const tab3 = document.getElementById("tab3");
+    expect(tab3).toHaveAttribute("role", "tab");
+    const tab4 = document.getElementById("tab4");
+    expect(tab4).toHaveAttribute("role", "tab");
   });
 
   it('should show the section associated with the active tab if it is not already shown', () => {
     document.body.innerHTML = `
         <div class="jazz-tablist" role="tablist">
-          <button role="tab" aria-controls="panel1">Tab Label 1</button>
-          <button role="tab" aria-controls="panel2" aria-selected="true">Tab Label 2</button>
-          <button role="tab" aria-controls="panel_disabled" disabled>Tab Disabled</button>
-          <button role="tab" aria-controls="panel3">Tab Label 3</button>
+          <a role="tab" aria-controls="panel1">Tab Label 1</a>
+          <a role="tab" aria-controls="panel2" aria-selected="true">Tab Label 2</a>
+          <span role="tab" aria-controls="panel_disabled">Tab Disabled</span>
+          <a role="tab" aria-controls="panel3">Tab Label 3</a>
         </div>
         <div id="panel1">Panel 1</div>
         <div id="panel2" hidden>Panel 2</div>
@@ -68,10 +68,10 @@ describe('tab initialization behavior', () => {
   it('should hide any sections associated with tabs that are not selected', () => {
     document.body.innerHTML = `
       <div class="jazz-tablist" role="tablist">
-        <button role="tab" aria-controls="panel1">Tab Label 1</button>
-        <button role="tab" aria-controls="panel2" aria-selected="true">Tab Label 2</button>
-        <button role="tab" aria-controls="panel_disabled" disabled>Tab Disabled</button>
-        <button role="tab" aria-controls="panel3">Tab Label 3</button>
+        <a role="tab" aria-controls="panel1">Tab Label 1</a>
+        <a role="tab" aria-controls="panel2" aria-selected="true">Tab Label 2</a>
+        <span role="tab" aria-controls="panel_disabled">Tab Disabled</span>
+        <a role="tab" aria-controls="panel3">Tab Label 3</a>
       </div>
       <div id="panel1">Panel 1</div>
       <div id="panel2">Panel 2</div>
@@ -91,53 +91,54 @@ describe('tab initialization behavior', () => {
     expect(panel2).toBeVisible();
     expect(panel3).not.toBeVisible();
     expect(panelDisabled).not.toBeVisible();
+
   });
 
   it('should make the active tab focusable and all other tabs not focusable', () => {
     document.body.innerHTML = `
         <div class="jazz-tablist" role="tablist">
-          <button role="tab" id="button1" tabindex="1">Tab Label 1</button>
-          <button role="tab" id="button2" aria-selected="true" tabindex="1">Tab Label 2</button>
-          <button role="tab" id="button3" disabled tabindex="1">Tab Disabled</button>
-          <button role="tab" id="button4" tabindex="1">Tab Label 3</button>
+          <a role="tab" id="tab1" tabindex="1">Tab Label 1</a>
+          <a role="tab" id="tab2" aria-selected="true" tabindex="1">Tab Label 2</a>
+          <a role="tab" id="tab3" disabled tabindex="1">Tab Disabled</a>
+          <a role="tab" id="tab4" tabindex="1">Tab Label 3</a>
         </div>
       `;
 
     const tabs = new TabsBehavior();
     tabs.enable();
 
-    const button1 = document.getElementById("button1");
-    const button2 = document.getElementById("button2");
-    const button3 = document.getElementById("button3");
-    const button4 = document.getElementById("button4");
+    const tab1 = document.getElementById("tab1");
+    const tab2 = document.getElementById("tab2");
+    const tab3 = document.getElementById("tab3");
+    const tab4 = document.getElementById("tab4");
 
-    expect(button1).toHaveAttribute("tabindex", "-1");
-    expect(button2).toHaveAttribute("tabindex", "0");
-    expect(button3).toHaveAttribute("tabindex", "-1");
-    expect(button4).toHaveAttribute("tabindex", "-1");
+    expect(tab1).toHaveAttribute("tabindex", "-1");
+    expect(tab2).toHaveAttribute("tabindex", "0");
+    expect(tab3).toHaveAttribute("tabindex", "-1");
+    expect(tab4).toHaveAttribute("tabindex", "-1");
   });
 });
 
-describe('tab button click behavior', () => {
-  it('should select a tab button when that tab button is clicked', () => {
+describe('tab link click behavior', () => {
+  it('should select a tab link when that tab link is clicked', () => {
     document.body.innerHTML = `
         <div class="jazz-tablist" role="tablist">
-          <button role="tab">Tab Label 1</button>
-          <button role="tab" aria-selected="true">Tab Label 2</button>
-          <button role="tab" disabled>Tab Disabled</button>
-          <button role="tab" id="button3">Tab Label 3</button>
+          <a role="tab">Tab Label 1</a>
+          <a role="tab" aria-selected="true">Tab Label 2</a>
+          <a role="tab" disabled>Tab Disabled</a>
+          <a role="tab" id="tab3">Tab Label 3</a>
         </div>
     `;
 
     const tabs = new TabsBehavior();
     tabs.enable();
 
-    const button3 = document.getElementById("button3");
-    expect(button3).not.toHaveAttribute("aria-selected", "true");
+    const tab3 = document.getElementById("tab3");
+    expect(tab3).not.toHaveAttribute("aria-selected", "true");
 
-    button3.click();
+    tab3.click();
 
-    expect(button3).toHaveAttribute("aria-selected", "true");
+    expect(tab3).toHaveAttribute("aria-selected", "true");
   });
 
   it('should not de-select an active tab button when it is clicked', () => {

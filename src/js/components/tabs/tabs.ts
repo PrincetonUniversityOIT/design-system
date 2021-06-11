@@ -3,9 +3,8 @@ import { prefix as PREFIX } from '../../config';
 import {Listener} from "../../base/decorator-functions";
 
 const TABLIST_SELECTOR = `.${PREFIX}-tablist`;
-const TABLIST_BUTTON_SELECTOR = `.${PREFIX}-tablist > button`;
-const TABLIST_ANCHOR_SELECTOR = `.${PREFIX}-tablist > a`;
-const TABLIST_BUTTON_ANCHOR_SELECTOR = `${TABLIST_BUTTON_SELECTOR}, ${TABLIST_ANCHOR_SELECTOR}`;
+const TABLIST_BUTTON_ANCHOR_SELECTOR = `.${PREFIX}-tablist > button, .${PREFIX}-tablist > a`;
+const TABLIST_SPAN_SELECTOR = `.${PREFIX}-tablist > span`;
 
 
 export class TabsBehavior extends Behavior {
@@ -28,11 +27,15 @@ export class TabsBehavior extends Behavior {
            tablist.setAttribute("role", "tablist");
         });
         
-        this.select(TABLIST_BUTTON_ANCHOR_SELECTOR, root).forEach((element: HTMLAnchorElement | HTMLButtonElement) => {
+        this.select(TABLIST_BUTTON_ANCHOR_SELECTOR, root).forEach((element: HTMLButtonElement | HTMLAnchorElement) => {
             element.setAttribute("role", "tab");
             const selected = element.getAttribute(ARIA_SELECTED) === "true";
             this.setTabSelection(element, selected);
         });
+
+        this.select(TABLIST_SPAN_SELECTOR, root).forEach((span: HTMLSpanElement) => {
+            span.setAttribute("role", "tab");
+        })
     }
 
     tabsAreButtons(tabs: Element | HTMLButtonElement[] | HTMLAnchorElement[]): Boolean {
