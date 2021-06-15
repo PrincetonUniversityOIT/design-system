@@ -202,7 +202,7 @@ export class TabsBehavior extends Behavior {
         event: 'click',
         selector: TABLIST_BUTTON_ANCHOR_SELECTOR
     })
-    onClickAnchor(event: Event) {
+    onClick(event: Event) {
         const tab = <HTMLButtonElement | HTMLAnchorElement> event.target;
         this.selectTab(tab);
         event.stopImmediatePropagation();
@@ -217,7 +217,7 @@ export class TabsBehavior extends Behavior {
         event: 'keyup',
         selector: TABLIST_BUTTON_ANCHOR_SELECTOR
     })
-    onKeyupButton(event: Event) {
+    onKeyup(event: Event) {
 
         const eventTab = <HTMLButtonElement | HTMLAnchorElement> event.target;
         const keyEvent: KeyboardEvent = <KeyboardEvent> event;
