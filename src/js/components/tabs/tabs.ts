@@ -55,7 +55,7 @@ export class TabsBehavior extends Behavior {
     }
 
     /**
-     * Find the tabs (anchors) associated with the provided Tab list.
+     * Find the tabs associated with the provided Tab list.
      *
      * @param tablist
      */
@@ -122,11 +122,11 @@ export class TabsBehavior extends Behavior {
     }
 
     /**
-     * Find the previous enabled tab (anchor) in the list of tabs (anchors) provided.
+     * Find the previous enabled tab in the list of tabs provided.
      *
-     * The search will begin at the position in the list where the provided tab (anchor) is located and the search
-     * will wrap around to the end of the provided list of tabs (anchors) if no enabled tab (anchor) is found
-     * in the list before the location of the provided tab (anchor).
+     * The search will begin at the position in the list where the provided tab is located and the search
+     * will wrap around to the end of the provided list of tabs if no enabled tab is found
+     * in the list before the location of the provided tab.
      *
      * @param tabs
      * @param refTab
@@ -174,12 +174,11 @@ export class TabsBehavior extends Behavior {
         this.deselectAllOtherAnchorsInTablist(this.getTabListForTab(tab), tab);
 
         // The selected tab is always set to be selected (selected=true).  Selecting an active tab will not de-select it.
-
         this.setTabSelection(tab, true);
     }
 
     /**
-     * De-select all tabs (anchors) in tablist, except the tab (anchor) provided.
+     * De-select all tabs in tablist, except the tab provided.
      *
      * @param tablist
      * @param exceptTab
@@ -193,7 +192,7 @@ export class TabsBehavior extends Behavior {
     }
 
     /**
-     * Handle tab (anchor) selection events.
+     * Handle tab selection events.
      *
      * The tab associated with the selected (clicked) anchor will be selected.
      *
@@ -210,7 +209,7 @@ export class TabsBehavior extends Behavior {
     }
 
     /**
-     * Handle tab (anchor) keyboard events.
+     * Handle tab keyboard events.
      *
      * @param event
      */
