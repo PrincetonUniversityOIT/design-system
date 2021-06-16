@@ -4,9 +4,7 @@ import {Listener} from "../../base/decorator-functions";
 
 const TABLIST_SELECTOR = `.${PREFIX}-tablist`;
 const TABLIST_BUTTON_ANCHOR_SELECTOR = `.${PREFIX}-tablist > button, .${PREFIX}-tablist > a`;
-const TABLIST_SPAN_SELECTOR = `.${PREFIX}-tablist > span`;
-
-
+// <q>Hello world</q>
 export class TabsBehavior extends Behavior {
 
     constructor() {
@@ -26,18 +24,38 @@ export class TabsBehavior extends Behavior {
         this.select(TABLIST_SELECTOR, root).forEach((tablist: HTMLButtonElement | HTMLAnchorElement) => {
            tablist.setAttribute("role", "tablist");
         });
-        
+
+        // Selects buttons and anchor tags. For each element, set role="tab"
         this.select(TABLIST_BUTTON_ANCHOR_SELECTOR, root).forEach((element: HTMLButtonElement | HTMLAnchorElement) => {
             element.setAttribute("role", "tab");
             const selected = element.getAttribute(ARIA_SELECTED) === "true";
             this.setTabSelection(element, selected);
         });
-
-        this.select(TABLIST_SPAN_SELECTOR, root).forEach((span: HTMLSpanElement) => {
-            span.setAttribute("role", "tab");
-        })
     }
 
+    /**
+     * Check if tab is a disabled button.
+     *
+     * @param tab
+     */
+    tabIsButtonDisabled(tab: HTMLButtonElement | HTMLAnchorElement): Boolean {
+        return tab.nodeName === "BUTTON" && (tab as HTMLButtonElement).disabled;
+    }
+
+    /**
+     * Check if tab is a disabled anchor.
+     *
+     * @param tab
+     */
+    tabIsAnchorDisabled(tab: HTMLButtonElement | HTMLAnchorElement): Boolean {
+        return tab.nodeName === "A" && (tab as HTMLAnchorElement).getAttribute("aria-disabled") === "true";
+    }
+
+    /**
+     * Check if tabs are buttons.
+     *
+     * @param tabs // Can be either buttons or anchors.
+     */
     tabsAreButtons(tabs: Element | HTMLButtonElement[] | HTMLAnchorElement[]): Boolean {
         return tabs && (tabs[0] instanceof HTMLButtonElement);
     }
@@ -45,13 +63,19 @@ export class TabsBehavior extends Behavior {
     /**
      * Sets the tab as selected or not selected based on the provided boolean.
      *
-     * @param tab // Can be either <a> or <button>
+     * @param tab // Can be either button or anchor.
      * @param selected
      */
     setTabSelection(tab: HTMLButtonElement | HTMLAnchorElement, selected: boolean) {
-        this.toggleControl(tab, selected, ARIA_SELECTED);
-        // enable the ability to get focus for the selected tab element and disable focus ability for all other tab elements
-        tab.tabIndex = selected ? 0 : -1;
+        // If element is a disabled anchor tag, disable focus ability
+        if (this.tabIsAnchorDisabled(tab)) {
+            this.toggleControl(tab, false, ARIA_SELECTED);
+            tab.tabIndex = -1;
+        } else {
+            this.toggleControl(tab, selected, ARIA_SELECTED);
+            // Enable the ability to get focus for the selected tab element and disable focus ability for all other tab elements
+            tab.tabIndex = selected ? 0 : -1;
+        }
     }
 
     /**
@@ -79,9 +103,9 @@ export class TabsBehavior extends Behavior {
      */
     getFirstEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[]) {
         if (this.tabsAreButtons(tabs)) {
-            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).find(tab => !tab.disabled) : undefined;
+            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).find(tab => !this.tabIsButtonDisabled(tab)) : undefined;
         }
-        return (tabs && tabs.length > 0) ? tabs[0] : undefined;
+        return (tabs && tabs.length > 0) ? (tabs as HTMLAnchorElement[]).find(tab => !this.tabIsAnchorDisabled(tab)) : undefined;
     }
 
     /**
@@ -91,9 +115,9 @@ export class TabsBehavior extends Behavior {
      */
     getLastEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[]) {
         if (this.tabsAreButtons(tabs)) {
-            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).reverse().find(tab => !tab.disabled) : undefined;
+            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).reverse().find(tab => !this.tabIsButtonDisabled(tab)) : undefined;
         }
-        return (tabs && tabs.length > 0) ? tabs.reverse()[0] : undefined;
+        return (tabs && tabs.length > 0) ? (tabs as HTMLAnchorElement[]).reverse().find(tab => !this.tabIsAnchorDisabled(tab)) : undefined;
     }
 
     /**
@@ -110,7 +134,7 @@ export class TabsBehavior extends Behavior {
         let found = false;
         for (let tab of tabs) {
             if (found) {
-                if (!this.tabsAreButtons(tabs) || (this.tabsAreButtons(tabs) && !(tab as HTMLButtonElement).disabled)) {
+                if (!this.tabsAreButtons(tabs) && !this.tabIsAnchorDisabled(tab) || (this.tabsAreButtons(tabs) && !this.tabIsButtonDisabled(tab))) {
                     return tab;
                 } 
             }
@@ -136,7 +160,7 @@ export class TabsBehavior extends Behavior {
         for (let tab of tabs.slice().reverse()) {
             if (found) {
                 // return if tabs are anchor tags or if the tabs are buttons and not disabled
-                if (!this.tabsAreButtons(tabs) || (this.tabsAreButtons(tabs) && !(tab as HTMLButtonElement).disabled)) {
+                if (!this.tabsAreButtons(tabs) && !this.tabIsAnchorDisabled(tab) || (this.tabsAreButtons(tabs) && !this.tabIsButtonDisabled(tab))) {
                     return tab;
                 }
             }
@@ -171,10 +195,10 @@ export class TabsBehavior extends Behavior {
      * @param tab
      */
     selectTab(tab: HTMLButtonElement | HTMLAnchorElement) {
-        this.deselectAllOtherAnchorsInTablist(this.getTabListForTab(tab), tab);
+            this.deselectAllOtherAnchorsInTablist(this.getTabListForTab(tab), tab);
 
-        // The selected tab is always set to be selected (selected=true).  Selecting an active tab will not de-select it.
-        this.setTabSelection(tab, true);
+            // The selected tab is always set to be selected (selected=true).  Selecting an active tab will not de-select it.
+            this.setTabSelection(tab, true);
     }
 
     /**
@@ -204,7 +228,13 @@ export class TabsBehavior extends Behavior {
     })
     onClick(event: Event) {
         const tab = <HTMLButtonElement | HTMLAnchorElement> event.target;
-        this.selectTab(tab);
+        if (this.tabIsAnchorDisabled(tab)) {
+            console.log("PREVENT DEFAULT");
+            // event.preventDefault();
+            tab.blur();
+        } else {
+            this.selectTab(tab);
+        }
         event.stopImmediatePropagation();
     }
 

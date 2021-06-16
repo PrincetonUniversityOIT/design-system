@@ -37,7 +37,7 @@ $jazz-tab-border-size: 4;
   padding-right: px-to-rem($jazz-focus-size-px * 2);
 }
 
-// Match text alignment of <a> and <span> to that of <button>
+// Match text alignment of <a> to that of <button>
 .jazz-tablist[role="tablist"] *[role="tab"]:not(button){
   display: flex;
   align-items: center;
@@ -47,13 +47,13 @@ $jazz-tab-border-size: 4;
 //
 // The focus indicator border is slightly smaller than the bottom border, which allows the bottom border to still show
 // through even when Focus is combined with other states.
-.jazz-tablist[role="tablist"] *[role="tab"]:not(span):focus {
+.jazz-tablist[role="tablist"] *[role="tab"]:focus {
   outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);
   outline-offset: px-to-rem(-1 * $jazz-focus-size-px);
 }
 
 // hover indicator, which is excluded from disabled tabs and from the current tab
-.jazz-tablist[role="tablist"] *[role="tab"]:not([disabled]):not(span):not([aria-selected="true"]):hover {
+.jazz-tablist[role="tablist"] *[role="tab"]:not([disabled]):not([aria-disabled="true"]):not([aria-selected="true"]):hover {
   border-bottom: px-to-rem($jazz-tab-border-size) solid
     jazz-theme(tab-hover-underline-color);
 }
@@ -66,9 +66,15 @@ $jazz-tab-border-size: 4;
 
 // disabled tab
 .jazz-tablist[role="tablist"] *[role="tab"][disabled]:not([disabled="false"]),
-.jazz-tablist[role="tablist"] span[role="tab"] {
+.jazz-tablist[role="tablist"] *[role="tab"][aria-disabled="true"] {
   color: jazz-theme(tab-disabled-color);
   border-bottom: px-to-rem($jazz-tab-border-size) solid
     jazz-theme(tablist-border-color);
   cursor: default;
+}
+
+// disabled anchor tab
+// Manually remove focus style
+.jazz-tablist[role="tablist"] a[role="tab"][aria-disabled="true"]:focus {
+   outline: none;
 }
