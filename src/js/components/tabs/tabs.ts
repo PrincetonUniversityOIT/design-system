@@ -39,7 +39,7 @@ export class TabsBehavior extends Behavior {
      * @param tab
      */
     tabIsButtonDisabled(tab: HTMLButtonElement | HTMLAnchorElement): Boolean {
-        return tab.nodeName === "BUTTON" && (tab as HTMLButtonElement).disabled;
+        return (tab instanceof HTMLButtonElement) && (tab as HTMLButtonElement).disabled;
     }
 
     /**
@@ -48,7 +48,7 @@ export class TabsBehavior extends Behavior {
      * @param tab
      */
     tabIsAnchorDisabled(tab: HTMLButtonElement | HTMLAnchorElement): Boolean {
-        return tab.nodeName === "A" && (tab as HTMLAnchorElement).getAttribute("aria-disabled") === "true";
+        return (tab instanceof HTMLAnchorElement) && (tab as Element).getAttribute("aria-disabled") === "true";
     }
 
     /**
@@ -229,9 +229,9 @@ export class TabsBehavior extends Behavior {
     onClick(event: Event) {
         const tab = <HTMLButtonElement | HTMLAnchorElement> event.target;
         if (this.tabIsAnchorDisabled(tab)) {
-            console.log("PREVENT DEFAULT");
-            // event.preventDefault();
-            tab.blur();
+            // console.log("PREVENT DEFAULT");
+            event.preventDefault();
+            // tab.blur();
         } else {
             this.selectTab(tab);
         }
