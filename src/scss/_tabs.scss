@@ -73,8 +73,8 @@ $jazz-tab-border-size: 4;
   cursor: default;
 }
 
-// disabled anchor tab
-// Manually remove focus style
-.jazz-tablist[role="tablist"] a[role="tab"][aria-disabled="true"]:focus {
-   outline: none;
-}
+//// disabled anchor tab
+//// Manually remove focus style
+//.jazz-tablist[role="tablist"] a[role="tab"][aria-disabled="true"]:focus {
+//   outline: none;
+//}

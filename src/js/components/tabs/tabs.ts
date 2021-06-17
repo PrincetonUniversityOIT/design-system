@@ -4,7 +4,7 @@ import {Listener} from "../../base/decorator-functions";
 
 const TABLIST_SELECTOR = `.${PREFIX}-tablist`;
 const TABLIST_BUTTON_ANCHOR_SELECTOR = `.${PREFIX}-tablist > button, .${PREFIX}-tablist > a`;
-// <q>Hello world</q>
+
 export class TabsBehavior extends Behavior {
 
     constructor() {
@@ -32,16 +32,16 @@ export class TabsBehavior extends Behavior {
             this.setTabSelection(element, selected);
         });
     }
-
-    /**
-     * Check if tab is a disabled button.
-     *
-     * @param tab
-     */
-    tabIsButtonDisabled(tab: HTMLButtonElement | HTMLAnchorElement): Boolean {
-        return (tab instanceof HTMLButtonElement) && (tab as HTMLButtonElement).disabled;
-    }
-
+    //
+    // /**
+    //  * Check if tab is a disabled button.
+    //  *
+    //  * @param tab
+    //  */
+    // tabIsButtonDisabled(tab: HTMLButtonElement | HTMLAnchorElement): Boolean {
+    //     return (tab instanceof HTMLButtonElement) && (tab as HTMLButtonElement).disabled;
+    // }
+    //
     /**
      * Check if tab is a disabled anchor.
      *
@@ -67,15 +67,9 @@ export class TabsBehavior extends Behavior {
      * @param selected
      */
     setTabSelection(tab: HTMLButtonElement | HTMLAnchorElement, selected: boolean) {
-        // If element is a disabled anchor tag, disable focus ability
-        if (this.tabIsAnchorDisabled(tab)) {
-            this.toggleControl(tab, false, ARIA_SELECTED);
-            tab.tabIndex = -1;
-        } else {
-            this.toggleControl(tab, selected, ARIA_SELECTED);
-            // Enable the ability to get focus for the selected tab element and disable focus ability for all other tab elements
-            tab.tabIndex = selected ? 0 : -1;
-        }
+        this.toggleControl(tab, selected, ARIA_SELECTED);
+        // Enable the ability to get focus for the selected tab element and disable focus ability for all other tab elements
+        tab.tabIndex = selected ? 0 : -1;
     }
 
     /**
@@ -97,78 +91,73 @@ export class TabsBehavior extends Behavior {
     }
 
     /**
-     * Find the first enabled tab in the list of provided tabs
+     * Find the first tab in the list of provided tabs
      *
      * @param tabs
      */
-    getFirstEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[]) {
+    getFirstTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[]) {
         if (this.tabsAreButtons(tabs)) {
-            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).find(tab => !this.tabIsButtonDisabled(tab)) : undefined;
+            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[])[0] : undefined;
         }
-        return (tabs && tabs.length > 0) ? (tabs as HTMLAnchorElement[]).find(tab => !this.tabIsAnchorDisabled(tab)) : undefined;
+        return (tabs && tabs.length > 0) ? (tabs as HTMLAnchorElement[])[0] : undefined;
     }
 
     /**
-     * Find the last enabled tab in the list of provided tabs.
+     * Find the last tab in the list of provided tabs.
      *
      * @param tabs
      */
-    getLastEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[]) {
+    getLastTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[]) {
         if (this.tabsAreButtons(tabs)) {
-            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).reverse().find(tab => !this.tabIsButtonDisabled(tab)) : undefined;
+            return (tabs && tabs.length > 0) ? (tabs as HTMLButtonElement[]).reverse()[0] : undefined;
         }
-        return (tabs && tabs.length > 0) ? (tabs as HTMLAnchorElement[]).reverse().find(tab => !this.tabIsAnchorDisabled(tab)) : undefined;
+        return (tabs && tabs.length > 0) ? (tabs as HTMLAnchorElement[]).reverse()[0] : undefined;
     }
 
     /**
-     * Find the next enabled tab in the list of tabs provided.
+     * Find the next tab in the list of tabs provided.
      *
      * The search will begin at the position in the list where the provided tab is located and the search
-     * will wrap around to the beginning of the provided list of tabs if no enabled tab is found
+     * will wrap around to the beginning of the provided list of tabs if no tab is found
      * in the list after the location of the provided tab.
      *
      * @param tabs
      * @param refTab
      */
-    getNextEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[], refTab: HTMLButtonElement | HTMLAnchorElement) {
+    getNextTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[], refTab: HTMLButtonElement | HTMLAnchorElement) {
         let found = false;
         for (let tab of tabs) {
             if (found) {
-                if (!this.tabsAreButtons(tabs) && !this.tabIsAnchorDisabled(tab) || (this.tabsAreButtons(tabs) && !this.tabIsButtonDisabled(tab))) {
-                    return tab;
-                } 
+                return tab;
             }
             if (tab === refTab) {
                 found = true;
             } 
         }
-        return this.getFirstEnabledTab(tabs);
+        return this.getFirstTab(tabs);
     }
 
     /**
-     * Find the previous enabled tab in the list of tabs provided.
+     * Find the previous tab in the list of tabs provided.
      *
      * The search will begin at the position in the list where the provided tab is located and the search
-     * will wrap around to the end of the provided list of tabs if no enabled tab is found
+     * will wrap around to the end of the provided list of tabs if no tab is found
      * in the list before the location of the provided tab.
      *
      * @param tabs
      * @param refTab
      */
-    getPreviousEnabledTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[], refTab: HTMLButtonElement | HTMLAnchorElement) {
+    getPreviousTab(tabs: HTMLButtonElement[] | HTMLAnchorElement[], refTab: HTMLButtonElement | HTMLAnchorElement) {
         let found = false;
         for (let tab of tabs.slice().reverse()) {
             if (found) {
-                // return if tabs are anchor tags or if the tabs are buttons and not disabled
-                if (!this.tabsAreButtons(tabs) && !this.tabIsAnchorDisabled(tab) || (this.tabsAreButtons(tabs) && !this.tabIsButtonDisabled(tab))) {
-                    return tab;
-                }
+                return tab;
             }
             if (tab === refTab) {
                 found = true;
             }
         }
-        return this.getLastEnabledTab(tabs);
+        return this.getLastTab(tabs);
     }
 
     /**
@@ -195,10 +184,12 @@ export class TabsBehavior extends Behavior {
      * @param tab
      */
     selectTab(tab: HTMLButtonElement | HTMLAnchorElement) {
+        if (tab.getAttribute("aria-disabled") !== "true") {
             this.deselectAllOtherAnchorsInTablist(this.getTabListForTab(tab), tab);
 
             // The selected tab is always set to be selected (selected=true).  Selecting an active tab will not de-select it.
             this.setTabSelection(tab, true);
+        }
     }
 
     /**
@@ -207,7 +198,7 @@ export class TabsBehavior extends Behavior {
      * @param tablist
      * @param exceptTab
      */
-    deselectAllOtherAnchorsInTablist(tablist: Element, exceptTab: HTMLAnchorElement | HTMLButtonElement) {
+    deselectAllOtherAnchorsInTablist(tablist: Element, exceptTab: HTMLButtonElement | HTMLAnchorElement ) {
         this.getTabs(tablist).forEach((tab) => {
             if (tab !== exceptTab) {
                 this.deselectTab(tab);
@@ -228,13 +219,11 @@ export class TabsBehavior extends Behavior {
     })
     onClick(event: Event) {
         const tab = <HTMLButtonElement | HTMLAnchorElement> event.target;
-        if (this.tabIsAnchorDisabled(tab)) {
-            // console.log("PREVENT DEFAULT");
-            event.preventDefault();
-            // tab.blur();
-        } else {
+        // if (this.tabIsAnchorDisabled(tab)) {
+        //     event.preventDefault();
+        // } else {
             this.selectTab(tab);
-        }
+        // }
         event.stopImmediatePropagation();
     }
 
@@ -258,16 +247,16 @@ export class TabsBehavior extends Behavior {
         // identify the tab that should receive focus based on the key that was pressed
         switch (keyEvent.key) {
             case 'ArrowRight':
-                focusTab = this.getNextEnabledTab(this.getTabs(tablist), eventTab);
+                focusTab = this.getNextTab(this.getTabs(tablist), eventTab);
                 break;
             case 'ArrowLeft':
-                focusTab = this.getPreviousEnabledTab(this.getTabs(tablist), eventTab);
+                focusTab = this.getPreviousTab(this.getTabs(tablist), eventTab);
                 break;
             case 'Home':
-                focusTab = this.getFirstEnabledTab(this.getTabs(tablist));
+                focusTab = this.getFirstTab(this.getTabs(tablist));
                 break;
             case 'End':
-                focusTab = this.getLastEnabledTab(this.getTabs(tablist));
+                focusTab = this.getLastTab(this.getTabs(tablist));
                 break;
         }
 
