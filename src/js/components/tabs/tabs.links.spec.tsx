@@ -249,12 +249,12 @@ describe('tab link right arrow key behavior', () => {
       expect(tab2).toHaveAttribute("aria-selected", "false");
     });
 
-    it('should skip over disabled tab links and not change the selected tab link', () => {
+    it('on right arrow key, should focus disabled link and not change the selected tab link', () => {
       document.body.innerHTML = `
         <div class="jazz-tablist" role="tablist">
           <a href="javascript:void(0)" role="tab">Tab</a>
           <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
+          <a href="javascript:void(0)" role="tab" id="tab-disabled" aria-disabled="true">Tab Disabled</a>
           <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
         </div>
     `;
@@ -268,60 +268,10 @@ describe('tab link right arrow key behavior', () => {
 
       simulateKeyupEvent(tab1, "ArrowRight");
 
-      const tab2 = document.getElementById("tab2");
-      expect(tab2).toHaveFocus();
+      const tabDisabled = document.getElementById("tab-disabled");
+      expect(tabDisabled).toHaveFocus();
       expect(tab1).toHaveAttribute("aria-selected", "true");
-      expect(tab2).toHaveAttribute("aria-selected", "false");
-    });
-
-    it('should loop back to the beginning of the tab list when there are no enabled tabs to the right', () => {
-      document.body.innerHTML = `
-        <div class="jazz-tablist" role="tablist">
-          <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
-          <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-        </div>
-    `;
-
-      const tabs = new TabsBehavior();
-      tabs.enable();
-
-      const tab1 = document.getElementById("tab1");
-      tab1.focus();
-      expect(tab1).toHaveFocus();
-
-      simulateKeyupEvent(tab1, "ArrowRight");
-
-      const tab2 = document.getElementById("tab2");
-      expect(tab2).toHaveFocus();
-      expect(tab1).toHaveAttribute("aria-selected", "true");
-      expect(tab2).toHaveAttribute("aria-selected", "false");
-    });
-
-    it('should not blindly set focus to the first tab when there are no enabled tabs to the right', () => {
-      document.body.innerHTML = `
-        <div class="jazz-tablist" role="tablist">
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-          <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
-          <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-        </div>
-    `;
-
-      const tabs = new TabsBehavior();
-      tabs.enable();
-
-      const tab1 = document.getElementById("tab1");
-      tab1.focus();
-      expect(tab1).toHaveFocus();
-
-      simulateKeyupEvent(tab1, "ArrowRight");
-
-      const tab2 = document.getElementById("tab2");
-      expect(tab2).toHaveFocus();
-      expect(tab1).toHaveAttribute("aria-selected", "true");
-      expect(tab2).toHaveAttribute("aria-selected", "false");
+      expect(tabDisabled).toHaveAttribute("aria-selected", "false");
     });
   });
 
@@ -351,12 +301,12 @@ describe('tab link right arrow key behavior', () => {
       expect(tab2).toHaveAttribute("aria-selected", "true");
     });
 
-    it('should skip over disabled tab links and not change the selected tab link', () => {
+    it('should not skip over disabled tab links and not change the selected tab link', () => {
       document.body.innerHTML = `
         <div class="jazz-tablist jazz-auto-activate" role="tablist">
           <a href="javascript:void(0)" role="tab">Tab Label</a>
           <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
+          <a href="javascript:void(0)" role="tab" id="disabled" aria-disabled="true">Tab Disabled</a>
           <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
         </div>
     `;
@@ -370,65 +320,15 @@ describe('tab link right arrow key behavior', () => {
 
       simulateKeyupEvent(tab1, "ArrowRight");
 
-      const tab2 = document.getElementById("tab2");
-      expect(tab2).toHaveFocus();
-      expect(tab1).toHaveAttribute("aria-selected", "false");
-      expect(tab2).toHaveAttribute("aria-selected", "true");
-    });
-
-    it('should loop back to the beginning of the tab list when there are no enabled tabs to the right', () => {
-      document.body.innerHTML = `
-        <div class="jazz-tablist jazz-auto-activate" role="tablist">
-          <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 1</a>
-          <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 2</a>
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-        </div>
-    `;
-
-      const tabs = new TabsBehavior();
-      tabs.enable();
-
-      const tab1 = document.getElementById("tab1");
-      tab1.focus();
-      expect(tab1).toHaveFocus();
-
-      simulateKeyupEvent(tab1, "ArrowRight");
-
-      const tab2 = document.getElementById("tab2");
-      expect(tab2).toHaveFocus();
-      expect(tab1).toHaveAttribute("aria-selected", "false");
-      expect(tab2).toHaveAttribute("aria-selected", "true");
-    });
-
-    it('should not blindly set focus to the first tab when there are no enabled tabs to the right', () => {
-      document.body.innerHTML = `
-        <div class="jazz-tablist jazz-auto-activate" role="tablist">
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-          <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
-          <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
-          <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Label 3</a>
-        </div>
-    `;
-
-      const tabs = new TabsBehavior();
-      tabs.enable();
-
-      const tab1 = document.getElementById("tab1");
-      tab1.focus();
-      expect(tab1).toHaveFocus();
-
-      simulateKeyupEvent(tab1, "ArrowRight");
-
-      const tab2 = document.getElementById("tab2");
-      expect(tab2).toHaveFocus();
-      expect(tab1).toHaveAttribute("aria-selected", "false");
-      expect(tab2).toHaveAttribute("aria-selected", "true");
+      const tabDisabled = document.getElementById("disabled");
+      expect(tabDisabled).toHaveFocus();
+      expect(tab1).toHaveAttribute("aria-selected", "true");
+      expect(tabDisabled).not.toHaveAttribute("aria-selected", "true");
     });
   });
 });
 
-describe('tab button left arrow key behavior', () => {
+describe('tab link left arrow key behavior', () => {
   it('should navigate to the previous tab link', () => {
     document.body.innerHTML = `
       <div class="jazz-tablist" role="tablist">
@@ -452,15 +352,15 @@ describe('tab button left arrow key behavior', () => {
     expect(tab1).toHaveFocus();
   });
 
-  it('should skip over disabled tab links', () => {
+  it('should not skip over disabled tab links', () => {
     document.body.innerHTML = `
       <div class="jazz-tablist" role="tablist">
         <a href="javascript:void(0)" role="tab" id="tab1">Tab Label 1</a>
         <a href="javascript:void(0)" role="tab" id="tab2" aria-selected="true">Tab Label 2</a>
-        <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
+        <a href="javascript:void(0)" role="tab" id="disabled" aria-disabled="true">Tab Disabled</a>
         <a href="javascript:void(0)" role="tab" id="tab3">Tab Label 3</a>
       </div>
-  `;
+    `;
 
     const tabs = new TabsBehavior();
     tabs.enable();
@@ -471,54 +371,8 @@ describe('tab button left arrow key behavior', () => {
 
     simulateKeyupEvent(tab3, "ArrowLeft");
 
-    const tab2 = document.getElementById("tab2");
-    expect(tab2).toHaveFocus();
-  });
-
-  it('should loop back to the end of the tab list when there are no enabled tabs to the left', () => {
-    document.body.innerHTML = `
-      <div class="jazz-tablist" role="tablist">
-        <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-        <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
-        <a href="javascript:void(0)" role="tab">Tab</a>
-        <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
-      </div>
-  `;
-
-    const tabs = new TabsBehavior();
-    tabs.enable();
-
-    const tab1 = document.getElementById("tab1");
-    tab1.focus();
-    expect(tab1).toHaveFocus();
-
-    simulateKeyupEvent(tab1, "ArrowLeft");
-
-    const tab2 = document.getElementById("tab2");
-    expect(tab2).toHaveFocus();
-  });
-
-  it('should not blindly set focus to the last tab when there are no enabled tabs to the left', () => {
-    document.body.innerHTML = `
-      <div class="jazz-tablist" role="tablist">
-        <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-        <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
-        <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
-        <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-      </div>
-  `;
-
-    const tabs = new TabsBehavior();
-    tabs.enable();
-
-    const tab1 = document.getElementById("tab1");
-    tab1.focus();
-    expect(tab1).toHaveFocus();
-
-    simulateKeyupEvent(tab1, "ArrowLeft");
-
-    const tab2 = document.getElementById("tab2");
-    expect(tab2).toHaveFocus();
+    const disabledTab = document.getElementById("disabled");
+    expect(disabledTab).toHaveFocus();
   });
 });
 
@@ -545,29 +399,6 @@ describe('tab link Home key behavior', () => {
     const tab2 = document.getElementById("tab2");
     expect(tab2).toHaveFocus();
   });
-
-  it('should choose the first enabled tab when the first tab is disabled', () => {
-    document.body.innerHTML = `
-      <div class="jazz-tablist" role="tablist">
-        <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
-        <a href="javascript:void(0)" role="tab" id="tab2" aria-selected="true">Tab Label 2</a>
-        <a href="javascript:void(0)" role="tab" id="tab1">Tab Label 1</a>
-        <a href="javascript:void(0)" role="tab">Tab</a>
-      </div>
-  `;
-
-    const tabs = new TabsBehavior();
-    tabs.enable();
-
-    const tab1 = document.getElementById("tab1");
-    tab1.focus();
-    expect(tab1).toHaveFocus();
-
-    simulateKeyupEvent(tab1, "Home");
-
-    const tab2 = document.getElementById("tab2");
-    expect(tab2).toHaveFocus();
-  });
 });
 
 describe('tab link End key behavior', () => {
@@ -578,29 +409,6 @@ describe('tab link End key behavior', () => {
         <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
         <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
         <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
-      </div>
-  `;
-
-    const tabs = new TabsBehavior();
-    tabs.enable();
-
-    const tab1 = document.getElementById("tab1");
-    tab1.focus();
-    expect(tab1).toHaveFocus();
-
-    simulateKeyupEvent(tab1, "End");
-
-    const tab2 = document.getElementById("tab2");
-    expect(tab2).toHaveFocus();
-  });
-
-  it('should choose the last enabled tab when the last tab is disabled', () => {
-    document.body.innerHTML = `
-      <div class="jazz-tablist" role="tablist">
-        <a href="javascript:void(0)" role="tab" aria-disabled="true" >Tab Disabled</a>
-        <a href="javascript:void(0)" role="tab" id="tab1" aria-selected="true">Tab Label 1</a>
-        <a href="javascript:void(0)" role="tab" id="tab2">Tab Label 2</a>
-        <a href="javascript:void(0)" role="tab" aria-disabled="true">Tab Disabled</a>
       </div>
   `;
 
