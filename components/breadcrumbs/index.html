@@ -452,6 +452,72 @@ Each link in the Breadcrumbs provides quick navigation to related pages in the s
 <h4>Overflow</h4>
 <p>The breadcrumb items do not fit within the available horizontal space.</p>
 
+
+<h2>Theme Variables</h2>
+
+<h3>Colors</h3>
+
+<p>
+    To override color variables with colors from the Design System color palette you can specify color hex values or html colors. If you want to use colors from the Design System color palette,
+    you can also specify the following value format for the color you want to use for the variable:
+</p>
+
+<pre class="language-html"><code class="language-html">var(--jazz-gray);</code></pre>
+
+<h3>Fonts</h3>
+
+<p>
+    To override the font variables you can specify the font you want to use as you would typically put in the css. Here is a quick example:
+</p>
+
+<pre class="language-html"><code class="language-html">'Lora', serif</code></pre>
+
+<h3>Breadcrumbs Variables </h3>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-breadcrumb-item-color</td>
+        <td>breadcrumb-item-color</td>
+        <td>Breadcrumb Color</td>
+        <td>Color</td>
+    </tr>
+
+     <tr>
+        <td>--jazz-breadcrumb-hover-underline-color</td>
+        <td>breadcrumb-hover-underline-color</td>
+        <td>Breadcrumb Hover Underline Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-breadcrumb-active-color</td>
+        <td>breadcrumb-active-color</td>
+        <td>Breadcrumb Active Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-breadcrumb-active-underline-color</td>
+        <td>breadcrumb-active-underline-color</td>
+        <td>Breadcrumb Active Underline Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-breadcrumb-divider-color</td>
+        <td>breadcrumb-divider-color</td>
+        <td>Breadcrumb Divider Color</td>
+        <td>Color</td>
+    </tr>
+</table>
+
         </div>
     </div>
 </main>

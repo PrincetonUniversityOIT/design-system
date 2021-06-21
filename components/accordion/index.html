@@ -580,6 +580,161 @@ An Accordion is a vertically stacked set of headings that each control the visib
     <li>Multiple - More than one Accordion Item can be expanded at a time.  Expansion of an Accordion Item will have no effect on other items.  The preferred behavior for an Accordion would normally be to have it be multiselectable.  An Accordion can be made multiselectable by adding the following attribute to the element that is identified with the <span class="code">jazz-accordion</span> class: <span class="code">aria-multiselectable=”true”</span></li>
 </ul>
 
+<h2>Theme Variables</h2>
+
+<h3>Colors</h3>
+
+<p>
+    To override color variables with colors from the Design System color palette you can specify color hex values or html colors. If you want to use colors from the Design System color palette,
+    you can also specify the following value format for the color you want to use for the variable:
+</p>
+
+<pre class="language-html"><code class="language-html">var(--jazz-gray);</code></pre>
+
+<h3>Fonts</h3>
+
+<p>
+    To override the font variables you can specify the font you want to use as you would typically put in the css. Here is a quick example:
+</p>
+
+<pre class="language-html"><code class="language-html">'Lora', serif</code></pre>
+
+<h3>Accordion Variables </h3>
+
+<h4>Header</h4>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-header-font</td>
+        <td>accordion-header-font</td>
+        <td>Header Font</td>
+        <td>Font</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-header-bgcolor</td>
+        <td>accordion-header-bgcolor</td>
+        <td>Header Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-header-color</td>
+        <td>accordion-header-color</td>
+        <td>Header Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-header-border-color</td>
+        <td>accordion-header-border-color</td>
+        <td>Header Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-header-hover-bgcolor</td>
+        <td>accordion-header-hover-bgcolor</td>
+        <td>Header Hover Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-header-hover-color</td>
+        <td>accordion-header-hover-color</td>
+        <td>Header Hover Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-bordered-header-collapsed-bgcolor</td>
+        <td>accordion-bordered-header-collapsed-bgcolor</td>
+        <td>Bordered Header Background Color (Collapsed)</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-bordered-header-collapsed-color</td>
+        <td>accordion-bordered-header-collapsed-color</td>
+        <td>Bordered Header Foreground Color (Collapsed)</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-bordered-header-expanded-bgcolor</td>
+        <td>accordion-bordered-header-expanded-bgcolor</td>
+        <td>Bordered Header Background Color (Expanded)</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-bordered-header-expanded-color</td>
+        <td>accordion-bordered-header-expanded-color</td>
+        <td>Bordered Header Foreground Color (Expanded)</td>
+        <td>Color</td>
+    </tr>
+</table>
+
+<h4>Body</h4>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-body-font</td>
+        <td>accordion-body-font</td>
+        <td>Body Font</td>
+        <td>Font</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-body-bgcolor</td>
+        <td>accordion-body-bgcolor</td>
+        <td>Body Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-body-color</td>
+        <td>accordion-body-color</td>
+        <td>Body Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-divider-color</td>
+        <td>accordion-divider-color</td>
+        <td>Divider Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-icon-color</td>
+        <td>accordion-icon-color</td>
+        <td>Icon Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-accordion-content-border-color</td>
+        <td>accordion-content-border-color</td>
+        <td>Content Border Color</td>
+        <td>Color</td>
+    </tr>
+</table>
+
         </div>
     </div>
 </main>

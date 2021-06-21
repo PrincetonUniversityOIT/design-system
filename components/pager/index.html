@@ -597,6 +597,86 @@
 <p>When the Pager is in the Overflow state, some paging links are left out to attempt to keep the pagination links within the available horizontal space.  It may be necessary for each design to evaluate how many pages can be represented within a design before the Overflow state is  triggered.  Each device resolution may require a different threshold for triggering the overflow state.</p>
 <p>Situations where the number of pages is extreme (i.e. 10,000 pages) have not been considered as part of the design.  The existence of more than a few hundred pages within a data set is probably an indication that a more efficient means of working with the data should be devised.</p>
 
+<h2>Theme Variables</h2>
+
+<h3>Colors</h3>
+
+<p>
+    To override color variables with colors from the Design System color palette you can specify color hex values or html colors. If you want to use colors from the Design System color palette,
+    you can also specify the following value format for the color you want to use for the variable:
+</p>
+
+<pre class="language-html"><code class="language-html">var(--jazz-gray);</code></pre>
+
+<h3>Fonts</h3>
+
+<p>
+    To override the font variables you can specify the font you want to use as you would typically put in the css. Here is a quick example:
+</p>
+
+<pre class="language-html"><code class="language-html">'Lora', serif</code></pre>
+
+<h3>Pager Variables </h3>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-pager-item-font</td>
+        <td>pager-item-font</td>
+        <td>Pager Font</td>
+        <td>Font</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-pager-item-bgcolor</td>
+        <td>pager-item-bgcolor</td>
+        <td>Pager Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-pager-item-color</td>
+        <td>pager-item-color</td>
+        <td>Pager Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-pager-item-hover-underline-color</td>
+        <td>pager-item-hover-underline-color</td>
+        <td>Pager Hover Underline Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-pager-item-disabled-color</td>
+        <td>pager-item-disabled-color</td>
+        <td>Pager Disabled Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-pager-item-current-color</td>
+        <td>pager-item-current-color</td>
+        <td>Pager Currently Selected Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-pager-item-current-underline-color</td>
+        <td>pager-item-current-underline-color</td>
+        <td>Pager Currently Selected Underline Color</td>
+        <td>Color</td>
+    </tr>
+
+</table>
+
         </div>
     </div>
 </main>

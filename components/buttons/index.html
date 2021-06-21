@@ -402,6 +402,377 @@ Use buttons to draw attention to important actions, such as “Add”, “Close�
     <li>A more cohesive visual experience for sighted users</li>
 </ul>
 
+<h2>Theme Variables</h2>
+
+<h3>Colors</h3>
+
+<p>
+    To override color variables with colors from the Design System color palette you can specify color hex values or html colors. If you want to use colors from the Design System color palette,
+    you can also specify the following value format for the color you want to use for the variable:
+</p>
+
+<pre class="language-html"><code class="language-html">var(--jazz-gray);</code></pre>
+
+<h3>Fonts</h3>
+
+<p>
+    To override the font variables you can specify the font you want to use as you would typically put in the css. Here is a quick example:
+</p>
+
+<pre class="language-html"><code class="language-html">'Lora', serif</code></pre>
+
+<h3>Button Variables </h3>
+
+<h4>Button Sizes</h4>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-size-small</td>
+        <td>button-size-small</td>
+        <td>Small button size</td>
+        <td>Size</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-size-medium</td>
+        <td>button-size-medium</td>
+        <td>Medium button size</td>
+        <td>Size</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-size-large</td>
+        <td>button-size-large</td>
+        <td>Large button size</td>
+        <td>Size</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-size-default</td>
+        <td>button-size-default</td>
+        <td>Default button size</td>
+        <td>Size</td>
+    </tr>
+</table>
+
+<h4>Solid (Default) Buttons </h4>
+
+<table class="jazz-table__bordered">
+
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-bgcolor</td>
+        <td>button-bgcolor</td>
+        <td>Button Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-color</td>
+        <td>button-color</td>
+        <td>Button Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-hover-bgcolor</td>
+        <td>button-hover-bgcolor</td>
+        <td>Button Hover Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-hover-color</td>
+        <td>button-hover-color</td>
+        <td>Button Hover Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-hover-border-color</td>
+        <td>button-hover-border-color</td>
+        <td>Button Hover Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-active-bgcolor</td>
+        <td>button-active-bgcolor</td>
+        <td>Button Action Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-active-color</td>
+        <td>button-active-color</td>
+        <td>Button Active Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-active-border-color</td>
+        <td>button-active-border-color</td>
+        <td>Button Active Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-focus-bgcolor</td>
+        <td>button-focus-bgcolor</td>
+        <td>Button Focus Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-focus-color</td>
+        <td>button-focus-color</td>
+        <td>Button Focus Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-focus-border-color</td>
+        <td>button-focus-border-color</td>
+        <td>Button Focus Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-disabled-bgcolor</td>
+        <td>button-disabled-bgcolor</td>
+        <td>Button Disabled Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-disabled-color</td>
+        <td>button-disabled-color</td>
+        <td>Button Disabled Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-disabled-border-color</td>
+        <td>button-disabled-border-color</td>
+        <td>Button Disabled Border Color</td>
+        <td>Color</td>
+    </tr>
+</table>
+
+<h4>Outline Buttons </h4>
+
+<table class="jazz-table__bordered">
+
+    <tr>
+        <th width="25%">CSS Variable</th>
+        <th width="25%">SCSS Theme Key</th>
+        <th width="25%">Description</th>
+        <th width="25%">Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-bgcolor</td>
+        <td>button-outline-bgcolor</td>
+        <td>Button Outline Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-color</td>
+        <td>button-outline-color</td>
+        <td>Button Outline Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-border-color</td>
+        <td>outline-border-color</td>
+        <td>Button Outline Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-hover-bgcolor</td>
+        <td>button-outline-hover-bgcolor</td>
+        <td>Button Outline Hover Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-hover-color</td>
+        <td>button-outline-hover-color</td>
+        <td>Button Outline Hover Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-hover-border-color</td>
+        <td>button-outline-hover-border-color</td>
+        <td>Button Outline Hover Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-active-bgcolor</td>
+        <td>button-outline-active-bgcolor</td>
+        <td>Button Outline Active Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-active-color</td>
+        <td>button-outline-active-color</td>
+        <td>Button Outline Active Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-active-border-color</td>
+        <td>button-outline-active-border-color</td>
+        <td>Button Outline Active Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-focus-bgcolor</td>
+        <td>button-outline-focus-bgcolor</td>
+        <td>Button Outline Focus Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-focus-color</td>
+        <td>button-outline-focus-color</td>
+        <td>Button Outline Focus Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-focus-border-color</td>
+        <td>button-outline-focus-border-color</td>
+        <td>Button Outline Focus Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-disabled-bgcolor</td>
+        <td>button-outline-disabled-bgcolor</td>
+        <td>Button Outline Disabled Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-disabled-color</td>
+        <td>button-outline-disabled-color</td>
+        <td>Button Outline Disabled Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-outline-disabled-border-color</td>
+        <td>button-outline-disabled-border-color</td>
+        <td>Button Outline Disabled Border Color</td>
+        <td>Color</td>
+    </tr>
+
+</table>
+
+<h4>Text Buttons </h4>
+
+    <table class="jazz-table__bordered">
+
+        <tr>
+            <th width="25%">CSS Variable</th>
+            <th width="25%">SCSS Theme Key</th>
+            <th width="25%">Description</th>
+            <th width="25%">Expected Value Type</th>
+        </tr>
+
+
+
+    <tr>
+        <td>--jazz-button-text-color</td>
+        <td>button-text-color</td>
+        <td>Button Text Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-border-color</td>
+        <td>button-text-border-color</td>
+        <td>Button Text Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-hover-color</td>
+        <td>button-text-hover-color</td>
+        <td>Button Text Hover Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-hover-border-color</td>
+        <td>button-text-hover-border-color</td>
+        <td>Button Text Hover Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-active-color</td>
+        <td>button-text-active-color</td>
+        <td>Button Text Active Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-active-border-color</td>
+        <td>button-text-active-border-color</td>
+        <td>Button Text Active Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-focus-color</td>
+        <td>button-text-focus-color</td>
+        <td>Button Text Focus Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-focus-border-color</td>
+        <td>button-text-focus-border-color</td>
+        <td>Button Text Focus Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-disabled-color</td>
+        <td>button-text-disabled-color</td>
+        <td>Button Text Disabled Foreground Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-button-text-disabled-border-color</td>
+        <td>button-text-disabled-border-color</td>
+        <td>Button Text Disabled Border Color</td>
+        <td>Color</td>
+    </tr>
+</table>
 
         </div>
     </div>
