@@ -150,6 +150,7 @@ button.jazz-utility-header__nav-toggle {
   // hide the logo for smaller devices
   img {
     display: none;
+    transform: scale(1.50);
   }
 }
 .jazz-utility-header__user-options {
