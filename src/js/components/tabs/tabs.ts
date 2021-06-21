@@ -32,16 +32,7 @@ export class TabsBehavior extends Behavior {
             this.setTabSelection(element, selected);
         });
     }
-    //
-    // /**
-    //  * Check if tab is a disabled button.
-    //  *
-    //  * @param tab
-    //  */
-    // tabIsButtonDisabled(tab: HTMLButtonElement | HTMLAnchorElement): Boolean {
-    //     return (tab instanceof HTMLButtonElement) && (tab as HTMLButtonElement).disabled;
-    // }
-    //
+
     /**
      * Check if tab is a disabled anchor.
      *
@@ -219,11 +210,7 @@ export class TabsBehavior extends Behavior {
     })
     onClick(event: Event) {
         const tab = <HTMLButtonElement | HTMLAnchorElement> event.target;
-        // if (this.tabIsAnchorDisabled(tab)) {
-        //     event.preventDefault();
-        // } else {
-            this.selectTab(tab);
-        // }
+        this.selectTab(tab);
         event.stopImmediatePropagation();
     }
 

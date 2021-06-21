@@ -60,6 +60,24 @@ export const AutoActivateTemplate = (args) => html`
     </script>
 `;
 
+export const AutoActivateLinksTemplate = (args) => html`
+    <div class="jazz-tablist jazz-auto-activate" role="tablist">
+      <a href="javascript:void(0)" role="tab" id="one">Tab Label A</a>
+      <a href="javascript:void(0)" role="tab" id="two" aria-selected="true">Tab Label B</a>
+      <a href="javascript:void(0)" role="tab" aria-disabled="true">Disabled Button</a>
+      <a href="javascript:void(0)" role="tab">Groups</a>
+      <a href="javascript:void(0)" role="tab">Funding</a>
+      <a href="javascript:void(0)" role="tab">Expenses</a>
+      <a href="javascript:void(0)" role="tab" aria-controls="icons">Icon</a>
+    </div>
+    <div id="icons">
+        Hello, Icons!
+    </div>
+    <script id="initscript">
+      PrincetonDesignSystem.enableDesignSystem();
+    </script>
+`;
+
 export const MissingRolesTemplate = (args) => html`
     <div class="jazz-tablist">
       <button id="one">Tab Label A</button>
@@ -69,6 +87,25 @@ export const MissingRolesTemplate = (args) => html`
       <button>Funding</button>
       <button>Expenses</button>
       <button aria-controls="icons">Icon</button>
+    </div>
+    <div id="icons">
+        Hello, Icons!
+    </div>
+    <script id="initscript">
+      PrincetonDesignSystem.enableDesignSystem();
+    </script>
+`;
+
+
+export const MissingRolesLinksTemplate = (args) => html`
+    <div class="jazz-tablist">
+      <a href="javascript:void(0)" id="one">Tab Label A</a>
+      <a href="javascript:void(0)" id="two" aria-selected="true">Tab Label B</a>
+      <a href="javascript:void(0)" aria-disabled="true">Disabled Button</a>
+      <a href="javascript:void(0)">Groups</a>
+      <a href="javascript:void(0)">Funding</a>
+      <a href="javascript:void(0)">Expenses</a>
+      <a href="javascript:void(0)" aria-controls="icons">Icon</a>
     </div>
     <div id="icons">
         Hello, Icons!
@@ -101,17 +138,33 @@ The following section demonstrates a simple set of tabs:
 
 <Canvas>
     <Story name="Auto Activate" args={{
-        label: 'Auto Activate Tabs' 
+        label: 'Auto Activate Tabs'
     }}>
       {AutoActivateTemplate.bind({})}
     </Story>
 </Canvas>
 
 <Canvas>
+    <Story name="Auto Activate Links" args={{
+        label: 'Auto Activate Links'
+    }}>
+      {AutoActivateLinksTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
     <Story name="Missing Roles" args={{
-        label: 'Missing Roles' 
+        label: 'Missing Roles'
     }}>
       {MissingRolesTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Missing Roles Links" args={{
+        label: 'Missing Roles Links'
+    }}>
+      {MissingRolesLinksTemplate.bind({})}
     </Story>
 </Canvas>
 
