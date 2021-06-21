@@ -43,7 +43,7 @@ efficiently flip between related sections.
 <ul>
     <li>Default (Enabled &amp; Not Current)</li>
     <li>Current</li>
-    <li>Disabled - disabled tabs can never receive focus</li>
+    <li>Disabled - disabled tabs can receive focus, but not be activated</li>
     <li>Hover (when the mouse is within a tab that is Not Current and not disabled)</li>
     <li>Focus (when browser focus is placed on one of the tabs that is not disabled)</li>
 </ul>
@@ -105,25 +105,22 @@ efficiently flip between related sections.
         {% endhighlight %}
     </li>
     <li>
-        Individual tabs are structurally implemented as a <span class="code">button</span> instead of a link because
-        there is a need to be able to disable individual tabs and the link element does not support the
-        <span class="code">disabled</span> attribute.  Implementing this structure as a button avoids the need to
-        otherwise replicate button semantics (i.e. disabled, focus, etc…).
+        Individual tabs are structurally implemented as either with a <span class="code">button</span> or an <span class="code">a</span> tag.
     </li>
     <li>
-        Each tab button  must have its <span class="code">role</span> set to <span class="code">tab</span>.
+        Each tab must have its <span class="code">role</span> set to <span class="code">tab</span>.
         {% highlight "html" %}
         <button role="tab">Tab Label</button>
         {% endhighlight %}
     </li>
     <li>
-        To disable an individual tab, disable the corresponding button.
+        To disable an individual tab, <span class="code">aria-disabled="true"</span> the corresponding button.
         {% highlight "html" %}
-        <button role="tab" disabled>Tab Label</button>
+        <button role="tab" aria-disabled="true">Tab Label</button>
         {% endhighlight %}
     </li>
     <li>
-        The selected tab (button) should have the aria-selected attribute set to <span class="code">true</span>.
+        The selected tab should have the aria-selected attribute set to <span class="code">true</span>.
         All other tabs should have their <span class="code">aria-selected</span> attribute set to
         <span class="code">false</span> or not specified at all.  A disabled tab cannot be the selected tab.
         {% highlight "html" %}
@@ -149,7 +146,7 @@ efficiently flip between related sections.
         The Hover state is only implemented for tabs that are not Disabled and Not Selected.
     </li>
     <li>
-        Disabled tabs do not have a Hover state, cannot be the Current tab, and cannot obtain focus.
+        Disabled tabs do not have a Hover state, and cannot be the Current tab.
     </li>
     <li>
         Optionally, tabs can automatically be selected when they obtain focus by adding the
