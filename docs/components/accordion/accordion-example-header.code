@@ -1,4 +1,5 @@
-<div class="jazz-accordion" role="region" aria-multiselectable="true" aria-label="Accordion Default">
+<h2 id="accordion-header">The header above the accordion</h2>
+<div class="jazz-accordion" role="region" aria-labelledby="accordion-header" aria-multiselectable="true">
   <h2>
     <button class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
   </h2>
