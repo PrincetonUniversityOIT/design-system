@@ -1,7 +1,6 @@
 .jazz-pager > ul {
   font-family: jazz-theme(pager-item-font);
   font-style: normal;
-  font-weight: 600;
   font-size: px-to-rem(16);
   line-height: px-to-rem(24);
   letter-spacing: normal;
@@ -38,12 +37,7 @@
   border-bottom: px-to-rem(4) solid transparent;
 }
 
-.jazz-pager > ul > li a span {
-  border-top: px-to-rem(4) solid transparent;
-  border-bottom: px-to-rem(4) solid transparent;
-}
-
-.jazz-pager > ul > li a span:hover {
+.jazz-pager > ul > li a:hover {
   border-bottom: px-to-rem(4) solid jazz-theme(pager-item-hover-underline-color);
 }
 
@@ -63,9 +57,6 @@
   cursor: not-allowed;
   font-weight: bold;
   color: jazz-theme(pager-item-current-color);
-}
-
-.jazz-pager > ul > li[aria-current=page] a span {
   border-bottom: px-to-rem(4) solid jazz-theme(pager-item-current-underline-color);
 }
 
@@ -73,9 +64,10 @@
   min-width: px-to-rem(25);
 }
 
-.jazz-pager > ul > li:not(:first-child):not(:last-child) > a span {
-  padding-right: 5px;
-  padding-left: 5px;
+.jazz-pager > ul > li:first-child > a,
+.jazz-pager > ul > li:last-child > a {
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 @include apply-to-phone-only {
