@@ -64,8 +64,7 @@ export class PagerBehavior extends Behavior {
 
     createLink(displayPageStr) {
         const link = document.createElement('a');
-        // link.appendChild(document.createTextNode(displayPageStr));
-        link.appendChild(this.createSpan(displayPageStr, true));
+        link.appendChild(document.createTextNode(displayPageStr));
         link.setAttribute("href", "javascript:setPage(" + displayPageStr + ");");
         link.setAttribute("aria-label", this.setAriaLabel(displayPageStr));
         link.setAttribute("data-page", displayPageStr);
