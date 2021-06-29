@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accordion Overflow Example - Princeton Design System</title>
+    <title>Accordion Example - Princeton Design System</title>
    <link rel="stylesheet" href="/design-system/jazz_serif.css">
    <link rel="stylesheet" href="/design-system/jazz_fonts.css">
    <link rel="stylesheet" href="/design-system/jazz_curated_icons.css">
@@ -14,7 +14,8 @@
 <!-- Example Start -->
 <div style="width:90%;height:90%;padding:10px;">
 
-<div class="jazz-accordion" role="region" aria-label="Accordion Overflow">
+<h2 id="accordion-header">The header above the accordion</h2>
+<div class="jazz-accordion" role="region" aria-labelledby="accordion-header" aria-multiselectable="true">
   <h2>
     <button class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
   </h2>
@@ -44,14 +45,6 @@
       posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
       Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
     </p>
-  </div>
-  <h2>
-    <button class="jazz-accordion__button" aria-controls="content4">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</button>
-  </h2>
-  <div class="jazz-accordion__content" id="content4">
-      Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-      posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-      Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
   </div>
 </div>
 
