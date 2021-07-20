@@ -18,7 +18,7 @@
   width: fit-content;
   border-radius: px-to-rem(2);
   border: px-to-rem(1) solid jazz-theme(button-bgcolor);
-  padding: px-to-rem(12) px-to-rem(24);
+  padding: px-to-rem(12) px-to-rem(20);
   white-space: nowrap;
 
   cursor: pointer;
@@ -34,10 +34,10 @@
   flex-basis: auto;
   flex-grow: 0;
   align-items: center;
-  gap: 5px;
+  gap: 9.75px;
 
   outline: transparent solid px-to-rem(2);
-  outline-offset: .25rem;
+  //outline-offset: .25rem;
   transition: all 0.25s ease;
 }
 
@@ -79,7 +79,7 @@
   color: jazz-theme(button-outline-color);
   border: px-to-rem(1) solid jazz-theme(button-outline-border-color);
   outline: transparent solid px-to-rem(2);
-  outline-offset: .25rem;
+  //outline-offset: .25rem;
 }
 
 .jazz-btn.jazz-btn-outline--hover, .jazz-btn-outline:hover {
@@ -119,7 +119,7 @@
   background-color: transparent;
   color: jazz-theme(button-text-color);
   border: px-to-rem(1) solid transparent;
-  outline-offset: .25rem;
+  //outline-offset: .25rem;
 
   span {
     border-bottom: px-to-rem(1) solid jazz-theme(button-text-border-color);
