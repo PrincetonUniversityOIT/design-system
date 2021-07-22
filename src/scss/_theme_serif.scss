@@ -246,14 +246,24 @@ $jazz-theme-feature: (
         skip-link-active-color: jazz-color(jazz-blue),
 
         // table
+        table-font: jazz-font(jazz-roboto),
         table-border-color: jazz-color(jazz-gray-60),
-        table-th-bgcolor: jazz-color(jazz-gray-20),
+        table-th-bgcolor: jazz-color(jazz-white),
         table-th-color: jazz-color(jazz-black),
+        table-th-border-color: jazz-color(jazz-gray-60),
         table-row-sep-color: jazz-color(jazz-gray-20),
-        table-row-even-odd-bgcolor: jazz-color(jazz-gray-20),
+        table-row-even-odd-bgcolor: jazz-color(jazz-gray-10),
         table-row-even-odd-color: jazz-color(black),
+        table-row-bgcolor: jazz-color(white),
+        table-row-color: jazz-color(black),
+        table-subtotal-bgcolor: jazz-color(white),
+        table-subtotal-color: jazz-color(black),
+        table-subtitle-bgcolor: jazz-color(white),
+        table-subtitle-color: jazz-color(black),
+        table-row-hover-bgcolor: jazz-color(jazz-blue-light),
+        table-row-hover-color: jazz-color(black),
 
-        // tabs
+  // tabs
         tab-bgcolor: jazz-color(jazz-white),
         tab-color: jazz-color(jazz-black),
         tab-font: jazz-font(jazz-roboto),
