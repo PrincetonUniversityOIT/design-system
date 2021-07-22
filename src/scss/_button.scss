@@ -34,11 +34,15 @@
   flex-basis: auto;
   flex-grow: 0;
   align-items: center;
-  gap: 9.75px;
+  gap: 8px;
 
   outline: transparent solid px-to-rem(2);
   //outline-offset: .25rem;
   transition: all 0.25s ease;
+
+  i {
+    font-size: px-to-rem(16);
+  }
 }
 
 .jazz-btn.jazz-btn--hover, .jazz-btn:hover {
@@ -159,19 +163,16 @@
 .jazz-btn-s-size {
   font-size: px-to-rem(12);
   height: jazz-theme(button-size-small);
-  padding: px-to-rem(12) px-to-rem(20);
 }
 
 .jazz-btn-m-size {
   font-size: px-to-rem(14);
   height: jazz-theme(button-size-medium);
-  padding: px-to-rem(12) px-to-rem(24);
 }
 
 .jazz-btn-l-size {
   font-size: px-to-rem(16);
   height: jazz-theme(button-size-large);
-  padding: px-to-rem(12) px-to-rem(28);
 }
 
 @include apply-to-phone-only {
