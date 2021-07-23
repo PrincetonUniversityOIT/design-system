@@ -50,7 +50,7 @@
   padding-bottom: px-to-rem(16);
 }
 
-.jazz-table.jazz-table__striped tr:nth-child(even):not(.jazz-table__subtotal):not(:hover) {
+.jazz-table.jazz-table__striped tr:nth-child(even):not(.jazz-table__subtotal):not(.jazz-table__grand-total):not(:hover) {
   background-color: jazz-theme(table-row-even-odd-bgcolor);
   color: jazz-theme(table-row-even-odd-color);
 }
@@ -65,6 +65,12 @@
   font-weight: bold;
   background-color: jazz-theme(table-subtotal-bgcolor);
   color: jazz-theme(table-subtotal-color);
+}
+
+.jazz-table tr.jazz-table__grand-total {
+  font-weight: bold;
+  background-color: jazz-theme(table-grand-total-bgcolor);
+  color: jazz-theme(table-grand-total-color);
 }
 
 .jazz-table__responsive {
