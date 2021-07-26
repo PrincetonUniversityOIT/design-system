@@ -3,8 +3,8 @@ import { html } from 'lit-html';
 
 <Meta title="Components/Tables" component="Table" />
 
-export const SimpleTemplate = () => html`
-    <table class="jazz-table jazz-table__bordered">
+export const DefaultTemplate = () => html`
+    <table class="jazz-table">
         <thead>
             <tr>
                 <th>Column Title</th>
@@ -32,8 +32,8 @@ export const SimpleTemplate = () => html`
     </table>
 `;
 
-export const BorderlessTemplate = () => html`
-    <table class="jazz-table">
+export const BorderedTemplate = () => html`
+    <table class="jazz-table jazz-table__bordered">
         <thead>
             <tr>
                 <th>Column Title</th>
@@ -99,11 +99,11 @@ export const ThemeVariationTemplate = () => html`
                 --jazz-table-row-bgcolor: var(--jazz-gray-80);
                 --jazz-table-row-color: var(--jazz-white);
                 --jazz-table-row-sep-color: var(--jazz-gray-20);
-                --jazz-table-row-even-odd-bgcolor: var(--jazz-gray-90);
+                --jazz-table-row-even-odd-bgcolor: var(--jazz-gray-60);
                 --jazz-table-row-even-odd-color: var(--jazz-white);
-                --jazz-table-subtotal-bgcolor: var(--jazz-gray-60);
+                --jazz-table-subtotal-bgcolor: var(--jazz-gray-80);
                 --jazz-table-subtotal-color: var(--jazz-white);
-                --jazz-table-subtitle-bgcolor: var(--jazz-gray-60);
+                --jazz-table-subtitle-bgcolor: var(--jazz-gray-80);
                 --jazz-table-subtitle-color: var(--jazz-white);
                 --jazz-table-grand-total-bgcolor: var(--jazz-gray-90);
                 --jazz-table-grand-total-color: var(--jazz-white);
@@ -114,6 +114,7 @@ export const ThemeVariationTemplate = () => html`
     <table class="jazz-table jazz-table__striped">
         <thead>
             <tr>
+                <th><input type="checkbox"></th>
                 <th>Column Title</th>
                 <th>Column Title Roboto Bold 14/16</th>
                 <th class="jazz-right">Price</th>
@@ -121,31 +122,37 @@ export const ThemeVariationTemplate = () => html`
         </thead>
         <tbody>
             <tr class="jazz-table__subtitle">
+                <td><input type="checkbox"></td>
                 <td>Group A</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
+                <td><input type="checkbox"></td>
                 <td>Table Text Roboto Regular 14/16</td>
                 <td>A fruit pie in which the principal filling ingredient is apple</td>
                 <td class="jazz-right">$4.50</td>
             </tr>
             <tr>
+                <td><input type="checkbox"></td>
                 <td>Table Text Roboto Regular 14/16</td>
                 <td>A fruit pie in which the principal filling ingredient is apple</td>
                 <td class="jazz-right">$4.50</td>
             </tr>
             <tr>
+                <td><input type="checkbox"></td>
                 <td>Table Text Roboto Regular 14/16</td>
                 <td>A fruit pie in which the principal filling ingredient is apple</td>
                 <td class="jazz-right">$4.50</td>
             </tr>
             <tr class="jazz-table__subtotal">
+                <td>&nbsp;</td>
                 <td>Sub Total</td>
                 <td>&nbsp;</td>
                 <td class="jazz-right">$13.50</td>
             </tr>
             <tr class="jazz-table__grand-total">
+                <td>&nbsp;</td>
                 <td>Grand Total</td>
                 <td>&nbsp;</td>
                 <td class="jazz-right">$13.50</td>
@@ -360,19 +367,73 @@ export const CheckboxTemplate = () => html`
     </table>
 `;
 
+export const MultiHeaderTemplate = () => html`
+    <table class="jazz-table">
+        <thead>
+            <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">Column Title</th>
+                <th scope="col">Column Title Roboto Bold 14/16</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Row 1</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+            <tr>
+                <th scope="row">Row 2</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+            <tr>
+                <th scope="row">Row 3</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
+export const NoRowsTemplate = () => html`
+    <table class="jazz-table">
+        <thead>
+            <tr>
+                <th scope="col">Column Title</th>
+                <th scope="col">Column Title Roboto Bold 14/16</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="3">
+                    <div class="jazz-table__no-data">
+                        <span>No Data Available</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
 # Tables
 
 <Canvas>
     <Story name="Default" args={{
     }}>
-      {BorderlessTemplate.bind({})}
+      {DefaultTemplate.bind({})}
     </Story>
 </Canvas>
 
 <Canvas>
     <Story name="Bordered" args={{
     }}>
-      {SimpleTemplate.bind({})}
+      {BorderedTemplate.bind({})}
     </Story>
 </Canvas>
 
@@ -412,6 +473,27 @@ export const CheckboxTemplate = () => html`
 </Canvas>
 
 <Canvas>
+    <Story name="With Checkbox Column" args={{
+    }}>
+      {CheckboxTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Multi Header" args={{
+    }}>
+      {MultiHeaderTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="No Rows" args={{
+    }}>
+      {NoRowsTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
     <Story name="Theme Variation" args={{
     }}>
       {ThemeVariationTemplate.bind({})}
@@ -422,12 +504,5 @@ export const CheckboxTemplate = () => html`
     <Story name="Responsive" args={{
     }}>
       {ResponsiveTemplate.bind({})}
-    </Story>
-</Canvas>
-
-<Canvas>
-    <Story name="With Checkbox Column" args={{
-    }}>
-      {CheckboxTemplate.bind({})}
     </Story>
 </Canvas>

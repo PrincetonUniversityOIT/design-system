@@ -4,12 +4,13 @@
   font-size: px-to-rem(16);
   line-height: px-to-rem(24);
 
-  border-collapse: collapse;
+  // border:collapse causes an issue with the weight of the first line to be doubled
+  // so using border-spacing instead
+  border-spacing: 0px;
 }
 
 .jazz-table th,
 .jazz-table td {
-  border-bottom: 1px solid jazz-theme(table-row-sep-color);
   padding: px-to-rem(8) px-to-rem(16);
   font-size: px-to-rem(16);
   vertical-align: top;
@@ -23,6 +24,17 @@
   color: jazz-theme(table-th-color);
 }
 
+.jazz-table th[scope=row] {
+  border-bottom: 1px solid jazz-theme(table-row-sep-color);
+  font-weight: normal;
+  background: jazz-theme(table-row-bgcolor);
+  color: jazz-theme(table-row-color);
+}
+
+.jazz-table td {
+  border-bottom: 1px solid jazz-theme(table-row-sep-color);
+}
+
 .jazz-table tr {
   background: jazz-theme(table-row-bgcolor);
   color: jazz-theme(table-row-color);
@@ -34,14 +46,15 @@
   color: jazz-theme(table-row-hover-color);
 }
 
-.jazz-table__bordered {
-  border: 1px solid jazz-theme(table-border-color);
-  border-collapse: collapse;
-}
-
-.jazz-table__bordered th,
 .jazz-table__bordered td {
   border: 1px solid jazz-theme(table-border-color);
+}
+
+.jazz-table__bordered th {
+  border-top: 1px solid jazz-theme(table-border-color);
+  border-left: 1px solid jazz-theme(table-border-color);
+  border-right: 1px solid jazz-theme(table-border-color);
+  border-bottom: 3px solid jazz-theme(table-th-border-color);
 }
 
 .jazz-table__open th,
@@ -78,4 +91,11 @@
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.jazz-table__no-data {
+  padding: px-to-rem(24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
