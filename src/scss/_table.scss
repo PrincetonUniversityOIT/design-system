@@ -46,47 +46,47 @@
   color: jazz-theme(table-row-hover-color);
 }
 
-.jazz-table__bordered td {
+.jazz-table--bordered td {
   border: 1px solid jazz-theme(table-border-color);
 }
 
-.jazz-table__bordered th {
+.jazz-table--bordered th {
   border-top: 1px solid jazz-theme(table-border-color);
   border-left: 1px solid jazz-theme(table-border-color);
   border-right: 1px solid jazz-theme(table-border-color);
   border-bottom: 3px solid jazz-theme(table-th-border-color);
 }
 
-.jazz-table__open th,
-.jazz-table__open td {
+.jazz-table--open th,
+.jazz-table--open td {
   padding-top: px-to-rem(16);
   padding-bottom: px-to-rem(16);
 }
 
-.jazz-table.jazz-table__striped tr:nth-child(even):not(.jazz-table__subtotal):not(.jazz-table__grand-total):not(:hover) {
+.jazz-table.jazz-table--striped tr:nth-child(even):not(.jazz-table--subtotal):not(.jazz-table--grand-total):not(:hover) {
   background-color: jazz-theme(table-row-even-odd-bgcolor);
   color: jazz-theme(table-row-even-odd-color);
 }
 
-.jazz-table tr.jazz-table__subtitle {
+.jazz-table tr.jazz-table--subtitle {
   font-weight: bold;
   background-color: jazz-theme(table-subtitle-bgcolor);
   color: jazz-theme(table-subtitle-color);
 }
 
-.jazz-table tr.jazz-table__subtotal {
+.jazz-table tr.jazz-table--subtotal {
   font-weight: bold;
   background-color: jazz-theme(table-subtotal-bgcolor);
   color: jazz-theme(table-subtotal-color);
 }
 
-.jazz-table tr.jazz-table__grand-total {
+.jazz-table tr.jazz-table--grand-total {
   font-weight: bold;
   background-color: jazz-theme(table-grand-total-bgcolor);
   color: jazz-theme(table-grand-total-color);
 }
 
-.jazz-table__responsive {
+.jazz-table--responsive {
   display: block;
   width: 100%;
   overflow-x: auto;
