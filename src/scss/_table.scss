@@ -3,6 +3,7 @@
   font-style: normal;
   font-size: px-to-rem(16);
   line-height: px-to-rem(24);
+  width: 100%;
 
   // border:collapse causes an issue with the weight of the first line to be doubled
   // so using border-spacing instead
