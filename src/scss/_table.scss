@@ -68,19 +68,19 @@
   color: jazz-theme(table-row-even-odd-color);
 }
 
-.jazz-table tr.jazz-table--subtitle {
+.jazz-table tr.jazz-table__subtitle {
   font-weight: bold;
   background-color: jazz-theme(table-subtitle-bgcolor);
   color: jazz-theme(table-subtitle-color);
 }
 
-.jazz-table tr.jazz-table--subtotal {
+.jazz-table tr.jazz-table__subtotal {
   font-weight: bold;
   background-color: jazz-theme(table-subtotal-bgcolor);
   color: jazz-theme(table-subtotal-color);
 }
 
-.jazz-table tr.jazz-table--grand-total {
+.jazz-table tr.jazz-table__grand-total {
   font-weight: bold;
   background-color: jazz-theme(table-grand-total-bgcolor);
   color: jazz-theme(table-grand-total-color);
