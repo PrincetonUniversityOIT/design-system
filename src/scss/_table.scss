@@ -1,40 +1,101 @@
-.jazz-table__bordered {
-  border: 1px solid jazz-theme(table-border-color);
-  border-collapse: collapse;
-  line-height: 1.25;
+.jazz-table {
+  font-family: jazz-theme(table-font);
+  font-style: normal;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+
+  // border:collapse causes an issue with the weight of the first line to be doubled
+  // so using border-spacing instead
+  border-spacing: 0px;
 }
 
-.jazz-table__bordered th,
-.jazz-table__bordered td {
-  border: 1px solid jazz-theme(table-border-color);
-  padding: px-to-rem(12);
+.jazz-table th,
+.jazz-table td {
+  padding: px-to-rem(8) px-to-rem(16);
+  font-size: px-to-rem(16);
+  vertical-align: top;
   text-align: left;
-  font-size: px-to-rem(14);
 }
 
-.jazz-table__bordered th {
-  background-color: jazz-theme(table-th-bgcolor);
+.jazz-table th {
+  border-bottom: 3px solid jazz-theme(table-th-border-color);
+  font-weight: bold;
+  background: jazz-theme(table-th-bgcolor);
   color: jazz-theme(table-th-color);
 }
 
-.jazz-table__borderless {
-  border-collapse: collapse;
-  line-height: 1.25;
-}
-
-.jazz-table__borderless th,
-.jazz-table__borderless td {
+.jazz-table th[scope=row] {
   border-bottom: 1px solid jazz-theme(table-row-sep-color);
-  padding: px-to-rem(12);
-  text-align: left;
-  font-size: px-to-rem(14);
+  font-weight: normal;
+  background: jazz-theme(table-row-bgcolor);
+  color: jazz-theme(table-row-color);
 }
 
-.jazz-table__borderless th {
-  border-bottom: 3px solid jazz-theme(accent);
+.jazz-table td {
+  border-bottom: 1px solid jazz-theme(table-row-sep-color);
 }
 
-.jazz-table__borderless tr:nth-child(even) {
+.jazz-table tr {
+  background: jazz-theme(table-row-bgcolor);
+  color: jazz-theme(table-row-color);
+  font-weight: normal;
+}
+
+.jazz-table tr:hover {
+  background: jazz-theme(table-row-hover-bgcolor);
+  color: jazz-theme(table-row-hover-color);
+}
+
+.jazz-table--bordered td {
+  border: 1px solid jazz-theme(table-border-color);
+}
+
+.jazz-table--bordered th {
+  border-top: 1px solid jazz-theme(table-border-color);
+  border-left: 1px solid jazz-theme(table-border-color);
+  border-right: 1px solid jazz-theme(table-border-color);
+  border-bottom: 3px solid jazz-theme(table-th-border-color);
+}
+
+.jazz-table--open th,
+.jazz-table--open td {
+  padding-top: px-to-rem(16);
+  padding-bottom: px-to-rem(16);
+}
+
+.jazz-table.jazz-table--striped tr:nth-child(even):not(.jazz-table--subtotal):not(.jazz-table--grand-total):not(:hover) {
   background-color: jazz-theme(table-row-even-odd-bgcolor);
   color: jazz-theme(table-row-even-odd-color);
+}
+
+.jazz-table tr.jazz-table__subtitle {
+  font-weight: bold;
+  background-color: jazz-theme(table-subtitle-bgcolor);
+  color: jazz-theme(table-subtitle-color);
+}
+
+.jazz-table tr.jazz-table__subtotal {
+  font-weight: bold;
+  background-color: jazz-theme(table-subtotal-bgcolor);
+  color: jazz-theme(table-subtotal-color);
+}
+
+.jazz-table tr.jazz-table__grand-total {
+  font-weight: bold;
+  background-color: jazz-theme(table-grand-total-bgcolor);
+  color: jazz-theme(table-grand-total-color);
+}
+
+.jazz-table--responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.jazz-table__no-data {
+  padding: px-to-rem(24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
