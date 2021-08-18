@@ -1,16 +1,18 @@
 .jazz-input, .jazz-select, .jazz-textarea {
+  font-family: jazz-theme(body-font);
   background-color: jazz-theme(form-input-bgcolor);
   color: jazz-theme(form-input-color);
-  border-radius: 0;
-  border: 1px solid jazz-theme(form-input-border-color);
+  border-radius: px-to-rem(2);
+  border: px-to-rem(1) solid jazz-theme(form-input-border-color);
+  line-height: px-to-rem(24);
   display: block;
-  margin-top: .5rem;
+  margin: 0;
   max-width: 30rem;
-  padding: .5rem;
+  padding: px-to-rem(8) px-to-rem(10);
 }
 
 .jazz-input.jazz-input--error {
-  border: .25rem solid jazz-theme(error);
+  border: px-to-rem(2) solid jazz-theme(error);
 }
 
 // taken from digital.gov

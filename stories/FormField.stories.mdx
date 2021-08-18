@@ -14,8 +14,9 @@ export const Template = (args) => html`
     </div>
     <div class="jazz-form-field--error">
         <label for="my-input3">${ args.label } - With Error</label>
-        <span class="jazz-form-field-error-msg" id="my-input3-msg" role="alert">Clear and brief error message</span>
+        <span class="jazz-form-field-msg" id="my-input4-msg">Provide a helpful hint about the field</span>
         <input class="jazz-input jazz-input--error" id="my-input3" type="text" placeholder="Placeholder" value="${ args.value }" aria-describedby="my-input3-msg" />
+        <span class="jazz-form-field-error-msg" id="my-input3-msg" role="alert">Clear and brief error message</span>
     </div>
     <div class="jazz-form-field">
         <label for="my-input4">${ args.label } - With Hint</label>
