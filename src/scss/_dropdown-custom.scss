@@ -7,9 +7,9 @@
   display: none; /*hide original SELECT element: */
 }
 .jazz-dropdown-custom__select {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  //position: relative;
+  //display: flex;
+  //flex-direction: column;
   border-width: 0 2px 0 2px;
   border-style: solid;
   border-color: #394a6d;
@@ -19,12 +19,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 22px;
-  font-size: 20px;
+  padding: px-to-rem(8) px-to-rem(10);
+  font-size: px-to-rem(16);
   font-weight: 300;
   color: #3b3b3b;
-  height: 60px;
-  line-height: 60px;
+  height: px-to-rem(40);
+  line-height: px-to-rem(24);
   background: #ffffff;
   cursor: pointer;
   border-width: 2px 0 2px 0;
@@ -54,11 +54,11 @@
 .jazz-dropdown-custom__option {
   position: relative;
   display: block;
-  padding: 0 22px 0 22px;
-  font-size: 22px;
+  padding: px-to-rem(8) px-to-rem(10);
+  font-size: px-to-rem(16);
   font-weight: 300;
   color: #3b3b3b;
-  line-height: 60px;
+  line-height: px-to-rem(24);
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -71,6 +71,7 @@
   background-color: #305c91;
 }
 
+/* Arrow styles */
 
 .jazz-dropdown__arrow {
   position: relative;
