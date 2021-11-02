@@ -19,7 +19,7 @@ it('We can check that content is hidden and shown correctly', () => {
           <h2>
             <button id="acrd-btn-2" class="jazz-accordion__button" aria-expanded="true" aria-controls="content2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta?</button>
           </h2>
-          <div aria-hidden="false" class="jazz-accordion__content" id="content2">
+          <div aria-hidden="false" class="jazz-accordion__content expanded" id="content2">
               Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet 
               et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. 
               Cras ultricies ligula sed magna dictum porta.
