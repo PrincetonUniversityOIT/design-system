@@ -87,13 +87,28 @@
   line-height: px-to-rem(24);
 
   border-left: px-to-rem(3) solid jazz-theme(accordion-content-border-color);
-  margin: px-to-rem(10) px-to-rem(20);
+  margin: 0 px-to-rem(20);
   padding-left: px-to-rem(20);
-  margin-bottom: px-to-rem(16);
   text-align: left;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 0;
+  opacity: 0;
+  transform: translateY(-25%);
+  transition: .15s ease-in-out;
 }
 .jazz-accordion__content[aria-hidden='true'] {
   display: none;
+}
+.jazz-accordion__content.expanded {
+  margin-top: px-to-rem(20);
+  margin-bottom: px-to-rem(16);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%);
+  z-index: -1;
+  height: 100%;
 }
 .jazz-accordion__button:focus {
   outline: px-to-rem($jazz-focus-size-px) solid jazz-theme(focus-color);

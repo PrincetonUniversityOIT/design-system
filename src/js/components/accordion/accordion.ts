@@ -1,4 +1,4 @@
-import { ARIA_EXPANDED, Behavior} from '../../base/delegreater';
+import {ARIA_CONTROLS, ARIA_EXPANDED, Behavior} from '../../base/delegreater';
 import { prefix as PREFIX } from '../../config';
 import {Listener} from "../../base/decorator-functions";
 
@@ -19,6 +19,35 @@ export class AccordionBehavior extends Behavior {
         });
     }
 
+    toggleControl(target: HTMLElement, expanded?: boolean, attribute?: string): boolean {
+        let safeAttribute: string = attribute || ARIA_EXPANDED;
+
+        let safeExpanded = expanded;
+
+        if (typeof safeExpanded !== "boolean") {
+            // invert the existing button value
+            safeExpanded = target.getAttribute(safeAttribute) === "false";
+        }
+
+        target.setAttribute(safeAttribute, safeExpanded.toString());
+
+        const controlledElementId = target.getAttribute(ARIA_CONTROLS);
+        if (controlledElementId) {
+            const controlledElement = document.getElementById(controlledElementId);
+            if (!controlledElement) {
+                throw new Error(`aria-controls is not properly configured: ${controlledElementId}`);
+            }
+        }
+
+        return safeExpanded;
+    }
+
+    // Get Current Button's Content
+    getMatchingContent = (button: HTMLElement, accordion: Element) => {
+        const matchVal = button.getAttribute("aria-controls");
+        return accordion.querySelector(`#${matchVal}`);
+    }
+
     getAccordionButtons = (accordion: Element) => {
         return this.selectClosestTo(ACCORDION_BUTTON_SELECTOR, ACCORDION_SELECTOR, accordion);
     };
@@ -28,18 +57,24 @@ export class AccordionBehavior extends Behavior {
         selector: ACCORDION_BUTTON_SELECTOR
     })
     onClick(event: Event) {
-        const button = <HTMLElement> event.target;
+        const button = <HTMLElement>event.target;
         const accordionEl = button.closest(ACCORDION_SELECTOR);
         const multiselectable = accordionEl.getAttribute(MULTISELECTABLE) === "true";
 
         const expanded = this.toggleControl(button, null);
+        const content = this.getMatchingContent(button, accordionEl);
+
 
         if (expanded && !multiselectable) {
             this.getAccordionButtons(accordionEl).forEach((other) => {
                 if (other !== button) {
                     this.toggleControl(other, false);
+                    this.getMatchingContent(other, accordionEl).classList.remove("expanded");
                 }
             });
+            content.classList.add("expanded");
+        } else {
+            content.classList.remove("expanded");
         }
         event.stopImmediatePropagation();
     }
