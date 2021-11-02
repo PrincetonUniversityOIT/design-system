@@ -65,7 +65,7 @@ export class AccordionBehavior extends Behavior {
         selector: ACCORDION_BUTTON_SELECTOR
     })
     onClick(event: Event) {
-        const button = <HTMLElement>event.target;
+        const button = <HTMLElement> event.target;
         const accordionEl = button.closest(ACCORDION_SELECTOR);
         const multiselectable = accordionEl.getAttribute(MULTISELECTABLE) === "true";
 
