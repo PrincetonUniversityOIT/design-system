@@ -42,8 +42,7 @@ export class AccordionBehavior extends Behavior {
         return safeExpanded;
     }
 
-    // Get Current Button's Content
-    getMatchingContent = (button: HTMLElement, accordion: Element) => {
+    getButtonMatchingContent = (button: HTMLElement, accordion: Element) => {
         const matchVal = button.getAttribute("aria-controls");
         return accordion.querySelector(`#${matchVal}`);
     }
@@ -51,6 +50,15 @@ export class AccordionBehavior extends Behavior {
     getAccordionButtons = (accordion: Element) => {
         return this.selectClosestTo(ACCORDION_BUTTON_SELECTOR, ACCORDION_SELECTOR, accordion);
     };
+
+    closeExpandedContents = (accordion: Element, button: Element) => {
+        return this.getAccordionButtons(accordion).forEach((other) => {
+            if (other !== button ) {
+                this.toggleControl(other, false);
+                this.getButtonMatchingContent(other, accordion).classList.remove("expanded");
+            }
+        });
+    }
 
     @Listener({
         event: 'click',
@@ -62,20 +70,17 @@ export class AccordionBehavior extends Behavior {
         const multiselectable = accordionEl.getAttribute(MULTISELECTABLE) === "true";
 
         const expanded = this.toggleControl(button, null);
-        const content = this.getMatchingContent(button, accordionEl);
+        const content = this.getButtonMatchingContent(button, accordionEl);
 
-
-        if (expanded && !multiselectable) {
-            this.getAccordionButtons(accordionEl).forEach((other) => {
-                if (other !== button) {
-                    this.toggleControl(other, false);
-                    this.getMatchingContent(other, accordionEl).classList.remove("expanded");
-                }
-            });
+        if (expanded) {
+            if (!multiselectable) {
+                this.closeExpandedContents(accordionEl, button);
+            }
             content.classList.add("expanded");
         } else {
             content.classList.remove("expanded");
         }
+
         event.stopImmediatePropagation();
     }
 }
