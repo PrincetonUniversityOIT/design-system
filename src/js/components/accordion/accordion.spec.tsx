@@ -48,7 +48,7 @@ it('We can check that content is hidden and shown correctly', () => {
 
     const content = document.getElementById('content1');
     // check if content is hidden
-    expect(content.hidden).toBe(true);
+    expect(content.classList.contains('expanded')).toBe(false);
 
     const button = document.getElementById('acrd-btn-1');
     // check if aria-expanded attribute is false
@@ -109,7 +109,7 @@ it('We can check that content is hidden and shown correctly for multi selectable
     /* Content 1 */
     const content = document.getElementById('content1');
     // check if content is hidden
-    expect(content.hidden).toBe(true);
+    expect(content.classList.contains('expanded')).toBe(false);
 
     const button = document.getElementById('acrd-btn-1');
     // check if aria-expanded attribute is false
@@ -119,7 +119,7 @@ it('We can check that content is hidden and shown correctly for multi selectable
     /* Content 2 */
     const content2 = document.getElementById('content2');
     // check if content is hidden
-    expect(content2.hidden).toBe(true);
+    expect(content2.classList.contains('expanded')).toBe(false);
 
     const button2 = document.getElementById('acrd-btn-2');
     // check if aria-expanded attribute is false
@@ -182,7 +182,7 @@ it('We can check that content is hidden and shown correctly for non-multi select
   /* Content 1 */
   const content = document.getElementById('content1');
   // check if content is hidden
-  expect(content.hidden).toBe(true);
+  expect(content.classList.contains('expanded')).toBe(false);
 
   const button = document.getElementById('acrd-btn-1');
   // check if aria-expanded attribute is false
@@ -192,7 +192,7 @@ it('We can check that content is hidden and shown correctly for non-multi select
   /* Content 2 */
   const content2 = document.getElementById('content2');
   // check if content is hidden
-  expect(content2.hidden).toBe(true);
+  expect(content2.classList.contains('expanded')).toBe(false);
 
   const button2 = document.getElementById('acrd-btn-2');
   // check if aria-expanded attribute is false-
@@ -200,8 +200,8 @@ it('We can check that content is hidden and shown correctly for non-multi select
   button2.click();
 
   // after button click check of content is shown only for the 2nd accordion section
-  expect(content.hidden).toBe(true);
-  expect(content2.hidden).toBe(false);
+  expect(content.classList.contains('expanded')).toBe(false);
+  expect(content2.classList.contains('expanded')).toBe(true);
 
   // after button click check if aria-expanded attribute for button is set to true only for the 2nd button
   expect(button.getAttribute('aria-expanded')).toBe("false");
