@@ -5,7 +5,7 @@ import {Listener} from "../../base/decorator-functions";
 const ACCORDION_SELECTOR = `.${PREFIX}-accordion`;
 const ACCORDION_BUTTON_SELECTOR = `.${PREFIX}-accordion__button`;
 const MULTISELECTABLE = "aria-multiselectable";
-const ACCORDION_CONTENT_EXPANDED_CLASSNAME = "jazz-accordion__content--expanded";
+export const ACCORDION_CONTENT_EXPANDED_CLASSNAME = "jazz-accordion__content--expanded";
 
 export class AccordionBehavior extends Behavior {
 
@@ -20,6 +20,7 @@ export class AccordionBehavior extends Behavior {
         });
     }
 
+    // Behavior method override to remove logic for attribute check
     toggleControl(target: HTMLElement, expanded?: boolean): boolean {
         let safeAttribute: string = ARIA_EXPANDED;
 
