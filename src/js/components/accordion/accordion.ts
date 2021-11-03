@@ -5,6 +5,7 @@ import {Listener} from "../../base/decorator-functions";
 const ACCORDION_SELECTOR = `.${PREFIX}-accordion`;
 const ACCORDION_BUTTON_SELECTOR = `.${PREFIX}-accordion__button`;
 const MULTISELECTABLE = "aria-multiselectable";
+const ACCORDION_CONTENT_EXPANDED_CLASSNAME = "jazz-accordion__content--expanded";
 
 export class AccordionBehavior extends Behavior {
 
@@ -19,8 +20,8 @@ export class AccordionBehavior extends Behavior {
         });
     }
 
-    toggleControl(target: HTMLElement, expanded?: boolean, attribute?: string): boolean {
-        let safeAttribute: string = attribute || ARIA_EXPANDED;
+    toggleControl(target: HTMLElement, expanded?: boolean): boolean {
+        let safeAttribute: string = ARIA_EXPANDED;
 
         let safeExpanded = expanded;
 
@@ -55,7 +56,7 @@ export class AccordionBehavior extends Behavior {
         return this.getAccordionButtons(accordion).forEach((other) => {
             if (other !== button ) {
                 this.toggleControl(other, false);
-                this.getButtonMatchingContent(other, accordion).classList.remove("expanded");
+                this.getButtonMatchingContent(other, accordion).classList.remove(ACCORDION_CONTENT_EXPANDED_CLASSNAME);
             }
         });
     }
@@ -76,9 +77,9 @@ export class AccordionBehavior extends Behavior {
             if (!multiselectable) {
                 this.closeExpandedContents(accordionEl, button);
             }
-            content.classList.add("expanded");
+            content.classList.add(ACCORDION_CONTENT_EXPANDED_CLASSNAME);
         } else {
-            content.classList.remove("expanded");
+            content.classList.remove(ACCORDION_CONTENT_EXPANDED_CLASSNAME);
         }
 
         event.stopImmediatePropagation();

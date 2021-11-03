@@ -102,7 +102,7 @@
 .jazz-accordion__content[aria-hidden='true'] {
   display: none;
 }
-.jazz-accordion__content.expanded {
+.jazz-accordion__content--expanded {
   margin-top: px-to-rem(20);
   margin-bottom: px-to-rem(16);
   opacity: 1;
