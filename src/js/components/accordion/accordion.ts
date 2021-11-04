@@ -58,6 +58,8 @@ export class AccordionBehavior extends Behavior {
             if (other !== button ) {
                 this.toggleControl(other, false);
                 this.getButtonMatchingContent(other, accordion).classList.remove(ACCORDION_CONTENT_EXPANDED_CLASSNAME);
+                const content = this.getButtonMatchingContent(other, accordion);
+                content.setAttribute("aria-hidden", 'true');
             }
         });
     }
@@ -79,10 +81,11 @@ export class AccordionBehavior extends Behavior {
                 this.closeExpandedContents(accordionEl, button);
             }
             content.classList.add(ACCORDION_CONTENT_EXPANDED_CLASSNAME);
+            content.setAttribute("aria-hidden", 'false');
         } else {
             content.classList.remove(ACCORDION_CONTENT_EXPANDED_CLASSNAME);
+            content.setAttribute("aria-hidden", 'true');
         }
-
         event.stopImmediatePropagation();
     }
 }
