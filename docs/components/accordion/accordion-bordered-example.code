@@ -2,7 +2,7 @@
           <h2>
             <button class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
           </h2>
-          <div class="jazz-accordion__content" id="content1" aria-hidden="true">
+          <div class="jazz-accordion__content" id="content1">
               Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a
               pellentesque nec, egestas non nisi.
           </div>
@@ -17,7 +17,7 @@
           <h2>
             <button class="jazz-accordion__button" aria-controls="content3">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</button>
           </h2>
-          <div class="jazz-accordion__content" id="content3" aria-hidden="true">
+          <div class="jazz-accordion__content" id="content3">
               Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
               posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
               Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
