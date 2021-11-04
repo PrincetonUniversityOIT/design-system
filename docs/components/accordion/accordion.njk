@@ -92,6 +92,7 @@ An Accordion is a vertically stacked set of headings that each control the visib
     </li>
     <li>Section headers are wrapped in HTML headers to define appropriate document structure.  All heading levels (H1-H6) are supported and their style has been redefined for a consistent style within the Accordion.</li>
     <li>Each section header button is associated with its corresponding panel by way of the <span class="code">aria-controls</span> attribute.  Each panel must be given a unique id, so that id can be referenced in the <span class="code">aria-controls</span> attribute of the corresponding button.</li>
+    <li>The <span class="code">jazz-accordion__content--expanded</span> class is attached to the expanded content, when the corresponding button is clicked. The class allows for animation of expanding and collapsing the content, and is added autonomously when its button is clicked.</li>
     <li>The <span class="code">aria-expanded</span> attribute of the button in each section header dictates the visibility of the corresponding region.
          {% highlight "html" %}
             <button class="jazz-accordion__button" aria-expanded="true" aria-controls="content2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta?</button>

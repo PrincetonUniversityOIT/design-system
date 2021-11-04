@@ -29,4 +29,13 @@
       Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
     </p>
   </div>
+  <h2>
+    <button class="jazz-accordion__button" aria-controls="content4">Ultricies mi quis hendrerit dolor magna eget est.</button>
+  </h2>
+  <div class="jazz-accordion__content" id="content4">
+     Non enim praesent elementum facilisis leo. Non blandit massa enim nec dui nunc mattis enim ut. Lorem sed
+     risus ultricies tristique <a href="#">nulla aliquet</a> enim tortor at. Sodales ut eu sem integer vitae justo eget. Donec
+     pretium vulputate sapien nec sagittis. Sit amet dictum sit amet justo. Faucibus in ornare quam viverra orci
+     sagittis eu.
+  </div>
 </div>
