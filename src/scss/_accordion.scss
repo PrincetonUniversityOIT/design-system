@@ -99,9 +99,6 @@
   transform: translateY(-25%);
   transition: .15s ease-in-out;
 }
-.jazz-accordion__content[aria-hidden='true'] {
-  display: none;
-}
 .jazz-accordion__content--expanded {
   margin-top: px-to-rem(20);
   margin-bottom: px-to-rem(16);
