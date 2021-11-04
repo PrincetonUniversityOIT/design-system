@@ -64,8 +64,8 @@ it('We can check that content is hidden and shown correctly', () => {
     expect(button.getAttribute('aria-expanded')).toBe("false");
     button.click();
 
-    // after button click check of content is shown
-    expect(content.hidden).toBe(false);
+    // after button click check if content is shown
+    expect(content.classList.contains(ACCORDION_CONTENT_EXPANDED_CLASSNAME)).toBe(true);
 
     // after button click check if aria-expanded attribute for button is set to true
     expect(button.getAttribute('aria-expanded')).toBe("true");
@@ -144,9 +144,9 @@ it('We can check that content is hidden and shown correctly for multi selectable
     expect(button2.getAttribute('aria-expanded')).toBe("false");
     button2.click();
 
-    // after button click check of content is shown
-    expect(content.hidden).toBe(false);
-    expect(content2.hidden).toBe(false);
+    // after button click check if content is shown
+    expect(content.classList.contains(ACCORDION_CONTENT_EXPANDED_CLASSNAME)).toBe(true);
+    expect(content2.classList.contains(ACCORDION_CONTENT_EXPANDED_CLASSNAME)).toBe(true);
 
     // after button click check if aria-expanded attribute for button is set to true
     expect(button.getAttribute('aria-expanded')).toBe("true");
