@@ -165,18 +165,5 @@ export const parameters = {
       ...customViewports,
     },
   },
-  layout: 'fullscreen',
-  backgrounds: {
-    default: 'white',
-    values: [
-      {
-        name: 'white',
-        value: 'FFFFFF',
-      },
-      {
-        name: 'yellow',
-        value: 'FFFF00',
-      }
-    ]
-  }
+  layout: 'fullscreen'
 }
