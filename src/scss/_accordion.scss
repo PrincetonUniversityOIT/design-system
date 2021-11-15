@@ -31,7 +31,8 @@
   font-style: normal;
   font-weight: 600;
   font-size: px-to-rem(18);
-  line-height: px-to-rem(28);
+  line-height: px-to-rem(27);
+  letter-spacing: px-to-rem(0.1);
 
   padding: px-to-rem(12) px-to-rem(24) px-to-rem(13) px-to-rem(24);
   position: relative;
@@ -43,12 +44,8 @@
   cursor: pointer;
   z-index: 1;
 
-  border-top: px-to-rem(.5) solid jazz-theme(accordion-divider-color);
+  border-top: px-to-rem(1) solid jazz-theme(accordion-divider-color);
   border-bottom: 0;
-}
-.jazz-accordion__button:hover {
-  background-color: jazz-theme(accordion-header-hover-bgcolor);
-  color: jazz-theme(accordion-header-hover-color);
 }
 .jazz-accordion__button[aria-expanded='false']:after {
   content: ' ';
@@ -85,12 +82,12 @@
   font-style: normal;
   font-weight: normal;
   font-size: px-to-rem(18);
-  line-height: px-to-rem(24);
+  line-height: px-to-rem(27);
 
   border-left: px-to-rem(4) solid jazz-theme(accordion-content-border-color);
   margin-right: px-to-rem(64);
-  margin-left: px-to-rem(24);
-  padding-left: px-to-rem(20);
+  margin-left: px-to-rem(32);
+  padding-left: px-to-rem(24);
   text-align: left;
   visibility: hidden;
   padding-top: 0;
@@ -131,7 +128,8 @@ These styles correct the default styles applied by the browser for collapsed acc
   margin-block-end: 0;
 }
 .jazz-accordion__content--expanded {
-  margin-bottom: px-to-rem(25);
+  margin-top: px-to-rem(24);
+  margin-bottom: px-to-rem(32);
   opacity: 1;
   visibility: visible;
   transform: translateY(0%);
