@@ -40,8 +40,8 @@ An Accordion is a vertically stacked set of headings that each control the visib
 <p>
     The preferred behavior for Accordions would normally be to allow multiple sections of the accordion to be expanded at the same time.
     This is to allow the user to be in control of the content as much as possible.
-    However, if conditions require that only one Accordion panel be expanded at a time, remove (or leave out) the <span class="code">aria-multiselectable</span> attribute.
-    Without this attribute, the behavior of the Accordion will change to collapse all other accordion items when an accordion item is selected.
+    However, if conditions require that only one Accordion panel be expanded at a time, remove (or leave out) the <span class="code">jazz-accordion-multiselectable</span> class.
+    Without this class, the behavior of the Accordion will change to collapse all other accordion items when an accordion item is selected.
 </p>
 
 {{ example("/components/accordion/accordion-example-single", "Single Selection Example", "code-panel-single-selection") }}
@@ -98,9 +98,9 @@ An Accordion is a vertically stacked set of headings that each control the visib
             <button class="jazz-accordion__button" aria-expanded="true" aria-controls="content2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta?</button>
           {% endhighlight %}
     </li>
-    <li>The <span class="code">aria-multiselectable</span> attribute on an <span class="code">jazz-accordion</span> element controls whether multiple sections can be expanded at once.
+    <li>The <span class="code">jazz-accordion-multiselectable</span> class on an <span class="code">jazz-accordion</span> element controls whether multiple sections can be expanded at once.
          {% highlight "html" %}
-               <div class="jazz-accordion" role="region" aria-multiselectable="true">
+               <div class="jazz-accordion jazz-accordion-multiselectable" role="region">
          {% endhighlight %}
     </li>
     <li>Buttons for collapsed sections will display a “Plus” icon to indicate that they can be expanded.</li>
@@ -140,7 +140,7 @@ An Accordion is a vertically stacked set of headings that each control the visib
 
 <ul>
     <li>Single - No more than one Accordion Panel can be shown at a time.  Expansion of an Accordion Item will collapse all other items.</li>
-    <li>Multiple - More than one Accordion Item can be expanded at a time.  Expansion of an Accordion Item will have no effect on other items.  The preferred behavior for an Accordion would normally be to have it be multiselectable.  An Accordion can be made multiselectable by adding the following attribute to the element that is identified with the <span class="code">jazz-accordion</span> class: <span class="code">aria-multiselectable=”true”</span></li>
+    <li>Multiple - More than one Accordion Item can be expanded at a time.  Expansion of an Accordion Item will have no effect on other items.  The preferred behavior for an Accordion would normally be to have it be multiselectable.  An Accordion can be made multiselectable by adding the following classname to the element that is identified with the <span class="code">jazz-accordion</span> class: <span class="code">jazz-accordion-multiselectable</span></li>
 </ul>
 
 <h2>Theme Variables</h2>

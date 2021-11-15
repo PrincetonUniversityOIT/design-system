@@ -4,8 +4,8 @@ import {Listener} from "../../base/decorator-functions";
 
 const ACCORDION_SELECTOR = `.${PREFIX}-accordion`;
 const ACCORDION_BUTTON_SELECTOR = `.${PREFIX}-accordion__button`;
-const MULTISELECTABLE = "aria-multiselectable";
-export const ACCORDION_CONTENT_EXPANDED_CLASSNAME = "jazz-accordion__content--expanded";
+export const ACCORDION_MULTISELECTABLE_CLASSNAME = `${PREFIX}-accordion-multiselectable`;
+export const ACCORDION_CONTENT_EXPANDED_CLASSNAME = `${PREFIX}-accordion__content--expanded`;
 
 export class AccordionBehavior extends Behavior {
 
@@ -53,11 +53,11 @@ export class AccordionBehavior extends Behavior {
         return this.selectClosestTo(ACCORDION_BUTTON_SELECTOR, ACCORDION_SELECTOR, accordion);
     };
 
-    closeExpandedContents = (accordion: Element, button: Element) => {
-        return this.getAccordionButtons(accordion).forEach((other) => {
-            if (other !== button ) {
-                this.toggleControl(other, false);
-                this.getButtonMatchingContent(other, accordion).classList.remove(ACCORDION_CONTENT_EXPANDED_CLASSNAME);
+    closeExpandedContents = (accordion: Element, clickedButton: Element) => {
+        return this.getAccordionButtons(accordion).forEach((button) => {
+            if (button !== clickedButton) {
+                this.toggleControl(button, false);
+                this.getButtonMatchingContent(button, accordion).classList.remove(ACCORDION_CONTENT_EXPANDED_CLASSNAME);
             }
         });
     }
@@ -69,7 +69,7 @@ export class AccordionBehavior extends Behavior {
     onClick(event: Event) {
         const button = <HTMLElement> event.target;
         const accordionEl = button.closest(ACCORDION_SELECTOR);
-        const multiselectable = accordionEl.getAttribute(MULTISELECTABLE) === "true";
+        const multiselectable = accordionEl.classList.contains(ACCORDION_MULTISELECTABLE_CLASSNAME);
 
         const expanded = this.toggleControl(button, null);
         const content = this.getButtonMatchingContent(button, accordionEl);
