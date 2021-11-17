@@ -1,4 +1,4 @@
-<div class="jazz-accordion" role="region" aria-multiselectable="true" aria-label="Accordion Default">
+<div class="jazz-accordion" role="region" aria-label="Accordion Default">
   <h2>
     <button class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
   </h2>

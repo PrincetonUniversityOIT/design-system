@@ -1,4 +1,4 @@
-import {ACCORDION_CONTENT_EXPANDED_CLASSNAME, AccordionBehavior} from "./accordion";
+import {ACCORDION_CONTENT_EXPANDED_CLASSNAME, ACCORDION_MULTISELECTABLE_CLASSNAME, AccordionBehavior} from "./accordion";
 
 it('We should be able to call new() on AccordionBehavior', () => {
     // Ensure constructor created the object:
@@ -73,7 +73,7 @@ it('We can check that content is hidden and shown correctly', () => {
 
 it('We can check that content is hidden and shown correctly for multi selectable accordions', () => {
     document.body.innerHTML = `
-      <div id="accordion1" class="jazz-accordion" role="region" aria-multiselectable="true">
+      <div id="accordion1" class="jazz-accordion jazz-accordion-multiselectable" role="region">
           <h2>
             <button id="acrd-btn-1" class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
           </h2>
@@ -122,9 +122,9 @@ it('We can check that content is hidden and shown correctly for multi selectable
 
     const accordion1 = document.getElementById('accordion1');
     // check if we allow multiple open accordions
-    expect(accordion1.getAttribute('aria-multiselectable')).toBe("true");
+    expect(accordion1.classList.contains(ACCORDION_MULTISELECTABLE_CLASSNAME)).toBe(true);
 
-    /* Content 1 */
+  /* Content 1 */
     const content = document.getElementById('content1');
     // check if content is hidden
     expect(content.classList.contains(ACCORDION_CONTENT_EXPANDED_CLASSNAME)).toBe(false);
@@ -204,7 +204,7 @@ it('We can check that content is hidden and shown correctly for non-multi select
 
   const accordion1 = document.getElementById('accordion1');
   // check if we allow multiple open accordions
-  expect(accordion1.getAttribute('aria-multiselectable')).toBe(null);
+  expect(accordion1.classList.contains(ACCORDION_MULTISELECTABLE_CLASSNAME)).toBe(false);
 
   /* Content 1 */
   const content = document.getElementById('content1');
@@ -286,7 +286,7 @@ it('We can check that content is hidden and the hidden a tag is not focusable or
 
   const accordion1 = document.getElementById('accordion1');
   // check if we allow multiple open accordions
-  expect(accordion1.getAttribute('aria-multiselectable')).toBe(null);
+  expect(accordion1.classList.contains(ACCORDION_MULTISELECTABLE_CLASSNAME)).toBe(false);
 
   /* Content 1 */
   const content = document.getElementById('content1');
@@ -334,7 +334,7 @@ it('We can check that content is hidden and the hidden a tag is not focusable or
 
 it('We can check that content is hidden and the hidden a tag is not focusable or clickable multi selectable accordions', () => {
   document.body.innerHTML = `
-      <div id="accordion1" class="jazz-accordion" role="region" aria-multiselectable="true">
+      <div id="accordion1" class="jazz-accordion jazz-accordion-multiselectable" role="region">
           <h2>
             <button id="acrd-btn-1" class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
           </h2>
@@ -383,7 +383,7 @@ it('We can check that content is hidden and the hidden a tag is not focusable or
 
   const accordion1 = document.getElementById('accordion1');
   // check if we allow multiple open accordions
-  expect(accordion1.getAttribute('aria-multiselectable')).toBe('true');
+  expect(accordion1.classList.contains(ACCORDION_MULTISELECTABLE_CLASSNAME)).toBe(true);
 
   /* Content 1 */
   const content = document.getElementById('content1');
