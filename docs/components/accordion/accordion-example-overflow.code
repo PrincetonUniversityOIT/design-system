@@ -1,4 +1,4 @@
-<div class="jazz-accordion" role="region" aria-label="Accordion Overflow">
+<div class="jazz-accordion jazz-accordion-multiselectable" role="region" aria-label="Accordion Overflow">
   <h2>
     <button class="jazz-accordion__button" aria-controls="content1">Sed porttitor lectus nibh?</button>
   </h2>
