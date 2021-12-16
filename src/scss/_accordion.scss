@@ -5,6 +5,8 @@
 }
 .jazz-accordion--bordered {
   border: px-to-rem(.5) solid jazz-theme(accordion-header-border-color);
+  background-color: jazz-theme(accordion-bordered-bgcolor);
+  border-bottom-color: jazz-theme(accordion-bordered-divider-color);
 }
 .jazz-accordion--bordered .jazz-accordion__button[aria-expanded='false'] {
   background-color: jazz-theme(accordion-bordered-header-collapsed-bgcolor);
@@ -46,6 +48,9 @@
 
   border-top: px-to-rem(1) solid jazz-theme(accordion-divider-color);
   border-bottom: 0;
+}
+.jazz-accordion--bordered .jazz-accordion__button {
+  border-top-color: jazz-theme(accordion-bordered-divider-color);
 }
 .jazz-accordion__button[aria-expanded='false']:after {
   content: ' ';
@@ -97,7 +102,9 @@
   transform: translateY(-25%);
   transition: .15s ease-in-out;
 }
-
+.jazz-accordion--bordered .jazz-accordion__content {
+  border-left: none;
+}
 /**
 DEFAULT BROWSER STYLE (USER AGENT STYLESHEET) MANUAL OVERRIDE
 
@@ -129,7 +136,7 @@ These styles correct the default styles applied by the browser for collapsed acc
 }
 .jazz-accordion__content--expanded {
   margin-top: px-to-rem(24);
-  margin-bottom: px-to-rem(32);
+  margin-bottom: px-to-rem(33);
   opacity: 1;
   visibility: visible;
   transform: translateY(0%);
