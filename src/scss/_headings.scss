@@ -1,9 +1,4 @@
-h1.jazz-xxl,
-h2.jazz-xxl,
-h3.jazz-xxl,
-h4.jazz-xxl,
-h5.jazz-xxl,
-h6.jazz-xxl {
+h1, .jazz-xxl {
   font-family: jazz-theme(heading-font);
   font-weight: 400;
   font-size: px-to-rem(50);
@@ -13,12 +8,7 @@ h6.jazz-xxl {
   margin-block-end: 0.67em;
 }
 
-h1.jazz-xl,
-h2.jazz-xl,
-h3.jazz-xl,
-h4.jazz-xl,
-h5.jazz-xl,
-h6.jazz-xl {
+h2, .jazz-xl {
   font-family: jazz-theme(heading-font);
   font-weight: 700;
   font-size: px-to-rem(30);
@@ -28,12 +18,7 @@ h6.jazz-xl {
   margin-block-end: 0.83em;
 }
 
-h1.jazz-l,
-h2.jazz-l,
-h3.jazz-l,
-h4.jazz-l,
-h5.jazz-l,
-h6.jazz-l {
+h3, .jazz-l {
   font-family: jazz-theme(heading-font);
   font-weight: 500;
   font-size: px-to-rem(26);
@@ -43,12 +28,7 @@ h6.jazz-l {
   margin-block-end: 1em;
 }
 
-h1.jazz-m,
-h2.jazz-m,
-h3.jazz-m,
-h4.jazz-m,
-h5.jazz-m,
-h6.jazz-m {
+h4, .jazz-m {
   font-family: jazz-theme(heading-font);
   font-weight: 600;
   font-size: px-to-rem(22);
@@ -58,12 +38,7 @@ h6.jazz-m {
   margin-block-end: 1.33em;
 }
 
-h1.jazz-s,
-h2.jazz-s,
-h3.jazz-s,
-h4.jazz-s,
-h5.jazz-s,
-h6.jazz-s {
+h5, .jazz-s {
   font-family: jazz-theme(heading-font);
   font-weight: 700;
   font-size: px-to-rem(20);
@@ -74,12 +49,7 @@ h6.jazz-s {
   margin-block-end: 1.67em;
 }
 
-h1.jazz-xs,
-h2.jazz-xs,
-h3.jazz-xs,
-h4.jazz-xs,
-h5.jazz-xs,
-h6.jazz-xs {
+h6, .jazz-xs {
   font-family: jazz-theme(heading-font);
   font-weight: 700;
   font-size: px-to-rem(18);
