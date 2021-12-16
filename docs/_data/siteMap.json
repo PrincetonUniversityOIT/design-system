@@ -21,6 +21,10 @@
         {
           "label": "Icons",
           "url": "/design/icons"
+        },
+        {
+          "label": "Typography",
+          "url": "/design/typography"
         }
       ]
     },

@@ -122,57 +122,57 @@ export const VerticalRhythmTemplate = (args) => html`
     </div>
 `;
 
-export const H1Template = (args) => html`
+export const XXLTemplate = (args) => html`
     <h1>Heading One</h1>
-    <h2 class="jazz-h1">Heading Two As Heading One</h2>
-    <h3 class="jazz-h1">Heading Three As Heading One</h3>
-    <h4 class="jazz-h1">Heading Four As Heading One</h4>
-    <h5 class="jazz-h1">Heading Five As Heading One</h5>
-    <h6 class="jazz-h1">Heading Six As Heading One</h6>
+    <h2 class="jazz-xxl">Heading Two As Heading XXL</h2>
+    <h3 class="jazz-xxl">Heading Three As Heading XXL</h3>
+    <h4 class="jazz-xxl">Heading Four As Heading XXL</h4>
+    <h5 class="jazz-xxl">Heading Five As Heading XXL</h5>
+    <h6 class="jazz-xxl">Heading Six As Heading XXL</h6>
 `;
 
-export const H2Template = (args) => html`
-    <h1 class="jazz-h2">Heading One As Heading Two</h1>
+export const XLTemplate = (args) => html`
+    <h1 class="jazz-xl">Heading One As Heading XL</h1>
     <h2>Heading Two</h2>
-    <h3 class="jazz-h2">Heading Three As Heading Two</h3>
-    <h4 class="jazz-h2">Heading Four As Heading Two</h4>
-    <h5 class="jazz-h2">Heading Five As Heading Two</h5>
-    <h6 class="jazz-h2">Heading Six As Heading Two</h6>
+    <h3 class="jazz-xl">Heading Three As Heading XL</h3>
+    <h4 class="jazz-xl">Heading Four As Heading XL</h4>
+    <h5 class="jazz-xl">Heading Five As Heading XL</h5>
+    <h6 class="jazz-xl">Heading Six As Heading XL</h6>
 `;
 
-export const H3Template = (args) => html`
-    <h1 class="jazz-h3">Heading One As Heading Three</h1>
-    <h2 class="jazz-h3">Heading Two As Heading Three</h2>
+export const LTemplate = (args) => html`
+    <h1 class="jazz-l">Heading One As Heading L</h1>
+    <h2 class="jazz-l">Heading Two As Heading L</h2>
     <h3>Heading Three</h3>
-    <h4 class="jazz-h3">Heading Four As Heading Three</h4>
-    <h5 class="jazz-h3">Heading Five As Heading Three</h5>
-    <h6 class="jazz-h3">Heading Six As Heading Three</h6>
+    <h4 class="jazz-l">Heading Four As Heading L</h4>
+    <h5 class="jazz-l">Heading Five As Heading L</h5>
+    <h6 class="jazz-l">Heading Six As Heading L</h6>
 `;
 
-export const H4Template = (args) => html`
-    <h1 class="jazz-h4">Heading One As Heading Four</h1>
-    <h2 class="jazz-h4">Heading Two As Heading Four</h2>
-    <h3 class="jazz-h4">Heading Three As Heading Four</h3>
+export const MTemplate = (args) => html`
+    <h1 class="jazz-m">Heading One As Heading M</h1>
+    <h2 class="jazz-m">Heading Two As Heading M</h2>
+    <h3 class="jazz-m">Heading Three As Heading M</h3>
     <h4>Heading Four</h4>
-    <h5 class="jazz-h4">Heading Five As Heading Four</h5>
-    <h6 class="jazz-h4">Heading Six As Heading Four</h6>
+    <h5 class="jazz-m">Heading Five As Heading M</h5>
+    <h6 class="jazz-m">Heading Six As Heading M</h6>
 `;
 
-export const H5Template = (args) => html`
-    <h1 class="jazz-h5">Heading One As Heading Five</h1>
-    <h2 class="jazz-h5">Heading Two As Heading Five</h2>
-    <h3 class="jazz-h5">Heading Three As Heading Five</h3>
-    <h4 class="jazz-h5">Heading Four As Heading Five</h4>
+export const STemplate = (args) => html`
+    <h1 class="jazz-s">Heading One As Heading S</h1>
+    <h2 class="jazz-s">Heading Two As Heading S</h2>
+    <h3 class="jazz-s">Heading Three As Heading S</h3>
+    <h4 class="jazz-s">Heading Four As Heading S</h4>
     <h5>Heading Five</h5>
-    <h6 class="jazz-h5">Heading Six As Heading Five</h6>
+    <h6 class="jazz-s">Heading Six As Heading S</h6>
 `;
 
-export const H6Template = (args) => html`
-    <h1 class="jazz-h6">Heading One As Heading Six</h1>
-    <h2 class="jazz-h6">Heading Two As Heading Six</h2>
-    <h3 class="jazz-h6">Heading Three As Heading Six</h3>
-    <h4 class="jazz-h6">Heading Four As Heading Six</h4>
-    <h5 class="jazz-h6">Heading Five As Heading Six</h5>
+export const XSTemplate = (args) => html`
+    <h1 class="jazz-xs">Heading One As Heading XS</h1>
+    <h2 class="jazz-xs">Heading Two As Heading XS</h2>
+    <h3 class="jazz-xs">Heading Three As Heading XS</h3>
+    <h4 class="jazz-xs">Heading Four As Heading XS</h4>
+    <h5 class="jazz-xs">Heading Five As Heading XS</h5>
     <h6>Heading Six</h6>
 `;
 
@@ -293,7 +293,7 @@ based on the ```line-height``` value.
     <Story name="Heading 1" args={{
         content: "Heading Content"
     }}>
-      {H1Template.bind({})}
+      {XXLTemplate.bind({})}
     </Story>
 </Canvas>
 
@@ -301,7 +301,7 @@ based on the ```line-height``` value.
     <Story name="Heading 2" args={{
         content: "Heading Content"
     }}>
-      {H2Template.bind({})}
+      {XLTemplate.bind({})}
     </Story>
 </Canvas>
 
@@ -309,7 +309,7 @@ based on the ```line-height``` value.
     <Story name="Heading 3" args={{
         content: "Heading Content"
     }}>
-      {H3Template.bind({})}
+      {LTemplate.bind({})}
     </Story>
 </Canvas>
 
@@ -317,7 +317,7 @@ based on the ```line-height``` value.
     <Story name="Heading 4" args={{
         content: "Heading Content"
     }}>
-      {H4Template.bind({})}
+      {MTemplate.bind({})}
     </Story>
 </Canvas>
 
@@ -325,7 +325,7 @@ based on the ```line-height``` value.
     <Story name="Heading 5" args={{
         content: "Heading Content"
     }}>
-      {H5Template.bind({})}
+      {STemplate.bind({})}
     </Story>
 </Canvas>
 
@@ -333,7 +333,7 @@ based on the ```line-height``` value.
     <Story name="Heading 6" args={{
         content: "Heading Content"
     }}>
-      {H6Template.bind({})}
+      {XSTemplate.bind({})}
     </Story>
 </Canvas>
 
