@@ -38,7 +38,7 @@ tags: typography
         <td>Regular | 400</td>
         <td>50px</td>
         <td>72px</td>
-        <td>0%</td>
+        <td>0px</td>
         <td><h1 class="jazz-xxl">This is a demo</h1></td>
     </tr>
 
@@ -50,7 +50,7 @@ tags: typography
         <td>Bold | 700</td>
         <td>30px</td>
         <td>46px</td>
-        <td>0%</td>
+        <td>0px</td>
         <td><h1 class="jazz-xl">This is a demo</h1></td>
     </tr>
 
@@ -62,7 +62,7 @@ tags: typography
         <td>Medium | 500</td>
         <td>26px</td>
         <td>40px</td>
-        <td>0%</td>
+        <td>0px</td>
         <td><h1 class="jazz-l">This is a demo</h1></td>
     </tr>
 
@@ -74,7 +74,7 @@ tags: typography
         <td>SemiBold | 600</td>
         <td>22px</td>
         <td>34px</td>
-        <td>0%</td>
+        <td>0px</td>
         <td><h1 class="jazz-m">This is a demo</h1></td>
     </tr>
 
@@ -86,7 +86,7 @@ tags: typography
         <td>Bold | 700</td>
         <td>20px</td>
         <td>27px</td>
-        <td>1%</td>
+        <td>1px</td>
         <td><h1 class="jazz-s">This is a demo</h1></td>
     </tr>
 
@@ -98,7 +98,7 @@ tags: typography
         <td>Bold | 700</td>
         <td>18px</td>
         <td>26px</td>
-        <td>0%</td>
+        <td>0px</td>
         <td><h1 class="jazz-xs">This is a demo</h1></td>
     </tr>
 </table>
@@ -109,4 +109,90 @@ tags: typography
     While multiples of the same HTML heading can be used with different T-shirt sizes to simulate multiple heading styles,
     this practice is not recommended for reasons pertaining to search engine crawlers and SEO best practices. It is important
     to keep this in mind and use different heading tags in relation to its priority.
+</p>
+
+<h2>Body</h2>
+
+{{ example("/design/typography/body/body-example1", "Demonstration", "code-panel-demo") }}
+
+<p>
+    Body styles are pre-defined in 5 sizes—<span class="code">jazz-body-reg</span>, <span class="code">jazz-body-sm</span>, <span class="code">jazz-body-sm-m</span>, <span class="code">jazz-body-semi</span>, <span class="code">jazz-body-bold</span>.
+    Adding a body style to an HTML tag will apply the pre-defined style as specified in the table below:
+</p>
+
+<table class="jazz-table__bordered">
+    <tr>
+        <th>Body Style Name</th>
+        <th>Classname</th>
+        <th>Font Weight</th>
+        <th>Font Size</th>
+        <th>Lineheight</th>
+        <th>Letterspacing</th>
+        <th>Demo</th>
+    </tr>
+
+    <tr>
+        <td>Body Regular</td>
+        <td>
+           <p class="code">jazz-body-reg</p>
+        </td>
+        <td>Regular | 400</td>
+        <td>18px</td>
+        <td>27px</td>
+        <td>0px</td>
+        <td><p class="jazz-body-reg">This is a demo</p></td>
+    </tr>
+
+    <tr>
+        <td>Body Small</td>
+        <td>
+           <p class="code">jazz-body-sm</p>
+        </td>
+        <td>Regular | 400</td>
+        <td>16px</td>
+        <td>24px</td>
+        <td>0px</td>
+        <td><p class="jazz-body-sm">This is a demo</p></td>
+    </tr>
+
+    <tr>
+        <td>Body Small Medium</td>
+        <td>
+           <p class="code">jazz-body-sm-m</p>
+        </td>
+        <td>Medium | 500</td>
+        <td>16px</td>
+        <td>24px</td>
+        <td>1px</td>
+        <td><p class="jazz-body-sm-m">This is a demo</p></td>
+    </tr>
+
+    <tr>
+        <td>Body SemiBold</td>
+        <td>
+           <p class="code">jazz-body-semi</p>
+        </td>
+        <td>SemiBold | 600</td>
+        <td>18px</td>
+        <td>27px</td>
+        <td>0px</td>
+        <td><p class="jazz-body-semi">This is a demo</p></td>
+    </tr>
+
+    <tr>
+        <td>Body Bold</td>
+        <td>
+           <p class="code">jazz-body-bold</p>
+        </td>
+        <td>Bold | 700</td>
+        <td>18px</td>
+        <td>27px</td>
+        <td>0px</td>
+        <td><p class="jazz-body-bold">This is a demo</p></td>
+    </tr>
+</table>
+
+<p>
+    Any HTML element without a specified style will automatically default to use Body Regular styles.
+    Else, using the pre-defined body style will override an HTML tag's default styles.
 </p>
