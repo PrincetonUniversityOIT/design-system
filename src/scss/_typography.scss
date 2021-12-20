@@ -1,8 +1,3 @@
-html {
-  font-family: jazz-theme(body-font);
-  font-size: $jazz-rem;
-}
-
 p.jazz-lead, p.jazz-lede {
   font-weight: 400;
   font-size: 1.375rem;
@@ -11,6 +6,42 @@ p.jazz-lead, p.jazz-lede {
 
 label {
   font-weight: bold;
+}
+
+html, .jazz-body-reg {
+  font-family: jazz-theme(body-font);
+  font-weight: 400;
+  font-size: px-to-rem(18);
+  line-height: px-to-rem(27);
+}
+
+.jazz-body-sm {
+  font-family: jazz-theme(body-font);
+  font-weight: 400;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+}
+
+.jazz-body-sm-m {
+  font-family: jazz-theme(body-font);
+  font-weight: 500;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+  letter-spacing: px-to-rem(1);
+}
+
+.jazz-body-semi {
+  font-family: jazz-theme(body-font);
+  font-weight: 600;
+  font-size: px-to-rem(18);
+  line-height: px-to-rem(27);
+}
+
+.jazz-body-bold {
+  font-family: jazz-theme(body-font);
+  font-weight: 700;
+  font-size: px-to-rem(18);
+  line-height: px-to-rem(27);
 }
 
 .jazz-body-flex-container {
