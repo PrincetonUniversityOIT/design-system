@@ -19,10 +19,10 @@
 }
 
 .jazz-table th {
-  border-bottom: 3px solid jazz-theme(table-th-border-color);
+  border-bottom: 2px solid jazz-theme(table-th-border-color);
   font-weight: bold;
-  background: jazz-theme(table-th-bgcolor);
   color: jazz-theme(table-th-color);
+  letter-spacing: px-to-rem(0.1);
 }
 
 .jazz-table th[scope=row] {
