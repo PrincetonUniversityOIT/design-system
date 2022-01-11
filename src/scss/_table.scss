@@ -12,9 +12,9 @@
 
 .jazz-table th,
 .jazz-table td {
-  padding: px-to-rem(8) px-to-rem(16);
+  padding: px-to-rem(16);
   font-size: px-to-rem(16);
-  vertical-align: top;
+  vertical-align: center;
   text-align: left;
 }
 
@@ -47,21 +47,9 @@
   color: jazz-theme(table-row-hover-color);
 }
 
-.jazz-table--bordered td {
-  border: 1px solid jazz-theme(table-border-color);
-}
-
-.jazz-table--bordered th {
-  border-top: 1px solid jazz-theme(table-border-color);
-  border-left: 1px solid jazz-theme(table-border-color);
-  border-right: 1px solid jazz-theme(table-border-color);
-  border-bottom: 3px solid jazz-theme(table-th-border-color);
-}
-
 .jazz-table--open th,
 .jazz-table--open td {
-  padding-top: px-to-rem(16);
-  padding-bottom: px-to-rem(16);
+  padding: px-to-rem(16) 0;
 }
 
 .jazz-table.jazz-table--striped tr:nth-child(even):not(.jazz-table--subtotal):not(.jazz-table--grand-total):not(:hover) {
