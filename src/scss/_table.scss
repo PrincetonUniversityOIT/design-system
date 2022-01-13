@@ -12,17 +12,17 @@
 
 .jazz-table th,
 .jazz-table td {
-  padding: px-to-rem(8) px-to-rem(16);
+  padding: px-to-rem(16);
   font-size: px-to-rem(16);
-  vertical-align: top;
+  vertical-align: center;
   text-align: left;
 }
 
 .jazz-table th {
-  border-bottom: 3px solid jazz-theme(table-th-border-color);
+  border-bottom: 2px solid jazz-theme(table-th-border-color);
   font-weight: bold;
-  background: jazz-theme(table-th-bgcolor);
   color: jazz-theme(table-th-color);
+  letter-spacing: px-to-rem(0.1);
 }
 
 .jazz-table th[scope=row] {
@@ -47,21 +47,9 @@
   color: jazz-theme(table-row-hover-color);
 }
 
-.jazz-table--bordered td {
-  border: 1px solid jazz-theme(table-border-color);
-}
-
-.jazz-table--bordered th {
-  border-top: 1px solid jazz-theme(table-border-color);
-  border-left: 1px solid jazz-theme(table-border-color);
-  border-right: 1px solid jazz-theme(table-border-color);
-  border-bottom: 3px solid jazz-theme(table-th-border-color);
-}
-
 .jazz-table--open th,
 .jazz-table--open td {
-  padding-top: px-to-rem(16);
-  padding-bottom: px-to-rem(16);
+  padding: px-to-rem(16) 0;
 }
 
 .jazz-table.jazz-table--striped tr:nth-child(even):not(.jazz-table--subtotal):not(.jazz-table--grand-total):not(:hover) {
@@ -69,20 +57,24 @@
   color: jazz-theme(table-row-even-odd-color);
 }
 
+.jazz-table tr.jazz-table__subtitle,
+.jazz-table tr.jazz-table__subtotal {
+  font-weight: 600;
+  letter-spacing: px-to-rem(0.1);
+}
+
 .jazz-table tr.jazz-table__subtitle {
-  font-weight: bold;
   background-color: jazz-theme(table-subtitle-bgcolor);
   color: jazz-theme(table-subtitle-color);
 }
 
 .jazz-table tr.jazz-table__subtotal {
-  font-weight: bold;
   background-color: jazz-theme(table-subtotal-bgcolor);
   color: jazz-theme(table-subtotal-color);
 }
 
 .jazz-table tr.jazz-table__grand-total {
-  font-weight: bold;
+  font-weight: 700;
   background-color: jazz-theme(table-grand-total-bgcolor);
   color: jazz-theme(table-grand-total-color);
 }
