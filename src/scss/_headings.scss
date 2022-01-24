@@ -1,59 +1,59 @@
-h1, .jazz-h1 {
+h1, .jazz-xxl {
   font-family: jazz-theme(heading-font);
   font-weight: 400;
-  font-size: px-to-rem(53);
-  line-height: px-to-rem(64);
-  margin: .4em 0;
+  font-size: px-to-rem(50);
+  line-height: px-to-rem(72);
   text-transform: none;
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
 }
 
-h2, .jazz-h2 {
+h2, .jazz-xl {
   font-family: jazz-theme(heading-font);
-  font-weight: 600;
-  font-size: px-to-rem(34);
-  line-height: px-to-rem(48);
+  font-weight: 700;
+  font-size: px-to-rem(30);
+  line-height: px-to-rem(46);
   text-transform: none;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
 }
 
-h3, .jazz-h3 {
+h3, .jazz-l {
   font-family: jazz-theme(heading-font);
-  font-weight: 600;
-  font-size: px-to-rem(24);
-  line-height: px-to-rem(27);
+  font-weight: 500;
+  font-size: px-to-rem(26);
+  line-height: px-to-rem(40);
   text-transform: none;
   margin-block-start: 1em;
   margin-block-end: 1em;
 }
 
-h4, .jazz-h4 {
+h4, .jazz-m {
   font-family: jazz-theme(heading-font);
-  font-weight: 700;
-  font-size: px-to-rem(21);
-  line-height: px-to-rem(27);
+  font-weight: 600;
+  font-size: px-to-rem(22);
+  line-height: px-to-rem(34);
   text-transform: none;
   margin-block-start: 1.33em;
   margin-block-end: 1.33em;
 }
 
-h5, .jazz-h5 {
+h5, .jazz-s {
   font-family: jazz-theme(heading-font);
   font-weight: 700;
-  font-size: px-to-rem(16);
+  font-size: px-to-rem(20);
   line-height: px-to-rem(27);
   text-transform: uppercase;
+  letter-spacing: 0.01em;
   margin-block-start: 1.67em;
   margin-block-end: 1.67em;
 }
 
-h6, .jazz-h6 {
+h6, .jazz-xs {
   font-family: jazz-theme(heading-font);
   font-weight: 700;
-  font-size: px-to-rem(16);
-  line-height: px-to-rem(27);
+  font-size: px-to-rem(18);
+  line-height: px-to-rem(26);
   text-transform: uppercase;
   margin-block-start: 2.33em;
   margin-block-end: 2.33em;

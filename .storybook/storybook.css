@@ -1,0 +1,4 @@
+/* needed to properly enable storybook's background-color feature */
+.sb-show-main {
+  background-color: transparent;
+}
