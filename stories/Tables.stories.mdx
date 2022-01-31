@@ -122,7 +122,7 @@ export const ThemeVariationTemplate = () => html`
                 <td>&nbsp;</td>
                 <td class="jazz-right">$13.50</td>
             </tr>
-            <tr class="jazz-table--grand-total">
+            <tr class="jazz-table__grand-total">
                 <td>&nbsp;</td>
                 <td>Grand Total</td>
                 <td>&nbsp;</td>
@@ -215,7 +215,7 @@ export const SubTotalTemplate = () => html`
                 <td>A fruit pie in which the principal filling ingredient is apple</td>
                 <td class="jazz-right">$4.50</td>
             </tr>
-            <tr class="jazz-table--grand-total">
+            <tr class="jazz-table__grand-total">
                 <td>Grand Total</td>
                 <td>&nbsp;</td>
                 <td class="jazz-right">$13.50</td>
@@ -392,6 +392,84 @@ export const NoRowsTemplate = () => html`
     </table>
 `;
 
+export const DarkmodeTemplate = () => html`
+    <table class="jazz-table jazz-inverse">
+        <thead>
+            <tr>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th class="jazz-right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="jazz-table__subtitle">
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr class="jazz-table__grand-total">
+                <td>Grand Total</td>
+                <td>&nbsp;</td>
+                <td class="jazz-right">$13.50</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
+export const DarkmodeStripedTemplate = () => html`
+    <table class="jazz-table jazz-inverse jazz-table--striped">
+        <thead>
+            <tr>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th class="jazz-right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="jazz-table__subtitle">
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+                <td class="jazz-right">Subtitle</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr class="jazz-table__grand-total">
+                <td>Grand Total</td>
+                <td>&nbsp;</td>
+                <td class="jazz-right">$13.50</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
 # Tables
 
 <Canvas>
@@ -468,5 +546,31 @@ export const NoRowsTemplate = () => html`
     <Story name="Responsive" args={{
     }}>
       {ResponsiveTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Darkmode"
+        args={{}}
+        parameters={{
+            backgrounds: {
+                default: 'dark'
+            },
+        }}>
+      {DarkmodeTemplate.bind({})}>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Darkmode Striped"
+        args={{}}
+        parameters={{
+            backgrounds: {
+                default: 'dark'
+            },
+        }}>
+      {DarkmodeStripedTemplate.bind({})}>
     </Story>
 </Canvas>
