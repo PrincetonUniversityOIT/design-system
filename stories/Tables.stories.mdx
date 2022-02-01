@@ -92,24 +92,24 @@ export const OpenTemplate = () => html`
 
 export const ThemeVariationTemplate = () => html`
    <style>
-            :root {
-                --jazz-table-th-bgcolor: var(--jazz-gray-90);
-                --jazz-table-th-color: var(--jazz-white);
-                --jazz-table-th-border-color: var(--jazz-gray-20);
-                --jazz-table-row-bgcolor: var(--jazz-gray-80);
-                --jazz-table-row-color: var(--jazz-white);
-                --jazz-table-row-sep-color: var(--jazz-gray-20);
-                --jazz-table-row-even-odd-bgcolor: var(--jazz-gray-60);
-                --jazz-table-row-even-odd-color: var(--jazz-white);
-                --jazz-table-subtotal-bgcolor: var(--jazz-gray-80);
-                --jazz-table-subtotal-color: var(--jazz-white);
-                --jazz-table-subtitle-bgcolor: var(--jazz-gray-80);
-                --jazz-table-subtitle-color: var(--jazz-white);
-                --jazz-table-grand-total-bgcolor: var(--jazz-gray-90);
-                --jazz-table-grand-total-color: var(--jazz-white);
-                --jazz-table-row-hover-bgcolor: var(--jazz-gray-20);
-                --jazz-table-row-hover-color: var(--jazz-black);
-            }
+        :root {
+            --jazz-table-th-bgcolor: var(--jazz-gray-90);
+            --jazz-table-th-color: var(--jazz-white);
+            --jazz-table-th-border-color: var(--jazz-gray-20);
+            --jazz-table-row-bgcolor: var(--jazz-gray-80);
+            --jazz-table-row-color: var(--jazz-white);
+            --jazz-table-row-sep-color: var(--jazz-gray-20);
+            --jazz-table-row-even-odd-bgcolor: var(--jazz-gray-60);
+            --jazz-table-row-even-odd-color: var(--jazz-white);
+            --jazz-table-subtotal-bgcolor: var(--jazz-gray-80);
+            --jazz-table-subtotal-color: var(--jazz-white);
+            --jazz-table-subtitle-bgcolor: var(--jazz-gray-80);
+            --jazz-table-subtitle-color: var(--jazz-white);
+            --jazz-table-grand-total-bgcolor: var(--jazz-gray-90);
+            --jazz-table-grand-total-color: var(--jazz-white);
+            --jazz-table-row-hover-bgcolor: var(--jazz-gray-20);
+            --jazz-table-row-hover-color: var(--jazz-black);
+        }
     </style>
     <table class="jazz-table jazz-table--striped">
         <thead>
@@ -434,7 +434,7 @@ export const InversemodeTemplate = () => html`
             <tr class="jazz-table__subtitle">
                 <td>Subtitle</td>
                 <td>Subtitle</td>
-                <td>Subtitle</td>
+                <td class="jazz-right">Subtitle</td>
             </tr>
             <tr>
                 <td>Table Text Roboto Regular 14/16</td>
@@ -449,7 +449,7 @@ export const InversemodeTemplate = () => html`
             <tr class="jazz-table__grand-total">
                 <td>Grand Total</td>
                 <td>&nbsp;</td>
-                <td class="jazz-right">$13.50</td>
+                <td class="jazz-right">$9.00</td>
             </tr>
         </tbody>
     </table>
@@ -493,7 +493,7 @@ export const InversemodeStripedTemplate = () => html`
             <tr class="jazz-table__grand-total">
                 <td>Grand Total</td>
                 <td>&nbsp;</td>
-                <td class="jazz-right">$13.50</td>
+                <td class="jazz-right">$18.00</td>
             </tr>
         </tbody>
     </table>
@@ -537,7 +537,58 @@ export const InversemodeBorderedTemplate = () => html`
             <tr class="jazz-table__grand-total">
                 <td>Grand Total</td>
                 <td>&nbsp;</td>
-                <td class="jazz-right">$13.50</td>
+                <td class="jazz-right">$18.00</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
+export const InversemodeCheckboxTemplate = () => html`
+    <table class="jazz-table jazz-inverse">
+        <thead>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th class="jazz-right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="jazz-table__subtitle">
+                <td>&nbsp;</td>
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+                <td class="jazz-right">Subtitle</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr class="jazz-table__grand-total">
+                <td>&nbsp;</td>
+                <td>Grand Total</td>
+                <td>&nbsp;</td>
+                <td class="jazz-right">$18.00</td>
             </tr>
         </tbody>
     </table>
@@ -667,3 +718,17 @@ export const InversemodeBorderedTemplate = () => html`
       {InversemodeBorderedTemplate.bind({})}>
     </Story>
 </Canvas>
+
+<Canvas>
+    <Story
+        name="Inversemode Checkbox"
+        args={{}}
+        parameters={{
+            backgrounds: {
+                default: 'dark'
+            },
+        }}>
+      {InversemodeCheckboxTemplate.bind({})}>
+    </Story>
+</Canvas>
+

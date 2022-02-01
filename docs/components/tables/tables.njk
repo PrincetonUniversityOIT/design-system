@@ -22,15 +22,24 @@ A Table component displays tabular data in a two-dimensional table comprised of 
 
 <h3>Striped Table</h3>
 
+<p>Striped tables highlight every other body row to easily distinguish the even-nth row.</p>
+
 {{ example("/components/tables/tables-striped-example", "Striped Example", "code-panel-borderless") }}
 
 <h3>Multiheader Table</h3>
 
 {{ example("/components/tables/tables-multiheader-example", "Multiheader Example", "code-panel-borderless") }}
 
+<h3>Open Table</h3>
+
+<p>Open Tables do not set horizontal paddings for headers and table body cells</p>
+
+{{ example("/components/tables/tables-open-example", "Open Example", "code-panel-borderless") }}
+
 <h2>Inverse Table</h2>
 
-<p>Inverse Tables are styled to better integrate with darker pages. Header rows, and Body cell rows have transparent background to allow the page background to show through the table.</p>
+<p>Inverse Tables are styled to better integrate with darker pages. Header rows, and Body cell rows have transparent background to allow the dark page background to show through the table.</p>
+<p>Adding the class <span class='code'>.jazz-inverse</span> to the table element will convert a table to an inverse table.</p>
 
 {{ example("/components/tables/tables-inversemode-example", "Inversemode Example", "code-panel-borderless") }}
 
@@ -40,8 +49,6 @@ A Table component displays tabular data in a two-dimensional table comprised of 
 
 <h3>Table Variables</h3>
 
-<h4>Header</h4>
-
 <table class="jazz-table">
     <tr>
         <th>CSS Variable</th>
@@ -49,127 +56,202 @@ A Table component displays tabular data in a two-dimensional table comprised of 
         <th>Description</th>
         <th>Expected Value Type</th>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-header-font</td>
-        <td>accordion-header-font</td>
-        <td>Header Font</td>
-        <td>Font</td>
-    </tr>
-
-    <tr>
-        <td>--jazz-accordion-header-bgcolor</td>
-        <td>accordion-header-bgcolor</td>
-        <td>Header Background Color</td>
+        <td>--jazz-table-border-color</td>
+        <td>table-border-color</td>
+        <td>Border Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-header-color</td>
-        <td>accordion-header-color</td>
-        <td>Header Foreground Color</td>
+        <td>--jazz-table-th-bgcolor</td>
+        <td>table-th-bgcolor</td>
+        <td>th Background Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-header-border-color</td>
-        <td>accordion-header-border-color</td>
-        <td>Header Border Color</td>
+        <td>--jazz-table-inverse-th-bgcolor</td>
+        <td>table-inverse-th-bgcolor</td>
+        <td>Inverse th Background Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-header-hover-bgcolor</td>
-        <td>accordion-header-hover-bgcolor</td>
-        <td>Header Hover Background Color</td>
+        <td>--jazz-table-th-color</td>
+        <td>table-th-color</td>
+        <td>th Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-header-hover-color</td>
-        <td>accordion-header-hover-color</td>
-        <td>Header Hover Foreground Color</td>
+        <td>--jazz-table-inverse-th-color</td>
+        <td>table-inverse-th-color</td>
+        <td>Inverse th Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-bordered-header-collapsed-bgcolor</td>
-        <td>accordion-bordered-header-collapsed-bgcolor</td>
-        <td>Bordered Header Background Color (Collapsed)</td>
+        <td>--jazz-table-th-border-color</td>
+        <td>table-th-border-color</td>
+        <td>th Border Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-bordered-header-collapsed-color</td>
-        <td>accordion-bordered-header-collapsed-color</td>
-        <td>Bordered Header Foreground Color (Collapsed)</td>
+        <td>--jazz-table-inverse-th-border-color</td>
+        <td>table-inverse-th-border-color</td>
+        <td>Inverse th Border Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-bordered-header-expanded-bgcolor</td>
-        <td>accordion-bordered-header-expanded-bgcolor</td>
-        <td>Bordered Header Background Color (Expanded)</td>
+        <td>--jazz-table-row-sep-color</td>
+        <td>table-row-sep-color</td>
+        <td>Row Sep Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-bordered-header-expanded-color</td>
-        <td>accordion-bordered-header-expanded-color</td>
-        <td>Bordered Header Foreground Color (Expanded)</td>
+        <td>--jazz-table-inverse-row-sep-color</td>
+        <td>table-inverse-row-sep-color</td>
+        <td>Inverse Row Sep Color</td>
         <td>Color</td>
     </tr>
-</table>
-
-<h4>Body</h4>
-
-<table class="jazz-table">
     <tr>
-        <th>CSS Variable</th>
-        <th>SCSS Theme Key</th>
-        <th>Description</th>
-        <th>Expected Value Type</th>
-    </tr>
-
-    <tr>
-        <td>--jazz-accordion-body-font</td>
-        <td>accordion-body-font</td>
-        <td>Body Font</td>
-        <td>Font</td>
-    </tr>
-
-    <tr>
-        <td>--jazz-accordion-body-bgcolor</td>
-        <td>accordion-body-bgcolor</td>
-        <td>Body Background Color</td>
+        <td>--jazz-table-row-even-odd-bgcolor</td>
+        <td>table-row-even-odd-bgcolor</td>
+        <td>Row Even Odd Background Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-body-color</td>
-        <td>accordion-body-color</td>
-        <td>Body Foreground Color</td>
+        <td>--jazz-table-inverse-row-even-odd-bgcolor</td>
+        <td>table-inverse-row-even-odd-bgcolor</td>
+        <td>Inverse Row Even Odd Background Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-divider-color</td>
-        <td>accordion-divider-color</td>
-        <td>Divider Color</td>
+        <td>--jazz-table-row-even-odd-color</td>
+        <td>table-row-even-odd-color</td>
+        <td>Row Even Odd Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-icon-color</td>
-        <td>accordion-icon-color</td>
-        <td>Icon Color</td>
+        <td>--jazz-table-inverse-row-even-odd-color</td>
+        <td>table-inverse-row-even-odd-color</td>
+        <td>Inverse Row Even Odd Color</td>
         <td>Color</td>
     </tr>
-
     <tr>
-        <td>--jazz-accordion-content-border-color</td>
-        <td>accordion-content-border-color</td>
-        <td>Content Border Color</td>
+        <td>--jazz-table-row-bgcolor</td>
+        <td>table-row-bgcolor</td>
+        <td>Row Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-bgcolor</td>
+        <td>table-inverse-row-bgcolor</td>
+        <td>Inverse Row Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-color</td>
+        <td>table-row-color</td>
+        <td>Row Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-color</td>
+        <td>table-inverse-row-color</td>
+        <td>Inverse Row Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-subtotal-bgcolor</td>
+        <td>table-subtotal-bgcolor</td>
+        <td>Subtotal Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-subtotal-bgcolor</td>
+        <td>table-inverse-subtotal-bgcolor</td>
+        <td>Inverse Subtotal Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-subtotal-color</td>
+        <td>table-subtotal-color</td>
+        <td>Subtotal Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-subtotal-color</td>
+        <td>table-inverse-subtotal-color</td>
+        <td>Inverse Subtotal Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-grand-total-bgcolor</td>
+        <td>table-grand-total-bgcolor</td>
+        <td>Grand Total Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-grand-total-bgcolor</td>
+        <td>table-inverse-grand-total-bgcolor</td>
+        <td>Inverse Grand Total Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-grand-total-color</td>
+        <td>table-grand-total-color</td>
+        <td>Grand Total Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-grand-total-color</td>
+        <td>table-inverse-grand-total-color</td>
+        <td>Inverse Grand Total Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-subtitle-bgcolor</td>
+        <td>table-subtitle-bgcolor</td>
+        <td>Subtitle Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-subtitle-bgcolor</td>
+        <td>table-inverse-subtitle-bgcolor</td>
+        <td>Inverse Subtitle Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-subtitle-color</td>
+        <td>table-subtitle-color</td>
+        <td>Subtitle Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-subtitle-color</td>
+        <td>table-inverse-subtitle-color</td>
+        <td>Inverse Subtitle Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-hover-bgcolor</td>
+        <td>table-row-hover-bgcolor</td>
+        <td>Row Hover Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-hover-bgcolor</td>
+        <td>table-inverse-row-hover-bgcolor</td>
+        <td>Inverse Row Hover Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-hover-color</td>
+        <td>table-row-hover-color</td>
+        <td>Row Hover Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-hover-color</td>
+        <td>table-inverse-row-hover-color</td>
+        <Td>Inverse Row Hover Color</Td>
         <td>Color</td>
     </tr>
 </table>
