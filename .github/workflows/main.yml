@@ -41,12 +41,12 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./_site
 
-      - name: Zip Files
-        id: zip_files
-        uses: papeloto/action-zip@v1
-        with:
-          files: dist/
-          dest: jazz.zip
+#      - name: Zip Files
+#        id: zip_files
+#        uses: papeloto/action-zip@v1
+#        with:
+#          files: dist/
+#          dest: jazz.zip
 
 #      - name: Upload Release Asset
 #        id: upload_release_asset
