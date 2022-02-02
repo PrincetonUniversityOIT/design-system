@@ -7,7 +7,7 @@
   line-height: px-to-rem(24);
   display: block;
   margin: 0;
-  max-width: 30rem;
+  width: 100%;
   padding: px-to-rem(8) px-to-rem(10);
 }
 
@@ -28,7 +28,37 @@
   height: 1.25em;
 }
 
-textarea.jazz-input {
-  width: 100%;
-  max-width: 100%;
+
+.jazz-form-field label[required]:after,
+.jazz-form-field--error label[required]:after,
+.jazz-form-field--info label[required]:after
+{
+  color: jazz-theme(accent);
+  content: "*";
+  padding-left: px-to-rem(2);
+  font-weight: bold;
+}
+
+.jazz-form-field--required {
+  padding-left: px-to-rem(5);
+  color: jazz-theme(accent);
+}
+
+.jazz-form-field input[type="checkbox"],
+.jazz-form-field input[type="radio"] {
+  margin-right: px-to-rem(5);
+}
+
+.jazz-form-field span {
+  margin-right: 10px;
+}
+
+.jazz-form-field--disabled,
+.jazz-form-field input::placeholder {
+  color: jazz-theme(form-input-disabled-color) !important;
+}
+
+.jazz-form-field[disabled] * {
+  color: jazz-theme(form-input-disabled-color) !important;
+  border-color: jazz-theme(form-input-disabled-color);
 }

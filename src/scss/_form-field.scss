@@ -2,7 +2,6 @@
 .jazz-form-field--error {
   font-family: jazz-theme(body-font);
   margin-top: 1.5rem;
-  padding-left: 1rem;
   border-left: .25rem solid transparent;
 }
 
@@ -27,9 +26,4 @@
 .jazz-form-field-msg {
   font-size: px-to-rem(14);
   color: jazz-theme(form-field-msg-color);
-}
-
-.jazz-form-field-required {
-  padding-left: px-to-rem(5);
-  color: jazz-theme(accent);
 }
