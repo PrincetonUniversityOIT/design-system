@@ -1,16 +1,18 @@
 .jazz-input, .jazz-select, .jazz-textarea {
+  font-family: jazz-theme(body-font);
   background-color: jazz-theme(form-input-bgcolor);
   color: jazz-theme(form-input-color);
-  border-radius: 0;
-  border: 1px solid jazz-theme(form-input-border-color);
+  border-radius: px-to-rem(2);
+  border: px-to-rem(1) solid jazz-theme(form-input-border-color);
+  line-height: px-to-rem(24);
   display: block;
-  margin-top: .5rem;
-  max-width: 30rem;
-  padding: .5rem;
+  margin: 0;
+  width: 100%;
+  padding: px-to-rem(8) px-to-rem(10);
 }
 
 .jazz-input.jazz-input--error {
-  border: .25rem solid jazz-theme(error);
+  border: px-to-rem(2) solid jazz-theme(error);
 }
 
 // taken from digital.gov
@@ -26,7 +28,37 @@
   height: 1.25em;
 }
 
-textarea.jazz-input {
-  width: 100%;
-  max-width: 100%;
+
+.jazz-form-field label[required]:after,
+.jazz-form-field--error label[required]:after,
+.jazz-form-field--info label[required]:after
+{
+  color: jazz-theme(accent);
+  content: "*";
+  padding-left: px-to-rem(2);
+  font-weight: bold;
+}
+
+.jazz-form-field--required {
+  padding-left: px-to-rem(5);
+  color: jazz-theme(accent);
+}
+
+.jazz-form-field input[type="checkbox"],
+.jazz-form-field input[type="radio"] {
+  margin-right: px-to-rem(5);
+}
+
+.jazz-form-field span {
+  margin-right: 10px;
+}
+
+.jazz-form-field--disabled,
+.jazz-form-field input::placeholder {
+  color: jazz-theme(form-input-disabled-color) !important;
+}
+
+.jazz-form-field[disabled] * {
+  color: jazz-theme(form-input-disabled-color) !important;
+  border-color: jazz-theme(form-input-disabled-color);
 }

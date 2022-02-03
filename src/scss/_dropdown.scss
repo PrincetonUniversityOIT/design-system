@@ -53,6 +53,8 @@
 .jazz-dropdown--error select option {
   border-bottom: 2px solid jazz-theme(form-dropdown-arrow-color);
   border-right: 2px solid jazz-theme(form-dropdown-arrow-color);
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
 }
 .jazz-dropdown select option[disabled],
 .jazz-dropdown--error select option[disabled] {

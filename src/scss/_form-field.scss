@@ -1,33 +1,29 @@
 .jazz-form-field,
 .jazz-form-field--error {
+  font-family: jazz-theme(body-font);
   margin-top: 1.5rem;
-  padding-left: 1rem;
   border-left: .25rem solid transparent;
 }
 
 .jazz-form-field label,
-.jazz-form-field--error label {
+.jazz-form-field--error label,
+.jazz-form-field--info label {
+  background-color: jazz-theme(form-input-label-bgcolor);
+  color: jazz-theme(form-input-label-color);
+  font-weight: bold;
+  font-size: px-to-rem(16);
   display: block;
-  line-height: 1.1;
-  margin-bottom: .5rem;
+  line-height: px-to-rem(24);
+  margin: 0;
   max-width: 30rem;
 }
 
-.jazz-form-field--error {
-  border-left: 4px solid jazz-theme(error);
-}
-
 .jazz-form-field-error-msg {
-  font-size: .85em;
+  font-size: px-to-rem(10);
   color: jazz-theme(error);
 }
 
 .jazz-form-field-msg {
-  font-size: .85em;
+  font-size: px-to-rem(14);
   color: jazz-theme(form-field-msg-color);
-}
-
-.jazz-form-field-required {
-  padding-left: px-to-rem(5);
-  color: jazz-theme(accent);
 }

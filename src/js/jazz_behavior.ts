@@ -5,6 +5,7 @@ import {UtilityHeaderBehavior} from "./components/header/utility-header";
 import {MenuToggleBehavior} from "./components/menu-toggle/menu-toggle";
 import {PagerBehavior} from "./components/pager/pager";
 import {TabsBehavior} from "./components/tabs/tabs";
+import {DropdownBehavior} from "./components/dropdown/dropdown";
 
 export class PrincetonDesignSystem {
 
@@ -26,6 +27,7 @@ export class PrincetonDesignSystem {
         new PagerBehavior().enable();
         new TabsBehavior().enable();
         new UtilityHeaderBehavior().enable();
+        new DropdownBehavior().enable();
     }
 
     public disable() {
@@ -36,6 +38,7 @@ export class PrincetonDesignSystem {
         new PagerBehavior().disable();
         new TabsBehavior().disable();
         new UtilityHeaderBehavior().disable();
+        new DropdownBehavior().disable();
         this.stopTrackingScroll();
     }
 

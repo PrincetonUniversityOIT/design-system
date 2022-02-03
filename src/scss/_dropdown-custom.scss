@@ -1,0 +1,105 @@
+.jazz-dropdown-custom {
+  position: relative;
+  user-select: none;
+  width: 100%;
+}
+.jazz-dropdown-custom select {
+  display: none; /*hide original SELECT element: */
+}
+.jazz-dropdown-custom__select {
+  border-width: 0 px-to-rem(2) 0 px-to-rem(2);
+  border-style: solid;
+  border-color: jazz-theme(form-input-border-color);
+}
+.jazz-dropdown-custom__select__trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: px-to-rem(8) px-to-rem(10);
+  font-size: px-to-rem(16);
+  font-weight: 300;
+  color: jazz-theme(form-input-color);
+  height: px-to-rem(40);
+  line-height: px-to-rem(24);
+  background: jazz-theme(form-input-bgcolor);
+  cursor: pointer;
+  border-width: px-to-rem(2) 0 px-to-rem(2) 0;
+  border-style: solid;
+  border-color: jazz-theme(form-input-border-color);
+}
+.jazz-dropdown-custom__options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border-top: 0;
+  background: jazz-theme(form-input-bgcolor);
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.jazz-dropdown-custom__select.open .jazz-dropdown-custom__options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.jazz-dropdown-custom__option {
+  position: relative;
+  display: block;
+  padding: px-to-rem(8) px-to-rem(10);
+  font-size: px-to-rem(16);
+  font-weight: 300;
+  color: jazz-theme(form-input-color);
+  line-height: px-to-rem(24);
+  cursor: pointer;
+  transition: all 0.5s;
+  border: px-to-rem(2) solid jazz-theme(form-input-border-color);
+  border-top: 0;
+}
+.jazz-dropdown-custom__option:hover {
+  cursor: pointer;
+  color: jazz-theme(focus-color);
+  border: px-to-rem(2) solid jazz-theme(focus-color);
+  border-top: 0;
+}
+.jazz-dropdown-custom__option.selected {
+  font-weight: bold;
+}
+
+/* Arrow styles */
+
+.jazz-dropdown__arrow {
+  position: relative;
+  height: px-to-rem(15);
+  width: px-to-rem(15);
+}
+.jazz-dropdown__arrow::before, .jazz-dropdown__arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0.15rem;
+  height: 100%;
+  transition: all 0.5s;
+}
+.jazz-dropdown__arrow::before {
+  left: px-to-rem(-5);
+  transform: rotate(45deg);
+  background-color: jazz-theme(form-dropdown-arrow-color);
+}
+.jazz-dropdown__arrow::after {
+  left: px-to-rem(5);
+  transform: rotate(-45deg);
+  background-color: jazz-theme(form-dropdown-arrow-color);
+}
+.open .jazz-dropdown__arrow::before {
+  left: px-to-rem(-5);
+  transform: rotate(-45deg);
+}
+.open .jazz-dropdown__arrow::after {
+  left: px-to-rem(5);
+  transform: rotate(45deg);
+}

@@ -75,6 +75,33 @@ export const DropdownTemplate = (args) => html`
     </div>    
 `;
 
+export const DropdownCustomTemplate = (args) => html`
+  <div class="jazz-form-field">
+       <label for="my-dropdown-3">Dropdown - Cars</label>
+       <div class="jazz-dropdown-custom">
+          <select>
+             <option value="0">Select car:</option>
+             <option value="1">Audi</option>
+             <option value="2">BMW</option>
+           </select>
+       </div>
+  </div>
+  <div class="jazz-form-field">
+       <label for="my-dropdown-3">Dropdown - Fruits</label>
+       <div class="jazz-dropdown-custom">
+             <select>
+                <option value="0">Select fruit:</option>
+                <option value="1">Apple</option>
+                <option value="2">Banana</option>
+                <option value="3">Orange</option>
+              </select>
+       </div>
+  </div>
+  <script id="initscript">
+           PrincetonDesignSystem.enableDesignSystem();
+  </script>
+`;
+
 # Form Inputs
 
 ## Accessibility Guidelines
@@ -120,5 +147,13 @@ export const DropdownTemplate = (args) => html`
         legend: "Types of Fruit"
     }}>
       {DropdownTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Dropdown Custom" args={{
+        legend: "Types of Fruit"
+    }}>
+      {DropdownCustomTemplate.bind({})}
     </Story>
 </Canvas>
