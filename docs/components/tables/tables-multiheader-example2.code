@@ -1,5 +1,5 @@
 <table class="jazz-table">
-    <caption class="jazz-visually-hidden">Row Headers Table</caption>
+    <caption class="jazz-visually-hidden">Row Headers Styles Reset Table</caption>
     <thead>
         <tr>
             <th scope="col">&nbsp;</th>
@@ -10,19 +10,19 @@
     </thead>
     <tbody>
         <tr>
-            <th scope="row">Row 1</th>
+            <th class="jazz-table__row-header-reset" scope="row">Row 1</th>
             <td>Table Text Roboto Regular 14/16</td>
             <td>A fruit pie in which the principal filling ingredient is apple</td>
             <td>$4.50</td>
         </tr>
         <tr>
-            <th scope="row">Row 2</th>
+            <th class="jazz-table__row-header-reset" scope="row">Row 2</th>
             <td>Table Text Roboto Regular 14/16</td>
             <td>A fruit pie in which the principal filling ingredient is apple</td>
             <td>$4.50</td>
         </tr>
         <tr>
-            <th scope="row">Row 3</th>
+            <th class="jazz-table__row-header-reset" scope="row">Row 3</th>
             <td>Table Text Roboto Regular 14/16</td>
             <td>A fruit pie in which the principal filling ingredient is apple</td>
             <td>$4.50</td>

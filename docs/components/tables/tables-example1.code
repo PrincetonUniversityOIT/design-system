@@ -1,4 +1,5 @@
 <table class="jazz-table">
+    <caption>Table Caption</caption>
     <thead>
         <tr>
             <th><input type="checkbox"></th>

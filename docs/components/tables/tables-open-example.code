@@ -1,4 +1,5 @@
 <table class="jazz-table jazz-table--open">
+    <caption class="jazz-visually-hidden">Compact Table</caption>
     <thead>
         <tr>
             <th>Column Title</th>

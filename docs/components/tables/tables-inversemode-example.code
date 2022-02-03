@@ -4,6 +4,7 @@
     }
 </style>
 <table class="jazz-table jazz-inverse jazz-table--striped">
+    <caption>Inverse Table Caption</caption>
     <thead>
         <tr>
             <th><input type="checkbox"></th>

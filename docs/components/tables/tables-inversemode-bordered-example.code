@@ -4,6 +4,7 @@
     }
 </style>
 <table class="jazz-table jazz-inverse jazz-table--bordered">
+    <caption class="jazz-visually-hidden">Inverse Bordered Table Caption</caption>
     <thead>
         <tr>
             <th>Column Title</th>

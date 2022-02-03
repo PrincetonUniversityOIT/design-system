@@ -1,4 +1,5 @@
 <table class="jazz-table jazz-table--bordered">
+    <caption class="jazz-visually-hidden">Bordered Table</caption>
     <thead>
         <tr>
             <th>Column Title</th>
