@@ -53,6 +53,10 @@
           "url": "/components/pager/"
         },
         {
+          "label": "Tables",
+          "url": "/components/tables/"
+        },
+        {
           "label": "Tabs",
           "url": "/components/tabs/"
         }

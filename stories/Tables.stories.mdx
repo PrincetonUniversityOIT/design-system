@@ -32,6 +32,35 @@ export const DefaultTemplate = () => html`
     </table>
 `;
 
+export const BorderedTemplate = () => html`
+    <table class="jazz-table jazz-table--bordered">
+        <thead>
+            <tr>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
 export const OpenTemplate = () => html`
     <table class="jazz-table jazz-table--open">
         <thead>
@@ -63,24 +92,24 @@ export const OpenTemplate = () => html`
 
 export const ThemeVariationTemplate = () => html`
    <style>
-            :root {
-                --jazz-table-th-bgcolor: var(--jazz-gray-90);
-                --jazz-table-th-color: var(--jazz-white);
-                --jazz-table-th-border-color: var(--jazz-gray-20);
-                --jazz-table-row-bgcolor: var(--jazz-gray-80);
-                --jazz-table-row-color: var(--jazz-white);
-                --jazz-table-row-sep-color: var(--jazz-gray-20);
-                --jazz-table-row-even-odd-bgcolor: var(--jazz-gray-60);
-                --jazz-table-row-even-odd-color: var(--jazz-white);
-                --jazz-table-subtotal-bgcolor: var(--jazz-gray-80);
-                --jazz-table-subtotal-color: var(--jazz-white);
-                --jazz-table-subtitle-bgcolor: var(--jazz-gray-80);
-                --jazz-table-subtitle-color: var(--jazz-white);
-                --jazz-table-grand-total-bgcolor: var(--jazz-gray-90);
-                --jazz-table-grand-total-color: var(--jazz-white);
-                --jazz-table-row-hover-bgcolor: var(--jazz-gray-20);
-                --jazz-table-row-hover-color: var(--jazz-black);
-            }
+        :root {
+            --jazz-table-th-bgcolor: var(--jazz-gray-90);
+            --jazz-table-th-color: var(--jazz-white);
+            --jazz-table-th-border-color: var(--jazz-gray-20);
+            --jazz-table-row-bgcolor: var(--jazz-gray-80);
+            --jazz-table-row-color: var(--jazz-white);
+            --jazz-table-row-sep-color: var(--jazz-gray-20);
+            --jazz-table-row-even-odd-bgcolor: var(--jazz-gray-60);
+            --jazz-table-row-even-odd-color: var(--jazz-white);
+            --jazz-table-subtotal-bgcolor: var(--jazz-gray-80);
+            --jazz-table-subtotal-color: var(--jazz-white);
+            --jazz-table-subtitle-bgcolor: var(--jazz-gray-80);
+            --jazz-table-subtitle-color: var(--jazz-white);
+            --jazz-table-grand-total-bgcolor: var(--jazz-gray-90);
+            --jazz-table-grand-total-color: var(--jazz-white);
+            --jazz-table-row-hover-bgcolor: var(--jazz-gray-20);
+            --jazz-table-row-hover-color: var(--jazz-black);
+        }
     </style>
     <table class="jazz-table jazz-table--striped">
         <thead>
@@ -122,7 +151,7 @@ export const ThemeVariationTemplate = () => html`
                 <td>&nbsp;</td>
                 <td class="jazz-right">$13.50</td>
             </tr>
-            <tr class="jazz-table--grand-total">
+            <tr class="jazz-table__grand-total">
                 <td>&nbsp;</td>
                 <td>Grand Total</td>
                 <td>&nbsp;</td>
@@ -215,7 +244,7 @@ export const SubTotalTemplate = () => html`
                 <td>A fruit pie in which the principal filling ingredient is apple</td>
                 <td class="jazz-right">$4.50</td>
             </tr>
-            <tr class="jazz-table--grand-total">
+            <tr class="jazz-table__grand-total">
                 <td>Grand Total</td>
                 <td>&nbsp;</td>
                 <td class="jazz-right">$13.50</td>
@@ -340,6 +369,7 @@ export const CheckboxTemplate = () => html`
 
 export const MultiHeaderTemplate = () => html`
     <table class="jazz-table">
+        <caption>Multi Header</caption>
         <thead>
             <tr>
                 <th scope="col">&nbsp;</th>
@@ -363,6 +393,49 @@ export const MultiHeaderTemplate = () => html`
             </tr>
             <tr>
                 <th scope="row">Row 3</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+            <tr>
+                <th scope="row">Row 4</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="jazz-table">
+        <caption>Header Reset</caption>
+        <thead>
+            <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">Column Title</th>
+                <th scope="col">Column Title Roboto Bold 14/16</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="jazz-table__row-header-reset" scope="row">Row 1</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+            <tr>
+                <th class="jazz-table__row-header-reset" scope="row">Row 2</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+            <tr>
+                <th class="jazz-table__row-header-reset" scope="row">Row 3</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td>$4.50</td>
+            </tr>
+            <tr>
+                <th class="jazz-table__row-header-reset" scope="row">Row 4</th>
                 <td>Table Text Roboto Regular 14/16</td>
                 <td>A fruit pie in which the principal filling ingredient is apple</td>
                 <td>$4.50</td>
@@ -392,12 +465,238 @@ export const NoRowsTemplate = () => html`
     </table>
 `;
 
+export const InversemodeTemplate = () => html`
+    <table class="jazz-table jazz-inverse">
+        <thead>
+            <tr>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th class="jazz-right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="jazz-table__subtitle">
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+                <td class="jazz-right">Subtitle</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr class="jazz-table__grand-total">
+                <td>Grand Total</td>
+                <td>&nbsp;</td>
+                <td class="jazz-right">$9.00</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
+export const InversemodeStripedTemplate = () => html`
+    <table class="jazz-table jazz-inverse jazz-table--striped">
+        <thead>
+            <tr>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th class="jazz-right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="jazz-table__subtitle">
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+                <td class="jazz-right">Subtitle</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr class="jazz-table__grand-total">
+                <td>Grand Total</td>
+                <td>&nbsp;</td>
+                <td class="jazz-right">$18.00</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
+export const InversemodeBorderedTemplate = () => html`
+    <table class="jazz-table jazz-inverse jazz-table--bordered">
+        <thead>
+            <tr>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th class="jazz-right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="jazz-table__subtitle">
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+                <td class="jazz-right">Subtitle</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr class="jazz-table__grand-total">
+                <td>Grand Total</td>
+                <td>&nbsp;</td>
+                <td class="jazz-right">$18.00</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
+export const InversemodeCheckboxTemplate = () => html`
+    <table class="jazz-table jazz-inverse">
+        <thead>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th class="jazz-right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="jazz-table__subtitle">
+                <td>&nbsp;</td>
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+                <td class="jazz-right">Subtitle</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr class="jazz-table__grand-total">
+                <td>&nbsp;</td>
+                <td>Grand Total</td>
+                <td>&nbsp;</td>
+                <td class="jazz-right">$18.00</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
+
+export const InversemodeMultiHeaderTemplate = () => html`
+    <table class="jazz-table jazz-inverse">
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Column Title</th>
+                <th>Column Title Roboto Bold 14/16</th>
+                <th class="jazz-right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="jazz-table__subtitle">
+                <th scope="row">Row 1</th>
+                <td>Subtitle</td>
+                <td>Subtitle</td>
+                <td class="jazz-right">Subtitle</td>
+            </tr>
+            <tr>
+                <th scope="row">Row 2</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <th scope="row">Row 3</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr>
+                <th class="jazz-table__row-header-reset" scope="row">Row 4</th>
+                <td>Table Text Roboto Regular 14/16</td>
+                <td>A fruit pie in which the principal filling ingredient is apple</td>
+                <td class="jazz-right">$4.50</td>
+            </tr>
+            <tr class="jazz-table__grand-total">
+                <td>&nbsp;</td>
+                <td>Grand Total</td>
+                <td>&nbsp;</td>
+                <td class="jazz-right">$9.00</td>
+            </tr>
+        </tbody>
+    </table>
+`;
+
 # Tables
 
 <Canvas>
     <Story name="Default" args={{
     }}>
       {DefaultTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Bordered" args={{
+    }}>
+      {BorderedTemplate.bind({})}
     </Story>
 </Canvas>
 
@@ -470,3 +769,71 @@ export const NoRowsTemplate = () => html`
       {ResponsiveTemplate.bind({})}
     </Story>
 </Canvas>
+
+<Canvas>
+    <Story
+        name="Inversemode"
+        args={{}}
+        parameters={{
+            backgrounds: {
+                default: 'dark'
+            },
+        }}>
+      {InversemodeTemplate.bind({})}>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Inversemode Striped"
+        args={{}}
+        parameters={{
+            backgrounds: {
+                default: 'dark'
+            },
+        }}>
+      {InversemodeStripedTemplate.bind({})}>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Inversemode Bordered"
+        args={{}}
+        parameters={{
+            backgrounds: {
+                default: 'dark'
+            },
+        }}>
+      {InversemodeBorderedTemplate.bind({})}>
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="Inversemode Checkbox"
+        args={{}}
+        parameters={{
+            backgrounds: {
+                default: 'dark'
+            },
+        }}>
+      {InversemodeCheckboxTemplate.bind({})}>
+    </Story>
+</Canvas>
+
+
+<Canvas>
+    <Story
+        name="Inversemode Multi Header"
+        args={{}}
+        parameters={{
+            backgrounds: {
+                default: 'dark'
+            },
+        }}>
+      {InversemodeMultiHeaderTemplate.bind({})}>
+    </Story>
+</Canvas>
+
+

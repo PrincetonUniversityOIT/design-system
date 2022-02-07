@@ -1,0 +1,31 @@
+<table class="jazz-table">
+    <caption class="jazz-visually-hidden">Row Headers Table</caption>
+    <thead>
+        <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">Column Title</th>
+            <th scope="col">Column Title Roboto Bold 14/16</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Row 1</th>
+            <td>Table Text Roboto Regular 14/16</td>
+            <td>A fruit pie in which the principal filling ingredient is apple</td>
+            <td>$4.50</td>
+        </tr>
+        <tr>
+            <th scope="row">Row 2</th>
+            <td>Table Text Roboto Regular 14/16</td>
+            <td>A fruit pie in which the principal filling ingredient is apple</td>
+            <td>$4.50</td>
+        </tr>
+        <tr>
+            <th scope="row">Row 3</th>
+            <td>Table Text Roboto Regular 14/16</td>
+            <td>A fruit pie in which the principal filling ingredient is apple</td>
+            <td>$4.50</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,384 @@
+---
+layout: layout.njk
+title: Tables
+tags: components
+---
+
+{% from "../../_includes/example.njk" import example %}
+
+<h1 class="jazz-page-title">Tables</h1>
+
+<p>
+A Table component displays tabular data in a two-dimensional table comprised of rows and columns of cells containing data.
+</p>
+
+{{ example("/components/tables/tables-example1", "Demonstration", "code-panel-demo") }}
+
+<h3>Best Practices</h3>
+
+<ul>
+    <li>Tables should be used for presenting data, not for layout.</li>
+    <li>Cells should contain a single value.</li>
+    <li>Columns and rows should have an appropriately defined header (<span class="code">th</span>).  Some screen readers will classify a table as a “presentation” table if there are no table headers in the first row.</li>
+    <li>Column and row headers must accurately describe the data in those columns/rows.</li>
+    <li>Consider row highlighting (even/odd and/or hover) when there are many columns in a row or when the row stretches across a wider screen.</li>
+    <li>Provide the ability to filter and sort large data sets.</li>
+    <li>Use pagination when data sets are very large and viewing the entire data set at once is not necessary.</li>
+    <li>Avoid nesting tables.</li>
+    <li>Avoid complex tables with multiple levels of headings.  Instead, strive for a simpler table structure.</li>
+    <li>Right-align numeric values where alignment of the decimal places is useful for interpreting the data (i.e. money).  If alignment of the decimal places is useful, be sure that all numbers in that column have the same number of decimal places.</li>
+    <li>Consider utilizing a caption within your HTML table structure to provide a description of the table contents.  If there is no need to visually display the caption, it may still be useful for assistive devices.</li>
+    <li>Use thead, tfoot, and tbody to properly identify the structure in your table.  This is useful for optimizing printed output for tables.</li>
+    <li>As a general rule, it is safest to always use the “scope” attribute on headers.  Although simple tables may not require use of the “scope” attribute, always including it eliminates the need to decide on when the attribute is necessary.</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>Basic Table</h3>
+
+<p>Simple Tables contain a grid of data, usually structured in a series of columns with corresponding headers. Accessible tables also provide a table caption.</p>
+
+{{ example("/components/tables/tables-basic-example1", "Basic Table", "code-panel-demo") }}
+
+<p>It may be desirable to not display a table caption, but the table caption should be included for assistive devices even if it is not shown. To visually hide the caption, but still have it be accessible to assistive devices, use the <span class="code">.jazz-visually-hidden</span> class on the table caption.</p>
+
+{{ example("/components/tables/tables-basic-example2", "Basic Table Hidden Caption", "code-panel-demo") }}
+
+<h3>Bordered Table</h3>
+
+<p>Designs can utilize bordered tables where it is preferable.</p>
+
+{{ example("/components/tables/tables-bordered-example", "Bordered Example", "code-panel-bordered") }}
+
+<h3>Striped Table</h3>
+
+<p>For wider displays, it may be desirable to utilize alternating row highlighting to assist the user with scanning data across a row.</p>
+
+{{ example("/components/tables/tables-striped-example", "Striped Example", "code-panel-borderless") }}
+
+<h3>Row Headers Table</h3>
+
+<p>Some data sets may benefit from having static row headers.</p>
+
+{{ example("/components/tables/tables-multiheader-example", "Multiheader Example", "code-panel-borderless") }}
+
+<p>Data sets may have a column within the data set that is useful as a row header. The design may look best without explicitly styling that column. The row header should still be identified within the HTML structure for use by assistive technologies.</p>
+
+{{ example("/components/tables/tables-multiheader-example2", "Multiheader Styles Reset Example", "code-panel-borderless") }}
+
+<h3>Compact Table</h3>
+
+<p>Some designs may require compact tables to make more efficient use of space.</p>
+
+{{ example("/components/tables/tables-open-example", "Open Example", "code-panel-borderless") }}
+
+<p>Compact tables can also have borders.</p>
+
+{{ example("/components/tables/tables-open-example2", "Open Borders Example", "code-panel-borderless") }}
+
+<h2>Inverse Table</h2>
+
+<p>Inverse Tables are styled to better integrate with darker pages. Header rows, and Body cell rows have transparent background to allow the dark page background to show through the table.</p>
+<p>Adding the class <span class='code'>.jazz-inverse</span> to the table element will convert a table to an inverse table.</p>
+
+{{ example("/components/tables/tables-inversemode-example", "Inversemode Example", "code-panel-borderless") }}
+
+<h3>Inverse Bordered Table</h3>
+
+{{ example("/components/tables/tables-inversemode-bordered-example", "Bordered Inversemode Example", "code-panel-borderless") }}
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<ul>
+    <li>Tables are composed of a caption, headers, and data rows.</li>
+    <li>The caption indicates the purpose of the table, and can also provide a summary about how the data is structured of what the data is presenting.</li>
+    <li>For simple tables, headers are described in the first row(s) of the table and provide structure to the data, both for sighted users and assistive technologies.</li>
+    <li>For more complex table structures, row headers may be included in the data rows.</li>
+    <li>Data rows are made of cells that contain the table data.</li>
+</ul>
+
+<h3>Code/Behavior</h3>
+
+<p>The default table behavior is utilized as much as possible to allow for proper support of assistive devices.  Assistive device support can be very difficult to achieve for all devices.  Keeping the table structures simple and avoiding sophisticated styling is recommended.</p>
+
+<ul>
+    <li>Table captions are indicated with the “caption” tag.  The “caption” tag offers a level of flexibility for content formatting that is not available through other options.</li>
+    <li>Column headers should be provided in the first row of the table using “th” tags.  Each column header should set a scope attribute (scope=”col”).</li>
+    <li>Row headers should be indicated using “th” tags.  Each row header should set a scope attribute (scope=”row”).</li>
+</ul>
+
+<p>More complicated table structures should be thoroughly tested for accessibility and use with assistive devices.</p>
+
+<h2>States (In Development)</h2>
+
+<h3>Default</h3>
+
+<p>The Default state for a table would be the Multiple state.</p>
+
+<h3>Hover</h3>
+
+<p>The Hover state occurs when the mouse is over top of a row or column.  The Hover state takes into consideration the possibility that some tables might use background colors on alternating rows.</p>
+
+<h3>Error</h3>
+
+<p>Tables themselves do not necessarily have an error state but they could encapsulate information that might have an error state that needs to be communicated through the table.</p>
+
+<p>Tables may need to draw attention to an entire row that contains data that is in an error state or they may need to draw attention to an individual cell that contains data that is in an error state.</p>
+
+<p>Further, there are cases where an individual row or cell may need to communicate multiple error messages per row/cell.</p>
+
+<h3>Selected</h3>
+
+<p>Tables do not necessarily have a Selected state, but the need could arise to be able to select a row (record) for further manipulation.</p>
+
+<p>In the case of a single possible selection, radio buttons in the first column are probably the most intuitive approach.</p>
+
+<p>In the case where multiple selections are possible, checkboxes in the first column are probably the most intuitive approach.</p>
+
+<h3>Empty</h3>
+
+<p>The Empty state for a table represents the case where there is no data to display within the table.  In these situations, it is usually appropriate to not display the table at all.</p>
+
+<h3>One</h3>
+
+<p>The One state for a table is the case where there is a single row to display.  It is important to consider this case to ensure that the styling for the header row and first row are appropriate when there is only one row of data to display.</p>
+
+<p>If there is only ever one row possible in a table, it may be desirable to change the orientation of the data within the table (i.e. display headers in the first column and data values in the second column).</p>
+
+<h3>Two</h3>
+
+<p>The Two state for a table is the case where there are two rows to display.  It is important to consider this case to ensure that the styling for the header row and first two rows are appropriate when there are only two rows of data to display.</p>
+
+<h3>Multiple</h3>
+
+<p>The Multiple state is the default state for a table and represents the case where there are multiple records to display.  The Two state can be included along with the Multiple state or kept independent depending on your needs.</p>
+
+<p>In the Multiple state, it is important to consider and expose the aggregate operations and features (sort, filter, totaling) that are appropriate for your data set.  The Table component only considers static data tables.  See the Editable Data Table for tables for support of data manipulation.</p>
+
+<h3>Overflow</h3>
+
+<p>There are various ways that Tables will need to consider the Overflow state:</p>
+
+<ul>
+    <li>Too Many Columns - There may be too many columns to fit within the horizontal space. This overflow situation is usually best handled with the addition of scrollbars. This strategy might be paired with providing the user the ability to choose which columns to display as a way to minimize the need to scroll.</li>
+    <li>Too Many Rows - There may be too many rows to fit within the vertical space, or too many rows to be reasonably viewed per page. This overflow situation is usually best handled by pairing the Table component with a Pager component.</li>
+    <li>Too Much Content - Content for an individual cell may not fit within the space available to the cell.  Wherever possible, it is best to allow the table columns to automatically adjust and content to wrap naturally to accommodate the content.</li>
+</ul>
+
+<p>Tables can be particularly difficult to work with on mobile or other devices that have a limited amount of horizontal space.  As a first step, evaluate how important the table is for mobile use and seek alternative representations that might be more useful in a mobile setting. If the table is absolutely necessary on smaller devices, strategies are available for dealing with this situation:</p>
+
+<ul>
+    <li>Columns could be hidden at different resolutions. This has the advantage of allowing the data table to be progressively enhanced for devices that have more available horizontal space.  Columns will have to be prioritized to decide which data is less important and can be hidden at smaller screen resolutions.</li>
+    <li>Rows orientation could change to fit table content within the horizontal space. All data could be pivoted down to a two column table.anecessary and allow them to be moved via touch gestures. This has the advantage that it provides the full data set, but might not be entirely mobile-friendly.</li>
+</ul>
+
+<h3>Table Variables</h3>
+
+<table class="jazz-table jazz-table--bordered">
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+    <tr>
+        <td>--jazz-table-border-color</td>
+        <td>table-border-color</td>
+        <td>Border Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-th-bgcolor</td>
+        <td>table-th-bgcolor</td>
+        <td>th Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-th-bgcolor</td>
+        <td>table-inverse-th-bgcolor</td>
+        <td>Inverse th Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-th-color</td>
+        <td>table-th-color</td>
+        <td>th Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-th-color</td>
+        <td>table-inverse-th-color</td>
+        <td>Inverse th Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-th-border-color</td>
+        <td>table-th-border-color</td>
+        <td>th Border Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-th-border-color</td>
+        <td>table-inverse-th-border-color</td>
+        <td>Inverse th Border Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-sep-color</td>
+        <td>table-row-sep-color</td>
+        <td>Row Sep Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-sep-color</td>
+        <td>table-inverse-row-sep-color</td>
+        <td>Inverse Row Sep Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-even-odd-bgcolor</td>
+        <td>table-row-even-odd-bgcolor</td>
+        <td>Row Even Odd Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-even-odd-bgcolor</td>
+        <td>table-inverse-row-even-odd-bgcolor</td>
+        <td>Inverse Row Even Odd Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-even-odd-color</td>
+        <td>table-row-even-odd-color</td>
+        <td>Row Even Odd Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-even-odd-color</td>
+        <td>table-inverse-row-even-odd-color</td>
+        <td>Inverse Row Even Odd Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-bgcolor</td>
+        <td>table-row-bgcolor</td>
+        <td>Row Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-bgcolor</td>
+        <td>table-inverse-row-bgcolor</td>
+        <td>Inverse Row Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-color</td>
+        <td>table-row-color</td>
+        <td>Row Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-color</td>
+        <td>table-inverse-row-color</td>
+        <td>Inverse Row Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-subtotal-bgcolor</td>
+        <td>table-subtotal-bgcolor</td>
+        <td>Subtotal Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-subtotal-bgcolor</td>
+        <td>table-inverse-subtotal-bgcolor</td>
+        <td>Inverse Subtotal Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-subtotal-color</td>
+        <td>table-subtotal-color</td>
+        <td>Subtotal Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-subtotal-color</td>
+        <td>table-inverse-subtotal-color</td>
+        <td>Inverse Subtotal Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-grand-total-bgcolor</td>
+        <td>table-grand-total-bgcolor</td>
+        <td>Grand Total Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-grand-total-bgcolor</td>
+        <td>table-inverse-grand-total-bgcolor</td>
+        <td>Inverse Grand Total Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-grand-total-color</td>
+        <td>table-grand-total-color</td>
+        <td>Grand Total Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-grand-total-color</td>
+        <td>table-inverse-grand-total-color</td>
+        <td>Inverse Grand Total Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-subtitle-bgcolor</td>
+        <td>table-subtitle-bgcolor</td>
+        <td>Subtitle Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-subtitle-bgcolor</td>
+        <td>table-inverse-subtitle-bgcolor</td>
+        <td>Inverse Subtitle Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-subtitle-color</td>
+        <td>table-subtitle-color</td>
+        <td>Subtitle Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-subtitle-color</td>
+        <td>table-inverse-subtitle-color</td>
+        <td>Inverse Subtitle Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-hover-bgcolor</td>
+        <td>table-row-hover-bgcolor</td>
+        <td>Row Hover Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-hover-bgcolor</td>
+        <td>table-inverse-row-hover-bgcolor</td>
+        <td>Inverse Row Hover Background Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-row-hover-color</td>
+        <td>table-row-hover-color</td>
+        <td>Row Hover Color</td>
+        <td>Color</td>
+    </tr>
+    <tr>
+        <td>--jazz-table-inverse-row-hover-color</td>
+        <td>table-inverse-row-hover-color</td>
+        <Td>Inverse Row Hover Color</Td>
+        <td>Color</td>
+    </tr>
+</table>
