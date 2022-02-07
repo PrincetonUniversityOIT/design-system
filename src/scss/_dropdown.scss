@@ -39,9 +39,9 @@
   -webkit-appearance: none;
   appearance: none;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: px-to-rem(2);
   border: 1px solid jazz-theme(form-input-border-color);
-  line-height: normal;
+  line-height: px-to-rem(27);
   max-width: 100%;
   padding: .5em 2em .5em .5em;
   width: 100%;
@@ -54,7 +54,7 @@
   border-bottom: 2px solid jazz-theme(form-dropdown-arrow-color);
   border-right: 2px solid jazz-theme(form-dropdown-arrow-color);
   font-size: px-to-rem(16);
-  line-height: px-to-rem(24);
+  line-height: px-to-rem(27);
 }
 .jazz-dropdown select option[disabled],
 .jazz-dropdown--error select option[disabled] {

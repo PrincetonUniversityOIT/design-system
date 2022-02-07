@@ -1,0 +1,5 @@
+<div class="jazz-form-field">
+    <label for="my-input" required>Text Field 1</label>
+    <input class="jazz-input" id="my-input" type="text" placeholder="Placeholder" />
+    <span role="alert" class="jazz-form-field-error-msg">'Field 1' is required.</span>
+</div>

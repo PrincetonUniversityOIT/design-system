@@ -1,0 +1,6 @@
+<div class="jazz-form-field">
+    <label for="my-input">Checkboxes</label>
+    <input type="checkbox" id="checkbox-1" value="value-1"><span class="jazz-checkbox__label">Input 1</span>
+    <input type="checkbox" id="checkbox-2" value="value-2"><span class="jazz-checkbox__label">Input 2</span>
+    <input type="checkbox" id="checkbox-3" value="value-2"><span class="jazz-checkbox__label">Input 3</span>
+</div>

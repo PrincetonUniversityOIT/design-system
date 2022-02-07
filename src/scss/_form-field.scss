@@ -19,11 +19,20 @@
 }
 
 .jazz-form-field-error-msg {
+  font-family: jazz-theme(body-font);
   font-size: px-to-rem(10);
+  font-style: normal;
+  font-weight: normal;
+  line-height: px-to-rem(14);
   color: jazz-theme(error);
+  margin-top: px-to-rem(4);
 }
 
 .jazz-form-field-msg {
+  font-family: jazz-theme(body-font);
   font-size: px-to-rem(14);
+  font-style: normal;
+  font-weight: normal;
+  line-height: px-to-rem(18);
   color: jazz-theme(form-field-msg-color);
 }

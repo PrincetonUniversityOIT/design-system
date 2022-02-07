@@ -1,0 +1,4 @@
+<div class="jazz-form-field">
+    <label for="my-input">Text Field 1</label>
+    <input class="jazz-input" id="my-input" type="text" placeholder="Placeholder" />
+</div>

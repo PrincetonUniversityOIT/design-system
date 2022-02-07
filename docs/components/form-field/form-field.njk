@@ -1,0 +1,216 @@
+---
+layout: layout.njk
+title: Form Field
+tags: components
+---
+
+{% from "../../_includes/example.njk" import example %}
+
+<h1 class="jazz-page-title">Form Field</h1>
+
+<p>
+A Form Field is a composite form construct that encapsulates a form input along with its corresponding label, required/optional indicator, field-specific assistive content, and field-specific error messages.
+</p>
+
+{{ example("/components/form-field/form-field-example-simple", "Demonstration", "code-panel-form-field") }}
+
+<h2>Best Practices</h2>
+
+<ul>
+
+    <li>Clearly label each form input.</li>
+    <li>Provide field-specific assistive content to clarify how the field should be used/completed.</li>
+    <li>Clearly label fields as required/optional.  If most of the fields are required, indicate which are optional.  If most of the fields are optional, indicate which are required.</li>
+    <li>Capitalize the first word of the label and any proper names as they would normally be capitalized.</li>
+</ul>
+
+<h2>Variations &amp; Examples</h2>
+
+<h3>The Basics</h3>
+
+{{ example("/components/form-field/form-field-example-simple", "Demonstration", "code-panel-form-field-basics") }}
+
+<h2>Detailed Specification</h2>
+
+<h3>Design</h3>
+
+<ul>
+    <li>A Form Field is composed of the label, the input control and the error message component.</li>
+    <li>The input control contained within the form field tags can be any simple form control.</li>
+    <li>The form field is designed to contain only one input control at a time.</li>
+</ul>
+
+<h3>Code</h3>
+
+<ul>
+    <li>The label and the input tags are wrapped by a div with the <span class="code">jazz-form-field</span> style.</li>
+    <li>The input tag should have the <span class="code">jazz-input</span> class in order to be styled properly.</li>
+    <li>In order to show that the field is required the label needs to have the <span class="code">required</span> attribute set to show the red asterisk next to the label.</li>
+        {% highlight "html" %}
+           <label for="my-input" required>Text Field 1</label>
+        {% endhighlight %}
+    <li>In order to override or specify messages for validation errors you can add a span/s with the role = alert and the class <span class="jazz-form-field-error-msg"></span>.
+          {% highlight "html" %}
+              <span role="alert" class="jazz-form-field-error-msg">'Field 1' is required.</span>
+          {% endhighlight %}
+    </li>
+    <li>The input control needs to have the <span class="code">jazz-input</span> class so that the styles for the input component are applied as designed.
+        {% highlight "html" %}
+           <div class="jazz-form-field">
+               <label for="my-input" required>Text Field 1</label>
+               <input class="jazz-input" id="my-input" type="text" placeholder="Placeholder" />
+           </div>
+        {% endhighlight %}
+    </li>
+    <li>To show error messages you can add a span with the class jazz-form-field-error-msg below the input control
+        {% highlight "html" %}
+            <div class="jazz-form-field">
+               <label for="my-input" required>Text Field 1</label>
+               <input class="jazz-input" id="my-input" type="text" placeholder="Placeholder" />
+               <span role="alert" class="jazz-form-field-error-msg">'Field 1' is required.</span>
+            </div>
+        {% endhighlight %}
+    </li>
+</ul>
+
+<h3>Examples</h3>
+
+<p>Here are some examples on how to use the form field component with various input controls.</p>
+
+<h4>Input Text</h4>
+
+{{ example("/components/form-field/form-field-example-text", "Demonstration", "code-panel-form-field-text-2") }}
+
+<h4>Input Text With Error</h4>
+
+{{ example("/components/form-field/form-field-example-text-error", "Demonstration", "code-panel-form-field-text-error") }}
+
+<h4>Text Area</h4>
+
+{{ example("/components/form-field/form-field-example-text-area", "Demonstration", "code-panel-form-field-text-area") }}
+
+<h4>Dropdown</h4>
+
+{{ example("/components/form-field/form-field-example-dropdown", "Demonstration", "code-panel-form-field-dropdown") }}
+
+<h4>Radio Button</h4>
+
+{{ example("/components/form-field/form-field-example-radio", "Demonstration", "code-panel-form-field-radio") }}
+
+<h4>Check Box</h4>
+
+{{ example("/components/form-field/form-field-example-checkbox", "Demonstration", "code-panel-form-field-checkbox") }}
+
+<h3>States</h3>
+
+<h4>Default</h4>
+<p>The Default state of a Form Field is Empty and not in the Error state.</p>
+<h4>Error (Warning/Invalid)</h4>
+<p>The Error state of a Form Field indicates that the Form Field’s child input values are not value and optionally provides an error message that indicates the specific problem with the field.</p>
+<h4>Correct</h4>
+<p>The Correct state indicates that the Form Field’s child input values are correct/valid.  In most cases, this state would not need to be represented, but it may be useful in cases where achieving the correct value is difficult.</p>
+<h4>Required</h4>
+<p>The Required state indicates that a Form Field is required, meaning that a value must be specified for the inputs in that Form Field before the value can be accepted.</p>
+<h4>Empty</h4>
+<p>There are a few different Empty state situations for a Form Field that need to be considered:</p>
+<h4>One (Single, Only)</h4>
+<p>The One state for a Text Input indicates that a value has been provided for the input.  Any placeholders are usually hidden once a value has been provided.</p>
+<h4>Overflow</h4>
+<p>The Overflow state for a Text Input would be when the value specified for the component exceeds the available space to display that value.  By default, HTML Form inputs will truncate the display of any content that exceeds the available width, while preserving the underlying value.</p>
+
+<h2>Theme Variables</h2>
+
+<h3>Colors</h3>
+
+<p>
+    To override color variables with colors from the Design System color palette you can specify color hex values or html colors. If you want to use colors from the Design System color palette,
+    you can also specify the following value format for the color you want to use for the variable:
+</p>
+
+{% highlight "html" %}
+    var(--jazz-gray);
+{% endhighlight %}
+
+<h3>Fonts</h3>
+
+<p>
+    To override the font variables you can specify the font you want to use as you would typically put in the css. Here is a quick example:
+</p>
+
+{% highlight "html" %}
+    'Lora', serif
+{% endhighlight %}
+
+<h3>Form Field Variables </h3>
+
+<table class="jazz-table">
+    <tr>
+        <th>CSS Variable</th>
+        <th>SCSS Theme Key</th>
+        <th>Description</th>
+        <th>Expected Value Type</th>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-input-bgcolor</td>
+        <td>form-input-bgcolor</td>
+        <td>Form Input Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-input-color</td>
+        <td>form-input-color</td>
+        <td>Form Input Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-input-border-color</td>
+        <td>form-input-border-color</td>
+        <td>Form Input Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-input-error-border-color</td>
+        <td>form-input-error-border-color</td>
+        <td>Form Input Error Border Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-input-label-bgcolor</td>
+        <td>form-input-label-bgcolor</td>
+        <td>Form Input Label Background Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-input-label-color</td>
+        <td> form-input-label-color</td>
+        <td>Form Input Label Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-dropdown-arrow-color</td>
+        <td>form-dropdown-arrow-color</td>
+        <td>Form Dropdown Arrow Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-input-disabled-color</td>
+        <td>form-input-disabled-color</td>
+        <td>Form Input Disabled Color</td>
+        <td>Color</td>
+    </tr>
+
+    <tr>
+        <td>--jazz-form-field-msg-color</td>
+        <td>form-field-msg-color</td>
+        <td>Form Field Message Color</td>
+        <td>Color</td>
+    </tr>
+</table>

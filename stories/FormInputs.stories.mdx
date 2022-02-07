@@ -17,6 +17,12 @@ export const MultilineTextInputTemplate = (args) => html`
     <textarea class="jazz-input" id="my-input4" type="text" aria-label="My Input 4" required>${ args.value }</textarea>
 `;
 
+export const SimpleCheckboxTemplate = (args) => html`
+     <input type="checkbox" id="checkbox-1" value="value-1"><span class="jazz-checkbox__label">Input 1</span>
+     <input type="checkbox" id="checkbox-2" value="value-2"><span class="jazz-checkbox__label">Input 2</span>
+     <input type="checkbox" id="checkbox-3" value="value-2"><span class="jazz-checkbox__label">Input 3</span>
+`;
+
 export const CheckboxTemplate = (args) => html`
     <fieldset class="jazz-fieldset">
         <legend class="jazz-visually-hidden">${ args.legend }</legend>
@@ -37,6 +43,12 @@ export const CheckboxTemplate = (args) => html`
             <label class="jazz-checkbox__label" for="watermelon">Watermelon</label>
         </div>
     </fieldset>
+`;
+
+export const SimpleRadioTemplate = (args) => html`
+     <input type="radio" name="radio1" value="value-1"><span class="jazz-radio__label">Input 1</span>
+     <input type="radio" name="radio1" value="value-2"><span class="jazz-radio__label">Input 2</span>
+     <input type="radio" name="radio1" value="value-3"><span class="jazz-radio__label">Input 3</span>
 `;
 
 export const DropdownTemplate = (args) => html`
@@ -135,10 +147,22 @@ export const DropdownCustomTemplate = (args) => html`
 </Canvas>
 
 <Canvas>
+    <Story name="Simple Checkbox">
+      {SimpleCheckboxTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
     <Story name="Checkbox" args={{
         legend: "Types of Fruit"
     }}>
       {CheckboxTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Simple Radio Buttons">
+      {SimpleRadioTemplate.bind({})}
     </Story>
 </Canvas>
 

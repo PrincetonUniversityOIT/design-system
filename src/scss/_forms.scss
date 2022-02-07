@@ -4,9 +4,7 @@
   color: jazz-theme(form-input-color);
   border-radius: px-to-rem(2);
   border: px-to-rem(1) solid jazz-theme(form-input-border-color);
-  line-height: px-to-rem(24);
-  display: block;
-  margin: 0;
+  line-height: px-to-rem(27);
   width: 100%;
   padding: px-to-rem(8) px-to-rem(10);
 }
@@ -49,9 +47,16 @@
   margin-right: px-to-rem(5);
 }
 
-.jazz-form-field span {
-  margin-right: 10px;
+.jazz-checkbox__label,
+.jazz-radio__label{
+  font-style: normal;
+  font-weight: normal;
+  font-size: px-to-rem(18);
+  line-height: px-to-rem(27);
+  margin-left: px-to-rem(16);
+  margin-right: px-to-rem(20);
 }
+
 
 .jazz-form-field--disabled,
 .jazz-form-field input::placeholder {

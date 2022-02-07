@@ -1,0 +1,6 @@
+<div class="jazz-form-field">
+    <label for="my-input">Radio Buttons</label>
+     <input type="radio" name="radio1" value="value-1"><span class="jazz-radio__label">Input 1</span>
+     <input type="radio" name="radio1" value="value-2"><span class="jazz-radio__label">Input 2</span>
+     <input type="radio" name="radio1" value="value-3"><span class="jazz-radio__label">Input 3</span>
+</div>

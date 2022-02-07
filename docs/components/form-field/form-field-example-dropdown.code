@@ -1,0 +1,11 @@
+ <div class="jazz-form-field">
+        <label for="my-dropdown-1">Dropdown</label>
+        <div class="jazz-dropdown">
+            <select class="jazz-select" id="my-dropdown-1">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option disabled>Option 3</option>
+                <option>Option 4</option>
+            </select>
+        </div>
+    </div>
