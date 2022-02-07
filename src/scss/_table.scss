@@ -53,16 +53,19 @@
   color: jazz-theme(table-row-color);
 }
 
-.jazz-table.jazz-inverse th[scope=row].jazz-table__row-header-reset {
-  border-bottom-color: jazz-theme(table-inverse-row-sep-color);
-  background: jazz-theme(table-inverse-row-bgcolor);
-  font-weight: 700;
+.jazz-table.jazz-inverse th[scope=row] {
+  border-bottom: 1px solid jazz-theme(table-inverse-row-sep-color);
   color: jazz-theme(table-inverse-row-color);
 }
 
 .jazz-table th[scope=row].jazz-table__row-header-reset {
   font-weight: 400;
 }
+
+.jazz-table.jazz-inverse th[scope=row].jazz-table__row-header-reset {
+  font-weight: 400;
+}
+
 
 .jazz-table td {
   border-bottom: 1px solid jazz-theme(table-row-sep-color);
