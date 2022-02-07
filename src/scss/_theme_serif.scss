@@ -6,7 +6,7 @@ $jazz-theme-feature: (
         // general theme options
         accent: jazz-color(jazz-princeton-orange),
         success: jazz-color(jazz-green),
-        error: jazz-color(jazz-red),
+        error: jazz-color(jazz-red-dark),
         info: jazz-color(jazz-blue),
         warning: jazz-color(jazz-indigo),
 
@@ -127,10 +127,12 @@ $jazz-theme-feature: (
 
         // form theme options
         form-input-bgcolor: jazz-color(jazz-white),
-        form-input-color: jazz-color(jazz-black),
+        form-input-color: jazz-color(jazz-gray),
         form-input-border-color: jazz-color(jazz-gray-60),
         form-input-error-border-color: jazz-color(jazz-red),
-        form-dropdown-arrow-color: jazz-color(jazz-princeton-orange),
+        form-input-label-bgcolor: jazz-color(jazz-white),
+        form-input-label-color: jazz-color(jazz-gray),
+        form-dropdown-arrow-color: jazz-color(jazz-gray),
         form-input-disabled-color: jazz-color(jazz-gray-40),
         form-field-msg-color: jazz-color(jazz-gray-60),
 
