@@ -10,32 +10,26 @@
   line-height: px-to-rem(16);
   text-align: center;
   text-transform: uppercase;
-
   background-color: jazz-theme(button-bgcolor);
   color: jazz-theme(button-color);
-
   height: jazz-theme(button-size-default);
   width: fit-content;
   border-radius: px-to-rem(2);
   border: px-to-rem(1) solid jazz-theme(button-bgcolor);
   padding: px-to-rem(12) px-to-rem(20);
   white-space: nowrap;
-
   cursor: pointer;
   display: inline-block;
   margin-right: .5rem;
   margin-top: .25rem;
   margin-bottom: .25rem;
-
   text-align: center;
   text-decoration: none;
-
   display: inline-flex;
   flex-basis: auto;
   flex-grow: 0;
   align-items: center;
   gap: 8px;
-
   outline: transparent solid px-to-rem(2);
   //outline-offset: .25rem;
   //transition: all 0.25s ease;
@@ -43,117 +37,118 @@
   i {
     font-size: px-to-rem(16);
   }
-}
 
-.jazz-btn.jazz-btn--hover, .jazz-btn:hover {
-  color: jazz-theme(button-hover-color);
-  background-color: jazz-theme(button-hover-bgcolor);
-  border: px-to-rem(1) solid jazz-theme(button-hover-border-color);
-  text-decoration: none;
-}
+  /*
+    Outline Button Styles
+  */
 
-.jazz-btn.jazz-btn--active, .jazz-btn:active {
-  color: jazz-theme(button-active-color);
-  background-color: jazz-theme(button-active-bgcolor);
-  border: px-to-rem(2) solid jazz-theme(button-active-border-color);
-}
+  &.jazz-btn-outline {
+    background-color: jazz-theme(button-outline-bgcolor);
+    color: jazz-theme(button-outline-color);
+    border: px-to-rem(1) solid jazz-theme(button-outline-border-color);
+    outline: transparent solid px-to-rem(2);
+    //outline-offset: .25rem;
 
-.jazz-btn.jazz-btn--focus, .jazz-btn:focus {
-  color: jazz-theme(button-focus-color);
-  background-color: jazz-theme(button-focus-bgcolor);
-  border: px-to-rem(1) solid jazz-theme(button-focus-border-color);
-  outline: px-to-rem(2) solid jazz-theme(focus-color);
-}
+    &--hover, &:hover {
+      color: jazz-theme(button-outline-hover-color);
+      background-color: jazz-theme(button-outline-hover-bgcolor);
+      border: px-to-rem(1) solid jazz-theme(button-outline-hover-border-color);
+      text-decoration: none;
+    }
 
-.jazz-btn:disabled {
-  color: jazz-theme(button-disabled-color);
-  background-color: jazz-theme(button-disabled-bgcolor);
-  border: px-to-rem(1) solid jazz-theme(button-disabled-border-color);
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  pointer-events: none;
-}
+    &--active, &:active {
+      color: jazz-theme(button-outline-active-color);
+      background-color: jazz-theme(button-outline-active-bgcolor);
+      border: px-to-rem(2) solid jazz-theme(button-outline-active-bgcolor);
+    }
 
-/*
-  Outline Button Styles
-*/
+    &--focus, &:focus {
+      color: jazz-theme(button-outline-focus-color);
+      background-color: jazz-theme(button-outline-focus-bgcolor);
+      border: px-to-rem(1) solid jazz-theme(button-outline-focus-border-color);
+      outline: px-to-rem(2) solid jazz-theme(focus-color);
+    }
 
-.jazz-btn-outline {
-  background-color: jazz-theme(button-outline-bgcolor);
-  color: jazz-theme(button-outline-color);
-  border: px-to-rem(1) solid jazz-theme(button-outline-border-color);
-  outline: transparent solid px-to-rem(2);
-  //outline-offset: .25rem;
-}
-
-.jazz-btn.jazz-btn-outline--hover, .jazz-btn-outline:hover {
-  color: jazz-theme(button-outline-hover-color);
-  background-color: jazz-theme(button-outline-hover-bgcolor);
-  border: px-to-rem(1) solid jazz-theme(button-outline-hover-border-color);
-  text-decoration: none;
-}
-
-.jazz-btn.jazz-btn-outline--active, .jazz-btn-outline:active {
-  color: jazz-theme(button-outline-active-color);
-  background-color: jazz-theme(button-outline-active-bgcolor);
-  border: px-to-rem(2) solid jazz-theme(button-outline-active-bgcolor);
-}
-
-.jazz-btn.jazz-btn-outline--focus, .jazz-btn-outline:focus {
-  color: jazz-theme(button-outline-focus-color);
-  background-color: jazz-theme(button-outline-focus-bgcolor);
-  border: px-to-rem(1) solid jazz-theme(button-outline-focus-border-color);
-  outline: px-to-rem(2) solid jazz-theme(focus-color);
-}
-
-.jazz-btn.jazz-btn-outline:disabled {
-  color: jazz-theme(button-outline-disabled-color);
-  background-color: jazz-theme(button-outline-disabled-bgcolor);
-  border: px-to-rem(1) solid jazz-theme(button-outline-disabled-border-color);
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  pointer-events: none;
-}
-
-/*
-  Text Button Styles
-*/
-
-.jazz-btn.jazz-btn-text {
-  background-color: transparent;
-  color: jazz-theme(button-text-color);
-  border: px-to-rem(1) solid transparent;
-  //outline-offset: .25rem;
-
-  span {
-    border-bottom: px-to-rem(1) solid jazz-theme(button-text-border-color);
+    &:disabled {
+      color: jazz-theme(button-outline-disabled-color);
+      background-color: jazz-theme(button-outline-disabled-bgcolor);
+      border: px-to-rem(1) solid jazz-theme(button-outline-disabled-border-color);
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      pointer-events: none;
+    }
   }
-}
 
-.jazz-btn.jazz-btn-text--hover span, .jazz-btn.jazz-btn-text span:hover {
-  color: jazz-theme(button-text-hover-color);
-  border-bottom: px-to-rem(1) solid jazz-theme(button-text-hover-border-color);
-}
+  &.jazz-btn--hover, &:hover {
+    color: jazz-theme(button-hover-color);
+    background-color: jazz-theme(button-hover-bgcolor);
+    border: px-to-rem(1) solid jazz-theme(button-hover-border-color);
+    text-decoration: none;
+  }
 
-.jazz-btn.jazz-btn-text--active span, .jazz-btn.jazz-btn-text span:active {
-  color: jazz-theme(button-text-active-color);
-  font-weight: 600;
-  border-bottom: px-to-rem(1) solid jazz-theme(button-text-active-border-color);
-}
+  &.jazz-btn--active, &:active {
+    color: jazz-theme(button-active-color);
+    background-color: jazz-theme(button-active-bgcolor);
+    border: px-to-rem(2) solid jazz-theme(button-active-border-color);
+  }
 
-.jazz-btn.jazz-btn-text--focus span, .jazz-btn.jazz-btn-text span:focus {
-  color: jazz-theme(button-text-focus-color);
-  border-bottom: px-to-rem(1) solid jazz-theme(button-text-focus-color);
-}
+  &.jazz-btn--focus, &:focus {
+    color: jazz-theme(button-focus-color);
+    background-color: jazz-theme(button-focus-bgcolor);
+    border: px-to-rem(1) solid jazz-theme(button-focus-border-color);
+    outline: px-to-rem(2) solid jazz-theme(focus-color);
+  }
 
-.jazz-btn.jazz-btn-text--focus, .jazz-btn.jazz-btn-text:focus {
-  outline: px-to-rem(2) solid jazz-theme(focus-color);
-}
+  &:disabled {
+    color: jazz-theme(button-disabled-color);
+    background-color: jazz-theme(button-disabled-bgcolor);
+    border: px-to-rem(1) solid jazz-theme(button-disabled-border-color);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    pointer-events: none;
+  }
 
-.jazz-btn.jazz-btn-text:disabled span {
-  color: jazz-theme(button-text-disabled-color);
-  pointer-events: none;
-  border-bottom: px-to-rem(1) solid jazz-theme(button-text-disabled-border-color);
+  /*
+    Text Button Styles
+  */
+
+  &.jazz-btn-text {
+    background-color: transparent;
+    color: jazz-theme(button-text-color);
+    border: px-to-rem(1) solid transparent;
+    //outline-offset: .25rem;
+
+    span {
+      border-bottom: px-to-rem(1) solid jazz-theme(button-text-border-color);
+    }
+
+    &--hover span, span:hover {
+      color: jazz-theme(button-text-hover-color);
+      border-bottom: px-to-rem(1) solid jazz-theme(button-text-hover-border-color);
+    }
+
+    &--active span, span:active {
+      color: jazz-theme(button-text-active-color);
+      font-weight: 600;
+      border-bottom: px-to-rem(1) solid jazz-theme(button-text-active-border-color);
+    }
+
+    &--focus span, span:focus {
+      color: jazz-theme(button-text-focus-color);
+      border-bottom: px-to-rem(1) solid jazz-theme(button-text-focus-color);
+    }
+
+    &--focus, &:focus {
+      outline: px-to-rem(2) solid jazz-theme(focus-color);
+    }
+
+    &:disabled span {
+      color: jazz-theme(button-text-disabled-color);
+      pointer-events: none;
+      border-bottom: px-to-rem(1) solid jazz-theme(button-text-disabled-border-color);
+    }
+  }
+
 }
 
 /*
