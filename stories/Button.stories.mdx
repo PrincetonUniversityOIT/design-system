@@ -171,6 +171,17 @@ export const LongButtonsTemplate = (args) => html`
     <button class="jazz-btn jazz-btn-text"><span>This is the longest button ever</span></button>
 `;
 
+export const DisabledButtonsTemplate = () => html`
+    <h3>Disabled</h3>
+    <button class="jazz-btn" disabled>Default Disabled</button>
+    <button class="jazz-btn" disabled><span>Default Span Disabled</span></button>
+    <button class="jazz-btn jazz-btn-outline" disabled>Default Outline Disabled</button>
+    <h3>Aria-Disabled</h3>
+    <button class="jazz-btn" aria-disabled="true">Aria-Disabled</button>
+    <button class="jazz-btn" aria-disabled="true"><span>Aria-Disabled Span</span></button>
+    <button class="jazz-btn jazz-btn-outline" aria-disabled="true">Aria-Disabled Outline</button>
+`;
+
 # Buttons
 
 ## TODO
@@ -226,9 +237,15 @@ export const LongButtonsTemplate = (args) => html`
 </Canvas>
 
 <Canvas>
-    <Story name="Long Buttons" args={{
+    <Story name="Long Buttons" args={{}}>
+      {LongButtonsTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+    <Story name="Disabled Buttons" args={{
         label: "Label",
     }}>
-      {LongButtonsTemplate.bind({})}
+      {DisabledButtonsTemplate.bind({})}
     </Story>
 </Canvas>

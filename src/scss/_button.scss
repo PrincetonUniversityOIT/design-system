@@ -65,7 +65,8 @@
   outline: px-to-rem(2) solid jazz-theme(focus-color);
 }
 
-.jazz-btn:disabled {
+.jazz-btn:disabled,
+.jazz-btn[aria-disabled=true] {
   color: jazz-theme(button-disabled-color);
   background-color: jazz-theme(button-disabled-bgcolor);
   border: px-to-rem(1) solid jazz-theme(button-disabled-border-color);
@@ -106,7 +107,8 @@
   outline: px-to-rem(2) solid jazz-theme(focus-color);
 }
 
-.jazz-btn.jazz-btn-outline:disabled {
+.jazz-btn.jazz-btn-outline:disabled,
+.jazz-btn.jazz-btn-outline[aria-disabled=true] {
   color: jazz-theme(button-outline-disabled-color);
   background-color: jazz-theme(button-outline-disabled-bgcolor);
   border: px-to-rem(1) solid jazz-theme(button-outline-disabled-border-color);
@@ -150,7 +152,8 @@
   outline: px-to-rem(2) solid jazz-theme(focus-color);
 }
 
-.jazz-btn.jazz-btn-text:disabled span {
+.jazz-btn.jazz-btn-text:disabled span,
+.jazz-btn.jazz-btn-text[aria-disabled=true] span {
   color: jazz-theme(button-text-disabled-color);
   pointer-events: none;
   border-bottom: px-to-rem(1) solid jazz-theme(button-text-disabled-border-color);

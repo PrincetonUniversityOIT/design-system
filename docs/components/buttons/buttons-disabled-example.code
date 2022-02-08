@@ -1,0 +1,4 @@
+<button class="jazz-btn" disabled>Default Disabled</button>
+<button class="jazz-btn" aria-disabled='true'>Aria-Disabled</button>
+<button class="jazz-btn jazz-btn-outline" disabled>Outline Disabled</button>
+<button class="jazz-btn jazz-btn-outline" aria-disabled='true'>Outline Aria-Disabled</button>
