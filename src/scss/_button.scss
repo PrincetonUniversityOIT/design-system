@@ -149,35 +149,34 @@
     }
   }
 
-}
+  /*
+    Button Sizes
+  */
 
-/*
-  Button Sizes
-*/
+  &-s-size {
+    font-size: px-to-rem(12);
+    height: jazz-theme(button-size-small);
+  }
 
-.jazz-btn-s-size {
-  font-size: px-to-rem(12);
-  height: jazz-theme(button-size-small);
-}
+  &-m-size {
+    font-size: px-to-rem(14);
+    height: jazz-theme(button-size-medium);
+  }
 
-.jazz-btn-m-size {
-  font-size: px-to-rem(14);
-  height: jazz-theme(button-size-medium);
-}
-
-.jazz-btn-l-size {
-  font-size: px-to-rem(16);
-  height: jazz-theme(button-size-large);
+  &-l-size {
+    font-size: px-to-rem(16);
+    height: jazz-theme(button-size-large);
+  }
 }
 
 @include apply-to-phone-only {
   .jazz-btn {
     width: auto;
-  }
 
-  .jazz-btn-s-size {
-    font-size: px-to-rem(14);
-    height: jazz-theme(button-size-medium);
-    padding: px-to-rem(12) px-to-rem(24)
+    &-s-size {
+      font-size: px-to-rem(14);
+      height: jazz-theme(button-size-medium);
+      padding: px-to-rem(12) px-to-rem(24)
+    }
   }
 }
