@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buttons - Princeton Design System</title>
     <link rel="icon" href="/design-system/favicon.ico">
-    <link rel="stylesheet" href="/design-system/jazz_sans.css">
+    <link rel="stylesheet" href="/design-system/jazz_serif.css">
     <link rel="stylesheet" href="/design-system/jazz_fonts.css">
     <link rel="stylesheet" href="/design-system/jazz_curated_icons.css">
     <link rel="stylesheet" href="/design-system/prism-atom-dark.css">
@@ -377,6 +377,37 @@ Use buttons to draw attention to important actions, such as “Add”, “Close�
     <div class="jazz-accordion__content jazz-code-panel" id="code-panel-medium">
         <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
         <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn jazz-btn-m-size<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+    </div>
+</div>
+
+
+<h3>Disabled Buttons</h3>
+
+<p>
+    A button may be represented as disabled by using either the <span class="code">disabled</span> or <span class="code">aria-disabled='true'</span> attributes,
+    so that buttons are represented consistently when accessibility ARIA features are utilized or not.
+</p>
+
+<p>
+    Though both attributes will disable the buttons, it is recommended to use the <span class="code">aria-disabled='true'</span> attribute in favor of <span class="code">disabled</span>
+    while keeping in mind that <span class="code">aria-disabled='true'</span> does not actually disable the button.
+    Disabling a button makes it difficult for users to understand why the button is disabled, but situations may arise where truly disabling a button is preferred.
+</p>
+
+
+
+<iframe src="/design-system/components/buttons/buttons-disabled-example" title="" class="jazz-docs__code-sample"></iframe>
+
+<div class="jazz-accordion" role="region">
+    <h3>
+        <button class="jazz-accordion__button" aria-controls="code-panel-large">HTML Code</button>
+    </h3>
+    <div class="jazz-accordion__content jazz-code-panel" id="code-panel-large">
+        <button class="jazz-btn" onclick="copyCode(this)">Copy</button>
+        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">></span></span>Default Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn<span class="token punctuation">"</span></span> <span class="token attr-name">aria-disabled</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>true<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>Aria-Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn jazz-btn-outline<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">></span></span>Outline Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jazz-btn jazz-btn-outline<span class="token punctuation">"</span></span> <span class="token attr-name">aria-disabled</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>true<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>Outline Aria-Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
     </div>
 </div>
 
