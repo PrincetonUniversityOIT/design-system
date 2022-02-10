@@ -58,6 +58,21 @@ Use buttons to draw attention to important actions, such as “Add”, “Close�
 
 {{ example("/components/buttons/buttons-medium-example", "Medium Example", "code-panel-medium") }}
 
+<h3>Disabled Buttons</h3>
+
+<p>
+    A button may be represented as disabled by using either the <span class="code">disabled</span> or <span class="code">aria-disabled='true'</span> attributes,
+    so that buttons are represented consistently when accessibility ARIA features are utilized or not.
+</p>
+
+<p>
+    Though both attributes will disable the buttons, it is recommended to use the <span class="code">aria-disabled='true'</span> attribute in favor of <span class="code">disabled</span>
+    while keeping in mind that <span class="code">aria-disabled='true'</span> does not actually disable the button.
+    Disabling a button makes it difficult for users to understand why the button is disabled, but situations may arise where truly disabling a button is preferred.
+</p>
+
+{{ example("/components/buttons/buttons-disabled-example", "Disabled Example", "code-panel-large") }}
+
 <h3>Large</h3>
 
 {{ example("/components/buttons/buttons-large-example", "Large Example", "code-panel-large") }}
