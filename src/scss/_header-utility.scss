@@ -325,7 +325,9 @@ html[data-jazz-scrollY] .jazz-utility-header.jazz-stuck-mobile {
         letter-spacing: normal;
         display: block;
 
-        &:hover {
+        &:hover,
+        &:active,
+        &.active {
           border-bottom: px-to-rem(2) solid jazz-theme(utility-header-link-underline-color);
         }
       }
